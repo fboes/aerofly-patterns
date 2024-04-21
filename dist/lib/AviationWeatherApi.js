@@ -1,5 +1,8 @@
 // @ts-check
 
+import { Vector } from "@fboes/geojson";
+import { Point } from "@fboes/geojson";
+
 /**
  * @typedef {object} AviationWeatherApiCloud
  * @property {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cover with {CLR: 0, FEW: 1/8, SCT: 2/8, BKN: 4/8, OVC: 1}
@@ -16,7 +19,7 @@
  * @property {number} wdir
  * @property {number} wspd
  * @property {number?} wgst
- * @property {string} visib "10+" in NM. Max values can be anything with a "+"
+ * @property {string|number} visib "10+" in NM. Max values can be anything with a "+"
  * @property {number} altim
  * @property {number} lat
  * @property {number} lon
@@ -29,9 +32,15 @@
  * @typedef {object} AviationWeatherApiRunway
  * @property {string} id "01L/19R"
  * @property {string} dimension "10801x150" in feet
- * @property {"A"|"C"} surface "A" Asphalt, "C" Concrete
+ * @property {"A"|"C"|"G"} surface "A" Asphalt, "C" Concrete, "G" Grass
  * @property {string} alignment "013"
  * @see https://aviationweather.gov/data/api/#/Data/dataAirport
+ */
+
+/**
+ * @typedef {object} AviationWeatherApiFrequencies
+ * @property {string} type "LCL/P",
+ * @property {number} freq 121.4
  */
 
 /**
@@ -46,7 +55,21 @@
  * @property {"T"|"-"} tower
  * @property {"B"|"-"} beacon
  * @property {AviationWeatherApiRunway[]} runways
+ * @property {AviationWeatherApiFrequencies[]} freqs
  * @see https://aviationweather.gov/data/api/#/Data/dataAirport
+ */
+
+/**
+ * @typedef {object} AviationWeatherApiNavaid
+ * @property {string} id "BDF"
+ * @property {"VORTAC"|"VOR/DME"|"TACAN"|"NDB"|"VOR"} type
+ * @property {string} name "BRADFORD"
+ * @property {number} lat
+ * @property {number} lon
+ * @property {number} elev 313.1 meters MSL
+ * @property {number} freq 114.7
+ * @property {string} mag_dec "02E" for East
+ * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
  */
 
 export class AviationWeatherApi {
@@ -78,6 +101,24 @@ export class AviationWeatherApi {
         ids: ids.join(","),
         format: "json",
         date: date ? date.toISOString().replace(/\.\d+(Z)/, "$1") : "",
+      }),
+    );
+  }
+
+  /**
+   *
+   * @param {Point} position
+   * @param {number} distance in meters
+   * @returns {Promise<AviationWeatherApiNavaid[]>}
+   */
+  static async fetchNavaid(position, distance = 1000) {
+    const southEast = position.getPointBy(new Vector(distance, 225));
+    const northWest = position.getPointBy(new Vector(distance, 45));
+    return AviationWeatherApi.doRequest(
+      "/api/data/navaid",
+      new URLSearchParams({
+        format: "json",
+        bbox: [southEast.latitude, southEast.longitude, northWest.latitude, northWest.longitude].join(","),
       }),
     );
   }

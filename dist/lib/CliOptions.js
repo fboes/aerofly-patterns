@@ -25,10 +25,20 @@ export class CliOptions {
   }
 
   /**
+   *
+   * @returns {string[]} get runway ID which will be right pattern runways
+   */
+  get getRightPatternRunways() {
+    return this.getArgv(3, this.icaoCode === "KMVY" ? "24,33" : "")
+      .toUpperCase()
+      .split(/[,\s]+/);
+  }
+
+  /**
    * @returns {number}
    */
   get numberOfMissions() {
-    return 2;
+    return 5;
   }
 
   /**

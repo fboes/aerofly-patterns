@@ -9,6 +9,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DateYielder } from "./DateYielder.js";
 import { Units } from "./Units.js";
+import { Point } from "@fboes/geojson";
+import { Vector } from "@fboes/geojson";
 
 /**
  * @typedef {object} AeroflyPatternsWaypointable
@@ -38,12 +40,13 @@ export class AeroflyPatterns {
   }
 
   async build() {
-    const airport = await this.fetchAirports();
+    const airport = await AviationWeatherApi.fetchAirports([this.cliOptions.icaoCode]);
     this.buildAirport(airport);
 
     if (!this.airport) {
       throw Error("No airport found");
     }
+    //const navaids = await AviationWeatherApi.fetchNavaid(this.airport?.position)
 
     const dateYielder = new DateYielder(this.cliOptions.numberOfMissions, this.airport.lstOffset);
     const dates = dateYielder.entries();
@@ -58,18 +61,10 @@ export class AeroflyPatterns {
 
   /**
    *
-   * @returns {Promise<import('./AviationWeatherApi.js').AviationWeatherApiAirport[]>}
-   */
-  async fetchAirports() {
-    return AviationWeatherApi.fetchAirports([this.cliOptions.icaoCode]);
-  }
-
-  /**
-   *
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport[]} airports
    */
   buildAirport(airports) {
-    this.airport = new Airport(airports[0]);
+    this.airport = new Airport(airports[0], this.cliOptions.getRightPatternRunways);
   }
 
   /**
@@ -92,7 +87,7 @@ export class AeroflyPatterns {
       geoJson.addFeature(
         new Feature(r.position, {
           title: r.id,
-          "marker-symbol": r === scenario.activeRunway ? "racetrack" : "triangle-stroked",
+          "marker-symbol": r === scenario.activeRunway ? "triangle" : "triangle-stroked",
         }),
       );
     });
@@ -103,6 +98,15 @@ export class AeroflyPatterns {
         "marker-symbol": "airfield",
       }),
     );
+
+    if (scenario.patternEntryPoint) {
+      geoJson.addFeature(
+        new Feature(scenario.patternEntryPoint.position, {
+          title: scenario.patternEntryPoint.id,
+          "marker-symbol": "racetrack",
+        }),
+      );
+    }
 
     return geoJson;
   }
@@ -116,18 +120,28 @@ export class AeroflyPatterns {
      * @param {AeroflyPatternsWaypointable} waypointable
      * @param {number} index
      * @param {string} type
+     * @param {Point?} lastPosition
+     * @param {number} length
+     * @param {number} frequency
      * @returns {string}
      */
-    const exportWaypoint = (waypointable, index, type) => {
+    const exportWaypoint = (waypointable, index, type, lastPosition, length = 0, frequency = 0) => {
+      /**
+       * @type {Vector?}
+       */
+      let vector = null;
+      if (lastPosition) {
+        vector = lastPosition.getVectorTo(waypointable.position);
+      }
       return `                    <[tmmission_checkpoint][element][${index}]
                         <[string8u][type][${type}]>
                         <[string8u][name][${waypointable.id || "WS2037"}]>
                         <[vector2_float64][lon_lat][${waypointable.position.longitude} ${waypointable.position.latitude}]>
                         <[float64][altitude][${waypointable.position.elevation}]>
-                        <[float64][direction][${index === 0 ? -1 : 0}]>
+                        <[float64][direction][${vector?.bearing ?? -1}]>
                         <[float64][slope][0]>
-                        <[float64][length][${type.match(/runway/) ? 1000 : 0}]>
-                        <[float64][frequency][0]>
+                        <[float64][length][${length}]>
+                        <[float64][frequency][${frequency}]>
                     >
 `;
     };
@@ -139,14 +153,14 @@ export class AeroflyPatterns {
 `;
 
     this.scenarios.forEach((s, index) => {
-      if (!s.activeRunway) {
+      if (!s.activeRunway || !s.patternEntryPoint) {
         return;
       }
 
-      const description = `${s.airport.name} (${s.airport.id}), active runway ${s.activeRunway.id}. Wind is ${s.weather?.windSpeed ?? 0} kts from ${s.weather?.windDirection ?? 0}°.`;
+      const description = `It is ${AeroflyPatternsDescription.getLocalDaytime(s.date, s.airport.lstOffset)}, and you are ${s.aircraft.distanceFromAirport} NM away from ${s.airport.name} (${s.airport.id}). As the wind is ${s.weather?.windSpeed ?? 0} kts from ${s.weather?.windDirection ?? 0}°, the currently active runway ${s.activeRunway.id}. Fly the pattern and land safely.`;
       output += `// -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][Landing Challenge ${s.airport.name} ${index + 1}]>
+                <[string8][title][${s.airport.id} #${index + 1}: ${s.airport.name}]>
                 <[string8][description][${description}]>
                 <[string8]   [flight_setting]     [cruise]>
                 <[string8u]  [aircraft_name]      [${s.aircraft.aeroflyCode}]>
@@ -175,13 +189,28 @@ export class AeroflyPatterns {
                     <[float64][cloud_cover][${s.weather?.cloudCover ?? 0}]>
                     <[float64][cloud_base][${(s.weather?.cloudBase ?? 0) * Units.feetPerMeter}]>
                 >
+                <[list_tmmission_checkpoint][checkpoints][]
 `;
-      let i = 0;
-      output += exportWaypoint(s.airport, i++, "origin");
-      output += exportWaypoint(s.activeRunway, i++, "departure_runway");
-      output += exportWaypoint(s.aircraft, i++, "waypoint");
-      output += exportWaypoint(s.activeRunway, i++, "destination_runway");
-      output += exportWaypoint(s.airport, i, "destination");
+      /**
+       * @type {[AeroflyPatternsWaypointable, string, number?, number?][]}
+       */
+      const waypoints = [
+        [s.airport, "origin"],
+        [s.activeRunway, "departure_runway", s.activeRunway.dimension[0]],
+        [s.patternEntryPoint, "waypoint"],
+        [s.activeRunway, "destination_runway", s.activeRunway.dimension[0]],
+        [s.airport, "destination"],
+      ];
+
+      /**
+       * @type {Point?}
+       */
+      let lastPosition = null;
+      waypoints.forEach((waypoint, index) => {
+        output += exportWaypoint(waypoint[0], index, waypoint[1], lastPosition, waypoint[2] ?? 0, waypoint[3] ?? 0);
+        lastPosition = waypoint[0].position;
+      });
+
       output += `                >
             >
 
@@ -198,12 +227,47 @@ export class AeroflyPatterns {
 
   async writeCustomMissionTmc() {
     const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
-    const dir = __dirname + "/../../data";
+    const dir = `${__dirname}/../../data/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
 
     await fs.mkdir(dir, { recursive: true });
+    await fs.writeFile(`${dir}/custom_missions_user.tmc`, this.buildCustomMissionTmc());
+    await fs.writeFile(`${dir}/debug.json`, JSON.stringify(this, null, 2));
     await fs.writeFile(
-      `${dir}/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}.tmc`,
-      this.buildCustomMissionTmc(),
+      `${dir}/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}.geojson`,
+      JSON.stringify(this.buildGeoJson(), null, 2),
     );
+  }
+}
+
+class AeroflyPatternsDescription {
+  /**
+   *
+   * @param {Date} date
+   * @param {number} offset
+   * @returns {string}
+   */
+  static getLocalDaytime(date, offset) {
+    const localSolarTime = (date.getUTCHours() - offset + 24) % 24;
+
+    if (localSolarTime < 5 || localSolarTime >= 19) {
+      return "night";
+    }
+    if (localSolarTime < 8) {
+      return "early morning";
+    }
+    if (localSolarTime < 11) {
+      return "morning";
+    }
+    if (localSolarTime < 13) {
+      return "noon";
+    }
+    if (localSolarTime < 15) {
+      return "afternoon";
+    }
+    if (localSolarTime < 19) {
+      return "late afternoon";
+    }
+
+    return "day";
   }
 }

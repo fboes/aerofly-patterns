@@ -10,8 +10,9 @@ export class Airport {
   /**
    *
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport} airportJson
+   * @param {string[]} rightPatternRunways
    */
-  constructor(airportJson) {
+  constructor(airportJson, rightPatternRunways = []) {
     this.id = airportJson.id;
     this.position = new Point(airportJson.lon, airportJson.lat, airportJson.elev);
 
@@ -31,7 +32,7 @@ export class Airport {
      */
     this.runways = [];
     airportJson.runways.map((r) => {
-      this.buildRunways(r, this.position).forEach((runway) => {
+      this.buildRunways(r, this.position, rightPatternRunways).forEach((runway) => {
         this.runways.push(runway);
       });
     });
@@ -68,9 +69,10 @@ export class Airport {
    *
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiRunway} runwayJson
    * @param {Point} airportPosition
+   * @param {string[]} rightPatternRunways
    * @returns {[AirportRunway, AirportRunway]}
    */
-  buildRunways(runwayJson, airportPosition) {
+  buildRunways(runwayJson, airportPosition, rightPatternRunways = []) {
     /**
      * @type {[string,string]}
      */
@@ -104,8 +106,8 @@ export class Airport {
     ];
 
     return [
-      new AirportRunway(id[0], dimension, alignment[0], positions[0]),
-      new AirportRunway(id[1], dimension, alignment[1], positions[1]),
+      new AirportRunway(id[0], dimension, alignment[0], positions[0], rightPatternRunways.indexOf(id[0]) !== -1),
+      new AirportRunway(id[1], dimension, alignment[1], positions[1], rightPatternRunways.indexOf(id[1]) !== -1),
     ];
   }
 }
@@ -120,8 +122,9 @@ export class AirportRunway {
    * @param {[number,number?]} dimension
    * @param {number} alignment
    * @param {Point} position
+   * @param {boolean} isRightPattern
    */
-  constructor(id, dimension, alignment, position) {
+  constructor(id, dimension, alignment, position, isRightPattern = false) {
     this.id = id;
     this.position = position;
 
@@ -134,5 +137,10 @@ export class AirportRunway {
      * @type {number}
      */
     this.alignment = alignment;
+
+    /**
+     * @type {boolean}
+     */
+    this.isRightPattern = isRightPattern;
   }
 }

@@ -40,6 +40,11 @@ export class Scenario {
      * @type {import('./Airport.js').AirportRunway?}
      */
     this.activeRunway = null;
+
+    /**
+     * @type {import("./AeroflyPatterns.js").AeroflyPatternsWaypointable?}
+     */
+    this.patternEntryPoint = null;
   }
 
   async build() {
@@ -63,6 +68,16 @@ export class Scenario {
     this.activeRunway = this.airport.runways.reduce((a, b) => {
       return difference(a.alignment) < difference(b.alignment) ? a : b;
     });
+
+    this.patternEntryPoint = {
+      id: this.activeRunway.id + "-ENTRY",
+      position: this.airport.position.getPointBy(
+        new Vector(
+          Units.meterPerNauticalMile,
+          this.activeRunway.alignment + ((this.activeRunway.isRightPattern ? 90 : 270) % 360),
+        ),
+      ),
+    };
   }
 }
 
@@ -160,7 +175,7 @@ class ScenarioWeather {
     /**
      * @type {number} in Nautical Miles. Max is 15 for METAR values ending on a "+"
      */
-    this.visibility = weatherJson.visib.match(/\+$/) ? 15 : Number(weatherJson.visib.replace(/\D/g, ""));
+    this.visibility = typeof weatherJson.visib === "string" ? 15 : weatherJson.visib;
 
     /**
      * @type {number} 0..1
