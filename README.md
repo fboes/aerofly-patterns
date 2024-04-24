@@ -1,6 +1,39 @@
-# aerofly-patterns
+# Aerofly Landegerät
 
-A brief summary
+> Landing Pattern Lessons for Aerofly FS 4.
+
+This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4. These missions contain landing pattern lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern correctly.
+
+## How to use it
+
+After installing this tool, use this CLI command to generate a new mission file:
+
+```bash
+# npm start [ICAO_AIRPORT_CODE] [ICAO_AIRCRAFT_CODE] [RP_RUNWAY,..]
+npm start KMVY C172 24,33
+```
+
+Examples for `ICAO_AIRCRAFT_CODE`:
+
+| `ICAO_AIRCRAFT_CODE` | Type                      |
+| -------------------- | ------------------------- |
+| `C172`               | Cessna 172                |
+| `BE58`               | Beechcraft Baron 58       |
+| `BU33`               | Bücker Bü 133 Jungmeister |
+| `PTS2`               | Pitts Special S-2         |
+| `BE9L`               | Beechcraft King Air C90   |
+
+Missions will be generated in `data/[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE]/`.
+
+## Download the missions
+
+There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE]/`. These files are in each directory:
+
+- `custom_missions_user.tmc`: Mission file with multiple emissions
+- `[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE].geojson`: A GeoJSON file containing the airport properties and the plane in mission #1
+- `README.md`: Quick summary of all missions
+
+See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
 
 ## Legal stuff
 

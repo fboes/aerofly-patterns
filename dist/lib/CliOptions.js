@@ -1,3 +1,5 @@
+import { AirportRunwayRightPatterns } from "./Airport.js";
+
 // @ts-check
 export class CliOptions {
   /**
@@ -29,16 +31,22 @@ export class CliOptions {
    * @returns {string[]} get runway ID which will be right pattern runways
    */
   get getRightPatternRunways() {
-    return this.getArgv(3, this.icaoCode === "KMVY" ? "24,33" : "")
-      .toUpperCase()
-      .split(/[,\s]+/);
+    const arg = this.getArgv(4, "");
+    return arg ? arg.toUpperCase().split(/[,\s]+/) : AirportRunwayRightPatterns[this.icaoCode] ?? [];
   }
 
   /**
    * @returns {number}
    */
   get numberOfMissions() {
-    return 5;
+    return 10;
+  }
+
+  /**
+   * @returns {number} in Nautical Miles
+   */
+  get initialDistance() {
+    return 10;
   }
 
   /**

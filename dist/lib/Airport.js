@@ -38,21 +38,21 @@ export class Airport {
     });
 
     /**
-     * @type {number}
+     * @type {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
      */
     this.magneticDeclination = 0;
     const mag_dec_match = airportJson.mag_dec.match(/^(\d+)(E|W)$/);
     if (mag_dec_match) {
       this.magneticDeclination = Number(mag_dec_match[1]);
-      if (mag_dec_match[2] === "E") {
+      if (mag_dec_match[2] === "W") {
         this.magneticDeclination *= -1;
       }
     }
 
     /**
-     * @type {number} at which UTC hour will the sun be highest, aks LST 12:00
+     * @type {number} at which UTC hour will the sun be lowest, aks LST 0:00
      */
-    this.lstOffset = 12 - this.position.longitude / 15;
+    this.lstOffset = this.position.longitude / 15;
 
     /**
      * @type {boolean}
@@ -101,8 +101,8 @@ export class Airport {
      * @type {[Point,Point]}
      */
     const positions = [
-      airportPosition.getPointBy(new Vector((dimension[0] / 2) * Units.feetPerMeter, alignment[0] + 180)),
-      airportPosition.getPointBy(new Vector((dimension[0] / 2) * Units.feetPerMeter, alignment[1] + 180)),
+      airportPosition.getPointBy(new Vector((dimension[0] / 2) / Units.feetPerMeter, alignment[0] + 180)),
+      airportPosition.getPointBy(new Vector((dimension[0] / 2) / Units.feetPerMeter, alignment[1] + 180)),
     ];
 
     return [
@@ -144,3 +144,15 @@ export class AirportRunway {
     this.isRightPattern = isRightPattern;
   }
 }
+
+/**
+ * A static list of right-hand pattern runways
+ * @type {{[key:string]: string[]}} with `airportCode`: `list of right-hand pattern runways`
+ */
+export const AirportRunwayRightPatterns = {
+  KBDU: ["26", "26G"],
+  KEYW: ["9"],
+  KHAF: ["30"],
+  KMVY: ["24", "33"],
+  KRTS: ["26", "32"],
+};

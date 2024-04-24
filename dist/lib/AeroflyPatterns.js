@@ -41,12 +41,11 @@ export class AeroflyPatterns {
 
   async build() {
     const airport = await AviationWeatherApi.fetchAirports([this.cliOptions.icaoCode]);
-    this.buildAirport(airport);
-
-    if (!this.airport) {
-      throw Error("No airport found");
+    if (!airport.length) {
+      throw new Error("No airport information from API");
     }
-    //const navaids = await AviationWeatherApi.fetchNavaid(this.airport?.position)
+    this.airport = new Airport(airport[0], this.cliOptions.getRightPatternRunways);
+    // const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position);
 
     const dateYielder = new DateYielder(this.cliOptions.numberOfMissions, this.airport.lstOffset);
     const dates = dateYielder.entries();
@@ -57,14 +56,6 @@ export class AeroflyPatterns {
     }
 
     await this.writeCustomMissionTmc();
-  }
-
-  /**
-   *
-   * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport[]} airports
-   */
-  buildAirport(airports) {
-    this.airport = new Airport(airports[0], this.cliOptions.getRightPatternRunways);
   }
 
   /**
@@ -157,11 +148,10 @@ export class AeroflyPatterns {
         return;
       }
 
-      const description = `It is ${AeroflyPatternsDescription.getLocalDaytime(s.date, s.airport.lstOffset)}, and you are ${s.aircraft.distanceFromAirport} NM away from ${s.airport.name} (${s.airport.id}). As the wind is ${s.weather?.windSpeed ?? 0} kts from ${s.weather?.windDirection ?? 0}°, the currently active runway ${s.activeRunway.id}. Fly the pattern and land safely.`;
       output += `// -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][${s.airport.id} #${index + 1}: ${s.airport.name}]>
-                <[string8][description][${description}]>
+                <[string8][description][${s.description}]>
                 <[string8]   [flight_setting]     [cruise]>
                 <[string8u]  [aircraft_name]      [${s.aircraft.aeroflyCode}]>
                 <[stringt8c] [aircraft_icao]      [${s.aircraft.icaoCode}]>
@@ -182,31 +172,21 @@ export class AeroflyPatterns {
                     >
                     <[float64][wind_direction][${s.weather?.windDirection ?? 0}]>
                     <[float64][wind_speed][${s.weather?.windSpeed ?? 0}]>
-                    <[float64][wind_gusts][${s.weather?.wundGusts ?? 0}]>
+                    <[float64][wind_gusts][${s.weather?.windGusts ?? 0}]>
                     <[float64][turbulence_strength][${s.weather?.turbulenceStrength ?? 0}]>
                     <[float64][thermal_strength][${s.weather?.thermalStrength ?? 0}]>
-                    <[float64][visibility][${(s.weather?.visibility ?? 15) * Units.meterPerNauticalMile}]>
+                    <[float64][visibility][${(s.weather?.visibility ?? 15) * Units.meterPerStatuteMile}]>
                     <[float64][cloud_cover][${s.weather?.cloudCover ?? 0}]>
-                    <[float64][cloud_base][${(s.weather?.cloudBase ?? 0) * Units.feetPerMeter}]>
+                    <[float64][cloud_base][${(s.weather?.cloudBase ?? 0) / Units.feetPerMeter}]>
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
 `;
-      /**
-       * @type {[AeroflyPatternsWaypointable, string, number?, number?][]}
-       */
-      const waypoints = [
-        [s.airport, "origin"],
-        [s.activeRunway, "departure_runway", s.activeRunway.dimension[0]],
-        [s.patternEntryPoint, "waypoint"],
-        [s.activeRunway, "destination_runway", s.activeRunway.dimension[0]],
-        [s.airport, "destination"],
-      ];
 
       /**
        * @type {Point?}
        */
       let lastPosition = null;
-      waypoints.forEach((waypoint, index) => {
+      s.waypoints.forEach((waypoint, index) => {
         output += exportWaypoint(waypoint[0], index, waypoint[1], lastPosition, waypoint[2] ?? 0, waypoint[3] ?? 0);
         lastPosition = waypoint[0].position;
       });
@@ -225,21 +205,93 @@ export class AeroflyPatterns {
     return output;
   }
 
+  /**
+   *
+   * @returns {string}
+   */
+  buildReadmeMarkdown() {
+    if (!this.airport) {
+      return "";
+    }
+
+    /**
+     * @param {number|string|undefined} value
+     * @param {number} targetLength
+     * @param {boolean} start
+     * @returns {string}
+     */
+    const pad = (value, targetLength = 2, start = false) => {
+      if (value === undefined) {
+        return "";
+      }
+      return start ? String(value).padStart(targetLength, " ") : String(value).padEnd(targetLength, " ");
+    };
+
+    /**
+     * @param {number|string} value
+     * @param {number} targetLength
+     * @returns {string}
+     */
+    const padNumber = (value, targetLength = 2) => {
+      return String(value).padStart(targetLength, "0");
+    };
+
+    let output = [`# ${this.airport.name} (${this.airport.id})`, ""];
+
+    output.push(
+      `Get [more information about ${this.airport.name} airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}).`,
+      "",
+      "## Included missions",
+      "",
+    );
+
+    output.push(`| No  |  Time | Wind          | Visibility | Runway  |`);
+    output.push(`| :-: | ----: | ------------- | ---------- | ------- |`);
+    this.scenarios.forEach((s, index) => {
+      const lst = Math.round((s.date.getUTCHours() - s.airport.lstOffset + 24) % 24);
+      output.push(
+        "| " +
+          [
+            "#" + pad(index + 1),
+            padNumber(lst) + ":00",
+            `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kts`,
+            pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
+            pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
+          ].join(" | ") +
+          " |",
+      );
+    });
+
+    output.push(
+      "",
+      "## Installation instructions",
+      "",
+      "1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)",
+      `2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.`,
+      "",
+    );
+
+    return output.join("\n");
+  }
+
   async writeCustomMissionTmc() {
     const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
     const dir = `${__dirname}/../../data/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
 
     await fs.mkdir(dir, { recursive: true });
-    await fs.writeFile(`${dir}/custom_missions_user.tmc`, this.buildCustomMissionTmc());
-    await fs.writeFile(`${dir}/debug.json`, JSON.stringify(this, null, 2));
-    await fs.writeFile(
-      `${dir}/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}.geojson`,
-      JSON.stringify(this.buildGeoJson(), null, 2),
-    );
+    await Promise.all([
+      fs.writeFile(`${dir}/custom_missions_user.tmc`, this.buildCustomMissionTmc()),
+      fs.writeFile(`${dir}/README.md`, this.buildReadmeMarkdown()),
+      fs.writeFile(
+        `${dir}/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}.geojson`,
+        JSON.stringify(this.buildGeoJson(), null, 2),
+      ),
+      // fs.writeFile(`${dir}/debug.json`, JSON.stringify(this, null, 2)),
+    ]);
   }
 }
 
-class AeroflyPatternsDescription {
+export class AeroflyPatternsDescription {
   /**
    *
    * @param {Date} date
@@ -269,5 +321,39 @@ class AeroflyPatternsDescription {
     }
 
     return "day";
+  }
+
+  /**
+   * Get a readable direction
+   * @param {number} heading
+   * @returns {string}
+   */
+  static getDirection(heading) {
+    const headings = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"];
+    return headings[Math.round((heading / 360) * headings.length) % headings.length];
+  }
+
+  /**
+   * Get a readable direction
+   * @param {number} number
+   * @returns {string}
+   */
+  static getNumberString(number) {
+    const numbers = [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "eleven",
+      "twelve",
+    ];
+    return numbers[Math.round(number)] ?? String(number);
   }
 }

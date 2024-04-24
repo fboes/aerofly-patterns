@@ -3,7 +3,7 @@
 import { strict as assert } from "node:assert";
 import { DateYielder } from "./DateYielder.js";
 
-const startDate = new Date("2024-05-15T12:00");
+const startDate = new Date(Date.UTC(2024, 4, 15, 12, 0, 0));
 
 console.group("DateYielder with 1 entries");
 {
@@ -25,6 +25,8 @@ console.group("DateYielder with 5 entries");
     //console.log(currentDate);
     assert.ok(currentDate);
     assert.notEqual(currentDate.toISOString(), startDate.toISOString());
+    assert.strictEqual(2024, currentDate.getUTCFullYear());
+    assert.strictEqual(4, currentDate.getUTCMonth());
   }
 }
 console.groupEnd();

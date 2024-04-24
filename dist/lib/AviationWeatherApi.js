@@ -14,13 +14,13 @@ import { Point } from "@fboes/geojson";
  * @typedef {object} AviationWeatherApiMetar
  * @property {string} icaoId "KMCI"
  * @property {string} reportTime "2024-04-19 07:00:00"
- * @property {number} temp
- * @property {number} dewp
- * @property {number} wdir
- * @property {number} wspd
- * @property {number?} wgst
- * @property {string|number} visib "10+" in NM. Max values can be anything with a "+"
- * @property {number} altim
+ * @property {number} temp °C
+ * @property {number} dewp °C
+ * @property {number} wdir °
+ * @property {number} wspd kts
+ * @property {number?} wgst kts
+ * @property {string|number} visib "10+" in SM. Max values can be anything with a "+"
+ * @property {number} altim hPa
  * @property {number} lat
  * @property {number} lon
  * @property {number} elev 313.1 meters MSL

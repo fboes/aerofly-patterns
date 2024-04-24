@@ -4,6 +4,7 @@ import { Vector } from "@fboes/geojson";
 import { Units } from "./Units.js";
 import { CliOptions } from "./CliOptions.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
+import { AeroflyPatternsDescription } from "./AeroflyPatterns.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -24,7 +25,7 @@ export class Scenario {
     /**
      * @type {ScenarioAircraft}
      */
-    this.aircraft = new ScenarioAircraft(airport, cliOptions.aircraft);
+    this.aircraft = new ScenarioAircraft(airport, cliOptions.aircraft, cliOptions.initialDistance);
 
     /**
      * @type {ScenarioWeather?}
@@ -49,6 +50,9 @@ export class Scenario {
 
   async build() {
     const weather = await AviationWeatherApi.fetchMetar([this.airport.id], this.date);
+    if (!weather.length) {
+      throw new Error("No METAR information from API");
+    }
     this.weather = new ScenarioWeather(weather[0]);
     this.getActiveRunway();
   }
@@ -79,6 +83,45 @@ export class Scenario {
       ),
     };
   }
+
+  /**
+   * @returns {string?}
+   */
+  get description() {
+    if (!this.activeRunway) {
+      return null;
+    }
+
+    //const distance = AeroflyPatternsDescription.getNumberString(this.aircraft.distanceFromAirport);
+    const bearing = AeroflyPatternsDescription.getDirection(
+      this.aircraft.bearingFromAirport - this.airport.magneticDeclination,
+    );
+    const towered = this.airport.hasTower ? "towered" : "untowered";
+
+    let description = `It is ${AeroflyPatternsDescription.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
+    description += this.weather
+      ? `As the wind is ${this.weather.windSpeed ?? 0} kts from ${this.weather.windDirection ?? 0}°, the main landing runway is ${this.activeRunway.id}. `
+      : `The main landing runway is ${this.activeRunway.id}. `;
+    description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
+
+    return description;
+  }
+
+  /**
+   * @returns {[import("./AeroflyPatterns.js").AeroflyPatternsWaypointable, string, number?, number?][]} will return an empty array if not all preconditions are met
+   */
+  get waypoints() {
+    if (!this.activeRunway || !this.patternEntryPoint) {
+      return [];
+    }
+    return [
+      [this.airport, "origin"],
+      [this.activeRunway, "departure_runway", this.activeRunway.dimension[0]],
+      [this.patternEntryPoint, "waypoint"],
+      [this.activeRunway, "destination_runway", this.activeRunway.dimension[0]],
+      [this.airport, "destination"],
+    ];
+  }
 }
 
 /**
@@ -89,23 +132,24 @@ class ScenarioAircraft {
    *
    * @param {import('./Airport.js').Airport} airport
    * @param {string} aircraftCode
+   * @param {number} distanceFromAirport
    */
-  constructor(airport, aircraftCode) {
+  constructor(airport, aircraftCode, distanceFromAirport) {
     /**
-     * @type {number} 0..360
+     * @type {number} true bearing. 0..360
      */
     this.bearingFromAirport = Math.random() * 360;
 
     /**
      * @type {number} in Nautical Miles
      */
-    this.distanceFromAirport = 10;
+    this.distanceFromAirport = distanceFromAirport;
 
     this.position = airport.position.getPointBy(new Vector(this.distanceFromAirport * 1852, this.bearingFromAirport));
     if (this.position.elevation !== null) {
       // Make height be 1500..3000 above airfield
       const variance = Math.min(1500, this.position.elevation / 8);
-      this.position.elevation += (1500 + variance + Math.random() * (1500 - variance)) * Units.feetPerMeter;
+      this.position.elevation += (1500 + variance + Math.random() * (1500 - variance)) / Units.feetPerMeter;
     }
     this.id = "current";
 
@@ -160,20 +204,10 @@ class ScenarioWeather {
     /**
      * @type {number} in kts
      */
-    this.wundGusts = weatherJson.wgst ?? 0;
+    this.windGusts = weatherJson.wgst ?? 0;
 
     /**
-     * @type {number} 0..1
-     */
-    this.turbulenceStrength = 0;
-
-    /**
-     * @type {number} 0..1
-     */
-    this.thermalStrength = 0;
-
-    /**
-     * @type {number} in Nautical Miles. Max is 15 for METAR values ending on a "+"
+     * @type {number} in Statute Miles. Max is 15 for METAR values ending on a "+"
      */
     this.visibility = typeof weatherJson.visib === "string" ? 15 : weatherJson.visib;
 
@@ -186,6 +220,18 @@ class ScenarioWeather {
      * @type {number} in ft
      */
     this.cloudBase = weatherJson.clouds[0]?.base ?? 0;
+
+    /**
+     * @type {number} 0..1
+     */
+    this.thermalStrength = ((weatherJson.temp ?? 14) - 5) / 25;
+  }
+
+  /**
+   * @returns {number} 0..1
+   */
+  get turbulenceStrength() {
+    return Math.min(1, this.windSpeed / 80 + this.windGusts / 20);
   }
 
   /**
