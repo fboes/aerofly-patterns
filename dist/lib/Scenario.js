@@ -97,11 +97,17 @@ export class Scenario {
       this.aircraft.bearingFromAirport - this.airport.magneticDeclination,
     );
     const towered = this.airport.hasTower ? "towered" : "untowered";
+    let weatherAdjectives = this.weather ? AeroflyPatternsDescription.getWeatherAdjectives(this.weather) : "";
+    if (weatherAdjectives) {
+      weatherAdjectives = `a ${weatherAdjectives} `;
+    }
 
-    let description = `It is ${AeroflyPatternsDescription.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
+    const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}°, ${Math.round(this.activeRunway.dimension[0]).toLocaleString("en")}ft)`;
+
+    let description = `It is ${weatherAdjectives}${AeroflyPatternsDescription.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
     description += this.weather
-      ? `As the wind is ${this.weather.windSpeed ?? 0} kts from ${this.weather.windDirection ?? 0}°, the main landing runway is ${this.activeRunway.id}. `
-      : `The main landing runway is ${this.activeRunway.id}. `;
+      ? `As the wind is ${this.weather.windSpeed ?? 0} kts from ${this.weather.windDirection ?? 0}°, the main landing runway is ${runway}. `
+      : `The main landing runway is ${runway}. `;
     description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
 
     return description;
@@ -116,9 +122,9 @@ export class Scenario {
     }
     return [
       [this.airport, "origin"],
-      [this.activeRunway, "departure_runway", this.activeRunway.dimension[0]],
+      [this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter],
       [this.patternEntryPoint, "waypoint"],
-      [this.activeRunway, "destination_runway", this.activeRunway.dimension[0]],
+      [this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter],
       [this.airport, "destination"],
     ];
   }
@@ -186,7 +192,17 @@ class ScenarioAircraft {
   }
 }
 
-class ScenarioWeather {
+export class ScenarioWeather {
+  /**
+   * @type {number} 0..1
+   */
+  #cloudCover = 0;
+
+  /**
+   * @type {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
+   */
+  #cloudCoverCode = "CLR";
+
   /**
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiMetar} weatherJson
    */
@@ -211,10 +227,7 @@ class ScenarioWeather {
      */
     this.visibility = typeof weatherJson.visib === "string" ? 15 : weatherJson.visib;
 
-    /**
-     * @type {number} 0..1
-     */
-    this.cloudCover = this.getCoverage(weatherJson.clouds[0]?.cover);
+    this.cloudCoverCode = weatherJson.clouds[0]?.cover;
 
     /**
      * @type {number} in ft
@@ -224,7 +237,7 @@ class ScenarioWeather {
     /**
      * @type {number} 0..1
      */
-    this.thermalStrength = ((weatherJson.temp ?? 14) - 5) / 25;
+    this.thermalStrength = Math.max(0, ((weatherJson.temp ?? 14) - 5) / 25);
   }
 
   /**
@@ -236,10 +249,10 @@ class ScenarioWeather {
 
   /**
    *
-   * @param {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"?} coverCode
-   * @returns {number}
+   * @param {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cloudCoverCode
    */
-  getCoverage(coverCode) {
+  set cloudCoverCode(cloudCoverCode) {
+    this.#cloudCoverCode = cloudCoverCode;
     /**
      * @type {{[key:string]:[number,number]}}
      */
@@ -250,8 +263,22 @@ class ScenarioWeather {
       BKN: [6 / 16, 4 / 16], // 4/8
       OVC: [10 / 16, 6 / 16], // 1
     };
-    const actualCover = coverCode && cover[coverCode] ? cover[coverCode] : cover.CLR;
+    const actualCover = cloudCoverCode && cover[cloudCoverCode] ? cover[cloudCoverCode] : cover.CLR;
 
-    return actualCover[0] + Math.random() * actualCover[1];
+    this.#cloudCover = actualCover[0] + Math.random() * actualCover[1];
+  }
+
+  /**
+   * @returns  {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
+   */
+  get cloudCoverCode() {
+    return this.#cloudCoverCode;
+  }
+
+  /**
+   * @returns {number} 0..1
+   */
+  get cloudCover() {
+    return this.#cloudCover;
   }
 }

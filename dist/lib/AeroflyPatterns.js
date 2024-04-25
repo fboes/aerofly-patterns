@@ -112,7 +112,7 @@ export class AeroflyPatterns {
      * @param {number} index
      * @param {string} type
      * @param {Point?} lastPosition
-     * @param {number} length
+     * @param {number} length in meter
      * @param {number} frequency
      * @returns {string}
      */
@@ -245,8 +245,8 @@ export class AeroflyPatterns {
       "",
     );
 
-    output.push(`| No  |  Time | Wind          | Visibility | Runway  |`);
-    output.push(`| :-: | ----: | ------------- | ---------- | ------- |`);
+    output.push(`| No  |  Time | Wind          | Clouds          | Visibility | Runway  |`);
+    output.push(`| :-: | ----: | ------------- | --------------- | ---------: | ------- |`);
     this.scenarios.forEach((s, index) => {
       const lst = Math.round((s.date.getUTCHours() - s.airport.lstOffset + 24) % 24);
       output.push(
@@ -255,6 +255,7 @@ export class AeroflyPatterns {
             "#" + pad(index + 1),
             padNumber(lst) + ":00",
             `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kts`,
+            `${pad(s.weather?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.cloudBase.toLocaleString("en"), 6, true)} ft`,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
           ].join(" | ") +
@@ -355,5 +356,41 @@ export class AeroflyPatternsDescription {
       "twelve",
     ];
     return numbers[Math.round(number)] ?? String(number);
+  }
+
+  /**
+   * @param  {import('./Scenario.js').ScenarioWeather} weather
+   * @returns {string}
+   */
+  static getWeatherAdjectives(weather) {
+    /**
+     * @type {string[]}
+     */
+    const adjectives = [];
+
+    if (weather.windSpeed >= 20) {
+      adjectives.push("stormy");
+    } else if (weather.windSpeed >= 10) {
+      adjectives.push("windy");
+    }
+
+    if (weather.visibility <= 1) {
+      adjectives.push("foggy");
+    } else if (weather.visibility <= 3) {
+      adjectives.push("misty");
+    } else {
+      switch (weather.cloudCoverCode) {
+        case "OVC":
+          adjectives.push("overcast");
+          break;
+        case "BKN":
+          adjectives.push("cloudy");
+          break;
+        case "CLR":
+          adjectives.push("clear");
+          break;
+      }
+    }
+    return adjectives.join(", ");
   }
 }

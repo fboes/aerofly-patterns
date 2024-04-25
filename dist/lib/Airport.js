@@ -74,7 +74,7 @@ export class Airport {
    */
   buildRunways(runwayJson, airportPosition, rightPatternRunways = []) {
     /**
-     * @type {[string,string]}
+     * @type {[string,string]} both directions
      */
     const id = ["", ""];
     runwayJson.id.split("/").forEach((i, index) => {
@@ -82,7 +82,7 @@ export class Airport {
     });
 
     /**
-     * @type {[number,number]}
+     * @type {[number,number]} length, width
      */
     const dimension = [0, 0];
     runwayJson.dimension
@@ -93,16 +93,16 @@ export class Airport {
       });
 
     /**
-     * @type {[number, number]}
+     * @type {[number, number]} both directions
      */
     const alignment = [Number(runwayJson.alignment), (Number(runwayJson.alignment) + 180) % 360];
 
     /**
-     * @type {[Point,Point]}
+     * @type {[Point,Point]} both directions
      */
     const positions = [
-      airportPosition.getPointBy(new Vector((dimension[0] / 2) / Units.feetPerMeter, alignment[0] + 180)),
-      airportPosition.getPointBy(new Vector((dimension[0] / 2) / Units.feetPerMeter, alignment[1] + 180)),
+      airportPosition.getPointBy(new Vector(dimension[0] / 2 / Units.feetPerMeter, alignment[0] + 180)),
+      airportPosition.getPointBy(new Vector(dimension[0] / 2 / Units.feetPerMeter, alignment[1] + 180)),
     ];
 
     return [
@@ -129,7 +129,7 @@ export class AirportRunway {
     this.position = position;
 
     /**
-     * @type {[number,number?]}
+     * @type {[number,number?]} length, width in ft
      */
     this.dimension = dimension;
 

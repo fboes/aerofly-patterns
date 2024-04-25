@@ -1,6 +1,5 @@
-import { AeroflyPatterns } from "./lib/AeroflyPatterns.js";
-import { strict as assert } from "node:assert";
+import { AeroflyPatternsTest } from "./lib/AeroflyPatterns.test.js";
+import { DateYielderTest } from "./lib/DateYielder.test.js";
 
-assert.deepStrictEqual(AeroflyPatterns, {});
-
-console.log("✅ Tests successful");
+new AeroflyPatternsTest();
+new DateYielderTest();
