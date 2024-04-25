@@ -110,6 +110,16 @@ export class Scenario {
       : `The main landing runway is ${runway}. `;
     description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
 
+    if (this.airport.navaids.length) {
+      description +=
+        "\n\nLocal NavAids: " +
+        this.airport.navaids
+          .map((n) => {
+            return `${n.type} ${n.id}: ${n.frequency}`;
+          })
+          .join(" | ");
+    }
+
     return description;
   }
 
@@ -210,7 +220,7 @@ export class ScenarioWeather {
     /**
      * @type {number} in kts
      */
-    this.windDirection = weatherJson.wdir;
+    this.windDirection = weatherJson.wdir === "VRB" ? 0 : weatherJson.wdir;
 
     /**
      * @type {number} in kts
@@ -257,11 +267,11 @@ export class ScenarioWeather {
      * @type {{[key:string]:[number,number]}}
      */
     const cover = {
-      CLR: [0, 1 / 16], // 0
-      FEW: [1 / 16, 2 / 16], // 1/8
-      SCT: [3 / 16, 3 / 16], // 2/8
-      BKN: [6 / 16, 4 / 16], // 4/8
-      OVC: [10 / 16, 6 / 16], // 1
+      CLR: [0, 0], // 0
+      FEW: [1 / 8, 1 / 8], // 1/8
+      SCT: [2 / 8, 2 / 8], // 2/8
+      BKN: [4 / 8, 3 / 8], // 4/8
+      OVC: [7 / 8, 1 / 8], // 1
     };
     const actualCover = cloudCoverCode && cover[cloudCoverCode] ? cover[cloudCoverCode] : cover.CLR;
 

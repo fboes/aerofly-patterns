@@ -63,6 +63,30 @@ export class Airport {
      * @type {boolean}
      */
     this.hasBeacon = airportJson.beacon !== "-";
+
+    const lclP = airportJson.freqs.find((f) => {
+      f.type = "LCL/P";
+    });
+
+    /**
+     * @type {number?}
+     */
+    this.localFrequency = lclP ? lclP.freq : null;
+
+    /**
+     * @type {AirportNavaid[]}
+     */
+    this.navaids = [];
+  }
+
+  /**
+   *
+   * @param {import("./AviationWeatherApi.js").AviationWeatherApiNavaid[]} navaids
+   */
+  setNavaids(navaids) {
+    this.navaids = navaids.map((n) => {
+      return new AirportNavaid(n);
+    });
   }
 
   /**
@@ -142,6 +166,30 @@ export class AirportRunway {
      * @type {boolean}
      */
     this.isRightPattern = isRightPattern;
+  }
+}
+
+/**
+ * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}
+ */
+export class AirportNavaid {
+  /**
+   *
+   * @param {import("./AviationWeatherApi.js").AviationWeatherApiNavaid} navaidJson
+   */
+  constructor(navaidJson) {
+    this.id = navaidJson.id;
+    this.position = new Point(navaidJson.lon, navaidJson.lat, navaidJson.elev);
+
+    /**
+     * @type {"VORTAC"|"VOR/DME"|"TACAN"|"NDB"|"VOR"}
+     */
+    this.type = navaidJson.type;
+
+    /**
+     * @type {number}
+     */
+    this.frequency = navaidJson.freq;
   }
 }
 

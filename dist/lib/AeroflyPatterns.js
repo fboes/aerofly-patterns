@@ -45,7 +45,9 @@ export class AeroflyPatterns {
       throw new Error("No airport information from API");
     }
     this.airport = new Airport(airport[0], this.cliOptions.getRightPatternRunways);
-    // const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position);
+
+    const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position, 10000);
+    this.airport.setNavaids(navaids);
 
     const dateYielder = new DateYielder(this.cliOptions.numberOfMissions, this.airport.lstOffset);
     const dates = dateYielder.entries();
@@ -239,23 +241,32 @@ export class AeroflyPatterns {
     let output = [`# ${this.airport.name} (${this.airport.id})`, ""];
 
     output.push(
+      "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
+      `Your ${this.cliOptions.aircraft} is ${this.cliOptions.initialDistance} NM away from ${this.airport.name}, and you have to make a correct landing pattern entry and land safely.`,
+      `Check wind and weather, as well as if it is a left- or right-turn-pattern.`,
+      "",
       `Get [more information about ${this.airport.name} airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}).`,
       "",
       "## Included missions",
       "",
     );
 
-    output.push(`| No  |  Time | Wind          | Clouds          | Visibility | Runway  |`);
-    output.push(`| :-: | ----: | ------------- | --------------- | ---------: | ------- |`);
+    output.push(`| No  | Local time | Wind          | Clouds          | Visibility | Runway  |`);
+    output.push(`| :-: | ---------: | ------------- | --------------- | ---------: | ------- |`);
     this.scenarios.forEach((s, index) => {
       const lst = Math.round((s.date.getUTCHours() - s.airport.lstOffset + 24) % 24);
+      const clouds =
+        s.weather?.cloudCoverCode !== "CLR"
+          ? `${pad(s.weather?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.cloudBase.toLocaleString("en"), 6, true)} ft`
+          : pad(s.weather?.cloudCoverCode, 15);
+
       output.push(
         "| " +
           [
             "#" + pad(index + 1),
-            padNumber(lst) + ":00",
+            pad(padNumber(lst) + ":00", 10, true),
             `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kts`,
-            `${pad(s.weather?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.cloudBase.toLocaleString("en"), 6, true)} ft`,
+            clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
           ].join(" | ") +
