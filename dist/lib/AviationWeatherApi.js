@@ -5,7 +5,7 @@ import { Point } from "@fboes/geojson";
 
 /**
  * @typedef {object} AviationWeatherApiCloud
- * @property {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cover with {CLR: 0, FEW: 1/8, SCT: 2/8, BKN: 4/8, OVC: 1}
+ * @property {"CAVOK"|"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cover with {CLR: 0, FEW: 1/8, SCT: 2/8, BKN: 4/8, OVC: 1}
  * @property {number} base 1900 ft AGL
  * @see https://aviationweather.gov/data/api/#/Data/dataMetar
  */

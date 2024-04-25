@@ -36,7 +36,7 @@ export class DateYielder {
       if (this.count > 1) {
         const percentage = index / (this.count - 1);
         currenDate.setDate(currenDate.getDate() - Math.round(percentage * 12) - 1);
-        currenDate.setUTCHours(8 + this.offsetHours + percentage * 12);
+        currenDate.setUTCHours(8 - this.offsetHours + percentage * 12);
       }
       yield currenDate;
 

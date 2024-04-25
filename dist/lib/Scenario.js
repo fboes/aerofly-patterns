@@ -43,9 +43,9 @@ export class Scenario {
     this.activeRunway = null;
 
     /**
-     * @type {import("./AeroflyPatterns.js").AeroflyPatternsWaypointable?}
+     * @type {import("./AeroflyPatterns.js").AeroflyPatternsWaypointable[]}
      */
-    this.patternEntryPoint = null;
+    this.patternWaypoints = [];
   }
 
   async build() {
@@ -73,15 +73,36 @@ export class Scenario {
       return difference(a.alignment) < difference(b.alignment) ? a : b;
     });
 
-    this.patternEntryPoint = {
-      id: this.activeRunway.id + "-ENTRY",
-      position: this.airport.position.getPointBy(
-        new Vector(
-          Units.meterPerNauticalMile,
-          this.activeRunway.alignment + ((this.activeRunway.isRightPattern ? 90 : 270) % 360),
-        ),
-      ),
-    };
+    const exitDistance = 1 * Units.meterPerNauticalMile;
+    const downwindDistance = 1 * Units.meterPerNauticalMile;
+    const finalDistance = 1 * Units.meterPerNauticalMile;
+
+    const activeRunwayEntry = this.activeRunway.position.getPointBy(
+      new Vector(finalDistance, (this.activeRunway.alignment + 180) % 360),
+    );
+    const activeRunwayExit = this.activeRunway.position.getPointBy(
+      new Vector(this.activeRunway.dimension[0] / Units.feetPerMeter + exitDistance, this.activeRunway.alignment),
+    );
+    const patternOrientation = this.activeRunway.alignment + ((this.activeRunway.isRightPattern ? 90 : 270) % 360);
+
+    this.patternWaypoints = [
+      {
+        id: this.activeRunway.id + "-CROSS",
+        position: activeRunwayExit,
+      },
+      {
+        id: this.activeRunway.id + "-DOWN",
+        position: activeRunwayExit.getPointBy(new Vector(downwindDistance, patternOrientation)),
+      },
+      {
+        id: this.activeRunway.id + "-BASE",
+        position: activeRunwayEntry.getPointBy(new Vector(downwindDistance, patternOrientation)),
+      },
+      {
+        id: this.activeRunway.id + "-FINAL",
+        position: activeRunwayEntry,
+      },
+    ];
   }
 
   /**
@@ -102,7 +123,7 @@ export class Scenario {
       weatherAdjectives = `a ${weatherAdjectives} `;
     }
 
-    const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}°, ${Math.round(this.activeRunway.dimension[0]).toLocaleString("en")}ft)`;
+    const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}° / ${Math.round(this.activeRunway.dimension[0]).toLocaleString("en")}ft)`;
 
     let description = `It is ${weatherAdjectives}${AeroflyPatternsDescription.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
     description += this.weather
@@ -115,9 +136,9 @@ export class Scenario {
         "\n\nLocal NavAids: " +
         this.airport.navaids
           .map((n) => {
-            return `${n.type} ${n.id}: ${n.frequency}`;
+            return `${n.type} ${n.id} (${n.frequency})`;
           })
-          .join(" | ");
+          .join(", ");
     }
 
     return description;
@@ -127,16 +148,26 @@ export class Scenario {
    * @returns {[import("./AeroflyPatterns.js").AeroflyPatternsWaypointable, string, number?, number?][]} will return an empty array if not all preconditions are met
    */
   get waypoints() {
-    if (!this.activeRunway || !this.patternEntryPoint) {
+    if (!this.activeRunway) {
       return [];
     }
-    return [
+
+    /**
+     * @type {[import("./AeroflyPatterns.js").AeroflyPatternsWaypointable, string, number?, number?][]}
+     */
+    const waypoints = [
       [this.airport, "origin"],
       [this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter],
-      [this.patternEntryPoint, "waypoint"],
-      [this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter],
-      [this.airport, "destination"],
     ];
+
+    this.patternWaypoints.forEach((p) => {
+      waypoints.push([p, "waypoint"]);
+    });
+
+    waypoints.push([this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter]);
+    waypoints.push([this.airport, "destination"]);
+
+    return waypoints;
   }
 }
 
@@ -259,9 +290,12 @@ export class ScenarioWeather {
 
   /**
    *
-   * @param {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cloudCoverCode
+   * @param {"CAVOK"|"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cloudCoverCode
    */
   set cloudCoverCode(cloudCoverCode) {
+    if (cloudCoverCode === "CAVOK") {
+      cloudCoverCode = "CLR";
+    }
     this.#cloudCoverCode = cloudCoverCode;
     /**
      * @type {{[key:string]:[number,number]}}
@@ -273,7 +307,7 @@ export class ScenarioWeather {
       BKN: [4 / 8, 3 / 8], // 4/8
       OVC: [7 / 8, 1 / 8], // 1
     };
-    const actualCover = cloudCoverCode && cover[cloudCoverCode] ? cover[cloudCoverCode] : cover.CLR;
+    const actualCover = cover[cloudCoverCode] ? cover[cloudCoverCode] : cover.CLR;
 
     this.#cloudCover = actualCover[0] + Math.random() * actualCover[1];
   }

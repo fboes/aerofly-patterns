@@ -46,7 +46,7 @@ export class CliOptions {
    * @returns {number} in Nautical Miles
    */
   get initialDistance() {
-    return 10;
+    return 8;
   }
 
   /**

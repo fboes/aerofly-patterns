@@ -92,14 +92,14 @@ export class AeroflyPatterns {
       }),
     );
 
-    if (scenario.patternEntryPoint) {
+    scenario.patternWaypoints.forEach((p) => {
       geoJson.addFeature(
-        new Feature(scenario.patternEntryPoint.position, {
-          title: scenario.patternEntryPoint.id,
+        new Feature(p.position, {
+          title: p.id,
           "marker-symbol": "racetrack",
         }),
       );
-    }
+    });
 
     return geoJson;
   }
@@ -146,7 +146,7 @@ export class AeroflyPatterns {
 `;
 
     this.scenarios.forEach((s, index) => {
-      if (!s.activeRunway || !s.patternEntryPoint) {
+      if (!s.activeRunway) {
         return;
       }
 
@@ -243,6 +243,7 @@ export class AeroflyPatterns {
     output.push(
       "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
       `Your ${this.cliOptions.aircraft} is ${this.cliOptions.initialDistance} NM away from ${this.airport.name}, and you have to make a correct landing pattern entry and land safely.`,
+      "",
       `Check wind and weather, as well as if it is a left- or right-turn-pattern.`,
       "",
       `Get [more information about ${this.airport.name} airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}).`,
@@ -251,10 +252,10 @@ export class AeroflyPatterns {
       "",
     );
 
-    output.push(`| No  | Local time | Wind          | Clouds          | Visibility | Runway  |`);
-    output.push(`| :-: | ---------: | ------------- | --------------- | ---------: | ------- |`);
+    output.push(`| No  | Local time | Wind          | Clouds          | Visibility | Runway  | Aircraft position |`);
+    output.push(`| :-: | ---------: | ------------- | --------------- | ---------: | ------- | ----------------- |`);
     this.scenarios.forEach((s, index) => {
-      const lst = Math.round((s.date.getUTCHours() - s.airport.lstOffset + 24) % 24);
+      const lst = Math.round((s.date.getUTCHours() + s.airport.lstOffset + 24) % 24);
       const clouds =
         s.weather?.cloudCoverCode !== "CLR"
           ? `${pad(s.weather?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.cloudBase.toLocaleString("en"), 6, true)} ft`
@@ -269,6 +270,7 @@ export class AeroflyPatterns {
             clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
+            "To the " + pad(AeroflyPatternsDescription.getDirection(s.aircraft.bearingFromAirport), 10),
           ].join(" | ") +
           " |",
       );
@@ -311,7 +313,7 @@ export class AeroflyPatternsDescription {
    * @returns {string}
    */
   static getLocalDaytime(date, offset) {
-    const localSolarTime = (date.getUTCHours() - offset + 24) % 24;
+    const localSolarTime = (date.getUTCHours() + offset + 24) % 24;
 
     if (localSolarTime < 5 || localSolarTime >= 19) {
       return "night";
@@ -379,9 +381,14 @@ export class AeroflyPatternsDescription {
      */
     const adjectives = [];
 
-    if (weather.windSpeed >= 20) {
+    if (weather.windSpeed >= 48) {
       adjectives.push("stormy");
-    } else if (weather.windSpeed >= 10) {
+    } else if (weather.windSpeed >= 34) {
+      adjectives.push("very windy");
+    } else if (weather.windGusts >= 10) {
+      // Gusty being more interesting as windy
+      adjectives.push("gusty");
+    } else if (weather.windSpeed >= 22) {
       adjectives.push("windy");
     }
 
