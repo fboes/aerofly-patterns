@@ -11,6 +11,7 @@ import { DateYielder } from "./DateYielder.js";
 import { Units } from "./Units.js";
 import { Point } from "@fboes/geojson";
 import { Vector } from "@fboes/geojson";
+import { Formatter } from "./Formatter.js";
 
 /**
  * @typedef {object} AeroflyPatternsWaypointable
@@ -57,7 +58,7 @@ export class AeroflyPatterns {
       this.scenarios.push(scenario);
     }
 
-    await this.writeCustomMissionTmc();
+    await this.writeCustomMissionFiles();
   }
 
   /**
@@ -152,6 +153,7 @@ export class AeroflyPatterns {
 
       output += `// -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
                 <[string8][title][${s.airport.id} #${index + 1}: ${s.airport.name}]>
                 <[string8][description][${s.description}]>
                 <[string8]   [flight_setting]     [cruise]>
@@ -238,7 +240,7 @@ export class AeroflyPatterns {
       return String(value).padStart(targetLength, "0");
     };
 
-    let output = [`# ${this.airport.name} (${this.airport.id})`, ""];
+    let output = [`# Landing Challenges: ${this.airport.name} (${this.airport.id})`, ""];
 
     output.push(
       "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
@@ -252,8 +254,12 @@ export class AeroflyPatterns {
       "",
     );
 
-    output.push(`| No  | Local time | Wind          | Clouds          | Visibility | Runway  | Aircraft position |`);
-    output.push(`| :-: | ---------: | ------------- | --------------- | ---------: | ------- | ----------------- |`);
+    output.push(
+      `| No  | Local date | Local time | Wind          | Clouds          | Visibility | Runway  | Aircraft position |`,
+    );
+    output.push(
+      `| :-: | ---------- | ---------: | ------------- | --------------- | ---------: | ------- | ----------------- |`,
+    );
     this.scenarios.forEach((s, index) => {
       const lst = Math.round((s.date.getUTCHours() + s.airport.lstOffset + 24) % 24);
       const clouds =
@@ -265,12 +271,13 @@ export class AeroflyPatterns {
         "| " +
           [
             "#" + pad(index + 1),
+            Formatter.getUtcCompleteDate(s.date),
             pad(padNumber(lst) + ":00", 10, true),
             `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kts`,
             clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
-            "To the " + pad(AeroflyPatternsDescription.getDirection(s.aircraft.bearingFromAirport), 10),
+            "To the " + pad(Formatter.getDirection(s.aircraft.bearingFromAirport), 10),
           ].join(" | ") +
           " |",
       );
@@ -283,14 +290,17 @@ export class AeroflyPatterns {
       "1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)",
       `2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.`,
       "",
+      `---`,
+      ``,
+      `Created with Aerofly Landegerät`,
     );
 
     return output.join("\n");
   }
 
-  async writeCustomMissionTmc() {
+  async writeCustomMissionFiles() {
     const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
-    const dir = `${__dirname}/../../data/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
+    const dir = `${__dirname}/../../data/Landing_Challenge-${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
 
     await fs.mkdir(dir, { recursive: true });
     await Promise.all([
@@ -302,113 +312,5 @@ export class AeroflyPatterns {
       ),
       // fs.writeFile(`${dir}/debug.json`, JSON.stringify(this, null, 2)),
     ]);
-  }
-}
-
-export class AeroflyPatternsDescription {
-  /**
-   *
-   * @param {Date} date
-   * @param {number} offset
-   * @returns {string}
-   */
-  static getLocalDaytime(date, offset) {
-    const localSolarTime = (date.getUTCHours() + offset + 24) % 24;
-
-    if (localSolarTime < 5 || localSolarTime >= 19) {
-      return "night";
-    }
-    if (localSolarTime < 8) {
-      return "early morning";
-    }
-    if (localSolarTime < 11) {
-      return "morning";
-    }
-    if (localSolarTime < 13) {
-      return "noon";
-    }
-    if (localSolarTime < 15) {
-      return "afternoon";
-    }
-    if (localSolarTime < 19) {
-      return "late afternoon";
-    }
-
-    return "day";
-  }
-
-  /**
-   * Get a readable direction
-   * @param {number} heading
-   * @returns {string}
-   */
-  static getDirection(heading) {
-    const headings = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"];
-    return headings[Math.round((heading / 360) * headings.length) % headings.length];
-  }
-
-  /**
-   * Get a readable direction
-   * @param {number} number
-   * @returns {string}
-   */
-  static getNumberString(number) {
-    const numbers = [
-      "zero",
-      "one",
-      "two",
-      "three",
-      "four",
-      "five",
-      "six",
-      "seven",
-      "eight",
-      "nine",
-      "ten",
-      "eleven",
-      "twelve",
-    ];
-    return numbers[Math.round(number)] ?? String(number);
-  }
-
-  /**
-   * @param  {import('./Scenario.js').ScenarioWeather} weather
-   * @returns {string}
-   */
-  static getWeatherAdjectives(weather) {
-    /**
-     * @type {string[]}
-     */
-    const adjectives = [];
-
-    if (weather.windSpeed >= 48) {
-      adjectives.push("stormy");
-    } else if (weather.windSpeed >= 34) {
-      adjectives.push("very windy");
-    } else if (weather.windGusts >= 10) {
-      // Gusty being more interesting as windy
-      adjectives.push("gusty");
-    } else if (weather.windSpeed >= 22) {
-      adjectives.push("windy");
-    }
-
-    if (weather.visibility <= 1) {
-      adjectives.push("foggy");
-    } else if (weather.visibility <= 3) {
-      adjectives.push("misty");
-    } else {
-      switch (weather.cloudCoverCode) {
-        case "OVC":
-          adjectives.push("overcast");
-          break;
-        case "BKN":
-          adjectives.push("cloudy");
-          break;
-        case "CLR":
-          adjectives.push("clear");
-          break;
-      }
-    }
-    return adjectives.join(", ");
   }
 }

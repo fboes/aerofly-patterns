@@ -1,5 +1,5 @@
-import { AeroflyPatternsTest } from "./lib/AeroflyPatterns.test.js";
+import { FormatterTest } from "./lib/Formatter.test.js";
 import { DateYielderTest } from "./lib/DateYielder.test.js";
 
-new AeroflyPatternsTest();
+new FormatterTest();
 new DateYielderTest();

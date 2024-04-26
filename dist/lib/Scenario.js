@@ -4,7 +4,7 @@ import { Vector } from "@fboes/geojson";
 import { Units } from "./Units.js";
 import { CliOptions } from "./CliOptions.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
-import { AeroflyPatternsDescription } from "./AeroflyPatterns.js";
+import { Formatter } from "./Formatter.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -113,19 +113,17 @@ export class Scenario {
       return null;
     }
 
-    //const distance = AeroflyPatternsDescription.getNumberString(this.aircraft.distanceFromAirport);
-    const bearing = AeroflyPatternsDescription.getDirection(
-      this.aircraft.bearingFromAirport - this.airport.magneticDeclination,
-    );
+    //const distance = Formatter.getNumberString(this.aircraft.distanceFromAirport);
+    const bearing = Formatter.getDirection(this.aircraft.bearingFromAirport - this.airport.magneticDeclination);
     const towered = this.airport.hasTower ? "towered" : "untowered";
-    let weatherAdjectives = this.weather ? AeroflyPatternsDescription.getWeatherAdjectives(this.weather) : "";
+    let weatherAdjectives = this.weather ? Formatter.getWeatherAdjectives(this.weather) : "";
     if (weatherAdjectives) {
       weatherAdjectives = `a ${weatherAdjectives} `;
     }
 
     const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}° / ${Math.round(this.activeRunway.dimension[0]).toLocaleString("en")}ft)`;
 
-    let description = `It is ${weatherAdjectives}${AeroflyPatternsDescription.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
+    let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
     description += this.weather
       ? `As the wind is ${this.weather.windSpeed ?? 0} kts from ${this.weather.windDirection ?? 0}°, the main landing runway is ${runway}. `
       : `The main landing runway is ${runway}. `;
