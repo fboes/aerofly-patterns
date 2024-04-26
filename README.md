@@ -9,23 +9,23 @@ This nice little project generates `custom_missions_user.tmc` to use with Aerofl
 After installing this tool, use this CLI command to generate a new mission file:
 
 ```bash
-# npm start [ICAO_AIRPORT_CODE] [ICAO_AIRCRAFT_CODE] [RP_RUNWAY,..]
+# npm start [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]
 npm start KMVY C172 24,33
 ```
 
 Missions will be generated in `data/Landing_Challenges-[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE]/`.
 
-### `ICAO_AIRCRAFT_CODE`
+### `AEROFLY_AIRCRAFT_CODE`
 
-Working examples for `ICAO_AIRCRAFT_CODE`. Not all ICAO aircraft codes can readily be converted to Aerofly FS4 aircraft codes.
+Working examples for `AEROFLY_AIRCRAFT_CODE`:
 
 | `ICAO_AIRCRAFT_CODE` | Type                      |
 | -------------------- | ------------------------- |
-| `C172`               | Cessna 172                |
-| `BE58`               | Beechcraft Baron 58       |
-| `BU33`               | Bücker Bü 133 Jungmeister |
-| `PTS2`               | Pitts Special S-2         |
-| `BE9L`               | Beechcraft King Air C90   |
+| `c172`               | Cessna 172                |
+| `b58`                | Beechcraft Baron 58       |
+| `jungmeister`        | Bücker Bü 133 Jungmeister |
+| `pitts`              | Pitts Special S-2         |
+| `c90gtx`             | Beechcraft King Air C90   |
 
 ### `RP_RUNWAY`
 

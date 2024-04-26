@@ -199,7 +199,7 @@ export class AirportNavaid {
  */
 export const AirportRunwayRightPatterns = {
   KBDU: ["26", "26G"],
-  KEYW: ["9"],
+  KEYW: ["09"],
   KHAF: ["30"],
   KMVY: ["24", "33"],
   KRTS: ["26", "32"],

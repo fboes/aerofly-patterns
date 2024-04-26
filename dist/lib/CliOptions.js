@@ -20,10 +20,10 @@ export class CliOptions {
 
   /**
    *
-   * @returns {string}
+   * @returns {string} as in Aerofly Aircraft Codes
    */
   get aircraft() {
-    return this.getArgv(3, "C172").toUpperCase();
+    return this.getArgv(3, "c172").toLowerCase();
   }
 
   /**

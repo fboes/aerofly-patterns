@@ -176,7 +176,7 @@ class ScenarioAircraft {
   /**
    *
    * @param {import('./Airport.js').Airport} airport
-   * @param {string} aircraftCode
+   * @param {string} aircraftCode Aerofly Aircraft Code
    * @param {number} distanceFromAirport
    */
   constructor(airport, aircraftCode, distanceFromAirport) {
@@ -199,22 +199,23 @@ class ScenarioAircraft {
     this.id = "current";
 
     /**
-     * @type {string} ICAO code
+     * @type {string}
      */
-    this.icaoCode = aircraftCode;
+    this.aeroflyCode = aircraftCode;
   }
 
   /**
-   * @returns {string}
+   * @returns {string} of aircraft
    */
-  get aeroflyCode() {
-    const aeroflyCodes = {
-      BE58: "b58",
-      BU33: "jungmeister",
-      PTS2: "pitts",
-      BE9L: "c90gtx",
+  get icaoCode() {
+    const icaoCodes = {
+      c172: "C172",
+      b58: "BE58",
+      jungmeister: "BU33",
+      pitts: "PTS2",
+      c90gtx: "BE9L",
     };
-    return aeroflyCodes[this.icaoCode] ?? this.icaoCode.toLowerCase();
+    return icaoCodes[this.aeroflyCode] ?? this.icaoCode.toUpperCase();
   }
 
   /**
@@ -222,12 +223,13 @@ class ScenarioAircraft {
    */
   get callsign() {
     const callsigns = {
-      BE58: "N58EU",
-      BU33: "HBMIZ",
-      PTS2: "DEUJS",
-      BE9L: "DIBYP",
+      c172: "N51911",
+      b58: "N58EU",
+      jungmeister: "HBMIZ",
+      pitts: "DEUJS",
+      c90gtx: "DIBYP",
     };
-    return callsigns[this.icaoCode] ?? "N51911";
+    return callsigns[this.aeroflyCode] ?? "N51911";
   }
 }
 
