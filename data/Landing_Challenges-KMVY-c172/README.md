@@ -11,16 +11,16 @@ Get [more information about Martha's Vineyard airport on SkyVector](https://skyv
 
 | No  | Local date | Local time | Wind          | Clouds          | Visibility | Runway  | Aircraft position |
 | :-: | ---------- | ---------: | ------------- | --------------- | ---------: | ------- | ----------------- |
-| #1  | 2024-04-25 |      07:00 | 340° @  8 kts | CLR             |      15 SM | 33 (RP) | To the west       |
+| #1  | 2024-04-25 |      07:00 | 340° @ 8 kts  | CLR             |      15 SM | 33 (RP) | To the west       |
 | #2  | 2024-04-24 |      09:00 | 190° @ 12 kts | SCT @ 10,000 ft |      15 SM | 24 (RP) | To the south-east |
 | #3  | 2024-04-22 |      10:00 | 320° @ 13 kts | CLR             |      15 SM | 33 (RP) | To the north-east |
-| #4  | 2024-04-21 |      11:00 | 240° @  8 kts | CLR             |      15 SM | 24 (RP) | To the north-east |
-| #5  | 2024-04-20 |      13:00 | 240° @  7 kts | BKN @    400 ft |       5 SM | 24 (RP) | To the south-east |
-| #6  | 2024-04-18 |      14:00 |  60° @ 15 kts | OVC @  5,000 ft |      15 SM | 06      | To the east       |
-| #7  | 2024-04-17 |      15:00 | 120° @  8 kts | OVC @  6,000 ft |      15 SM | 15      | To the north-west |
+| #4  | 2024-04-21 |      11:00 | 240° @ 8 kts  | CLR             |      15 SM | 24 (RP) | To the north-east |
+| #5  | 2024-04-20 |      13:00 | 240° @ 7 kts  | BKN @ 400 ft    |       5 SM | 24 (RP) | To the south-east |
+| #6  | 2024-04-18 |      14:00 | 60° @ 15 kts  | OVC @ 5,000 ft  |      15 SM | 06      | To the east       |
+| #7  | 2024-04-17 |      15:00 | 120° @ 8 kts  | OVC @ 6,000 ft  |      15 SM | 15      | To the north-west |
 | #8  | 2024-04-16 |      17:00 | 220° @ 12 kts | CLR             |      15 SM | 24 (RP) | To the south-west |
-| #9  | 2024-04-14 |      18:00 | 220° @ 11 kts | BKN @  9,000 ft |      15 SM | 24 (RP) | To the north-west |
-| #10 | 2024-04-14 |      19:00 | 260° @ 11 kts | BKN @  8,000 ft |      15 SM | 24 (RP) | To the south-west |
+| #9  | 2024-04-14 |      18:00 | 220° @ 11 kts | BKN @ 9,000 ft  |      15 SM | 24 (RP) | To the north-west |
+| #10 | 2024-04-14 |      19:00 | 260° @ 11 kts | BKN @ 8,000 ft  |      15 SM | 24 (RP) | To the south-west |
 
 ## Installation instructions
 

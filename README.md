@@ -13,13 +13,13 @@ After installing this tool, use this CLI command to generate a new mission file:
 npm start KMVY C172 24,33
 ```
 
-Missions will be generated in `data/Landing_Challenges-[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE]/`.
+Missions will be generated in `data/Landing_Challenges-[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE]/`.
 
 ### `AEROFLY_AIRCRAFT_CODE`
 
 Working examples for `AEROFLY_AIRCRAFT_CODE`:
 
-| `ICAO_AIRCRAFT_CODE` | Type                      |
+| `AEROFLY_AIRCRAFT_CODE` | Type                      |
 | -------------------- | ------------------------- |
 | `c172`               | Cessna 172                |
 | `b58`                | Beechcraft Baron 58       |
@@ -33,10 +33,10 @@ You may want to supply a list of runways with right-turn patterns, as the API do
 
 ## Download the missions
 
-There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE]/`. These files are in each directory:
+There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE]/`. These files are in each directory:
 
 - `custom_missions_user.tmc`: Mission file with multiple emissions
-- `[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE].geojson`: A GeoJSON file containing the airport properties and the plane in mission #1
+- `[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE].geojson`: A GeoJSON file containing the airport properties and the plane in mission #1
 - `README.md`: Quick summary of all missions
 
 See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.

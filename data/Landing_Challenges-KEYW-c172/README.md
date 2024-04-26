@@ -9,18 +9,18 @@ Get [more information about Key West Intl airport on SkyVector](https://skyvecto
 
 ## Included missions
 
-| No  | Local date | Local time | Wind          | Clouds          | Visibility | Runway  | Aircraft position |
-| :-: | ---------- | ---------: | ------------- | --------------- | ---------: | ------- | ----------------- |
-| #1  | 2024-04-25 |      08:00 |  70° @  8 kts | CLR             |      15 SM | 09 (RP) | To the south      |
-| #2  | 2024-04-24 |      09:00 |  80° @ 10 kts | FEW @  2,800 ft |      15 SM | 09 (RP) | To the east       |
-| #3  | 2024-04-22 |      11:00 | 230° @  9 kts | SCT @  2,300 ft |      15 SM | 27      | To the east       |
-| #4  | 2024-04-21 |      12:00 | 160° @ 11 kts | CLR             |      15 SM | 09 (RP) | To the east       |
-| #5  | 2024-04-20 |      13:00 | 100° @  9 kts | CLR             |      15 SM | 09 (RP) | To the north      |
-| #6  | 2024-04-18 |      15:00 | 100° @ 11 kts | CLR             |      15 SM | 09 (RP) | To the north-west |
-| #7  | 2024-04-17 |      16:00 | 100° @ 12 kts | CLR             |      15 SM | 09 (RP) | To the north-west |
-| #8  | 2024-04-16 |      17:00 |  80° @ 12 kts | CLR             |      15 SM | 09 (RP) | To the south-west |
-| #9  | 2024-04-15 |      19:00 | 100° @ 12 kts | CLR             |      15 SM | 09 (RP) | To the north      |
-| #10 | 2024-04-14 |      20:00 |  40° @  4 kts | FEW @  3,800 ft |      15 SM | 09 (RP) | To the west       |
+| No  | Local date | Local time | Wind          | Clouds         | Visibility | Runway  | Aircraft position |
+| :-: | ---------- | ---------: | ------------- | -------------- | ---------: | ------- | ----------------- |
+| #1  | 2024-04-25 |      08:00 | 70° @ 8 kts   | CLR            |      15 SM | 09 (RP) | To the south      |
+| #2  | 2024-04-24 |      09:00 | 80° @ 10 kts  | FEW @ 2,800 ft |      15 SM | 09 (RP) | To the east       |
+| #3  | 2024-04-22 |      11:00 | 230° @ 9 kts  | SCT @ 2,300 ft |      15 SM | 27      | To the east       |
+| #4  | 2024-04-21 |      12:00 | 160° @ 11 kts | CLR            |      15 SM | 09 (RP) | To the east       |
+| #5  | 2024-04-20 |      13:00 | 100° @ 9 kts  | CLR            |      15 SM | 09 (RP) | To the north      |
+| #6  | 2024-04-18 |      15:00 | 100° @ 11 kts | CLR            |      15 SM | 09 (RP) | To the north-west |
+| #7  | 2024-04-17 |      16:00 | 100° @ 12 kts | CLR            |      15 SM | 09 (RP) | To the north-west |
+| #8  | 2024-04-16 |      17:00 | 80° @ 12 kts  | CLR            |      15 SM | 09 (RP) | To the south-west |
+| #9  | 2024-04-15 |      19:00 | 100° @ 12 kts | CLR            |      15 SM | 09 (RP) | To the north      |
+| #10 | 2024-04-14 |      20:00 | 40° @ 4 kts   | FEW @ 3,800 ft |      15 SM | 09 (RP) | To the west       |
 
 ## Installation instructions
 
