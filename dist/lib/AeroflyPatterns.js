@@ -300,7 +300,7 @@ export class AeroflyPatterns {
 
   async writeCustomMissionFiles() {
     const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
-    const dir = `${__dirname}/../../data/Landing_Challenge-${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
+    const dir = `${__dirname}/../../data/Landing_Challenges-${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
 
     await fs.mkdir(dir, { recursive: true });
     await Promise.all([

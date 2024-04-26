@@ -1,4 +1,4 @@
-# Martha's Vineyard (KMVY)
+# Landing Challenge: Martha's Vineyard (KMVY)
 
 This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 Your C172 is 8 NM away from Martha's Vineyard, and you have to make a correct landing pattern entry and land safely.

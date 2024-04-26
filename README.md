@@ -13,7 +13,11 @@ After installing this tool, use this CLI command to generate a new mission file:
 npm start KMVY C172 24,33
 ```
 
-Examples for `ICAO_AIRCRAFT_CODE`:
+Missions will be generated in `data/Landing_Challenges-[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE]/`.
+
+### `ICAO_AIRCRAFT_CODE`
+
+Working examples for `ICAO_AIRCRAFT_CODE`. Not all ICAO aircraft codes can readily be converted to Aerofly FS4 aircraft codes.
 
 | `ICAO_AIRCRAFT_CODE` | Type                      |
 | -------------------- | ------------------------- |
@@ -23,7 +27,9 @@ Examples for `ICAO_AIRCRAFT_CODE`:
 | `PTS2`               | Pitts Special S-2         |
 | `BE9L`               | Beechcraft King Air C90   |
 
-Missions will be generated in `data/[ICAO_AIRPORT_CODE]-[ICAO_AIRCRAFT_CODE]/`.
+### `RP_RUNWAY`
+
+You may want to supply a list of runways with right-turn patterns, as the API does not know about these. Please supply a comma-separated list like `24,33` without any blank spaces in between.
 
 ## Download the missions
 
@@ -34,6 +40,10 @@ There are already multiple mission files generated in [`/data`](./data/). They a
 - `README.md`: Quick summary of all missions
 
 See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
+
+## Technical stuff
+
+This projects uses the public APIs of the [Aviation Weather Center](https://aviationweather.gov/). The usage of these APIs may be restricted or blocked on your local computer. The data may also be incoherent with your local state of Aerofly FS 4.
 
 ## Legal stuff
 
