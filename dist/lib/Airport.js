@@ -1,7 +1,7 @@
 // @ts-check
 
 import { Vector, Point } from "@fboes/geojson";
-import { Units } from "./Units.js";
+import { Units } from "../data/Units.js";
 
 /**
  * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}

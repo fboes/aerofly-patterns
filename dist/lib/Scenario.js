@@ -1,7 +1,7 @@
 // @ts-check
 
 import { Vector } from "@fboes/geojson";
-import { Units } from "./Units.js";
+import { Units } from "../data/Units.js";
 import { CliOptions } from "./CliOptions.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";

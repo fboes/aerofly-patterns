@@ -6,30 +6,45 @@ This nice little project generates `custom_missions_user.tmc` to use with Aerofl
 
 ## How to use it
 
-After installing this tool, use this CLI command to generate a new mission file:
+After installing this tool, use this CLI command to generate a new mission file in the current folder.
 
 ```bash
 # npm start [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]
-npm start KMVY C172 24,33
+npm start KMVY c172 24,33
 ```
 
-Missions will be generated in `data/Landing_Challenges-[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE]/`.
+| Parameter               | Description                                                   | Example | Default |
+| ----------------------- | ------------------------------------------------------------- | ------- | ------- |
+| `ICAO_AIRPORT_CODE`     | ICAO airport code which needs to be available in Aerofly FS 4 | `KMVY`  | `KMVY`  |
+| `AEROFLY_AIRCRAFT_CODE` | Internal aircraft code in Aerofly FS 4                        | `c172`  | `c172`  |
+| `RP_RUNWAY`             | Comma-separated list of runway names with right-turn pattern  | `24,33` |         |
 
-### `AEROFLY_AIRCRAFT_CODE`
+The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Examples of codes:
 
-Working examples for `AEROFLY_AIRCRAFT_CODE`:
-
-| `AEROFLY_AIRCRAFT_CODE` | Type                      |
-| -------------------- | ------------------------- |
-| `c172`               | Cessna 172                |
-| `b58`                | Beechcraft Baron 58       |
-| `jungmeister`        | Bücker Bü 133 Jungmeister |
-| `pitts`              | Pitts Special S-2         |
-| `c90gtx`             | Beechcraft King Air C90   |
-
-### `RP_RUNWAY`
-
-You may want to supply a list of runways with right-turn patterns, as the API does not know about these. Please supply a comma-separated list like `24,33` without any blank spaces in between.
+| `AEROFLY_AIRCRAFT_CODE` | Type                                 |
+| ----------------------- | ------------------------------------ |
+| `a320`                  | Airbus A320                          |
+| `asg29`                 | Schleicher ASG 29                    |
+| `b58`                   | Beechcraft Baron 58                  |
+| `b737`                  | Boeing 737                           |
+| `b737_900`              | Boeing 737-900                       |
+| `b777_300er`            | Boeing 777                           |
+| `c172`                  | Cessna 172                           |
+| `c90gtx`                | Beechcraft King Air C90              |
+| `camel`                 | Sopwith Camel                        |
+| `concorde`              | Aérospatiale-BAC Concorde            |
+| `dr1`                   | Fokker Dr.I                          |
+| `ec135`                 | Eurocopter EC135                     |
+| `f15e`                  | McDonnell Douglas F-15E Strike Eagle |
+| `f4u`                   | Vought F4U Corsair                   |
+| `jungmeister`           | Bücker Bü 133 Jungmeister            |
+| `lj45`                  | Learjet 45                           |
+| `mb339`                 | Aermacchi MB-339                     |
+| `p38`                   | Lockheed P-38                        |
+| `pitts`                 | Pitts Special S-2                    |
+| `q400`                  | De Havilland DHC-8                   |
+| `r22`                   | Robinson R22                         |
+| `swift`                 | Aériane Swift                        |
 
 ## Download the missions
 

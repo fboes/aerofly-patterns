@@ -1,14 +1,12 @@
 // @ts-check
+import * as fs from "node:fs/promises";
 import { Airport } from "./Airport.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { CliOptions } from "./CliOptions.js";
 import { FeatureCollection, Feature } from "@fboes/geojson";
 import { Scenario } from "./Scenario.js";
-import * as fs from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { DateYielder } from "./DateYielder.js";
-import { Units } from "./Units.js";
+import { Units } from "../data/Units.js";
 import { Point } from "@fboes/geojson";
 import { Vector } from "@fboes/geojson";
 import { Formatter } from "./Formatter.js";
@@ -40,7 +38,11 @@ export class AeroflyPatterns {
     this.scenarios = [];
   }
 
-  async build() {
+  /**
+   *
+   * @param {string} saveDirectory
+   */
+  async build(saveDirectory) {
     const airport = await AviationWeatherApi.fetchAirports([this.cliOptions.icaoCode]);
     if (!airport.length) {
       throw new Error("No airport information from API");
@@ -58,7 +60,7 @@ export class AeroflyPatterns {
       this.scenarios.push(scenario);
     }
 
-    await this.writeCustomMissionFiles();
+    await this.writeCustomMissionFiles(saveDirectory);
   }
 
   /**
@@ -298,19 +300,19 @@ export class AeroflyPatterns {
     return output.join("\n");
   }
 
-  async writeCustomMissionFiles() {
-    const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
-    const dir = `${__dirname}/../../data/Landing_Challenges-${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
-
-    await fs.mkdir(dir, { recursive: true });
+  /**
+   *
+   * @param {string} saveDirectory
+   */
+  async writeCustomMissionFiles(saveDirectory) {
     await Promise.all([
-      fs.writeFile(`${dir}/custom_missions_user.tmc`, this.buildCustomMissionTmc()),
-      fs.writeFile(`${dir}/README.md`, this.buildReadmeMarkdown()),
+      fs.writeFile(`${saveDirectory}/custom_missions_user.tmc`, this.buildCustomMissionTmc()),
+      fs.writeFile(`${saveDirectory}/README.md`, this.buildReadmeMarkdown()),
       fs.writeFile(
-        `${dir}/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}.geojson`,
+        `${saveDirectory}/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}.geojson`,
         JSON.stringify(this.buildGeoJson(), null, 2),
       ),
-      // fs.writeFile(`${dir}/debug.json`, JSON.stringify(this, null, 2)),
+      // fs.writeFile(`${saveDirectory}/debug.json`, JSON.stringify(this, null, 2)),
     ]);
   }
 }

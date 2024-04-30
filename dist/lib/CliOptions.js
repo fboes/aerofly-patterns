@@ -1,6 +1,7 @@
+// @ts-check
+
 import { AirportRunwayRightPatterns } from "./Airport.js";
 
-// @ts-check
 export class CliOptions {
   /**
    *
