@@ -8,8 +8,8 @@
  * @property {string} icaoCode
  * @property {string} callsign
  * @property {number} cruiseSpeed in knots
- * @property {number?} runwayTakeoff length in meters
- * @property {number?} runwayLanding length in meters
+ * @property {number?} runwayTakeoff length in feet
+ * @property {number?} runwayLanding length in feet
  */
 
 /**
@@ -23,10 +23,19 @@ export const AeroflyAircrafts = {
     icaoCode: "A320",
     callsign: "LH321",
     cruiseSpeed: 447,
+    runwayTakeoff: 7186,
+    runwayLanding: 4725,
+  },
+  /*a380: {
+    name: "Airbus A380",
+    type: null,
+    icaoCode: "380",
+    callsign: null,
+    cruiseSpeed: null,
     runwayTakeoff: null,
     runwayLanding: null,
-  },
-  /*asg29: {
+  }
+  asg29: {
     name: "Schleicher ASG 29",
     type: "G",
     icaoCode: null,
@@ -96,9 +105,9 @@ export const AeroflyAircrafts = {
     type: null,
     icaoCode: "BE9L",
     callsign: "DIBYP",
-    cruiseSpeed: 226,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    cruiseSpeed: 217,
+    runwayTakeoff: 2557,
+    runwayLanding: 3417,
   },
   /*camel: {
     name: "Sopwith Camel",
@@ -142,8 +151,8 @@ export const AeroflyAircrafts = {
     icaoCode: "F15",
     callsign: "ASJ0494",
     cruiseSpeed: 570,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    runwayTakeoff: 985,
+    runwayLanding: 1641,
   },
   f18: {
     name: "McDonnell Douglas F/A-18 Hornet",
@@ -151,8 +160,8 @@ export const AeroflyAircrafts = {
     icaoCode: "F18H",
     callsign: "VVAC260",
     cruiseSpeed: 570,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    runwayTakeoff: 1477,
+    runwayLanding: 1313,
   },
   /*f4u: {
     name: "Vought F4U Corsair",
@@ -168,27 +177,27 @@ export const AeroflyAircrafts = {
     type: null,
     icaoCode: "BU33",
     callsign: "HBMIZ",
-    cruiseSpeed: 110,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    cruiseSpeed: 108,
+    runwayTakeoff: 380,
+    runwayLanding: 374,
   },
-  /*lj45: {
+  lj45: {
     name: "Learjet 45",
     type: null,
     icaoCode: "LJ45",
-    callsign: null,
-    cruiseSpeed: null,
-    runwayTakeoff: null,
-    runwayLanding: null,
-  },*/
+    callsign: "DCSDD",
+    cruiseSpeed: 450,
+    runwayTakeoff: 4348,
+    runwayLanding: 2658,
+  },
   mb339: {
     name: "Aermacchi MB-339",
     type: null,
     icaoCode: "M339",
     callsign: "FPR456",
     cruiseSpeed: 350,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    runwayTakeoff: 1772,
+    runwayLanding: 1542,
   },
   p38: {
     name: "Lockheed P-38",
@@ -216,21 +225,21 @@ export const AeroflyAircrafts = {
     cruiseSpeed: 360,
     runwayTakeoff: null,
     runwayLanding: null,
-  },
+  },*/
   r22: {
     name: "Robinson R22",
     type: "H",
-    icaoCode: null,
-    callsign: null,
+    icaoCode: "R22",
+    callsign: "VHPHK",
     cruiseSpeed: 96,
     runwayTakeoff: 0,
     runwayLanding: 0,
   },
-  swift: {
+  /*swift: {
     name: "Aériane Swift",
     type: "G",
     icaoCode: null,
-    callsign: null,
+    callsign: "D8139",
     cruiseSpeed: null,
     runwayTakeoff: null,
     runwayLanding: null,

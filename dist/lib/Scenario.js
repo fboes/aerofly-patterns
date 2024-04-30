@@ -70,7 +70,19 @@ export class Scenario {
       return diff > 180 ? Math.abs(diff - 360) : diff;
     };
 
-    this.activeRunway = this.airport.runways.reduce((a, b) => {
+    const possibleRunways = this.airport.runways
+      .filter((r) => {
+        return r.runwayType === null || r.runwayType === this.aircraft.data.type;
+      })
+      .filter((r) => {
+        return (
+          this.aircraft.data.runwayLanding === null ||
+          this.aircraft.data.runwayLanding === 0 ||
+          this.aircraft.data.runwayLanding <= r.dimension[0]
+        );
+      });
+
+    this.activeRunway = possibleRunways.reduce((a, b) => {
       return difference(a.alignment) < difference(b.alignment) ? a : b;
     });
 

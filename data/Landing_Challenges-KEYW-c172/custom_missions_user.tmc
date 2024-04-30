@@ -6,17 +6,371 @@
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
                 <[string8][title][KEYW #1: Key West Intl]>
-                <[string8][description][It is a clear early morning, and you are 8 NM to the south of the towered airport Key West Intl (KEYW). As the wind is 8 kn from 70°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+                <[string8][description][It is a gusty early morning, and you are 8 NM to the south-east of the towered airport Key West Intl (KEYW). As the wind is 15 kn from 100°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
 
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
                 <[string8]   [flight_setting]     [cruise]>
                 <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
                 <[stringt8c] [callsign]           [N51911]>
                 <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.74202412999223 24.423864519872524]>
-                <[float64]   [origin_dir]         [352.9441286770351]>
-                <[float64]   [origin_alt]         [629.1537990634715]>
+                <[tmvector2d][origin_lon_lat]     [-81.64373263645555 24.47508628102155]>
+                <[float64]   [origin_dir]         [307.42180021693724]>
+                <[float64]   [origin_alt]         [838.3858726816102]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [89]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][29]>
+                        <[float64][time_hours][13.25]>
+                    >
+                    <[float64][wind_direction][100]>
+                    <[float64][wind_speed][15]>
+                    <[float64][wind_gusts][22]>
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.8240000000000001]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0.2408740727144018]>
+                    <[float64][cloud_base][853.4399726899209]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999852]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-CROSS]>
+                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99999999999812]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-DOWN]>
+                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.0000000000514]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-BASE]>
+                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.01409091722235]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-FINAL]>
+                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.00013275081915]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99239123871132]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99682177982442]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #2: Key West Intl]>
+                <[string8][description][It is a gusty morning, and you are 8 NM to the east of the towered airport Key West Intl (KEYW). As the wind is 16 kn from 90°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.61355675389682 24.55964710395736]>
+                <[float64]   [origin_dir]         [268.4441054440988]>
+                <[float64]   [origin_alt]         [912.7169922361311]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [89]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][28]>
+                        <[float64][time_hours][14.25]>
+                    >
+                    <[float64][wind_direction][90]>
+                    <[float64][wind_speed][16]>
+                    <[float64][wind_gusts][25]>
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.8440000000000001]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0.17091039746390377]>
+                    <[float64][cloud_base][1219.1999609856014]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999852]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-CROSS]>
+                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99999999999812]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-DOWN]>
+                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.0000000000514]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-BASE]>
+                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.01409091722235]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-FINAL]>
+                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.00013275081915]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99239123871132]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99682177982442]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #3: Key West Intl]>
+                <[string8][description][It is a gusty, clear morning, and you are 8 NM to the west of the towered airport Key West Intl (KEYW). As the wind is 14 kn from 110°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.90218104203676 24.588257149112227]>
+                <[float64]   [origin_dir]         [103.99526934840719]>
+                <[float64]   [origin_alt]         [567.748796401714]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [89]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][26]>
+                        <[float64][time_hours][16.25]>
+                    >
+                    <[float64][wind_direction][110]>
+                    <[float64][wind_speed][14]>
+                    <[float64][wind_gusts][22]>
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.912]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0]>
+                    <[float64][cloud_base][0]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999852]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-CROSS]>
+                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99999999999812]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-DOWN]>
+                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.0000000000514]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-BASE]>
+                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.01409091722235]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-FINAL]>
+                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.00013275081915]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99239123871132]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99682177982442]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #4: Key West Intl]>
+                <[string8][description][It is noon, and you are 8 NM to the south of the towered airport Key West Intl (KEYW). As the wind is 8 kn from 60°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.78411664743457 24.424676403769883]>
+                <[float64]   [origin_dir]         [9.485544804047208]>
+                <[float64]   [origin_alt]         [801.9278294219589]>
                 <[stringt8c] [destination_icao]   [KEYW]>
                 <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
                 <[float64]   [destination_dir]    [89]>
@@ -25,9 +379,599 @@ Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
                         <[int32][time_year][2024]>
                         <[int32][time_month][4]>
                         <[int32][time_day][25]>
-                        <[float64][time_hours][13.233333333333333]>
+                        <[float64][time_hours][17.25]>
                     >
-                    <[float64][wind_direction][70]>
+                    <[float64][wind_direction][60]>
+                    <[float64][wind_speed][8]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0.1]>
+                    <[float64][thermal_strength][0.912]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0.37830632245873574]>
+                    <[float64][cloud_base][1341.1199570841613]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999852]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-CROSS]>
+                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99999999999812]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-DOWN]>
+                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.0000000000514]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-BASE]>
+                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.01409091722235]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-FINAL]>
+                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.00013275081915]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99239123871132]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99682177982442]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #5: Key West Intl]>
+                <[string8][description][It is a clear noon, and you are 8 NM to the east of the towered airport Key West Intl (KEYW). As the wind is 13 kn from 100°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.6168520921042 24.584479593020827]>
+                <[float64]   [origin_dir]         [257.67258684240574]>
+                <[float64]   [origin_alt]         [767.4725565770799]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [89]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][24]>
+                        <[float64][time_hours][18.25]>
+                    >
+                    <[float64][wind_direction][100]>
+                    <[float64][wind_speed][13]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0.1625]>
+                    <[float64][thermal_strength][0.912]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0]>
+                    <[float64][cloud_base][0]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999852]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-CROSS]>
+                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99999999999812]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-DOWN]>
+                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.0000000000514]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-BASE]>
+                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.01409091722235]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-FINAL]>
+                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.00013275081915]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99239123871132]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99682177982442]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #6: Key West Intl]>
+                <[string8][description][It is afternoon, and you are 8 NM to the south-west of the towered airport Key West Intl (KEYW). As the wind is 11 kn from 330°, the main landing runway is 27 (273° / 5,076ft). Fly the pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.8686761244482 24.46679059754678]>
+                <[float64]   [origin_dir]         [47.93448596265398]>
+                <[float64]   [origin_alt]         [666.8212604572287]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [269]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][22]>
+                        <[float64][time_hours][20.25]>
+                    >
+                    <[float64][wind_direction][330]>
+                    <[float64][wind_speed][11]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0.1375]>
+                    <[float64][thermal_strength][0.976]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0.17452202293149777]>
+                    <[float64][cloud_base][548.6399824435206]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][27]>
+                        <[vector2_float64][lon_lat][-81.75235236775978 24.55622122335174]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][89.00000000001148]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][27-CROSS]>
+                        <[vector2_float64][lon_lat][-81.78595635311622 24.555683988435014]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999982]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][27-DOWN]>
+                        <[vector2_float64][lon_lat][-81.78563681449128 24.53903108866022]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.00000000003797]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][27-BASE]>
+                        <[vector2_float64][lon_lat][-81.73372392017859 24.539857895254762]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.98617483624338]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][27-FINAL]>
+                        <[vector2_float64][lon_lat][-81.73404346090877 24.55651079502957]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.0001327558864]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][27]>
+                        <[vector2_float64][lon_lat][-81.75235236775978 24.55622122335174]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.0076089663677]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.0031782410924]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #7: Key West Intl]>
+                <[string8][description][It is a clear late afternoon, and you are 8 NM to the north-west of the towered airport Key West Intl (KEYW). As the wind is 6 kn from 150°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.8782807640092 24.634757667738597]>
+                <[float64]   [origin_dir]         [126.20504872587878]>
+                <[float64]   [origin_alt]         [543.8666480715]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [89]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][21]>
+                        <[float64][time_hours][21.25]>
+                    >
+                    <[float64][wind_direction][150]>
+                    <[float64][wind_speed][6]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0.075]>
+                    <[float64][thermal_strength][0.912]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0]>
+                    <[float64][cloud_base][0]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999852]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-CROSS]>
+                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99999999999812]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-DOWN]>
+                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.0000000000514]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-BASE]>
+                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.01409091722235]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-FINAL]>
+                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.00013275081915]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99239123871132]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99682177982442]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #8: Key West Intl]>
+                <[string8][description][It is a clear late afternoon, and you are 8 NM to the east of the towered airport Key West Intl (KEYW). As the wind is 10 kn from 110°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.62866181018691 24.61517653363863]>
+                <[float64]   [origin_dir]         [243.65341626578797]>
+                <[float64]   [origin_alt]         [593.0467324704662]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [89]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][20]>
+                        <[float64][time_hours][22.25]>
+                    >
+                    <[float64][wind_direction][110]>
+                    <[float64][wind_speed][10]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0.125]>
+                    <[float64][thermal_strength][0.912]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0]>
+                    <[float64][cloud_base][0]>
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][268.9999999999852]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-CROSS]>
+                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99999999999812]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-DOWN]>
+                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][179.0000000000514]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-BASE]>
+                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][269.01409091722235]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][09-FINAL]>
+                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][359.00013275081915]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][09]>
+                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99239123871132]>
+                        <[float64][slope][0]>
+                        <[float64][length][1547.164750490728]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEYW]>
+                        <[vector2_float64][lon_lat][-81.76 24.5561]>
+                        <[float64][altitude][1]>
+                        <[float64][direction][88.99682177982442]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEYW #9: Key West Intl]>
+                <[string8][description][It is a clear late afternoon, and you are 8 NM to the north of the towered airport Key West Intl (KEYW). As the wind is 8 kn from 90°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [c172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
+                <[stringt8c] [callsign]           [N51911]>
+                <[stringt8c] [origin_icao]        [KEYW]>
+                <[tmvector2d][origin_lon_lat]     [-81.82399206371576 24.67597214706167]>
+                <[float64]   [origin_dir]         [154.12506099497477]>
+                <[float64]   [origin_alt]         [713.1654587773351]>
+                <[stringt8c] [destination_icao]   [KEYW]>
+                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
+                <[float64]   [destination_dir]    [89]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][19]>
+                        <[float64][time_hours][0.25]>
+                    >
+                    <[float64][wind_direction][90]>
                     <[float64][wind_speed][8]>
                     <[float64][wind_gusts][0]>
                     <[float64][turbulence_strength][0.1]>
@@ -123,490 +1067,18 @@ Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
-                <[string8][title][KEYW #2: Key West Intl]>
-                <[string8][description][It is a gusty morning, and you are 8 NM to the south-east of the towered airport Key West Intl (KEYW). As the wind is 10 kn from 80°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
+                <[string8][title][KEYW #10: Key West Intl]>
+                <[string8][description][It is a clear night, and you are 8 NM to the south-west of the towered airport Key West Intl (KEYW). As the wind is 8 kn from 80°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
 
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
+Local NavAids: NDB FIS (332), VORTAC EYW (113.50)]>
                 <[string8]   [flight_setting]     [cruise]>
                 <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
+                <[stringt8c] [aircraft_icao]      [icaoCode]>
                 <[stringt8c] [callsign]           [N51911]>
                 <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.62220945990143 24.51092197660937]>
-                <[float64]   [origin_dir]         [289.7912187825723]>
-                <[float64]   [origin_alt]         [558.0441875689942]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [89]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][24]>
-                        <[float64][time_hours][14.233333333333333]>
-                    >
-                    <[float64][wind_direction][80]>
-                    <[float64][wind_speed][10]>
-                    <[float64][wind_gusts][20]>
-                    <[float64][turbulence_strength][1]>
-                    <[float64][thermal_strength][0.868]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0.23158952056720972]>
-                    <[float64][cloud_base][853.4399726899209]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999852]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-CROSS]>
-                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99999999999812]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-DOWN]>
-                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.0000000000514]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-BASE]>
-                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.01409091722235]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-FINAL]>
-                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.00013275081915]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99239123871132]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99682177982442]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #3: Key West Intl]>
-                <[string8][description][It is morning, and you are 8 NM to the east of the towered airport Key West Intl (KEYW). As the wind is 9 kn from 230°, the main landing runway is 27 (273° / 5,076ft). Fly the pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.6143133769441 24.54220781384205]>
-                <[float64]   [origin_dir]         [275.9543607791146]>
-                <[float64]   [origin_alt]         [709.5202049405306]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [269]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][22]>
-                        <[float64][time_hours][16.233333333333334]>
-                    >
-                    <[float64][wind_direction][230]>
-                    <[float64][wind_speed][9]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.1125]>
-                    <[float64][thermal_strength][0.912]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0.37860868256945235]>
-                    <[float64][cloud_base][701.0399775667207]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][27]>
-                        <[vector2_float64][lon_lat][-81.75235236775978 24.55622122335174]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][89.00000000001148]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][27-CROSS]>
-                        <[vector2_float64][lon_lat][-81.78595635311622 24.555683988435014]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999982]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][27-DOWN]>
-                        <[vector2_float64][lon_lat][-81.78563681449128 24.53903108866022]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.00000000003797]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][27-BASE]>
-                        <[vector2_float64][lon_lat][-81.73372392017859 24.539857895254762]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.98617483624338]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][27-FINAL]>
-                        <[vector2_float64][lon_lat][-81.73404346090877 24.55651079502957]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.0001327558864]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][27]>
-                        <[vector2_float64][lon_lat][-81.75235236775978 24.55622122335174]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.0076089663677]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.0031782410924]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #4: Key West Intl]>
-                <[string8][description][It is a clear noon, and you are 8 NM to the east of the towered airport Key West Intl (KEYW). As the wind is 11 kn from 160°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.6159436302723 24.580370055064822]>
-                <[float64]   [origin_dir]         [259.47514987793545]>
-                <[float64]   [origin_alt]         [872.064479172546]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [89]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][21]>
-                        <[float64][time_hours][17.233333333333334]>
-                    >
-                    <[float64][wind_direction][160]>
-                    <[float64][wind_speed][11]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.1375]>
-                    <[float64][thermal_strength][0.932]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]>
-                    <[float64][cloud_base][0]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999852]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-CROSS]>
-                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99999999999812]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-DOWN]>
-                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.0000000000514]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-BASE]>
-                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.01409091722235]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-FINAL]>
-                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.00013275081915]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99239123871132]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99682177982442]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #5: Key West Intl]>
-                <[string8][description][It is a clear noon, and you are 8 NM to the north of the towered airport Key West Intl (KEYW). As the wind is 9 kn from 100°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.79627347566941 24.685198531048908]>
-                <[float64]   [origin_dir]         [165.6788401473799]>
-                <[float64]   [origin_alt]         [695.7936223872098]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [89]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][20]>
-                        <[float64][time_hours][18.233333333333334]>
-                    >
-                    <[float64][wind_direction][100]>
-                    <[float64][wind_speed][9]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.1125]>
-                    <[float64][thermal_strength][0.932]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]>
-                    <[float64][cloud_base][0]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999852]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-CROSS]>
-                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99999999999812]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-DOWN]>
-                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.0000000000514]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-BASE]>
-                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.01409091722235]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-FINAL]>
-                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.00013275081915]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99239123871132]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99682177982442]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #6: Key West Intl]>
-                <[string8][description][It is a clear afternoon, and you are 8 NM to the north of the towered airport Key West Intl (KEYW). As the wind is 11 kn from 100°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.81911436507635 24.678024859199425]>
-                <[float64]   [origin_dir]         [156.22555948946433]>
-                <[float64]   [origin_alt]         [497.71541156264334]>
+                <[tmvector2d][origin_lon_lat]     [-81.84232401923843 24.445908521905178]>
+                <[float64]   [origin_dir]         [34.22597721422608]>
+                <[float64]   [origin_alt]         [772.5417958337509]>
                 <[stringt8c] [destination_icao]   [KEYW]>
                 <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
                 <[float64]   [destination_dir]    [89]>
@@ -615,488 +1087,16 @@ Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
                         <[int32][time_year][2024]>
                         <[int32][time_month][4]>
                         <[int32][time_day][18]>
-                        <[float64][time_hours][20.233333333333334]>
-                    >
-                    <[float64][wind_direction][100]>
-                    <[float64][wind_speed][11]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.1375]>
-                    <[float64][thermal_strength][0.932]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]>
-                    <[float64][cloud_base][0]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999852]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-CROSS]>
-                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99999999999812]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-DOWN]>
-                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.0000000000514]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-BASE]>
-                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.01409091722235]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-FINAL]>
-                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.00013275081915]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99239123871132]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99682177982442]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #7: Key West Intl]>
-                <[string8][description][It is a clear late afternoon, and you are 8 NM to the north-west of the towered airport Key West Intl (KEYW). As the wind is 12 kn from 100°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.88541755073842 24.625006290748896]>
-                <[float64]   [origin_dir]         [121.16706138770695]>
-                <[float64]   [origin_alt]         [769.3776125983064]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [89]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][17]>
-                        <[float64][time_hours][21.233333333333334]>
-                    >
-                    <[float64][wind_direction][100]>
-                    <[float64][wind_speed][12]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.15]>
-                    <[float64][thermal_strength][0.868]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]>
-                    <[float64][cloud_base][0]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999852]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-CROSS]>
-                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99999999999812]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-DOWN]>
-                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.0000000000514]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-BASE]>
-                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.01409091722235]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-FINAL]>
-                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.00013275081915]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99239123871132]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99682177982442]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #8: Key West Intl]>
-                <[string8][description][It is a gusty, clear late afternoon, and you are 8 NM to the south-west of the towered airport Key West Intl (KEYW). As the wind is 12 kn from 80°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.86367317063757 24.46199714940855]>
-                <[float64]   [origin_dir]         [45.091123206266616]>
-                <[float64]   [origin_alt]         [773.821632602537]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [89]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][16]>
-                        <[float64][time_hours][22.233333333333334]>
+                        <[float64][time_hours][1.25]>
                     >
                     <[float64][wind_direction][80]>
-                    <[float64][wind_speed][12]>
-                    <[float64][wind_gusts][21]>
-                    <[float64][turbulence_strength][1]>
-                    <[float64][thermal_strength][0.8440000000000001]>
+                    <[float64][wind_speed][8]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0.1]>
+                    <[float64][thermal_strength][0.7759999999999999]>
                     <[float64][visibility][24140.16]>
                     <[float64][cloud_cover][0]>
                     <[float64][cloud_base][0]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999852]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-CROSS]>
-                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99999999999812]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-DOWN]>
-                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.0000000000514]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-BASE]>
-                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.01409091722235]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-FINAL]>
-                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.00013275081915]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99239123871132]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99682177982442]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #9: Key West Intl]>
-                <[string8][description][It is a clear late afternoon, and you are 8 NM to the north of the towered airport Key West Intl (KEYW). As the wind is 12 kn from 100°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.77728149393307 24.688414089830587]>
-                <[float64]   [origin_dir]         [173.23235044354863]>
-                <[float64]   [origin_alt]         [659.1330690097593]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [89]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][15]>
-                        <[float64][time_hours][0.23333333333333334]>
-                    >
-                    <[float64][wind_direction][100]>
-                    <[float64][wind_speed][12]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.15]>
-                    <[float64][thermal_strength][0.7559999999999999]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]>
-                    <[float64][cloud_base][0]>
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][268.9999999999852]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-CROSS]>
-                        <[vector2_float64][lon_lat][-81.73404341121 24.556508175831503]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99999999999812]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-DOWN]>
-                        <[vector2_float64][lon_lat][-81.7337238704865 24.539855276056702]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][179.0000000000514]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-BASE]>
-                        <[vector2_float64][lon_lat][-81.78563686531447 24.539033707845388]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][269.01409091722235]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][09-FINAL]>
-                        <[vector2_float64][lon_lat][-81.78595640394609 24.55568660762018]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][359.00013275081915]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][09]>
-                        <[vector2_float64][lon_lat][-81.76764761743071 24.55597839079851]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99239123871132]>
-                        <[float64][slope][0]>
-                        <[float64][length][1547.164750490728]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEYW]>
-                        <[vector2_float64][lon_lat][-81.76 24.5561]>
-                        <[float64][altitude][1]>
-                        <[float64][direction][88.99682177982442]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEYW #10: Key West Intl]>
-                <[string8][description][It is night, and you are 8 NM to the west of the towered airport Key West Intl (KEYW). As the wind is 4 kn from 40°, the main landing runway is 09 (93° / 5,076ft). Fly the right-turn pattern and land safely.
-
-Local NavAids: NDB FIS (332), VORTAC EYW (113.5)]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [c172]>
-                <[stringt8c] [aircraft_icao]      [C172]>
-                <[stringt8c] [callsign]           [N51911]>
-                <[stringt8c] [origin_icao]        [KEYW]>
-                <[tmvector2d][origin_lon_lat]     [-81.90568479611996 24.570147970901278]>
-                <[float64]   [origin_dir]         [96.08226547149104]>
-                <[float64]   [origin_alt]         [796.6580944264432]>
-                <[stringt8c] [destination_icao]   [KEYW]>
-                <[tmvector2d][destination_lon_lat][-81.76 24.5561]>
-                <[float64]   [destination_dir]    [89]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][4]>
-                        <[int32][time_day][14]>
-                        <[float64][time_hours][1.2333333333333334]>
-                    >
-                    <[float64][wind_direction][40]>
-                    <[float64][wind_speed][4]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.05]>
-                    <[float64][thermal_strength][0.7559999999999999]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0.22066866945515265]>
-                    <[float64][cloud_base][1158.2399629363213]>
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]

@@ -175,7 +175,7 @@ export class AirportRunway {
     const endMatch = id.match(/[SGHUW]$/);
 
     /**
-     * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water
+     * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water, all
      */
     this.runwayType = endMatch ? endMatch[0] : null;
   }
