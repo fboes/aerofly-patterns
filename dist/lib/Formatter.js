@@ -44,6 +44,16 @@ export class Formatter {
 
   /**
    * Get a readable direction
+   * @param {number} heading
+   * @returns {string}
+   */
+  static getDirectionArrow(heading) {
+    const headings = ["↑", "↗", "→", "↘", "↓", "↙", "←", "↖"];
+    return headings[Math.round((heading / 360) * headings.length) % headings.length];
+  }
+
+  /**
+   * Get a readable direction
    * @param {number} number
    * @returns {string}
    */

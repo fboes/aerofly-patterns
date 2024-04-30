@@ -5,6 +5,7 @@ import { Units } from "../data/Units.js";
 import { CliOptions } from "./CliOptions.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";
+import { AeroflyAircrafts } from "../data/AeroflyAircraft.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -125,8 +126,12 @@ export class Scenario {
 
     let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
     description += this.weather
-      ? `As the wind is ${this.weather.windSpeed ?? 0} kts from ${this.weather.windDirection ?? 0}°, the main landing runway is ${runway}. `
+      ? `As the wind is ${this.weather.windSpeed ?? 0} kn from ${this.weather.windDirection ?? 0}°, the main landing runway is ${runway}. `
       : `The main landing runway is ${runway}. `;
+    if (this.activeRunway.ilsFrequency) {
+      description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}MHz). `;
+    }
+
     description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
 
     if (this.airport.navaids.length) {
@@ -134,7 +139,7 @@ export class Scenario {
         "\n\nLocal NavAids: " +
         this.airport.navaids
           .map((n) => {
-            return `${n.type} ${n.id} (${n.frequency})`;
+            return `${n.type} ${n.id} (${n.frequency.toFixed(n.type !== "NDB" ? 2 : 0)})`;
           })
           .join(", ");
     }
@@ -202,34 +207,16 @@ class ScenarioAircraft {
      * @type {string}
      */
     this.aeroflyCode = aircraftCode;
-  }
 
-  /**
-   * @returns {string} of aircraft
-   */
-  get icaoCode() {
-    const icaoCodes = {
-      c172: "C172",
-      b58: "BE58",
-      jungmeister: "BU33",
-      pitts: "PTS2",
-      c90gtx: "BE9L",
-    };
-    return icaoCodes[this.aeroflyCode] ?? this.icaoCode.toUpperCase();
-  }
+    const aircraft = AeroflyAircrafts[this.aeroflyCode];
+    if (!aircraft) {
+      throw Error("Unknown aircraft");
+    }
 
-  /**
-   * @returns {string}
-   */
-  get callsign() {
-    const callsigns = {
-      c172: "N51911",
-      b58: "N58EU",
-      jungmeister: "HBMIZ",
-      pitts: "DEUJS",
-      c90gtx: "DIBYP",
-    };
-    return callsigns[this.aeroflyCode] ?? "N51911";
+    /**
+     * @type {import('../data/AeroflyAircraft.js').AeroflyAircraft} additional aircraft information like name and technical properties
+     */
+    this.data = aircraft;
   }
 }
 
@@ -249,17 +236,17 @@ export class ScenarioWeather {
    */
   constructor(weatherJson) {
     /**
-     * @type {number} in kts
+     * @type {number} in kn
      */
     this.windDirection = weatherJson.wdir === "VRB" ? 0 : weatherJson.wdir;
 
     /**
-     * @type {number} in kts
+     * @type {number} in kn
      */
     this.windSpeed = weatherJson.wspd;
 
     /**
-     * @type {number} in kts
+     * @type {number} in kn
      */
     this.windGusts = weatherJson.wgst ?? 0;
 

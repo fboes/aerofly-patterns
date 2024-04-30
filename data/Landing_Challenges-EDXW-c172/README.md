@@ -8,18 +8,18 @@ Get [more information about Sylt Airport airport on SkyVector](https://skyvector
 
 ## Included missions
 
-| No  | Local time | Wind          | Clouds          | Visibility | Runway | Aircraft position |
-| :-: | ---------: | ------------- | --------------- | ---------: | ------ | ----------------- |
-| #1  |      08:00 | 80° @ 13 kts  | BKN @ 800 ft    |      15 SM | 06     | To the north      |
-| #2  |      09:00 | 270° @ 14 kts | FEW @ 3,500 ft  |      15 SM | 24     | To the south-east |
-| #3  |      11:00 | 40° @ 10 kts  | CLR             |      15 SM | 06     | To the west       |
-| #4  |      12:00 | 310° @ 8 kts  | CLR             |      15 SM | 32     | To the west       |
-| #5  |      13:00 | 40° @ 19 kts  | BKN @ 1,400 ft  |      15 SM | 06     | To the east       |
-| #6  |      15:00 | 340° @ 13 kts | FEW @ 2,500 ft  |      15 SM | 32     | To the north-west |
-| #7  |      16:00 | 350° @ 19 kts | FEW @ 4,600 ft  |      15 SM | 32     | To the north      |
-| #8  |      17:00 | 150° @ 15 kts | SCT @ 1,900 ft  |      15 SM | 14     | To the east       |
-| #9  |      19:00 | 230° @ 14 kts | BKN @ 1,000 ft  |      15 SM | 24     | To the south      |
-| #10 |      20:00 | 250° @ 12 kts | BKN @ 25,000 ft |      15 SM | 24     | To the west       |
+| No  | Local time | Wind         | Clouds          | Visibility | Runway | Aircraft position |
+| :-: | ---------: | ------------ | --------------- | ---------: | ------ | ----------------- |
+| #1  |      08:00 | 80° @ 13 kn  | BKN @ 800 ft    |      15 SM | 06     | To the north      |
+| #2  |      09:00 | 270° @ 14 kn | FEW @ 3,500 ft  |      15 SM | 24     | To the south-east |
+| #3  |      11:00 | 40° @ 10 kn  | CLR             |      15 SM | 06     | To the west       |
+| #4  |      12:00 | 310° @ 8 kn  | CLR             |      15 SM | 32     | To the west       |
+| #5  |      13:00 | 40° @ 19 kn  | BKN @ 1,400 ft  |      15 SM | 06     | To the east       |
+| #6  |      15:00 | 340° @ 13 kn | FEW @ 2,500 ft  |      15 SM | 32     | To the north-west |
+| #7  |      16:00 | 350° @ 19 kn | FEW @ 4,600 ft  |      15 SM | 32     | To the north      |
+| #8  |      17:00 | 150° @ 15 kn | SCT @ 1,900 ft  |      15 SM | 14     | To the east       |
+| #9  |      19:00 | 230° @ 14 kn | BKN @ 1,000 ft  |      15 SM | 24     | To the south      |
+| #10 |      20:00 | 250° @ 12 kn | BKN @ 25,000 ft |      15 SM | 24     | To the west       |
 
 ## Installation instructions
 

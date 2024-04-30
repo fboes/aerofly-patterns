@@ -166,6 +166,18 @@ export class AirportRunway {
      * @type {boolean}
      */
     this.isRightPattern = isRightPattern;
+
+    /**
+     * @type {number} in MHz
+     */
+    this.ilsFrequency = 0;
+
+    const endMatch = id.match(/[SGHUW]$/);
+
+    /**
+     * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water
+     */
+    this.runwayType = endMatch ? endMatch[0] : null;
   }
 }
 

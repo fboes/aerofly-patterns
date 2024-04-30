@@ -19,6 +19,8 @@ npm start KMVY c172 24,33
 | `AEROFLY_AIRCRAFT_CODE` | Internal aircraft code in Aerofly FS 4                        | `c172`  | `c172`  |
 | `RP_RUNWAY`             | Comma-separated list of runway names with right-turn pattern  | `24,33` |         |
 
+If you need to skip a parameter, supply `-` and it will use the default value.
+
 The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Examples of codes:
 
 | `AEROFLY_AIRCRAFT_CODE` | Type                                 |

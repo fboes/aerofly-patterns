@@ -4,28 +4,29 @@
  * @typedef AeroflyAircraft
  * @type {object}
  * @property {string} name of aircraft
- * @property {"S"|"G"|"H"|"U"?} type STOL, Glider, Helicopter, Ultralight
- * @property {string?} icaoCode
- * @property {string?} callsign
- * @property {number?} cruiseSpeed in knots
+ * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water
+ * @property {string} icaoCode
+ * @property {string} callsign
+ * @property {number} cruiseSpeed in knots
  * @property {number?} runwayTakeoff length in meters
  * @property {number?} runwayLanding length in meters
  */
 
 /**
+ * @see https://www.icao.int/publications/doc8643/pages/search.aspx
  * @type {{[key:string]: AeroflyAircraft}}
  */
 export const AeroflyAircrafts = {
   a320: {
     name: "Airbus A320",
     type: null,
-    icaoCode: null,
-    callsign: null,
-    cruiseSpeed: null,
+    icaoCode: "A320",
+    callsign: "LH321",
+    cruiseSpeed: 447,
     runwayTakeoff: null,
     runwayLanding: null,
   },
-  asg29: {
+  /*asg29: {
     name: "Schleicher ASG 29",
     type: "G",
     icaoCode: null,
@@ -33,22 +34,23 @@ export const AeroflyAircrafts = {
     cruiseSpeed: null,
     runwayTakeoff: null,
     runwayLanding: null,
-  },
+  },*/
   b58: {
+    // https://beechcraft.txtav.com/en/baron-g58
     name: "Beechcraft Baron 58",
     type: null,
     icaoCode: "BE58",
     callsign: "N58EU",
-    cruiseSpeed: null,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    cruiseSpeed: 202,
+    runwayTakeoff: 1373,
+    runwayLanding: 1440,
   },
-  b737: {
+  /*b737: {
     name: "Boeing 737",
     type: null,
-    icaoCode: null,
+    icaoCode: "B735",
     callsign: null,
-    cruiseSpeed: null,
+    cruiseSpeed: 450,
     runwayTakeoff: null,
     runwayLanding: null,
   },
@@ -57,56 +59,66 @@ export const AeroflyAircrafts = {
     type: null,
     icaoCode: null,
     callsign: null,
-    cruiseSpeed: null,
+    cruiseSpeed: 450,
     runwayTakeoff: null,
     runwayLanding: null,
   },
   b777_300er: {
     name: "Boeing 777",
     type: null,
-    icaoCode: null,
+    icaoCode: "B77W",
     callsign: null,
-    cruiseSpeed: null,
+    cruiseSpeed: 450,
     runwayTakeoff: null,
     runwayLanding: null,
   },
+  bf109e: {
+    name: "Messerschmitt Bf 109",
+    type: null,
+    icaoCode: "ME09",
+    callsign: null,
+    cruiseSpeed: 320,
+    runwayTakeoff: null,
+    runwayLanding: null,
+  },*/
   c172: {
+    // https://cessna.txtav.com/en/piston/cessna-skyhawk
     name: "Cessna 172",
     type: null,
     icaoCode: "icaoCode",
     callsign: "N51911",
-    cruiseSpeed: null,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    cruiseSpeed: 124,
+    runwayTakeoff: 960,
+    runwayLanding: 575,
   },
   c90gtx: {
     name: "Beechcraft King Air C90",
     type: null,
     icaoCode: "BE9L",
     callsign: "DIBYP",
-    cruiseSpeed: null,
+    cruiseSpeed: 226,
     runwayTakeoff: null,
     runwayLanding: null,
   },
-  camel: {
+  /*camel: {
     name: "Sopwith Camel",
     type: null,
-    icaoCode: null,
+    icaoCode: "CAML",
     callsign: null,
-    cruiseSpeed: null,
+    cruiseSpeed: 98,
     runwayTakeoff: null,
     runwayLanding: null,
-  },
+  },*/
   concorde: {
     name: "Aérospatiale-BAC Concorde",
     type: null,
-    icaoCode: null,
-    callsign: null,
-    cruiseSpeed: null,
+    icaoCode: "CONC",
+    callsign: "FBVFB",
+    cruiseSpeed: 1165,
     runwayTakeoff: null,
     runwayLanding: null,
   },
-  dr1: {
+  /*dr1: {
     name: "Fokker Dr.I",
     type: null,
     icaoCode: null,
@@ -114,67 +126,76 @@ export const AeroflyAircrafts = {
     cruiseSpeed: null,
     runwayTakeoff: null,
     runwayLanding: null,
-  },
+  },*/
   ec135: {
     name: "Eurocopter EC135",
     type: "H",
-    icaoCode: null,
-    callsign: null,
-    cruiseSpeed: null,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    icaoCode: "EC35",
+    callsign: "CHX64",
+    cruiseSpeed: 137,
+    runwayTakeoff: 0,
+    runwayLanding: 0,
   },
   f15e: {
-    name: "McDonnell Douglas F-15E Strike ",
+    name: "McDonnell Douglas F-15E Strike Eagle",
     type: null,
-    icaoCode: null,
-    callsign: null,
-    cruiseSpeed: null,
+    icaoCode: "F15",
+    callsign: "ASJ0494",
+    cruiseSpeed: 570,
     runwayTakeoff: null,
     runwayLanding: null,
   },
-  f4u: {
+  f18: {
+    name: "McDonnell Douglas F/A-18 Hornet",
+    type: null,
+    icaoCode: "F18H",
+    callsign: "VVAC260",
+    cruiseSpeed: 570,
+    runwayTakeoff: null,
+    runwayLanding: null,
+  },
+  /*f4u: {
     name: "Vought F4U Corsair",
     type: null,
-    icaoCode: null,
+    icaoCode: "CORS",
     callsign: null,
-    cruiseSpeed: null,
+    cruiseSpeed: 187,
     runwayTakeoff: null,
     runwayLanding: null,
-  },
+  },*/
   jungmeister: {
     name: "Bücker Bü 133 Jungmeister",
     type: null,
     icaoCode: "BU33",
     callsign: "HBMIZ",
-    cruiseSpeed: null,
+    cruiseSpeed: 110,
     runwayTakeoff: null,
     runwayLanding: null,
   },
-  lj45: {
+  /*lj45: {
     name: "Learjet 45",
     type: null,
-    icaoCode: null,
+    icaoCode: "LJ45",
     callsign: null,
     cruiseSpeed: null,
     runwayTakeoff: null,
     runwayLanding: null,
-  },
+  },*/
   mb339: {
     name: "Aermacchi MB-339",
     type: null,
-    icaoCode: null,
-    callsign: null,
-    cruiseSpeed: null,
+    icaoCode: "M339",
+    callsign: "FPR456",
+    cruiseSpeed: 350,
     runwayTakeoff: null,
     runwayLanding: null,
   },
   p38: {
     name: "Lockheed P-38",
     type: null,
-    icaoCode: null,
-    callsign: null,
-    cruiseSpeed: null,
+    icaoCode: "P38",
+    callsign: "N38BP",
+    cruiseSpeed: 239,
     runwayTakeoff: null,
     runwayLanding: null,
   },
@@ -183,16 +204,16 @@ export const AeroflyAircrafts = {
     type: null,
     icaoCode: "PTS2",
     callsign: "DEUJS",
-    cruiseSpeed: null,
+    cruiseSpeed: 152,
     runwayTakeoff: null,
     runwayLanding: null,
   },
-  q400: {
+  /*q400: {
     name: "De Havilland DHC-8",
     type: null,
-    icaoCode: null,
+    icaoCode: "DH8D",
     callsign: null,
-    cruiseSpeed: null,
+    cruiseSpeed: 360,
     runwayTakeoff: null,
     runwayLanding: null,
   },
@@ -201,9 +222,9 @@ export const AeroflyAircrafts = {
     type: "H",
     icaoCode: null,
     callsign: null,
-    cruiseSpeed: null,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    cruiseSpeed: 96,
+    runwayTakeoff: 0,
+    runwayLanding: 0,
   },
   swift: {
     name: "Aériane Swift",
@@ -213,5 +234,14 @@ export const AeroflyAircrafts = {
     cruiseSpeed: null,
     runwayTakeoff: null,
     runwayLanding: null,
+  },*/
+  uh60: {
+    name: "Sikorsky UH-60 Black Hawk",
+    type: "H",
+    icaoCode: "H60",
+    callsign: "EVAC26212",
+    cruiseSpeed: 152,
+    runwayTakeoff: 0,
+    runwayLanding: 0,
   },
 };

@@ -17,8 +17,8 @@ import { Point } from "@fboes/geojson";
  * @property {number} temp °C
  * @property {number} dewp °C
  * @property {"VRB"|number} wdir ° | "VRB"
- * @property {number} wspd kts
- * @property {number?} wgst kts
+ * @property {number} wspd kn
+ * @property {number?} wgst kn
  * @property {string|number} visib "10+" in SM. Max values can be anything with a "+"
  * @property {number} altim hPa
  * @property {number} lat

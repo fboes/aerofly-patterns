@@ -90,7 +90,7 @@ export class AeroflyPatterns {
 
     geoJson.addFeature(
       new Feature(scenario.aircraft.position, {
-        title: scenario.aircraft.icaoCode,
+        title: scenario.aircraft.data.icaoCode,
         "marker-symbol": "airfield",
       }),
     );
@@ -160,8 +160,8 @@ export class AeroflyPatterns {
                 <[string8][description][${s.description}]>
                 <[string8]   [flight_setting]     [cruise]>
                 <[string8u]  [aircraft_name]      [${s.aircraft.aeroflyCode}]>
-                <[stringt8c] [aircraft_icao]      [${s.aircraft.icaoCode}]>
-                <[stringt8c] [callsign]           [${s.aircraft.callsign}]>
+                <[stringt8c] [aircraft_icao]      [${s.aircraft.data.icaoCode}]>
+                <[stringt8c] [callsign]           [${s.aircraft.data.callsign}]>
                 <[stringt8c] [origin_icao]        [${s.airport.id}]>
                 <[tmvector2d][origin_lon_lat]     [${s.aircraft.position.longitude} ${s.aircraft.position.latitude}]>
                 <[float64]   [origin_dir]         [${(s.aircraft.bearingFromAirport + 180) % 360}]>
@@ -242,11 +242,13 @@ export class AeroflyPatterns {
       return String(value).padStart(targetLength, "0");
     };
 
+    const firstMission = this.scenarios[0];
+
     let output = [`# Landing Challenges: ${this.airport.name} (${this.airport.id})`, ""];
 
     output.push(
       "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
-      `Your ${this.cliOptions.aircraft} is ${this.cliOptions.initialDistance} NM away from ${this.airport.name}, and you have to make a correct landing pattern entry and land safely.`,
+      `Your ${firstMission.aircraft.data.name} is ${firstMission.aircraft.distanceFromAirport} NM away from ${this.airport.name}, and you have to make a correct landing pattern entry and land safely.`,
       "",
       `Check wind and weather, as well as if it is a left- or right-turn-pattern.`,
       "",
@@ -257,10 +259,10 @@ export class AeroflyPatterns {
     );
 
     output.push(
-      `| No  | Local date | Local time | Wind          | Clouds          | Visibility | Runway  | Aircraft position |`,
+      `| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |`,
     );
     output.push(
-      `| :-: | ---------- | ---------: | ------------- | --------------- | ---------: | ------- | ----------------- |`,
+      `| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |`,
     );
     this.scenarios.forEach((s, index) => {
       const lst = Math.round((s.date.getUTCHours() + s.airport.lstOffset + 24) % 24);
@@ -275,11 +277,13 @@ export class AeroflyPatterns {
             "#" + pad(index + 1),
             Formatter.getUtcCompleteDate(s.date),
             pad(padNumber(lst) + ":00", 10, true),
-            `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kts`,
+            `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kn`,
             clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
-            "To the " + pad(Formatter.getDirection(s.aircraft.bearingFromAirport), 10),
+            Formatter.getDirectionArrow(s.aircraft.bearingFromAirport) +
+              " To the " +
+              pad(Formatter.getDirection(s.aircraft.bearingFromAirport), 10),
           ].join(" | ") +
           " |",
       );
