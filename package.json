@@ -10,6 +10,9 @@
     "eslint": "npx eslint **/*.js --fix",
     "build": "npm run prettier && npm run eslint && npm run test"
   },
+  "bin": {
+    "aerofly-patterns": "./dist/index.js"
+  },
   "author": "Frank Boës <info@fboes.org> (https://3960.org/)",
   "license": "MIT",
   "type": "module",
