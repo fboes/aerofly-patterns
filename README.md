@@ -1,16 +1,18 @@
 # Aerofly Landegerät
 
-> Landing Pattern Lessons for Aerofly FS 4.
+> Create landing pattern lessons for Aerofly FS 4.
 
 This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4. These missions contain landing pattern lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern correctly.
 
 ## How to use it
 
-After installing this tool, use this CLI command to generate a new mission file in the current folder.
+This tool requires [Node.js](https://nodejs.org/en) in at least version 20 to be installed on your local computer.
+
+Use this CLI command to generate a new mission file in the current folder.
 
 ```bash
-# npm start [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]
-npm start KMVY c172 24,33
+# npx @fboes/aerofly-patterns [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]
+npx @fboes/aerofly-patterns KMVY c172 24,33
 ```
 
 | Parameter               | Description                                                   | Example | Default |
@@ -61,6 +63,12 @@ See [the installation instructions](https://fboes.github.io/aerofly-missions/doc
 ## Technical stuff
 
 This projects uses the public APIs of the [Aviation Weather Center](https://aviationweather.gov/). The usage of these APIs may be restricted or blocked on your local computer. The data may also be incoherent with your local state of Aerofly FS 4.
+
+## Status
+
+[![npm version](https://badge.fury.io/js/aerofly-patterns.svg)](https://badge.fury.io/js/aerofly-patterns)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/fboes/aerofly-patterns.svg?sort=semver)
+![GitHub](https://img.shields.io/github/license/fboes/aerofly-patterns.svg)
 
 ## Legal stuff
 
