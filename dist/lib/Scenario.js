@@ -5,7 +5,7 @@ import { Units } from "../data/Units.js";
 import { CliOptions } from "./CliOptions.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";
-import { AeroflyAircrafts } from "../data/AeroflyAircraft.js";
+import { AeroflyAircraftFinder, AeroflyAircrafts } from "../data/AeroflyAircraft.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -220,15 +220,10 @@ class ScenarioAircraft {
      */
     this.aeroflyCode = aircraftCode;
 
-    const aircraft = AeroflyAircrafts[this.aeroflyCode];
-    if (!aircraft) {
-      throw Error("Unknown aircraft");
-    }
-
     /**
      * @type {import('../data/AeroflyAircraft.js').AeroflyAircraft} additional aircraft information like name and technical properties
      */
-    this.data = aircraft;
+    this.data = AeroflyAircraftFinder.get(aircraftCode);
   }
 }
 

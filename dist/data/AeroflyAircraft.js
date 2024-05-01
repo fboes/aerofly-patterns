@@ -254,3 +254,31 @@ export const AeroflyAircrafts = {
     runwayLanding: 0,
   },
 };
+
+export const AeroflyAircraftFinder = {
+  /**
+   *
+   * @param {string} aeroflyAircraftCode
+   * @param {boolean} useFallback if this is set to `true`, and unknown aircraft code will still return some aircraft data
+   * @returns {AeroflyAircraft}
+   */
+  get: (aeroflyAircraftCode, useFallback = true) => {
+    if (AeroflyAircrafts[aeroflyAircraftCode]) {
+      return AeroflyAircrafts[aeroflyAircraftCode];
+    }
+
+    if (!useFallback) {
+      throw Error("Unknown aircraft: " + aeroflyAircraftCode);
+    }
+
+    return {
+      name: aeroflyAircraftCode.toUpperCase(),
+      type: null,
+      icaoCode: aeroflyAircraftCode.toUpperCase(),
+      callsign: "N12345",
+      cruiseSpeed: 120,
+      runwayTakeoff: 8000,
+      runwayLanding: 6000,
+    };
+  },
+};
