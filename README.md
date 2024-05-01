@@ -34,32 +34,21 @@ npx @fboes/aerofly-patterns KMVY c172 24,33
 
 If you need to skip a parameter, supply `-` and it will use the default value.
 
-The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Examples of codes:
+The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Improved flight planning is available for aircraft listed in [`dist/data/AeroflyAircraft.js`](./dist/data/AeroflyAircraft.js). Examples of codes:
 
 | `AEROFLY_AIRCRAFT_CODE` | Type                                 |
 | ----------------------- | ------------------------------------ |
 | `a320`                  | Airbus A320                          |
-| `asg29`                 | Schleicher ASG 29                    |
 | `b58`                   | Beechcraft Baron 58                  |
-| `b737`                  | Boeing 737                           |
-| `b737_900`              | Boeing 737-900                       |
-| `b777_300er`            | Boeing 777                           |
 | `c172`                  | Cessna 172                           |
 | `c90gtx`                | Beechcraft King Air C90              |
-| `camel`                 | Sopwith Camel                        |
-| `concorde`              | Aérospatiale-BAC Concorde            |
-| `dr1`                   | Fokker Dr.I                          |
 | `ec135`                 | Eurocopter EC135                     |
 | `f15e`                  | McDonnell Douglas F-15E Strike Eagle |
-| `f4u`                   | Vought F4U Corsair                   |
 | `jungmeister`           | Bücker Bü 133 Jungmeister            |
 | `lj45`                  | Learjet 45                           |
 | `mb339`                 | Aermacchi MB-339                     |
-| `p38`                   | Lockheed P-38                        |
 | `pitts`                 | Pitts Special S-2                    |
-| `q400`                  | De Havilland DHC-8                   |
 | `r22`                   | Robinson R22                         |
-| `swift`                 | Aériane Swift                        |
 
 ## Download the missions
 

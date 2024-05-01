@@ -94,7 +94,7 @@ export const AeroflyAircrafts = {
     // https://cessna.txtav.com/en/piston/cessna-skyhawk
     name: "Cessna 172",
     type: null,
-    icaoCode: "icaoCode",
+    icaoCode: "C172",
     callsign: "N51911",
     cruiseSpeed: 124,
     runwayTakeoff: 960,

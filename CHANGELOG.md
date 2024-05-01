@@ -1,6 +1,10 @@
 # Changelog
 
-## 1.0.1
+## 1.1.1
+
+- Fixed aircraft database
+
+## 1.1.0
 
 - Added CLI help via `--help`
 - Added folder mode, which creates all files in a subdirectory
