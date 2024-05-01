@@ -20,7 +20,7 @@ export class Airport {
      * @type {string}
      */
     this.name = airportJson.name
-      .replace(/^.+?\//g, "")
+      .replace(/(\/)/g, " $1 ")
       .replace(/_/g, " ")
       .toLowerCase()
       .replace(/(^|\s)[a-z]/g, (char) => {

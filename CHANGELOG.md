@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+- Added CLI help via `--help`
+- Added folder mode, which creates all files in a subdirectory
+- Added some missions
+
 ## 1.0.0
 
-- Initial commit
+- Initial release

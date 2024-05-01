@@ -309,6 +309,12 @@ export class AeroflyPatterns {
    * @param {string} saveDirectory
    */
   async writeCustomMissionFiles(saveDirectory) {
+    if (this.cliOptions.folderMode) {
+      saveDirectory = `${saveDirectory}/data/Landing_Challenges-${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
+
+      await fs.mkdir(saveDirectory, { recursive: true });
+    }
+
     await Promise.all([
       fs.writeFile(`${saveDirectory}/custom_missions_user.tmc`, this.buildCustomMissionTmc()),
       fs.writeFile(`${saveDirectory}/README.md`, this.buildReadmeMarkdown()),

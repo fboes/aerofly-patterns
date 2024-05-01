@@ -37,6 +37,13 @@ export class CliOptions {
   }
 
   /**
+   * @returns {boolean} if files should be created in subfolder
+   */
+  get folderMode() {
+    return this.getArgv(5, "") !== "";
+  }
+
+  /**
    * @returns {number}
    */
   get numberOfMissions() {
