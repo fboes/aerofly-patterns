@@ -259,7 +259,7 @@ export const AeroflyAircraftFinder = {
   /**
    *
    * @param {string} aeroflyAircraftCode
-   * @param {boolean} useFallback if this is set to `true`, and unknown aircraft code will still return some aircraft data
+   * @param {boolean} useFallback if this is set to `true`, an unknown aircraft code will still return some aircraft data
    * @returns {AeroflyAircraft}
    */
   get: (aeroflyAircraftCode, useFallback = true) => {
