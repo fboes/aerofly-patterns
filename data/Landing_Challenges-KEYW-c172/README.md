@@ -1,26 +1,26 @@
-# Landing Challenges: Key West Intl (KEYW)
+# Landing Challenges: Key West / Key West Intl (KEYW)
 
 This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
-Your Cessna 172 is 8 NM away from Key West Intl, and you have to make a correct landing pattern entry and land safely.
+Your Cessna 172 is 8 NM away from Key West / Key West Intl, and you have to make a correct landing pattern entry and land safely.
 
 Check wind and weather, as well as if it is a left- or right-turn-pattern.
 
-Get [more information about Key West Intl airport on SkyVector](https://skyvector.com/airport/KEYW).
+Get [more information about Key West / Key West Intl airport on SkyVector](https://skyvector.com/airport/KEYW).
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway  | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-04-29 |      08:00 | 100° @ 15 kn | FEW @ 2,800 ft |      15 SM | 09 (RP) | ↘ To the south-east |
-| #2  | 2024-04-28 |      09:00 | 90° @ 16 kn  | FEW @ 4,000 ft |      15 SM | 09 (RP) | → To the east        |
-| #3  | 2024-04-26 |      11:00 | 110° @ 14 kn | CLR            |      15 SM | 09 (RP) | ← To the west        |
-| #4  | 2024-04-25 |      12:00 | 60° @ 8 kn   | SCT @ 4,400 ft |      15 SM | 09 (RP) | ↓ To the south       |
-| #5  | 2024-04-24 |      13:00 | 100° @ 13 kn | CLR            |      15 SM | 09 (RP) | → To the east        |
-| #6  | 2024-04-22 |      15:00 | 330° @ 11 kn | FEW @ 1,800 ft |      15 SM | 27      | ↙ To the south-west |
-| #7  | 2024-04-21 |      16:00 | 150° @ 6 kn  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #8  | 2024-04-20 |      17:00 | 110° @ 10 kn | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
-| #9  | 2024-04-19 |      19:00 | 90° @ 8 kn   | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #10 | 2024-04-18 |      20:00 | 80° @ 8 kn   | CLR            |      15 SM | 09 (RP) | ↙ To the south-west |
+| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |
+| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |
+| #1  | 2024-05-01 |      08:00 |   0° @  6 kn | SCT @  1,200 ft |      15 SM | 09 (RP) | ↗ To the north-east |
+| #2  | 2024-04-30 |      09:00 |  10° @  5 kn | SCT @  2,100 ft |      15 SM | 09 (RP) | ↗ To the north-east |
+| #3  | 2024-04-28 |      11:00 |  90° @ 14 kn | OVC @  6,000 ft |      15 SM | 09 (RP) | ↑ To the north      |
+| #4  | 2024-04-27 |      12:00 | 100° @ 19 kn | FEW @  2,500 ft |      15 SM | 09 (RP) | ↓ To the south      |
+| #5  | 2024-04-26 |      13:00 | 110° @ 15 kn | FEW @  3,500 ft |      15 SM | 09 (RP) | ↓ To the south      |
+| #6  | 2024-04-24 |      15:00 | 100° @ 14 kn | CLR             |      15 SM | 09 (RP) | ↘ To the south-east |
+| #7  | 2024-04-23 |      16:00 | 100° @ 17 kn | FEW @  4,000 ft |      15 SM | 09 (RP) | ↑ To the north      |
+| #8  | 2024-04-22 |      17:00 | 340° @ 11 kn | BKN @  1,900 ft |      15 SM | 27      | ↘ To the south-east |
+| #9  | 2024-04-21 |      19:00 |  90° @  5 kn | CLR             |      15 SM | 09 (RP) | ↙ To the south-west |
+| #10 | 2024-04-20 |      20:00 | 110° @  9 kn | CLR             |      15 SM | 09 (RP) | ↙ To the south-west |
 
 ## Installation instructions
 
@@ -29,4 +29,4 @@ Get [more information about Key West Intl airport on SkyVector](https://skyvecto
 
 ---
 
-Created with Aerofly Landegerät
+Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)

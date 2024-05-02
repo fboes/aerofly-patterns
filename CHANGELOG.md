@@ -3,6 +3,7 @@
 ## 1.1.2
 
 - Added `Degree` helper
+- Updated C172 landing challenges
 
 ## 1.1.1
 

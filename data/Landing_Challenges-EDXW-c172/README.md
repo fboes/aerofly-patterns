@@ -9,18 +9,18 @@ Get [more information about Westerland / Sylt Airport airport on SkyVector](http
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |
-| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |
-| #1  | 2024-05-01 |      08:00 |  90° @ 18 kn | FEW @ 22,000 ft |      15 SM | 06      | → To the east       |
-| #2  | 2024-04-30 |      09:00 | 100° @ 17 kn | FEW @  3,400 ft |      15 SM | 06      | → To the east       |
-| #3  | 2024-04-28 |      11:00 | 160° @ 13 kn | CLR             |      15 SM | 14      | ↖ To the north-west |
-| #4  | 2024-04-27 |      12:00 | 110° @ 11 kn | CLR             |      15 SM | 14      | ↘ To the south-east |
-| #5  | 2024-04-26 |      13:00 | 210° @  8 kn | FEW @  2,300 ft |      15 SM | 24      | ↗ To the north-east |
-| #6  | 2024-04-24 |      15:00 |  30° @  5 kn | CLR             |      15 SM | 06      | ↗ To the north-east |
-| #7  | 2024-04-23 |      16:00 | 300° @ 10 kn | SCT @  1,100 ft |      15 SM | 32      | ↗ To the north-east |
-| #8  | 2024-04-22 |      17:00 | 350° @ 11 kn | BKN @  5,900 ft |      15 SM | 32      | ↓ To the south      |
-| #9  | 2024-04-20 |      19:00 | 320° @ 13 kn | FEW @  3,600 ft |      15 SM | 32      | → To the east       |
-| #10 | 2024-04-19 |      20:00 |  20° @ 12 kn | FEW @  3,600 ft |      15 SM | 06      | → To the east       |
+| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway | Aircraft position    |
+| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------ | -------------------- |
+| #1  | 2024-05-01 |      08:00 | 90° @ 18 kn  | FEW @ 22,000 ft |      15 SM | 06     | → To the east        |
+| #2  | 2024-04-30 |      09:00 | 100° @ 17 kn | FEW @ 3,400 ft  |      15 SM | 06     | → To the east        |
+| #3  | 2024-04-28 |      11:00 | 160° @ 13 kn | CLR             |      15 SM | 14     | ↖ To the north-west |
+| #4  | 2024-04-27 |      12:00 | 110° @ 11 kn | CLR             |      15 SM | 14     | ↘ To the south-east |
+| #5  | 2024-04-26 |      13:00 | 210° @ 8 kn  | FEW @ 2,300 ft  |      15 SM | 24     | ↗ To the north-east |
+| #6  | 2024-04-24 |      15:00 | 30° @ 5 kn   | CLR             |      15 SM | 06     | ↗ To the north-east |
+| #7  | 2024-04-23 |      16:00 | 300° @ 10 kn | SCT @ 1,100 ft  |      15 SM | 32     | ↗ To the north-east |
+| #8  | 2024-04-22 |      17:00 | 350° @ 11 kn | BKN @ 5,900 ft  |      15 SM | 32     | ↓ To the south       |
+| #9  | 2024-04-20 |      19:00 | 320° @ 13 kn | FEW @ 3,600 ft  |      15 SM | 32     | → To the east        |
+| #10 | 2024-04-19 |      20:00 | 20° @ 12 kn  | FEW @ 3,600 ft  |      15 SM | 06     | → To the east        |
 
 ## Installation instructions
 
