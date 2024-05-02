@@ -5,7 +5,8 @@ import { Units } from "../data/Units.js";
 import { CliOptions } from "./CliOptions.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";
-import { AeroflyAircraftFinder, AeroflyAircrafts } from "../data/AeroflyAircraft.js";
+import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
+import { Degree, degreeDifference } from "./Degree.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -66,8 +67,7 @@ export class Scenario {
      * @returns {number}
      */
     const difference = (alignment) => {
-      const diff = Math.abs(alignment - counterWindDirection);
-      return diff > 180 ? Math.abs(diff - 360) : diff;
+      return Math.abs(degreeDifference(alignment, counterWindDirection));
     };
 
     const possibleRunways = this.airport.runways
@@ -91,12 +91,12 @@ export class Scenario {
     const finalDistance = 1 * Units.meterPerNauticalMile;
 
     const activeRunwayEntry = this.activeRunway.position.getPointBy(
-      new Vector(finalDistance, (this.activeRunway.alignment + 180) % 360),
+      new Vector(finalDistance, Degree(this.activeRunway.alignment + 180)),
     );
     const activeRunwayExit = this.activeRunway.position.getPointBy(
       new Vector(this.activeRunway.dimension[0] / Units.feetPerMeter + exitDistance, this.activeRunway.alignment),
     );
-    const patternOrientation = this.activeRunway.alignment + ((this.activeRunway.isRightPattern ? 90 : 270) % 360);
+    const patternOrientation = this.activeRunway.alignment + Degree(this.activeRunway.isRightPattern ? 90 : 270);
 
     this.patternWaypoints = [
       {
@@ -245,7 +245,7 @@ export class ScenarioWeather {
     /**
      * @type {number} in kn
      */
-    this.windDirection = weatherJson.wdir === "VRB" ? 0 : weatherJson.wdir;
+    this.windDirection = weatherJson.wdir === "VRB" ? 0 : Degree(weatherJson.wdir);
 
     /**
      * @type {number} in kn

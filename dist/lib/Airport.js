@@ -2,6 +2,7 @@
 
 import { Vector, Point } from "@fboes/geojson";
 import { Units } from "../data/Units.js";
+import { Degree } from "./Degree.js";
 
 /**
  * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}
@@ -119,7 +120,7 @@ export class Airport {
     /**
      * @type {[number, number]} both directions
      */
-    const alignment = [Number(runwayJson.alignment), (Number(runwayJson.alignment) + 180) % 360];
+    const alignment = [Number(runwayJson.alignment), Degree(Number(runwayJson.alignment) + 180)];
 
     /**
      * @type {[Point,Point]} both directions
@@ -160,7 +161,7 @@ export class AirportRunway {
     /**
      * @type {number}
      */
-    this.alignment = alignment;
+    this.alignment = Degree(alignment);
 
     /**
      * @type {boolean}

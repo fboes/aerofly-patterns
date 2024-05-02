@@ -10,6 +10,7 @@ import { Units } from "../data/Units.js";
 import { Point } from "@fboes/geojson";
 import { Vector } from "@fboes/geojson";
 import { Formatter } from "./Formatter.js";
+import { Degree } from "./Degree.js";
 
 /**
  * @typedef {object} AeroflyPatternsWaypointable
@@ -164,7 +165,7 @@ export class AeroflyPatterns {
                 <[stringt8c] [callsign]           [${s.aircraft.data.callsign}]>
                 <[stringt8c] [origin_icao]        [${s.airport.id}]>
                 <[tmvector2d][origin_lon_lat]     [${s.aircraft.position.longitude} ${s.aircraft.position.latitude}]>
-                <[float64]   [origin_dir]         [${(s.aircraft.bearingFromAirport + 180) % 360}]>
+                <[float64]   [origin_dir]         [${Degree(s.aircraft.bearingFromAirport + 180)}]>
                 <[float64]   [origin_alt]         [${s.aircraft.position.elevation}]>
                 <[stringt8c] [destination_icao]   [${s.airport.id}]>
                 <[tmvector2d][destination_lon_lat][${s.airport.position.longitude} ${s.airport.position.latitude}]>
@@ -298,7 +299,7 @@ export class AeroflyPatterns {
       "",
       `---`,
       ``,
-      `Created with Aerofly Landegerät`,
+      `Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)`,
     );
 
     return output.join("\n");

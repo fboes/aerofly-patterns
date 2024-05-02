@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- Added `Degree` helper
+
 ## 1.1.1
 
 - Fixed aircraft database
