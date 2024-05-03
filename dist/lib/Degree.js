@@ -22,16 +22,8 @@ export const degreeToRad = (degree) => {
  * COmputes the difference between to angles
  * @param {number} fromDegree
  * @param {number} toDegree
- * @returns {number}
+ * @returns {number} -180..180
  */
 export const degreeDifference = (fromDegree, toDegree) => {
-  let result = toDegree - fromDegree;
-  while (result > 180) {
-    result -= 360;
-  }
-  while (result < -180) {
-    result += 360;
-  }
-
-  return result;
+  return ((toDegree - fromDegree - 180) % 360) + 180;
 };

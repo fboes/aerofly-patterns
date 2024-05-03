@@ -13,10 +13,21 @@ import { Formatter } from "./Formatter.js";
 import { Degree } from "./Degree.js";
 
 /**
- * @typedef {object} AeroflyPatternsWaypointable
+ * @typedef AeroflyPatternsCheckpoint
+ * @type {object}
+ * @property {AeroflyPatternsWaypointable} waypoint
+ * @property {"origin"|"departure_runway"|"waypoint"|"destination_runway"|"destination"} type
+ * @property {number} [length] optional in meters
+ * @property {number} [frequency] optional in Hz
+ */
+
+/**
+ * @typedef AeroflyPatternsWaypointable
+ * @type {object}
  * @property {string} id
  * @property  {import('@fboes/geojson').Point} position
  */
+
 export class AeroflyPatterns {
   /**
    *
@@ -114,31 +125,29 @@ export class AeroflyPatterns {
   buildCustomMissionTmc() {
     /**
      *
-     * @param {AeroflyPatternsWaypointable} waypointable
+     * @param {AeroflyPatternsCheckpoint} checkpoint
      * @param {number} index
-     * @param {string} type
      * @param {Point?} lastPosition
-     * @param {number} length in meter
-     * @param {number} frequency
      * @returns {string}
      */
-    const exportWaypoint = (waypointable, index, type, lastPosition, length = 0, frequency = 0) => {
+    const exportWaypoint = (checkpoint, index, lastPosition) => {
       /**
        * @type {Vector?}
        */
       let vector = null;
+      const waypointable = checkpoint.waypoint;
       if (lastPosition) {
         vector = lastPosition.getVectorTo(waypointable.position);
       }
       return `                    <[tmmission_checkpoint][element][${index}]
-                        <[string8u][type][${type}]>
+                        <[string8u][type][${checkpoint.type}]>
                         <[string8u][name][${waypointable.id || "WS2037"}]>
                         <[vector2_float64][lon_lat][${waypointable.position.longitude} ${waypointable.position.latitude}]>
                         <[float64][altitude][${waypointable.position.elevation}]>
                         <[float64][direction][${vector?.bearing ?? -1}]>
                         <[float64][slope][0]>
-                        <[float64][length][${length}]>
-                        <[float64][frequency][${frequency}]>
+                        <[float64][length][${checkpoint.length ?? 0}]>
+                        <[float64][frequency][${checkpoint.frequency ?? 0}]>
                     >
 `;
     };
@@ -194,8 +203,8 @@ export class AeroflyPatterns {
        */
       let lastPosition = null;
       s.waypoints.forEach((waypoint, index) => {
-        output += exportWaypoint(waypoint[0], index, waypoint[1], lastPosition, waypoint[2] ?? 0, waypoint[3] ?? 0);
-        lastPosition = waypoint[0].position;
+        output += exportWaypoint(waypoint, index, lastPosition);
+        lastPosition = waypoint.waypoint.position;
       });
 
       output += `                >
@@ -249,20 +258,23 @@ export class AeroflyPatterns {
 
     output.push(
       "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
-      `Your ${firstMission.aircraft.data.name} is ${firstMission.aircraft.distanceFromAirport} NM away from ${this.airport.name}, and you have to make a correct landing pattern entry and land safely.`,
       "",
-      `Check wind and weather, as well as if it is a left- or right-turn-pattern.`,
+      `Your ${firstMission.aircraft.data.name} is ${firstMission.aircraft.distanceFromAirport} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.`,
       "",
-      `Get [more information about ${this.airport.name} airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}).`,
+      `Get [more information about ${this.airport.name} Airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}):`,
       "",
-      "## Included missions",
+      `- What is the tower / CTAF frequency?
+- What is the Traffic Pattern Altitude (TPA) for this airport?
+- Has the runway standard left turns, or right turns?
+- Are there additional navigational aids like ILS for your assigned runways?
+- Are there special noises abatement procedures in effect?`,
       "",
     );
 
     output.push(
+      "## Included missions",
+      "",
       `| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |`,
-    );
-    output.push(
       `| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |`,
     );
     this.scenarios.forEach((s, index) => {
@@ -291,16 +303,14 @@ export class AeroflyPatterns {
     });
 
     output.push(
-      "",
       "## Installation instructions",
       "",
       "1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)",
       `2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.`,
       "",
-      `---`,
-      ``,
-      `Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)`,
     );
+
+    output.push("", `---`, ``, `Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)`);
 
     return output.join("\n");
   }

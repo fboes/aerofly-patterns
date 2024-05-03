@@ -148,7 +148,7 @@ export class Scenario {
 
     if (this.airport.navaids.length) {
       description +=
-        "\n\nLocal NavAids: " +
+        "\n\nLocal navigational aids: " +
         this.airport.navaids
           .map((n) => {
             return `${n.type} ${n.id} (${n.frequency.toFixed(n.type !== "NDB" ? 2 : 0)})`;
@@ -160,7 +160,7 @@ export class Scenario {
   }
 
   /**
-   * @returns {[import("./AeroflyPatterns.js").AeroflyPatternsWaypointable, string, number?, number?][]} will return an empty array if not all preconditions are met
+   * @returns {import("./AeroflyPatterns.js").AeroflyPatternsCheckpoint[]} `Waypoint, type, length, frequency`; will return an empty array if not all preconditions are met
    */
   get waypoints() {
     if (!this.activeRunway) {
@@ -168,19 +168,40 @@ export class Scenario {
     }
 
     /**
-     * @type {[import("./AeroflyPatterns.js").AeroflyPatternsWaypointable, string, number?, number?][]}
+     * @type {import("./AeroflyPatterns.js").AeroflyPatternsCheckpoint[]}
      */
     const waypoints = [
-      [this.airport, "origin"],
-      [this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter],
+      {
+        waypoint: this.airport,
+        type: "origin",
+      },
+      {
+        waypoint: this.activeRunway,
+        type: "departure_runway",
+        length: this.activeRunway.dimension[0] / Units.feetPerMeter,
+        frequency: this.activeRunway.ilsFrequency * 1_000_000,
+      },
     ];
 
     this.patternWaypoints.forEach((p) => {
-      waypoints.push([p, "waypoint"]);
+      waypoints.push({
+        waypoint: p,
+        type: "waypoint",
+      });
     });
 
-    waypoints.push([this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter]);
-    waypoints.push([this.airport, "destination"]);
+    waypoints.push(
+      {
+        waypoint: this.activeRunway,
+        type: "destination_runway",
+        length: this.activeRunway.dimension[0] / Units.feetPerMeter,
+        frequency: this.activeRunway.ilsFrequency * 1_000_000,
+      },
+      {
+        waypoint: this.airport,
+        type: "destination",
+      },
+    );
 
     return waypoints;
   }
