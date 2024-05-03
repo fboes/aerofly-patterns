@@ -5,6 +5,7 @@
 - Added `Degree` helper
 - Updated C172 landing challenges
 - Improved unknown aircraft fallback handling
+- Improved documentation generator
 
 ## 1.1.1
 

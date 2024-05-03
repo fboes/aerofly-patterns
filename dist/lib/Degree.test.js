@@ -30,7 +30,10 @@ export class DegreeTest {
 
   degreeDifference() {
     assert.strictEqual(90, degreeDifference(0, 90));
+    assert.strictEqual(180, degreeDifference(0, 180));
     assert.strictEqual(-90, degreeDifference(90, 0));
+    assert.strictEqual(-180, degreeDifference(180, 0));
+    assert.strictEqual(-179, degreeDifference(179, 0));
 
     assert.strictEqual(90, degreeDifference(270, 0));
     assert.strictEqual(-90, degreeDifference(0, 270));
