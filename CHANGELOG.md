@@ -1,5 +1,7 @@
 # Changelog
 
+- Changed runway length output to meters
+
 ## 1.1.2
 
 - Added `Degree` helper

@@ -134,7 +134,7 @@ export class Scenario {
       weatherAdjectives = `a ${weatherAdjectives} `;
     }
 
-    const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}° / ${Math.round(this.activeRunway.dimension[0]).toLocaleString("en")}ft)`;
+    const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}° / ${Math.round(this.activeRunway.dimension[0] / Units.feetPerMeter).toLocaleString("en")}m)`;
 
     let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
     description += this.weather

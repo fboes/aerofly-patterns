@@ -16,16 +16,16 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 | No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |
 | :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |
-| #1  | 2024-05-02 |      07:00 | 180° @  9 kn | CLR             |      15 SM | 24 (RP) | ← To the west       |
-| #2  | 2024-05-01 |      09:00 |  40° @  9 kn | OVC @    800 ft |       9 SM | 06      | ↙ To the south-west |
-| #3  | 2024-04-29 |      10:00 |  70° @ 14 kn | FEW @  4,700 ft |      15 SM | 06      | ↙ To the south-west |
-| #4  | 2024-04-28 |      11:00 | 190° @ 16 kn | OVC @  1,700 ft |      15 SM | 24 (RP) | ↑ To the north      |
-| #5  | 2024-04-27 |      13:00 | 210° @ 11 kn | CLR             |      15 SM | 24 (RP) | ↙ To the south-west |
-| #6  | 2024-04-25 |      14:00 |  70° @  8 kn | CLR             |      15 SM | 06      | ↑ To the north      |
-| #7  | 2024-04-24 |      15:00 | 200° @ 11 kn | CLR             |      15 SM | 24 (RP) | ↓ To the south      |
-| #8  | 2024-04-23 |      17:00 | 170° @  6 kn | CLR             |      15 SM | 15      | ↖ To the north-west |
-| #9  | 2024-04-21 |      18:00 | 230° @  9 kn | CLR             |      15 SM | 24 (RP) | → To the east       |
-| #10 | 2024-04-21 |      19:00 | 120° @  3 kn | OVX @      0 ft |       0 SM | 15      | ↖ To the north-west |
+| #1  | 2024-05-03 |      07:00 |  30° @ 10 kn | OVC @  1,200 ft |      15 SM | 06      | ↘ To the south-east |
+| #2  | 2024-05-02 |      09:00 | 210° @ 13 kn | FEW @  1,000 ft |      15 SM | 24 (RP) | ↖ To the north-west |
+| #3  | 2024-04-30 |      10:00 | 140° @ 10 kn | OVC @  3,500 ft |      15 SM | 15      | ↙ To the south-west |
+| #4  | 2024-04-29 |      11:00 |  50° @ 15 kn | CLR             |      15 SM | 06      | ↘ To the south-east |
+| #5  | 2024-04-28 |      13:00 | 200° @ 10 kn | OVC @  1,100 ft |      15 SM | 24 (RP) | ↗ To the north-east |
+| #6  | 2024-04-26 |      14:00 | 210° @  7 kn | FEW @  5,000 ft |      15 SM | 24 (RP) | ↖ To the north-west |
+| #7  | 2024-04-25 |      15:00 |  60° @  6 kn | CLR             |      15 SM | 06      | ↑ To the north      |
+| #8  | 2024-04-24 |      17:00 | 240° @  8 kn | FEW @  8,000 ft |      15 SM | 24 (RP) | ← To the west       |
+| #9  | 2024-04-22 |      18:00 | 150° @  5 kn | CLR             |      15 SM | 15      | ↑ To the north      |
+| #10 | 2024-04-22 |      19:00 | 240° @  4 kn | CLR             |      15 SM | 24 (RP) | ↖ To the north-west |
 ## Installation instructions
 
 1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)

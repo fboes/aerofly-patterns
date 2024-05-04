@@ -107,7 +107,7 @@ export class Airport {
     });
 
     /**
-     * @type {[number,number]} length, width
+     * @type {[number,number]} length, width in ft
      */
     const dimension = [0, 0];
     runwayJson.dimension
