@@ -103,9 +103,15 @@ export class Scenario {
     const activeRunwayEntry = this.activeRunway.position.getPointBy(
       new Vector(finalDistance, Degree(this.activeRunway.alignment + 180)),
     );
+    if (activeRunwayEntry.elevation) {
+      activeRunwayEntry.elevation += 1000 / Units.feetPerMeter;
+    }
     const activeRunwayExit = this.activeRunway.position.getPointBy(
       new Vector(this.activeRunway.dimension[0] / Units.feetPerMeter + exitDistance, this.activeRunway.alignment),
     );
+    if (activeRunwayExit.elevation) {
+      activeRunwayExit.elevation += 1000 / Units.feetPerMeter;
+    }
     const patternOrientation = this.activeRunway.alignment + Degree(this.activeRunway.isRightPattern ? 90 : 270);
 
     this.patternWaypoints = [

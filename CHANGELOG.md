@@ -1,5 +1,7 @@
 # Changelog
 
+- Changed altitude of pattern waypoints
+
 ## 1.1.3
 
 - Added crosswind component calculator
