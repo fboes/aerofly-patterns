@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.3
+
+- Added crosswind component calculator
 - Changed runway length output to meters
 
 ## 1.1.2

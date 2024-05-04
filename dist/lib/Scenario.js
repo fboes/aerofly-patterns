@@ -6,7 +6,7 @@ import { CliOptions } from "./CliOptions.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";
 import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
-import { Degree, degreeDifference } from "./Degree.js";
+import { Degree, degreeDifference, degreeToRad } from "./Degree.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -43,6 +43,11 @@ export class Scenario {
      * @type {import('./Airport.js').AirportRunway?}
      */
     this.activeRunway = null;
+
+    /**
+     * @type {number} in feet per second
+     */
+    this.activeRunwayCrosswindComponent = 0;
 
     /**
      * @type {import("./AeroflyPatterns.js").AeroflyPatternsWaypointable[]}
@@ -90,6 +95,11 @@ export class Scenario {
     const downwindDistance = 1 * Units.meterPerNauticalMile;
     const finalDistance = 1 * Units.meterPerNauticalMile;
 
+    if (this.weather?.windDirection) {
+      const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.windDirection);
+      this.activeRunwayCrosswindComponent = Math.sin(degreeToRad(crosswindAngle)) * this.weather.windSpeed;
+    }
+
     const activeRunwayEntry = this.activeRunway.position.getPointBy(
       new Vector(finalDistance, Degree(this.activeRunway.alignment + 180)),
     );
@@ -134,12 +144,18 @@ export class Scenario {
       weatherAdjectives = `a ${weatherAdjectives} `;
     }
 
-    const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}° / ${Math.round(this.activeRunway.dimension[0] / Units.feetPerMeter).toLocaleString("en")}m)`;
+    let crossWind = "";
+    if (this.activeRunwayCrosswindComponent > 4.5) {
+      crossWind = ` / ${Math.ceil(this.activeRunwayCrosswindComponent)} kn crosswind component`;
+    }
+    const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}° / ${Math.round(this.activeRunway.dimension[0] / Units.feetPerMeter).toLocaleString("en")}m${crossWind})`;
 
     let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name} (${this.airport.id}). `;
+
     description += this.weather
       ? `As the wind is ${this.weather.windSpeed ?? 0} kn from ${this.weather.windDirection ?? 0}°, the main landing runway is ${runway}. `
       : `The main landing runway is ${runway}. `;
+
     if (this.activeRunway.ilsFrequency) {
       description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}MHz). `;
     }
