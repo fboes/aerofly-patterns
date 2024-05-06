@@ -24,6 +24,6 @@ export const Airports = {
   ],
   KRTS: [
     { id: "26", isRightPattern: true },
-    { id: "32", isRightPattern: true },
+    { id: "32", isRightPattern: true, ilsFrequency: 111.9 },
   ],
 };
