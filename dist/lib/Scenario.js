@@ -81,7 +81,7 @@ export class Scenario {
       })
       .filter((r) => {
         return (
-          this.aircraft.data.runwayLanding === null ||
+          this.aircraft.data.runwayLanding === undefined ||
           this.aircraft.data.runwayLanding === 0 ||
           this.aircraft.data.runwayLanding <= r.dimension[0]
         );
@@ -162,7 +162,7 @@ export class Scenario {
       ? `As the wind is ${this.weather.windSpeed ?? 0} kn from ${this.weather.windDirection ?? 0}°, the main landing runway is ${runway}. `
       : `The main landing runway is ${runway}. `;
 
-    if (this.activeRunway.ilsFrequency) {
+    if (this.activeRunway.ilsFrequency && !this.aircraft.data.hasNoRadioNav) {
       description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}). `;
     }
 
@@ -174,7 +174,7 @@ export class Scenario {
     if (this.airport.localFrequency) {
       description += "\nLocal tower / CTAF frequency: " + this.airport.localFrequency.toFixed(2);
     }
-    if (this.airport.navaids.length) {
+    if (this.airport.navaids.length && !this.aircraft.data.hasNoRadioNav) {
       description +=
         "\nLocal navigational aids: " +
         this.airport.navaids

@@ -22,4 +22,4 @@ Arguments:
 
 const app = new AeroflyPatterns(process.argv);
 await app.build(process.cwd());
-console.log("Done\n");
+console.log("✅ Done");

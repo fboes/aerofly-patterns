@@ -6,15 +6,20 @@
  * @property {string} name of aircraft
  * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water
  * @property {string} icaoCode
+ * @property {boolean} [hasNoRadioNav] if no VOR receiver is onboard
  */
 
 /**
  * @typedef AeroflyAircraft
- * @type {object & AeroflyAircraftBasic}
+ * @type {object}
+ * @property {string} name of aircraft
+ * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water
+ * @property {string} icaoCode
  * @property {string} callsign
  * @property {number} cruiseSpeed in knots
- * @property {number?} runwayTakeoff length in feet
- * @property {number?} runwayLanding length in feet
+ * @property {number} [runwayTakeoff] length in feet
+ * @property {number} [runwayLanding] length in feet
+ * @property {boolean} [hasNoRadioNav] if no VOR receiver is onboard
  */
 
 /**
@@ -66,8 +71,6 @@ export const AeroflyAircrafts = {
     icaoCode: "CONC",
     callsign: "FBVFB",
     cruiseSpeed: 1165,
-    runwayTakeoff: null,
-    runwayLanding: null,
   },
   ec135: {
     name: "Eurocopter EC135",
@@ -104,6 +107,7 @@ export const AeroflyAircrafts = {
     cruiseSpeed: 108,
     runwayTakeoff: 380,
     runwayLanding: 374,
+    hasNoRadioNav: true,
   },
   lj45: {
     name: "Learjet 45",
@@ -129,8 +133,7 @@ export const AeroflyAircrafts = {
     icaoCode: "P38",
     callsign: "N38BP",
     cruiseSpeed: 239,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    hasNoRadioNav: true,
   },
   pitts: {
     name: "Pitts Special S-2",
@@ -138,8 +141,7 @@ export const AeroflyAircrafts = {
     icaoCode: "PTS2",
     callsign: "DEUJS",
     cruiseSpeed: 152,
-    runwayTakeoff: null,
-    runwayLanding: null,
+    hasNoRadioNav: true,
   },
   r22: {
     name: "Robinson R22",
@@ -150,7 +152,6 @@ export const AeroflyAircrafts = {
     runwayTakeoff: 0,
     runwayLanding: 0,
   },
-
   uh60: {
     name: "Sikorsky UH-60 Black Hawk",
     type: "H",
@@ -239,6 +240,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 320,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasNoRadioNav: true,
   },
   camel: {
     name: "Sopwith Camel",
@@ -248,6 +250,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 98,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasNoRadioNav: true,
   },
   crj900: {
     name: "Bombardier Canadair Regional Jet",
@@ -266,6 +269,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: null,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasNoRadioNav: true,
   },
   f4u: {
     name: "Vought F4U Corsair",
@@ -275,6 +279,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 187,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasNoRadioNav: true,
   },
   q400: {
     name: "De Havilland DHC-8",
@@ -335,6 +340,7 @@ export const AeroflyAircraftFinder = {
       cruiseSpeed: 120,
       runwayTakeoff: 8000,
       runwayLanding: 6000,
+      hasNoRadioNav: fallback?.hasNoRadioNav ?? false,
     };
   },
 

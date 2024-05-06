@@ -1,5 +1,7 @@
 # Changelog
 
+- Aircraft without VOR receivers get a different briefing
+
 ## 1.2.0
 
 - Added improved Airport database with ILS frequencies, right turn patterns
