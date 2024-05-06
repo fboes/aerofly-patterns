@@ -21,8 +21,8 @@ This tool requires [Node.js](https://nodejs.org/en) in at least version 20 to be
 Use this CLI command to generate a new mission file in the current folder.
 
 ```bash
-# npx @fboes/aerofly-patterns [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]
-npx @fboes/aerofly-patterns KMVY c172 24,33
+# npx @fboes/aerofly-patterns@latest [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]
+npx @fboes/aerofly-patterns@latest KMVY c172 24,33
 ```
 
 | Parameter               | Description                                                                     | Example | Default |
