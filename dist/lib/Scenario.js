@@ -163,14 +163,20 @@ export class Scenario {
       : `The main landing runway is ${runway}. `;
 
     if (this.activeRunway.ilsFrequency) {
-      description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}MHz). `;
+      description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}). `;
     }
 
     description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
 
+    if (this.airport.localFrequency || this.airport.navaids.length) {
+      description += "\n";
+    }
+    if (this.airport.localFrequency) {
+      description += "\nLocal tower / CTAF frequency: " + this.airport.localFrequency.toFixed(2);
+    }
     if (this.airport.navaids.length) {
       description +=
-        "\n\nLocal navigational aids: " +
+        "\nLocal navigational aids: " +
         this.airport.navaids
           .map((n) => {
             return `${n.type} ${n.id} (${n.frequency.toFixed(n.type !== "NDB" ? 2 : 0)})`;

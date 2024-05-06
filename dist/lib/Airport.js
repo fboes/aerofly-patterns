@@ -3,6 +3,7 @@
 import { Vector, Point } from "@fboes/geojson";
 import { Units } from "../data/Units.js";
 import { Degree } from "./Degree.js";
+import { Airports } from "../data/Airports.js";
 
 /**
  * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}
@@ -38,6 +39,21 @@ export class Airport {
       });
     });
 
+    const airportDatabase = Airports[this.id] ?? [];
+    airportDatabase.forEach((r) => {
+      const matchingRunway = this.runways.find((rr) => {
+        return rr.id === r.id;
+      });
+      if (matchingRunway) {
+        if (!matchingRunway.isRightPattern && r.isRightPattern) {
+          matchingRunway.isRightPattern = r.isRightPattern;
+        }
+        if (!matchingRunway.ilsFrequency && r.ilsFrequency) {
+          matchingRunway.ilsFrequency = r.ilsFrequency;
+        }
+      }
+    });
+
     /**
      * @type {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
      */
@@ -66,7 +82,7 @@ export class Airport {
     this.hasBeacon = airportJson.beacon !== "-";
 
     const lclP = airportJson.freqs.find((f) => {
-      f.type = "LCL/P";
+      return f.type === "LCL/P";
     });
 
     /**
@@ -148,8 +164,9 @@ export class AirportRunway {
    * @param {number} alignment
    * @param {Point} position
    * @param {boolean} isRightPattern
+   * @param {number} ilsFrequency
    */
-  constructor(id, dimension, alignment, position, isRightPattern = false) {
+  constructor(id, dimension, alignment, position, isRightPattern = false, ilsFrequency = 0) {
     this.id = id;
     this.position = position;
 
@@ -171,7 +188,7 @@ export class AirportRunway {
     /**
      * @type {number} in MHz
      */
-    this.ilsFrequency = 0;
+    this.ilsFrequency = ilsFrequency;
 
     const endMatch = id.match(/[SGHUW]$/);
 
@@ -205,15 +222,3 @@ export class AirportNavaid {
     this.frequency = navaidJson.freq;
   }
 }
-
-/**
- * A static list of right-hand pattern runways
- * @type {{[key:string]: string[]}} with `airportCode`: `list of right-hand pattern runways`
- */
-export const AirportRunwayRightPatterns = {
-  KBDU: ["26", "26G"],
-  KEYW: ["09"],
-  KHAF: ["30"],
-  KMVY: ["24", "33"],
-  KRTS: ["26", "32"],
-};

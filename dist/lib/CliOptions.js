@@ -1,7 +1,5 @@
 // @ts-check
 
-import { AirportRunwayRightPatterns } from "./Airport.js";
-
 export class CliOptions {
   /**
    *
@@ -33,7 +31,7 @@ export class CliOptions {
    */
   get getRightPatternRunways() {
     const arg = this.getArgv(4, "");
-    return arg ? arg.toUpperCase().split(/[,\s]+/) : AirportRunwayRightPatterns[this.icaoCode] ?? [];
+    return arg ? arg.toUpperCase().split(/[,\s]+/) : [];
   }
 
   /**

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Added improved Airport database with ILS frequencies, right turn patterns
+- Added support for local frequencies (tower / CTAF)
 - Changed altitude of pattern waypoints
 - Improved documentation
 
