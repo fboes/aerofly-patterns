@@ -1,6 +1,7 @@
 # Changelog
 
 - Changed altitude of pattern waypoints
+- Improved documentation
 
 ## 1.1.3
 

@@ -75,3 +75,7 @@ This projects uses the public APIs of the [Aviation Weather Center](https://avia
 Author: [Frank Boës](https://3960.org/) 2024
 
 Copyright & license: See [LICENSE.txt](LICENSE.txt)
+
+This tool is NOT affiliated with, endorsed, or sponsored by IPACS GbR. As stated in the [LICENSE.txt](LICENSE.txt), this tool comes with no warranty and might damage your files.
+
+This software complies with the General Data Protection Regulation (GDPR) as it does not collect nor transmits any personal data to third parties, but for the usage of the [Aviation Weather Center API](https://aviationweather.gov/). For their data protection statement you might want to check their terms of service.
