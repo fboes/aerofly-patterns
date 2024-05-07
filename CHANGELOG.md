@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.0
+
+- Added `MINIMUM_SAFE_ALTITUDE` parameters
 - Aircraft without VOR receivers get a different briefing
 
 ## 1.2.0

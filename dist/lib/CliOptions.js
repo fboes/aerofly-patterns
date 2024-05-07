@@ -35,10 +35,17 @@ export class CliOptions {
   }
 
   /**
+   * @returns {number} in feet
+   */
+  get mimimumSafeAltitude() {
+    return Number(this.getArgv(5, "0")) * 100;
+  }
+
+  /**
    * @returns {boolean} if files should be created in subfolder
    */
   get folderMode() {
-    return this.getArgv(5, "") !== "";
+    return this.getArgv(6, "") !== "";
   }
 
   /**

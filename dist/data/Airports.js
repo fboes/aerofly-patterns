@@ -16,6 +16,7 @@ export const Airports = {
     { id: "26", isRightPattern: true },
     { id: "26G", isRightPattern: true },
   ],
+  KEGE: [{ id: "07", isRightPattern: true }],
   KEYW: [{ id: "09", isRightPattern: true }],
   KHAF: [{ id: "30", isRightPattern: true }],
   KMVY: [
