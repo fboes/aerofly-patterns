@@ -27,12 +27,12 @@ export class Scenario {
     /**
      * @type {number} in feet
      */
-    let minimumSafeAltitude = Math.max((this.airport.position.elevation ?? 0) + 1500, cliOptions.mimimumSafeAltitude);
+    let mimimumSafeAltitude = Math.max((this.airport.position.elevation ?? 0) + 1500, cliOptions.mimimumSafeAltitude);
 
     /**
      * @type {ScenarioAircraft}
      */
-    this.aircraft = new ScenarioAircraft(airport, cliOptions.aircraft, cliOptions.initialDistance, minimumSafeAltitude);
+    this.aircraft = new ScenarioAircraft(airport, cliOptions.aircraft, cliOptions.initialDistance, mimimumSafeAltitude);
 
     /**
      * @type {ScenarioWeather?}
@@ -249,9 +249,9 @@ class ScenarioAircraft {
    * @param {import('./Airport.js').Airport} airport
    * @param {string} aircraftCode Aerofly Aircraft Code
    * @param {number} distanceFromAirport
-   * @param {number} minimumSafeAltitude in ft
+   * @param {number} mimimumSafeAltitude in ft
    */
-  constructor(airport, aircraftCode, distanceFromAirport, minimumSafeAltitude) {
+  constructor(airport, aircraftCode, distanceFromAirport, mimimumSafeAltitude) {
     /**
      * @type {number} true bearing. 0..360
      */
@@ -263,7 +263,13 @@ class ScenarioAircraft {
     this.distanceFromAirport = distanceFromAirport;
 
     this.position = airport.position.getPointBy(new Vector(this.distanceFromAirport * 1852, this.bearingFromAirport));
-    this.position.elevation = minimumSafeAltitude / Units.feetPerMeter;
+
+    const altitude =
+      this.bearingFromAirport > 180 // bearing - 180 = course
+        ? Math.ceil((mimimumSafeAltitude - 1500) / 2000) * 2000 + 1500 // 3500, 5500, ..
+        : Math.ceil((mimimumSafeAltitude - 500) / 2000) * 2000 + 500; // 4500, 6500, ..
+    this.position.elevation = altitude / Units.feetPerMeter;
+
     this.id = "current";
 
     /**

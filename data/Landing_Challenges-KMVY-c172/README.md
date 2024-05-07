@@ -14,23 +14,23 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway  | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-05-05 |      07:00 | 130° @ 8 kn  | OVC @ 700 ft   |      15 SM | 15      | ↑ To the north       |
-| #2  | 2024-05-04 |      09:00 | 60° @ 11 kn  | FEW @ 1,800 ft |      15 SM | 06      | ↖ To the north-west |
-| #3  | 2024-05-02 |      10:00 | 210° @ 15 kn | BKN @ 800 ft   |      15 SM | 24 (RP) | ↑ To the north       |
-| #4  | 2024-05-01 |      11:00 | 50° @ 13 kn  | SCT @ 1,400 ft |      15 SM | 06      | ← To the west        |
-| #5  | 2024-04-30 |      13:00 | 90° @ 13 kn  | OVC @ 3,500 ft |      15 SM | 15      | ↙ To the south-west |
-| #6  | 2024-04-28 |      14:00 | 200° @ 10 kn | OVC @ 1,100 ft |      15 SM | 24 (RP) | → To the east        |
-| #7  | 2024-04-27 |      15:00 | 230° @ 14 kn | CLR            |      15 SM | 24 (RP) | ↘ To the south-east |
-| #8  | 2024-04-26 |      17:00 | 170° @ 7 kn  | CLR            |      15 SM | 15      | ↗ To the north-east |
-| #9  | 2024-04-24 |      18:00 | 240° @ 8 kn  | FEW @ 8,000 ft |      15 SM | 24 (RP) | ← To the west        |
-| #10 | 2024-04-24 |      19:00 | 230° @ 3 kn  | CLR            |      15 SM | 24 (RP) | ← To the west        |
-
+| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |
+| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |
+| #1  | 2024-05-06 |      07:00 | 200° @  6 kn | OVC @    300 ft |       4 SM | 24 (RP) | ↙ To the south-west |
+| #2  | 2024-05-05 |      09:00 | 140° @  9 kn | OVC @    700 ft |       9 SM | 15      | → To the east       |
+| #3  | 2024-05-03 |      10:00 |  50° @ 13 kn | OVC @  1,700 ft |      15 SM | 06      | ↙ To the south-west |
+| #4  | 2024-05-02 |      11:00 | 210° @ 13 kn | OVC @    400 ft |       4 SM | 24 (RP) | ↑ To the north      |
+| #5  | 2024-05-01 |      13:00 |  40° @ 11 kn | FEW @  4,400 ft |      15 SM | 06      | → To the east       |
+| #6  | 2024-04-29 |      14:00 |  70° @ 10 kn | SCT @ 10,000 ft |      15 SM | 06      | ↘ To the south-east |
+| #7  | 2024-04-28 |      15:00 | 200° @ 13 kn | OVC @  1,100 ft |      15 SM | 24 (RP) | ↖ To the north-west |
+| #8  | 2024-04-27 |      17:00 | 230° @ 11 kn | CLR             |      15 SM | 24 (RP) | → To the east       |
+| #9  | 2024-04-25 |      18:00 | 140° @  9 kn | CLR             |      15 SM | 15      | → To the east       |
+| #10 | 2024-04-25 |      19:00 | 300° @  9 kn | FEW @  6,500 ft |      15 SM | 33 (RP) | ↘ To the south-east |
 ## Installation instructions
 
 1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)
 2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
+
 
 ---
 

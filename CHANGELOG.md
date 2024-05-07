@@ -3,6 +3,7 @@
 ## 1.3.0
 
 - Added `MINIMUM_SAFE_ALTITUDE` parameters
+- Added correct flight level separation
 - Aircraft without VOR receivers get a different briefing
 
 ## 1.2.0
