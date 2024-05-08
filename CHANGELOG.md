@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.3.1
+
 - Improved naming of airports
 - Improved handling of missing weather data
 
