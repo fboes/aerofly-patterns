@@ -1,5 +1,8 @@
 # Changelog
 
+- Improved naming of airports
+- Improved handling of missing weather data
+
 ## 1.3.0
 
 - Added `MINIMUM_SAFE_ALTITUDE` parameters

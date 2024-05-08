@@ -18,7 +18,7 @@ This nice little project generates `custom_missions_user.tmc` to use with Aerofl
 
 This tool requires [Node.js](https://nodejs.org/en) in at least version 20 to be installed on your local computer.
 
-Use this CLI command to generate a new mission file in the current folder.
+Use this CLI command to automatically download the tool and generate a new mission file in the current folder.
 
 ```bash
 # npx @fboes/aerofly-patterns@latest [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]

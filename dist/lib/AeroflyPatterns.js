@@ -68,8 +68,16 @@ export class AeroflyPatterns {
     const dates = dateYielder.entries();
     for (const date of dates) {
       const scenario = new Scenario(this.airport, this.cliOptions, date);
-      await scenario.build();
-      this.scenarios.push(scenario);
+      try {
+        await scenario.build();
+        this.scenarios.push(scenario);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    if (this.scenarios.length === 0) {
+      throw Error("No scenarios generated, possibly because of missing weather data");
     }
 
     await this.writeCustomMissionFiles(saveDirectory);
@@ -301,6 +309,7 @@ export class AeroflyPatterns {
           " |",
       );
     });
+    output.push("");
 
     output.push(
       "## Installation instructions",

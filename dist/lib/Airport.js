@@ -22,12 +22,20 @@ export class Airport {
      * @type {string}
      */
     this.name = airportJson.name
-      .replace(/(\/)/g, " $1 ")
       .replace(/_/g, " ")
+      .replace(/\bINTL\b/g, "INTERNATIONAL")
+      .replace(/\bRGNL\b/g, "REGIONAL")
+      .replace(/(\/)/g, " $1 ")
       .toLowerCase()
       .replace(/(^|\s)[a-z]/g, (char) => {
         return char.toUpperCase();
       });
+
+    // Remove municipality name if already present in airport name
+    const duplicateMatch = this.name.match(/^(.+?) \/ (.+)$/);
+    if (duplicateMatch && duplicateMatch[2].includes(duplicateMatch[1])) {
+      this.name = duplicateMatch[2];
+    }
 
     /**
      * @type {AirportRunway[]}
