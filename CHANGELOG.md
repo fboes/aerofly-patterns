@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+- Changed CLI parameters
+
 ## 1.3.1
 
 - Improved naming of airports

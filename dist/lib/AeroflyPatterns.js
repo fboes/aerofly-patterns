@@ -2,7 +2,7 @@
 import * as fs from "node:fs/promises";
 import { Airport } from "./Airport.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
-import { CliOptions } from "./CliOptions.js";
+import { Configuration } from "./Configuration.js";
 import { FeatureCollection, Feature } from "@fboes/geojson";
 import { Scenario } from "./Scenario.js";
 import { DateYielder } from "./DateYielder.js";
@@ -31,13 +31,13 @@ import { Degree } from "./Degree.js";
 export class AeroflyPatterns {
   /**
    *
-   * @param {string[]} argv
+   * @param {Configuration} configuration
    */
-  constructor(argv) {
+  constructor(configuration) {
     /**
-     * @type {CliOptions}
+     * @type {Configuration}
      */
-    this.cliOptions = new CliOptions(argv);
+    this.configuration = configuration;
 
     /**
      * @type {Airport?} the airport to build scenarios for
@@ -55,19 +55,19 @@ export class AeroflyPatterns {
    * @param {string} saveDirectory
    */
   async build(saveDirectory) {
-    const airport = await AviationWeatherApi.fetchAirports([this.cliOptions.icaoCode]);
+    const airport = await AviationWeatherApi.fetchAirports([this.configuration.icaoCode]);
     if (!airport.length) {
       throw new Error("No airport information from API");
     }
-    this.airport = new Airport(airport[0], this.cliOptions.getRightPatternRunways);
+    this.airport = new Airport(airport[0], this.configuration.rightPatternRunways);
 
     const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position, 10000);
     this.airport.setNavaids(navaids);
 
-    const dateYielder = new DateYielder(this.cliOptions.numberOfMissions, this.airport.lstOffset);
+    const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.airport.lstOffset);
     const dates = dateYielder.entries();
     for (const date of dates) {
-      const scenario = new Scenario(this.airport, this.cliOptions, date);
+      const scenario = new Scenario(this.airport, this.configuration, date);
       try {
         await scenario.build();
         this.scenarios.push(scenario);
@@ -262,9 +262,10 @@ export class AeroflyPatterns {
 
     const firstMission = this.scenarios[0];
 
-    let output = [`# Landing Challenges: ${this.airport.name} (${this.airport.id})`, ""];
+    let output = [`# Landing Challenges: ${this.airport.name} (${this.airport.id})`];
 
     output.push(
+      "",
       "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
       "",
       `Your ${firstMission.aircraft.data.name} is ${firstMission.aircraft.distanceFromAirport} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.`,
@@ -276,10 +277,10 @@ export class AeroflyPatterns {
 - Has the runway standard left turns, or right turns?
 - Are there additional navigational aids like ILS for your assigned runways?
 - Are there special noises abatement procedures in effect?`,
-      "",
     );
 
     output.push(
+      "",
       "## Included missions",
       "",
       `| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |`,
@@ -309,14 +310,13 @@ export class AeroflyPatterns {
           " |",
       );
     });
-    output.push("");
 
     output.push(
+      "",
       "## Installation instructions",
       "",
       "1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)",
       `2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.`,
-      "",
     );
 
     output.push("", `---`, ``, `Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)`);
@@ -329,8 +329,8 @@ export class AeroflyPatterns {
    * @param {string} saveDirectory
    */
   async writeCustomMissionFiles(saveDirectory) {
-    if (this.cliOptions.folderMode) {
-      saveDirectory = `${saveDirectory}/data/Landing_Challenges-${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}`;
+    if (this.configuration.directoryMode) {
+      saveDirectory = `${saveDirectory}/data/Landing_Challenges-${this.configuration.icaoCode}-${this.configuration.aircraft}`;
 
       await fs.mkdir(saveDirectory, { recursive: true });
     }
@@ -339,7 +339,7 @@ export class AeroflyPatterns {
       fs.writeFile(`${saveDirectory}/custom_missions_user.tmc`, this.buildCustomMissionTmc()),
       fs.writeFile(`${saveDirectory}/README.md`, this.buildReadmeMarkdown()),
       fs.writeFile(
-        `${saveDirectory}/${this.cliOptions.icaoCode}-${this.cliOptions.aircraft}.geojson`,
+        `${saveDirectory}/${this.configuration.icaoCode}-${this.configuration.aircraft}.geojson`,
         JSON.stringify(this.buildGeoJson(), null, 2),
       ),
       // fs.writeFile(`${saveDirectory}/debug.json`, JSON.stringify(this, null, 2)),

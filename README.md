@@ -20,20 +20,33 @@ This tool requires [Node.js](https://nodejs.org/en) in at least version 20 to be
 
 Use this CLI command to automatically download the tool and generate a new mission file in the current folder.
 
-```bash
-# npx @fboes/aerofly-patterns@latest [ICAO_AIRPORT_CODE] [AEROFLY_AIRCRAFT_CODE] [RP_RUNWAY,..]
-npx @fboes/aerofly-patterns@latest KMVY c172 24,33
+```
+Usage: npx @fboes/aerofly-patterns ICAO_AIRPORT_CODE [AEROFLY_AIRCRAFT_CODE] [...options]
+Create landing pattern lessons for Aerofly FS 4.
+
+Arguments:
+  ICAO_AIRPORT_CODE         ICAO airport code which needs to be available in Aerofly FS 4.
+  AEROFLY_AIRCRAFT_CODE     Internal aircraft code in Aerofly FS 4.
+
+Options:
+  --right-pattern=.., -r=..    Comma-separated list of runway names with right-turn pattern
+                            Example value: 24,33
+  --min-altitude=.., -m=..  Minimum safe altitude of aircraft, in 100ft. At least airport elevation.
+                            Default value: 0
+                            Example value: 145
+  --missions=..             Number of missions in file.
+                            Default value: 10
+  --distance=..             Initial distance from airport in Nautical Miles.
+                            Default value: 8
+  --directory, -d           Will create files in a subdirectory instead of current directory.
+  --help, -h                Will output the help.
 ```
 
-| Parameter               | Description                                                                                | Example | Default |
-| ----------------------- | ------------------------------------------------------------------------------------------ | ------- | ------- |
-| `ICAO_AIRPORT_CODE`     | ICAO airport code which needs to be available in Aerofly FS 4                              | `KMVY`  | `KMVY`  |
-| `AEROFLY_AIRCRAFT_CODE` | Internal aircraft code in Aerofly FS 4                                                     | `c172`  | `c172`  |
-| `RP_RUNWAY`             | Comma-separated list of runway names with right-turn pattern                               | `24,33` |         |
-| `MINIMUM_SAFE_ALTITUDE` | Minimum altitude of aircraft, in 100ft. Will default to at least traffic pattern altitude. | `125`   |         |
-| `FOLDER_MODE`           | If set to `1` will create files in a subdirectory instead of current directory.            | `1`     |         |
+Example:
 
-If you need to skip a parameter, supply `-` and it will use the default value.
+```bash
+npx @fboes/aerofly-patterns@latest KMVY c172 --right-pattern 24,33
+```
 
 The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Improved flight planning is available for aircraft listed in [`dist/data/AeroflyAircraft.js`](./dist/data/AeroflyAircraft.js). Examples of codes:
 

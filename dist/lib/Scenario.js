@@ -2,7 +2,7 @@
 
 import { Vector } from "@fboes/geojson";
 import { Units } from "../data/Units.js";
-import { CliOptions } from "./CliOptions.js";
+import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";
 import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
@@ -17,22 +17,30 @@ import { Degree, degreeDifference, degreeToRad } from "./Degree.js";
 export class Scenario {
   /**
    * @param {import('./Airport.js').Airport} airport
-   * @param {CliOptions} cliOptions
+   * @param {Configuration} configuration
    * @param {Date?} date
    */
-  constructor(airport, cliOptions, date = null) {
+  constructor(airport, configuration, date = null) {
     this.airport = airport;
-    this.cliOptions = cliOptions;
+    this.configuration = configuration;
 
     /**
      * @type {number} in feet
      */
-    let mimimumSafeAltitude = Math.max((this.airport.position.elevation ?? 0) + 1500, cliOptions.mimimumSafeAltitude);
+    let mimimumSafeAltitude = Math.max(
+      (this.airport.position.elevation ?? 0) + 1500,
+      configuration.mimimumSafeAltitude,
+    );
 
     /**
      * @type {ScenarioAircraft}
      */
-    this.aircraft = new ScenarioAircraft(airport, cliOptions.aircraft, cliOptions.initialDistance, mimimumSafeAltitude);
+    this.aircraft = new ScenarioAircraft(
+      airport,
+      configuration.aircraft,
+      configuration.initialDistance,
+      mimimumSafeAltitude,
+    );
 
     /**
      * @type {ScenarioWeather?}
