@@ -16,15 +16,15 @@ Get [more information about Eagle County Regional Airport on SkyVector](https://
 
 | No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position    |
 | :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-05-08 |      08:00 | 90° @ 3 kn   | CLR             |      15 SM | 07 (RP) | ↙ To the south-west |
-| #2  | 2024-05-07 |      09:00 | 240° @ 16 kn | BKN @ 1,000 ft  |       4 SM | 25      | ↘ To the south-east |
-| #3  | 2024-05-05 |      10:00 | 270° @ 4 kn  | CLR             |      15 SM | 25      | ↑ To the north       |
-| #4  | 2024-05-03 |      13:00 | 250° @ 14 kn | BKN @ 11,000 ft |      15 SM | 25      | ↗ To the north-east |
-| #5  | 2024-05-01 |      14:00 | 210° @ 9 kn  | OVC @ 4,800 ft  |      15 SM | 25      | ← To the west        |
-| #6  | 2024-04-30 |      16:00 | 280° @ 14 kn | CLR             |      15 SM | 25      | ↖ To the north-west |
-| #7  | 2024-04-30 |      17:00 | 240° @ 8 kn  | BKN @ 12,000 ft |      15 SM | 25      | ← To the west        |
-| #8  | 2024-04-28 |      18:00 | 190° @ 5 kn  | OVC @ 4,500 ft  |      15 SM | 25      | ↙ To the south-west |
-| #9  | 2024-04-27 |      20:00 | 0° @ 0 kn    | FEW @ 2,500 ft  |      15 SM | 07 (RP) | ↘ To the south-east |
+| #1  | 2024-05-09 |      08:00 | 0° @ 0 kn    | SCT @ 9,500 ft  |      15 SM | 07 (RP) | ← To the west        |
+| #2  | 2024-05-08 |      09:00 | 310° @ 5 kn  | CLR             |      15 SM | 25      | ↙ To the south-west |
+| #3  | 2024-05-06 |      10:00 | 240° @ 16 kn | BKN @ 3,600 ft  |      15 SM | 25      | ↙ To the south-west |
+| #4  | 2024-05-05 |      12:00 | 230° @ 18 kn | CLR             |      15 SM | 25      | ↖ To the north-west |
+| #5  | 2024-05-02 |      14:00 | 290° @ 19 kn | CLR             |      15 SM | 25      | ↑ To the north       |
+| #6  | 2024-05-01 |      16:00 | 80° @ 7 kn   | SCT @ 3,900 ft  |      15 SM | 07 (RP) | ↗ To the north-east |
+| #7  | 2024-05-01 |      17:00 | 270° @ 12 kn | CLR             |      15 SM | 25      | ← To the west        |
+| #8  | 2024-04-29 |      18:00 | 210° @ 12 kn | BKN @ 3,400 ft  |      15 SM | 25      | ↘ To the south-east |
+| #9  | 2024-04-28 |      20:00 | 0° @ 0 kn    | BKN @ 11,000 ft |      15 SM | 07 (RP) | ↑ To the north       |
 
 ## Installation instructions
 

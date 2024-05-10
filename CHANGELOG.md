@@ -2,6 +2,7 @@
 
 ## 2.0.1
 
+- Added field elevation output
 - Added CLI parameters for GeoJSON / `README.md`
 
 ## 2.0.0
