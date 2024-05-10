@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+- Added CLI parameters for GeoJSON / `README.md`
+
 ## 2.0.0
 
 - Changed CLI parameters

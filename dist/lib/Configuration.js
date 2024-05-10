@@ -20,7 +20,7 @@ export class Configuration {
     "right-pattern": {
       type: "string",
       default: "",
-      description: "Comma-separated list of runway names with right-turn pattern",
+      description: "Comma-separated list of runway names with right-turn pattern.",
       example: "24,33",
     },
     "min-altitude": {
@@ -43,7 +43,19 @@ export class Configuration {
       type: "boolean",
       short: "d",
       default: false,
-      description: "Will create files in a subdirectory instead of current directory.",
+      description: "Create files in a subdirectory instead of current directory.",
+    },
+    geojson: {
+      type: "boolean",
+      short: "g",
+      default: false,
+      description: "Create a GeoJSON file.",
+    },
+    readme: {
+      type: "boolean",
+      short: "r",
+      default: false,
+      description: "Create a `README.md`.",
     },
     help: {
       type: "boolean",
@@ -90,6 +102,16 @@ export class Configuration {
      * @type {boolean} if files should be created in subfolder
      */
     this.directoryMode = Boolean(values["directory"]);
+
+    /**
+     * @type {boolean}
+     */
+    this.geojson = Boolean(values["geojson"]);
+
+    /**
+     * @type {boolean}
+     */
+    this.readme = Boolean(values["readme"]);
 
     /**
      * @type {boolean}

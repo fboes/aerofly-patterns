@@ -337,11 +337,12 @@ export class AeroflyPatterns {
 
     await Promise.all([
       fs.writeFile(`${saveDirectory}/custom_missions_user.tmc`, this.buildCustomMissionTmc()),
-      fs.writeFile(`${saveDirectory}/README.md`, this.buildReadmeMarkdown()),
-      fs.writeFile(
-        `${saveDirectory}/${this.configuration.icaoCode}-${this.configuration.aircraft}.geojson`,
-        JSON.stringify(this.buildGeoJson(), null, 2),
-      ),
+      !this.configuration.readme || fs.writeFile(`${saveDirectory}/README.md`, this.buildReadmeMarkdown()),
+      !this.configuration.geojson ||
+        fs.writeFile(
+          `${saveDirectory}/${this.configuration.icaoCode}-${this.configuration.aircraft}.geojson`,
+          JSON.stringify(this.buildGeoJson(), null, 2),
+        ),
       // fs.writeFile(`${saveDirectory}/debug.json`, JSON.stringify(this, null, 2)),
     ]);
   }

@@ -29,16 +29,18 @@ Arguments:
   AEROFLY_AIRCRAFT_CODE     Internal aircraft code in Aerofly FS 4.
 
 Options:
-  --right-pattern=.., -r=..    Comma-separated list of runway names with right-turn pattern
+  --right-pattern=..        Comma-separated list of runway names with right-turn pattern
                             Example value: 24,33
-  --min-altitude=.., -m=..  Minimum safe altitude of aircraft, in 100ft. At least airport elevation.
+  --min-altitude=..         Minimum safe altitude of aircraft, in 100ft. At least airport elevation.
                             Default value: 0
                             Example value: 145
   --missions=..             Number of missions in file.
                             Default value: 10
   --distance=..             Initial distance from airport in Nautical Miles.
                             Default value: 8
-  --directory, -d           Will create files in a subdirectory instead of current directory.
+  --directory, -d           Create files in a subdirectory instead of current directory.
+  --geojson, -g             Create a GeoJSON file.
+  --readme, -r              Create a `README.md`.
   --help, -h                Will output the help.
 ```
 
