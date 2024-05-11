@@ -1,7 +1,8 @@
 # Changelog
 
-## 2.0.1
+## 2.1.0
 
+- Added preferred runway for (almost) no wind conditions
 - Added field elevation output
 - Improved wind description output
 - Added CLI parameters for GeoJSON / `README.md`

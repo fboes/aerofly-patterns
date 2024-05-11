@@ -59,7 +59,7 @@ export class AeroflyPatterns {
     if (!airport.length) {
       throw new Error("No airport information from API");
     }
-    this.airport = new Airport(airport[0], this.configuration.rightPatternRunways);
+    this.airport = new Airport(airport[0], this.configuration);
 
     const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position, 10000);
     this.airport.setNavaids(navaids);

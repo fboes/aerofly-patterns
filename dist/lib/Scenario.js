@@ -7,6 +7,7 @@ import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";
 import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
 import { Degree, degreeDifference, degreeToRad } from "./Degree.js";
+import { Airports } from "../data/Airports.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -24,12 +25,16 @@ export class Scenario {
     this.airport = airport;
     this.configuration = configuration;
 
+    if (!configuration.minimumSafeAltitude) {
+      configuration.minimumSafeAltitude = Airports[airport.id]?.minimumSafeAltitude ?? 0;
+    }
+
     /**
      * @type {number} in feet
      */
-    let mimimumSafeAltitude = Math.max(
+    let minimumSafeAltitude = Math.max(
       (this.airport.position.elevation ?? 0) + 1500,
-      configuration.mimimumSafeAltitude,
+      configuration.minimumSafeAltitude,
     );
 
     /**
@@ -39,7 +44,7 @@ export class Scenario {
       airport,
       configuration.aircraft,
       configuration.initialDistance,
-      mimimumSafeAltitude,
+      minimumSafeAltitude,
     );
 
     /**
@@ -88,7 +93,7 @@ export class Scenario {
       return Math.abs(degreeDifference(alignment, counterWindDirection));
     };
 
-    const possibleRunways = this.airport.runways
+    let possibleRunways = this.airport.runways
       .filter((r) => {
         return r.runwayType === null || r.runwayType === this.aircraft.data.type;
       })
@@ -99,6 +104,16 @@ export class Scenario {
           this.aircraft.data.runwayLanding <= r.dimension[0]
         );
       });
+
+    if (!this.weather || this.weather?.windSpeed <= 5) {
+      const preferredRunways = possibleRunways.filter((r) => {
+        return r.isPreferred;
+      });
+
+      if (preferredRunways.length > 0) {
+        possibleRunways = preferredRunways;
+      }
+    }
 
     this.activeRunway = possibleRunways.reduce((a, b) => {
       return difference(a.alignment) < difference(b.alignment) ? a : b;
@@ -271,9 +286,9 @@ class ScenarioAircraft {
    * @param {import('./Airport.js').Airport} airport
    * @param {string} aircraftCode Aerofly Aircraft Code
    * @param {number} distanceFromAirport
-   * @param {number} mimimumSafeAltitude in ft
+   * @param {number} minimumSafeAltitude in ft
    */
-  constructor(airport, aircraftCode, distanceFromAirport, mimimumSafeAltitude) {
+  constructor(airport, aircraftCode, distanceFromAirport, minimumSafeAltitude) {
     /**
      * @type {number} true bearing. 0..360
      */
@@ -288,8 +303,8 @@ class ScenarioAircraft {
 
     const altitude =
       this.bearingFromAirport > 180 // bearing - 180 = course
-        ? Math.ceil((mimimumSafeAltitude - 1500) / 2000) * 2000 + 1500 // 3500, 5500, ..
-        : Math.ceil((mimimumSafeAltitude - 500) / 2000) * 2000 + 500; // 4500, 6500, ..
+        ? Math.ceil((minimumSafeAltitude - 1500) / 2000) * 2000 + 1500 // 3500, 5500, ..
+        : Math.ceil((minimumSafeAltitude - 500) / 2000) * 2000 + 500; // 4500, 6500, ..
     this.position.elevation = altitude / Units.feetPerMeter;
 
     this.id = "current";

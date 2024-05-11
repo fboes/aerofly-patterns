@@ -39,6 +39,12 @@ export class Configuration {
       default: "8",
       description: "Initial distance from airport in Nautical Miles.",
     },
+    "prefer-rwy": {
+      type: "string",
+      default: "",
+      description: "Comma-separated list of runway names which are preferred if wind is indecisive.",
+      example: "24,33",
+    },
     directory: {
       type: "boolean",
       short: "d",
@@ -87,16 +93,23 @@ export class Configuration {
     this.aircraft = (positionals[1] ?? "c172").toLowerCase();
 
     /**
-     * @type {string[]} get runway ID which will be right pattern runways
+     * @type {string[]} runway IDs which will be right pattern runways
      */
     this.rightPatternRunways = String(values["right-pattern"])
       .toUpperCase()
       .split(/[,\s]+/);
 
     /**
+     * @type {string[]} runway IDs which will be prefrerred if wind is indecisive
+     */
+    this.preferredRunways = String(values["prefer-rwy"])
+      .toUpperCase()
+      .split(/[,\s]+/);
+
+    /**
      * @type {number} in feet
      */
-    this.mimimumSafeAltitude = Number(values["min-altitude"]) * 100;
+    this.minimumSafeAltitude = Number(values["min-altitude"]) * 100;
 
     /**
      * @type {boolean} if files should be created in subfolder

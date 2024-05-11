@@ -7,12 +7,13 @@ This nice little project generates `custom_missions_user.tmc` to use with Aerofl
 ## What does it do?
 
 1. It downloads data for an airport selected by you,
-2. and places an aircraft selected by you in a random spot around this airport.
-3. It downloads METAR weather data for the last few days,
-4. and determines which will be the active runway,
-5. considering if your aircraft is able to land on this runway.
-6. From this data it will create multiple random missions,
-7. and write these to a `custom_missions_user.tmc` which you then can use in Aerofly FS 4.
+2. and places an aircraft selected by you in a random spot around this airport,
+3. considering an optional Minimum Safe Altitude.
+4. It downloads METAR weather data for the last few days,
+5. and determines which will be the active runway by taking a look at the wind (or using a default runway if there is almost no wind)
+6. considering if your aircraft is able to land on this runway.
+7. From this data it will create multiple random missions,
+8. and write these to a `custom_missions_user.tmc` which you then can use in Aerofly FS 4.
 
 ## How to use it
 
@@ -29,7 +30,7 @@ Arguments:
   AEROFLY_AIRCRAFT_CODE     Internal aircraft code in Aerofly FS 4.
 
 Options:
-  --right-pattern=..        Comma-separated list of runway names with right-turn pattern
+  --right-pattern=..        Comma-separated list of runway names with right-turn pattern.
                             Example value: 24,33
   --min-altitude=..         Minimum safe altitude of aircraft, in 100ft. At least airport elevation.
                             Default value: 0
@@ -38,6 +39,8 @@ Options:
                             Default value: 10
   --distance=..             Initial distance from airport in Nautical Miles.
                             Default value: 8
+  --prefer-rwy=..           Comma-separated list of runway names which are preferred if wind is indecisive.
+                            Example value: 24,33
   --directory, -d           Create files in a subdirectory instead of current directory.
   --geojson, -g             Create a GeoJSON file.
   --readme, -r              Create a `README.md`.

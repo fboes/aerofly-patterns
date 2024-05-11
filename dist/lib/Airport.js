@@ -12,9 +12,9 @@ export class Airport {
   /**
    *
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport} airportJson
-   * @param {string[]} rightPatternRunways
+   * @param  {import('./Configuration.js').Configuration?} configuration
    */
-  constructor(airportJson, rightPatternRunways = []) {
+  constructor(airportJson, configuration) {
     this.id = airportJson.id;
     this.position = new Point(airportJson.lon, airportJson.lat, airportJson.elev);
 
@@ -42,25 +42,30 @@ export class Airport {
      */
     this.runways = [];
     airportJson.runways.map((r) => {
-      this.buildRunways(r, this.position, rightPatternRunways).forEach((runway) => {
+      this.buildRunways(r, this.position, configuration).forEach((runway) => {
         this.runways.push(runway);
       });
     });
 
-    const airportDatabase = Airports[this.id] ?? [];
-    airportDatabase.forEach((r) => {
-      const matchingRunway = this.runways.find((rr) => {
-        return rr.id === r.id;
+    const airportDatabase = Airports[this.id] ?? null;
+    if (airportDatabase) {
+      airportDatabase.runways.forEach((r) => {
+        const matchingRunway = this.runways.find((rr) => {
+          return rr.id === r.id;
+        });
+        if (matchingRunway) {
+          if (!matchingRunway.isRightPattern && r.isRightPattern) {
+            matchingRunway.isRightPattern = r.isRightPattern;
+          }
+          if (!matchingRunway.ilsFrequency && r.ilsFrequency) {
+            matchingRunway.ilsFrequency = r.ilsFrequency;
+          }
+          if (!matchingRunway.isPreferred && r.isPreferred) {
+            matchingRunway.isPreferred = r.isPreferred;
+          }
+        }
       });
-      if (matchingRunway) {
-        if (!matchingRunway.isRightPattern && r.isRightPattern) {
-          matchingRunway.isRightPattern = r.isRightPattern;
-        }
-        if (!matchingRunway.ilsFrequency && r.ilsFrequency) {
-          matchingRunway.ilsFrequency = r.ilsFrequency;
-        }
-      }
-    });
+    }
 
     /**
      * @type {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
@@ -118,10 +123,10 @@ export class Airport {
    *
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiRunway} runwayJson
    * @param {Point} airportPosition
-   * @param {string[]} rightPatternRunways
+   * @param  {import('./Configuration.js').Configuration?} configuration
    * @returns {[AirportRunway, AirportRunway]}
    */
-  buildRunways(runwayJson, airportPosition, rightPatternRunways = []) {
+  buildRunways(runwayJson, airportPosition, configuration) {
     /**
      * @type {[string,string]} both directions
      */
@@ -155,8 +160,22 @@ export class Airport {
     ];
 
     return [
-      new AirportRunway(id[0], dimension, alignment[0], positions[0], rightPatternRunways.indexOf(id[0]) !== -1),
-      new AirportRunway(id[1], dimension, alignment[1], positions[1], rightPatternRunways.indexOf(id[1]) !== -1),
+      new AirportRunway(
+        id[0],
+        dimension,
+        alignment[0],
+        positions[0],
+        configuration?.rightPatternRunways.indexOf(id[0]) !== -1,
+        configuration?.preferredRunways.indexOf(id[0]) !== -1,
+      ),
+      new AirportRunway(
+        id[1],
+        dimension,
+        alignment[1],
+        positions[1],
+        configuration?.rightPatternRunways.indexOf(id[1]) !== -1,
+        configuration?.preferredRunways.indexOf(id[1]) !== -1,
+      ),
     ];
   }
 }
@@ -172,9 +191,10 @@ export class AirportRunway {
    * @param {number} alignment
    * @param {Point} position
    * @param {boolean} isRightPattern
+   * @param {boolean} isPreferred
    * @param {number} ilsFrequency
    */
-  constructor(id, dimension, alignment, position, isRightPattern = false, ilsFrequency = 0) {
+  constructor(id, dimension, alignment, position, isRightPattern = false, isPreferred = false, ilsFrequency = 0) {
     this.id = id;
     this.position = position;
 
@@ -192,6 +212,11 @@ export class AirportRunway {
      * @type {boolean}
      */
     this.isRightPattern = isRightPattern;
+
+    /**
+     * @type {boolean} isPreferred most active runways, will be used in case wind is indecisive
+     */
+    this.isPreferred = isPreferred;
 
     /**
      * @type {number} in MHz
