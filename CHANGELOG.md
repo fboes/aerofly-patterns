@@ -3,6 +3,7 @@
 ## 2.0.1
 
 - Added field elevation output
+- Improved wind description output
 - Added CLI parameters for GeoJSON / `README.md`
 
 ## 2.0.0

@@ -176,9 +176,18 @@ export class Scenario {
 
     let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name}${elevation}. `;
 
-    description += this.weather
-      ? `As the wind is ${this.weather.windSpeed ?? 0} kn from ${this.weather.windDirection ?? 0}°, the main landing runway is ${runway}. `
-      : `The main landing runway is ${runway}. `;
+    let wind = ``;
+    if (this.weather) {
+      if (this.weather.windSpeed < 1) {
+        wind = `As there is no wind`;
+      } else if (this.weather.windSpeed <= 5) {
+        wind = `As there is almost no wind`;
+      } else {
+        wind = `As the wind is ${this.weather.windSpeed ?? 0} kn from ${this.weather.windDirection ?? 0}°`;
+      }
+    }
+
+    description += wind ? `${wind}, the main landing runway is ${runway}. ` : `The main landing runway is ${runway}. `;
 
     if (this.activeRunway.ilsFrequency && !this.aircraft.data.hasNoRadioNav) {
       description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}). `;
