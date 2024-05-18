@@ -45,6 +45,7 @@ export class Scenario {
       configuration.aircraft,
       configuration.initialDistance,
       minimumSafeAltitude,
+      configuration.randomHeadingRange,
     );
 
     /**
@@ -119,9 +120,9 @@ export class Scenario {
       return difference(a.alignment) < difference(b.alignment) ? a : b;
     });
 
-    const exitDistance = 1 * Units.meterPerNauticalMile;
-    const downwindDistance = 1 * Units.meterPerNauticalMile;
-    const finalDistance = 1 * Units.meterPerNauticalMile;
+    const exitDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+    const downwindDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+    const finalDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
 
     if (this.weather?.windDirection) {
       const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.windDirection);
@@ -150,6 +151,10 @@ export class Scenario {
       {
         id: this.activeRunway.id + "-DOWN",
         position: activeRunwayExit.getPointBy(new Vector(downwindDistance, patternOrientation)),
+      },
+      {
+        id: this.activeRunway.id + "-ENTRY",
+        position: this.airport.position.getPointBy(new Vector(downwindDistance, patternOrientation)),
       },
       {
         id: this.activeRunway.id + "-BASE",
@@ -287,8 +292,9 @@ class ScenarioAircraft {
    * @param {string} aircraftCode Aerofly Aircraft Code
    * @param {number} distanceFromAirport
    * @param {number} minimumSafeAltitude in ft
+   * @param {number} randomHeadingRange in degree
    */
-  constructor(airport, aircraftCode, distanceFromAirport, minimumSafeAltitude) {
+  constructor(airport, aircraftCode, distanceFromAirport, minimumSafeAltitude, randomHeadingRange = 0) {
     /**
      * @type {number} true bearing. 0..360
      */
@@ -306,6 +312,13 @@ class ScenarioAircraft {
         ? Math.ceil((minimumSafeAltitude - 1500) / 2000) * 2000 + 1500 // 3500, 5500, ..
         : Math.ceil((minimumSafeAltitude - 500) / 2000) * 2000 + 500; // 4500, 6500, ..
     this.position.elevation = altitude / Units.feetPerMeter;
+
+    /**
+     * @type {number} Heading of aircraft. Can be randomized
+     */
+    this.heading = Degree(
+      this.bearingFromAirport + 180 + (randomHeadingRange ? (Math.random() * 2 - 1) * randomHeadingRange : 0),
+    );
 
     this.id = "current";
 

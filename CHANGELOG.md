@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+- Added randomized heading for aircraft
+
 ## 2.1.0
 
 - Added preferred runway for (almost) no wind conditions

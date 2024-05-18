@@ -39,6 +39,16 @@ export class Configuration {
       default: "8",
       description: "Initial distance from airport in Nautical Miles.",
     },
+    "pattern-distance": {
+      type: "string",
+      default: "1",
+      description: "Pattern distance from airport runway in Nautical Miles.",
+    },
+    "rnd-heading": {
+      type: "string",
+      default: "0",
+      description: "Randomized aircraft heading deviation from direct heading to airport in degree.",
+    },
     "prefer-rwy": {
       type: "string",
       default: "",
@@ -100,16 +110,36 @@ export class Configuration {
       .split(/[,\s]+/);
 
     /**
+     * @type {number} in feet
+     */
+    this.minimumSafeAltitude = Number(values["min-altitude"]) * 100;
+
+    /**
+     * @type {number}
+     */
+    this.numberOfMissions = Number(values["missions"]);
+
+    /**
+     * @type {number} in Nautical Miles
+     */
+    this.initialDistance = Number(values["distance"]);
+
+    /**
+     * @type {number} in Nautical Miles
+     */
+    this.patternDistance = Number(values["pattern-distance"]);
+
+    /**
+     * @type {number} Randomized aircraft heading deviation from direct heading to airport in degree.
+     */
+    this.randomHeadingRange = Number(values["rnd-heading"]);
+
+    /**
      * @type {string[]} runway IDs which will be prefrerred if wind is indecisive
      */
     this.preferredRunways = String(values["prefer-rwy"])
       .toUpperCase()
       .split(/[,\s]+/);
-
-    /**
-     * @type {number} in feet
-     */
-    this.minimumSafeAltitude = Number(values["min-altitude"]) * 100;
 
     /**
      * @type {boolean} if files should be created in subfolder
@@ -130,16 +160,6 @@ export class Configuration {
      * @type {boolean}
      */
     this.help = Boolean(values["help"]);
-
-    /**
-     * @type {number}
-     */
-    this.numberOfMissions = Number(values["missions"]);
-
-    /**
-     * @type {number} in Nautical Miles
-     */
-    this.initialDistance = Number(values["distance"]);
   }
 
   /**

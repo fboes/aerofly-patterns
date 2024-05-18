@@ -182,7 +182,7 @@ export class AeroflyPatterns {
                 <[stringt8c] [callsign]           [${s.aircraft.data.callsign}]>
                 <[stringt8c] [origin_icao]        [${s.airport.id}]>
                 <[tmvector2d][origin_lon_lat]     [${s.aircraft.position.longitude} ${s.aircraft.position.latitude}]>
-                <[float64]   [origin_dir]         [${Degree(s.aircraft.bearingFromAirport + 180)}]>
+                <[float64]   [origin_dir]         [${s.aircraft.heading}]>
                 <[float64]   [origin_alt]         [${s.aircraft.position.elevation}]>
                 <[stringt8c] [destination_icao]   [${s.airport.id}]>
                 <[tmvector2d][destination_lon_lat][${s.airport.position.longitude} ${s.airport.position.latitude}]>

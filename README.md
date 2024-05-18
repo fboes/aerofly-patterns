@@ -39,6 +39,10 @@ Options:
                             Default value: 10
   --distance=..             Initial distance from airport in Nautical Miles.
                             Default value: 8
+  --pattern-distance=..     Pattern distance from airport runway in Nautical Miles.
+                            Default value: 1
+  --rnd-heading=..          Randomized aircraft heading deviation from direct heading to airport in degree.
+                            Default value: 0
   --prefer-rwy=..           Comma-separated list of runway names which are preferred if wind is indecisive.
                             Example value: 24,33
   --directory, -d           Create files in a subdirectory instead of current directory.
