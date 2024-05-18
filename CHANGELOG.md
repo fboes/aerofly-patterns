@@ -1,8 +1,11 @@
 # Changelog
 
+- Added `.npmignore`
+
 ## 2.1.1
 
 - Added randomized heading for aircraft
+- Added configurable pattern distance
 
 ## 2.1.0
 
