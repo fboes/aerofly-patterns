@@ -112,7 +112,14 @@ export class Airport {
     /**
      * @type {string} Local description
      */
-    this.description = this.buildDescription();
+    this.radioDescription = this.localFrequency
+      ? "- Local tower / CTAF frequency: " + this.localFrequency.toFixed(2)
+      : "";
+
+    /**
+     * @type {string} Local description
+     */
+    this.navAidDescription = "";
   }
 
   /**
@@ -123,17 +130,10 @@ export class Airport {
     this.navaids = navaids.map((n) => {
       return new AirportNavaid(n);
     });
-    this.description = this.buildDescription();
-  }
 
-  buildDescription() {
-    let description = "";
-    if (this.localFrequency) {
-      description += "\n- Local tower / CTAF frequency: " + this.localFrequency.toFixed(2);
-    }
     if (this.navaids.length) {
-      description +=
-        "\n- Local navigational aids: " +
+      this.navAidDescription =
+        "- Local navigational aids: " +
         this.navaids
           .map((n) => {
             return `${n.type} ${n.id} (${n.frequency.toFixed(n.type !== "NDB" ? 2 : 0)}) ${Formatter.getVector(
@@ -142,7 +142,33 @@ export class Airport {
           })
           .join(", ");
     }
+  }
 
+  /**
+   * @returns {string}
+   */
+  get description() {
+    return this.getDescription();
+  }
+
+  /**
+   * @param {boolean} withNavAid if to include navigational aids in description
+   * @returns {string}
+   */
+  getDescription(withNavAid = true) {
+    let description = "";
+    const anyDescription = this.radioDescription || (this.navAidDescription && withNavAid);
+    if (!anyDescription) {
+      return description;
+    }
+
+    if (this.radioDescription) {
+      description += "\n" + this.radioDescription;
+    }
+
+    if (this.navAidDescription && withNavAid) {
+      description += "\n" + this.navAidDescription;
+    }
     return description;
   }
 

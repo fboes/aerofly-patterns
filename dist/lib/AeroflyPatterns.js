@@ -268,10 +268,13 @@ export class AeroflyPatterns {
       "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
       "",
       `Your ${firstMission.aircraft.data.name} is ${this.configuration.initialDistance} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.`,
+      "",
+      "## Airport details",
     );
 
-    if (this.airport.description) {
-      output.push(this.airport.description);
+    const airportDescription = this.airport.getDescription(firstMission.aircraft.data.hasNoRadioNav !== true);
+    if (airportDescription) {
+      output.push(airportDescription);
     }
 
     output.push(

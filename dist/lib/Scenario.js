@@ -215,8 +215,9 @@ export class Scenario {
 
     description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
 
-    if (this.airport.description) {
-      description += "\n" + this.airport.description;
+    const airportDescription = this.airport.getDescription(this.aircraft.data.hasNoRadioNav !== true);
+    if (airportDescription) {
+      description += "\n" + airportDescription;
     }
 
     return description;
