@@ -1,5 +1,7 @@
 // @ts-check
 
+import { Units } from "../data/Units.js";
+
 export class Formatter {
   /**
    *
@@ -40,6 +42,33 @@ export class Formatter {
   static getDirection(heading) {
     const headings = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"];
     return headings[Math.round((heading / 360) * headings.length) % headings.length];
+  }
+
+  /**
+   * @param {number} distance in meters
+   * @returns {string}
+   */
+  static getDistance(distance) {
+    const nauticalMiles = distance / Units.meterPerNauticalMile;
+
+    if (nauticalMiles > 10) {
+      return Math.round(nauticalMiles).toLocaleString("en") + " NM";
+    }
+    return (Math.round(nauticalMiles * 10) / 10).toLocaleString("en") + " NM";
+  }
+
+  /**
+   *
+   * @param {import('@fboes/geojson').Vector} vector
+   * @param {string} onSite as fallback for distances less than 1 NM
+   * @returns {string}
+   */
+  static getVector(vector, onSite = "on field") {
+    if (vector.meters < Units.meterPerNauticalMile) {
+      return onSite;
+    }
+
+    return Formatter.getDistance(vector.meters) + " to the " + Formatter.getDirection(vector.bearing);
   }
 
   /**

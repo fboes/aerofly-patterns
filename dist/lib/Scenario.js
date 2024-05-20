@@ -176,7 +176,7 @@ export class Scenario {
     }
 
     //const distance = Formatter.getNumberString(this.aircraft.distanceFromAirport);
-    const bearing = Formatter.getDirection(this.aircraft.bearingFromAirport - this.airport.magneticDeclination);
+    const vector = Formatter.getVector(this.aircraft.vectorFromAirport);
     const towered = this.airport.hasTower ? "towered" : "untowered";
     let weatherAdjectives = this.weather ? Formatter.getWeatherAdjectives(this.weather) : "";
     if (weatherAdjectives) {
@@ -194,7 +194,7 @@ export class Scenario {
         ? ` (${Math.ceil(this.airport.position.elevation * Units.feetPerMeter).toLocaleString("en")}ft)`
         : "";
 
-    let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${this.aircraft.distanceFromAirport} NM to the ${bearing} of the ${towered} airport ${this.airport.name}${elevation}. `;
+    let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.lstOffset)}, and you are ${vector} of the ${towered} airport ${this.airport.name}${elevation}. `;
 
     let wind = ``;
     if (this.weather) {
@@ -290,25 +290,20 @@ class ScenarioAircraft {
    *
    * @param {import('./Airport.js').Airport} airport
    * @param {string} aircraftCode Aerofly Aircraft Code
-   * @param {number} distanceFromAirport
+   * @param {number} distanceFromAirport in Nautical Miles
    * @param {number} minimumSafeAltitude in ft
    * @param {number} randomHeadingRange in degree
    */
   constructor(airport, aircraftCode, distanceFromAirport, minimumSafeAltitude, randomHeadingRange = 0) {
     /**
-     * @type {number} true bearing. 0..360
+     * @type {import("@fboes/geojson").Vector} how the aircraft relates to the airport
      */
-    this.bearingFromAirport = Math.random() * 360;
+    this.vectorFromAirport = new Vector(distanceFromAirport * Units.meterPerNauticalMile, Math.random() * 360);
 
-    /**
-     * @type {number} in Nautical Miles
-     */
-    this.distanceFromAirport = distanceFromAirport;
-
-    this.position = airport.position.getPointBy(new Vector(this.distanceFromAirport * 1852, this.bearingFromAirport));
+    this.position = airport.position.getPointBy(this.vectorFromAirport);
 
     const altitude =
-      this.bearingFromAirport > 180 // bearing - 180 = course
+      this.vectorFromAirport.bearing > 180 // bearing - 180 = course
         ? Math.ceil((minimumSafeAltitude - 1500) / 2000) * 2000 + 1500 // 3500, 5500, ..
         : Math.ceil((minimumSafeAltitude - 500) / 2000) * 2000 + 500; // 4500, 6500, ..
     this.position.elevation = altitude / Units.feetPerMeter;
@@ -317,7 +312,7 @@ class ScenarioAircraft {
      * @type {number} Heading of aircraft. Can be randomized
      */
     this.heading = Degree(
-      this.bearingFromAirport + 180 + (randomHeadingRange ? (Math.random() * 2 - 1) * randomHeadingRange : 0),
+      this.vectorFromAirport.bearing + 180 + (randomHeadingRange ? (Math.random() * 2 - 1) * randomHeadingRange : 0),
     );
 
     this.id = "current";

@@ -10,7 +10,6 @@ import { Units } from "../data/Units.js";
 import { Point } from "@fboes/geojson";
 import { Vector } from "@fboes/geojson";
 import { Formatter } from "./Formatter.js";
-import { Degree } from "./Degree.js";
 
 /**
  * @typedef AeroflyPatternsCheckpoint
@@ -151,7 +150,7 @@ export class AeroflyPatterns {
                         <[string8u][type][${checkpoint.type}]>
                         <[string8u][name][${waypointable.id || "WS2037"}]>
                         <[vector2_float64][lon_lat][${waypointable.position.longitude} ${waypointable.position.latitude}]>
-                        <[float64][altitude][${waypointable.position.elevation}]>
+                        <[float64][altitude][${waypointable.position.elevation}]> // ${(waypointable.position.elevation ?? 0) * Units.feetPerMeter} ft
                         <[float64][direction][${vector?.bearing ?? -1}]>
                         <[float64][slope][0]>
                         <[float64][length][${checkpoint.length ?? 0}]>
@@ -183,7 +182,7 @@ export class AeroflyPatterns {
                 <[stringt8c] [origin_icao]        [${s.airport.id}]>
                 <[tmvector2d][origin_lon_lat]     [${s.aircraft.position.longitude} ${s.aircraft.position.latitude}]>
                 <[float64]   [origin_dir]         [${s.aircraft.heading}]>
-                <[float64]   [origin_alt]         [${s.aircraft.position.elevation}]>
+                <[float64]   [origin_alt]         [${s.aircraft.position.elevation}]> // ${(s.aircraft.position.elevation ?? 0) * Units.feetPerMeter} ft
                 <[stringt8c] [destination_icao]   [${s.airport.id}]>
                 <[tmvector2d][destination_lon_lat][${s.airport.position.longitude} ${s.airport.position.latitude}]>
                 <[float64]   [destination_dir]    [${s.activeRunway.alignment}]>
@@ -268,7 +267,7 @@ export class AeroflyPatterns {
       "",
       "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
       "",
-      `Your ${firstMission.aircraft.data.name} is ${firstMission.aircraft.distanceFromAirport} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.`,
+      `Your ${firstMission.aircraft.data.name} is ${this.configuration.initialDistance} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.`,
       "",
       `Get [more information about ${this.airport.name} Airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}):`,
       "",
@@ -299,13 +298,15 @@ export class AeroflyPatterns {
             "#" + pad(index + 1),
             Formatter.getUtcCompleteDate(s.date),
             pad(padNumber(lst) + ":00", 10, true),
-            `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kn`,
+            s.weather?.windSpeed === 0
+              ? pad("Calm", 12)
+              : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kn`,
             clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
-            Formatter.getDirectionArrow(s.aircraft.bearingFromAirport) +
+            Formatter.getDirectionArrow(s.aircraft.vectorFromAirport.bearing) +
               " To the " +
-              pad(Formatter.getDirection(s.aircraft.bearingFromAirport), 10),
+              pad(Formatter.getDirection(s.aircraft.vectorFromAirport.bearing), 10),
           ].join(" | ") +
           " |",
       );
@@ -319,7 +320,7 @@ export class AeroflyPatterns {
       `2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.`,
     );
 
-    output.push("", `---`, ``, `Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)`);
+    output.push("", `---`, ``, `Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)`, ``);
 
     return output.join("\n");
   }

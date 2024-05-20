@@ -1,5 +1,7 @@
 # Changelog
 
+- Improved output of geographic vectors
+- Added feet debugging output in `custom_missions_user.tmc`
 - Added `.npmignore`
 
 ## 2.1.1
