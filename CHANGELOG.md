@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.2
+
+- Improved altitude calculation for glide slope
 - Improved output of geographic vectors
 - Added vector output to navigational aids
 - Added feet debugging output in `custom_missions_user.tmc`

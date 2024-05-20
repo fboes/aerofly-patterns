@@ -19,18 +19,18 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |
-| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |
-| #1  | 2024-05-19 |      07:00 |  20° @ 11 kn | OVC @    700 ft |      15 SM | 06      | ↑ To the north      |
-| #2  | 2024-05-18 |      09:00 |  20° @ 12 kn | OVC @    500 ft |       2 SM | 06      | ↘ To the south-east |
-| #3  | 2024-05-16 |      10:00 |  70° @ 18 kn | OVC @    600 ft |      15 SM | 06      | ↘ To the south-east |
-| #4  | 2024-05-15 |      11:00 | 190° @  5 kn | OVC @  3,600 ft |      15 SM | 24 (RP) | ↓ To the south      |
-| #5  | 2024-05-14 |      13:00 | 200° @ 15 kn | CLR             |      15 SM | 24 (RP) | ↘ To the south-east |
-| #6  | 2024-05-12 |      14:00 | 230° @  8 kn | FEW @  5,500 ft |      15 SM | 24 (RP) | → To the east       |
-| #7  | 2024-05-11 |      15:00 |  40° @ 15 kn | FEW @  3,000 ft |      15 SM | 06      | ← To the west       |
-| #8  | 2024-05-10 |      17:00 |  30° @ 12 kn | FEW @  9,500 ft |      15 SM | 06      | ↓ To the south      |
-| #9  | 2024-05-08 |      18:00 | 200° @  6 kn | OVC @    300 ft |       2 SM | 24 (RP) | ↖ To the north-west |
-| #10 | 2024-05-08 |      19:00 | 200° @  5 kn | OVX @      0 ft |       1 SM | 24 (RP) | ↑ To the north      |
+| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway  | Aircraft position    |
+| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | ------- | -------------------- |
+| #1  | 2024-05-19 |      07:00 | 20° @ 11 kn  | OVC @ 700 ft   |      15 SM | 06      | ↘ To the south-east |
+| #2  | 2024-05-18 |      09:00 | 20° @ 12 kn  | OVC @ 500 ft   |       2 SM | 06      | ↙ To the south-west |
+| #3  | 2024-05-16 |      10:00 | 70° @ 18 kn  | OVC @ 600 ft   |      15 SM | 06      | ↑ To the north       |
+| #4  | 2024-05-15 |      11:00 | 190° @ 5 kn  | OVC @ 3,600 ft |      15 SM | 24 (RP) | ↙ To the south-west |
+| #5  | 2024-05-14 |      13:00 | 200° @ 15 kn | CLR            |      15 SM | 24 (RP) | ↙ To the south-west |
+| #6  | 2024-05-12 |      14:00 | 230° @ 8 kn  | FEW @ 5,500 ft |      15 SM | 24 (RP) | ↑ To the north       |
+| #7  | 2024-05-11 |      15:00 | 40° @ 15 kn  | FEW @ 3,000 ft |      15 SM | 06      | ↓ To the south       |
+| #8  | 2024-05-10 |      17:00 | 30° @ 12 kn  | FEW @ 9,500 ft |      15 SM | 06      | ↑ To the north       |
+| #9  | 2024-05-08 |      18:00 | 230° @ 6 kn  | OVC @ 400 ft   |       7 SM | 24 (RP) | ← To the west        |
+| #10 | 2024-05-08 |      19:00 | 200° @ 6 kn  | OVC @ 200 ft   |       1 SM | 24 (RP) | ↑ To the north       |
 
 ## Installation instructions
 

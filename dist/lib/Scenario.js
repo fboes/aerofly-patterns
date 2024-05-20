@@ -123,46 +123,61 @@ export class Scenario {
     const exitDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
     const downwindDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
     const finalDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+    const patternOrientation = this.activeRunway.alignment + Degree(this.activeRunway.isRightPattern ? 90 : 270);
+    const patternAltitude = (this.airport.position.elevation ?? 0) + 1000 / Units.feetPerMeter;
+
+    /**
+     * @type {number} meters to sink per 1 NM to have 3° glide slope
+     */
+    const glideSlope = 319.8 / Units.feetPerMeter;
 
     if (this.weather?.windDirection) {
       const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.windDirection);
       this.activeRunwayCrosswindComponent = Math.sin(degreeToRad(crosswindAngle)) * this.weather.windSpeed;
     }
 
-    const activeRunwayEntry = this.activeRunway.position.getPointBy(
+    // Final
+    const activeRunwayFinal = this.activeRunway.position.getPointBy(
       new Vector(finalDistance, Degree(this.activeRunway.alignment + 180)),
     );
-    if (activeRunwayEntry.elevation) {
-      activeRunwayEntry.elevation += 1000 / Units.feetPerMeter;
-    }
-    const activeRunwayExit = this.activeRunway.position.getPointBy(
+    const finalAltitude = (this.airport.position.elevation ?? 0) + this.configuration.patternDistance * glideSlope;
+    activeRunwayFinal.elevation = Math.min(finalAltitude, patternAltitude);
+
+    // Base
+    const activeRunwayBase = activeRunwayFinal.getPointBy(new Vector(downwindDistance, patternOrientation));
+    const baseAltitude = finalAltitude + this.configuration.patternDistance * glideSlope;
+    activeRunwayBase.elevation = Math.min(baseAltitude, patternAltitude);
+
+    // Crosswind
+    const activeRunwayCrosswind = this.activeRunway.position.getPointBy(
       new Vector(this.activeRunway.dimension[0] / Units.feetPerMeter + exitDistance, this.activeRunway.alignment),
     );
-    if (activeRunwayExit.elevation) {
-      activeRunwayExit.elevation += 1000 / Units.feetPerMeter;
-    }
-    const patternOrientation = this.activeRunway.alignment + Degree(this.activeRunway.isRightPattern ? 90 : 270);
+    activeRunwayCrosswind.elevation = patternAltitude;
+
+    // Entry
+    const activeRunwayEntry = this.airport.position.getPointBy(new Vector(downwindDistance, patternOrientation));
+    activeRunwayEntry.elevation = patternAltitude;
 
     this.patternWaypoints = [
       {
         id: this.activeRunway.id + "-CROSS",
-        position: activeRunwayExit,
+        position: activeRunwayCrosswind,
       },
       {
         id: this.activeRunway.id + "-DOWN",
-        position: activeRunwayExit.getPointBy(new Vector(downwindDistance, patternOrientation)),
+        position: activeRunwayCrosswind.getPointBy(new Vector(downwindDistance, patternOrientation)),
       },
       {
         id: this.activeRunway.id + "-ENTRY",
-        position: this.airport.position.getPointBy(new Vector(downwindDistance, patternOrientation)),
+        position: activeRunwayEntry,
       },
       {
         id: this.activeRunway.id + "-BASE",
-        position: activeRunwayEntry.getPointBy(new Vector(downwindDistance, patternOrientation)),
+        position: activeRunwayBase,
       },
       {
         id: this.activeRunway.id + "-FINAL",
-        position: activeRunwayEntry,
+        position: activeRunwayFinal,
       },
     ];
   }
