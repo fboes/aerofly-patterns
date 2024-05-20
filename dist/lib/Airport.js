@@ -4,6 +4,7 @@ import { Vector, Point } from "@fboes/geojson";
 import { Units } from "../data/Units.js";
 import { Degree } from "./Degree.js";
 import { Airports } from "../data/Airports.js";
+import { Formatter } from "./Formatter.js";
 
 /**
  * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}
@@ -12,7 +13,7 @@ export class Airport {
   /**
    *
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport} airportJson
-   * @param  {import('./Configuration.js').Configuration?} configuration
+   * @param {import('./Configuration.js').Configuration?} configuration
    */
   constructor(airportJson, configuration) {
     this.id = airportJson.id;
@@ -107,6 +108,11 @@ export class Airport {
      * @type {AirportNavaid[]}
      */
     this.navaids = [];
+
+    /**
+     * @type {string} Local description
+     */
+    this.description = this.buildDescription();
   }
 
   /**
@@ -117,6 +123,27 @@ export class Airport {
     this.navaids = navaids.map((n) => {
       return new AirportNavaid(n);
     });
+    this.description = this.buildDescription();
+  }
+
+  buildDescription() {
+    let description = "";
+    if (this.localFrequency) {
+      description += "\n- Local tower / CTAF frequency: " + this.localFrequency.toFixed(2);
+    }
+    if (this.navaids.length) {
+      description +=
+        "\n- Local navigational aids: " +
+        this.navaids
+          .map((n) => {
+            return `${n.type} ${n.id} (${n.frequency.toFixed(n.type !== "NDB" ? 2 : 0)}) ${Formatter.getVector(
+              this.position.getVectorTo(n.position),
+            )}`;
+          })
+          .join(", ");
+    }
+
+    return description;
   }
 
   /**

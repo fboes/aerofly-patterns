@@ -215,20 +215,8 @@ export class Scenario {
 
     description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
 
-    if (this.airport.localFrequency || this.airport.navaids.length) {
-      description += "\n";
-    }
-    if (this.airport.localFrequency) {
-      description += "\nLocal tower / CTAF frequency: " + this.airport.localFrequency.toFixed(2);
-    }
-    if (this.airport.navaids.length && !this.aircraft.data.hasNoRadioNav) {
-      description +=
-        "\nLocal navigational aids: " +
-        this.airport.navaids
-          .map((n) => {
-            return `${n.type} ${n.id} (${n.frequency.toFixed(n.type !== "NDB" ? 2 : 0)})`;
-          })
-          .join(", ");
+    if (this.airport.description) {
+      description += "\n" + this.airport.description;
     }
 
     return description;

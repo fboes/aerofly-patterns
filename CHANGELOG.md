@@ -1,6 +1,7 @@
 # Changelog
 
 - Improved output of geographic vectors
+- Added vector output to navigational aids
 - Added feet debugging output in `custom_missions_user.tmc`
 - Added `.npmignore`
 

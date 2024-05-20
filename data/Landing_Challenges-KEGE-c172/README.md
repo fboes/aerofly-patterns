@@ -4,6 +4,9 @@ This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains rand
 
 Your Cessna 172 is 8 NM away from Eagle County Regional Airport, and you have to make a correct landing pattern entry and land safely.
 
+- Local tower / CTAF frequency: 119.80
+- Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west
+
 Get [more information about Eagle County Regional Airport on SkyVector](https://skyvector.com/airport/KEGE):
 
 - What is the tower / CTAF frequency?
@@ -16,15 +19,16 @@ Get [more information about Eagle County Regional Airport on SkyVector](https://
 
 | No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway | Aircraft position    |
 | :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------ | -------------------- |
-| #1  | 2024-05-10 |      08:00 | 0° @ 0 kn    | CLR             |      15 SM | 25     | ↘ To the south-east |
-| #2  | 2024-05-09 |      09:00 | 0° @ 0 kn    | SCT @ 8,500 ft  |      15 SM | 25     | ↖ To the north-west |
-| #3  | 2024-05-07 |      10:00 | 280° @ 3 kn  | BKN @ 700 ft    |       1 SM | 25     | ↘ To the south-east |
-| #4  | 2024-05-06 |      12:00 | 250° @ 27 kn | FEW @ 2,600 ft  |      15 SM | 25     | ↘ To the south-east |
-| #5  | 2024-05-05 |      13:00 | 260° @ 14 kn | CLR             |      15 SM | 25     | ↙ To the south-west |
-| #6  | 2024-05-02 |      16:00 | 300° @ 15 kn | CLR             |      15 SM | 25     | ↙ To the south-west |
-| #7  | 2024-05-02 |      17:00 | 60° @ 4 kn   | BKN @ 10,000 ft |      15 SM | 25     | ↗ To the north-east |
-| #8  | 2024-04-30 |      18:00 | 220° @ 11 kn | BKN @ 12,000 ft |      15 SM | 25     | ↗ To the north-east |
-| #9  | 2024-04-29 |      20:00 | 280° @ 7 kn  | BKN @ 7,500 ft  |      15 SM | 25     | ← To the west        |
+| #1  | 2024-05-19 |      08:00 | Calm         | CLR             |      15 SM | 25     | ↓ To the south       |
+| #2  | 2024-05-18 |      09:00 | 310° @ 4 kn  | FEW @ 12,000 ft |      15 SM | 25     | ↓ To the south       |
+| #3  | 2024-05-16 |      10:00 | Calm         | CLR             |      15 SM | 25     | ← To the west        |
+| #4  | 2024-05-15 |      12:00 | Calm         | BKN @ 8,500 ft  |      15 SM | 25     | ↓ To the south       |
+| #5  | 2024-05-14 |      13:00 | 300° @ 11 kn | FEW @ 11,000 ft |      15 SM | 25     | → To the east        |
+| #6  | 2024-05-12 |      14:00 | Calm         | FEW @ 8,000 ft  |      15 SM | 25     | ↓ To the south       |
+| #7  | 2024-05-11 |      16:00 | 260° @ 6 kn  | CLR             |      15 SM | 25     | → To the east        |
+| #8  | 2024-05-11 |      17:00 | 110° @ 4 kn  | BKN @ 4,100 ft  |      15 SM | 25     | ← To the west        |
+| #9  | 2024-05-09 |      18:00 | 20° @ 5 kn   | SCT @ 5,500 ft  |      15 SM | 25     | ↑ To the north       |
+| #10 | 2024-05-08 |      20:00 | 270° @ 7 kn  | SCT @ 10,000 ft |      15 SM | 25     | ↗ To the north-east |
 
 ## Installation instructions
 
