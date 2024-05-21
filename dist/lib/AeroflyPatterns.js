@@ -3,7 +3,7 @@ import * as fs from "node:fs/promises";
 import { Airport } from "./Airport.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Configuration } from "./Configuration.js";
-import { FeatureCollection, Feature } from "@fboes/geojson";
+import { FeatureCollection, Feature, MultiLineString, LineString } from "@fboes/geojson";
 import { Scenario } from "./Scenario.js";
 import { DateYielder } from "./DateYielder.js";
 import { Units } from "../data/Units.js";
@@ -96,6 +96,7 @@ export class AeroflyPatterns {
       new Feature(this.airport.position, {
         title: this.airport.name,
         "marker-symbol": "airport",
+        frequency: this.airport.localFrequency,
       }),
     ]);
     this.airport.runways.forEach((r) => {
@@ -103,6 +104,19 @@ export class AeroflyPatterns {
         new Feature(r.position, {
           title: r.id,
           "marker-symbol": r === scenario.activeRunway ? "triangle" : "triangle-stroked",
+          frequency: r.ilsFrequency,
+          isRightPattern: r.isRightPattern,
+        }),
+      );
+    });
+
+    this.airport.navaids.forEach((n) => {
+      geoJson.addFeature(
+        new Feature(n.position, {
+          title: n.id,
+          "marker-symbol": "communications-tower",
+          frequency: n.frequency,
+          type: n.type,
         }),
       );
     });
@@ -113,6 +127,35 @@ export class AeroflyPatterns {
         "marker-symbol": "airfield",
       }),
     );
+
+    const waypoints = scenario.patternWaypoints.map((p) => {
+      return p.position;
+    });
+    waypoints.push(scenario.patternWaypoints[0].position);
+    geoJson.addFeature(
+      new Feature(new LineString(waypoints), {
+        title: "Traffic pattern",
+        "stroke-opacity": 0.2,
+      }),
+    );
+
+    if (scenario.activeRunway) {
+      geoJson.addFeature(
+        new Feature(
+          new LineString([
+            scenario.aircraft.position,
+            scenario.patternWaypoints[2].position,
+            scenario.patternWaypoints[3].position,
+            scenario.patternWaypoints[4].position,
+            scenario.activeRunway?.position,
+          ]),
+          {
+            title: "Flight plan",
+            stroke: "#ff1493",
+          },
+        ),
+      );
+    }
 
     scenario.patternWaypoints.forEach((p) => {
       geoJson.addFeature(

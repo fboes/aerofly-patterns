@@ -122,14 +122,15 @@ export class Scenario {
 
     const exitDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
     const downwindDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
-    const finalDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+    const finalDistance = this.configuration.patternFinalDistance * Units.meterPerNauticalMile;
     const patternOrientation = this.activeRunway.alignment + Degree(this.activeRunway.isRightPattern ? 90 : 270);
-    const patternAltitude = (this.airport.position.elevation ?? 0) + 1000 / Units.feetPerMeter;
+    const patternAltitude =
+      (this.airport.position.elevation ?? 0) + (this.aircraft.data.hasTurbine ? 1500 : 1000) / Units.feetPerMeter;
 
     /**
-     * @type {number} meters to sink per 1 NM to have 3° glide slope
+     * @type {number} meters to sink per meter distance to have 3° glide slope
      */
-    const glideSlope = 319.8 / Units.feetPerMeter;
+    const glideSlope = 319.8 / Units.feetPerMeter / Units.meterPerNauticalMile;
 
     if (this.weather?.windDirection) {
       const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.windDirection);
@@ -140,12 +141,12 @@ export class Scenario {
     const activeRunwayFinal = this.activeRunway.position.getPointBy(
       new Vector(finalDistance, Degree(this.activeRunway.alignment + 180)),
     );
-    const finalAltitude = (this.airport.position.elevation ?? 0) + this.configuration.patternDistance * glideSlope;
+    const finalAltitude = (this.airport.position.elevation ?? 0) + finalDistance * glideSlope;
     activeRunwayFinal.elevation = Math.min(finalAltitude, patternAltitude);
 
     // Base
     const activeRunwayBase = activeRunwayFinal.getPointBy(new Vector(downwindDistance, patternOrientation));
-    const baseAltitude = finalAltitude + this.configuration.patternDistance * glideSlope;
+    const baseAltitude = finalAltitude + downwindDistance * glideSlope;
     activeRunwayBase.elevation = Math.min(baseAltitude, patternAltitude);
 
     // Crosswind

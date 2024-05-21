@@ -13,7 +13,8 @@
       },
       "properties": {
         "title": "Key West International",
-        "marker-symbol": "airport"
+        "marker-symbol": "airport",
+        "frequency": 118.2
       }
     },
     {
@@ -28,7 +29,9 @@
       },
       "properties": {
         "title": "09",
-        "marker-symbol": "triangle-stroked"
+        "marker-symbol": "triangle",
+        "frequency": 0,
+        "isRightPattern": true
       }
     },
     {
@@ -43,7 +46,9 @@
       },
       "properties": {
         "title": "27",
-        "marker-symbol": "triangle"
+        "marker-symbol": "triangle-stroked",
+        "frequency": 0,
+        "isRightPattern": false
       }
     },
     {
@@ -51,8 +56,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.61712911604063,
-          24.526720449600745,
+          -81.7864,
+          24.5483,
+          1
+        ]
+      },
+      "properties": {
+        "title": "FIS",
+        "marker-symbol": "communications-tower",
+        "frequency": 332,
+        "type": "NDB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.8005,
+          24.5859,
+          3
+        ]
+      },
+      "properties": {
+        "title": "EYW",
+        "marker-symbol": "communications-tower",
+        "frequency": 113.5,
+        "type": "VORTAC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6887988995418,
+          24.672563308193208,
           761.9999756160008
         ]
       },
@@ -64,15 +103,96 @@
     {
       "type": "Feature",
       "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -81.73404341121,
+            24.556508175831503,
+            305.79999024640034
+          ],
+          [
+            -81.7337238704865,
+            24.539855276056702,
+            305.79999024640034
+          ],
+          [
+            -81.7596804603158,
+            24.539447100225196,
+            305.79999024640034
+          ],
+          [
+            -81.78563686531447,
+            24.539033707845388,
+            195.95007376159765
+          ],
+          [
+            -81.78595640394609,
+            24.55568660762018,
+            98.47503688079883
+          ],
+          [
+            -81.73404341121,
+            24.556508175831503,
+            305.79999024640034
+          ]
+        ]
+      },
+      "properties": {
+        "title": "Traffic pattern",
+        "marker-symbol": "racetrack",
+        "stroke-opacity": 0.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -81.6887988995418,
+            24.672563308193208,
+            761.9999756160008
+          ],
+          [
+            -81.7596804603158,
+            24.539447100225196,
+            305.79999024640034
+          ],
+          [
+            -81.78563686531447,
+            24.539033707845388,
+            195.95007376159765
+          ],
+          [
+            -81.78595640394609,
+            24.55568660762018,
+            98.47503688079883
+          ],
+          [
+            -81.76764761743071,
+            24.55597839079851,
+            1
+          ]
+        ]
+      },
+      "properties": {
+        "title": "Flight plan",
+        "marker-symbol": "airfield",
+        "stroke": "#ff1493"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.78595635311622,
-          24.555683988435014,
+          -81.73404341121,
+          24.556508175831503,
           305.79999024640034
         ]
       },
       "properties": {
-        "title": "27-CROSS",
+        "title": "09-CROSS",
         "marker-symbol": "racetrack"
       }
     },
@@ -81,13 +201,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.78563681449128,
-          24.53903108866022,
+          -81.7337238704865,
+          24.539855276056702,
           305.79999024640034
         ]
       },
       "properties": {
-        "title": "27-DOWN",
+        "title": "09-DOWN",
         "marker-symbol": "racetrack"
       }
     },
@@ -102,7 +222,7 @@
         ]
       },
       "properties": {
-        "title": "27-ENTRY",
+        "title": "09-ENTRY",
         "marker-symbol": "racetrack"
       }
     },
@@ -111,13 +231,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.73372392017859,
-          24.539857895254762,
+          -81.78563686531447,
+          24.539033707845388,
           195.95007376159765
         ]
       },
       "properties": {
-        "title": "27-BASE",
+        "title": "09-BASE",
         "marker-symbol": "racetrack"
       }
     },
@@ -126,13 +246,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.73404346090877,
-          24.55651079502957,
+          -81.78595640394609,
+          24.55568660762018,
           98.47503688079883
         ]
       },
       "properties": {
-        "title": "27-FINAL",
+        "title": "09-FINAL",
         "marker-symbol": "racetrack"
       }
     }

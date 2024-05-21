@@ -37,9 +37,11 @@ Options:
                             Example value: 145
   --missions=..             Number of missions in file.
                             Default value: 10
-  --distance=..             Initial distance from airport in Nautical Miles.
+  --distance=..             Initial aircraft distance from airport in Nautical Miles.
                             Default value: 8
   --pattern-distance=..     Pattern distance from airport runway in Nautical Miles.
+                            Default value: 1
+  --pattern-final-distance=..  Pattern final distance from airport runway edge in Nautical Miles.
                             Default value: 1
   --rnd-heading=..          Randomized aircraft heading deviation from direct heading to airport in degree.
                             Default value: 0

@@ -1,5 +1,9 @@
 # Changelog
 
+- Added navigational aids to GeoJSON
+- Improved GeoJSON output
+- Added alternate TPA for turbine planes
+
 ## 2.1.2
 
 - Improved altitude calculation for glide slope

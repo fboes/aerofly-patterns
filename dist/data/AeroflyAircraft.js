@@ -7,6 +7,7 @@
  * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water
  * @property {string} icaoCode
  * @property {boolean} [hasNoRadioNav] if no VOR receiver is onboard
+ * @property {boolean} [hasTurbine] if plane is powered by turbines
  */
 
 /**
@@ -20,6 +21,7 @@
  * @property {number} [runwayTakeoff] length in feet
  * @property {number} [runwayLanding] length in feet
  * @property {boolean} [hasNoRadioNav] if no VOR receiver is onboard
+ * @property {boolean} [hasTurbine] if plane is powered by turbines
  */
 
 /**
@@ -35,6 +37,7 @@ export const AeroflyAircrafts = {
     cruiseSpeed: 447,
     runwayTakeoff: 7186,
     runwayLanding: 4725,
+    hasTurbine: true,
   },
   b58: {
     // https://beechcraft.txtav.com/en/baron-g58
@@ -71,6 +74,7 @@ export const AeroflyAircrafts = {
     icaoCode: "CONC",
     callsign: "FBVFB",
     cruiseSpeed: 1165,
+    hasTurbine: true,
   },
   ec135: {
     name: "Eurocopter EC135",
@@ -89,6 +93,7 @@ export const AeroflyAircrafts = {
     cruiseSpeed: 570,
     runwayTakeoff: 985,
     runwayLanding: 1641,
+    hasTurbine: true,
   },
   f18: {
     name: "McDonnell Douglas F/A-18 Hornet",
@@ -98,6 +103,7 @@ export const AeroflyAircrafts = {
     cruiseSpeed: 570,
     runwayTakeoff: 1477,
     runwayLanding: 1313,
+    hasTurbine: true,
   },
   jungmeister: {
     name: "Bücker Bü 133 Jungmeister",
@@ -117,6 +123,7 @@ export const AeroflyAircrafts = {
     cruiseSpeed: 450,
     runwayTakeoff: 4348,
     runwayLanding: 2658,
+    hasTurbine: true,
   },
   mb339: {
     name: "Aermacchi MB-339",
@@ -126,6 +133,7 @@ export const AeroflyAircrafts = {
     cruiseSpeed: 350,
     runwayTakeoff: 1772,
     runwayLanding: 1542,
+    hasTurbine: true,
   },
   p38: {
     name: "Lockheed P-38",
@@ -177,6 +185,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: null,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   asg29: {
     name: "Schleicher ASG 29",
@@ -195,6 +204,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 450,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   b737_900: {
     name: "Boeing 737-900",
@@ -204,6 +214,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 450,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   b747: {
     name: "Boeing 747",
@@ -213,6 +224,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 450,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   b777_300er: {
     name: "Boeing 777",
@@ -222,6 +234,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 450,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   b787: {
     name: "Boeing 787 Dreamliner Dreamliner",
@@ -231,6 +244,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 450,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   bf109e: {
     name: "Messerschmitt Bf 109",
@@ -260,6 +274,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: null,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   dr1: {
     name: "Fokker Dr.I",
@@ -289,6 +304,7 @@ const AeroflyAircraftsBasic = {
     // cruiseSpeed: 360,
     // runwayTakeoff: null,
     // runwayLanding: null,
+    hasTurbine: true,
   },
   swift: {
     name: "Aériane Swift",

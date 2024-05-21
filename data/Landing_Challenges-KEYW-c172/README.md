@@ -21,16 +21,16 @@ Get [more information about Key West International Airport on SkyVector](https:/
 
 | No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway  | Aircraft position    |
 | :-: | ---------- | ---------: | ------------ | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-05-19 |      08:00 | 230° @ 6 kn  | CLR            |       9 SM | 27      | → To the east        |
-| #2  | 2024-05-18 |      09:00 | 160° @ 11 kn | CLR            |      15 SM | 09 (RP) | ↘ To the south-east |
-| #3  | 2024-05-16 |      11:00 | 230° @ 13 kn | FEW @ 1,800 ft |      15 SM | 27      | ← To the west        |
-| #4  | 2024-05-15 |      12:00 | 200° @ 8 kn  | FEW @ 1,400 ft |      15 SM | 27      | → To the east        |
-| #5  | 2024-05-14 |      13:00 | 150° @ 7 kn  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #6  | 2024-05-12 |      15:00 | 120° @ 8 kn  | FEW @ 2,800 ft |      15 SM | 09 (RP) | ↘ To the south-east |
-| #7  | 2024-05-11 |      16:00 | 270° @ 7 kn  | FEW @ 2,700 ft |      15 SM | 27      | → To the east        |
-| #8  | 2024-05-10 |      17:00 | 10° @ 3 kn   | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
-| #9  | 2024-05-09 |      19:00 | 100° @ 11 kn | FEW @ 2,000 ft |      15 SM | 09 (RP) | ← To the west        |
-| #10 | 2024-05-08 |      20:00 | 100° @ 11 kn | CLR            |      15 SM | 09 (RP) | ↑ To the north       |
+| #1  | 2024-05-20 |      08:00 | 30° @ 3 kn   | BKN @ 1,900 ft |       8 SM | 09 (RP) | ↗ To the north-east |
+| #2  | 2024-05-19 |      09:00 | 230° @ 8 kn  | CLR            |      15 SM | 27      | ↘ To the south-east |
+| #3  | 2024-05-17 |      11:00 | 180° @ 9 kn  | CLR            |      15 SM | 27      | ↙ To the south-west |
+| #4  | 2024-05-16 |      12:00 | 260° @ 13 kn | FEW @ 1,600 ft |      15 SM | 27      | ↙ To the south-west |
+| #5  | 2024-05-15 |      13:00 | 290° @ 8 kn  | BKN @ 2,000 ft |      15 SM | 27      | ↘ To the south-east |
+| #6  | 2024-05-13 |      15:00 | 120° @ 12 kn | CLR            |      15 SM | 09 (RP) | ↓ To the south       |
+| #7  | 2024-05-12 |      16:00 | 140° @ 6 kn  | FEW @ 3,000 ft |      15 SM | 09 (RP) | ↗ To the north-east |
+| #8  | 2024-05-11 |      17:00 | 280° @ 6 kn  | CLR            |      15 SM | 27      | ↘ To the south-east |
+| #9  | 2024-05-10 |      19:00 | 120° @ 8 kn  | CLR            |      15 SM | 09 (RP) | ↙ To the south-west |
+| #10 | 2024-05-09 |      20:00 | 80° @ 8 kn   | CLR            |      15 SM | 09 (RP) | ↑ To the north       |
 
 ## Installation instructions
 

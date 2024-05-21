@@ -37,12 +37,17 @@ export class Configuration {
     distance: {
       type: "string",
       default: "8",
-      description: "Initial distance from airport in Nautical Miles.",
+      description: "Initial aircraft distance from airport in Nautical Miles.",
     },
     "pattern-distance": {
       type: "string",
       default: "1",
       description: "Pattern distance from airport runway in Nautical Miles.",
+    },
+    "pattern-final-distance": {
+      type: "string",
+      default: "1",
+      description: "Pattern final distance from airport runway edge in Nautical Miles.",
     },
     "rnd-heading": {
       type: "string",
@@ -128,6 +133,11 @@ export class Configuration {
      * @type {number} in Nautical Miles
      */
     this.patternDistance = Number(values["pattern-distance"]);
+
+    /**
+     * @type {number} in Nautical miles
+     */
+    this.patternFinalDistance = Number(values["pattern-final-distance"]);
 
     /**
      * @type {number} Randomized aircraft heading deviation from direct heading to airport in degree.

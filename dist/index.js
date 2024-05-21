@@ -24,4 +24,4 @@ ${Configuration.argumentList()}
 
 const app = new AeroflyPatterns(configuration);
 await app.build(process.cwd());
-console.log("✅ Done");
+console.log(`✅  Done with ${app.airport?.name} (${app.airport?.id})`);
