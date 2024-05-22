@@ -120,12 +120,32 @@ export class Scenario {
       return difference(a.alignment) < difference(b.alignment) ? a : b;
     });
 
+    /**
+     * @type {number} in meters
+     */
     const exitDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+
+    /**
+     * @type {number} in meters
+     */
     const downwindDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+
+    /**
+     * @type {number} in meters
+     */
     const finalDistance = this.configuration.patternFinalDistance * Units.meterPerNauticalMile;
-    const patternOrientation = this.activeRunway.alignment + Degree(this.activeRunway.isRightPattern ? 90 : 270);
+
+    /**
+     * @type {number} in degree
+     */
+    const patternOrientation = Degree(this.activeRunway.alignment + (this.activeRunway.isRightPattern ? 90 : 270));
+
+    /**
+     * @type {number} in meters MSL
+     */
     const patternAltitude =
-      (this.airport.position.elevation ?? 0) + (this.aircraft.data.hasTurbine ? 1500 : 1000) / Units.feetPerMeter;
+      (this.configuration.patternAltitude ??
+        (this.airport.position.elevation ?? 0) + (this.aircraft.data.hasTurbine ? 1500 : 1000)) / Units.feetPerMeter;
 
     /**
      * @type {number} meters to sink per meter distance to have 3° glide slope

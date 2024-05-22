@@ -20,16 +20,16 @@ Get [more information about Eagle County Regional Airport on SkyVector](https://
 
 | No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position    |
 | :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-05-20 |      08:00 | Calm         | CLR             |      15 SM | 25      | ↑ To the north       |
-| #2  | 2024-05-19 |      09:00 | 0° @ 3 kn    | CLR             |      15 SM | 25      | ↘ To the south-east |
-| #3  | 2024-05-17 |      10:00 | 0° @ 3 kn    | CLR             |      15 SM | 25      | ↖ To the north-west |
-| #4  | 2024-05-16 |      12:00 | 0° @ 5 kn    | CLR             |      15 SM | 25      | ↙ To the south-west |
-| #5  | 2024-05-15 |      13:00 | 100° @ 4 kn  | BKN @ 8,500 ft  |      15 SM | 25      | ↗ To the north-east |
-| #6  | 2024-05-13 |      14:00 | 0° @ 5 kn    | SCT @ 9,000 ft  |      15 SM | 25      | → To the east        |
-| #7  | 2024-05-12 |      16:00 | 350° @ 14 kn | SCT @ 11,000 ft |      15 SM | 25      | ↙ To the south-west |
-| #8  | 2024-05-12 |      17:00 | 220° @ 11 kn | BKN @ 8,500 ft  |      15 SM | 25      | ↖ To the north-west |
-| #9  | 2024-05-10 |      18:00 | 40° @ 6 kn   | FEW @ 6,000 ft  |      15 SM | 07 (RP) | ↑ To the north       |
-| #10 | 2024-05-09 |      20:00 | 110° @ 4 kn  | OVC @ 8,000 ft  |      15 SM | 25      | ↖ To the north-west |
+| #1  | 2024-05-21 |      08:00 | 250° @ 7 kn  | CLR             |      15 SM | 25      | ← To the west        |
+| #2  | 2024-05-20 |      09:00 | Calm         | CLR             |      15 SM | 25      | ↓ To the south       |
+| #3  | 2024-05-18 |      10:00 | Calm         | FEW @ 11,000 ft |      15 SM | 25      | → To the east        |
+| #4  | 2024-05-17 |      12:00 | 260° @ 18 kn | CLR             |      15 SM | 25      | ↓ To the south       |
+| #5  | 2024-05-16 |      13:00 | 180° @ 7 kn  | CLR             |      15 SM | 25      | ↖ To the north-west |
+| #6  | 2024-05-14 |      14:00 | 260° @ 7 kn  | CLR             |      15 SM | 25      | → To the east        |
+| #7  | 2024-05-13 |      16:00 | 0° @ 6 kn    | SCT @ 11,000 ft |      15 SM | 07 (RP) | ↘ To the south-east |
+| #8  | 2024-05-13 |      17:00 | 270° @ 10 kn | SCT @ 11,000 ft |      15 SM | 25      | → To the east        |
+| #9  | 2024-05-11 |      18:00 | 340° @ 3 kn  | FEW @ 7,000 ft  |      15 SM | 25      | ↓ To the south       |
+| #10 | 2024-05-10 |      20:00 | 10° @ 4 kn   | OVC @ 8,000 ft  |      15 SM | 25      | ↓ To the south       |
 
 ## Installation instructions
 

@@ -3,6 +3,7 @@
 - Added navigational aids to GeoJSON
 - Improved GeoJSON output
 - Added alternate TPA for turbine planes
+- Added TPA configuration
 
 ## 2.1.2
 

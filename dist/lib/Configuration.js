@@ -26,7 +26,7 @@ export class Configuration {
     "min-altitude": {
       type: "string",
       default: "0",
-      description: "Minimum safe altitude of aircraft, in 100ft. At least airport elevation.",
+      description: "Minimum safe altitude of aircraft, in 100ft MSL. At least airport elevation.",
       example: "145",
     },
     missions: {
@@ -38,6 +38,11 @@ export class Configuration {
       type: "string",
       default: "8",
       description: "Initial aircraft distance from airport in Nautical Miles.",
+    },
+    "pattern-altitude": {
+      type: "string",
+      default: undefined,
+      description: "Pattern altitude in ft MSL. Defaults to +1000ft airport elevation.",
     },
     "pattern-distance": {
       type: "string",
@@ -128,6 +133,11 @@ export class Configuration {
      * @type {number} in Nautical Miles
      */
     this.initialDistance = Number(values["distance"]);
+
+    /**
+     * @type {number|undefined} in ft MSL
+     */
+    this.patternAltitude = values["pattern-altitude"] ? Number(values["pattern-altitude"]) : undefined;
 
     /**
      * @type {number} in Nautical Miles
