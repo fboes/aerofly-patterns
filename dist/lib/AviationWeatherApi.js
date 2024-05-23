@@ -33,7 +33,7 @@ import { Point } from "@fboes/geojson";
  * @property {string} id "01L/19R"
  * @property {string} dimension "10801x150" in feet
  * @property {"A"|"C"|"G"} surface "A" Asphalt, "C" Concrete, "G" Grass
- * @property {string} alignment "013"
+ * @property {string} alignment "013" or "-"
  * @see https://aviationweather.gov/data/api/#/Data/dataAirport
  */
 

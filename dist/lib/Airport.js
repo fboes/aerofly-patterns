@@ -15,7 +15,7 @@ export class Airport {
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport} airportJson
    * @param {import('./Configuration.js').Configuration?} configuration
    */
-  constructor(airportJson, configuration) {
+  constructor(airportJson, configuration = null) {
     this.id = airportJson.id;
     this.position = new Point(airportJson.lon, airportJson.lat, airportJson.elev);
 
@@ -199,10 +199,12 @@ export class Airport {
         dimension[index] = d;
       });
 
+    const alignmentBase = runwayJson.alignment !== "-" ? Number(runwayJson.alignment) : 0;
+
     /**
      * @type {[number, number]} both directions
      */
-    const alignment = [Number(runwayJson.alignment), Degree(Number(runwayJson.alignment) + 180)];
+    const alignment = [alignmentBase, Degree(alignmentBase + 180)];
 
     /**
      * @type {[Point,Point]} both directions
@@ -212,24 +214,40 @@ export class Airport {
       airportPosition.getPointBy(new Vector(dimension[0] / 2 / Units.feetPerMeter, alignment[1] + 180)),
     ];
 
-    return [
+    const rightPatternRunways = [
+      configuration && configuration.rightPatternRunways.length
+        ? configuration.rightPatternRunways.indexOf(id[0]) !== -1
+        : id[0].endsWith("R"),
+      configuration && configuration.rightPatternRunways.length
+        ? configuration.rightPatternRunways.indexOf(id[1]) !== -1
+        : id[1].endsWith("R"),
+    ];
+
+    const runways = [
       new AirportRunway(
         id[0],
         dimension,
         alignment[0],
         positions[0],
-        configuration?.rightPatternRunways.indexOf(id[0]) !== -1,
+        rightPatternRunways[0],
         configuration?.preferredRunways.indexOf(id[0]) !== -1,
       ),
-      new AirportRunway(
-        id[1],
-        dimension,
-        alignment[1],
-        positions[1],
-        configuration?.rightPatternRunways.indexOf(id[1]) !== -1,
-        configuration?.preferredRunways.indexOf(id[1]) !== -1,
-      ),
     ];
+
+    if (id[1] !== "") {
+      runways.push(
+        new AirportRunway(
+          id[1],
+          dimension,
+          alignment[1],
+          positions[1],
+          rightPatternRunways[1],
+          configuration?.preferredRunways.indexOf(id[1]) !== -1,
+        ),
+      );
+    }
+
+    return runways;
   }
 }
 
@@ -276,7 +294,7 @@ export class AirportRunway {
      */
     this.ilsFrequency = ilsFrequency;
 
-    const endMatch = id.match(/[SGHUW]$/);
+    const endMatch = id.match(/([SGUW]$)|H/);
 
     /**
      * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water, all

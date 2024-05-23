@@ -1,9 +1,12 @@
 # Changelog
 
+## 2.1.2
+
 - Added navigational aids to GeoJSON
 - Improved GeoJSON output
-- Added alternate TPA for turbine planes
 - Added TPA configuration
+- Added simple mechanism to determine right pattern
+- Improved support for helipads
 
 ## 2.1.2
 

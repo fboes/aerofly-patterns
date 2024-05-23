@@ -72,6 +72,11 @@ export class Scenario {
      * @type {import("./AeroflyPatterns.js").AeroflyPatternsWaypointable[]}
      */
     this.patternWaypoints = [];
+
+    /**
+     * @type {import("./AeroflyPatterns.js").AeroflyPatternsWaypointable?}
+     */
+    this.entryWaypoint = null;
   }
 
   async build() {
@@ -143,9 +148,10 @@ export class Scenario {
     /**
      * @type {number} in meters MSL
      */
-    const patternAltitude =
-      (this.configuration.patternAltitude ??
-        (this.airport.position.elevation ?? 0) + (this.aircraft.data.hasTurbine ? 1500 : 1000)) / Units.feetPerMeter;
+    let patternAltitude = this.configuration.patternAltitude / Units.feetPerMeter;
+    if (!this.configuration.isPatternAltitudeMsl && this.airport.position.elevation) {
+      patternAltitude += this.airport.position.elevation;
+    }
 
     /**
      * @type {number} meters to sink per meter distance to have 3° glide slope
@@ -201,6 +207,16 @@ export class Scenario {
         position: activeRunwayFinal,
       },
     ];
+
+    this.entryWaypoint = {
+      id: this.activeRunway.id + "-VENTRY",
+      position: activeRunwayEntry.getPointBy(
+        new Vector(
+          0.5 * Units.meterPerNauticalMile,
+          Degree(patternOrientation + (this.activeRunway.isRightPattern ? -45 : 45)),
+        ),
+      ),
+    };
   }
 
   /**

@@ -32,13 +32,15 @@ Arguments:
 Options:
   --right-pattern=..        Comma-separated list of runway names with right-turn pattern.
                             Example value: 24,33
-  --min-altitude=..         Minimum safe altitude of aircraft, in 100ft. At least airport elevation.
+  --min-altitude=..         Minimum safe altitude of aircraft, in 100ft MSL. At least airport elevation.
                             Default value: 0
                             Example value: 145
   --missions=..             Number of missions in file.
                             Default value: 10
   --distance=..             Initial aircraft distance from airport in Nautical Miles.
                             Default value: 8
+  --pattern-altitude=..     Pattern altitude in ft AGL. For MSL see `--pattern-altitude-msl`
+                            Default value: 1000
   --pattern-distance=..     Pattern distance from airport runway in Nautical Miles.
                             Default value: 1
   --pattern-final-distance=..  Pattern final distance from airport runway edge in Nautical Miles.
@@ -47,6 +49,7 @@ Options:
                             Default value: 0
   --prefer-rwy=..           Comma-separated list of runway names which are preferred if wind is indecisive.
                             Example value: 24,33
+  --pattern-altitude-msl, -m  Pattern altitude is in MSL instead of AGL
   --directory, -d           Create files in a subdirectory instead of current directory.
   --geojson, -g             Create a GeoJSON file.
   --readme, -r              Create a `README.md`.

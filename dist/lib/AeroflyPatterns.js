@@ -144,6 +144,7 @@ export class AeroflyPatterns {
         new Feature(
           new LineString([
             scenario.aircraft.position,
+            scenario.entryWaypoint?.position,
             scenario.patternWaypoints[2].position,
             scenario.patternWaypoints[3].position,
             scenario.patternWaypoints[4].position,

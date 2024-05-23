@@ -41,8 +41,8 @@ export class Configuration {
     },
     "pattern-altitude": {
       type: "string",
-      default: undefined,
-      description: "Pattern altitude in ft MSL. Defaults to +1000ft airport elevation.",
+      default: "1000",
+      description: "Pattern altitude in ft AGL. For MSL see `--pattern-altitude-msl`",
     },
     "pattern-distance": {
       type: "string",
@@ -64,6 +64,12 @@ export class Configuration {
       default: "",
       description: "Comma-separated list of runway names which are preferred if wind is indecisive.",
       example: "24,33",
+    },
+    "pattern-altitude-msl": {
+      type: "boolean",
+      short: "m",
+      default: false,
+      description: "Pattern altitude is in MSL instead of AGL",
     },
     directory: {
       type: "boolean",
@@ -135,9 +141,9 @@ export class Configuration {
     this.initialDistance = Number(values["distance"]);
 
     /**
-     * @type {number|undefined} in ft MSL
+     * @type {number} in ft AGL (or MSL if isPatternAltitudeMsl)
      */
-    this.patternAltitude = values["pattern-altitude"] ? Number(values["pattern-altitude"]) : undefined;
+    this.patternAltitude = Number(values["pattern-altitude"]);
 
     /**
      * @type {number} in Nautical Miles
@@ -160,6 +166,11 @@ export class Configuration {
     this.preferredRunways = String(values["prefer-rwy"])
       .toUpperCase()
       .split(/[,\s]+/);
+
+    /**
+     * @type {boolean} if this.patternAltitude is in MSL instead of AGL
+     */
+    this.isPatternAltitudeMsl = Boolean(values["pattern-altitude-msl"]);
 
     /**
      * @type {boolean} if files should be created in subfolder

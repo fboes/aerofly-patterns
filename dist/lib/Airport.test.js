@@ -7,6 +7,7 @@ export class AirportTest {
   constructor() {
     this.checkKansasCity();
     this.checkMarthasVineyard();
+    this.checkStockton();
   }
 
   checkKansasCity() {
@@ -110,5 +111,64 @@ export class AirportTest {
     assert.strictEqual(airport.localFrequency, 121.4);
 
     console.log(`✅ ${this.constructor.name}.checkMarthasVineyard successful`);
+  }
+
+  checkStockton() {
+    /** @type {import('./AviationWeatherApi.js').AviationWeatherApiAirport} */
+    const airportJson = {
+      id: "KSCK",
+      name: "STOCKTON/STOCKTON_METRO",
+      lat: 37.8944,
+      lon: -121.2387,
+      elev: 10.1,
+      mag_dec: "14E",
+      rwy_num: 3,
+      tower: "T",
+      beacon: "B",
+      runways: [
+        {
+          id: "11L/29R",
+          dimension: "10249x150",
+          surface: "A",
+          alignment: "128",
+        },
+        {
+          id: "11R/29L",
+          dimension: "4448x75",
+          surface: "A",
+          alignment: "128",
+        },
+        {
+          id: "H1",
+          dimension: "70x70",
+          surface: "C",
+          alignment: "-",
+        },
+      ],
+      freqs: [
+        {
+          type: "ATIS",
+          freq: 118.25,
+        },
+        {
+          type: "LCL/P",
+          freq: 120.3,
+        },
+      ],
+    };
+
+    const airport = new Airport(airportJson);
+    assert.strictEqual(airport.id, "KSCK");
+    assert.strictEqual(airport.hasTower, true);
+    assert.strictEqual(airport.hasBeacon, true);
+
+    assert.strictEqual(airport.runways.length, 5);
+    assert.strictEqual(airport.runways[0].id, "11L");
+    assert.strictEqual(airport.runways[0].isRightPattern, false);
+    assert.strictEqual(airport.runways[2].id, "11R");
+    assert.strictEqual(airport.runways[2].isRightPattern, true);
+    assert.strictEqual(airport.runways[4].runwayType, "H");
+
+    console.log(`✅ ${this.constructor.name}.checkStockton successful`);
   }
 }
