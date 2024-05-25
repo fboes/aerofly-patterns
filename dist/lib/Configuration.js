@@ -121,9 +121,11 @@ export class Configuration {
     /**
      * @type {string[]} runway IDs which will be right pattern runways
      */
-    this.rightPatternRunways = String(values["right-pattern"])
-      .toUpperCase()
-      .split(/[,\s]+/);
+    this.rightPatternRunways = values["right-pattern"]
+      ? String(values["right-pattern"])
+          .toUpperCase()
+          .split(/[,\s]+/)
+      : [];
 
     /**
      * @type {number} in feet
@@ -163,9 +165,11 @@ export class Configuration {
     /**
      * @type {string[]} runway IDs which will be prefrerred if wind is indecisive
      */
-    this.preferredRunways = String(values["prefer-rwy"])
-      .toUpperCase()
-      .split(/[,\s]+/);
+    this.preferredRunways = values["prefer-rwy"]
+      ? String(values["prefer-rwy"])
+          .toUpperCase()
+          .split(/[,\s]+/)
+      : [];
 
     /**
      * @type {boolean} if this.patternAltitude is in MSL instead of AGL

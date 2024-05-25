@@ -3,7 +3,7 @@ import * as fs from "node:fs/promises";
 import { Airport } from "./Airport.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
 import { Configuration } from "./Configuration.js";
-import { FeatureCollection, Feature, MultiLineString, LineString } from "@fboes/geojson";
+import { FeatureCollection, Feature, LineString } from "@fboes/geojson";
 import { Scenario } from "./Scenario.js";
 import { DateYielder } from "./DateYielder.js";
 import { Units } from "../data/Units.js";
@@ -103,7 +103,9 @@ export class AeroflyPatterns {
       geoJson.addFeature(
         new Feature(r.position, {
           title: r.id,
-          "marker-symbol": r === scenario.activeRunway ? "triangle" : "triangle-stroked",
+          "marker-symbol":
+            r === scenario.activeRunway ? "triangle" : r.runwayType === "H" ? "heliport" : "triangle-stroked",
+          alignment: r.alignment,
           frequency: r.ilsFrequency,
           isRightPattern: r.isRightPattern,
         }),
@@ -336,8 +338,8 @@ export class AeroflyPatterns {
       "",
       "## Included missions",
       "",
-      `| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway  | Aircraft position   |`,
-      `| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | ------- | ------------------- |`,
+      `| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway   | Aircraft position   |`,
+      `| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | -------- | ------------------- |`,
     );
     this.scenarios.forEach((s, index) => {
       const lst = Math.round((s.date.getUTCHours() + s.airport.lstOffset + 24) % 24);
@@ -357,7 +359,7 @@ export class AeroflyPatterns {
               : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kn`,
             clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
-            pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 7),
+            pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 8),
             Formatter.getDirectionArrow(s.aircraft.vectorFromAirport.bearing) +
               " To the " +
               pad(Formatter.getDirection(s.aircraft.vectorFromAirport.bearing), 10),

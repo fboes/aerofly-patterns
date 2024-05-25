@@ -26,6 +26,7 @@ export class Airport {
       .replace(/_/g, " ")
       .replace(/\bINTL\b/g, "INTERNATIONAL")
       .replace(/\bRGNL\b/g, "REGIONAL")
+      .replace(/\bFLD\b/g, "FIELD")
       .replace(/(\/)/g, " $1 ")
       .toLowerCase()
       .replace(/(^|\s)[a-z]/g, (char) => {
@@ -177,7 +178,7 @@ export class Airport {
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiRunway} runwayJson
    * @param {Point} airportPosition
    * @param  {import('./Configuration.js').Configuration?} configuration
-   * @returns {[AirportRunway, AirportRunway]}
+   * @returns {AirportRunway[]} both directions, or in case of helipads on single helipad
    */
   buildRunways(runwayJson, airportPosition, configuration) {
     /**
@@ -199,6 +200,7 @@ export class Airport {
         dimension[index] = d;
       });
 
+    // Helipads
     const alignmentBase = runwayJson.alignment !== "-" ? Number(runwayJson.alignment) : 0;
 
     /**
@@ -274,10 +276,12 @@ export class AirportRunway {
      */
     this.dimension = dimension;
 
+    const alignmentAdjustment = id.endsWith("R") ? 0.1 : 0;
+
     /**
      * @type {number}
      */
-    this.alignment = Degree(alignment);
+    this.alignment = Degree(alignment + alignmentAdjustment);
 
     /**
      * @type {boolean}

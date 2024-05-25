@@ -1,12 +1,13 @@
 # Changelog
 
-## 2.1.2
+## 2.2.0
 
 - Added navigational aids to GeoJSON
 - Improved GeoJSON output
 - Added TPA configuration
 - Added simple mechanism to determine right pattern
 - Improved support for helipads
+- Improved support for "L"/"R" runways
 
 ## 2.1.2
 
