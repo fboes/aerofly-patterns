@@ -372,16 +372,6 @@ class ScenarioAircraft {
 
 export class ScenarioWeather {
   /**
-   * @type {number} 0..1
-   */
-  #cloudCover = 0;
-
-  /**
-   * @type {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
-   */
-  #cloudCoverCode = "CLR";
-
-  /**
    * @param {import('./AviationWeatherApi.js').AviationWeatherApiMetar} weatherJson
    */
   constructor(weatherJson) {
@@ -405,12 +395,9 @@ export class ScenarioWeather {
      */
     this.visibility = typeof weatherJson.visib === "string" ? 15 : weatherJson.visib;
 
-    this.cloudCoverCode = weatherJson.clouds[0]?.cover;
-
-    /**
-     * @type {number} in ft
-     */
-    this.cloudBase = weatherJson.clouds[0]?.base ?? 0;
+    this.clouds = weatherJson.clouds.map((c) => {
+      return new ScenarioWeatherCloud(c.cover, c.base);
+    });
 
     /**
      * @type {number} 0..1
@@ -423,6 +410,37 @@ export class ScenarioWeather {
    */
   get turbulenceStrength() {
     return Math.min(1, this.windSpeed / 80 + this.windGusts / 20);
+  }
+}
+
+export class ScenarioWeatherCloud {
+  /**
+   * @type {number} 0..1
+   */
+  #cloudCover = 0;
+
+  /**
+   * @type {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
+   */
+  #cloudCoverCode = "CLR";
+
+  /**
+   * @param {"CAVOK"|"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cover
+   * @param {number?} base
+   */
+  constructor(cover, base) {
+    this.cloudCoverCode = cover;
+
+    /**
+     * @type {number} in ft
+     */
+    this.cloudBase = base ?? 0;
+  }
+  /**
+   * @returns {number} 0..1
+   */
+  get cloudCover() {
+    return this.#cloudCover;
   }
 
   /**
@@ -454,12 +472,5 @@ export class ScenarioWeather {
    */
   get cloudCoverCode() {
     return this.#cloudCoverCode;
-  }
-
-  /**
-   * @returns {number} 0..1
-   */
-  get cloudCover() {
-    return this.#cloudCover;
   }
 }

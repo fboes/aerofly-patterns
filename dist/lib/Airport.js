@@ -45,7 +45,7 @@ export class Airport {
     this.runways = [];
     airportJson.runways.map((r) => {
       this.buildRunways(r, this.position, configuration).forEach((runway) => {
-        this.runways.push(runway);
+        runway && this.runways.push(runway);
       });
     });
 
@@ -200,8 +200,15 @@ export class Airport {
         dimension[index] = d;
       });
 
-    // Helipads
-    const alignmentBase = runwayJson.alignment !== "-" ? Number(runwayJson.alignment) : 0;
+    // Helipads & Water runways get an approximate alignment
+    if (runwayJson.alignment === "-") {
+      runwayJson.alignment = id[0].replace(/\D/g, "") + "0";
+    }
+
+    const alignmentBase = Number(runwayJson.alignment);
+    if (isNaN(alignmentBase)) {
+      return [];
+    }
 
     /**
      * @type {[number, number]} both directions

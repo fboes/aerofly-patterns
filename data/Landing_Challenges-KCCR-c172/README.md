@@ -19,18 +19,18 @@ Get [more information about Concord / Buchanan Field Airport on SkyVector](https
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds | Visibility | Runway   | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | ------ | ---------: | -------- | -------------------- |
-| #1  | 2024-05-23 |      08:00 | 280° @ 9 kn  | CLR    |      15 SM | 32L      | ↙ To the south-west |
-| #2  | 2024-05-22 |      09:00 | 190° @ 4 kn  | CLR    |      15 SM | 19R (RP) | ↖ To the north-west |
-| #3  | 2024-05-20 |      10:00 | 0° @ 6 kn    | CLR    |      15 SM | 01L      | ↖ To the north-west |
-| #4  | 2024-05-19 |      12:00 | 0° @ 6 kn    | CLR    |      15 SM | 01L      | ↑ To the north       |
-| #5  | 2024-05-18 |      13:00 | 270° @ 11 kn | CLR    |      15 SM | 32L      | ← To the west        |
-| #6  | 2024-05-16 |      14:00 | 260° @ 13 kn | CLR    |      15 SM | 19R (RP) | ↓ To the south       |
-| #7  | 2024-05-16 |      16:00 | 210° @ 9 kn  | CLR    |      15 SM | 19R (RP) | ↑ To the north       |
-| #8  | 2024-05-15 |      17:00 | 270° @ 8 kn  | CLR    |      15 SM | 32L      | ← To the west        |
-| #9  | 2024-05-13 |      18:00 | 0° @ 6 kn    | CLR    |      15 SM | 01L      | ↘ To the south-east |
-| #10 | 2024-05-12 |      20:00 | 230° @ 6 kn  | CLR    |      15 SM | 19R (RP) | ↙ To the south-west |
+| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway   | Aircraft position    |
+| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | -------- | -------------------- |
+| #1  | 2024-05-26 |      08:00 | 0° @ 3 kn    | CLR            |      15 SM | 19R (RP) | ↙ To the south-west |
+| #2  | 2024-05-25 |      09:00 | 200° @ 13 kn | BKN @ 1,800 ft |      15 SM | 19L      | → To the east        |
+| #3  | 2024-05-23 |      10:00 | 310° @ 6 kn  | CLR            |      15 SM | 32L      | ↗ To the north-east |
+| #4  | 2024-05-22 |      12:00 | 300° @ 7 kn  | CLR            |      15 SM | 32L      | ↙ To the south-west |
+| #5  | 2024-05-21 |      13:00 | 310° @ 8 kn  | CLR            |      15 SM | 32L      | ↖ To the north-west |
+| #6  | 2024-05-19 |      14:00 | 270° @ 9 kn  | CLR            |      15 SM | 32L      | ↓ To the south       |
+| #7  | 2024-05-19 |      16:00 | 240° @ 15 kn | CLR            |      15 SM | 19R (RP) | ↑ To the north       |
+| #8  | 2024-05-18 |      17:00 | 240° @ 9 kn  | CLR            |      15 SM | 19R (RP) | ↑ To the north       |
+| #9  | 2024-05-16 |      18:00 | 240° @ 12 kn | CLR            |      15 SM | 19R (RP) | ← To the west        |
+| #10 | 2024-05-15 |      20:00 | 200° @ 10 kn | CLR            |      15 SM | 19L      | ↓ To the south       |
 
 ## Installation instructions
 

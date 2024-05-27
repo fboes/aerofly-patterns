@@ -8,7 +8,7 @@ const configuration = new Configuration(process.argv);
 
 if (configuration.help) {
   process.stdout
-    .write(`\x1b[94mUsage: npx @fboes/aerofly-patterns ICAO_AIRPORT_CODE [AEROFLY_AIRCRAFT_CODE] [...options]\x1b[0m
+    .write(`\x1b[94mUsage: npx @fboes/aerofly-patterns@latest ICAO_AIRPORT_CODE [AEROFLY_AIRCRAFT_CODE] [...options]\x1b[0m
 Create landing pattern lessons for Aerofly FS 4.
 
 Arguments:

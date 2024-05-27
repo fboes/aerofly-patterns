@@ -1,5 +1,8 @@
 # Changelog
 
+- Added approximate alignment for water runways
+- Added extra cloud layers
+
 ## 2.2.0
 
 - Added navigational aids to GeoJSON

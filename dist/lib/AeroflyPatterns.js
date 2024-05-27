@@ -106,6 +106,7 @@ export class AeroflyPatterns {
           "marker-symbol":
             r === scenario.activeRunway ? "triangle" : r.runwayType === "H" ? "heliport" : "triangle-stroked",
           alignment: r.alignment,
+          dimension: r.dimension,
           frequency: r.ilsFrequency,
           isRightPattern: r.isRightPattern,
         }),
@@ -223,6 +224,7 @@ export class AeroflyPatterns {
                 <[string8][description][${s.description}]>
                 <[string8]   [flight_setting]     [cruise]>
                 <[string8u]  [aircraft_name]      [${s.aircraft.aeroflyCode}]>
+                //<[string8u][aircraft_livery]    []>
                 <[stringt8c] [aircraft_icao]      [${s.aircraft.data.icaoCode}]>
                 <[stringt8c] [callsign]           [${s.aircraft.data.callsign}]>
                 <[stringt8c] [origin_icao]        [${s.airport.id}]>
@@ -245,8 +247,12 @@ export class AeroflyPatterns {
                     <[float64][turbulence_strength][${s.weather?.turbulenceStrength ?? 0}]>
                     <[float64][thermal_strength][${s.weather?.thermalStrength ?? 0}]>
                     <[float64][visibility][${(s.weather?.visibility ?? 15) * Units.meterPerStatuteMile}]>
-                    <[float64][cloud_cover][${s.weather?.cloudCover ?? 0}]>
-                    <[float64][cloud_base][${(s.weather?.cloudBase ?? 0) / Units.feetPerMeter}]>
+                    <[float64][cloud_cover][${s.weather?.clouds[0]?.cloudCover ?? 0}]> // ${s.weather?.clouds[0]?.cloudCoverCode ?? "CLR"}
+                    <[float64][cloud_base][${(s.weather?.clouds[0]?.cloudBase ?? 0) / Units.feetPerMeter}]> // ${s.weather?.clouds[0]?.cloudBase ?? 0} ft
+                    //<[float64][cloud2_cover][${s.weather?.clouds[1]?.cloudCover ?? 0}]> // ${s.weather?.clouds[1]?.cloudCoverCode ?? "CLR"}
+                    //<[float64][cloud2_base][${(s.weather?.clouds[1]?.cloudBase ?? 0) / Units.feetPerMeter}]> // ${s.weather?.clouds[1]?.cloudBase ?? 0} ft
+                    //<[float64][cloud3_cover][${s.weather?.clouds[2]?.cloudCover ?? 0}]> // ${s.weather?.clouds[2]?.cloudCoverCode ?? "CLR"}
+                    //<[float64][cloud3_base][${(s.weather?.clouds[2]?.cloudBase ?? 0) / Units.feetPerMeter}]> // ${s.weather?.clouds[2]?.cloudBase ?? 0} ft
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
 `;
@@ -344,9 +350,9 @@ export class AeroflyPatterns {
     this.scenarios.forEach((s, index) => {
       const lst = Math.round((s.date.getUTCHours() + s.airport.lstOffset + 24) % 24);
       const clouds =
-        s.weather?.cloudCoverCode !== "CLR"
-          ? `${pad(s.weather?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.cloudBase.toLocaleString("en"), 6, true)} ft`
-          : pad(s.weather?.cloudCoverCode, 15);
+        s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
+          ? `${pad(s.weather?.clouds[0]?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.clouds[0]?.cloudBase.toLocaleString("en"), 6, true)} ft`
+          : pad(s.weather?.clouds[0]?.cloudCoverCode, 15);
 
       output.push(
         "| " +

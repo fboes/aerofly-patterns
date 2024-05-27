@@ -18,18 +18,18 @@ Get [more information about Stockton Metro Airport on SkyVector](https://skyvect
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds | Visibility | Runway   | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | ------ | ---------: | -------- | -------------------- |
-| #1  | 2024-05-23 |      08:00 | 310° @ 11 kn | CLR    |      15 SM | 29R (RP) | ↗ To the north-east |
-| #2  | 2024-05-22 |      09:00 | 250° @ 7 kn  | CLR    |      15 SM | 29L      | ← To the west        |
-| #3  | 2024-05-20 |      10:00 | 320° @ 8 kn  | CLR    |      15 SM | 29R (RP) | → To the east        |
-| #4  | 2024-05-19 |      12:00 | 330° @ 7 kn  | CLR    |      15 SM | 29R (RP) | ↖ To the north-west |
-| #5  | 2024-05-18 |      13:00 | 330° @ 5 kn  | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
-| #6  | 2024-05-16 |      14:00 | 0° @ 6 kn    | CLR    |      15 SM | 29R (RP) | → To the east        |
-| #7  | 2024-05-16 |      16:00 | 300° @ 12 kn | CLR    |      15 SM | 29L      | ← To the west        |
-| #8  | 2024-05-15 |      17:00 | 310° @ 11 kn | CLR    |      15 SM | 29R (RP) | ← To the west        |
-| #9  | 2024-05-13 |      18:00 | 310° @ 10 kn | CLR    |      15 SM | 29R (RP) | ← To the west        |
-| #10 | 2024-05-12 |      20:00 | 260° @ 10 kn | CLR    |      15 SM | 29L      | ↓ To the south       |
+| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway   | Aircraft position    |
+| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | -------- | -------------------- |
+| #1  | 2024-05-26 |      08:00 | 280° @ 4 kn  | CLR            |      15 SM | 29L      | ↑ To the north       |
+| #2  | 2024-05-25 |      09:00 | 270° @ 4 kn  | BKN @ 3,200 ft |      15 SM | 29L      | ← To the west        |
+| #3  | 2024-05-23 |      10:00 | 290° @ 12 kn | CLR            |      15 SM | 29L      | ← To the west        |
+| #4  | 2024-05-22 |      12:00 | 290° @ 8 kn  | CLR            |      15 SM | 29L      | ↑ To the north       |
+| #5  | 2024-05-21 |      13:00 | 310° @ 8 kn  | CLR            |      15 SM | 29R (RP) | ← To the west        |
+| #6  | 2024-05-19 |      14:00 | 0° @ null kn | CLR            |      15 SM | 29R (RP) | ← To the west        |
+| #7  | 2024-05-19 |      16:00 | 330° @ 9 kn  | CLR            |      15 SM | 29R (RP) | ↘ To the south-east |
+| #8  | 2024-05-18 |      17:00 | 300° @ 8 kn  | CLR            |      15 SM | 29L      | ↓ To the south       |
+| #9  | 2024-05-16 |      18:00 | 260° @ 9 kn  | CLR            |      15 SM | 29L      | ↙ To the south-west |
+| #10 | 2024-05-15 |      20:00 | 260° @ 10 kn | CLR            |      15 SM | 29L      | ↘ To the south-east |
 
 ## Installation instructions
 
