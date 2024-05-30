@@ -131,7 +131,7 @@ export class Formatter {
     } else if (weather.visibility <= 3) {
       adjectives.push("misty");
     } else {
-      switch (weather.cloudCoverCode) {
+      switch (weather.clouds[0]?.cloudCoverCode) {
         case "OVC":
           adjectives.push("overcast");
           break;

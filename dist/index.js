@@ -3,6 +3,7 @@
 // @ts-check
 import { AeroflyPatterns } from "./lib/AeroflyPatterns.js";
 import { Configuration } from "./lib/Configuration.js";
+import { FileWriter } from "./lib/FileWriter.js";
 
 const configuration = new Configuration(process.argv);
 
@@ -23,5 +24,7 @@ ${Configuration.argumentList()}
 }
 
 const app = new AeroflyPatterns(configuration);
-await app.build(process.cwd());
+await app.build();
+await FileWriter.writeFile(app, process.cwd());
+
 console.log(`✅  Done with ${app.airport?.name} (${app.airport?.id})`);

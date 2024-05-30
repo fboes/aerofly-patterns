@@ -82,7 +82,7 @@ export class Scenario {
   async build() {
     const weather = await AviationWeatherApi.fetchMetar([this.airport.id], this.date);
     if (!weather.length) {
-      throw new Error("No METAR information from API");
+      throw new Error("No METAR information from API for " + this.airport.id);
     }
     this.weather = new ScenarioWeather(weather[0]);
     this.getActiveRunway();

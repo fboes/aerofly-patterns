@@ -103,7 +103,7 @@ export class Airport {
     /**
      * @type {number?}
      */
-    this.localFrequency = lclP ? lclP.freq : null;
+    this.localFrequency = lclP?.freq ?? null;
 
     /**
      * @type {AirportNavaid[]}

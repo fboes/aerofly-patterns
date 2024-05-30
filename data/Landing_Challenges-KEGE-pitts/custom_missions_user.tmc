@@ -5,8 +5,8 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
-                <[string8][title][KEGE #1: Eagle County Regional]>
-                <[string8][description][It is early morning, and you are 8 NM to the south of the towered airport Eagle County Regional (6,550ft). As there is almost no wind, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+                <[string8][title][KEGE #1: Eagle County Regional ]>
+                <[string8][description][It is a clear early morning, and you are 10 NM to the south of the towered airport Eagle County Regional  (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
 
 - Local tower / CTAF frequency: 119.80]>
                 <[string8]   [flight_setting]     [cruise]>
@@ -15,29 +15,428 @@
                 <[stringt8c] [aircraft_icao]      [PTS2]>
                 <[stringt8c] [callsign]           [DEUJS]>
                 <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-106.93099720604528 39.509965611879934]>
-                <[float64]   [origin_dir]         [5.015012971127021]>
+                <[tmvector2d][origin_lon_lat]     [-106.97041660004301 39.48151557557637]>
+                <[float64]   [origin_dir]         [14.606097620678838]>
                 <[float64]   [origin_alt]         [4724.399848819205]> // 15500 ft
                 <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
+                <[float64]   [destination_dir]    [262]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][29]>
+                        <[float64][time_hours][14.5]>
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.22399999999999998]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft
+                    //<[float64][cloud2_cover][0]> // CLR
+                    //<[float64][cloud2_base][0]> // 0 ft
+                    //<[float64][cloud3_cover][0]> // CLR
+                    //<[float64][cloud3_base][0]> // 0 ft
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][82.00000000004775]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-CROSS]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-DOWN]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-ENTRY]>
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][81.96372019901276]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-BASE]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-FINAL]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.0101209456011]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEGE #2: Eagle County Regional ]>
+                <[string8][description][It is a clear early morning, and you are 10 NM to the east of the towered airport Eagle County Regional  (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+
+- Local tower / CTAF frequency: 119.80]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [pitts]>
+                //<[string8u][aircraft_livery]    []>
+                <[stringt8c] [aircraft_icao]      [PTS2]>
+                <[stringt8c] [callsign]           [DEUJS]>
+                <[stringt8c] [origin_icao]        [KEGE]>
+                <[tmvector2d][origin_lon_lat]     [-106.70026082818643 39.65482053358491]>
+                <[float64]   [origin_dir]         [265.7579454644815]>
+                <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
+                <[stringt8c] [destination_icao]   [KEGE]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
+                <[float64]   [destination_dir]    [262]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][28]>
+                        <[float64][time_hours][15.5]>
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.22399999999999998]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft
+                    //<[float64][cloud2_cover][0]> // CLR
+                    //<[float64][cloud2_base][0]> // 0 ft
+                    //<[float64][cloud3_cover][0]> // CLR
+                    //<[float64][cloud3_base][0]> // 0 ft
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][82.00000000004775]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-CROSS]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-DOWN]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-ENTRY]>
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][81.96372019901276]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-BASE]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-FINAL]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.0101209456011]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEGE #3: Eagle County Regional ]>
+                <[string8][description][It is a clear morning, and you are 10 NM to the north-east of the towered airport Eagle County Regional  (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+
+- Local tower / CTAF frequency: 119.80]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [pitts]>
+                //<[string8u][aircraft_livery]    []>
+                <[stringt8c] [aircraft_icao]      [PTS2]>
+                <[stringt8c] [callsign]           [DEUJS]>
+                <[stringt8c] [origin_icao]        [KEGE]>
+                <[tmvector2d][origin_lon_lat]     [-106.75868150109429 39.7571091881163]>
+                <[float64]   [origin_dir]         [226.5631620703624]>
+                <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
+                <[stringt8c] [destination_icao]   [KEGE]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
+                <[float64]   [destination_dir]    [262]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][27]>
+                        <[float64][time_hours][16.5]>
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]>
+                    <[float64][wind_gusts][0]>
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.31200000000000006]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft
+                    //<[float64][cloud2_cover][0]> // CLR
+                    //<[float64][cloud2_base][0]> // 0 ft
+                    //<[float64][cloud3_cover][0]> // CLR
+                    //<[float64][cloud3_base][0]> // 0 ft
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][82.00000000004775]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-CROSS]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-DOWN]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-ENTRY]>
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][81.96372019901276]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-BASE]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-FINAL]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.0101209456011]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEGE #4: Eagle County Regional ]>
+                <[string8][description][It is morning, and you are 10 NM to the south-west of the towered airport Eagle County Regional  (6,549ft). As the wind is 10 kn from 240°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+
+- Local tower / CTAF frequency: 119.80]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [pitts]>
+                //<[string8u][aircraft_livery]    []>
+                <[stringt8c] [aircraft_icao]      [PTS2]>
+                <[stringt8c] [callsign]           [DEUJS]>
+                <[stringt8c] [origin_icao]        [KEGE]>
+                <[tmvector2d][origin_lon_lat]     [-107.11233479432838 39.57298376706541]>
+                <[float64]   [origin_dir]         [65.31768109715813]>
+                <[float64]   [origin_alt]         [4724.399848819205]> // 15500 ft
+                <[stringt8c] [destination_icao]   [KEGE]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64]   [destination_dir]    [262]>
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][5]>
                         <[int32][time_day][26]>
-                        <[float64][time_hours][15.783333333333333]>
+                        <[float64][time_hours][17.5]>
                     >
-                    <[float64][wind_direction][50]>
-                    <[float64][wind_speed][3]>
+                    <[float64][wind_direction][240]>
+                    <[float64][wind_speed][10]>
                     <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.0375]>
-                    <[float64][thermal_strength][0.15600000000000003]>
+                    <[float64][turbulence_strength][0.125]>
+                    <[float64][thermal_strength][0.26799999999999996]>
                     <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0.9342648440411445]> // OVC
-                    <[float64][cloud_base][2438.3999219712027]> // 8000 ft
-                    //<[float64][cloud2_cover][0]> // CLR
-                    //<[float64][cloud2_base][0]> // 0 ft
+                    <[float64][cloud_cover][0.18261897748551184]> // FEW
+                    <[float64][cloud_base][1127.759963911681]> // 3700 ft
+                    //<[float64][cloud2_cover][0.91526841430689]> // OVC
+                    //<[float64][cloud2_base][1341.1199570841613]> // 4400 ft
                     //<[float64][cloud3_cover][0]> // CLR
                     //<[float64][cloud3_base][0]> // 0 ft
                 >
@@ -45,8 +444,8 @@
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -55,8 +454,8 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][departure_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][82.00000000004775]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
@@ -65,9 +464,9 @@
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -75,9 +474,9 @@
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -85,8 +484,8 @@
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
                         <[float64][direction][81.96372019901276]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -95,9 +494,9 @@
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -105,9 +504,9 @@
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -115,9 +514,9 @@
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][destination_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
                         <[float64][frequency][109750000]>
@@ -125,8 +524,8 @@
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][destination]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][262.0101209456011]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -138,8 +537,8 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
-                <[string8][title][KEGE #2: Eagle County Regional]>
-                <[string8][description][It is morning, and you are 8 NM to the south of the towered airport Eagle County Regional (6,550ft). As the wind is 7 kn from 270°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+                <[string8][title][KEGE #5: Eagle County Regional ]>
+                <[string8][description][It is a gusty, overcast morning, and you are 10 NM to the south-east of the towered airport Eagle County Regional  (6,549ft). As the wind is 11 kn from 300°, the main landing runway is 25 (253° / 2,743m / 7 kn crosswind component). Fly the pattern and land safely.
 
 - Local tower / CTAF frequency: 119.80]>
                 <[string8]   [flight_setting]     [cruise]>
@@ -148,24 +547,157 @@
                 <[stringt8c] [aircraft_icao]      [PTS2]>
                 <[stringt8c] [callsign]           [DEUJS]>
                 <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-106.92055129626523 39.50950475114866]>
-                <[float64]   [origin_dir]         [1.5432994548431225]>
-                <[float64]   [origin_alt]         [4724.399848819205]> // 15500 ft
+                <[tmvector2d][origin_lon_lat]     [-106.82405151335982 39.49198085986241]>
+                <[float64]   [origin_dir]         [334.78381450666404]>
+                <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
                 <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64]   [destination_dir]    [262]>
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][5]>
                         <[int32][time_day][25]>
-                        <[float64][time_hours][16.783333333333335]>
+                        <[float64][time_hours][18.5]>
                     >
-                    <[float64][wind_direction][270]>
-                    <[float64][wind_speed][7]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.0875]>
-                    <[float64][thermal_strength][0.376]>
+                    <[float64][wind_direction][300]>
+                    <[float64][wind_speed][11]>
+                    <[float64][wind_gusts][18]>
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.44]>
+                    <[float64][visibility][24140.16]>
+                    <[float64][cloud_cover][0.9476799765071933]> // OVC
+                    <[float64][cloud_base][2590.7999170944026]> // 8500 ft
+                    //<[float64][cloud2_cover][0]> // CLR
+                    //<[float64][cloud2_base][0]> // 0 ft
+                    //<[float64][cloud3_cover][0]> // CLR
+                    //<[float64][cloud3_base][0]> // 0 ft
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][82.00000000004775]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-CROSS]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-DOWN]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-ENTRY]>
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][81.96372019901276]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-BASE]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-FINAL]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]>
+                        <[float64][frequency][109750000]>
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.0101209456011]>
+                        <[float64][slope][0]>
+                        <[float64][length][0]>
+                        <[float64][frequency][0]>
+                    >
+                >
+            >
+
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                // Created with Aerofly Landegerät
+                <[string8][title][KEGE #6: Eagle County Regional ]>
+                <[string8][description][It is a gusty, clear noon, and you are 10 NM to the east of the towered airport Eagle County Regional  (6,549ft). As the wind is 19 kn from 260°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+
+- Local tower / CTAF frequency: 119.80]>
+                <[string8]   [flight_setting]     [cruise]>
+                <[string8u]  [aircraft_name]      [pitts]>
+                //<[string8u][aircraft_livery]    []>
+                <[stringt8c] [aircraft_icao]      [PTS2]>
+                <[stringt8c] [callsign]           [DEUJS]>
+                <[stringt8c] [origin_icao]        [KEGE]>
+                <[tmvector2d][origin_lon_lat]     [-106.70159017216415 39.62096144132744]>
+                <[float64]   [origin_dir]         [277.43121019566604]>
+                <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
+                <[stringt8c] [destination_icao]   [KEGE]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
+                <[float64]   [destination_dir]    [262]>
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][24]>
+                        <[float64][time_hours][19.5]>
+                    >
+                    <[float64][wind_direction][260]>
+                    <[float64][wind_speed][19]>
+                    <[float64][wind_gusts][27]>
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.44400000000000006]>
                     <[float64][visibility][24140.16]>
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft
@@ -178,8 +710,8 @@
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -188,8 +720,8 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][departure_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][82.00000000004775]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
@@ -198,9 +730,9 @@
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -208,9 +740,9 @@
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -218,8 +750,8 @@
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
                         <[float64][direction][81.96372019901276]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -228,9 +760,9 @@
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -238,9 +770,9 @@
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -248,9 +780,9 @@
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][destination_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
                         <[float64][frequency][109750000]>
@@ -258,8 +790,8 @@
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][destination]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][262.0101209456011]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -271,8 +803,8 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
-                <[string8][title][KEGE #3: Eagle County Regional]>
-                <[string8][description][It is a gusty morning, and you are 8 NM to the east of the towered airport Eagle County Regional (6,550ft). As the wind is 16 kn from 230°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+                <[string8][title][KEGE #7: Eagle County Regional ]>
+                <[string8][description][It is a gusty noon, and you are 10 NM to the south-east of the towered airport Eagle County Regional  (6,549ft). As the wind is 20 kn from 270°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
 
 - Local tower / CTAF frequency: 119.80]>
                 <[string8]   [flight_setting]     [cruise]>
@@ -281,38 +813,38 @@
                 <[stringt8c] [aircraft_icao]      [PTS2]>
                 <[stringt8c] [callsign]           [DEUJS]>
                 <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-106.74596336241335 39.667926004170944]>
-                <[float64]   [origin_dir]         [259.03253097788775]>
+                <[tmvector2d][origin_lon_lat]     [-106.74803162828954 39.53788748529853]>
+                <[float64]   [origin_dir]         [308.94486992012025]>
                 <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
                 <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64]   [destination_dir]    [262]>
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][5]>
                         <[int32][time_day][23]>
-                        <[float64][time_hours][17.783333333333335]>
+                        <[float64][time_hours][20.5]>
                     >
-                    <[float64][wind_direction][230]>
-                    <[float64][wind_speed][16]>
-                    <[float64][wind_gusts][31]>
+                    <[float64][wind_direction][270]>
+                    <[float64][wind_speed][20]>
+                    <[float64][wind_gusts][24]>
                     <[float64][turbulence_strength][1]>
                     <[float64][thermal_strength][0.5559999999999999]>
                     <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft
-                    //<[float64][cloud2_cover][0]> // CLR
-                    //<[float64][cloud2_base][0]> // 0 ft
-                    //<[float64][cloud3_cover][0]> // CLR
-                    //<[float64][cloud3_base][0]> // 0 ft
+                    <[float64][cloud_cover][0.15878592794437574]> // FEW
+                    <[float64][cloud_base][1432.5599541580814]> // 4700 ft
+                    //<[float64][cloud2_cover][0.33360231797083584]> // SCT
+                    //<[float64][cloud2_base][1828.799941478402]> // 6000 ft
+                    //<[float64][cloud3_cover][0.9172621410197818]> // OVC
+                    //<[float64][cloud3_base][2438.3999219712027]> // 8000 ft
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -321,8 +853,8 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][departure_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][82.00000000004775]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
@@ -331,9 +863,9 @@
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -341,9 +873,9 @@
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -351,8 +883,8 @@
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
                         <[float64][direction][81.96372019901276]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -361,9 +893,9 @@
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -371,9 +903,9 @@
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -381,9 +913,9 @@
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][destination_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
                         <[float64][frequency][109750000]>
@@ -391,8 +923,8 @@
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][destination]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][262.0101209456011]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -404,8 +936,8 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
-                <[string8][title][KEGE #4: Eagle County Regional]>
-                <[string8][description][It is a gusty noon, and you are 8 NM to the east of the towered airport Eagle County Regional (6,550ft). As the wind is 13 kn from 240°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+                <[string8][title][KEGE #8: Eagle County Regional ]>
+                <[string8][description][It is a gusty afternoon, and you are 10 NM to the north-east of the towered airport Eagle County Regional  (6,549ft). As the wind is 10 kn from 250°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
 
 - Local tower / CTAF frequency: 119.80]>
                 <[string8]   [flight_setting]     [cruise]>
@@ -414,27 +946,27 @@
                 <[stringt8c] [aircraft_icao]      [PTS2]>
                 <[stringt8c] [callsign]           [DEUJS]>
                 <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-106.74630729509713 39.66926878100639]>
-                <[float64]   [origin_dir]         [258.44400746314113]>
+                <[tmvector2d][origin_lon_lat]     [-106.73786445119231 39.73730548738435]>
+                <[float64]   [origin_dir]         [235.33118856651413]>
                 <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
                 <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64]   [destination_dir]    [262]>
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][5]>
                         <[int32][time_day][22]>
-                        <[float64][time_hours][19.783333333333335]>
+                        <[float64][time_hours][21.5]>
                     >
-                    <[float64][wind_direction][240]>
-                    <[float64][wind_speed][13]>
+                    <[float64][wind_direction][250]>
+                    <[float64][wind_speed][10]>
                     <[float64][wind_gusts][19]>
                     <[float64][turbulence_strength][1]>
-                    <[float64][thermal_strength][0.4]>
+                    <[float64][thermal_strength][0.488]>
                     <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft
+                    <[float64][cloud_cover][0.4098030573761191]> // SCT
+                    <[float64][cloud_base][2743.199912217603]> // 9000 ft
                     //<[float64][cloud2_cover][0]> // CLR
                     //<[float64][cloud2_base][0]> // 0 ft
                     //<[float64][cloud3_cover][0]> // CLR
@@ -444,8 +976,8 @@
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -454,8 +986,8 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][departure_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][82.00000000004775]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
@@ -464,9 +996,9 @@
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -474,9 +1006,9 @@
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -484,8 +1016,8 @@
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
                         <[float64][direction][81.96372019901276]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -494,9 +1026,9 @@
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -504,9 +1036,9 @@
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -514,9 +1046,9 @@
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][destination_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
                         <[float64][frequency][109750000]>
@@ -524,8 +1056,8 @@
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][destination]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][262.0101209456011]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -537,8 +1069,8 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
-                <[string8][title][KEGE #5: Eagle County Regional]>
-                <[string8][description][It is noon, and you are 8 NM to the north-west of the towered airport Eagle County Regional (6,550ft). As the wind is 8 kn from 240°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+                <[string8][title][KEGE #9: Eagle County Regional ]>
+                <[string8][description][It is a clear afternoon, and you are 10 NM to the west of the towered airport Eagle County Regional  (6,549ft). As the wind is 21 kn from 240°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
 
 - Local tower / CTAF frequency: 119.80]>
                 <[string8]   [flight_setting]     [cruise]>
@@ -547,290 +1079,24 @@
                 <[stringt8c] [aircraft_icao]      [PTS2]>
                 <[stringt8c] [callsign]           [DEUJS]>
                 <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-107.0274250881598 39.74462929238718]>
-                <[float64]   [origin_dir]         [139.9412608830828]>
+                <[tmvector2d][origin_lon_lat]     [-107.11627420523625 39.70577651443359]>
+                <[float64]   [origin_dir]         [112.31796570701715]>
                 <[float64]   [origin_alt]         [4724.399848819205]> // 15500 ft
                 <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64]   [destination_dir]    [262]>
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][5]>
                         <[int32][time_day][21]>
-                        <[float64][time_hours][20.783333333333335]>
+                        <[float64][time_hours][22.5]>
                     >
                     <[float64][wind_direction][240]>
-                    <[float64][wind_speed][8]>
+                    <[float64][wind_speed][21]>
                     <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.1]>
-                    <[float64][thermal_strength][0.12]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0.1372713087852395]> // FEW
-                    <[float64][cloud_base][761.9999756160008]> // 2500 ft
-                    //<[float64][cloud2_cover][0.6245528319232561]> // BKN
-                    //<[float64][cloud2_base][1188.7199619609612]> // 3900 ft
-                    //<[float64][cloud3_cover][0.9327607039844032]> // OVC
-                    //<[float64][cloud3_base][1432.5599541580814]> // 4700 ft
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][82.00000000004775]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][109750000]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][81.96372019901276]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][109750000]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0101209456011]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEGE #6: Eagle County Regional]>
-                <[string8][description][It is a gusty afternoon, and you are 8 NM to the south-west of the towered airport Eagle County Regional (6,550ft). As the wind is 15 kn from 250°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
-
-- Local tower / CTAF frequency: 119.80]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [pitts]>
-                //<[string8u][aircraft_livery]    []>
-                <[stringt8c] [aircraft_icao]      [PTS2]>
-                <[stringt8c] [callsign]           [DEUJS]>
-                <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-107.05948896922678 39.56843552130502]>
-                <[float64]   [origin_dir]         [56.172431310182674]>
-                <[float64]   [origin_alt]         [4724.399848819205]> // 15500 ft
-                <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
-                <[float64]   [destination_dir]    [262]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][5]>
-                        <[int32][time_day][19]>
-                        <[float64][time_hours][21.783333333333335]>
-                    >
-                    <[float64][wind_direction][250]>
-                    <[float64][wind_speed][15]>
-                    <[float64][wind_gusts][22]>
-                    <[float64][turbulence_strength][1]>
-                    <[float64][thermal_strength][0.6679999999999999]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0.4771692223320016]> // SCT
-                    <[float64][cloud_base][3047.9999024640033]> // 10000 ft
-                    //<[float64][cloud2_cover][0]> // CLR
-                    //<[float64][cloud2_base][0]> // 0 ft
-                    //<[float64][cloud3_cover][0]> // CLR
-                    //<[float64][cloud3_base][0]> // 0 ft
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][82.00000000004775]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][109750000]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][81.96372019901276]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][109750000]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0101209456011]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEGE #7: Eagle County Regional]>
-                <[string8][description][It is a gusty late afternoon, and you are 8 NM to the north of the towered airport Eagle County Regional (6,550ft). As the wind is 11 kn from 190°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
-
-- Local tower / CTAF frequency: 119.80]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [pitts]>
-                //<[string8u][aircraft_livery]    []>
-                <[stringt8c] [aircraft_icao]      [PTS2]>
-                <[stringt8c] [callsign]           [DEUJS]>
-                <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-106.86493332357786 39.770043614179635]>
-                <[float64]   [origin_dir]         [197.09774191436566]>
-                <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
-                <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
-                <[float64]   [destination_dir]    [262]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][5]>
-                        <[int32][time_day][18]>
-                        <[float64][time_hours][23.783333333333335]>
-                    >
-                    <[float64][wind_direction][190]>
-                    <[float64][wind_speed][11]>
-                    <[float64][wind_gusts][14]>
-                    <[float64][turbulence_strength][0.8374999999999999]>
-                    <[float64][thermal_strength][0.644]>
+                    <[float64][turbulence_strength][0.2625]>
+                    <[float64][thermal_strength][0.2]>
                     <[float64][visibility][24140.16]>
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft
@@ -843,8 +1109,8 @@
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -853,8 +1119,8 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][departure_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][82.00000000004775]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
@@ -863,9 +1129,9 @@
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -873,9 +1139,9 @@
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -883,8 +1149,8 @@
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
                         <[float64][direction][81.96372019901276]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -893,9 +1159,9 @@
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -903,9 +1169,9 @@
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -913,9 +1179,9 @@
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][destination_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
                         <[float64][frequency][109750000]>
@@ -923,8 +1189,8 @@
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][destination]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][262.0101209456011]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -936,8 +1202,8 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 // Created with Aerofly Landegerät
-                <[string8][title][KEGE #8: Eagle County Regional]>
-                <[string8][description][It is late afternoon, and you are 8 NM to the north-east of the towered airport Eagle County Regional (6,550ft). As the wind is 7 kn from 290°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
+                <[string8][title][KEGE #10: Eagle County Regional ]>
+                <[string8][description][It is a gusty, clear late afternoon, and you are 10 NM to the north-west of the towered airport Eagle County Regional  (6,549ft). As the wind is 21 kn from 230°, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
 
 - Local tower / CTAF frequency: 119.80]>
                 <[string8]   [flight_setting]     [cruise]>
@@ -946,23 +1212,23 @@
                 <[stringt8c] [aircraft_icao]      [PTS2]>
                 <[stringt8c] [callsign]           [DEUJS]>
                 <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-106.77178158009585 39.716532020870204]>
-                <[float64]   [origin_dir]         [236.30433580028875]>
-                <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
+                <[tmvector2d][origin_lon_lat]     [-107.01042951586146 39.79258147334681]>
+                <[float64]   [origin_dir]         [154.17443576032224]>
+                <[float64]   [origin_alt]         [4724.399848819205]> // 15500 ft
                 <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64]   [destination_dir]    [262]>
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][5]>
-                        <[int32][time_day][18]>
-                        <[float64][time_hours][0.7833333333333333]>
+                        <[int32][time_day][20]>
+                        <[float64][time_hours][23.5]>
                     >
-                    <[float64][wind_direction][290]>
-                    <[float64][wind_speed][7]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.0875]>
+                    <[float64][wind_direction][230]>
+                    <[float64][wind_speed][21]>
+                    <[float64][wind_gusts][31]>
+                    <[float64][turbulence_strength][1]>
                     <[float64][thermal_strength][0.688]>
                     <[float64][visibility][24140.16]>
                     <[float64][cloud_cover][0]> // CLR
@@ -976,8 +1242,8 @@
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -986,8 +1252,8 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][departure_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][82.00000000004775]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
@@ -996,9 +1262,9 @@
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][262.0000000000041]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -1006,9 +1272,9 @@
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
+                        <[float64][direction][172.00000000004206]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -1016,8 +1282,8 @@
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7548.55664 ft
                         <[float64][direction][81.96372019901276]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
@@ -1026,9 +1292,9 @@
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7188.156640000001 ft
+                        <[float64][direction][81.9961078771492]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -1036,9 +1302,9 @@
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6868.356640000001 ft
+                        <[float64][direction][352.0019200020506]>
                         <[float64][slope][0]>
                         <[float64][length][0]>
                         <[float64][frequency][0]>
@@ -1046,9 +1312,9 @@
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][destination_runway]>
                         <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
+                        <[float64][direction][262.01366682387027]>
                         <[float64][slope][0]>
                         <[float64][length][2743.199912217603]>
                         <[float64][frequency][109750000]>
@@ -1056,274 +1322,8 @@
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][destination]>
                         <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0101209456011]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEGE #9: Eagle County Regional]>
-                <[string8][description][It is late afternoon, and you are 8 NM to the west of the towered airport Eagle County Regional (6,550ft). As the wind is 6 kn from 50°, the main landing runway is 07 (73° / 2,743m). Fly the right-turn pattern and land safely.
-
-- Local tower / CTAF frequency: 119.80]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [pitts]>
-                //<[string8u][aircraft_livery]    []>
-                <[stringt8c] [aircraft_icao]      [PTS2]>
-                <[stringt8c] [callsign]           [DEUJS]>
-                <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-107.08665556110094 39.62126846663851]>
-                <[float64]   [origin_dir]         [80.79852728602259]>
-                <[float64]   [origin_alt]         [4724.399848819205]> // 15500 ft
-                <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
-                <[float64]   [destination_dir]    [82]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][5]>
-                        <[int32][time_day][16]>
-                        <[float64][time_hours][1.7833333333333332]>
-                    >
-                    <[float64][wind_direction][50]>
-                    <[float64][wind_speed][6]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.075]>
-                    <[float64][thermal_strength][0.488]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft
-                    //<[float64][cloud2_cover][0]> // CLR
-                    //<[float64][cloud2_base][0]> // 0 ft
-                    //<[float64][cloud3_cover][0]> // CLR
-                    //<[float64][cloud3_base][0]> // 0 ft
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][07]>
-                        <[vector2_float64][lon_lat][-106.9317625254147 39.64098220784217]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][261.9999999999425]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][07-CROSS]>
-                        <[vector2_float64][lon_lat][-106.87861471883349 39.64672151381566]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][82.00000000000358]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][07-DOWN]>
-                        <[vector2_float64][lon_lat][-106.87560503516846 39.63022812839312]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.0000000000001]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][07-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0401244938482]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][07-BASE]>
-                        <[vector2_float64][lon_lat][-106.95017081600025 39.622168867099006]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][262.00773107756675]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][07-FINAL]>
-                        <[vector2_float64][lon_lat][-106.95318014913886 39.638662252510436]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019194518136]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][07]>
-                        <[vector2_float64][lon_lat][-106.9317625254147 39.64098220784217]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][81.9863364263174]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][81.98987992287232]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                >
-            >
-
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][KEGE #10: Eagle County Regional]>
-                <[string8][description][It is night, and you are 8 NM to the north-east of the towered airport Eagle County Regional (6,550ft). As there is almost no wind, the main landing runway is 25 (253° / 2,743m). Fly the pattern and land safely.
-
-- Local tower / CTAF frequency: 119.80]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [pitts]>
-                //<[string8u][aircraft_livery]    []>
-                <[stringt8c] [aircraft_icao]      [PTS2]>
-                <[stringt8c] [callsign]           [DEUJS]>
-                <[stringt8c] [origin_icao]        [KEGE]>
-                <[tmvector2d][origin_lon_lat]     [-106.83678267511863 39.761226539353956]>
-                <[float64]   [origin_dir]         [207.15819131450849]>
-                <[float64]   [origin_alt]         [5029.199839065605]> // 16500 ft
-                <[stringt8c] [destination_icao]   [KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.9159 39.6427]>
-                <[float64]   [destination_dir]    [262]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][5]>
-                        <[int32][time_day][15]>
-                        <[float64][time_hours][3.783333333333333]>
-                    >
-                    <[float64][wind_direction][180]>
-                    <[float64][wind_speed][5]>
-                    <[float64][wind_gusts][0]>
-                    <[float64][turbulence_strength][0.0625]>
-                    <[float64][thermal_strength][0.26799999999999996]>
-                    <[float64][visibility][24140.16]>
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft
-                    //<[float64][cloud2_cover][0]> // CLR
-                    //<[float64][cloud2_base][0]> // 0 ft
-                    //<[float64][cloud3_cover][0]> // CLR
-                    //<[float64][cloud3_base][0]> // 0 ft
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][82.00000000004775]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][109750000]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.9531782922402 39.638652111085385]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][262.0000000000059]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.9501689595426 39.62215872567397]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][172.00000000000875]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91289049126277 39.626206614583]>
-                        <[float64][altitude][2300.9999902464006]> // 7549.212808000001 ft
-                        <[float64][direction][81.96372019901276]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.87560687984922 39.63023827073841]>
-                        <[float64][altitude][2191.150073761598]> // 7188.812808000001 ft
-                        <[float64][direction][81.9961078771438]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87861656395546 39.64673165616097]>
-                        <[float64][altitude][2093.675036880799]> // 6869.012808 ft
-                        <[float64][direction][352.0019200020839]>
-                        <[float64][slope][0]>
-                        <[float64][length][0]>
-                        <[float64][frequency][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90003668700388 39.64441563453717]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
-                        <[float64][direction][262.0136668238656]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]>
-                        <[float64][frequency][109750000]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.9159 39.6427]>
-                        <[float64][altitude][1996.2]> // 6549.212808 ft
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6548.55664 ft
                         <[float64][direction][262.0101209456011]>
                         <[float64][slope][0]>
                         <[float64][length][0]>

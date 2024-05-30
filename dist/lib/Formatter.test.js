@@ -2,7 +2,7 @@
 
 import { strict as assert } from "node:assert";
 import { Formatter } from "./Formatter.js";
-import { ScenarioWeather } from "./Scenario.js";
+import { ScenarioWeather, ScenarioWeatherCloud } from "./Scenario.js";
 
 export class FormatterTest {
   constructor() {
@@ -74,7 +74,7 @@ export class FormatterTest {
     w.visibility = 1;
     assert.strictEqual("foggy", Formatter.getWeatherAdjectives(w));
 
-    w.cloudCoverCode = "OVC";
+    w.clouds[0] = new ScenarioWeatherCloud("OVC", 1000);
     assert.strictEqual("foggy", Formatter.getWeatherAdjectives(w));
 
     w.visibility = 4;

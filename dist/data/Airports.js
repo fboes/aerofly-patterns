@@ -35,6 +35,7 @@ export const Airports = {
   },
   KEYW: { runways: [{ id: "09", isRightPattern: true }] },
   KHAF: { runways: [{ id: "30", isRightPattern: true }] },
+  KJAC: { minimumSafeAltitude: 14_900, runways: [{ id: "19", ilsFrequency: 109.1, isPreferred: true }] },
   KMVY: {
     runways: [
       { id: "24", isRightPattern: true, ilsFrequency: 108.7, isPreferred: true },
@@ -48,4 +49,5 @@ export const Airports = {
     ],
     minimumSafeAltitude: 12_000,
   },
+  KWYS: { minimumSafeAltitude: 12_600, runways: [{ id: "01", ilsFrequency: 110.7, isPreferred: true }] },
 };

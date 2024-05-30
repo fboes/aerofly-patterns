@@ -187,7 +187,7 @@ export class Configuration {
     this.geojson = Boolean(values["geojson"]);
 
     /**
-     * @type {boolean}
+     * @type {boolean} if generate
      */
     this.readme = Boolean(values["readme"]);
 

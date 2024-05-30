@@ -5,39 +5,33 @@ import { DateYielder } from "./DateYielder.js";
 
 export class DateYielderTest {
   constructor() {
-    this.checkSingleEntry();
-    this.checkMultipleEntries(5);
-    this.checkMultipleEntries(12);
-    this.checkMultipleEntries(24);
-  }
-
-  checkSingleEntry() {
-    const startDate = new Date(Date.UTC(2024, 4, 15, 12, 0, 0));
-    const dateYielder = new DateYielder(1, 0, startDate);
-    const dates = dateYielder.entries();
-    for (const currentDate of dates) {
-      //console.log(currentDate);
-      assert.ok(currentDate);
-      assert.equal(currentDate.toISOString(), startDate.toISOString());
+    // All time zones
+    for (let i = 12; i >= -12; i--) {
+      this.checkEntries(1, i);
+      this.checkEntries(5, i);
+      this.checkEntries(12, i);
     }
-
-    console.log(`✅ ${this.constructor.name}.checkSingleEntry successful`);
   }
 
   /**
    *
    * @param {number} entries
+   * @param {number} offsetHours
    */
-  checkMultipleEntries(entries) {
-    const startDate = new Date(Date.UTC(2024, 4, 15, 12, 0, 0));
-    const dateYielder = new DateYielder(entries, 2, startDate);
-    const dates = dateYielder.entries();
-    for (const currentDate of dates) {
-      //console.log(currentDate);
-      assert.ok(currentDate);
-      assert.notEqual(currentDate.toISOString(), startDate.toISOString());
-    }
+  checkEntries(entries, offsetHours) {
+    const startDate = new Date(Date.UTC(2024, 4, 15, 12, 32, 0));
+    const dateYielder = new DateYielder(entries, offsetHours, startDate);
+    const dates = Array.from(dateYielder.entries());
 
-    console.log(`✅ ${this.constructor.name}.checkMultipleEntries(${entries}) successful`);
+    assert.strictEqual(dates.length, entries);
+    dates.forEach((d) => {
+      assert.strictEqual(d.getUTCFullYear(), 2024);
+      assert.strictEqual(d.getUTCMonth(), 4);
+      assert.ok(d.getUTCDate() <= 15);
+      assert.ok(d.valueOf() <= startDate.valueOf());
+    });
+    //console.log(dateYielder.startDate, dates);
+
+    console.log(`✅ ${this.constructor.name}.checkEntries(${entries}, ${offsetHours}) successful`);
   }
 }

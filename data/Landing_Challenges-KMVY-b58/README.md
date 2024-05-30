@@ -1,15 +1,15 @@
-# Landing Challenges: Vineyard Haven / Martha's Vineyard (KMVY)
+# Landing Challenges: Vineyard Haven / Martha's Vineyard  (KMVY)
 
 This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Beechcraft Baron 58 is 8 NM away from Vineyard Haven / Martha's Vineyard Airport, and you have to make a correct landing pattern entry and land safely.
+Your Beechcraft Baron 58 is 8 NM away from Vineyard Haven / Martha's Vineyard  Airport, and you have to make a correct landing pattern entry and land safely.
 
 ## Airport details
 
 - Local tower / CTAF frequency: 121.40
 - Local navigational aids: VOR/DME MVY (114.50) on field
 
-Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVector](https://skyvector.com/airport/KMVY):
+Get [more information about Vineyard Haven / Martha's Vineyard  Airport on SkyVector](https://skyvector.com/airport/KMVY):
 
 - What is the tower / CTAF frequency?
 - What is the Traffic Pattern Altitude (TPA) for this airport?
@@ -19,18 +19,18 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway  | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-05-26 |      07:00 | 190° @ 7 kn  | OVC @ 200 ft   |       1 SM | 24 (RP) | → To the east        |
-| #2  | 2024-05-25 |      09:00 | Calm         | CLR            |      15 SM | 24 (RP) | → To the east        |
-| #3  | 2024-05-23 |      10:00 | 210° @ 9 kn  | OVC @ 500 ft   |      15 SM | 24 (RP) | ↘ To the south-east |
-| #4  | 2024-05-22 |      11:00 | 200° @ 10 kn | CLR            |      15 SM | 24 (RP) | ↑ To the north       |
-| #5  | 2024-05-21 |      13:00 | 210° @ 11 kn | CLR            |      15 SM | 24 (RP) | ↙ To the south-west |
-| #6  | 2024-05-19 |      14:00 | 10° @ 14 kn  | OVC @ 1,200 ft |      15 SM | 06      | ↑ To the north       |
-| #7  | 2024-05-18 |      15:00 | 10° @ 14 kn  | OVC @ 700 ft   |       7 SM | 06      | ↖ To the north-west |
-| #8  | 2024-05-17 |      17:00 | 10° @ 11 kn  | BKN @ 2,500 ft |      15 SM | 06      | ↖ To the north-west |
-| #9  | 2024-05-15 |      18:00 | 60° @ 6 kn   | FEW @ 4,300 ft |       8 SM | 06      | ↖ To the north-west |
-| #10 | 2024-05-15 |      19:00 | 210° @ 10 kn | CLR            |      15 SM | 24 (RP) | ↓ To the south       |
+| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway   | Aircraft position   |
+| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | -------- | ------------------- |
+| #1  | 2024-05-29 |      07:30 |   0° @  5 kn | CLR             |      15 SM | 24 (RP)  | ↖ To the north-west |
+| #2  | 2024-05-28 |      08:30 | 210° @ 10 kn | OVX @      0 ft |       0 SM | 24 (RP)  | ↖ To the north-west |
+| #3  | 2024-05-27 |      09:30 | 110° @  9 kn | OVC @    200 ft |       1 SM | 15       | ↓ To the south      |
+| #4  | 2024-05-26 |      10:30 | 150° @  8 kn | OVC @    500 ft |       2 SM | 15       | ↓ To the south      |
+| #5  | 2024-05-25 |      11:30 | 180° @  8 kn | CLR             |      15 SM | 24 (RP)  | ↖ To the north-west |
+| #6  | 2024-05-24 |      12:30 | 210° @ 12 kn | FEW @  8,000 ft |      15 SM | 24 (RP)  | ↗ To the north-east |
+| #7  | 2024-05-23 |      13:30 | 200° @  6 kn | OVC @    500 ft |       2 SM | 24 (RP)  | ↖ To the north-west |
+| #8  | 2024-05-22 |      14:30 | 220° @ 12 kn | CLR             |      15 SM | 24 (RP)  | ↗ To the north-east |
+| #9  | 2024-05-21 |      15:30 | 200° @ 14 kn | CLR             |      15 SM | 24 (RP)  | ↓ To the south      |
+| #10 | 2024-05-20 |      16:30 |  60° @  8 kn | CLR             |      15 SM | 06       | ↙ To the south-west |
 
 ## Installation instructions
 

@@ -1,15 +1,15 @@
-# Landing Challenges: Key West International (KEYW)
+# Landing Challenges: Key West International  (KEYW)
 
 This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Beechcraft Baron 58 is 8 NM away from Key West International Airport, and you have to make a correct landing pattern entry and land safely.
+Your Beechcraft Baron 58 is 8 NM away from Key West International  Airport, and you have to make a correct landing pattern entry and land safely.
 
 ## Airport details
 
 - Local tower / CTAF frequency: 118.20
 - Local navigational aids: NDB FIS (332) 1.5 NM to the west, VORTAC EYW (113.50) 2.8 NM to the north-west
 
-Get [more information about Key West International Airport on SkyVector](https://skyvector.com/airport/KEYW):
+Get [more information about Key West International  Airport on SkyVector](https://skyvector.com/airport/KEYW):
 
 - What is the tower / CTAF frequency?
 - What is the Traffic Pattern Altitude (TPA) for this airport?
@@ -19,18 +19,18 @@ Get [more information about Key West International Airport on SkyVector](https:/
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway  | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-05-26 |      08:00 | 160° @ 6 kn  | CLR            |      15 SM | 09 (RP) | ↑ To the north       |
-| #2  | 2024-05-25 |      09:00 | 140° @ 6 kn  | CLR            |      15 SM | 09 (RP) | → To the east        |
-| #3  | 2024-05-23 |      11:00 | 130° @ 8 kn  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #4  | 2024-05-22 |      12:00 | 120° @ 7 kn  | CLR            |      15 SM | 09 (RP) | ↙ To the south-west |
-| #5  | 2024-05-21 |      13:00 | 0° @ null kn | FEW @ 3,000 ft |      15 SM | 09 (RP) | ↑ To the north       |
-| #6  | 2024-05-19 |      15:00 | 310° @ 9 kn  | SCT @ 4,500 ft |      15 SM | 27      | ↓ To the south       |
-| #7  | 2024-05-18 |      16:00 | 0° @ 4 kn    | CLR            |      15 SM | 09 (RP) | ← To the west        |
-| #8  | 2024-05-17 |      17:00 | 120° @ 10 kn | CLR            |      15 SM | 09 (RP) | ↙ To the south-west |
-| #9  | 2024-05-16 |      19:00 | 0° @ 5 kn    | CLR            |      15 SM | 09 (RP) | ← To the west        |
-| #10 | 2024-05-15 |      20:00 | 110° @ 8 kn  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
+| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway   | Aircraft position   |
+| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | -------- | ------------------- |
+| #1  | 2024-05-29 |      07:30 | Calm         | CLR             |      15 SM | 09 (RP)  | ↘ To the south-east |
+| #2  | 2024-05-28 |      08:30 | 150° @ 10 kn | CLR             |      15 SM | 09 (RP)  | ↘ To the south-east |
+| #3  | 2024-05-27 |      09:30 | 130° @  8 kn | FEW @  1,600 ft |      15 SM | 09 (RP)  | ↙ To the south-west |
+| #4  | 2024-05-26 |      10:30 | 140° @  6 kn | CLR             |      15 SM | 09 (RP)  | ↑ To the north      |
+| #5  | 2024-05-25 |      11:30 | 190° @  5 kn | CLR             |      15 SM | 27       | ↙ To the south-west |
+| #6  | 2024-05-24 |      12:30 | 150° @  6 kn | FEW @  4,200 ft |      15 SM | 09 (RP)  | ← To the west       |
+| #7  | 2024-05-23 |      13:30 | 110° @  9 kn | SCT @  3,300 ft |      15 SM | 09 (RP)  | ↗ To the north-east |
+| #8  | 2024-05-22 |      14:30 | 150° @  9 kn | CLR             |      15 SM | 09 (RP)  | ↗ To the north-east |
+| #9  | 2024-05-21 |      15:30 |   0° @  6 kn | SCT @  3,200 ft |      15 SM | 09 (RP)  | ↑ To the north      |
+| #10 | 2024-05-20 |      16:30 | 290° @  5 kn | CLR             |      15 SM | 27       | ↙ To the south-west |
 
 ## Installation instructions
 

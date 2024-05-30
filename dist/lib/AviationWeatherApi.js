@@ -39,8 +39,8 @@ import { Point } from "@fboes/geojson";
 
 /**
  * @typedef {object} AviationWeatherApiFrequencies
- * @property {string} type "LCL/P",
- * @property {number} freq 121.4
+ * @property {string} type "LCL/P" or "-"
+ * @property {number} [freq] 121.4
  */
 
 /**

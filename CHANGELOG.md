@@ -2,6 +2,8 @@
 
 - Added approximate alignment for water runways
 - Added extra cloud layers
+- Extracted FileWriter to have NodeJs dependency separate
+- Improved `DateYielder`
 
 ## 2.2.0
 
