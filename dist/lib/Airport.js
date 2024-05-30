@@ -89,12 +89,12 @@ export class Airport {
     /**
      * @type {boolean}
      */
-    this.hasTower = airportJson.tower !== "-";
+    this.hasTower = airportJson.tower === "T";
 
     /**
      * @type {boolean}
      */
-    this.hasBeacon = airportJson.beacon !== "-";
+    this.hasBeacon = airportJson.beacon === "B";
 
     const lclP = airportJson.freqs.find((f) => {
       return f.type === "LCL/P";

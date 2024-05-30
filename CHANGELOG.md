@@ -4,6 +4,7 @@
 - Added extra cloud layers
 - Extracted FileWriter to have NodeJs dependency separate
 - Improved `DateYielder`
+- Added API changes from AviationWeather
 
 ## 2.2.0
 
