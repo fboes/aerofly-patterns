@@ -13,13 +13,14 @@ export class AirportTest {
   checkKansasCity() {
     /** @type {import('./AviationWeatherApi.js').AviationWeatherApiAirport} */
     const airportJson = {
-      id: "KMCI",
+      icaoId: "KMCI",
       name: "KANSAS CITY/KANSAS_CITY_INTL",
+      type: "ARP",
       lat: 39.2976,
       lon: -94.7139,
       elev: 313.1,
-      mag_dec: "02E",
-      rwy_num: 3,
+      magdec: "02E",
+      rwyNum: 3,
       tower: "T",
       beacon: "B",
       runways: [
@@ -72,13 +73,14 @@ export class AirportTest {
   checkMarthasVineyard() {
     /** @type {import('./AviationWeatherApi.js').AviationWeatherApiAirport} */
     const airportJson = {
-      id: "KMVY",
+      icaoId: "KMVY",
       name: "VINEYARD HAVEN/MARTHA'S_VINEYARD",
+      type: "ARP",
       lat: 41.3934,
       lon: -70.6139,
       elev: 20.4,
-      mag_dec: "15W",
-      rwy_num: 2,
+      magdec: "15W",
+      rwyNum: 2,
       tower: "T",
       beacon: "B",
       runways: [
@@ -116,13 +118,14 @@ export class AirportTest {
   checkStockton() {
     /** @type {import('./AviationWeatherApi.js').AviationWeatherApiAirport} */
     const airportJson = {
-      id: "KSCK",
+      icaoId: "KSCK",
       name: "STOCKTON/STOCKTON_METRO",
+      type: "ARP",
       lat: 37.8944,
       lon: -121.2387,
       elev: 10.1,
-      mag_dec: "14E",
-      rwy_num: 3,
+      magdec: "14E",
+      rwyNum: 3,
       tower: "T",
       beacon: "B",
       runways: [

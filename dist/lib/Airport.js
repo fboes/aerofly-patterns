@@ -5,6 +5,7 @@ import { Units } from "../data/Units.js";
 import { Degree } from "./Degree.js";
 import { Airports } from "../data/Airports.js";
 import { Formatter } from "./Formatter.js";
+import { AviationWeatherApiHelpers } from "./AviationWeatherApi.js";
 
 /**
  * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}
@@ -16,7 +17,7 @@ export class Airport {
    * @param {import('./Configuration.js').Configuration?} configuration
    */
   constructor(airportJson, configuration = null) {
-    this.id = airportJson.id;
+    this.id = airportJson.icaoId;
     this.position = new Point(airportJson.lon, airportJson.lat, airportJson.elev);
 
     /**
@@ -73,10 +74,10 @@ export class Airport {
      * @type {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
      */
     this.magneticDeclination = 0;
-    const mag_dec_match = airportJson.mag_dec.match(/^(\d+)(E|W)$/);
-    if (mag_dec_match) {
-      this.magneticDeclination = Number(mag_dec_match[1]);
-      if (mag_dec_match[2] === "W") {
+    const magdecMatch = airportJson.magdec.match(/^(\d+)(E|W)$/);
+    if (magdecMatch) {
+      this.magneticDeclination = Number(magdecMatch[1]);
+      if (magdecMatch[2] === "W") {
         this.magneticDeclination *= -1;
       }
     }
@@ -96,7 +97,7 @@ export class Airport {
      */
     this.hasBeacon = airportJson.beacon === "B";
 
-    const lclP = airportJson.freqs.find((f) => {
+    const lclP = AviationWeatherApiHelpers.fixFrequencies(airportJson.freqs).find((f) => {
       return f.type === "LCL/P";
     });
 

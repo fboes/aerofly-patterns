@@ -1,10 +1,12 @@
 # Changelog
 
+## 2.3.0
+
+- Added API changes from AviationWeather
 - Added approximate alignment for water runways
 - Added extra cloud layers
 - Extracted FileWriter to have NodeJs dependency separate
 - Improved `DateYielder`
-- Added API changes from AviationWeather
 
 ## 2.2.0
 

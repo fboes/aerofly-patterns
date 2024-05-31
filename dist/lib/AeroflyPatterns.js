@@ -49,7 +49,7 @@ export class AeroflyPatterns {
   }
 
   async build() {
-    const airport = await AviationWeatherApi.fetchAirportsAlternate([this.configuration.icaoCode]);
+    const airport = await AviationWeatherApi.fetchAirports([this.configuration.icaoCode]);
     if (!airport.length) {
       throw new Error("No airport information from API");
     }
