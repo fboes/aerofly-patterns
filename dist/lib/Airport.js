@@ -83,9 +83,9 @@ export class Airport {
     }
 
     /**
-     * @type {number} at which UTC hour will the sun be lowest, aks LST 0:00
+     * @type {number} a tome zone which only considers the local solar time, rounded to the full hour, in hours difference to UTC
      */
-    this.lstOffset = this.position.longitude / 15;
+    this.localSolarTimezone = Math.round(this.position.longitude / 15);
 
     /**
      * @type {boolean}

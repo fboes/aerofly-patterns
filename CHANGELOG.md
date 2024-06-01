@@ -1,5 +1,7 @@
 # Changelog
 
+- Added variable time spacing between missions
+
 ## 2.3.2
 
 - Fixed time zone
@@ -14,7 +16,7 @@
 - Added API changes from AviationWeather
 - Added approximate alignment for water runways
 - Added extra cloud layers
-- Extracted FileWriter to have NodeJs dependency separate
+- Extracted FileWriter to have Node.js dependency separate
 - Improved `DateYielder`
 
 ## 2.2.0

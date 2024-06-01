@@ -59,7 +59,7 @@ export class AeroflyPatterns {
     const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position, 10000);
     this.airport.setNavaids(navaids);
 
-    const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.airport.lstOffset);
+    const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.airport.localSolarTimezone);
     const dates = dateYielder.entries();
     for (const date of dates) {
       const scenario = new Scenario(this.airport, this.configuration, date);
@@ -342,7 +342,7 @@ export class AeroflyPatterns {
       `| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | -------- | ------------------- |`,
     );
     this.scenarios.forEach((s, index) => {
-      const lst = LocalSolarTime(s.date, s.airport.lstOffset);
+      const lst = LocalSolarTime(s.date, s.airport.localSolarTimezone);
       const clouds =
         s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
           ? `${pad(s.weather?.clouds[0]?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.clouds[0]?.cloudBase.toLocaleString("en"), 6, true)} ft`

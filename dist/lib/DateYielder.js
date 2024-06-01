@@ -4,10 +4,11 @@ export class DateYielder {
   /**
    *
    * @param {number} count
-   * @param {number} offsetHours
-   * @param {Date} startDate
+   * @param {number} [offsetHours]
+   * @param {Date} [startDate]
+   * @param {number} [hoursSpacing]  between missions
    */
-  constructor(count, offsetHours = 0, startDate = new Date()) {
+  constructor(count, offsetHours = 0, startDate = new Date(), hoursSpacing = 1.5) {
     /**
      * @type {number}
      */
@@ -19,9 +20,14 @@ export class DateYielder {
     this.offsetHours = offsetHours;
 
     /**
+     * @type {number} hours spacing between missions
+     */
+    this.hoursSpacing = hoursSpacing;
+
+    /**
      * @type {Date}
      */
-    this.startDate = this.getLocalTime(startDate, 12 - (count - 1) / 2);
+    this.startDate = this.getLocalTime(startDate, 12 - ((count - 1) * this.hoursSpacing) / 2);
   }
 
   /**
@@ -34,7 +40,7 @@ export class DateYielder {
     while (index < this.count) {
       const currenDate = new Date(this.startDate);
       currenDate.setDate(currenDate.getDate() - index);
-      currenDate.setUTCHours(currenDate.getUTCHours() + index);
+      currenDate.setUTCMinutes(currenDate.getUTCMinutes() + index * this.hoursSpacing * 60);
 
       yield currenDate;
 
