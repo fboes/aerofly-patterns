@@ -51,7 +51,7 @@ export class DateYielder {
   getLocalTime(startDate, hours = 6) {
     const eightOClock = new Date(startDate);
     eightOClock.setUTCMinutes(60 * (hours % 1));
-    eightOClock.setUTCHours(Math.floor(hours - this.offsetHours));
+    eightOClock.setUTCHours(Math.floor(hours + this.offsetHours));
 
     while (eightOClock.valueOf() > startDate.valueOf()) {
       eightOClock.setDate(eightOClock.getDate() - 1);

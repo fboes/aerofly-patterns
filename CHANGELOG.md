@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.3.1
+
+- Improved handling of Local Solar Time (LST)
+- Fixed time zone
+
 ## 2.3.0
 
 - Added API changes from AviationWeather

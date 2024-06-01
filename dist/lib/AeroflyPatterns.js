@@ -9,6 +9,7 @@ import { Units } from "../data/Units.js";
 import { Point } from "@fboes/geojson";
 import { Vector } from "@fboes/geojson";
 import { Formatter } from "./Formatter.js";
+import { LocalSolarTime } from "./LocalSolarTime.js";
 
 /**
  * @typedef AeroflyPatternsCheckpoint
@@ -341,7 +342,7 @@ export class AeroflyPatterns {
       `| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | -------- | ------------------- |`,
     );
     this.scenarios.forEach((s, index) => {
-      const lst = Math.round((s.date.getUTCHours() + s.airport.lstOffset + 24) % 24);
+      const lst = LocalSolarTime(s.date, s.airport.lstOffset);
       const clouds =
         s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
           ? `${pad(s.weather?.clouds[0]?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.clouds[0]?.cloudBase.toLocaleString("en"), 6, true)} ft`
@@ -351,8 +352,8 @@ export class AeroflyPatterns {
         "| " +
           [
             "#" + pad(index + 1),
-            Formatter.getUtcCompleteDate(s.date),
-            pad(padNumber(lst) + ":" + padNumber(s.date.getUTCMinutes()), 10, true),
+            pad(lst.fullYear + "-" + padNumber(lst.month + 1) + "-" + padNumber(lst.date), 10, true),
+            pad(padNumber(lst.hours) + ":" + padNumber(lst.minutes), 10, true),
             s.weather?.windSpeed === 0
               ? pad("Calm", 12)
               : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kn`,
