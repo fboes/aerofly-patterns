@@ -21,16 +21,16 @@ Get [more information about Jackson Hole  Airport on SkyVector](https://skyvecto
 
 | No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway   | Aircraft position   |
 | :-: | ---------- | ---------: | ------------ | --------------- | ---------: | -------- | ------------------- |
-| #1  | 2024-05-31 |      17:30 | 270° @ 11 kn | CLR             |      15 SM | 19       | ↙ To the south-west |
-| #2  | 2024-05-30 |      18:30 | 230° @  8 kn | FEW @  7,000 ft |      15 SM | 19       | ↑ To the north      |
-| #3  | 2024-05-29 |      19:30 | 220° @ 14 kn | CLR             |      15 SM | 19       | → To the east       |
-| #4  | 2024-05-28 |      20:30 | 230° @  6 kn | FEW @  7,000 ft |      15 SM | 19       | ← To the west       |
-| #5  | 2024-05-27 |      21:30 | Calm         | CLR             |      15 SM | 19       | ↘ To the south-east |
-| #6  | 2024-05-26 |      22:30 | Calm         | OVC @  7,500 ft |      15 SM | 19       | ← To the west       |
-| #7  | 2024-05-25 |      23:30 | 190° @ 13 kn | BKN @  5,500 ft |      15 SM | 19       | ↓ To the south      |
-| #8  | 2024-05-25 |      00:30 |  20° @  4 kn | OVC @ 10,000 ft |      15 SM | 19       | ↑ To the north      |
-| #9  | 2024-05-24 |      01:30 | Calm         | BKN @  4,000 ft |      15 SM | 19       | ↗ To the north-east |
-| #10 | 2024-05-23 |      02:30 | 210° @ 10 kn | FEW @  4,800 ft |      15 SM | 19       | ↙ To the south-west |
+| #1  | 2024-05-31 |      07:30 |  10° @  4 kn | CLR             |      15 SM | 19       | → To the east       |
+| #2  | 2024-05-30 |      08:30 | 220° @  9 kn | BKN @  5,000 ft |      15 SM | 19       | ← To the west       |
+| #3  | 2024-05-29 |      09:30 | 210° @  7 kn | BKN @  7,000 ft |      15 SM | 19       | ↑ To the north      |
+| #4  | 2024-05-28 |      10:30 | 190° @  5 kn | CLR             |      15 SM | 19       | ↘ To the south-east |
+| #5  | 2024-05-27 |      11:30 | 130° @  4 kn | CLR             |      15 SM | 19       | ↖ To the north-west |
+| #6  | 2024-05-26 |      12:30 | 210° @  8 kn | OVC @  7,000 ft |      15 SM | 19       | ↖ To the north-west |
+| #7  | 2024-05-25 |      13:30 |   0° @  5 kn | FEW @  1,600 ft |      15 SM | 19       | ↘ To the south-east |
+| #8  | 2024-05-24 |      14:30 | 200° @  8 kn | BKN @  5,500 ft |      15 SM | 19       | ↘ To the south-east |
+| #9  | 2024-05-23 |      15:30 | 210° @ 11 kn | BKN @  2,300 ft |       7 SM | 19       | ← To the west       |
+| #10 | 2024-05-22 |      16:30 | 200° @ 14 kn | SCT @  4,700 ft |      15 SM | 19       | ↙ To the south-west |
 
 ## Installation instructions
 

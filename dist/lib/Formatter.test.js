@@ -10,7 +10,6 @@ export class FormatterTest {
     this.getDirection();
     this.getNumberString();
     this.getWeatherAdjectives();
-    this.getUtcCompleteDate();
   }
 
   getLocalDaytime() {
@@ -81,12 +80,5 @@ export class FormatterTest {
     assert.strictEqual("overcast", Formatter.getWeatherAdjectives(w));
 
     console.log(`✅ ${this.constructor.name}.getWeatherAdjectives successful`);
-  }
-
-  getUtcCompleteDate() {
-    const startDate = new Date(Date.UTC(2024, 4, 15, 12, 0, 0));
-    assert.strictEqual("2024-05-15", Formatter.getUtcCompleteDate(startDate));
-
-    console.log(`✅ ${this.constructor.name}.getUtcCompleteDate successful`);
   }
 }

@@ -5,6 +5,8 @@ import { DateYielder } from "./DateYielder.js";
 
 export class DateYielderTest {
   constructor() {
+    this.checkOtherEntries(12, -6);
+
     // All time zones
     for (let i = 12; i >= -12; i--) {
       this.checkEntries(1, i);
@@ -30,8 +32,27 @@ export class DateYielderTest {
       assert.ok(d.getUTCDate() <= 15);
       assert.ok(d.valueOf() <= startDate.valueOf());
     });
-    //console.log(dateYielder.startDate, dates);
+    // console.log(dateYielder.startDate, dates, offsetHours);
 
     console.log(`✅ ${this.constructor.name}.checkEntries(${entries}, ${offsetHours}) successful`);
+  }
+
+  /**
+   *
+   * @param {number} entries
+   * @param {number} offsetHours
+   */
+  checkOtherEntries(entries, offsetHours) {
+    const startDate = new Date();
+    const dateYielder = new DateYielder(entries, offsetHours, startDate);
+    const dates = Array.from(dateYielder.entries());
+
+    assert.strictEqual(dates.length, entries);
+    dates.forEach((d) => {
+      assert.ok(d.valueOf() <= startDate.valueOf());
+    });
+    // console.log(startDate, dateYielder.startDate, dates, offsetHours);
+
+    console.log(`✅ ${this.constructor.name}.checkOtherEntries(${entries}, ${offsetHours}) successful`);
   }
 }

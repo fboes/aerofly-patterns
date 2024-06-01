@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.2
+
+- Fixed time zone
+
 ## 2.3.1
 
 - Improved handling of Local Solar Time (LST)
