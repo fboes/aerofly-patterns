@@ -19,7 +19,7 @@ import { Point } from "@fboes/geojson";
  * @property {"VRB"|number} wdir ° | "VRB"
  * @property {number} wspd kn
  * @property {number?} wgst kn
- * @property {string|number} visib "10+" in SM. Max values can be anything with a "+"
+ * @property {string|number} visib "10+" / "6+" in SM. Max values can be anything with a "+"
  * @property {number} altim hPa
  * @property {number} lat
  * @property {number} lon
@@ -29,7 +29,7 @@ import { Point } from "@fboes/geojson";
  */
 
 /**
- * @typedef {"A"|"C"|"G"|"W"|"T"} AviationWeatherApiRunwaySurface  "A" Asphalt, "C" Concrete, "G" Grass, "W" Water, "T" Turf Dirt
+ * @typedef {"A"|"C"|"G"|"W"|"T"|"H"} AviationWeatherApiRunwaySurface  "A" Asphalt, "C" Concrete, "G" Grass, "W" Water, "T" Turf Dirt, "H" Hard
  */
 
 /**
