@@ -9,7 +9,7 @@ import { Units } from "../data/Units.js";
 import { Point } from "@fboes/geojson";
 import { Vector } from "@fboes/geojson";
 import { Formatter } from "./Formatter.js";
-import { LocalSolarTime } from "./LocalSolarTime.js";
+import { LocalTime } from "./LocalTime.js";
 
 /**
  * @typedef AeroflyPatternsCheckpoint
@@ -59,7 +59,7 @@ export class AeroflyPatterns {
     const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position, 10000);
     this.airport.setNavaids(navaids);
 
-    const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.airport.localSolarTimezone);
+    const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.airport.nauticalTimezone);
     const dates = dateYielder.entries();
     for (const date of dates) {
       const scenario = new Scenario(this.airport, this.configuration, date);
@@ -338,11 +338,11 @@ export class AeroflyPatterns {
       "",
       "## Included missions",
       "",
-      `| No  | Local date | Local time | Wind         | Clouds          | Visibility | Runway   | Aircraft position   |`,
-      `| :-: | ---------- | ---------: | ------------ | --------------- | ---------: | -------- | ------------------- |`,
+      `| No  | Local date¹ | Local time¹ | Wind         | Clouds          | Visibility | Runway   | Aircraft position   |`,
+      `| :-: | ----------- | ----------: | ------------ | --------------- | ---------: | -------- | ------------------- |`,
     );
     this.scenarios.forEach((s, index) => {
-      const lst = LocalSolarTime(s.date, s.airport.localSolarTimezone);
+      const localNauticalTime = LocalTime(s.date, s.airport.nauticalTimezone);
       const clouds =
         s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
           ? `${pad(s.weather?.clouds[0]?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.clouds[0]?.cloudBase.toLocaleString("en"), 6, true)} ft`
@@ -352,8 +352,8 @@ export class AeroflyPatterns {
         "| " +
           [
             "#" + pad(index + 1),
-            pad(lst.fullYear + "-" + padNumber(lst.month + 1) + "-" + padNumber(lst.date), 10, true),
-            pad(padNumber(lst.hours) + ":" + padNumber(lst.minutes), 10, true),
+            pad(localNauticalTime.fullYear + "-" + padNumber(localNauticalTime.month + 1) + "-" + padNumber(localNauticalTime.date), 11, true),
+            pad(padNumber(localNauticalTime.hours) + ":" + padNumber(localNauticalTime.minutes), 11, true),
             s.weather?.windSpeed === 0
               ? pad("Calm", 12)
               : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kn`,
@@ -369,6 +369,8 @@ export class AeroflyPatterns {
     });
 
     output.push(
+      "",
+      "¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)",
       "",
       "## Installation instructions",
       "",

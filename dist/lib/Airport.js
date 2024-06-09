@@ -83,9 +83,10 @@ export class Airport {
     }
 
     /**
-     * @type {number} a tome zone which only considers the local solar time, rounded to the full hour, in hours difference to UTC
+     * @type {number} a tome zone which only considers the longitude, rounded to the full hour, in hours difference to UTC
+     * @see https://en.wikipedia.org/wiki/Nautical_time
      */
-    this.localSolarTimezone = Math.round(this.position.longitude / 15);
+    this.nauticalTimezone = Math.round(this.position.longitude / 15);
 
     /**
      * @type {boolean}

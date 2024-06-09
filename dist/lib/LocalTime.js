@@ -3,10 +3,10 @@
 /**
  *
  * @param {Date} date
- * @param {number} offsetHours
+ * @param {number} offsetHours as integer
  * @returns {{hours:number, minutes:number, date: number, month: number, fullYear: number}}
  */
-export const LocalSolarTime = (date, offsetHours) => {
+export const LocalTime = (date, offsetHours) => {
   const offsetDate = new Date(date);
   offsetDate.setUTCHours(offsetDate.getUTCHours() + Math.round(offsetHours));
   return {

@@ -18,18 +18,20 @@ Get [more information about Stockton Metro Airport on SkyVector](https://skyvect
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds       | Visibility | Runway   | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | ------------ | ---------: | -------- | -------------------- |
-| #1  | 2024-06-01 |      05:15 | 300° @ 6 kn  | CLR          |      15 SM | 29L      | ↘ To the south-east |
-| #2  | 2024-05-31 |      06:45 | 190° @ 3 kn  | CLR          |      15 SM | 11R (RP) | ↖ To the north-west |
-| #3  | 2024-05-30 |      08:15 | 320° @ 10 kn | CLR          |      15 SM | 29R (RP) | ↙ To the south-west |
-| #4  | 2024-05-29 |      09:45 | 320° @ 9 kn  | CLR          |      15 SM | 29R (RP) | ↓ To the south       |
-| #5  | 2024-05-28 |      11:15 | 0° @ 4 kn    | CLR          |      15 SM | 29R (RP) | ↘ To the south-east |
-| #6  | 2024-05-27 |      12:45 | Calm         | CLR          |      15 SM | 29R (RP) | ← To the west        |
-| #7  | 2024-05-26 |      14:15 | 330° @ 7 kn  | CLR          |      15 SM | 29R (RP) | ↗ To the north-east |
-| #8  | 2024-05-25 |      15:45 | 280° @ 11 kn | CLR          |      15 SM | 29L      | ↘ To the south-east |
-| #9  | 2024-05-24 |      17:15 | 260° @ 21 kn | FEW @ 500 ft |      15 SM | 29L      | ↓ To the south       |
-| #10 | 2024-05-23 |      18:45 | 260° @ 14 kn | CLR          |      15 SM | 29L      | ← To the west        |
+| No  | Local date¹ | Local time¹ | Wind         | Clouds | Visibility | Runway   | Aircraft position    |
+| :-: | ----------- | ----------: | ------------ | ------ | ---------: | -------- | -------------------- |
+| #1  | 2024-06-08  |       05:15 | 270° @ 9 kn  | CLR    |      15 SM | 29L      | ↑ To the north       |
+| #2  | 2024-06-07  |       06:45 | 350° @ 5 kn  | CLR    |      15 SM | 29R (RP) | ↖ To the north-west |
+| #3  | 2024-06-06  |       08:15 | 300° @ 6 kn  | CLR    |      15 SM | 29L      | ↓ To the south       |
+| #4  | 2024-06-05  |       09:45 | 320° @ 7 kn  | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
+| #5  | 2024-06-04  |       11:15 | 330° @ 12 kn | CLR    |      15 SM | 29R (RP) | → To the east        |
+| #6  | 2024-06-03  |       12:45 | 260° @ 14 kn | CLR    |      15 SM | 29L      | ↖ To the north-west |
+| #7  | 2024-06-02  |       14:15 | 300° @ 10 kn | CLR    |      15 SM | 29L      | ↘ To the south-east |
+| #8  | 2024-06-01  |       15:45 | 280° @ 13 kn | CLR    |      15 SM | 29L      | ↓ To the south       |
+| #9  | 2024-05-31  |       17:15 | 300° @ 12 kn | CLR    |      15 SM | 29L      | ↘ To the south-east |
+| #10 | 2024-05-30  |       18:45 | 340° @ 7 kn  | CLR    |      15 SM | 29R (RP) | ← To the west        |
+
+¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
 ## Installation instructions
 

@@ -1,6 +1,7 @@
 # Changelog
 
 - Added variable time spacing between missions
+- Added description for [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
 ## 2.3.2
 

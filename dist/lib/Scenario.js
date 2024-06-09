@@ -246,7 +246,7 @@ export class Scenario {
         ? ` (${Math.ceil(this.airport.position.elevation * Units.feetPerMeter).toLocaleString("en")}ft)`
         : "";
 
-    let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.localSolarTimezone)}, and you are ${vector} of the ${towered} airport ${this.airport.name}${elevation}. `;
+    let description = `It is ${weatherAdjectives}${Formatter.getLocalDaytime(this.date, this.airport.nauticalTimezone)}, and you are ${vector} of the ${towered} airport ${this.airport.name}${elevation}. `;
 
     let wind = ``;
     if (this.weather) {
