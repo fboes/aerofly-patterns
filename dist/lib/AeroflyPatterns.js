@@ -352,7 +352,15 @@ export class AeroflyPatterns {
         "| " +
           [
             "#" + pad(index + 1),
-            pad(localNauticalTime.fullYear + "-" + padNumber(localNauticalTime.month + 1) + "-" + padNumber(localNauticalTime.date), 11, true),
+            pad(
+              localNauticalTime.fullYear +
+                "-" +
+                padNumber(localNauticalTime.month + 1) +
+                "-" +
+                padNumber(localNauticalTime.date),
+              11,
+              true,
+            ),
             pad(padNumber(localNauticalTime.hours) + ":" + padNumber(localNauticalTime.minutes), 11, true),
             s.weather?.windSpeed === 0
               ? pad("Calm", 12)

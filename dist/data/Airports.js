@@ -49,5 +49,20 @@ export const Airports = {
     ],
     minimumSafeAltitude: 12_000,
   },
+  KSPG: {
+    runways: [
+      { id: "07", isRightPattern: true },
+      { id: "36", isRightPattern: true },
+      { id: "18", isPreferred: true },
+    ],
+    minimumSafeAltitude: 2_700,
+  },
+  KTPF: {
+    runways: [
+      { id: "04", isRightPattern: true },
+      { id: "36", isRightPattern: true, isPreferred: true },
+    ],
+    minimumSafeAltitude: 2_700,
+  },
   KWYS: { minimumSafeAltitude: 12_600, runways: [{ id: "01", ilsFrequency: 110.7, isPreferred: true }] },
 };

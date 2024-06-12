@@ -55,7 +55,7 @@ import { Point } from "@fboes/geojson";
  * @property {number} lat
  * @property {number} lon
  * @property {number} elev 313.1 meters MSL
- * @property {string} magdec "02E" for East
+ * @property {string} magdec "02E" for East, "--" obiously for true headings
  * @property {number} rwyNum
  * @property {"T"|"-"|null} tower
  * @property {"B"|"-"|null} beacon
