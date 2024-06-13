@@ -16,7 +16,7 @@
  * @property {"S"|"G"|"H"|"U"|"W"?} type STOL, Glider, Helicopter, Ultralight, Water
  * @property {string} icaoCode
  * @property {string} callsign
- * @property {number} cruiseSpeed in knots
+ * @property {number} cruiseSpeed in kts
  * @property {number} [runwayTakeoff] length in feet
  * @property {number} [runwayLanding] length in feet
  * @property {boolean} [hasNoRadioNav] if no VOR receiver is onboard

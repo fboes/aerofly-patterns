@@ -25,6 +25,7 @@ export class Airport {
      */
     this.name = airportJson.name
       .replace(/_/g, " ")
+      .trim()
       .replace(/\bINTL\b/g, "INTERNATIONAL")
       .replace(/\bRGNL\b/g, "REGIONAL")
       .replace(/\bFLD\b/g, "FIELD")

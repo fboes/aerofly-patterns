@@ -19,18 +19,20 @@ Get [more information about Jackson Hole Airport on SkyVector](https://skyvector
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds         | Visibility | Runway | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | -------------- | ---------: | ------ | -------------------- |
-| #1  | 2024-06-01 |      05:15 | 10° @ 4 kn   | CLR            |      15 SM | 19     | ↑ To the north       |
-| #2  | 2024-05-31 |      06:45 | 20° @ 4 kn   | CLR            |      15 SM | 19     | ↘ To the south-east |
-| #3  | 2024-05-30 |      08:15 | 220° @ 9 kn  | BKN @ 5,000 ft |      15 SM | 19     | ↖ To the north-west |
-| #4  | 2024-05-29 |      09:45 | 210° @ 7 kn  | BKN @ 7,000 ft |      15 SM | 19     | ← To the west        |
-| #5  | 2024-05-28 |      11:15 | 190° @ 6 kn  | CLR            |      15 SM | 19     | ← To the west        |
-| #6  | 2024-05-27 |      12:45 | 0° @ 4 kn    | FEW @ 7,000 ft |      15 SM | 19     | ↘ To the south-east |
-| #7  | 2024-05-26 |      14:15 | 250° @ 19 kn | BKN @ 7,000 ft |      15 SM | 19     | ← To the west        |
-| #8  | 2024-05-25 |      15:45 | 240° @ 10 kn | FEW @ 5,000 ft |      15 SM | 19     | ← To the west        |
-| #9  | 2024-05-24 |      17:15 | 250° @ 7 kn  | SCT @ 6,500 ft |      15 SM | 19     | ↙ To the south-west |
-| #10 | 2024-05-23 |      18:45 | 260° @ 9 kn  | OVC @ 4,100 ft |       9 SM | 19     | → To the east        |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | -------------------- |
+| #1  | 2024-06-13  |       05:15 | 30° @ 5 kts   | CLR            |      15 SM | 19     | ↖ To the north-west |
+| #2  | 2024-06-12  |       06:45 | Calm          | CLR            |       9 SM | 19     | ↙ To the south-west |
+| #3  | 2024-06-11  |       08:15 | 190° @ 4 kts  | CLR            |      15 SM | 19     | ↑ To the north       |
+| #4  | 2024-06-10  |       09:45 | 210° @ 12 kts | FEW @ 3,600 ft |      15 SM | 19     | ↗ To the north-east |
+| #5  | 2024-06-09  |       11:15 | 0° @ 6 kts    | FEW @ 9,000 ft |      15 SM | 01     | ↖ To the north-west |
+| #6  | 2024-06-08  |       12:45 | 220° @ 10 kts | FEW @ 7,500 ft |      15 SM | 19     | ↙ To the south-west |
+| #7  | 2024-06-07  |       14:15 | 290° @ 11 kts | BKN @ 8,000 ft |      15 SM | 19     | ↖ To the north-west |
+| #8  | 2024-06-06  |       15:45 | 240° @ 5 kts  | CLR            |      15 SM | 19     | ↙ To the south-west |
+| #9  | 2024-06-05  |       17:15 | 270° @ 8 kts  | BKN @ 7,500 ft |      15 SM | 19     | ↗ To the north-east |
+| #10 | 2024-06-04  |       18:45 | 240° @ 6 kts  | SCT @ 6,500 ft |      15 SM | 19     | ← To the west        |
+
+¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
 ## Installation instructions
 

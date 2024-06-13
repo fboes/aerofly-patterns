@@ -5,11 +5,17 @@ import { Configuration } from "./Configuration.js";
 import { FeatureCollection, Feature, LineString } from "@fboes/geojson";
 import { Scenario } from "./Scenario.js";
 import { DateYielder } from "./DateYielder.js";
-import { Units } from "../data/Units.js";
 import { Point } from "@fboes/geojson";
 import { Vector } from "@fboes/geojson";
 import { Formatter } from "./Formatter.js";
 import { LocalTime } from "./LocalTime.js";
+import {
+  AeroflyMission,
+  AeroflyMissionCheckpoint,
+  AeroflyMissionConditions,
+  AeroflyMissionConditionsCloud,
+  AeroflyMissionsList,
+} from "./AeroflyCustomMissions.js";
 
 /**
  * @typedef AeroflyPatternsCheckpoint
@@ -136,12 +142,12 @@ export class AeroflyPatterns {
       }),
     );
 
-    if (scenario.activeRunway) {
+    if (scenario.activeRunway && scenario.entryWaypoint) {
       geoJson.addFeature(
         new Feature(
           new LineString([
             scenario.aircraft.position,
-            scenario.entryWaypoint?.position,
+            scenario.entryWaypoint.position,
             scenario.patternWaypoints[2].position,
             scenario.patternWaypoints[3].position,
             scenario.patternWaypoints[4].position,
@@ -172,106 +178,82 @@ export class AeroflyPatterns {
    */
   buildCustomMissionTmc() {
     /**
-     *
-     * @param {AeroflyPatternsCheckpoint} checkpoint
-     * @param {number} index
-     * @param {Point?} lastPosition
-     * @returns {string}
+     * @type {AeroflyMission[]}
      */
-    const exportWaypoint = (checkpoint, index, lastPosition) => {
-      /**
-       * @type {Vector?}
-       */
-      let vector = null;
-      const waypointable = checkpoint.waypoint;
-      if (lastPosition) {
-        vector = lastPosition.getVectorTo(waypointable.position);
-      }
-      return `                    <[tmmission_checkpoint][element][${index}]
-                        <[string8u][type][${checkpoint.type}]>
-                        <[string8u][name][${waypointable.id || "WS2037"}]>
-                        <[vector2_float64][lon_lat][${waypointable.position.longitude} ${waypointable.position.latitude}]>
-                        <[float64][altitude][${waypointable.position.elevation}]> // ${(waypointable.position.elevation ?? 0) * Units.feetPerMeter} ft
-                        <[float64][direction][${vector?.bearing ?? -1}]>
-                        <[float64][slope][0]>
-                        <[float64][length][${checkpoint.length ?? 0}]>
-                        <[float64][frequency][${checkpoint.frequency ?? 0}]>
-                    >
-`;
-    };
-
-    let output = `<[file][][]
-    <[tmmissions_list][][]
-        <[list_tmmission_definition][missions][]
-
-`;
-
-    this.scenarios.forEach((s, index) => {
-      if (!s.activeRunway) {
-        return;
-      }
-
-      output += `// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                // Created with Aerofly Landegerät
-                <[string8][title][${s.airport.id} #${index + 1}: ${s.airport.name}]>
-                <[string8][description][${s.description}]>
-                <[string8]   [flight_setting]     [cruise]>
-                <[string8u]  [aircraft_name]      [${s.aircraft.aeroflyCode}]>
-                //<[string8u][aircraft_livery]    []>
-                <[stringt8c] [aircraft_icao]      [${s.aircraft.data.icaoCode}]>
-                <[stringt8c] [callsign]           [${s.aircraft.data.callsign}]>
-                <[stringt8c] [origin_icao]        [${s.airport.id}]>
-                <[tmvector2d][origin_lon_lat]     [${s.aircraft.position.longitude} ${s.aircraft.position.latitude}]>
-                <[float64]   [origin_dir]         [${s.aircraft.heading}]>
-                <[float64]   [origin_alt]         [${s.aircraft.position.elevation}]> // ${(s.aircraft.position.elevation ?? 0) * Units.feetPerMeter} ft
-                <[stringt8c] [destination_icao]   [${s.airport.id}]>
-                <[tmvector2d][destination_lon_lat][${s.airport.position.longitude} ${s.airport.position.latitude}]>
-                <[float64]   [destination_dir]    [${s.activeRunway.alignment}]>
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][${s.date.getUTCFullYear()}]>
-                        <[int32][time_month][${s.date.getUTCMonth() + 1}]>
-                        <[int32][time_day][${s.date.getUTCDate()}]>
-                        <[float64][time_hours][${s.date.getUTCHours() + s.date.getMinutes() / 60}]>
-                    >
-                    <[float64][wind_direction][${s.weather?.windDirection ?? 0}]>
-                    <[float64][wind_speed][${s.weather?.windSpeed ?? 0}]>
-                    <[float64][wind_gusts][${s.weather?.windGusts ?? 0}]>
-                    <[float64][turbulence_strength][${s.weather?.turbulenceStrength ?? 0}]>
-                    <[float64][thermal_strength][${s.weather?.thermalStrength ?? 0}]>
-                    <[float64][visibility][${(s.weather?.visibility ?? 15) * Units.meterPerStatuteMile}]>
-                    <[float64][cloud_cover][${s.weather?.clouds[0]?.cloudCover ?? 0}]> // ${s.weather?.clouds[0]?.cloudCoverCode ?? "CLR"}
-                    <[float64][cloud_base][${(s.weather?.clouds[0]?.cloudBase ?? 0) / Units.feetPerMeter}]> // ${s.weather?.clouds[0]?.cloudBase ?? 0} ft
-                    //<[float64][cloud2_cover][${s.weather?.clouds[1]?.cloudCover ?? 0}]> // ${s.weather?.clouds[1]?.cloudCoverCode ?? "CLR"}
-                    //<[float64][cloud2_base][${(s.weather?.clouds[1]?.cloudBase ?? 0) / Units.feetPerMeter}]> // ${s.weather?.clouds[1]?.cloudBase ?? 0} ft
-                    //<[float64][cloud3_cover][${s.weather?.clouds[2]?.cloudCover ?? 0}]> // ${s.weather?.clouds[2]?.cloudCoverCode ?? "CLR"}
-                    //<[float64][cloud3_base][${(s.weather?.clouds[2]?.cloudBase ?? 0) / Units.feetPerMeter}]> // ${s.weather?.clouds[2]?.cloudBase ?? 0} ft
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-`;
+    const missions = this.scenarios.map((s, index) => {
+      const condition = new AeroflyMissionConditions();
+      condition.time = s.date;
+      condition.wind = {
+        direction: s.weather?.windDirection ?? 0,
+        speed: s.weather?.windSpeed ?? 0,
+        gusts: s.weather?.windGusts ?? 0,
+      };
+      condition.turbulence_strength = s.weather?.turbulenceStrength ?? 0;
+      condition.thermal_strength = s.weather?.thermalStrength ?? 0;
+      condition.visibility_sm = s.weather?.visibility ?? 15;
+      condition.clouds =
+        s.weather?.clouds.map((c) => {
+          return new AeroflyMissionConditionsCloud(c.cloudCover, c.cloudBase);
+        }) ?? [];
 
       /**
        * @type {Point?}
        */
       let lastPosition = null;
-      s.waypoints.forEach((waypoint, index) => {
-        output += exportWaypoint(waypoint, index, lastPosition);
+
+      /**
+       * @type {AeroflyMissionCheckpoint[]}
+       */
+      const checkpoints = s.waypoints.map((waypoint) => {
+        /**
+         * @type {Vector?}
+         */
+        const vector = lastPosition?.getVectorTo(waypoint.waypoint.position) ?? null;
+        const checkpoint = new AeroflyMissionCheckpoint(
+          waypoint.waypoint.id || "WS2037",
+          waypoint.type,
+          waypoint.waypoint.position.longitude,
+          waypoint.waypoint.position.latitude,
+          waypoint.waypoint.position.elevation ?? 0,
+        );
+        checkpoint.direction = vector?.bearing ?? -1;
+        checkpoint.length = waypoint.length ?? 0;
+        checkpoint.frequency = waypoint.frequency ?? 0;
+        checkpoint.slope = 0;
+
         lastPosition = waypoint.waypoint.position;
+        return checkpoint;
       });
 
-      output += `                >
-            >
+      const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, checkpoints);
+      mission.description = s.description ?? "";
+      mission.flight_setting = "cruise";
+      mission.aircraft = {
+        name: s.aircraft.aeroflyCode,
+        livery: "",
+        icao: s.aircraft.data.icaoCode,
+      };
+      mission.callsign = s.aircraft.data.callsign;
+      mission.origin = {
+        icao: s.airport.id,
+        longitude: s.aircraft.position.longitude,
+        latitude: s.aircraft.position.latitude,
+        dir: s.aircraft.heading,
+        alt: s.aircraft.position.elevation ?? 0,
+      };
+      mission.destination = {
+        icao: s.airport.id,
+        longitude: s.airport.position.longitude,
+        latitude: s.airport.position.latitude,
+        dir: s.activeRunway?.alignment ?? 0,
+        alt: s.airport.position.elevation ?? 0,
+      };
+      mission.conditions = condition;
 
-`;
+      return mission;
     });
 
-    output += `        >
-    >
->
-`;
-
-    return output;
+    return new AeroflyMissionsList(missions).toString();
   }
 
   /**
@@ -338,8 +320,8 @@ export class AeroflyPatterns {
       "",
       "## Included missions",
       "",
-      `| No  | Local date¹ | Local time¹ | Wind         | Clouds          | Visibility | Runway   | Aircraft position   |`,
-      `| :-: | ----------- | ----------: | ------------ | --------------- | ---------: | -------- | ------------------- |`,
+      `| No  | Local date¹ | Local time¹ | Wind          | Clouds          | Visibility | Runway   | Aircraft position   |`,
+      `| :-: | ----------- | ----------: | ------------- | --------------- | ---------: | -------- | ------------------- |`,
     );
     this.scenarios.forEach((s, index) => {
       const localNauticalTime = LocalTime(s.date, s.airport.nauticalTimezone);
@@ -362,9 +344,9 @@ export class AeroflyPatterns {
               true,
             ),
             pad(padNumber(localNauticalTime.hours) + ":" + padNumber(localNauticalTime.minutes), 11, true),
-            s.weather?.windSpeed === 0
-              ? pad("Calm", 12)
-              : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kn`,
+            !s.weather?.windSpeed
+              ? pad("Calm", 13)
+              : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)}  kts`,
             clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 8),

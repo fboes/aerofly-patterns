@@ -237,7 +237,7 @@ export class Scenario {
 
     let crossWind = "";
     if (this.activeRunwayCrosswindComponent > 4.5) {
-      crossWind = ` / ${Math.ceil(this.activeRunwayCrosswindComponent)} kn crosswind component`;
+      crossWind = ` / ${Math.ceil(this.activeRunwayCrosswindComponent)} kts crosswind component`;
     }
     const runway = `${this.activeRunway.id} (${Math.round(this.activeRunway.alignment - this.airport.magneticDeclination)}° / ${Math.round(this.activeRunway.dimension[0] / Units.feetPerMeter).toLocaleString("en")}m${crossWind})`;
 
@@ -255,7 +255,7 @@ export class Scenario {
       } else if (this.weather.windSpeed <= 5) {
         wind = `As there is almost no wind`;
       } else {
-        wind = `As the wind is ${this.weather.windSpeed ?? 0} kn from ${this.weather.windDirection ?? 0}°`;
+        wind = `As the wind is ${this.weather.windSpeed ?? 0} kts from ${this.weather.windDirection ?? 0}°`;
       }
     }
 
@@ -376,17 +376,17 @@ export class ScenarioWeather {
    */
   constructor(weatherJson) {
     /**
-     * @type {number} in kn
+     * @type {number} in degree
      */
     this.windDirection = weatherJson.wdir === "VRB" ? 0 : Degree(weatherJson.wdir);
 
     /**
-     * @type {number} in kn
+     * @type {number} in kts
      */
     this.windSpeed = weatherJson.wspd;
 
     /**
-     * @type {number} in kn
+     * @type {number} in kts
      */
     this.windGusts = weatherJson.wgst ?? 0;
 

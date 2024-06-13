@@ -19,18 +19,20 @@ Get [more information about Concord / Buchanan Field Airport on SkyVector](https
 
 ## Included missions
 
-| No  | Local date | Local time | Wind         | Clouds | Visibility | Runway   | Aircraft position    |
-| :-: | ---------- | ---------: | ------------ | ------ | ---------: | -------- | -------------------- |
-| #1  | 2024-06-01 |      05:15 | 190° @ 16 kn | CLR    |       9 SM | 19L      | ↓ To the south       |
-| #2  | 2024-05-31 |      06:45 | Calm         | CLR    |       9 SM | 19R (RP) | ↙ To the south-west |
-| #3  | 2024-05-30 |      08:15 | Calm         | CLR    |      15 SM | 19R (RP) | ↙ To the south-west |
-| #4  | 2024-05-29 |      09:45 | 300° @ 6 kn  | CLR    |      15 SM | 32L      | ← To the west        |
-| #5  | 2024-05-28 |      11:15 | 0° @ 5 kn    | CLR    |      15 SM | 19R (RP) | ↘ To the south-east |
-| #6  | 2024-05-27 |      12:45 | 180° @ 12 kn | CLR    |      15 SM | 19L      | → To the east        |
-| #7  | 2024-05-26 |      14:15 | 300° @ 10 kn | CLR    |      15 SM | 32L      | ↗ To the north-east |
-| #8  | 2024-05-25 |      15:45 | 210° @ 14 kn | CLR    |      15 SM | 19R (RP) | ↗ To the north-east |
-| #9  | 2024-05-24 |      17:15 | 190° @ 17 kn | CLR    |      15 SM | 19L      | ← To the west        |
-| #10 | 2024-05-23 |      18:45 | 180° @ 8 kn  | CLR    |      15 SM | 19L      | → To the east        |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway   | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | ------ | ---------: | -------- | -------------------- |
+| #1  | 2024-06-13  |       05:15 | 280° @ 7 kts  | CLR    |      15 SM | 32L      | ↙ To the south-west |
+| #2  | 2024-06-12  |       06:45 | 350° @ 3 kts  | CLR    |       8 SM | 19R (RP) | ↘ To the south-east |
+| #3  | 2024-06-11  |       08:15 | Calm          | CLR    |      15 SM | 19R (RP) | ↗ To the north-east |
+| #4  | 2024-06-10  |       09:45 | Calm          | CLR    |      15 SM | 19R (RP) | ↑ To the north       |
+| #5  | 2024-06-09  |       11:15 | Calm          | CLR    |      15 SM | 19R (RP) | ↘ To the south-east |
+| #6  | 2024-06-08  |       12:45 | Calm          | CLR    |      15 SM | 19R (RP) | ↓ To the south       |
+| #7  | 2024-06-07  |       14:15 | 260° @ 11 kts | CLR    |      15 SM | 19R (RP) | ↘ To the south-east |
+| #8  | 2024-06-06  |       15:45 | 200° @ 11 kts | CLR    |      15 SM | 19L      | ↖ To the north-west |
+| #9  | 2024-06-05  |       17:15 | 290° @ 9 kts  | CLR    |      15 SM | 32L      | ← To the west        |
+| #10 | 2024-06-04  |       18:45 | Calm          | CLR    |      15 SM | 19R (RP) | ↗ To the north-east |
+
+¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
 ## Installation instructions
 
