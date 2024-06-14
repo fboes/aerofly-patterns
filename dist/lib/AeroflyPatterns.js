@@ -5,26 +5,14 @@ import { Configuration } from "./Configuration.js";
 import { FeatureCollection, Feature, LineString } from "@fboes/geojson";
 import { Scenario } from "./Scenario.js";
 import { DateYielder } from "./DateYielder.js";
-import { Point } from "@fboes/geojson";
-import { Vector } from "@fboes/geojson";
 import { Formatter } from "./Formatter.js";
 import { LocalTime } from "./LocalTime.js";
 import {
   AeroflyMission,
-  AeroflyMissionCheckpoint,
   AeroflyMissionConditions,
   AeroflyMissionConditionsCloud,
   AeroflyMissionsList,
 } from "./AeroflyCustomMissions.js";
-
-/**
- * @typedef AeroflyPatternsCheckpoint
- * @type {object}
- * @property {AeroflyPatternsWaypointable} waypoint
- * @property {"origin"|"departure_runway"|"waypoint"|"destination_runway"|"destination"} type
- * @property {number} [length] optional in meters
- * @property {number} [frequency] optional in Hz
- */
 
 /**
  * @typedef AeroflyPatternsWaypointable
@@ -188,46 +176,17 @@ export class AeroflyPatterns {
         speed: s.weather?.windSpeed ?? 0,
         gusts: s.weather?.windGusts ?? 0,
       };
-      condition.turbulence_strength = s.weather?.turbulenceStrength ?? 0;
-      condition.thermal_strength = s.weather?.thermalStrength ?? 0;
+      condition.turbulenceStrength = s.weather?.turbulenceStrength ?? 0;
+      condition.thermalStrength = s.weather?.thermalStrength ?? 0;
       condition.visibility_sm = s.weather?.visibility ?? 15;
       condition.clouds =
         s.weather?.clouds.map((c) => {
-          return new AeroflyMissionConditionsCloud(c.cloudCover, c.cloudBase);
+          return AeroflyMissionConditionsCloud.createInFeet(c.cloudCover, c.cloudBase);
         }) ?? [];
 
-      /**
-       * @type {Point?}
-       */
-      let lastPosition = null;
-
-      /**
-       * @type {AeroflyMissionCheckpoint[]}
-       */
-      const checkpoints = s.waypoints.map((waypoint) => {
-        /**
-         * @type {Vector?}
-         */
-        const vector = lastPosition?.getVectorTo(waypoint.waypoint.position) ?? null;
-        const checkpoint = new AeroflyMissionCheckpoint(
-          waypoint.waypoint.id || "WS2037",
-          waypoint.type,
-          waypoint.waypoint.position.longitude,
-          waypoint.waypoint.position.latitude,
-          waypoint.waypoint.position.elevation ?? 0,
-        );
-        checkpoint.direction = vector?.bearing ?? -1;
-        checkpoint.length = waypoint.length ?? 0;
-        checkpoint.frequency = waypoint.frequency ?? 0;
-        checkpoint.slope = 0;
-
-        lastPosition = waypoint.waypoint.position;
-        return checkpoint;
-      });
-
-      const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, checkpoints);
+      const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, s.waypoints);
       mission.description = s.description ?? "";
-      mission.flight_setting = "cruise";
+      mission.flightSetting = "cruise";
       mission.aircraft = {
         name: s.aircraft.aeroflyCode,
         livery: "",

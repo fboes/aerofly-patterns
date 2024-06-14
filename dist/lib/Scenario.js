@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Vector } from "@fboes/geojson";
+import { Point, Vector } from "@fboes/geojson";
 import { Units } from "../data/Units.js";
 import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
@@ -8,6 +8,7 @@ import { Formatter } from "./Formatter.js";
 import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
 import { Degree, degreeDifference, degreeToRad } from "./Degree.js";
 import { Airports } from "../data/Airports.js";
+import { AeroflyMissionCheckpoint } from "./AeroflyCustomMissions.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -276,7 +277,7 @@ export class Scenario {
   }
 
   /**
-   * @returns {import("./AeroflyPatterns.js").AeroflyPatternsCheckpoint[]} `Waypoint, type, length, frequency`; will return an empty array if not all preconditions are met
+   * @returns {import("./AeroflyCustomMissions.js").AeroflyMissionCheckpoint[]} `Waypoint, type, length, frequency`; will return an empty array if not all preconditions are met
    */
   get waypoints() {
     if (!this.activeRunway) {
@@ -284,39 +285,55 @@ export class Scenario {
     }
 
     /**
-     * @type {import("./AeroflyPatterns.js").AeroflyPatternsCheckpoint[]}
+     * @param {import("./AeroflyPatterns.js").AeroflyPatternsWaypointable} waypoint
+     * @param {"origin"|"departure_runway"|"waypoint"|"destination_runway"|"destination"} type
+     * @param {number?} [length] optional in meters
+     * @param {number?} [frequency] optional in Hz
+     * @returns {AeroflyMissionCheckpoint}
+     */
+    const makeCheckpoint = (waypoint, type, length = null, frequency = null) => {
+      const checkpoint = new AeroflyMissionCheckpoint(
+        waypoint.id,
+        type,
+        waypoint.position.longitude,
+        waypoint.position.latitude,
+        waypoint.position.elevation ?? 0,
+      );
+
+      if (length) {
+        checkpoint.length = length;
+      }
+      if (frequency) {
+        checkpoint.frequency = frequency;
+      }
+      return checkpoint;
+    };
+
+    /**
+     * @type {import("./AeroflyCustomMissions.js").AeroflyMissionCheckpoint[]}
      */
     const waypoints = [
-      {
-        waypoint: this.airport,
-        type: "origin",
-      },
-      {
-        waypoint: this.activeRunway,
-        type: "departure_runway",
-        length: this.activeRunway.dimension[0] / Units.feetPerMeter,
-        frequency: this.activeRunway.ilsFrequency * 1_000_000,
-      },
+      makeCheckpoint(this.airport, "origin"),
+      makeCheckpoint(
+        this.activeRunway,
+        "departure_runway",
+        this.activeRunway.dimension[0] / Units.feetPerMeter,
+        this.activeRunway.ilsFrequency * 1_000_000,
+      ),
     ];
 
     this.patternWaypoints.forEach((p) => {
-      waypoints.push({
-        waypoint: p,
-        type: "waypoint",
-      });
+      waypoints.push(makeCheckpoint(p, "waypoint"));
     });
 
     waypoints.push(
-      {
-        waypoint: this.activeRunway,
-        type: "destination_runway",
-        length: this.activeRunway.dimension[0] / Units.feetPerMeter,
-        frequency: this.activeRunway.ilsFrequency * 1_000_000,
-      },
-      {
-        waypoint: this.airport,
-        type: "destination",
-      },
+      makeCheckpoint(
+        this.activeRunway,
+        "destination_runway",
+        this.activeRunway.dimension[0] / Units.feetPerMeter,
+        this.activeRunway.ilsFrequency * 1_000_000,
+      ),
+      makeCheckpoint(this.airport, "destination"),
     );
 
     return waypoints;

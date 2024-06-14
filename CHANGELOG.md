@@ -1,5 +1,7 @@
 # Changelog
 
+## 2.3.3
+
 - Refactored custom mission file generator
 - Added variable time spacing between missions
 - Added description for [nautical time](https://en.wikipedia.org/wiki/Nautical_time)

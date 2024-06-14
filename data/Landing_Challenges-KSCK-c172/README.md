@@ -20,16 +20,16 @@ Get [more information about Stockton Metro Airport on SkyVector](https://skyvect
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway   | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | ------ | ---------: | -------- | -------------------- |
-| #1  | 2024-06-13  |       05:15 | 340° @ 6 kts  | CLR    |      15 SM | 29R (RP) | ↓ To the south       |
-| #2  | 2024-06-12  |       06:45 | 340° @ 3 kts  | CLR    |      15 SM | 29R (RP) | → To the east        |
-| #3  | 2024-06-11  |       08:15 | 330° @ 4 kts  | CLR    |      15 SM | 29R (RP) | ↖ To the north-west |
-| #4  | 2024-06-10  |       09:45 | 320° @ 7 kts  | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
-| #5  | 2024-06-09  |       11:15 | 0° @ 3 kts    | CLR    |      15 SM | 29R (RP) | ↙ To the south-west |
-| #6  | 2024-06-08  |       12:45 | 310° @ 8 kts  | CLR    |      15 SM | 29R (RP) | ↑ To the north       |
-| #7  | 2024-06-07  |       14:15 | 290° @ 10 kts | CLR    |      15 SM | 29L      | ↗ To the north-east |
-| #8  | 2024-06-06  |       15:45 | 280° @ 10 kts | CLR    |      15 SM | 29L      | → To the east        |
-| #9  | 2024-06-05  |       17:15 | 340° @ 7 kts  | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
-| #10 | 2024-06-04  |       18:45 | 300° @ 12 kts | CLR    |      15 SM | 29L      | ↑ To the north       |
+| #1  | 2024-06-14  |       05:15 | 320° @ 5 kts  | CLR    |      15 SM | 29R (RP) | ↖ To the north-west |
+| #2  | 2024-06-13  |       06:45 | 350° @ 5 kts  | CLR    |      15 SM | 29R (RP) | → To the east        |
+| #3  | 2024-06-12  |       08:15 | 270° @ 6 kts  | CLR    |      15 SM | 29L      | ← To the west        |
+| #4  | 2024-06-11  |       09:45 | 300° @ 6 kts  | CLR    |      15 SM | 29L      | ← To the west        |
+| #5  | 2024-06-10  |       11:15 | Calm          | CLR    |      15 SM | 29R (RP) | ↗ To the north-east |
+| #6  | 2024-06-09  |       12:45 | 270° @ 3 kts  | CLR    |      15 SM | 29L      | ↙ To the south-west |
+| #7  | 2024-06-08  |       14:15 | 270° @ 9 kts  | CLR    |      15 SM | 29L      | ↙ To the south-west |
+| #8  | 2024-06-07  |       15:45 | 280° @ 10 kts | CLR    |      15 SM | 29L      | ← To the west        |
+| #9  | 2024-06-06  |       17:15 | 290° @ 10 kts | CLR    |      15 SM | 29L      | ↗ To the north-east |
+| #10 | 2024-06-05  |       18:45 | 320° @ 7 kts  | CLR    |      15 SM | 29R (RP) | → To the east        |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
