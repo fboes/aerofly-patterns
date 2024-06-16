@@ -12,7 +12,7 @@ import {
   AeroflyMissionConditions,
   AeroflyMissionConditionsCloud,
   AeroflyMissionsList,
-} from "./AeroflyCustomMissions.js";
+} from "@fboes/aerofly-custom-missions";
 
 /**
  * @typedef AeroflyPatternsWaypointable
@@ -184,7 +184,9 @@ export class AeroflyPatterns {
           return AeroflyMissionConditionsCloud.createInFeet(c.cloudCover, c.cloudBase);
         }) ?? [];
 
-      const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, s.waypoints);
+      const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, {
+        checkpoints: s.waypoints,
+      });
       mission.description = s.description ?? "";
       mission.flightSetting = "cruise";
       mission.aircraft = {

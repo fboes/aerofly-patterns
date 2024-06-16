@@ -20,16 +20,16 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-06-14  |       05:15 | 210° @ 8 kts  | CLR            |      15 SM | 24 (RP) | ↗ To the north-east |
-| #2  | 2024-06-13  |       06:45 | 260° @ 4 kts  | CLR            |      15 SM | 24 (RP) | → To the east        |
-| #3  | 2024-06-12  |       08:15 | 190° @ 6 kts  | CLR            |      15 SM | 24 (RP) | → To the east        |
-| #4  | 2024-06-11  |       09:45 | Calm          | CLR            |      15 SM | 24 (RP) | ↘ To the south-east |
-| #5  | 2024-06-10  |       11:15 | 270° @ 7 kts  | CLR            |      15 SM | 33 (RP) | ↗ To the north-east |
-| #6  | 2024-06-09  |       12:45 | 230° @ 12 kts | SCT @ 1,200 ft |       7 SM | 24 (RP) | ↑ To the north       |
-| #7  | 2024-06-08  |       14:15 | 230° @ 15 kts | CLR            |      15 SM | 24 (RP) | → To the east        |
-| #8  | 2024-06-07  |       15:45 | 210° @ 5 kts  | OVC @ 300 ft   |       4 SM | 24 (RP) | ↑ To the north       |
-| #9  | 2024-06-06  |       17:15 | 200° @ 8 kts  | OVC @ 200 ft   |       1 SM | 24 (RP) | ↑ To the north       |
-| #10 | 2024-06-05  |       18:45 | 220° @ 8 kts  | CLR            |      15 SM | 24 (RP) | ↖ To the north-west |
+| #1  | 2024-06-16  |       05:15 | 10° @ 4 kts   | CLR            |      15 SM | 24 (RP) | ↘ To the south-east |
+| #2  | 2024-06-15  |       06:45 | 340° @ 7 kts  | BKN @ 600 ft   |       8 SM | 33 (RP) | ↘ To the south-east |
+| #3  | 2024-06-14  |       08:15 | 210° @ 11 kts | FEW @ 4,400 ft |      15 SM | 24 (RP) | → To the east        |
+| #4  | 2024-06-13  |       09:45 | 200° @ 8 kts  | CLR            |      15 SM | 24 (RP) | ↙ To the south-west |
+| #5  | 2024-06-12  |       11:15 | 210° @ 11 kts | CLR            |      15 SM | 24 (RP) | ↓ To the south       |
+| #6  | 2024-06-11  |       12:45 | 210° @ 9 kts  | CLR            |      15 SM | 24 (RP) | ↑ To the north       |
+| #7  | 2024-06-10  |       14:15 | 210° @ 14 kts | CLR            |      15 SM | 24 (RP) | ↘ To the south-east |
+| #8  | 2024-06-09  |       15:45 | 320° @ 14 kts | BKN @ 700 ft   |      15 SM | 33 (RP) | ↙ To the south-west |
+| #9  | 2024-06-08  |       17:15 | 250° @ 14 kts | CLR            |      15 SM | 24 (RP) | ↘ To the south-east |
+| #10 | 2024-06-07  |       18:45 | 170° @ 6 kts  | OVC @ 200 ft   |       1 SM | 15      | ↙ To the south-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

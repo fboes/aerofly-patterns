@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Point, Vector } from "@fboes/geojson";
+import { Vector } from "@fboes/geojson";
 import { Units } from "../data/Units.js";
 import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi } from "./AviationWeatherApi.js";
@@ -8,7 +8,7 @@ import { Formatter } from "./Formatter.js";
 import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
 import { Degree, degreeDifference, degreeToRad } from "./Degree.js";
 import { Airports } from "../data/Airports.js";
-import { AeroflyMissionCheckpoint } from "./AeroflyCustomMissions.js";
+import { AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -277,7 +277,7 @@ export class Scenario {
   }
 
   /**
-   * @returns {import("./AeroflyCustomMissions.js").AeroflyMissionCheckpoint[]} `Waypoint, type, length, frequency`; will return an empty array if not all preconditions are met
+   * @returns {import("@fboes/aerofly-custom-missions").AeroflyMissionCheckpoint[]} `Waypoint, type, length, frequency`; will return an empty array if not all preconditions are met
    */
   get waypoints() {
     if (!this.activeRunway) {
@@ -297,7 +297,9 @@ export class Scenario {
         type,
         waypoint.position.longitude,
         waypoint.position.latitude,
-        waypoint.position.elevation ?? 0,
+        {
+          altitude: waypoint.position.elevation ?? 0,
+        },
       );
 
       if (length) {
@@ -310,7 +312,7 @@ export class Scenario {
     };
 
     /**
-     * @type {import("./AeroflyCustomMissions.js").AeroflyMissionCheckpoint[]}
+     * @type {import("@fboes/aerofly-custom-missions").AeroflyMissionCheckpoint[]}
      */
     const waypoints = [
       makeCheckpoint(this.airport, "origin"),

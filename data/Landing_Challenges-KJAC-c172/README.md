@@ -19,18 +19,17 @@ Get [more information about Jackson Hole Airport on SkyVector](https://skyvector
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | -------------------- |
-| #1  | 2024-06-14  |       05:15 | 290° @ 6 kts  | CLR            |      15 SM | 19     | ↙ To the south-west |
-| #2  | 2024-06-13  |       06:45 | 0° @ 4 kts    | CLR            |      15 SM | 19     | ↖ To the north-west |
-| #3  | 2024-06-12  |       08:15 | 230° @ 8 kts  | CLR            |      15 SM | 19     | ↗ To the north-east |
-| #4  | 2024-06-11  |       09:45 | 240° @ 4 kts  | CLR            |      15 SM | 19     | ↖ To the north-west |
-| #5  | 2024-06-10  |       11:15 | 210° @ 8 kts  | BKN @ 6,500 ft |      15 SM | 19     | ↙ To the south-west |
-| #6  | 2024-06-09  |       12:45 | 250° @ 9 kts  | CLR            |      15 SM | 19     | ← To the west        |
-| #7  | 2024-06-08  |       14:15 | 230° @ 9 kts  | SCT @ 9,000 ft |      15 SM | 19     | ↖ To the north-west |
-| #8  | 2024-06-07  |       15:45 | 240° @ 8 kts  | CLR            |      15 SM | 19     | ↑ To the north       |
-| #9  | 2024-06-06  |       17:15 | 220° @ 7 kts  | CLR            |      15 SM | 19     | ↙ To the south-west |
-| #10 | 2024-06-05  |       18:45 | 220° @ 13 kts | OVC @ 7,500 ft |      15 SM | 19     | ↙ To the south-west |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds          | Visibility | Runway | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | --------------- | ---------: | ------ | -------------------- |
+| #1  | 2024-06-15  |       06:45 | 120° @ 5 kts  | FEW @ 7,000 ft  |      15 SM | 19     | ↖ To the north-west |
+| #2  | 2024-06-14  |       08:15 | 0° @ 3 kts    | CLR             |      15 SM | 19     | ↗ To the north-east |
+| #3  | 2024-06-13  |       09:45 | Calm          | CLR             |      15 SM | 19     | → To the east        |
+| #4  | 2024-06-12  |       11:15 | 230° @ 14 kts | CLR             |      15 SM | 19     | ↑ To the north       |
+| #5  | 2024-06-11  |       12:45 | 280° @ 10 kts | CLR             |      15 SM | 19     | ↓ To the south       |
+| #6  | 2024-06-10  |       14:15 | 290° @ 13 kts | CLR             |      15 SM | 19     | ↓ To the south       |
+| #7  | 2024-06-09  |       15:45 | 230° @ 9 kts  | CLR             |      15 SM | 19     | ← To the west        |
+| #8  | 2024-06-08  |       17:15 | 280° @ 11 kts | BKN @ 10,000 ft |      15 SM | 19     | ↑ To the north       |
+| #9  | 2024-06-07  |       18:45 | 20° @ 17 kts  | SCT @ 11,000 ft |      15 SM | 01     | ↘ To the south-east |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
