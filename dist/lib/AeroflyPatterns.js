@@ -169,47 +169,48 @@ export class AeroflyPatterns {
      * @type {AeroflyMission[]}
      */
     const missions = this.scenarios.map((s, index) => {
-      const condition = new AeroflyMissionConditions();
-      condition.time = s.date;
-      condition.wind = {
-        direction: s.weather?.windDirection ?? 0,
-        speed: s.weather?.windSpeed ?? 0,
-        gusts: s.weather?.windGusts ?? 0,
-      };
-      condition.turbulenceStrength = s.weather?.turbulenceStrength ?? 0;
-      condition.thermalStrength = s.weather?.thermalStrength ?? 0;
-      condition.visibility_sm = s.weather?.visibility ?? 15;
-      condition.clouds =
-        s.weather?.clouds.map((c) => {
-          return AeroflyMissionConditionsCloud.createInFeet(c.cloudCover, c.cloudBase);
-        }) ?? [];
+      const conditions = new AeroflyMissionConditions({
+        time: s.date,
+        wind: {
+          direction: s.weather?.windDirection ?? 0,
+          speed: s.weather?.windSpeed ?? 0,
+          gusts: s.weather?.windGusts ?? 0,
+        },
+        turbulenceStrength: s.weather?.turbulenceStrength ?? 0,
+        thermalStrength: s.weather?.thermalStrength ?? 0,
+        clouds:
+          s.weather?.clouds.map((c) => {
+            return AeroflyMissionConditionsCloud.createInFeet(c.cloudCover, c.cloudBase);
+          }) ?? [],
+      });
+      conditions.visibility_sm = s.weather?.visibility ?? 15;
 
       const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, {
         checkpoints: s.waypoints,
+        description: s.description ?? "",
+        flightSetting: "cruise",
+        aircraft: {
+          name: s.aircraft.aeroflyCode,
+          livery: "",
+          icao: s.aircraft.data.icaoCode,
+        },
+        callsign: s.aircraft.data.callsign,
+        origin: {
+          icao: s.airport.id,
+          longitude: s.aircraft.position.longitude,
+          latitude: s.aircraft.position.latitude,
+          dir: s.aircraft.heading,
+          alt: s.aircraft.position.elevation ?? 0,
+        },
+        destination: {
+          icao: s.airport.id,
+          longitude: s.airport.position.longitude,
+          latitude: s.airport.position.latitude,
+          dir: s.activeRunway?.alignment ?? 0,
+          alt: s.airport.position.elevation ?? 0,
+        },
+        conditions,
       });
-      mission.description = s.description ?? "";
-      mission.flightSetting = "cruise";
-      mission.aircraft = {
-        name: s.aircraft.aeroflyCode,
-        livery: "",
-        icao: s.aircraft.data.icaoCode,
-      };
-      mission.callsign = s.aircraft.data.callsign;
-      mission.origin = {
-        icao: s.airport.id,
-        longitude: s.aircraft.position.longitude,
-        latitude: s.aircraft.position.latitude,
-        dir: s.aircraft.heading,
-        alt: s.aircraft.position.elevation ?? 0,
-      };
-      mission.destination = {
-        icao: s.airport.id,
-        longitude: s.airport.position.longitude,
-        latitude: s.airport.position.latitude,
-        dir: s.activeRunway?.alignment ?? 0,
-        alt: s.airport.position.elevation ?? 0,
-      };
-      mission.conditions = condition;
 
       return mission;
     });

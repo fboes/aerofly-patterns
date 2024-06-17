@@ -21,16 +21,16 @@ Get [more information about Key West International Airport on SkyVector](https:/
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds          | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | --------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-06-16  |       05:15 | 90° @ 12 kts  | CLR             |      15 SM | 09 (RP) | ↓ To the south       |
-| #2  | 2024-06-15  |       06:45 | 40° @ 4 kts   | OVC @ 11,000 ft |      15 SM | 09 (RP) | ↗ To the north-east |
-| #3  | 2024-06-14  |       08:15 | 180° @ 7 kts  | BKN @ 8,000 ft  |      15 SM | 27      | ↗ To the north-east |
-| #4  | 2024-06-13  |       09:45 | 190° @ 16 kts | FEW @ 1,900 ft  |      15 SM | 27      | ← To the west        |
-| #5  | 2024-06-12  |       11:15 | 200° @ 13 kts | CLR             |      15 SM | 27      | ↗ To the north-east |
-| #6  | 2024-06-11  |       12:45 | 180° @ 12 kts | FEW @ 1,400 ft  |      32 SM | 27      | ↙ To the south-west |
-| #7  | 2024-06-10  |       14:15 | 160° @ 9 kts  | FEW @ 1,900 ft  |      15 SM | 09 (RP) | ↗ To the north-east |
-| #8  | 2024-06-09  |       15:45 | 170° @ 5 kts  | CLR             |      15 SM | 09 (RP) | ↘ To the south-east |
-| #9  | 2024-06-08  |       17:15 | 230° @ 6 kts  | FEW @ 2,400 ft  |      15 SM | 27      | ↖ To the north-west |
-| #10 | 2024-06-07  |       18:45 | 100° @ 4 kts  | FEW @ 6,000 ft  |      15 SM | 09 (RP) | ↖ To the north-west |
+| #1  | 2024-06-17  |       05:15 | 80° @ 8 kts   | FEW @ 2,200 ft  |      15 SM | 09 (RP) | ↗ To the north-east |
+| #2  | 2024-06-16  |       06:45 | 100° @ 12 kts | SCT @ 2,700 ft  |      15 SM | 09 (RP) | ↑ To the north       |
+| #3  | 2024-06-15  |       08:15 | 30° @ 6 kts   | BKN @ 11,000 ft |      15 SM | 09 (RP) | ↘ To the south-east |
+| #4  | 2024-06-14  |       09:45 | 180° @ 8 kts  | FEW @ 1,600 ft  |      15 SM | 27      | ← To the west        |
+| #5  | 2024-06-13  |       11:15 | 190° @ 17 kts | CLR             |      15 SM | 27      | ← To the west        |
+| #6  | 2024-06-12  |       12:45 | 210° @ 14 kts | CLR             |      15 SM | 27      | ← To the west        |
+| #7  | 2024-06-11  |       14:15 | 170° @ 12 kts | FEW @ 2,000 ft  |      15 SM | 09 (RP) | ← To the west        |
+| #8  | 2024-06-10  |       15:45 | 120° @ 11 kts | FEW @ 2,000 ft  |      15 SM | 09 (RP) | → To the east        |
+| #9  | 2024-06-09  |       17:15 | 140° @ 7 kts  | CLR             |      15 SM | 09 (RP) | → To the east        |
+| #10 | 2024-06-08  |       18:45 | Calm          | CLR             |      15 SM | 09 (RP) | ↖ To the north-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
