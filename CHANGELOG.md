@@ -1,6 +1,10 @@
 # Changelog
 
-## 2.3.4
+## 2.3.6
+
+- Updated dependencies
+
+## 2.3.4 / 2.3.5
 
 - Added NPM package for custom mission file generator
 
