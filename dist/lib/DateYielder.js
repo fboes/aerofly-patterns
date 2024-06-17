@@ -49,20 +49,22 @@ export class DateYielder {
   }
 
   /**
-   * Gets the next local 8 o'clock in the past
+   * Gets the next local time with `hours:00` in the past
    * @param {Date} startDate
    * @param {number} hours local time
    * @returns {Date}
    */
   getLocalTime(startDate, hours = 6) {
-    const eightOClock = new Date(startDate);
-    eightOClock.setUTCMinutes(60 * (hours % 1));
-    eightOClock.setUTCHours(Math.floor(hours - this.offsetHours));
+    const localTime = new Date(startDate);
+    localTime.setUTCMinutes(60 * (hours % 1));
+    localTime.setUTCHours(Math.floor(hours - this.offsetHours));
+    localTime.setUTCSeconds(0);
+    localTime.setUTCMilliseconds(0);
 
-    while (eightOClock.valueOf() > startDate.valueOf()) {
-      eightOClock.setDate(eightOClock.getDate() - 1);
+    while (localTime.valueOf() > startDate.valueOf()) {
+      localTime.setDate(localTime.getDate() - 1);
     }
 
-    return eightOClock;
+    return localTime;
   }
 }
