@@ -1,5 +1,6 @@
 # Changelog
 
+- Updated `@fboes/aerofly-custom-missions` package
 - Added support for liveries
 
 ## 2.3.6
