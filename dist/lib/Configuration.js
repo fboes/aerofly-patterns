@@ -119,6 +119,11 @@ export class Configuration {
     this.aircraft = (positionals[1] ?? "c172").toLowerCase();
 
     /**
+     * @type {string} as in Aerofly Aircraft Codes
+     */
+    this.livery = (positionals[2] ?? "").toLowerCase();
+
+    /**
      * @type {string[]} runway IDs which will be right pattern runways
      */
     this.rightPatternRunways = values["right-pattern"]

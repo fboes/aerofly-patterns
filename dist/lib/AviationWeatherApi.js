@@ -6,7 +6,7 @@ import { Point } from "@fboes/geojson";
 /**
  * @typedef {object} AviationWeatherApiCloud
  * @property {"CAVOK"|"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cover with {CLR: 0, FEW: 1/8, SCT: 2/8, BKN: 4/8, OVC: 1}
- * @property {number} base 1900 ft AGL
+ * @property {number?} base 1900 ft AGL
  * @see https://aviationweather.gov/data/api/#/Data/dataMetar
  */
 
@@ -81,21 +81,6 @@ export class AviationWeatherApi {
   /**
    *
    * @param {string[]} ids
-   * @returns {Promise<AviationWeatherApiAirport[]>}
-   */
-  static async fetchAirports(ids) {
-    return AviationWeatherApi.doRequest(
-      "/api/data/airport",
-      new URLSearchParams({
-        ids: ids.join(","),
-        format: "json",
-      }),
-    );
-  }
-
-  /**
-   *
-   * @param {string[]} ids
    * @param {?Date} date to yyyy-mm-ddThh:mm:ssZ
    * @returns {Promise<AviationWeatherApiMetar[]>}
    */
@@ -105,7 +90,26 @@ export class AviationWeatherApi {
       new URLSearchParams({
         ids: ids.join(","),
         format: "json",
+        // taf,
+        // hours,
+        // bbox: AviationWeatherApiHelpers.buildBbox(position, distance).join(","),
         date: date ? date.toISOString().replace(/\.\d+(Z)/, "$1") : "",
+      }),
+    );
+  }
+
+  /**
+   *
+   * @param {string[]} ids
+   * @returns {Promise<AviationWeatherApiAirport[]>}
+   */
+  static async fetchAirports(ids) {
+    return AviationWeatherApi.doRequest(
+      "/api/data/airport",
+      new URLSearchParams({
+        ids: ids.join(","),
+        // bbox: AviationWeatherApiHelpers.buildBbox(position, distance).join(","),
+        format: "json",
       }),
     );
   }
@@ -117,13 +121,12 @@ export class AviationWeatherApi {
    * @returns {Promise<AviationWeatherApiNavaid[]>}
    */
   static async fetchNavaid(position, distance = 1000) {
-    const southEast = position.getPointBy(new Vector(distance, 225));
-    const northWest = position.getPointBy(new Vector(distance, 45));
     return AviationWeatherApi.doRequest(
       "/api/data/navaid",
       new URLSearchParams({
+        // ids: ids.join(","),
         format: "json",
-        bbox: [southEast.latitude, southEast.longitude, northWest.latitude, northWest.longitude].join(","),
+        bbox: AviationWeatherApiHelpers.buildBbox(position, distance).join(","),
       }),
     );
   }
@@ -135,8 +138,9 @@ export class AviationWeatherApi {
    * @returns {Promise}
    */
   static async doRequest(route, query) {
-    //console.log(`https://aviationweather.gov${route}?${query}`);
-    const response = await fetch(`https://aviationweather.gov${route}?${query}`, {
+    const url = new URL(route + "?" + query, "https://aviationweather.gov");
+    //console.log(url);
+    const response = await fetch(url, {
       headers: {
         Accept: "application/json",
       },
@@ -170,5 +174,17 @@ export class AviationWeatherApiHelpers {
         };
       },
     );
+  }
+
+  /**
+   *
+   * @param {Point} position
+   * @param {number} [distance] in meters
+   * @returns {[number,number,number,number]} southEast.latitude, southEast.longitude, northWest.latitude, northWest.longitude
+   */
+  static buildBbox(position, distance = 1000) {
+    const southEast = position.getPointBy(new Vector(distance, 225));
+    const northWest = position.getPointBy(new Vector(distance, 45));
+    return [southEast.latitude, southEast.longitude, northWest.latitude, northWest.longitude];
   }
 }

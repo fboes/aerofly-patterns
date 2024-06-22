@@ -1,5 +1,7 @@
 # Changelog
 
+- Added support for liveries
+
 ## 2.3.6
 
 - Updated dependencies

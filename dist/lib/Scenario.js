@@ -47,6 +47,7 @@ export class Scenario {
       configuration.initialDistance,
       minimumSafeAltitude,
       configuration.randomHeadingRange,
+      configuration.livery,
     );
 
     /**
@@ -352,9 +353,17 @@ class ScenarioAircraft {
    * @param {string} aircraftCode Aerofly Aircraft Code
    * @param {number} distanceFromAirport in Nautical Miles
    * @param {number} minimumSafeAltitude in ft
-   * @param {number} randomHeadingRange in degree
+   * @param {number} [randomHeadingRange] in degree
+   * @param {string} [aircraftLivery] Aerofly Aircraft Code
    */
-  constructor(airport, aircraftCode, distanceFromAirport, minimumSafeAltitude, randomHeadingRange = 0) {
+  constructor(
+    airport,
+    aircraftCode,
+    distanceFromAirport,
+    minimumSafeAltitude,
+    randomHeadingRange = 0,
+    aircraftLivery = "",
+  ) {
     /**
      * @type {import("@fboes/geojson").Vector} how the aircraft relates to the airport
      */
@@ -381,6 +390,11 @@ class ScenarioAircraft {
      * @type {string}
      */
     this.aeroflyCode = aircraftCode;
+
+    /**
+     * @type {string}
+     */
+    this.aeroflyLiveryCode = aircraftLivery;
 
     /**
      * @type {import('../data/AeroflyAircraft.js').AeroflyAircraft} additional aircraft information like name and technical properties

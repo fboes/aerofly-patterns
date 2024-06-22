@@ -191,7 +191,7 @@ export class AeroflyPatterns {
         flightSetting: "cruise",
         aircraft: {
           name: s.aircraft.aeroflyCode,
-          livery: "",
+          livery: s.aircraft.aeroflyLiveryCode,
           icao: s.aircraft.data.icaoCode,
         },
         callsign: s.aircraft.data.callsign,
