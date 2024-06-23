@@ -433,9 +433,9 @@ export class ScenarioWeather {
     });
 
     /**
-     * @type {number} 0..1
+     * @type {number} in °C
      */
-    this.thermalStrength = Math.max(0, ((weatherJson.temp ?? 14) - 5) / 25);
+    this.temperature = weatherJson.temp;
   }
 
   /**

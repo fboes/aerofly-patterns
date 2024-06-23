@@ -177,13 +177,13 @@ export class AeroflyPatterns {
           gusts: s.weather?.windGusts ?? 0,
         },
         turbulenceStrength: s.weather?.turbulenceStrength ?? 0,
-        thermalStrength: s.weather?.thermalStrength ?? 0,
         visibility_sm: s.weather?.visibility ?? 15,
         clouds:
           s.weather?.clouds.map((c) => {
             return AeroflyMissionConditionsCloud.createInFeet(c.cloudCover, c.cloudBase);
           }) ?? [],
       });
+      conditions.temperature = s.weather?.temperature ?? 0;
 
       const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, {
         checkpoints: s.waypoints,

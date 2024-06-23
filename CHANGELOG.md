@@ -1,13 +1,15 @@
 # Changelog
 
+## 2.3.6
+
+- Delegated handling of temperature to sub library
+
+## 2.3.5
+
 - Updated `@fboes/aerofly-custom-missions` package
 - Added support for liveries
 
-## 2.3.6
-
-- Updated dependencies
-
-## 2.3.4 / 2.3.5
+## 2.3.4
 
 - Added NPM package for custom mission file generator
 
