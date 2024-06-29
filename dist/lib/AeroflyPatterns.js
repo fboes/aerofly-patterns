@@ -308,7 +308,7 @@ export class AeroflyPatterns {
             pad(padNumber(localNauticalTime.hours) + ":" + padNumber(localNauticalTime.minutes), 11, true),
             !s.weather?.windSpeed
               ? pad("Calm", 13)
-              : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)}  kts`,
+              : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kts`,
             clouds,
             pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
             pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 8),

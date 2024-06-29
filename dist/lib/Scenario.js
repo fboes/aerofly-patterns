@@ -3,7 +3,7 @@
 import { Vector } from "@fboes/geojson";
 import { Units } from "../data/Units.js";
 import { Configuration } from "./Configuration.js";
-import { AviationWeatherApi } from "./AviationWeatherApi.js";
+import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "./AviationWeatherApi.js";
 import { Formatter } from "./Formatter.js";
 import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
 import { Degree, degreeDifference, degreeToRad } from "./Degree.js";
@@ -405,37 +405,38 @@ class ScenarioAircraft {
 
 export class ScenarioWeather {
   /**
-   * @param {import('./AviationWeatherApi.js').AviationWeatherApiMetar} weatherJson
+   * @param {import('./AviationWeatherApi.js').AviationWeatherApiMetar} weatherApiData
    */
-  constructor(weatherJson) {
+  constructor(weatherApiData) {
+    const weather = new AviationWeatherNormalizedMetar(weatherApiData);
     /**
      * @type {number} in degree
      */
-    this.windDirection = weatherJson.wdir === "VRB" ? 0 : Degree(weatherJson.wdir);
+    this.windDirection = weather.wdir ?? 0;
 
     /**
      * @type {number} in kts
      */
-    this.windSpeed = weatherJson.wspd;
+    this.windSpeed = weather.wspd;
 
     /**
      * @type {number} in kts
      */
-    this.windGusts = weatherJson.wgst ?? 0;
+    this.windGusts = weather.wgst ?? 0;
 
     /**
      * @type {number} in Statute Miles. Max is 15 for METAR values ending on a "+"
      */
-    this.visibility = typeof weatherJson.visib === "string" ? 15 : weatherJson.visib;
+    this.visibility = Math.min(15, weather.visib);
 
-    this.clouds = weatherJson.clouds.map((c) => {
-      return new ScenarioWeatherCloud(c.cover, c.base);
+    this.clouds = weather.clouds.map((c) => {
+      return new ScenarioWeatherCloud(c);
     });
 
     /**
      * @type {number} in °C
      */
-    this.temperature = weatherJson.temp;
+    this.temperature = weather.temp;
   }
 
   /**
@@ -448,62 +449,31 @@ export class ScenarioWeather {
 
 export class ScenarioWeatherCloud {
   /**
-   * @type {number} 0..1
+   * @param {import('./AviationWeatherApi.js').AviationWeatherNormalizedCloud} cloud
    */
-  #cloudCover = 0;
+  constructor(cloud) {
+    /**
+     * @type {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
+     */
+    this.cloudCoverCode = cloud.cover;
 
-  /**
-   * @type {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
-   */
-  #cloudCoverCode = "CLR";
+    const cover = {
+      CLR: [0, 0], // 0
+      FEW: [1 / 8, 1 / 8], // 1/8 .. 2/8
+      SCT: [2 / 8, 2 / 8], // 2/8 .. 4/8
+      BKN: [4 / 8, 3 / 8], // 4/8 .. 7/8
+      OVC: [7 / 8, 1 / 8], // 7/8 .. 1
+    };
+    const actualCover = cover[this.cloudCoverCode] ? cover[this.cloudCoverCode] : cover.CLR;
 
-  /**
-   * @param {"CAVOK"|"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cover
-   * @param {number?} base
-   */
-  constructor(cover, base) {
-    this.cloudCoverCode = cover;
+    /**
+     * @type {number} 0..1
+     */
+    this.cloudCover = actualCover[0] + Math.random() * actualCover[1];
 
     /**
      * @type {number} in ft
      */
-    this.cloudBase = base ?? 0;
-  }
-  /**
-   * @returns {number} 0..1
-   */
-  get cloudCover() {
-    return this.#cloudCover;
-  }
-
-  /**
-   *
-   * @param {"CAVOK"|"CLR"|"FEW"|"SCT"|"BKN"|"OVC"} cloudCoverCode
-   */
-  set cloudCoverCode(cloudCoverCode) {
-    if (cloudCoverCode === "CAVOK") {
-      cloudCoverCode = "CLR";
-    }
-    this.#cloudCoverCode = cloudCoverCode;
-    /**
-     * @type {{[key:string]:[number,number]}}
-     */
-    const cover = {
-      CLR: [0, 0], // 0
-      FEW: [1 / 8, 1 / 8], // 1/8
-      SCT: [2 / 8, 2 / 8], // 2/8
-      BKN: [4 / 8, 3 / 8], // 4/8
-      OVC: [7 / 8, 1 / 8], // 1
-    };
-    const actualCover = cover[cloudCoverCode] ? cover[cloudCoverCode] : cover.CLR;
-
-    this.#cloudCover = actualCover[0] + Math.random() * actualCover[1];
-  }
-
-  /**
-   * @returns  {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
-   */
-  get cloudCoverCode() {
-    return this.#cloudCoverCode;
+    this.cloudBase = cloud.base ?? 0;
   }
 }

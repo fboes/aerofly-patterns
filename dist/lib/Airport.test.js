@@ -20,7 +20,7 @@ export class AirportTest {
       lon: -94.7139,
       elev: 313.1,
       magdec: "02E",
-      rwyNum: 3,
+      rwyNum: "3",
       tower: "T",
       beacon: "B",
       runways: [
@@ -80,7 +80,7 @@ export class AirportTest {
       lon: -70.6139,
       elev: 20.4,
       magdec: "15W",
-      rwyNum: 2,
+      rwyNum: "2",
       tower: "T",
       beacon: "B",
       runways: [
@@ -125,7 +125,7 @@ export class AirportTest {
       lon: -121.2387,
       elev: 10.1,
       magdec: "14E",
-      rwyNum: 3,
+      rwyNum: "3",
       tower: "T",
       beacon: "B",
       runways: [

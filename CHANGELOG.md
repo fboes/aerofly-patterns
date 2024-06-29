@@ -1,5 +1,7 @@
 # Changelog
 
+- Added Data Transfer Objects for Aviation Weather API
+
 ## 2.3.6
 
 - Delegated handling of temperature to sub library

@@ -5,7 +5,7 @@ import { Units } from "../data/Units.js";
 import { Degree } from "./Degree.js";
 import { Airports } from "../data/Airports.js";
 import { Formatter } from "./Formatter.js";
-import { AviationWeatherApiHelpers } from "./AviationWeatherApi.js";
+import { AviationWeatherNormalizedAirport } from "./AviationWeatherApi.js";
 
 /**
  * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}
@@ -13,27 +13,19 @@ import { AviationWeatherApiHelpers } from "./AviationWeatherApi.js";
 export class Airport {
   /**
    *
-   * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport} airportJson
+   * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport} airportApiData
    * @param {import('./Configuration.js').Configuration?} configuration
    */
-  constructor(airportJson, configuration = null) {
-    this.id = airportJson.icaoId;
-    this.position = new Point(airportJson.lon, airportJson.lat, airportJson.elev);
+  constructor(airportApiData, configuration = null) {
+    const airportNormalized = new AviationWeatherNormalizedAirport(airportApiData);
+
+    this.id = airportNormalized.icaoId;
+    this.position = new Point(airportNormalized.lon, airportNormalized.lat, airportNormalized.elev);
 
     /**
      * @type {string}
      */
-    this.name = airportJson.name
-      .replace(/_/g, " ")
-      .trim()
-      .replace(/\bINTL\b/g, "INTERNATIONAL")
-      .replace(/\bRGNL\b/g, "REGIONAL")
-      .replace(/\bFLD\b/g, "FIELD")
-      .replace(/(\/)/g, " $1 ")
-      .toLowerCase()
-      .replace(/(^|\s)[a-z]/g, (char) => {
-        return char.toUpperCase();
-      });
+    this.name = airportNormalized.name;
 
     // Remove municipality name if already present in airport name
     const duplicateMatch = this.name.match(/^(.+?) \/ (.+)$/);
@@ -45,7 +37,7 @@ export class Airport {
      * @type {AirportRunway[]}
      */
     this.runways = [];
-    airportJson.runways.map((r) => {
+    airportNormalized.runways.map((r) => {
       this.buildRunways(r, this.position, configuration).forEach((runway) => {
         runway && this.runways.push(runway);
       });
@@ -74,14 +66,7 @@ export class Airport {
     /**
      * @type {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
      */
-    this.magneticDeclination = 0;
-    const magdecMatch = airportJson.magdec.match(/^(\d+)(E|W)$/);
-    if (magdecMatch) {
-      this.magneticDeclination = Number(magdecMatch[1]);
-      if (magdecMatch[2] === "W") {
-        this.magneticDeclination *= -1;
-      }
-    }
+    this.magneticDeclination = airportNormalized.magdec;
 
     /**
      * @type {number} a tome zone which only considers the longitude, rounded to the full hour, in hours difference to UTC
@@ -92,14 +77,14 @@ export class Airport {
     /**
      * @type {boolean}
      */
-    this.hasTower = airportJson.tower === "T";
+    this.hasTower = airportNormalized.tower;
 
     /**
      * @type {boolean}
      */
-    this.hasBeacon = airportJson.beacon === "B";
+    this.hasBeacon = airportNormalized.beacon;
 
-    const lclP = AviationWeatherApiHelpers.fixFrequencies(airportJson.freqs).find((f) => {
+    const lclP = airportNormalized.freqs.find((f) => {
       return f.type === "LCL/P";
     });
 
@@ -178,37 +163,28 @@ export class Airport {
 
   /**
    *
-   * @param {import('./AviationWeatherApi.js').AviationWeatherApiRunway} runwayJson
+   * @param {import('./AviationWeatherApi.js').AviationWeatherNormalizedRunway} runwayApiData
    * @param {Point} airportPosition
    * @param  {import('./Configuration.js').Configuration?} configuration
    * @returns {AirportRunway[]} both directions, or in case of helipads on single helipad
    */
-  buildRunways(runwayJson, airportPosition, configuration) {
+  buildRunways(runwayApiData, airportPosition, configuration) {
     /**
      * @type {[string,string]} both directions
      */
-    const id = ["", ""];
-    runwayJson.id.split("/").forEach((i, index) => {
-      id[index] = i;
-    });
+    const id = runwayApiData.id;
 
     /**
      * @type {[number,number]} length, width in ft
      */
-    const dimension = [0, 0];
-    runwayJson.dimension
-      .split("x")
-      .map((x) => Number(x))
-      .forEach((d, index) => {
-        dimension[index] = d;
-      });
+    const dimension = runwayApiData.dimension;
 
     // Helipads & Water runways get an approximate alignment
-    if (runwayJson.alignment === "-") {
-      runwayJson.alignment = id[0].replace(/\D/g, "") + "0";
+    if (runwayApiData.alignment === null) {
+      runwayApiData.alignment = Number(id[0].replace(/\D/g, "") + "0");
     }
 
-    const alignmentBase = Number(runwayJson.alignment);
+    const alignmentBase = runwayApiData.alignment;
     if (isNaN(alignmentBase)) {
       return [];
     }
