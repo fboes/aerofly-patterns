@@ -19,18 +19,18 @@ Get [more information about Concord / Buchanan Field Airport on SkyVector](https
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds       | Visibility | Runway   | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | ------------ | ---------: | -------- | -------------------- |
-| #1  | 2024-06-16  |       05:15 | 160° @ 6 kts  | CLR          |      15 SM | 14R (RP) | ↑ To the north       |
-| #2  | 2024-06-15  |       06:45 | 200° @ 9 kts  | CLR          |      15 SM | 19L      | ↓ To the south       |
-| #3  | 2024-06-14  |       08:15 | 200° @ 10 kts | CLR          |      15 SM | 19L      | ← To the west        |
-| #4  | 2024-06-13  |       09:45 | 0° @ 3 kts    | CLR          |      15 SM | 19R (RP) | ↙ To the south-west |
-| #5  | 2024-06-12  |       11:15 | 200° @ 12 kts | CLR          |      15 SM | 19L      | ← To the west        |
-| #6  | 2024-06-11  |       12:45 | 20° @ 4 kts   | FEW @ 200 ft |       3 SM | 19R (RP) | ↘ To the south-east |
-| #7  | 2024-06-10  |       14:15 | Calm          | CLR          |      15 SM | 19R (RP) | ← To the west        |
-| #8  | 2024-06-09  |       15:45 | Calm          | CLR          |      15 SM | 19R (RP) | → To the east        |
-| #9  | 2024-06-08  |       17:15 | Calm          | CLR          |      15 SM | 19R (RP) | ↓ To the south       |
-| #10 | 2024-06-07  |       18:45 | 190° @ 13 kts | CLR          |      15 SM | 19L      | ↙ To the south-west |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds          | Visibility | Runway   | Aircraft position   |
+| :-: | ----------- | ----------: | ------------- | --------------- | ---------: | -------- | ------------------- |
+| #1  |  2024-08-03 |       05:15 | 360° @  3 kts | CLR             |      15 SM | 19R (RP) | ↗ To the north-east |
+| #2  |  2024-08-02 |       06:45 | 340° @  3 kts | CLR             |      15 SM | 19R (RP) | ↓ To the south      |
+| #3  |  2024-08-01 |       08:15 |   0° @  3 kts | CLR             |      15 SM | 19R (RP) | ↗ To the north-east |
+| #4  |  2024-07-31 |       09:45 | 180° @  7 kts | CLR             |      15 SM | 19L      | ↗ To the north-east |
+| #5  |  2024-07-30 |       11:15 | 200° @  7 kts | CLR             |      15 SM | 19L      | ↓ To the south      |
+| #6  |  2024-07-29 |       12:45 | 190° @ 10 kts | CLR             |      15 SM | 19L      | ↓ To the south      |
+| #7  |  2024-07-28 |       14:15 | 300° @ 12 kts | CLR             |      15 SM | 32L      | → To the east       |
+| #8  |  2024-07-27 |       15:45 | 210° @ 14 kts | SCT @  2,200 ft |      15 SM | 19R (RP) | ↑ To the north      |
+| #9  |  2024-07-26 |       17:15 | 240° @ 10 kts | CLR             |      15 SM | 19R (RP) | ↓ To the south      |
+| #10 |  2024-07-25 |       18:45 | 260° @  9 kts | CLR             |      15 SM | 19R (RP) | ↘ To the south-east |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
