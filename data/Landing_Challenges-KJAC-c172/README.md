@@ -21,16 +21,16 @@ Get [more information about Jackson Hole Airport on SkyVector](https://skyvector
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | ------ | ---------: | ------ | -------------------- |
-| #1  | 2024-10-02  |       05:15 | 20° @ 9 kts   | CLR    |      15 SM | 01     | ↗ To the north-east |
-| #2  | 2024-10-01  |       06:45 | 0° @ 3 kts    | CLR    |      15 SM | 19     | ↓ To the south       |
+| #1  | 2024-10-02  |       05:15 | 20° @ 9 kts   | CLR    |      15 SM | 01     | ← To the west        |
+| #2  | 2024-10-01  |       06:45 | 0° @ 3 kts    | CLR    |      15 SM | 19     | ↘ To the south-east |
 | #3  | 2024-09-30  |       08:15 | 10° @ 13 kts  | CLR    |      15 SM | 01     | ↖ To the north-west |
-| #4  | 2024-09-29  |       09:45 | 0° @ 3 kts    | CLR    |       9 SM | 19     | ↘ To the south-east |
-| #5  | 2024-09-28  |       11:15 | Calm          | CLR    |       1 SM | 19     | ↓ To the south       |
-| #6  | 2024-09-27  |       12:45 | 0° @ 4 kts    | CLR    |      15 SM | 19     | ↑ To the north       |
-| #7  | 2024-09-26  |       14:15 | 240° @ 16 kts | CLR    |      15 SM | 19     | → To the east        |
-| #8  | 2024-09-25  |       15:45 | 220° @ 11 kts | CLR    |      15 SM | 19     | ↙ To the south-west |
-| #9  | 2024-09-24  |       17:15 | Calm          | CLR    |      15 SM | 19     | ↖ To the north-west |
-| #10 | 2024-09-23  |       18:45 | 280° @ 10 kts | CLR    |      15 SM | 19     | ↙ To the south-west |
+| #4  | 2024-09-29  |       09:45 | 0° @ 3 kts    | CLR    |       9 SM | 19     | ↑ To the north       |
+| #5  | 2024-09-28  |       11:15 | Calm          | CLR    |       1 SM | 19     | → To the east        |
+| #6  | 2024-09-27  |       12:45 | 0° @ 4 kts    | CLR    |      15 SM | 19     | ↗ To the north-east |
+| #7  | 2024-09-26  |       14:15 | 240° @ 16 kts | CLR    |      15 SM | 19     | ↘ To the south-east |
+| #8  | 2024-09-25  |       15:45 | 220° @ 11 kts | CLR    |      15 SM | 19     | ← To the west        |
+| #9  | 2024-09-24  |       17:15 | Calm          | CLR    |      15 SM | 19     | ↙ To the south-west |
+| #10 | 2024-09-23  |       18:45 | 280° @ 10 kts | CLR    |      15 SM | 19     | ↘ To the south-east |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
