@@ -1,5 +1,8 @@
 # Changelog
 
+# 2.3.7
+
+- Updated mission file generator, adding tags
 - Added Data Transfer Objects for Aviation Weather API
 
 ## 2.3.6
