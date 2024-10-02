@@ -222,6 +222,33 @@ export class Scenario {
   }
 
   /**
+   * @returns {string[]}
+   */
+  get tags() {
+    const tags = ["approach", "pattern", "practice"];
+    if (this.activeRunwayCrosswindComponent > 4.5) {
+      tags.push("crosswind");
+    }
+    if (this.weather?.windSpeed && this.weather.windSpeed >= 22) {
+      tags.push("windy");
+    }
+    if (this.weather?.visibility && this.weather.visibility <= 3) {
+      tags.push("low_visibility");
+    }
+    if (Formatter.getLocalDaytime(this.date, this.airport.nauticalTimezone) === "night") {
+      tags.push("night");
+    }
+    if (this.activeRunway?.ilsFrequency) {
+      tags.push("instruments");
+    }
+    if(this.activeRunway?.dimension[0] && this.activeRunway.dimension[0] <= 2000) {
+      tags.push("short_runway");
+    }
+
+    return tags;
+  }
+
+  /**
    * @returns {string?}
    */
   get description() {

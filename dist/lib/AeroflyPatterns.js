@@ -188,6 +188,7 @@ export class AeroflyPatterns {
       const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, {
         checkpoints: s.waypoints,
         description: s.description ?? "",
+        tags: s.tags,
         flightSetting: "cruise",
         aircraft: {
           name: s.aircraft.aeroflyCode,

@@ -20,16 +20,16 @@ Get [more information about Eagle County Regional Airport on SkyVector](https://
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds          | Visibility | Runway   | Aircraft position   |
 | :-: | ----------- | ----------: | ------------- | --------------- | ---------: | -------- | ------------------- |
-| #1  |  2024-08-04 |       05:15 | Calm          | CLR             |      15 SM | 25       | ↗ To the north-east |
-| #2  |  2024-08-03 |       06:45 | 100° @  3 kts | CLR             |      15 SM | 25       | ↙ To the south-west |
-| #3  |  2024-08-02 |       08:15 | Calm          | FEW @    200 ft |      15 SM | 25       | ↗ To the north-east |
-| #4  |  2024-08-01 |       09:45 | Calm          | CLR             |      15 SM | 25       | ↖ To the north-west |
-| #5  |  2024-07-31 |       11:15 |   0° @  3 kts | CLR             |       9 SM | 25       | ↑ To the north      |
-| #6  |  2024-07-30 |       12:45 | 280° @  9 kts | CLR             |      15 SM | 25       | ↗ To the north-east |
-| #7  |  2024-07-29 |       14:15 | 200° @  7 kts | CLR             |      15 SM | 25       | ↗ To the north-east |
-| #8  |  2024-07-28 |       15:45 | 290° @ 15 kts | CLR             |      15 SM | 25       | → To the east       |
-| #9  |  2024-07-27 |       17:15 | 280° @  8 kts | CLR             |      15 SM | 25       | ← To the west       |
-| #10 |  2024-07-26 |       18:45 |  70° @  7 kts | CLR             |      15 SM | 07 (RP)  | ↗ To the north-east |
+| #1  |  2024-10-02 |       05:15 | 100° @  3 kts | CLR             |      15 SM | 25       | ↘ To the south-east |
+| #2  |  2024-10-01 |       06:45 | Calm          | CLR             |      15 SM | 25       | ↙ To the south-west |
+| #3  |  2024-09-30 |       08:15 | Calm          | CLR             |      15 SM | 25       | ← To the west       |
+| #4  |  2024-09-29 |       09:45 | Calm          | CLR             |      15 SM | 25       | ↘ To the south-east |
+| #5  |  2024-09-28 |       11:15 | Calm          | CLR             |      15 SM | 25       | ↑ To the north      |
+| #6  |  2024-09-27 |       12:45 | 200° @  3 kts | CLR             |      15 SM | 25       | → To the east       |
+| #7  |  2024-09-26 |       14:15 | 220° @ 11 kts | FEW @ 12,000 ft |      15 SM | 25       | → To the east       |
+| #8  |  2024-09-25 |       15:45 | 300° @  9 kts | CLR             |      15 SM | 25       | ↙ To the south-west |
+| #9  |  2024-09-24 |       17:15 | Calm          | CLR             |      15 SM | 25       | ← To the west       |
+| #10 |  2024-09-23 |       18:45 | 230° @  8 kts | CLR             |      15 SM | 25       | ↙ To the south-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
