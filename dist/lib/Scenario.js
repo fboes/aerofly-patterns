@@ -241,7 +241,7 @@ export class Scenario {
     if (this.activeRunway?.ilsFrequency) {
       tags.push("instruments");
     }
-    if(this.activeRunway?.dimension[0] && this.activeRunway.dimension[0] <= 2000) {
+    if (this.activeRunway?.dimension[0] && this.activeRunway.dimension[0] <= 2000) {
       tags.push("short_runway");
     }
 
