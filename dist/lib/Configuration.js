@@ -71,6 +71,11 @@ export class Configuration {
       default: false,
       description: "Pattern altitude is in MSL instead of AGL",
     },
+    "no-guides": {
+      type: "boolean",
+      default: false,
+      description: "Try to remove virtual guides from missions.",
+    },
     directory: {
       type: "boolean",
       short: "d",
@@ -185,6 +190,11 @@ export class Configuration {
      * @type {boolean} if files should be created in subfolder
      */
     this.directoryMode = Boolean(values["directory"]);
+
+    /**
+     * @type {boolean} if guides should be removed from missions
+     */
+    this.noGuides = Boolean(values["no-guides"]);
 
     /**
      * @type {boolean}

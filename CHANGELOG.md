@@ -1,5 +1,13 @@
 # Changelog
 
+# 2.3.9
+
+- Added `--no-guides` parameter to remove guides from missions
+
+# 2.3.8
+
+- Added new cloud properties
+
 # 2.3.7
 
 - Updated mission file generator, adding tags

@@ -13,6 +13,8 @@ import {
   AeroflyMissionConditionsCloud,
   AeroflyMissionsList,
 } from "@fboes/aerofly-custom-missions";
+import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
+import { Vector } from "@fboes/geojson";
 
 /**
  * @typedef AeroflyPatternsWaypointable
@@ -190,6 +192,7 @@ export class AeroflyPatterns {
         description: s.description ?? "",
         tags: s.tags,
         flightSetting: "cruise",
+        difficulty: 0.5 + index * 0.01,
         aircraft: {
           name: s.aircraft.aeroflyCode,
           livery: s.aircraft.aeroflyLiveryCode,
@@ -212,6 +215,15 @@ export class AeroflyPatterns {
         },
         conditions,
       });
+
+      if (this.configuration.noGuides) {
+        const targetPosition = s.aircraft.position.getPointBy(new Vector(1, s.aircraft.heading));
+        mission.finish = new AeroflyMissionTargetPlane(
+          targetPosition.longitude,
+          targetPosition.latitude,
+          s.aircraft.heading,
+        );
+      }
 
       return mission;
     });

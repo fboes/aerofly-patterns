@@ -21,16 +21,16 @@ Get [more information about Key West International Airport on SkyVector](https:/
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-10-02  |       05:15 | 160° @ 3 kts  | CLR            |      15 SM | 09 (RP) | ↓ To the south       |
-| #2  | 2024-10-01  |       06:45 | 80° @ 4 kts   | FEW @ 1,800 ft |      15 SM | 09 (RP) | → To the east        |
-| #3  | 2024-09-30  |       08:15 | 110° @ 8 kts  | CLR            |      15 SM | 09 (RP) | → To the east        |
-| #4  | 2024-09-29  |       09:45 | 130° @ 6 kts  | SCT @ 2,200 ft |      15 SM | 09 (RP) | ↖ To the north-west |
-| #5  | 2024-09-28  |       11:15 | 170° @ 8 kts  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #6  | 2024-09-27  |       12:45 | 220° @ 10 kts | CLR            |      15 SM | 27      | ↑ To the north       |
-| #7  | 2024-09-26  |       14:15 | 170° @ 25 kts | BKN @ 1,800 ft |       5 SM | 09 (RP) | ↗ To the north-east |
-| #8  | 2024-09-25  |       15:45 | 130° @ 16 kts | FEW @ 4,300 ft |      15 SM | 09 (RP) | ↖ To the north-west |
-| #9  | 2024-09-24  |       17:15 | 90° @ 10 kts  | FEW @ 2,000 ft |      15 SM | 09 (RP) | ↓ To the south       |
-| #10 | 2024-09-23  |       18:45 | 100° @ 11 kts | SCT @ 2,300 ft |      15 SM | 09 (RP) | ↓ To the south       |
+| #1  | 2024-10-19  |       05:15 | 50° @ 9 kts   | BKN @ 4,100 ft |      15 SM | 09 (RP) | ↖ To the north-west |
+| #2  | 2024-10-18  |       06:45 | 50° @ 13 kts  | OVC @ 3,700 ft |      15 SM | 09 (RP) | ↑ To the north       |
+| #3  | 2024-10-17  |       08:15 | 40° @ 14 kts  | CLR            |      15 SM | 09 (RP) | ↑ To the north       |
+| #4  | 2024-10-16  |       09:45 | 30° @ 11 kts  | FEW @ 1,800 ft |      15 SM | 09 (RP) | ↑ To the north       |
+| #5  | 2024-10-15  |       11:15 | 360° @ 6 kts  | SCT @ 2,900 ft |      15 SM | 09 (RP) | ← To the west        |
+| #6  | 2024-10-14  |       12:45 | 50° @ 6 kts   | FEW @ 1,800 ft |      15 SM | 09 (RP) | ↓ To the south       |
+| #7  | 2024-10-13  |       14:15 | 100° @ 10 kts | SCT @ 1,700 ft |      15 SM | 09 (RP) | ↑ To the north       |
+| #8  | 2024-10-12  |       15:45 | 60° @ 7 kts   | OVC @ 6,000 ft |      15 SM | 09 (RP) | → To the east        |
+| #9  | 2024-10-11  |       17:15 | 40° @ 5 kts   | FEW @ 7,000 ft |      15 SM | 09 (RP) | ↓ To the south       |
+| #10 | 2024-10-10  |       18:45 | 310° @ 7 kts  | CLR            |      15 SM | 27      | ← To the west        |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
