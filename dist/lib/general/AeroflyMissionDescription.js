@@ -35,7 +35,12 @@ export default class AeroflyMissionDescription {
       weatherAdjectivesString = ` ${this.#getAorAn(weatherAdjectives[0])} ${weatherAdjectives.join(", ")}`;
     }
 
-    return `It is${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind}.`;
+    let description = `It is${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind}.`;
+    if (this.#mission.flightSetting === "cold_and_dark") {
+      description += ` Your aircraft is cold and dark.`;
+    }
+
+    return description;
   }
 
   /**

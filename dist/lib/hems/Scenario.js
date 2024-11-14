@@ -119,7 +119,7 @@ export class Scenario {
 
     const describer = new AeroflyMissionDescription(this.mission);
     this.mission.description = describer.description + "\n" + this.mission.description;
-    this.mission.tags.concat(describer.tags);
+    this.mission.tags = this.mission.tags.concat(describer.tags);
     this.mission.distance = describer.distance;
     this.mission.duration = describer.calculateDuration(this.aircraft.cruiseSpeed);
   }
