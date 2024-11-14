@@ -53,9 +53,9 @@ export default class AeroflyMissionDescription {
     if (this.timeOfDay === "night") {
       tags.push("night");
     }
-    /*if (this.#mission.flightSetting === "cold") {
-      tags.push("cold");
-    }*/
+    if (this.#mission.flightSetting === "cold_and_dark") {
+      tags.push("cold_and_dark");
+    }
 
     return tags;
   }

@@ -68,7 +68,7 @@ export class Scenario {
         livery: this.configuration.livery,
       },
       callsign: aircraft.callsign,
-      flightSetting: this.configuration.isColdAndDark ? "cold" : "taxi",
+      flightSetting: this.configuration.isColdAndDark ? "cold_and_dark" : "taxi",
       conditions,
       tags: ["medical", "dropoff"],
       origin: {
