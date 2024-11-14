@@ -13,7 +13,8 @@ import * as fs from "node:fs";
  *   "marker-symbol": string|null
  * }} properties
  * @property {{
- *   coordinates: [number, number]
+ *   coordinates: [number, number, number?],
+ *   type: string
  * }} geometry
  */
 
@@ -37,12 +38,19 @@ export class GeoJsonLocations {
       throw Error("Missing FeatureCollection with features in GeoJSON file");
     }
 
-    this.#validateGeoJsonFeatures(featureCollection.features);
+
+    const pointFeatures = featureCollection.features.filter((f) => {
+      return f.type === "Feature" && f.geometry.type === "Point";
+    });
+    if (pointFeatures.length === 0) {
+      throw Error("Missing Features in GeoJson file");
+    }
+    this.#validateGeoJsonFeatures(pointFeatures);
 
     /**
      * @type {GeoJsonFeature[]}
      */
-    this.heliports = featureCollection.features.filter((f) => {
+    this.heliports = pointFeatures.filter((f) => {
       return f.properties && f.properties["marker-symbol"] === "heliport";
     });
     if (this.heliports.length === 0) {
@@ -52,7 +60,7 @@ export class GeoJsonLocations {
     /**
      * @type {GeoJsonFeature[]}
      */
-    this.hospitals = featureCollection.features.filter((f) => {
+    this.hospitals = pointFeatures.filter((f) => {
       return f.properties && f.properties["marker-symbol"] === "hospital";
     });
     if (this.hospitals.length === 0) {
@@ -62,7 +70,7 @@ export class GeoJsonLocations {
     /**
      * @type {GeoJsonFeature[]}
      */
-    this.other = featureCollection.features.filter((f) => {
+    this.other = pointFeatures.filter((f) => {
       return (
         f.properties && f.properties["marker-symbol"] !== "heliport" && f.properties["marker-symbol"] !== "hospital"
       );
@@ -78,10 +86,10 @@ export class GeoJsonLocations {
   #validateGeoJsonFeatures(geoJsonFeatures) {
     for (const geoJsonFeature of geoJsonFeatures) {
       if (!geoJsonFeature.properties.title) {
-        throw Error(`Missing properties.title in GeoJSONFearure ${geoJsonFeature.id}`);
+        throw Error(`Missing properties.title in GeoJSONFeature ${geoJsonFeature.id}`);
       }
       if (!geoJsonFeature.geometry.coordinates) {
-        throw Error(`Missing properties.geometry.coordinates in GeoJSONFearure ${geoJsonFeature.id}`);
+        throw Error(`Missing properties.geometry.coordinates in GeoJSONFeature ${geoJsonFeature.id}`);
       }
     }
   }
