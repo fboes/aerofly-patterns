@@ -1,12 +1,12 @@
 // @ts-check
 import { Airport } from "./Airport.js";
-import { AviationWeatherApi } from "./AviationWeatherApi.js";
+import { AviationWeatherApi } from "../general/AviationWeatherApi.js";
 import { Configuration } from "./Configuration.js";
 import { FeatureCollection, Feature, LineString } from "@fboes/geojson";
 import { Scenario } from "./Scenario.js";
-import { DateYielder } from "./DateYielder.js";
-import { Formatter } from "./Formatter.js";
-import { LocalTime } from "./LocalTime.js";
+import { DateYielder } from "../general/DateYielder.js";
+import { Formatter } from "../general/Formatter.js";
+import { LocalTime } from "../general/LocalTime.js";
 import {
   AeroflyMission,
   AeroflyMissionConditions,

@@ -1,14 +1,15 @@
 // @ts-check
 
 import { Vector } from "@fboes/geojson";
-import { Units } from "../data/Units.js";
+import { Units } from "../../data/Units.js";
 import { Configuration } from "./Configuration.js";
-import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "./AviationWeatherApi.js";
-import { Formatter } from "./Formatter.js";
-import { AeroflyAircraftFinder } from "../data/AeroflyAircraft.js";
-import { Degree, degreeDifference, degreeToRad } from "./Degree.js";
-import { Airports } from "../data/Airports.js";
+import { AviationWeatherApi } from "../general/AviationWeatherApi.js";
+import { Formatter } from "../general/Formatter.js";
+import { AeroflyAircraftFinder } from "../../data/AeroflyAircraft.js";
+import { Degree, degreeDifference, degreeToRad } from "../general/Degree.js";
+import { Airports } from "../../data/Airports.js";
 import { AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
+import { ScenarioWeather } from "../general/ScenarioWeather.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -424,83 +425,8 @@ class ScenarioAircraft {
     this.aeroflyLiveryCode = aircraftLivery;
 
     /**
-     * @type {import('../data/AeroflyAircraft.js').AeroflyAircraft} additional aircraft information like name and technical properties
+     * @type {import('../../data/AeroflyAircraft.js').AeroflyAircraft} additional aircraft information like name and technical properties
      */
     this.data = AeroflyAircraftFinder.get(aircraftCode);
-  }
-}
-
-export class ScenarioWeather {
-  /**
-   * @param {import('./AviationWeatherApi.js').AviationWeatherApiMetar} weatherApiData
-   */
-  constructor(weatherApiData) {
-    const weather = new AviationWeatherNormalizedMetar(weatherApiData);
-    /**
-     * @type {number} in degree
-     */
-    this.windDirection = weather.wdir ?? 0;
-
-    /**
-     * @type {number} in kts
-     */
-    this.windSpeed = weather.wspd;
-
-    /**
-     * @type {number} in kts
-     */
-    this.windGusts = weather.wgst ?? 0;
-
-    /**
-     * @type {number} in Statute Miles. Max is 15 for METAR values ending on a "+"
-     */
-    this.visibility = Math.min(15, weather.visib);
-
-    this.clouds = weather.clouds.map((c) => {
-      return new ScenarioWeatherCloud(c);
-    });
-
-    /**
-     * @type {number} in °C
-     */
-    this.temperature = weather.temp;
-  }
-
-  /**
-   * @returns {number} 0..1
-   */
-  get turbulenceStrength() {
-    return Math.min(1, this.windSpeed / 80 + this.windGusts / 20);
-  }
-}
-
-export class ScenarioWeatherCloud {
-  /**
-   * @param {import('./AviationWeatherApi.js').AviationWeatherNormalizedCloud} cloud
-   */
-  constructor(cloud) {
-    /**
-     * @type {"CLR"|"FEW"|"SCT"|"BKN"|"OVC"}
-     */
-    this.cloudCoverCode = cloud.cover;
-
-    const cover = {
-      CLR: [0, 0], // 0
-      FEW: [1 / 8, 1 / 8], // 1/8 .. 2/8
-      SCT: [2 / 8, 2 / 8], // 2/8 .. 4/8
-      BKN: [4 / 8, 3 / 8], // 4/8 .. 7/8
-      OVC: [7 / 8, 1 / 8], // 7/8 .. 1
-    };
-    const actualCover = cover[this.cloudCoverCode] ? cover[this.cloudCoverCode] : cover.CLR;
-
-    /**
-     * @type {number} 0..1
-     */
-    this.cloudCover = actualCover[0] + Math.random() * actualCover[1];
-
-    /**
-     * @type {number} in ft
-     */
-    this.cloudBase = cloud.base ?? 0;
   }
 }

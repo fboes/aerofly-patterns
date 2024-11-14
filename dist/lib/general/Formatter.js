@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Units } from "../data/Units.js";
+import { Units } from "../../data/Units.js";
 
 export class Formatter {
   /**
@@ -106,7 +106,7 @@ export class Formatter {
   }
 
   /**
-   * @param  {import('./Scenario.js').ScenarioWeather} weather
+   * @param  {import('./ScenarioWeather.js').ScenarioWeather} weather
    * @returns {string}
    */
   static getWeatherAdjectives(weather) {

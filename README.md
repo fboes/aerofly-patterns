@@ -1,8 +1,13 @@
 # Aerofly Landegerät
 
-> Create landing pattern lessons for Aerofly FS 4.
+> Create random custom missions Aerofly FS 4.
 
-This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4. These missions contain landing pattern lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern correctly.
+This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4.
+
+1. The main tool creates missions containing landing pattern lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern correctly.
+2. Also there now is a HEMS missions generator, which will put your helicopter on a random heliport, sets time of day as well as weather, and create flight plans to nearby MedEvac locations. See the [HEMS missions generator documentation](docs/hems.md).
+
+The main documentation centers around the landing pattern lessons:
 
 ## What does it do?
 
@@ -64,19 +69,20 @@ npx @fboes/aerofly-patterns@latest KMVY c172 --right-pattern 24,33
 
 The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Improved flight planning is available for aircraft listed in [`dist/data/AeroflyAircraft.js`](./dist/data/AeroflyAircraft.js). Examples of codes:
 
-| `AEROFLY_AIRCRAFT_CODE` | Type                                 |
-| ----------------------- | ------------------------------------ |
-| `a320`                  | Airbus A320                          |
-| `b58`                   | Beechcraft Baron 58                  |
-| `c172`                  | Cessna 172                           |
-| `c90gtx`                | Beechcraft King Air C90              |
-| `ec135`                 | Eurocopter EC135                     |
-| `f15e`                  | McDonnell Douglas F-15E Strike Eagle |
-| `jungmeister`           | Bücker Bü 133 Jungmeister            |
-| `lj45`                  | Learjet 45                           |
-| `mb339`                 | Aermacchi MB-339                     |
-| `pitts`                 | Pitts Special S-2                    |
-| `r22`                   | Robinson R22                         |
+| `AEROFLY_AIRCRAFT_CODE` | Type                                 | Liveries                                          |
+| ----------------------- | ------------------------------------ | ------------------------------------------------- |
+| `a320`                  | Airbus A320                          |                                                   |
+| `b58`                   | Beechcraft Baron 58                  |                                                   |
+| `c172`                  | Cessna 172                           |                                                   |
+| `c90gtx`                | Beechcraft King Air C90              |                                                   |
+| `ec135`                 | Eurocopter EC135                     | `adac`, `drf`, `german_army`, `police`, `sheriff` |
+| `uh60`                  | Sikorsky UH-60 Black Hawk            |                                                   |
+| `f15e`                  | McDonnell Douglas F-15E Strike Eagle |                                                   |
+| `jungmeister`           | Bücker Bü 133 Jungmeister            |                                                   |
+| `lj45`                  | Learjet 45                           |                                                   |
+| `mb339`                 | Aermacchi MB-339                     |                                                   |
+| `pitts`                 | Pitts Special S-2                    |                                                   |
+| `r22`                   | Robinson R22                         |                                                   |
 
 ## Download the missions
 

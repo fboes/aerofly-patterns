@@ -1,19 +1,19 @@
 // @ts-check
 
 import { Vector, Point } from "@fboes/geojson";
-import { Units } from "../data/Units.js";
-import { Degree } from "./Degree.js";
-import { Airports } from "../data/Airports.js";
-import { Formatter } from "./Formatter.js";
-import { AviationWeatherNormalizedAirport } from "./AviationWeatherApi.js";
+import { Units } from "../../data/Units.js";
+import { Degree } from "../general/Degree.js";
+import { Airports } from "../../data/Airports.js";
+import { Formatter } from "../general/Formatter.js";
+import { AviationWeatherNormalizedAirport } from "../general/AviationWeatherApi.js";
 
 /**
- * @type  {import('./AeroflyPatterns.js').AeroflyPatternsWaypointable}
+ * @type  {import('../pattern/AeroflyPatterns.js').AeroflyPatternsWaypointable}
  */
 export class Airport {
   /**
    *
-   * @param {import('./AviationWeatherApi.js').AviationWeatherApiAirport} airportApiData
+   * @param {import('../general/AviationWeatherApi.js').AviationWeatherApiAirport} airportApiData
    * @param {import('./Configuration.js').Configuration?} configuration
    */
   constructor(airportApiData, configuration = null) {
@@ -113,7 +113,7 @@ export class Airport {
 
   /**
    *
-   * @param {import("./AviationWeatherApi.js").AviationWeatherApiNavaid[]} navaids
+   * @param {import("../general/AviationWeatherApi.js").AviationWeatherApiNavaid[]} navaids
    */
   setNavaids(navaids) {
     this.navaids = navaids.map((n) => {
@@ -163,7 +163,7 @@ export class Airport {
 
   /**
    *
-   * @param {import('./AviationWeatherApi.js').AviationWeatherNormalizedRunway} runwayApiData
+   * @param {import('../general/AviationWeatherApi.js').AviationWeatherNormalizedRunway} runwayApiData
    * @param {Point} airportPosition
    * @param  {import('./Configuration.js').Configuration?} configuration
    * @returns {AirportRunway[]} both directions, or in case of helipads on single helipad
@@ -299,7 +299,7 @@ export class AirportRunway {
 export class AirportNavaid {
   /**
    *
-   * @param {import("./AviationWeatherApi.js").AviationWeatherApiNavaid} navaidJson
+   * @param {import("../general/AviationWeatherApi.js").AviationWeatherApiNavaid} navaidJson
    */
   constructor(navaidJson) {
     this.id = navaidJson.id;

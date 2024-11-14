@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 // @ts-check
-import { AeroflyPatterns } from "./lib/AeroflyPatterns.js";
-import { Configuration } from "./lib/Configuration.js";
-import { FileWriter } from "./lib/FileWriter.js";
+import { AeroflyPatterns } from "./lib/pattern/AeroflyPatterns.js";
+import { Configuration } from "./lib/pattern/Configuration.js";
+import { FileWriter } from "./lib/pattern/FileWriter.js";
 
 const configuration = new Configuration(process.argv);
 

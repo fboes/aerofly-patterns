@@ -11,7 +11,7 @@ export class AirportTest {
   }
 
   checkKansasCity() {
-    /** @type {import('./AviationWeatherApi.js').AviationWeatherApiAirport} */
+    /** @type {import('../general/AviationWeatherApi.js').AviationWeatherApiAirport} */
     const airportJson = {
       icaoId: "KMCI",
       name: "KANSAS CITY/KANSAS_CITY_INTL",
@@ -71,7 +71,7 @@ export class AirportTest {
   }
 
   checkMarthasVineyard() {
-    /** @type {import('./AviationWeatherApi.js').AviationWeatherApiAirport} */
+    /** @type {import('../general/AviationWeatherApi.js').AviationWeatherApiAirport} */
     const airportJson = {
       icaoId: "KMVY",
       name: "VINEYARD HAVEN/MARTHA'S_VINEYARD",
@@ -116,7 +116,7 @@ export class AirportTest {
   }
 
   checkStockton() {
-    /** @type {import('./AviationWeatherApi.js').AviationWeatherApiAirport} */
+    /** @type {import('../general/AviationWeatherApi.js').AviationWeatherApiAirport} */
     const airportJson = {
       icaoId: "KSCK",
       name: "STOCKTON/STOCKTON_METRO",

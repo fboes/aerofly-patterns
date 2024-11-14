@@ -2,7 +2,7 @@
 
 import { strict as assert } from "node:assert";
 import { Formatter } from "./Formatter.js";
-import { ScenarioWeather, ScenarioWeatherCloud } from "./Scenario.js";
+import { ScenarioWeather, ScenarioWeatherCloud } from "./ScenarioWeather.js";
 import { AviationWeatherNormalizedCloud } from "./AviationWeatherApi.js";
 
 export class FormatterTest {

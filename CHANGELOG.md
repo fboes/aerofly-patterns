@@ -1,7 +1,8 @@
 # Changelog
 
-# 2.3.9
+# 2.4.0
 
+- Added HEMS mission generator
 - Added `--no-guides` parameter to remove guides from missions
 
 # 2.3.8
