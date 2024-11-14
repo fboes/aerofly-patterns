@@ -38,7 +38,6 @@ export class GeoJsonLocations {
       throw Error("Missing FeatureCollection with features in GeoJSON file");
     }
 
-
     const pointFeatures = featureCollection.features.filter((f) => {
       return f.type === "Feature" && f.geometry.type === "Point";
     });

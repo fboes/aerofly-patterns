@@ -81,7 +81,8 @@ export class Configuration {
      * @type {string}
      */
     this.geoJsonFile =
-      positionals[0] ?? path.join(path.dirname(fileURLToPath(import.meta.url)), "../../data/hems/san_francisco.geojson");
+      positionals[0] ??
+      path.join(path.dirname(fileURLToPath(import.meta.url)), "../../data/hems/san_francisco.geojson");
     if (!path.isAbsolute(this.geoJsonFile)) {
       this.geoJsonFile = path.join(process.cwd(), this.geoJsonFile);
     }

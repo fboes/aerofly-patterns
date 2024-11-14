@@ -43,7 +43,9 @@ export class Scenario {
 
     const isTransfer = this.configuration.canTransfer && locations.hospitals.length > 1 && Math.random() <= 0.1;
     const waypoint1 = this.#getRandLocation(isTransfer ? locations.hospitals : locations.other);
-    const waypoint2 = this.#getRandLocation(locations.hospitals, waypoint1);
+    const waypoint2 = isTransfer
+      ? this.#getRandLocation(locations.hospitals, waypoint1)
+      : this.#getNearestLocation(locations.hospitals, waypoint1);
 
     const conditions = new AeroflyMissionConditions({
       time,
@@ -133,6 +135,51 @@ export class Scenario {
       location = locations[Math.floor(Math.random() * locations.length)];
     } while (butNot && location.properties.title === butNot?.properties.title);
     return location;
+  }
+
+  /**
+   * @param {import('./GeoJsonLocations.js').GeoJsonFeature[]} locations
+   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} location
+   * @returns {import('./GeoJsonLocations.js').GeoJsonFeature}
+   */
+  #getNearestLocation(locations, location) {
+    let distance = 9999;
+    let nearestLocation = locations[0];
+    for (const testLocation of locations) {
+      const testDistance = this.#getDistanceBetweenLocations(testLocation, location);
+      if (testDistance < distance) {
+        nearestLocation = testLocation;
+        distance = testDistance;
+      }
+    }
+
+    return nearestLocation;
+  }
+
+  /**
+   *
+   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} lastCp
+   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} cp
+   * @returns {number} distance in meters
+   */
+  #getDistanceBetweenLocations(lastCp, cp) {
+    const lat1 = (lastCp.geometry.coordinates[1] / 180) * Math.PI;
+    const lon1 = (lastCp.geometry.coordinates[0] / 180) * Math.PI;
+    const lat2 = (cp.geometry.coordinates[1] / 180) * Math.PI;
+    const lon2 = (cp.geometry.coordinates[0] / 180) * Math.PI;
+
+    const dLon = lon2 - lon1;
+    const dLat = lat2 - lat1;
+
+    //const y = Math.sin(dLon) * Math.cos(lat2);
+    //const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
+    //const bearing = ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
+
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return 6_371_000 * c;
   }
 
   /**

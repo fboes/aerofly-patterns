@@ -121,7 +121,7 @@ export default class AeroflyMissionDescription {
 
     for (const cp of this.#mission.checkpoints) {
       if (lastCp !== null) {
-        distance += this.getDistanceBetweenCheckpoints(lastCp, cp);
+        distance += AeroflyMissionDescription.getDistanceBetweenCheckpoints(lastCp, cp);
       }
 
       lastCp = cp;
@@ -181,7 +181,7 @@ export default class AeroflyMissionDescription {
    * @param {AeroflyMissionCheckpoint} cp
    * @returns {number} distance in meters
    */
-  getDistanceBetweenCheckpoints(lastCp, cp) {
+  static getDistanceBetweenCheckpoints(lastCp, cp) {
     const lat1 = (lastCp.latitude / 180) * Math.PI;
     const lon1 = (lastCp.longitude / 180) * Math.PI;
     const lat2 = (cp.latitude / 180) * Math.PI;
