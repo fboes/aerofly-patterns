@@ -18,18 +18,18 @@ Get [more information about Stockton Metro Airport on SkyVector](https://skyvect
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds          | Visibility | Runway   | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | --------------- | ---------: | -------- | -------------------- |
-| #1  | 2024-10-18  |       05:15 | 340° @ 17 kts | CLR             |      15 SM | 29R (RP) | ↗ To the north-east |
-| #2  | 2024-10-17  |       06:45 | 290° @ 3 kts  | CLR             |      15 SM | 29L      | ← To the west        |
-| #3  | 2024-10-16  |       08:15 | 230° @ 10 kts | FEW @ 11,000 ft |      15 SM | 29L      | ↑ To the north       |
-| #4  | 2024-10-15  |       09:45 | Calm          | CLR             |      15 SM | 29R (RP) | ← To the west        |
-| #5  | 2024-10-14  |       11:15 | 310° @ 7 kts  | CLR             |      15 SM | 29R (RP) | ↘ To the south-east |
-| #6  | 2024-10-13  |       12:45 | 330° @ 10 kts | CLR             |       8 SM | 29R (RP) | ↖ To the north-west |
-| #7  | 2024-10-12  |       14:15 | 330° @ 11 kts | CLR             |      15 SM | 29R (RP) | ← To the west        |
-| #8  | 2024-10-11  |       15:45 | 280° @ 6 kts  | CLR             |      15 SM | 29L      | ↗ To the north-east |
-| #9  | 2024-10-10  |       17:15 | 300° @ 6 kts  | CLR             |      15 SM | 29L      | ↑ To the north       |
-| #10 | 2024-10-09  |       18:45 | 300° @ 6 kts  | CLR             |      15 SM | 29L      | → To the east        |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | -------------------- |
+| #1  | 2024-11-15  |       05:15 | 270° @ 7 kts  | SCT @ 4,600 ft |      15 SM | 29L      | ↑ To the north       |
+| #2  | 2024-11-14  |       06:45 | Calm          | CLR            |       2 SM | 29R (RP) | ↙ To the south-west |
+| #3  | 2024-11-13  |       08:15 | 130° @ 7 kts  | CLR            |       3 SM | 11R (RP) | ↙ To the south-west |
+| #4  | 2024-11-12  |       09:45 | Calm          | FEW @ 100 ft   |       3 SM | 29R (RP) | ↗ To the north-east |
+| #5  | 2024-11-11  |       11:15 | 290° @ 10 kts | FEW @ 3,100 ft |       2 SM | 29L      | ↖ To the north-west |
+| #6  | 2024-11-10  |       12:45 | 360° @ 4 kts  | CLR            |      15 SM | 29R (RP) | ↘ To the south-east |
+| #7  | 2024-11-09  |       14:15 | 360° @ 3 kts  | CLR            |      15 SM | 29R (RP) | ↙ To the south-west |
+| #8  | 2024-11-08  |       15:45 | 330° @ 4 kts  | CLR            |      15 SM | 29R (RP) | ↓ To the south       |
+| #9  | 2024-11-07  |       17:15 | Calm          | CLR            |      15 SM | 29R (RP) | ↘ To the south-east |
+| #10 | 2024-11-06  |       18:45 | 320° @ 4 kts  | CLR            |      15 SM | 29R (RP) | ↙ To the south-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

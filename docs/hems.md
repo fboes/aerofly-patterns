@@ -24,20 +24,23 @@ Create landing pattern lessons for Aerofly FS 4.
 
 Arguments:
   GEOJSON_FILE              GeoJSON file containing possible mission locations.
-  AFS_AIRCRAFT_CODE         Internal aircraft code in Aerofly FS 4.
-  AFS_LIVERY_CODE           Internal aircraft code in Aerofly FS 4.
+  AFS_AIRCRAFT_CODE         Internal aircraft code in Aerofly FS 4. Defaults to "ec135".
+  AFS_LIVERY_CODE           Internal aircraft code in Aerofly FS 4. Defaults to "adac".
 
 Options:
   --metar-icao=.., -m=..    Use this ICAO station code to find weather reports
                             Example value: EHAM
   --missions=..             Number of missions in file.
                             Default value: 10
+  --callsign=..             Optional callsign, else default callsign will be used.
   --no-guides               Try to remove virtual guides from missions.
   --cold-dark               Start cold & dark.
   --transfer, -t            Mission types can also be transfers.
   --directory, -d           Create files in a subdirectory instead of current directory.
   --help, -h                Will output the help.
 ```
+
+See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
 
 ## The GeoJSON file
 
@@ -59,6 +62,7 @@ This project contains an [example GeoJSON file for Lüneburg](../dist/data/hems/
 | -------------------------- | -------- | ---------------------------------- |
 | `properties.marker-symbol` | `string` | `heliport`                         |
 | `properties.title`         | `string` | Aerofly code of heliport           |
+| `properties.icaoCode`      | `string` | ICAO code                          |
 | `properties.direction`     | `number` | Optional orientation of helicopter |
 
 ### Hospital
@@ -67,6 +71,7 @@ This project contains an [example GeoJSON file for Lüneburg](../dist/data/hems/
 | -------------------------- | -------- | ----------------------------------------------- |
 | `properties.marker-symbol` | `string` | `hospital`                                      |
 | `properties.title`         | `string` | Name of hospital to be used in mission briefing |
+| `properties.icaoCode`      | `string` | ICAO code                                       |
 
 ### Emergency site
 

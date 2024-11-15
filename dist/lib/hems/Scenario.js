@@ -7,6 +7,7 @@ import {
 import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import AeroflyMissionDescription from "../general/AeroflyMissionDescription.js";
+import { Point } from "@fboes/geojson";
 
 export class Scenario {
   /**
@@ -58,7 +59,7 @@ export class Scenario {
         : waypoint1.properties.title);
     const description = isTransfer
       ? `You will need to transfer a patient from ${waypoint1.properties.title} to ${waypoint2.properties.title}.`
-      : `Fly to the specified location to drop off an emergency doctor and take a patient on board if necessary. Afterwards fly to ${waypoint2.properties.title}.`;
+      : `Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ${waypoint2.properties.title}.`;
 
     this.mission = new AeroflyMission(title, {
       description,
@@ -72,14 +73,14 @@ export class Scenario {
       conditions,
       tags: ["medical", "dropoff"],
       origin: {
-        icao: this.origin.properties.title,
+        icao: this.origin.properties.icaoCode ?? this.origin.properties.title,
         longitude: this.origin.geometry.coordinates[0],
         latitude: this.origin.geometry.coordinates[1],
         alt: this.origin.geometry.coordinates[2] ?? 0,
         dir: this.origin.properties?.direction ?? 0,
       },
       destination: {
-        icao: destination.properties.title,
+        icao: destination.properties.icaoCode ?? destination.properties.title,
         longitude: destination.geometry.coordinates[0],
         latitude: destination.geometry.coordinates[1],
         alt: destination.geometry.coordinates[2] ?? 0,
@@ -163,23 +164,14 @@ export class Scenario {
    * @returns {number} distance in meters
    */
   #getDistanceBetweenLocations(lastCp, cp) {
-    const lat1 = (lastCp.geometry.coordinates[1] / 180) * Math.PI;
-    const lon1 = (lastCp.geometry.coordinates[0] / 180) * Math.PI;
-    const lat2 = (cp.geometry.coordinates[1] / 180) * Math.PI;
-    const lon2 = (cp.geometry.coordinates[0] / 180) * Math.PI;
-
-    const dLon = lon2 - lon1;
-    const dLat = lat2 - lat1;
-
-    //const y = Math.sin(dLon) * Math.cos(lat2);
-    //const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
-    //const bearing = ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
-
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return 6_371_000 * c;
+    const vector = new Point(
+      cp.geometry.coordinates[0],
+      cp.geometry.coordinates[1],
+      cp.geometry.coordinates[2] ?? null,
+    ).getVectorTo(
+      new Point(lastCp.geometry.coordinates[0], lastCp.geometry.coordinates[1], lastCp.geometry.coordinates[2] ?? null),
+    );
+    return vector.meters;
   }
 
   /**
@@ -188,18 +180,14 @@ export class Scenario {
    * @param {import("@fboes/aerofly-custom-missions").AeroflyMissionCheckpointType} type
    * @returns {AeroflyMissionCheckpoint}
    */
-  #makeCheckpoint(location, type = "checkpoint") {
-    const title =
-      type !== "checkpoint"
-        ? location.properties.title
-        : this.#makeCheckpointName(location.properties["marker-symbol"] ?? "Emergency");
+  #makeCheckpoint(location, type = "waypoint") {
     return new AeroflyMissionCheckpoint(
-      title,
+      this.#makeCheckpointName(location),
       type,
       location.geometry.coordinates[0],
       location.geometry.coordinates[1],
       {
-        altitude: this.configuration.noGuides ? -1 : location.geometry.coordinates[2] ?? 0,
+        altitude: this.configuration.noGuides ? -100 : location.geometry.coordinates[2] ?? 150,
         flyOver: true,
       },
     );
@@ -210,8 +198,8 @@ export class Scenario {
    * @returns {boolean}
    */
   #checkIcao(location) {
-    if (!location.properties.title.match(/^[a-zA-Z0-9]+$/)) {
-      throw Error(`Not any ICAO code: ${location.properties.title}`);
+    if (!location.properties.icaoCode.match(/^[a-zA-Z0-9]+$/)) {
+      throw Error(`Not an ICAO code: ${location.properties.title}`);
     }
 
     return true;
@@ -219,13 +207,15 @@ export class Scenario {
 
   /**
    *
-   * @param {string} name
+   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} location
    * @returns {string}
    */
-  #makeCheckpointName(name) {
-    return ("W-" + name)
-      .toUpperCase()
-      .replace(/[^A-Z0-9-]/, "")
-      .substring(0, 10);
+  #makeCheckpointName(location) {
+    if (location.properties.icaoCode) {
+      return location.properties.icaoCode.toUpperCase();
+    }
+    let name = location.properties["marker-symbol"] === "hospital" ? "HOSPITAL" : "EVAC";
+
+    return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-]/, "");
   }
 }

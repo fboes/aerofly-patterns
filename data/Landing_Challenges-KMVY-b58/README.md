@@ -21,16 +21,16 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-10-19  |       05:15 | Calm          | FEW @ 300 ft   |       3 SM | 24 (RP) | ↓ To the south       |
-| #2  | 2024-10-18  |       06:45 | 20° @ 14 kts  | CLR            |      15 SM | 06      | → To the east        |
-| #3  | 2024-10-17  |       08:15 | 30° @ 6 kts   | FEW @ 2,900 ft |      15 SM | 06      | ↗ To the north-east |
-| #4  | 2024-10-16  |       09:45 | 280° @ 14 kts | CLR            |      15 SM | 33 (RP) | ↓ To the south       |
-| #5  | 2024-10-15  |       11:15 | 280° @ 10 kts | CLR            |      15 SM | 33 (RP) | ↖ To the north-west |
-| #6  | 2024-10-14  |       12:45 | 270° @ 5 kts  | OVC @ 800 ft   |       8 SM | 24 (RP) | ↘ To the south-east |
-| #7  | 2024-10-13  |       14:15 | 90° @ 6 kts   | OVC @ 2,100 ft |      15 SM | 15      | ↓ To the south       |
-| #8  | 2024-10-12  |       15:45 | 290° @ 8 kts  | CLR            |      15 SM | 33 (RP) | ↙ To the south-west |
-| #9  | 2024-10-11  |       17:15 | 240° @ 8 kts  | CLR            |      15 SM | 24 (RP) | ↙ To the south-west |
-| #10 | 2024-10-10  |       18:45 | 330° @ 8 kts  | CLR            |      15 SM | 33 (RP) | ↙ To the south-west |
+| #1  | 2024-11-15  |       05:15 | 330° @ 7 kts  | CLR            |      15 SM | 33 (RP) | ↗ To the north-east |
+| #2  | 2024-11-14  |       06:45 | 20° @ 13 kts  | FEW @ 2,700 ft |      15 SM | 06      | ↓ To the south       |
+| #3  | 2024-11-13  |       08:15 | 10° @ 17 kts  | OVC @ 3,600 ft |      15 SM | 06      | ↘ To the south-east |
+| #4  | 2024-11-12  |       09:45 | 310° @ 15 kts | CLR            |      15 SM | 33 (RP) | → To the east        |
+| #5  | 2024-11-11  |       11:15 | 240° @ 11 kts | BKN @ 1,000 ft |      15 SM | 24 (RP) | ↘ To the south-east |
+| #6  | 2024-11-10  |       12:45 | 230° @ 8 kts  | CLR            |      15 SM | 24 (RP) | ↖ To the north-west |
+| #7  | 2024-11-09  |       14:15 | 330° @ 12 kts | CLR            |      15 SM | 33 (RP) | ↙ To the south-west |
+| #8  | 2024-11-08  |       15:45 | 250° @ 12 kts | CLR            |      15 SM | 24 (RP) | → To the east        |
+| #9  | 2024-11-07  |       17:15 | 300° @ 7 kts  | CLR            |      15 SM | 33 (RP) | ↗ To the north-east |
+| #10 | 2024-11-06  |       18:45 | 220° @ 9 kts  | CLR            |      15 SM | 24 (RP) | ↙ To the south-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

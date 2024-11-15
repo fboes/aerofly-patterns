@@ -10,7 +10,8 @@ import * as fs from "node:fs";
  * @property {GeoJsonFeature[]} features
  * @property {{
  *   title: string,
- *   "marker-symbol": string|null
+ *   "marker-symbol": string|null,
+ *   icaoCode?: string
  * }} properties
  * @property {{
  *   coordinates: [number, number, number?],

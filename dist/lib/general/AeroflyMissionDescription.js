@@ -111,7 +111,7 @@ export default class AeroflyMissionDescription {
    * @returns {number} duration in seconds
    */
   calculateDuration(knots) {
-    return this.#mission.distance / (knots * (1852 / 3600));
+    return (this.#mission.distance ?? 0) / (knots * (1852 / 3600));
   }
 
   /**
@@ -126,7 +126,9 @@ export default class AeroflyMissionDescription {
 
     for (const cp of this.#mission.checkpoints) {
       if (lastCp !== null) {
-        distance += AeroflyMissionDescription.getDistanceBetweenCheckpoints(lastCp, cp);
+        const vector = AeroflyMissionDescription.getDistanceBetweenCheckpoints(lastCp, cp);
+        distance += vector.distance;
+        cp.direction = vector.bearing;
       }
 
       lastCp = cp;
@@ -184,7 +186,7 @@ export default class AeroflyMissionDescription {
    *
    * @param {AeroflyMissionCheckpoint} lastCp
    * @param {AeroflyMissionCheckpoint} cp
-   * @returns {number} distance in meters
+   * @returns {{distance:number,bearing:number}} distance in meters
    */
   static getDistanceBetweenCheckpoints(lastCp, cp) {
     const lat1 = (lastCp.latitude / 180) * Math.PI;
@@ -195,14 +197,18 @@ export default class AeroflyMissionDescription {
     const dLon = lon2 - lon1;
     const dLat = lat2 - lat1;
 
-    //const y = Math.sin(dLon) * Math.cos(lat2);
-    //const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
-    //const bearing = ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
+    const y = Math.sin(dLon) * Math.cos(lat2);
+    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
+    const bearing = ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
 
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return 6_371_000 * c;
+    const distance = 6_371_000 * c;
+    return {
+      distance,
+      bearing,
+    };
   }
 }

@@ -21,16 +21,16 @@ Get [more information about Jackson Hole Airport on SkyVector](https://skyvector
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | -------------------- |
-| #1  | 2024-10-19  |       05:15 | Calm          | OVC @ 300 ft   |       0 SM | 19     | ↖ To the north-west |
-| #2  | 2024-10-18  |       06:45 | 20° @ 11 kts  | BKN @ 2,000 ft |       8 SM | 01     | ↙ To the south-west |
-| #3  | 2024-10-17  |       08:15 | 210° @ 5 kts  | BKN @ 3,400 ft |      15 SM | 19     | ← To the west        |
-| #4  | 2024-10-16  |       09:45 | Calm          | @ ft           |       3 SM | 19     | ↖ To the north-west |
-| #5  | 2024-10-15  |       11:15 | Calm          | CLR            |       2 SM | 19     | ↓ To the south       |
-| #6  | 2024-10-14  |       12:45 | Calm          | CLR            |       1 SM | 19     | → To the east        |
-| #7  | 2024-10-13  |       14:15 | 220° @ 4 kts  | CLR            |       3 SM | 19     | ↗ To the north-east |
-| #8  | 2024-10-12  |       15:45 | 0° @ 5 kts    | CLR            |      15 SM | 19     | ↘ To the south-east |
-| #9  | 2024-10-11  |       17:15 | 250° @ 10 kts | CLR            |      15 SM | 19     | ↘ To the south-east |
-| #10 | 2024-10-10  |       18:45 | 230° @ 7 kts  | CLR            |      15 SM | 19     | → To the east        |
+| #1  | 2024-11-15  |       05:15 | 360° @ 4 kts  | CLR            |      15 SM | 19     | → To the east        |
+| #2  | 2024-11-14  |       06:45 | 210° @ 7 kts  | OVC @ 5,000 ft |      15 SM | 19     | → To the east        |
+| #3  | 2024-11-13  |       08:15 | 240° @ 8 kts  | CLR            |      15 SM | 19     | ← To the west        |
+| #4  | 2024-11-12  |       09:45 | 110° @ 3 kts  | OVC @ 5,000 ft |      15 SM | 19     | ↖ To the north-west |
+| #5  | 2024-11-11  |       11:15 | 220° @ 10 kts | CLR            |      15 SM | 19     | ↓ To the south       |
+| #6  | 2024-11-10  |       12:45 | 160° @ 3 kts  | CLR            |      15 SM | 19     | → To the east        |
+| #7  | 2024-11-09  |       14:15 | 0° @ 3 kts    | CLR            |      15 SM | 19     | ↙ To the south-west |
+| #8  | 2024-11-08  |       15:45 | Calm          | CLR            |      15 SM | 19     | → To the east        |
+| #9  | 2024-11-07  |       17:15 | Calm          | CLR            |      15 SM | 19     | ↖ To the north-west |
+| #10 | 2024-11-06  |       18:45 | Calm          | CLR            |      15 SM | 19     | ↗ To the north-east |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
