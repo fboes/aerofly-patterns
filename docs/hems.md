@@ -36,6 +36,7 @@ Options:
   --no-guides               Try to remove virtual guides from missions.
   --cold-dark               Start cold & dark.
   --transfer, -t            Mission types can also be transfers.
+  --poi, -p                 Generate POI files in sub directory.
   --directory, -d           Create files in a subdirectory instead of current directory.
   --help, -h                Will output the help.
 ```
@@ -79,6 +80,12 @@ This project contains an [example GeoJSON file for Lüneburg](../dist/data/hems/
 | -------------------------- | -------- | ---------------------------------------------------- |
 | `properties.marker-symbol` | `string` | any but `heliport` or `hospital`                     |
 | `properties.title`         | `string` | Title of mission, e.g. "Car accident on Main Street" |
+
+## Using the POI file
+
+If you want to the "Landegerät: HEMS" can generate POI files for you. This file contains positions for an ambulance and a police car to be present at every emergency site. Idea donated by [ApfelFlieger](https://www.aerofly.com/community/forum/index.php?thread/23415-searching-for-simple-method-to-add-stock-objects-to-scenery/&postID=150121#post150121).
+
+You will need to copy the generated POI folder to your Aerofly FS 4 user directory, and there to `scenery/poi`.
 
 ---
 

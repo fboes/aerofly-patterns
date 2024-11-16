@@ -3,11 +3,86 @@
         <[list_tmmission_definition][missions][]
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #1: MedEvac at camping site Stover Strand]>
-                <[string8][description][It is an overcast early morning with wind from 280° at 6 kts.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
+                <[string8][title][HEMS #1: MedEvac at Heiligenthal, Hauptstraße]>
+                <[string8][description][It is early morning with wind from 230° at 11 kts. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
+                <[string8u][aircraft_name][uh60]>
+                <[stringt8c][aircraft_icao][H60]>
+                <[stringt8c][callsign][EVAC26212]>
+                <[stringt8c][origin_icao][EDHG]>
+                <[tmvector2d][origin_lon_lat][10.457620941302837 53.24756138354581]>
+                <[float64][origin_alt][0]> // 0 ft MSL
+                <[float64][origin_dir][290]>
+                <[stringt8c][destination_icao][EDHG]>
+                <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
+                <[float64][destination_alt][0]> // 0 ft MSL
+                <[float64][destination_dir][290]>
+                <[float64][distance][17329.735088420966]> // 17 km
+                <[float64][duration][221.62046123080125]> // 4 min
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][11]>
+                        <[int32][time_day][16]>
+                        <[float64][time_hours][4.25]> // 04:15:00 UTC
+                    >
+                    <[float64][wind_direction][230]>
+                    <[float64][wind_speed][11]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.2116]> // 8 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0.5]> // SCT
+                    <[float64][cloud_base][731.5199765913608]> // 2400 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][EDHG]>
+                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.336700553669715 53.220286446750805]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][249.39971018370147]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][59.856046364973906]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][destination]>
+                        <[string8u][name][EDHG]>
+                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HEMS #2: MedEvac at camping site Stover Strand]>
+                <[string8][description][It is an overcast early morning with wind from 280° at 8 kts. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen/Luhe.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
                 <[string8u][aircraft_name][uh60]>
                 <[stringt8c][aircraft_icao][H60]>
                 <[stringt8c][callsign][EVAC26212]>
@@ -26,42 +101,42 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[int32][time_year][2024]>
                         <[int32][time_month][11]>
                         <[int32][time_day][15]>
-                        <[float64][time_hours][4.25]> // 04:15:00 UTC
+                        <[float64][time_hours][5.75]> // 05:45:00 UTC
                     >
                     <[float64][wind_direction][280]>
-                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_speed][8]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.2304]> // 9 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][640.0799795174406]> // 2100 ft AGL
+                    <[float64][cloud_base][579.1199814681606]> // 1900 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
+                        <[float64][altitude][-100]> // -328 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
                         <[vector2_float64][lon_lat][10.304816277769817 53.429604495969954]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][333.44189561273754]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE1034]>
                         <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][217.89346030718957]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -69,8 +144,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][destination]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][123.09607432063274]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -78,11 +153,11 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #2: MedEvac at Kloster Ebstorf]>
-                <[string8][description][It is an overcast early morning with wind from 290° at 7 kts.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
+                <[string8][title][HEMS #3: MedEvac at Ravener Dorfstraße]>
+                <[string8][description][It is an overcast morning with wind from 310° at 11 kts. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
                 <[string8u][aircraft_name][uh60]>
                 <[stringt8c][aircraft_icao][H60]>
                 <[stringt8c][callsign][EVAC26212]>
@@ -94,49 +169,49 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
                 <[float64][destination_alt][0]> // 0 ft MSL
                 <[float64][destination_dir][290]>
-                <[float64][distance][82950.19103651834]> // 83 km
-                <[float64][duration][1060.8044210081066]> // 18 min
+                <[float64][distance][43111.29449843166]> // 43 km
+                <[float64][duration][551.326660347114]> // 9 min
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][11]>
                         <[int32][time_day][14]>
-                        <[float64][time_hours][5.75]> // 05:45:00 UTC
+                        <[float64][time_hours][7.25]> // 07:15:00 UTC
                     >
-                    <[float64][wind_direction][290]>
-                    <[float64][wind_speed][7]> // kts
+                    <[float64][wind_direction][310]>
+                    <[float64][wind_speed][11]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.2304]> // 9 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][640.0799795174406]> // 2100 ft AGL
+                    <[float64][cloud_base][548.6399824435206]> // 1800 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
+                        <[float64][altitude][-100]> // -328 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.41305322117077 53.03058529092442]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.15905044457196 53.173984874291335]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][247.75300661288006]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][64.67120245252386]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -144,8 +219,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][destination]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -153,11 +228,11 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #3: Boating accident at Elbe Fischtreppe]>
-                <[string8][description][It is morning with almost no wind.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
+                <[string8][title][HEMS #4: MedEvac at Amelinghausen, Sportplatz]>
+                <[string8][description][It is morning with almost no wind. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
                 <[string8u][aircraft_name][uh60]>
                 <[stringt8c][aircraft_icao][H60]>
                 <[stringt8c][callsign][EVAC26212]>
@@ -169,88 +244,13 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
                 <[float64][destination_alt][0]> // 0 ft MSL
                 <[float64][destination_dir][290]>
-                <[float64][distance][54616.34932684457]> // 55 km
-                <[float64][duration][698.4584857644667]> // 12 min
+                <[float64][distance][42365.33659607738]> // 42 km
+                <[float64][duration][541.7870145570882]> // 9 min
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][11]>
                         <[int32][time_day][13]>
-                        <[float64][time_hours][7.25]> // 07:15:00 UTC
-                    >
-                    <[float64][wind_direction][230]>
-                    <[float64][wind_speed][1]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.17639999999999997]> // 6 °C
-                    <[float64][visibility][7000.6464]> // 4.35 SM
-                    <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][60.95999804928006]> // 200 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][EDHG]>
-                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.336222832307982 53.42694129877583]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][destination]>
-                        <[string8u][name][EDHG]>
-                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HEMS #4: Boating accident at Elbe Fischtreppe]>
-                <[string8][description][It is morning with almost no wind.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
-                <[string8u][aircraft_name][uh60]>
-                <[stringt8c][aircraft_icao][H60]>
-                <[stringt8c][callsign][EVAC26212]>
-                <[stringt8c][origin_icao][EDHG]>
-                <[tmvector2d][origin_lon_lat][10.457620941302837 53.24756138354581]>
-                <[float64][origin_alt][0]> // 0 ft MSL
-                <[float64][origin_dir][290]>
-                <[stringt8c][destination_icao][EDHG]>
-                <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
-                <[float64][destination_alt][0]> // 0 ft MSL
-                <[float64][destination_dir][290]>
-                <[float64][distance][54616.34932684457]> // 55 km
-                <[float64][duration][698.4584857644667]> // 12 min
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][11]>
-                        <[int32][time_day][12]>
                         <[float64][time_hours][8.75]> // 08:45:00 UTC
                     >
                     <[float64][wind_direction][0]>
@@ -258,37 +258,39 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.1936]> // 7 °C
-                    <[float64][visibility][5005.05984]> // 3.11 SM
-                    <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][121.91999609856012]> // 400 ft AGL
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0.5]> // SCT
+                    <[float64][cloud_base][548.6399824435206]> // 1800 ft AGL
                     <[float64][cirrus_cover][0.5]> // SCT
-                    <[float64][cirrus_base][274.3199912217603]> // 900 ft AGL
+                    <[float64][cirrus_base][792.4799746406408]> // 2600 ft AGL
+                    <[float64][cumulus_mediocris_cover][0.5]> // SCT
+                    <[float64][cumulus_mediocris_base][1036.319966837761]> // 3400 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
+                        <[float64][altitude][-100]> // -328 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.336222832307982 53.42694129877583]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.22211473995057 53.124447358131846]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][228.99262239514437]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][41.74311161613764]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -296,8 +298,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][destination]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -305,11 +307,11 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #5: MedEvac at Fliegenberg Sportplatz]>
-                <[string8][description][It is noon with wind from 170° at 9 kts.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
+                <[string8][title][HEMS #5: MedEvac at Heinsen]>
+                <[string8][description][It is noon with almost no wind. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
                 <[string8u][aircraft_name][uh60]>
                 <[stringt8c][aircraft_icao][H60]>
                 <[stringt8c][callsign][EVAC26212]>
@@ -321,100 +323,96 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
                 <[float64][destination_alt][0]> // 0 ft MSL
                 <[float64][destination_dir][290]>
-                <[float64][distance][58129.62430626317]> // 58 km
-                <[float64][duration][743.3878293116525]> // 12 min
+                <[float64][distance][26192.662335419696]> // 26 km
+                <[float64][duration][334.9635685727766]> // 6 min
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][11]>
+                        <[int32][time_day][12]>
+                        <[float64][time_hours][10.25]> // 10:15:00 UTC
+                    >
+                    <[float64][wind_direction][60]>
+                    <[float64][wind_speed][4]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.2304]> // 9 °C
+                    <[float64][visibility][7000.6464]> // 4.35 SM
+                    <[float64][cloud_cover][0.5]> // SCT
+                    <[float64][cloud_base][182.8799941478402]> // 600 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][EDHG]>
+                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.34527694080353 53.15928983887568]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][217.3640583889789]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][20.350110954878062]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][destination]>
+                        <[string8u][name][EDHG]>
+                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HEMS #6: MedEvac at Hohnstorf]>
+                <[string8][description][It is an overcast noon with wind from 170° at 7 kts. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
+                <[string8u][aircraft_name][uh60]>
+                <[stringt8c][aircraft_icao][H60]>
+                <[stringt8c][callsign][EVAC26212]>
+                <[stringt8c][origin_icao][EDHG]>
+                <[tmvector2d][origin_lon_lat][10.457620941302837 53.24756138354581]>
+                <[float64][origin_alt][0]> // 0 ft MSL
+                <[float64][origin_dir][290]>
+                <[stringt8c][destination_icao][EDHG]>
+                <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
+                <[float64][destination_alt][0]> // 0 ft MSL
+                <[float64][destination_dir][290]>
+                <[float64][distance][36042.93552242675]> // 36 km
+                <[float64][duration][460.93330070171754]> // 8 min
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][11]>
                         <[int32][time_day][11]>
-                        <[float64][time_hours][10.25]> // 10:15:00 UTC
+                        <[float64][time_hours][11.75]> // 11:45:00 UTC
                     >
                     <[float64][wind_direction][170]>
-                    <[float64][wind_speed][9]> // kts
+                    <[float64][wind_speed][7]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.2116]> // 8 °C
-                    <[float64][visibility][7998.4396799999995]> // 4.97 SM
-                    <[float64][cloud_cover][0.5]> // SCT
-                    <[float64][cloud_base][274.3199912217603]> // 900 ft AGL
-                    <[float64][cirrus_cover][0.5]> // SCT
-                    <[float64][cirrus_base][396.2399873203204]> // 1300 ft AGL
-                    <[float64][cumulus_mediocris_cover][0.5]> // SCT
-                    <[float64][cumulus_mediocris_base][670.5599785420807]> // 2200 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][EDHG]>
-                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.13348856784097 53.41840434555314]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][destination]>
-                        <[string8u][name][EDHG]>
-                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HEMS #6: MedEvac at Barum center]>
-                <[string8][description][It is an overcast noon with almost no wind.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
-                <[string8u][aircraft_name][uh60]>
-                <[stringt8c][aircraft_icao][H60]>
-                <[stringt8c][callsign][EVAC26212]>
-                <[stringt8c][origin_icao][EDHG]>
-                <[tmvector2d][origin_lon_lat][10.457620941302837 53.24756138354581]>
-                <[float64][origin_alt][0]> // 0 ft MSL
-                <[float64][origin_dir][290]>
-                <[stringt8c][destination_icao][EDHG]>
-                <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
-                <[float64][destination_alt][0]> // 0 ft MSL
-                <[float64][destination_dir][290]>
-                <[float64][distance][46525.42564034302]> // 47 km
-                <[float64][duration][594.9881078252347]> // 10 min
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][11]>
-                        <[int32][time_day][10]>
-                        <[float64][time_hours][11.75]> // 11:45:00 UTC
-                    >
-                    <[float64][wind_direction][150]>
-                    <[float64][wind_speed][5]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.17639999999999997]> // 6 °C
-                    <[float64][visibility][7000.6464]> // 4.35 SM
+                    <[float64][visibility][8996.23296]> // 5.59 SM
                     <[float64][cloud_cover][1]> // OVC
                     <[float64][cloud_base][213.35999317248022]> // 700 ft AGL
                 >
@@ -423,26 +421,26 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][origin]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
+                        <[float64][altitude][-100]> // -328 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.410811785698087 53.351436643668876]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.55079170884369 53.36597221408283]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][25.143819784445895]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][216.56252894772416]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -450,8 +448,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][destination]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -459,11 +457,11 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #7: MedEvac at Lauenburg train station]>
-                <[string8][description][It is an overcast afternoon with wind from 130° at 7 kts.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
+                <[string8][title][HEMS #7: MedEvac at Tätendorf]>
+                <[string8][description][It is an overcast afternoon with wind from 170° at 6 kts. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Uelzen.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
                 <[string8u][aircraft_name][uh60]>
                 <[stringt8c][aircraft_icao][H60]>
                 <[stringt8c][callsign][EVAC26212]>
@@ -475,17 +473,92 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
                 <[float64][destination_alt][0]> // 0 ft MSL
                 <[float64][destination_dir][290]>
-                <[float64][distance][60470.68475711236]> // 60 km
-                <[float64][duration][773.3263652580584]> // 13 min
+                <[float64][distance][62181.148277087355]> // 62 km
+                <[float64][duration][795.2005435003214]> // 13 min
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][11]>
+                        <[int32][time_day][10]>
+                        <[float64][time_hours][13.25]> // 13:15:00 UTC
+                    >
+                    <[float64][wind_direction][170]>
+                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.17639999999999997]> // 6 °C
+                    <[float64][visibility][8996.23296]> // 5.59 SM
+                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][cloud_base][243.83999219712024]> // 800 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][EDHG]>
+                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.543655214829954 53.04810173362972]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][165.46139771035587]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0999]>
+                        <[vector2_float64][lon_lat][10.53266261154144 52.97322272971323]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][185.05208736729583]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][destination]>
+                        <[string8u][name][EDHG]>
+                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][350.70539500480487]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HEMS #8: MedEvac at Hohnstorf]>
+                <[string8][description][It is an overcast late afternoon with almost no wind. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
+                <[string8u][aircraft_name][uh60]>
+                <[stringt8c][aircraft_icao][H60]>
+                <[stringt8c][callsign][EVAC26212]>
+                <[stringt8c][origin_icao][EDHG]>
+                <[tmvector2d][origin_lon_lat][10.457620941302837 53.24756138354581]>
+                <[float64][origin_alt][0]> // 0 ft MSL
+                <[float64][origin_dir][290]>
+                <[stringt8c][destination_icao][EDHG]>
+                <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
+                <[float64][destination_alt][0]> // 0 ft MSL
+                <[float64][destination_dir][290]>
+                <[float64][distance][36042.93552242675]> // 36 km
+                <[float64][duration][460.93330070171754]> // 8 min
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][11]>
                         <[int32][time_day][9]>
-                        <[float64][time_hours][13.25]> // 13:15:00 UTC
+                        <[float64][time_hours][14.75]> // 14:45:00 UTC
                     >
-                    <[float64][wind_direction][130]>
-                    <[float64][wind_speed][7]> // kts
+                    <[float64][wind_direction][100]>
+                    <[float64][wind_speed][5]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.17639999999999997]> // 6 °C
@@ -498,26 +571,26 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][origin]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
+                        <[float64][altitude][-100]> // -328 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.567126950807477 53.36989266003667]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.55079170884369 53.36597221408283]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][25.143819784445895]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][216.56252894772416]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -525,8 +598,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][destination]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -534,11 +607,11 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #8: MedEvac at Ravener Dorfstraße]>
-                <[string8][description][It is an overcast late afternoon with wind from 110° at 11 kts.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
+                <[string8][title][HEMS #9: MedEvac at Neetze lake]>
+                <[string8][description][It is an overcast late afternoon with wind from 110° at 12 kts. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
                 <[string8u][aircraft_name][uh60]>
                 <[stringt8c][aircraft_icao][H60]>
                 <[stringt8c][callsign][EVAC26212]>
@@ -550,49 +623,49 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
                 <[float64][destination_alt][0]> // 0 ft MSL
                 <[float64][destination_dir][290]>
-                <[float64][distance][61618.11516611637]> // 62 km
-                <[float64][duration][788.0002223699092]> // 13 min
+                <[float64][distance][27031.34259846852]> // 27 km
+                <[float64][duration][345.6889896928167]> // 6 min
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][11]>
                         <[int32][time_day][8]>
-                        <[float64][time_hours][14.75]> // 14:45:00 UTC
+                        <[float64][time_hours][16.25]> // 16:15:00 UTC
                     >
                     <[float64][wind_direction][110]>
-                    <[float64][wind_speed][11]> // kts
+                    <[float64][wind_speed][12]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.17639999999999997]> // 6 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][487.6799843942405]> // 1600 ft AGL
+                    <[float64][cloud_base][518.1599834188805]> // 1700 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][origin]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
+                        <[float64][altitude][-100]> // -328 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.15905044457196 53.173984874291335]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.457899131808603 53.343692982314536]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][0.09898804103988823]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][199.86135314021743]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -600,8 +673,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][destination]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -609,11 +682,11 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #9: MedEvac at Lauenburg bus station]>
-                <[string8][description][It is an overcast late afternoon with wind from 90° at 7 kts.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
+                <[string8][title][HEMS #10: Car accident on B216 near Norndorf]>
+                <[string8][description][It is an overcast late afternoon with almost no wind. Your aircraft is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg.]>
+                <[string8u][tags][medical dropoff cold_and_dark]>
+                <[string8][flight_setting][cold_and_dark]>
                 <[string8u][aircraft_name][uh60]>
                 <[stringt8c][aircraft_icao][H60]>
                 <[stringt8c][callsign][EVAC26212]>
@@ -625,17 +698,17 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
                 <[float64][destination_alt][0]> // 0 ft MSL
                 <[float64][destination_dir][290]>
-                <[float64][distance][59641.21844641856]> // 60 km
-                <[float64][duration][762.7187763126166]> // 13 min
+                <[float64][distance][25200.593495066783]> // 25 km
+                <[float64][duration][322.27654520802696]> // 5 min
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][11]>
                         <[int32][time_day][7]>
-                        <[float64][time_hours][16.25]> // 16:15:00 UTC
+                        <[float64][time_hours][17.75]> // 17:45:00 UTC
                     >
-                    <[float64][wind_direction][90]>
-                    <[float64][wind_speed][7]> // kts
+                    <[float64][wind_direction][70]>
+                    <[float64][wind_speed][3]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.17639999999999997]> // 6 °C
@@ -648,26 +721,26 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][origin]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
+                        <[float64][altitude][-100]> // -328 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.554734991634405 53.37309484488506]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][10.578000561826343 53.21846313175075]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][111.94238964199326]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][DE0819]>
+                        <[vector2_float64][lon_lat][10.395810021196723 53.24081383105499]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][281.6546612809362]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -675,83 +748,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][type][destination]>
                         <[string8u][name][EDHG]>
                         <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HEMS #10: MedEvac as Salzhausen supermarket]>
-                <[string8][description][It is an overcast late afternoon with almost no wind.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][taxi]>
-                <[string8u][aircraft_name][uh60]>
-                <[stringt8c][aircraft_icao][H60]>
-                <[stringt8c][callsign][EVAC26212]>
-                <[stringt8c][origin_icao][EDHG]>
-                <[tmvector2d][origin_lon_lat][10.457620941302837 53.24756138354581]>
-                <[float64][origin_alt][0]> // 0 ft MSL
-                <[float64][origin_dir][290]>
-                <[stringt8c][destination_icao][EDHG]>
-                <[tmvector2d][destination_lon_lat][10.457620941302837 53.24756138354581]>
-                <[float64][destination_alt][0]> // 0 ft MSL
-                <[float64][destination_dir][290]>
-                <[float64][distance][54272.4283171134]> // 54 km
-                <[float64][duration][694.0602689184105]> // 12 min
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][11]>
-                        <[int32][time_day][6]>
-                        <[float64][time_hours][17.75]> // 17:45:00 UTC
-                    >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][2]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.17639999999999997]> // 6 °C
-                    <[float64][visibility][6002.85312]> // 3.7299999999999995 SM
-                    <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][91.4399970739201]> // 300 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][EDHG]>
-                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-EVACUN]>
-                        <[vector2_float64][lon_lat][10.159191329745653 53.227157492596945]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][checkpoint]>
-                        <[string8u][name][W-HSPTLU]>
-                        <[vector2_float64][lon_lat][10.199265119023437 53.34860122223179]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][destination]>
-                        <[string8u][name][EDHG]>
-                        <[vector2_float64][lon_lat][10.457620941302837 53.24756138354581]>
-                        <[float64][altitude][-1]> // -3 ft
-                        <[float64][direction][0]>
+                        <[float64][altitude][-100]> // -328 ft
+                        <[float64][direction][79.63672141087932]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >

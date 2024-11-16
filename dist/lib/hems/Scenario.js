@@ -144,11 +144,11 @@ export class Scenario {
    * @returns {import('./GeoJsonLocations.js').GeoJsonFeature}
    */
   #getNearestLocation(locations, location) {
-    let distance = 9999;
+    let distance = null;
     let nearestLocation = locations[0];
     for (const testLocation of locations) {
       const testDistance = this.#getDistanceBetweenLocations(testLocation, location);
-      if (testDistance < distance) {
+      if (distance === null || testDistance < distance) {
         nearestLocation = testLocation;
         distance = testDistance;
       }

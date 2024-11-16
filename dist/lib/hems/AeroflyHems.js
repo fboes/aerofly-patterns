@@ -6,6 +6,8 @@ import { Scenario } from "./Scenario.js";
 import { DateYielder } from "../general/DateYielder.js";
 import { AeroflyMissionsList } from "@fboes/aerofly-custom-missions";
 import { AeroflyAircraftFinder } from "../../data/AeroflyAircraft.js";
+import { AeroflyTocGenerator } from "./AeroflyTocGenerator.js";
+import { AeroflyTslGenerator } from "./AeroflyTslGenerator.js";
 
 export class AeroflyHems {
   /**
@@ -73,5 +75,38 @@ export class AeroflyHems {
         return s.mission;
       }),
     ).toString();
+  }
+
+  /**
+   * @returns {string}
+   */
+  buildEmergencySitesTsl() {
+    return new AeroflyTslGenerator(this.locations?.other ?? []).toString();
+  }
+
+  /**
+   * @returns {string}
+   */
+  buildEmergencySitesToc() {
+    return new AeroflyTocGenerator(this.locations?.other ?? []).toString();
+  }
+
+  /**
+   *
+   * @returns {string} like e01045n5324
+   */
+  getEmergencySitesFolderSuffix() {
+    const coordinates = this.locations?.heliports[0].geometry.coordinates;
+    if (!coordinates) {
+      return "";
+    }
+
+    return (
+      (coordinates[0] > 0 ? "e" : "w") +
+      String(Math.abs(Math.round(coordinates[0] * 100))).padStart(5, "0") +
+      (coordinates[1] > 0 ? "n" : "s") +
+      String(Math.abs(Math.round(coordinates[1] * 100))).padStart(4, "0") +
+      "_"
+    );
   }
 }

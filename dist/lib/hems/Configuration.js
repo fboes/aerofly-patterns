@@ -52,6 +52,12 @@ export class Configuration {
       default: false,
       description: "Mission types can also be transfers.",
     },
+    poi: {
+      type: "boolean",
+      short: "p",
+      default: false,
+      description: "Generate POI files in sub directory.",
+    },
     directory: {
       type: "boolean",
       short: "d",
@@ -135,6 +141,11 @@ export class Configuration {
      * @type {boolean} missions types can also be "transfer"
      */
     this.canTransfer = Boolean(values["transfer"]);
+
+    /**
+     * @type {boolean} missions types can also be "transfer"
+     */
+    this.generatePois = Boolean(values["poi"]);
 
     /**
      * @type {boolean}
