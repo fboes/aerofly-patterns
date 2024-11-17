@@ -11,7 +11,8 @@ import * as fs from "node:fs";
  * @property {{
  *   title: string,
  *   "marker-symbol": string|null,
- *   icaoCode?: string
+ *   icaoCode?: string,
+ *   direction?: number
  * }} properties
  * @property {{
  *   coordinates: [number, number, number?],

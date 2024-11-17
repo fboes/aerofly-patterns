@@ -78,8 +78,18 @@ This project contains an [example GeoJSON file for Lüneburg](../dist/data/hems/
 
 | Property                   | Type     | Description                                          |
 | -------------------------- | -------- | ---------------------------------------------------- |
-| `properties.marker-symbol` | `string` | any but `heliport` or `hospital`                     |
+| `properties.marker-symbol` | `string` | anything but `heliport` or `hospital`                |
 | `properties.title`         | `string` | Title of mission, e.g. "Car accident on Main Street" |
+| `properties.direction`     | `number` | Optional orientation of emergency site               |
+
+There are special marker symbols for emergency sites, which spawns different objects at the emergency site:
+
+| `marker-symbol`     | Description                         |
+| ------------------- | ----------------------------------- |
+| default             | Spawn an ambulance and a police car |
+| `car`               | Spawns a car accident scene         |
+| `ship`, `ferry`     | Spawns a ship                       |
+| `person`, `cricket` | Spawns a single person              |
 
 ## Using the POI file
 
