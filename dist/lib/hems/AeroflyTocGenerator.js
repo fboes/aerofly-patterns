@@ -1,5 +1,7 @@
 // @ts-check
 
+import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
+
 export class AeroflyTocGenerator {
   /**
    *
@@ -14,58 +16,8 @@ export class AeroflyTocGenerator {
    */
   get lightList() {
     return this.locations.map((location) => {
-      /**
-       * @type {{
-       * height?: number,
-       * color: [number, number, number],
-       * flashing: number[],
-       * intensity?: number
-       * }[]}
-       */
-      const lights = [];
-      switch (location.properties["marker-symbol"] ?? null) {
-        case `car`:
-          lights.push({
-            height: 1.7,
-            color: [0, 0, 1],
-            flashing: [20, 0, 100, 0],
-          });
-          break;
-        case `ship`:
-        case `ferry`:
-          lights.push({
-            height: 20,
-            color: [1, 1, 1],
-            flashing: [20, 0, 100, 0],
-          });
-          break;
-        case `person`:
-        case `cricket`:
-          lights.push({
-            height: 1.4,
-            color: [1, 1, 1],
-            flashing: [20, 0, 100, 0],
-            intensity: 10,
-          });
-          break;
-        default:
-          lights.push(
-            {
-              height: 3,
-              color: [0, 0, 1],
-              flashing: [10, 0, 100, 0],
-            },
-            {
-              height: 1.7,
-              color: [0, 0, 1],
-              flashing: [20, 0, 100, 0],
-            },
-          );
-          break;
-      }
-
-      return lights
-        .map((light, index) => {
+      return MissionTypeFinder.get(location)
+        .lights.map((light, index) => {
           const coordinates = this.#getLonLat(location, index);
           return `\
             <[light][element][0]
@@ -85,29 +37,8 @@ export class AeroflyTocGenerator {
    */
   get xrefList() {
     return this.locations.map((location) => {
-      /**
-       * @type {string[]}
-       */
-      const xrefs = [];
-      switch (location.properties["marker-symbol"] ?? null) {
-        case `car`:
-          xrefs.push("police_car", "car_01");
-          break;
-        case `ship`:
-        case `ferry`:
-          xrefs.push("police_car"); // cruisship
-          break;
-        case `person`:
-        case `cricket`:
-          xrefs.push("staticpeople_man01");
-          break;
-        default:
-          xrefs.push("ambulance", "police_car");
-          break;
-      }
-
-      return xrefs
-        .map((xref, index) => {
+      return MissionTypeFinder.get(location)
+        .xrefs.map((xref, index) => {
           const coordinates = this.#getLonLat(location, index);
           return `\
             <[xref][element][0]

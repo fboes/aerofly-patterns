@@ -10,7 +10,8 @@ export default [
   {
     languageOptions: {
       globals: {
-        ...globals.node,
+        ...globals.nodeBuiltin,
+        Generator: true,
       },
     },
     plugins: {

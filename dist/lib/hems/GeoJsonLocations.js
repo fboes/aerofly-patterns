@@ -79,6 +79,39 @@ export class GeoJsonLocations {
     if (this.other.length === 0) {
       throw Error("Missing mission locations in GeoJson file");
     }
+
+    /**
+     * @type {Generator<GeoJsonFeature, void, unknown>}
+     */
+
+    this.randomEmergencySite = this.#yieldRandomEmergencySite();
+  }
+
+  /**
+   * Infinite generator of randomized `this.other`. On end of list will return to beginning, but keeping the random order.
+   * @yields {GeoJsonFeature}
+   * @generator
+   */
+  *#yieldRandomEmergencySite() {
+    let i = this.other.length;
+    let j = 0;
+    let temp;
+    const emergencySites = structuredClone(this.other);
+
+    while (i--) {
+      j = Math.floor(Math.random() * (i + 1));
+
+      // swap randomly chosen element with current element
+      temp = emergencySites[i];
+      emergencySites[i] = emergencySites[j];
+      emergencySites[j] = temp;
+    }
+
+    while (emergencySites.length) {
+      for (const location of emergencySites) {
+        yield location;
+      }
+    }
   }
 
   /**

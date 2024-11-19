@@ -8,6 +8,7 @@ import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import AeroflyMissionDescription from "../general/AeroflyMissionDescription.js";
 import { Point } from "@fboes/geojson";
+import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
 
 export class Scenario {
   /**
@@ -43,7 +44,15 @@ export class Scenario {
     this.#checkIcao(destination);
 
     const isTransfer = this.configuration.canTransfer && locations.hospitals.length > 1 && Math.random() <= 0.1;
-    const waypoint1 = this.#getRandLocation(isTransfer ? locations.hospitals : locations.other);
+    /**
+     * @type {import("./GeoJsonLocations.js").GeoJsonFeature}
+     */
+    const waypoint1 = isTransfer
+      ? this.#getRandLocation(locations.hospitals)
+      : locations.randomEmergencySite.next().value;
+    /**
+     * @type {import("./GeoJsonLocations.js").GeoJsonFeature}
+     */
     const waypoint2 = isTransfer
       ? this.#getRandLocation(locations.hospitals, waypoint1)
       : this.#getNearestLocation(locations.hospitals, waypoint1);
@@ -52,14 +61,9 @@ export class Scenario {
       time,
     });
 
-    const title =
-      `HEMS #${index + 1}: ` +
-      (isTransfer
-        ? `Transfer from ${waypoint1.properties.title} to ${waypoint2.properties.title}`
-        : waypoint1.properties.title);
-    const description = isTransfer
-      ? `You will need to transfer a patient from ${waypoint1.properties.title} to ${waypoint2.properties.title}.`
-      : `Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ${waypoint2.properties.title}.`;
+    const mission = MissionTypeFinder.get(waypoint1);
+    const title = `HEMS #${index + 1}: ` + mission.title(waypoint1, waypoint2);
+    const description = mission.description(waypoint1, waypoint2);
 
     this.mission = new AeroflyMission(title, {
       description,
@@ -131,6 +135,9 @@ export class Scenario {
    * @returns {import('./GeoJsonLocations.js').GeoJsonFeature}
    */
   #getRandLocation(locations, butNot = null) {
+    if (butNot && locations.length < 2) {
+      throw Error("Not enough locations to search for an alternate");
+    }
     let location = null;
     do {
       location = locations[Math.floor(Math.random() * locations.length)];

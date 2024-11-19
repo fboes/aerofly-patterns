@@ -69,20 +69,20 @@ npx @fboes/aerofly-patterns@latest KMVY c172 --right-pattern 24,33
 
 The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Improved flight planning is available for aircraft listed in [`dist/data/AeroflyAircraft.js`](./dist/data/AeroflyAircraft.js). Examples of codes:
 
-| `AEROFLY_AIRCRAFT_CODE` | Type                                 | Liveries                                          |
-| ----------------------- | ------------------------------------ | ------------------------------------------------- |
-| `a320`                  | Airbus A320                          |                                                   |
-| `b58`                   | Beechcraft Baron 58                  |                                                   |
-| `c172`                  | Cessna 172                           |                                                   |
-| `c90gtx`                | Beechcraft King Air C90              |                                                   |
-| `ec135`                 | Eurocopter EC135                     | `adac`, `drf`, `german_army`, `police`, `sheriff` |
-| `uh60`                  | Sikorsky UH-60 Black Hawk            |                                                   |
-| `f15e`                  | McDonnell Douglas F-15E Strike Eagle |                                                   |
-| `jungmeister`           | Bücker Bü 133 Jungmeister            |                                                   |
-| `lj45`                  | Learjet 45                           |                                                   |
-| `mb339`                 | Aermacchi MB-339                     |                                                   |
-| `pitts`                 | Pitts Special S-2                    |                                                   |
-| `r22`                   | Robinson R22                         |                                                   |
+| `AEROFLY_AIRCRAFT_CODE` | Type                                 |
+| ----------------------- | ------------------------------------ |
+| `a320`                  | Airbus A320                          |
+| `b58`                   | Beechcraft Baron 58                  |
+| `c172`                  | Cessna 172                           |
+| `c90gtx`                | Beechcraft King Air C90              |
+| `ec135`                 | Eurocopter EC135                     |
+| `uh60`                  | Sikorsky UH-60 Black Hawk            |
+| `f15e`                  | McDonnell Douglas F-15E Strike Eagle |
+| `jungmeister`           | Bücker Bü 133 Jungmeister            |
+| `lj45`                  | Learjet 45                           |
+| `mb339`                 | Aermacchi MB-339                     |
+| `pitts`                 | Pitts Special S-2                    |
+| `r22`                   | Robinson R22                         |
 
 ## Download the missions
 

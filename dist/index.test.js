@@ -5,6 +5,7 @@ import { DateYielderTest } from "./lib/general/DateYielder.test.js";
 import { DegreeTest } from "./lib/general/Degree.test.js";
 import { FormatterTest } from "./lib/general/Formatter.test.js";
 import AeroflyMissionDescriptionTest from "./lib/general/AeroflyMissionDescription.test.js";
+import GeoJsonLocationsTest from "./lib/hems/GeoJsonLocations.test.js";
 
 new AirportTest();
 new AviationWeatherApiTest();
@@ -12,4 +13,5 @@ new DateYielderTest();
 new DegreeTest();
 new FormatterTest();
 new AeroflyMissionDescriptionTest();
-//process.exit();
+new GeoJsonLocationsTest();
+process.exit();
