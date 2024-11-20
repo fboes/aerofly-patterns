@@ -8,16 +8,21 @@
  */
 
 /**
- * @typedef MissionType
- * @type {object}
- * @property {MissionTypeDescription} title
- * @property {MissionTypeDescription} description
- * @property {{
+ * @typedef MissionTypeLight
+ * @type {{
  * height?: number,
  * color: [number, number, number],
  * flashing: number[],
  * intensity?: number
- * }[]} lights in order of xrefs
+ * }}
+ */
+
+/**
+ * @typedef MissionType
+ * @type {object}
+ * @property {MissionTypeDescription} title
+ * @property {MissionTypeDescription} description
+ * @property {MissionTypeLight[]} lights in order of xrefs
  * @property {string[]} xrefs xref model name
  */
 
@@ -60,10 +65,10 @@ export const MissionTypes = {
   lostPerson: {
     // eslint-disable-next-line no-unused-vars
     title: (from, to) => {
-      return `Locate patient at ${from.properties.title}`;
+      return `Locate person in distress at ${from.properties.title}`;
     },
     description: (from, to) => {
-      return `Fly to the specified location and locate the patient. You will need to drop off your emergency doctor / paramedic and take the patient on board. Afterwards fly to ${to.properties.title}.`;
+      return `Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to ${to.properties.title}.`;
     },
     lights: [
       {
@@ -75,7 +80,7 @@ export const MissionTypes = {
     ],
     xrefs: ["staticpeople_man01"],
   },
-  shipSar: {
+  ship: {
     // eslint-disable-next-line no-unused-vars
     title: (from, to) => {
       return `Ship rescue at ${from.properties.title}`;
@@ -92,7 +97,7 @@ export const MissionTypes = {
     ],
     xrefs: ["police_car"],
   },
-  carAccident: {
+  car: {
     // eslint-disable-next-line no-unused-vars
     title: (from, to) => {
       return `Car accident on ${from.properties.title}`;
@@ -122,15 +127,64 @@ export const MissionTypeFinder = {
       case `hospital`:
         return MissionTypes.patientTransfer;
       case `car`:
-        return MissionTypes.carAccident;
+      case `road-accident`:
+        return MissionTypes.car;
       case `ship`:
       case `ferry`:
-        return MissionTypes.shipSar;
+        return MissionTypes.ship;
       case `person`:
       case `cricket`:
+      case `mountain`:
+      case `swimming`:
         return MissionTypes.lostPerson;
+      case `bicycle`:
+        return this._quickMission("Bike accident");
+      case `bus`:
+        return this._quickMission("Bus accident");
+      case `farm`:
+        return this._quickMission("Farming accident");
+      case `logging`:
+        return this._quickMission("Logging accident");
+      case `rail-light`:
+        return this._quickMission("Tram accident");
+      case `rail-metro`:
+        return this._quickMission("Metro train accident");
+      case `rail`:
+        return this._quickMission("Train accident");
+      case `fire-station`:
       default:
         return MissionTypes.medEvac;
     }
+  },
+
+  /**
+   * This generates quick fallback `MissionType`, which at least changes title and description.
+   * @param {string} accidentType
+   * @param {MissionTypeLight[]} lights
+   * @param {string[]} xrefs
+   * @returns {MissionType}
+   */
+  _quickMission(
+    accidentType,
+    lights = [
+      {
+        height: 3,
+        color: [0, 0, 1],
+        flashing: [10, 0, 100, 0],
+      },
+    ],
+    xrefs = ["ambulance"],
+  ) {
+    return {
+      // eslint-disable-next-line no-unused-vars
+      title: (from, to) => {
+        return `${accidentType} at ${from.properties.title}`;
+      },
+      description: (from, to) => {
+        return `Fly to the specified ${accidentType.toLowerCase()} site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ${to.properties.title}.`;
+      },
+      lights,
+      xrefs,
+    };
   },
 };

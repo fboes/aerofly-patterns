@@ -1,6 +1,6 @@
 # Aerofly Landegerät
 
-> Create random custom missions Aerofly FS 4.
+> Create random custom missions for Aerofly FS 4.
 
 This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4.
 
@@ -24,7 +24,7 @@ The main documentation centers around the landing pattern lessons:
 
 This tool requires [Node.js](https://nodejs.org/en) in at least version 20 to be installed on your local computer.
 
-Use this CLI command to automatically download the tool and generate a new mission file in the current folder.
+The Landegerät is a Command Line Interface (CLI) tool, which means you need to open a terminal to run it. The tool itself does not need to be installed, as the Node.js tool `npx` will take care of downloading as well as executing the Landegerät.
 
 ```
 Usage: npx @fboes/aerofly-patterns@latest ICAO_AIRPORT_CODE [AEROFLY_AIRCRAFT_CODE] [...options]
@@ -86,7 +86,7 @@ The complete list of available internal aircraft codes in Aerofly FS 4 is availa
 
 ## Download the missions
 
-There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE]/`. These files are in each directory:
+There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/Landing_Challenges-[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE]/`. These files are in each directory:
 
 - `custom_missions_user.tmc`: Mission file with multiple emissions
 - `[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE].geojson`: A GeoJSON file containing the airport properties and the plane in mission #1

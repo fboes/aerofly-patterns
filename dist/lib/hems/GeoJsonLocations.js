@@ -62,7 +62,10 @@ export class GeoJsonLocations {
      * @type {GeoJsonFeature[]}
      */
     this.hospitals = pointFeatures.filter((f) => {
-      return f.properties && f.properties["marker-symbol"] === "hospital";
+      return (
+        f.properties &&
+        (f.properties["marker-symbol"] === "hospital" || f.properties["marker-symbol"] === "hospital-JP")
+      );
     });
     if (this.hospitals.length === 0) {
       this.hospitals = this.heliports;
@@ -73,7 +76,10 @@ export class GeoJsonLocations {
      */
     this.other = pointFeatures.filter((f) => {
       return (
-        f.properties && f.properties["marker-symbol"] !== "heliport" && f.properties["marker-symbol"] !== "hospital"
+        f.properties &&
+        f.properties["marker-symbol"] !== "heliport" &&
+        f.properties["marker-symbol"] !== "hospital" &&
+        f.properties["marker-symbol"] !== "hospital-JP"
       );
     });
     if (this.other.length === 0) {
