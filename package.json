@@ -7,6 +7,7 @@
     "start": "node ./dist/index.js",
     "test": "node ./dist/index.test.js",
     "hems": "node ./dist/hems.js",
+    "zip": "mkdir -p data-zip && cd data && for i in */; do zip -r \"../data-zip/${i%/}.zip\" \"$i\"; done; cd -",
     "prettier": "npx prettier --cache --write .",
     "eslint": "npx eslint **/*.js --fix",
     "build": "npm run prettier && npm run eslint && npm run test"

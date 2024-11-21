@@ -12,24 +12,26 @@ export class FileWriter {
    * @param {string} saveDirectory
    */
   static async writeFile(app, saveDirectory) {
-    const stationId = path.basename(app.configuration.geoJsonFile, path.extname(app.configuration.geoJsonFile));
-
     /**
      * @param {string} saveDirectory
      */
     if (app.configuration.directoryMode) {
-      saveDirectory = `${saveDirectory}/data/HEMS-${stationId}-${app.configuration.aircraft}`;
+      saveDirectory = `${saveDirectory}/data/HEMS-${app.configuration.environmentId}-${app.configuration.aircraft}`;
 
-      await fs.mkdir(saveDirectory, { recursive: true });
+      await fs.mkdir(path.join(saveDirectory, "missions"), { recursive: true });
     }
 
-    const promises = [fs.writeFile(`${saveDirectory}/custom_missions_user.tmc`, app.buildCustomMissionTmc())];
+    const promises = [fs.writeFile(`${saveDirectory}/missions/custom_missions_user.tmc`, app.buildCustomMissionTmc())];
 
-    const poi_id = "emergency_sites";
-    const poiDirectory = path.join(saveDirectory, app.getEmergencySitesFolderSuffix() + poi_id);
+    if (app.configuration.directoryMode) {
+      promises.push(fs.writeFile(`${saveDirectory}/README.md`, app.buildMarkdown()));
+    }
+
+    const poi_id = app.configuration.environmentId + "_emergency_sites";
+    const poiDirectory = path.join(saveDirectory, "scenery/poi", app.getEmergencySitesFolderSuffix() + poi_id);
     const poiFallbackDirectory = path.join(poiDirectory, "fallback");
 
-    if (app.configuration.generatePois) {
+    if (!app.configuration.doNotGeneratePois) {
       await fs.mkdir(poiDirectory, { recursive: true });
 
       promises.push(

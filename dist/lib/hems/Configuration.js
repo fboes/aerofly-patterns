@@ -52,17 +52,17 @@ export class Configuration {
       default: false,
       description: "Mission types can also be transfers.",
     },
-    poi: {
+    "no-poi": {
       type: "boolean",
       short: "p",
       default: false,
-      description: "Generate POI files in sub directory.",
+      description: "Do not generate POI files.",
     },
     directory: {
       type: "boolean",
       short: "d",
       default: false,
-      description: "Create files in a subdirectory instead of current directory.",
+      description: "Create files in another directory instead of current directory.",
     },
     help: {
       type: "boolean",
@@ -92,6 +92,14 @@ export class Configuration {
     if (!path.isAbsolute(this.geoJsonFile)) {
       this.geoJsonFile = path.join(process.cwd(), this.geoJsonFile);
     }
+
+    /**
+     * @type {string} an identifier for the environment
+     */
+    this.environmentId = path
+      .basename(this.geoJsonFile, path.extname(this.geoJsonFile))
+      .toLowerCase()
+      .replace(/[^a-z0-9_]/, "_");
 
     /**
      * @type {string} as in Aerofly Aircraft Codes
@@ -145,7 +153,7 @@ export class Configuration {
     /**
      * @type {boolean} missions types can also be "transfer"
      */
-    this.generatePois = Boolean(values["poi"]);
+    this.doNotGeneratePois = Boolean(values["no-poi"]);
 
     /**
      * @type {boolean}

@@ -1,6 +1,9 @@
 # Changelog
 
-# 2.4.0
+- Changed directories for HEMS mission output
+- Added `README.md` export for HEMS missions
+
+# 2.4.0-0
 
 - Added HEMS mission generator
 - Added `--no-guides` parameter to remove guides from missions

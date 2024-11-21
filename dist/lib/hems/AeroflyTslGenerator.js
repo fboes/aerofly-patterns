@@ -4,9 +4,11 @@ export class AeroflyTslGenerator {
   /**
    *
    * @param {import("./GeoJsonLocations").GeoJsonFeature[]} locations
+   * @param {string} environmentId
    */
-  constructor(locations) {
+  constructor(locations, environmentId) {
     this.locations = locations;
+    this.environmentId = environmentId;
   }
 
   /**
@@ -30,7 +32,7 @@ export class AeroflyTslGenerator {
     <[tmsimulator_scenery_place_simple][][]
         <[string8u] [coordinate_system] [lonlat]>
         <[bool][autoheight][true]>
-        <[string8u][cultivation][emergency_sites]>
+        <[string8u][cultivation][${this.environmentId}_emergency_sites]>
         <[list_tmsimulator_scenery_object][objects][]
 ${this.sceneryObjectList.join("\n")}
         >

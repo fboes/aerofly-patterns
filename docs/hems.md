@@ -15,7 +15,7 @@ This nice little project generates `custom_missions_user.tmc` to use with Aerofl
 1. …with randomly selected heliports, emergency sites, and a hospitals.
 1. Finally it will fetch METAR weather data for the given location and date,
 1. …and export these missions to a `custom_missions_user.tmc` which you then can use in Aerofly FS 4.
-1. Optionally the Landegerät creates a Point of Interest (POI) file, which will contain cars and persons for every emergency site. You will need to put this file into your Aerofly FS 4 `scenery/poi` directory (see below).
+1. …as well as Point of Interest (POI) files, which will contain cars and persons for every emergency site.
 
 ## How to use it
 
@@ -43,8 +43,8 @@ Options:
   --no-guides               Try to remove virtual guides from missions.
   --cold-dark               Start cold & dark.
   --transfer, -t            Mission types can also be transfers.
-  --poi, -p                 Generate POI files in sub directory.
-  --directory, -d           Create files in a subdirectory instead of current directory.
+  --no-poi, -p              Do not generate POI files.
+  --directory, -d           Create files in another directory instead of current directory.
   --help, -h                Will output the help.
 ```
 
@@ -66,14 +66,14 @@ As of present there are three helicopters in Aerofly FS 4:
 
 There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/HEMS-[LOCATION_NAME]-[AEROFLY_AIRCRAFT_CODE]/`. These files are in each directory:
 
-- `custom_missions_user.tmc`: Mission file with multiple emissions
-- Optional a directory with the POI files (see below)
+- `missions/custom_missions_user.tmc`: Mission file with multiple emissions
+- `scenery/poi` directory with the POI files (see below)
 
 See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
 
 ### Using the POI file
 
-If you want to the "Landegerät: HEMS" can generate POI files for you. These file contain positions for cars, persons and other objects to be present at every emergency site.
+The "Landegerät: HEMS" can generate POI files for you. These file contain positions for cars, persons and other objects to be present at every emergency site.
 
 You will need to copy the generated POI folder to your Aerofly FS 4 user directory, and there to `scenery/poi`.
 
@@ -85,8 +85,9 @@ The mission generator needs a [GeoJSON file](https://geojson.org/) which contain
 
 This project contains example GeoJSON files, which will help you build your own missions source file.
 
-1. [Lüneburg](../dist/data/hems/lueneburg.geojson) (open in [geojson.io](https://geojson.io/#data=data:text/x-url,https%3A%2F%2Fraw.githubusercontent.com%2Ffboes%2Faerofly-patterns%2Frefs%2Fheads%2Fdevelop%2Fdist%2Fdata%2Fhems%2Flueneburg.geojson))
-2. [San Francisco](../dist/data/hems/san_francisco.geojson) (open in [geojson.io](https://geojson.io/#data=data:text/x-url,https%3A%2F%2Fraw.githubusercontent.com%2Ffboes%2Faerofly-patterns%2Frefs%2Fheads%2Fdevelop%2Fdist%2Fdata%2Fhems%2Fsan_francisco.geojson))
+1. [Lüneburg, Germany](../dist/data/hems/lueneburg.geojson) (open in [geojson.io](https://geojson.io/#data=data:text/x-url,https%3A%2F%2Fraw.githubusercontent.com%2Ffboes%2Faerofly-patterns%2Frefs%2Fheads%2Fdevelop%2Fdist%2Fdata%2Fhems%2Flueneburg.geojson))
+2. [San Francisco, USA](../dist/data/hems/san_francisco.geojson) (open in [geojson.io](https://geojson.io/#data=data:text/x-url,https%3A%2F%2Fraw.githubusercontent.com%2Ffboes%2Faerofly-patterns%2Frefs%2Fheads%2Fdevelop%2Fdist%2Fdata%2Fhems%2Fsan_francisco.geojson))
+3. [Oban, Scotland](../dist/data/hems/oban.geojson) (open in [geojson.io](https://geojson.io/#data=data:text/x-url,https%3A%2F%2Fraw.githubusercontent.com%2Ffboes%2Faerofly-patterns%2Frefs%2Fheads%2Fdevelop%2Fdist%2Fdata%2Fhems%2Foban.geojson))
 
 ### Content of the GeoJSON file
 

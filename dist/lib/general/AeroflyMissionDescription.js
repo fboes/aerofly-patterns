@@ -108,10 +108,22 @@ export default class AeroflyMissionDescription {
 
   /**
    * @param {number} knots in knots
-   * @returns {number} duration in seconds
+   * @returns {number} duration in seconds, considering aircraft flight setting
    */
   calculateDuration(knots) {
-    return (this.#mission.distance ?? 0) / (knots * (1852 / 3600));
+    let duration = (this.#mission.distance ?? 0) / (knots * (1852 / 3600));
+    switch (this.#mission.flightSetting) {
+      case "cold_and_dark":
+        duration += 240;
+        break;
+      case "before_start":
+        duration += 120;
+        break;
+      case "taxi":
+        duration += 60;
+        break;
+    }
+    return duration;
   }
 
   /**
