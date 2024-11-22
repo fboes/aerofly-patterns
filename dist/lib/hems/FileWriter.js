@@ -24,7 +24,10 @@ export class FileWriter {
     const promises = [fs.writeFile(`${saveDirectory}/missions/custom_missions_user.tmc`, app.buildCustomMissionTmc())];
 
     if (app.configuration.directoryMode) {
-      promises.push(fs.writeFile(`${saveDirectory}/README.md`, app.buildMarkdown()));
+      promises.push(
+        fs.writeFile(`${saveDirectory}/README.md`, app.buildMarkdown()),
+        fs.cp(app.configuration.geoJsonFile, `${saveDirectory}/${app.configuration.environmentId}.geojson`),
+      );
     }
 
     const poi_id = app.configuration.environmentId + "_emergency_sites";
