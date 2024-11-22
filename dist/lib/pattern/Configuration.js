@@ -82,18 +82,6 @@ export class Configuration {
       default: false,
       description: "Create files in a subdirectory instead of current directory.",
     },
-    geojson: {
-      type: "boolean",
-      short: "g",
-      default: false,
-      description: "Create a GeoJSON file.",
-    },
-    readme: {
-      type: "boolean",
-      short: "r",
-      default: false,
-      description: "Create a `README.md`.",
-    },
     help: {
       type: "boolean",
       short: "h",
@@ -195,16 +183,6 @@ export class Configuration {
      * @type {boolean} if guides should be removed from missions
      */
     this.noGuides = Boolean(values["no-guides"]);
-
-    /**
-     * @type {boolean}
-     */
-    this.geojson = Boolean(values["geojson"]);
-
-    /**
-     * @type {boolean} if generate
-     */
-    this.readme = Boolean(values["readme"]);
 
     /**
      * @type {boolean}

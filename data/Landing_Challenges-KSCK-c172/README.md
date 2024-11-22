@@ -1,6 +1,6 @@
 # Landing Challenges: Stockton Metro (KSCK)
 
-This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
+This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
 Your Cessna 172 is 8 NM away from Stockton Metro Airport, and you have to make a correct landing pattern entry and land safely.
 
@@ -20,22 +20,22 @@ Get [more information about Stockton Metro Airport on SkyVector](https://skyvect
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | -------------------- |
-| #1  | 2024-11-15  |       05:15 | 270° @ 7 kts  | SCT @ 4,600 ft |      15 SM | 29L      | ↑ To the north       |
-| #2  | 2024-11-14  |       06:45 | Calm          | CLR            |       2 SM | 29R (RP) | ↙ To the south-west |
-| #3  | 2024-11-13  |       08:15 | 130° @ 7 kts  | CLR            |       3 SM | 11R (RP) | ↙ To the south-west |
-| #4  | 2024-11-12  |       09:45 | Calm          | FEW @ 100 ft   |       3 SM | 29R (RP) | ↗ To the north-east |
-| #5  | 2024-11-11  |       11:15 | 290° @ 10 kts | FEW @ 3,100 ft |       2 SM | 29L      | ↖ To the north-west |
-| #6  | 2024-11-10  |       12:45 | 360° @ 4 kts  | CLR            |      15 SM | 29R (RP) | ↘ To the south-east |
-| #7  | 2024-11-09  |       14:15 | 360° @ 3 kts  | CLR            |      15 SM | 29R (RP) | ↙ To the south-west |
-| #8  | 2024-11-08  |       15:45 | 330° @ 4 kts  | CLR            |      15 SM | 29R (RP) | ↓ To the south       |
-| #9  | 2024-11-07  |       17:15 | Calm          | CLR            |      15 SM | 29R (RP) | ↘ To the south-east |
-| #10 | 2024-11-06  |       18:45 | 320° @ 4 kts  | CLR            |      15 SM | 29R (RP) | ↙ To the south-west |
+| #1  | 2024-11-21  |       05:15 | 140° @ 8 kts  | FEW @ 5,500 ft |      15 SM | 11R (RP) | → To the east        |
+| #2  | 2024-11-20  |       06:45 | 140° @ 6 kts  | CLR            |      15 SM | 11R (RP) | ↙ To the south-west |
+| #3  | 2024-11-19  |       08:15 | 120° @ 3 kts  | CLR            |      15 SM | 11L      | → To the east        |
+| #4  | 2024-11-18  |       09:45 | 310° @ 7 kts  | CLR            |      15 SM | 29R (RP) | ← To the west        |
+| #5  | 2024-11-17  |       11:15 | 160° @ 4 kts  | OVC @ 7,000 ft |      15 SM | 11R (RP) | ↑ To the north       |
+| #6  | 2024-11-16  |       12:45 | 350° @ 5 kts  | CLR            |      15 SM | 29R (RP) | ↗ To the north-east |
+| #7  | 2024-11-15  |       14:15 | 300° @ 11 kts | FEW @ 4,900 ft |      15 SM | 29L      | ↘ To the south-east |
+| #8  | 2024-11-14  |       15:45 | 270° @ 13 kts | OVC @ 7,500 ft |      15 SM | 29L      | ← To the west        |
+| #9  | 2024-11-13  |       17:15 | 100° @ 4 kts  | OVC @ 4,700 ft |      15 SM | 11L      | ↘ To the south-east |
+| #10 | 2024-11-12  |       18:45 | 240° @ 3 kts  | CLR            |      15 SM | 29L      | ↑ To the north       |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
 ## Installation instructions
 
-1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)
+1. Download the [`custom_missions_user.tmc`](missions/custom_missions_user.tmc)
 2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
 
 ---

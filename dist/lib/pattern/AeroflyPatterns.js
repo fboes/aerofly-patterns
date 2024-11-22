@@ -268,7 +268,7 @@ export class AeroflyPatterns {
 
     output.push(
       "",
-      "This [`custom_missions_user.tmc`](./custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
+      "This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
       "",
       `Your ${firstMission.aircraft.data.name} is ${this.configuration.initialDistance} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.`,
       "",
@@ -339,7 +339,7 @@ export class AeroflyPatterns {
       "",
       "## Installation instructions",
       "",
-      "1. Download the [`custom_missions_user.tmc`](./custom_missions_user.tmc)",
+      "1. Download the [`custom_missions_user.tmc`](missions/custom_missions_user.tmc)",
       `2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.`,
     );
 
