@@ -79,6 +79,16 @@ export const AeroflyAircrafts = {
     callsign: "FBVFB",
     cruiseSpeed: 1165,
   },
+  dr400: {
+    name: "Robin DR 400",
+    type: null,
+    icaoCode: "DR40",
+    aeroflyCode: "dr400",
+    callsign: "HBJOA",
+    cruiseSpeed: 140,
+    runwayTakeoff: 1150,
+    runwayLanding: 820,
+  },
   ec135: {
     name: "Eurocopter EC135",
     type: "H",

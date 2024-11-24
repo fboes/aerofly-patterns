@@ -1,5 +1,9 @@
 # Changelog
 
+- Added Robin DR 400
+
+# 2.5.0-0
+
 - Changed directories for HEMS mission output
 - Added `README.md` export for HEMS missions
 - Changed folder export behavior so all exports are meant to be used from the user directory (instead of the `missions`directory)

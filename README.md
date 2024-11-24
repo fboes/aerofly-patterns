@@ -75,6 +75,7 @@ The complete list of available internal aircraft codes in Aerofly FS 4 is availa
 | `b58`                   | Beechcraft Baron 58                  |
 | `c172`                  | Cessna 172                           |
 | `c90gtx`                | Beechcraft King Air C90              |
+| `dr400`                 | Robin DR 400                         |
 | `ec135`                 | Eurocopter EC135                     |
 | `uh60`                  | Sikorsky UH-60 Black Hawk            |
 | `f15e`                  | McDonnell Douglas F-15E Strike Eagle |
