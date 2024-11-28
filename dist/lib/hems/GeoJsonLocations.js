@@ -17,7 +17,7 @@ import * as fs from "node:fs";
  * @property {{
  *   coordinates: [number, number, number?],
  *   type: string
- * }} geometry
+ * }} geometry with longitude, latitude, elevation (m)
  */
 
 export class GeoJsonLocations {

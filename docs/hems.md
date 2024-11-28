@@ -114,19 +114,22 @@ To create the different types of locations, you will need to add properties to e
 
 ### Properties of hospitals
 
-| Property                   | Type     | Description                 |
-| -------------------------- | -------- | --------------------------- |
-| `properties.marker-symbol` | `string` | `hospital` or `hospital-JP` |
-| `properties.title`         | `string` | Name of location            |
-| `properties.icaoCode`      | `string` | ICAO code                   |
+| Property                   | Type     | Description                         |
+| -------------------------- | -------- | ----------------------------------- |
+| `properties.marker-symbol` | `string` | `hospital` or `hospital-JP`         |
+| `properties.title`         | `string` | Name of location                    |
+| `properties.icaoCode`      | `string` | Optional ICAO code                  |
+| `properties.direction`     | `number` | Optional orientation of landing pad |
 
 ### Properties of emergency sites
 
-| Property                   | Type     | Description                     |
-| -------------------------- | -------- | ------------------------------- |
-| `properties.marker-symbol` | `string` | see below, or can be left empty |
-| `properties.title`         | `string` | Name of location                |
-| `properties.direction`     | `number` | Optional orientation of POI     |
+| Property                   | Type     | Description                 |
+| -------------------------- | -------- | --------------------------- |
+| `properties.marker-symbol` | `string` | Optional, see below         |
+| `properties.title`         | `string` | Name of location¹           |
+| `properties.direction`     | `number` | Optional orientation of POI |
+
+¹) If the location does not have a unique name, use "location near …" to describe the location.
 
 There are special `properties.marker-symbol` values for emergency sites, which will create different types of emergency sites:
 
@@ -134,8 +137,8 @@ There are special `properties.marker-symbol` values for emergency sites, which w
 | -------------------------- | ----------------------------------------------------------------- |
 | default                    | Patient recovery                                                  |
 | `car`, `road-accident`     | Car accident                                                      |
-| `person`¹, `cricket`       | Lost person                                                       |
-| `ship`¹, `ferry`           | Ship SAR                                                          |
+| `person`², `cricket`       | Lost person                                                       |
+| `ship`², `ferry`           | Ship SAR                                                          |
 | `bicycle`                  | Bicycle accident (not yet fully implemented)                      |
 | `bus`                      | Bus accident (not yet fully implemented)                          |
 | `farm`                     | Farming accident (not yet fully implemented)                      |
@@ -147,7 +150,7 @@ There are special `properties.marker-symbol` values for emergency sites, which w
 | `rail`                     | Train accident (not yet fully implemented)                        |
 | `swimming`                 | Lost person in open water (not yet fully implemented)             |
 
-¹) Some marker symbols will not spawn the correct icon in [geojson.io](https://geojson.io/), but are still valid mission types.
+²) Some marker symbols will not spawn the correct icon in [geojson.io](https://geojson.io/), but are still valid mission types.
 
 ---
 

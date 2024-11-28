@@ -1,5 +1,13 @@
 # Changelog
 
+# 2.5.2
+
+- Improved mission description generator
+
+# 2.5.1
+
+- Fixed removal of guides
+
 # 2.5.0
 
 - Added Robin DR 400

@@ -1,8 +1,9 @@
 // @ts-check
 
+import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
 
-export default class AeroflyMissionDescription {
+export default class AeroflyMissionAutofill {
   /**
    * @type {AeroflyMission}
    */
@@ -30,17 +31,10 @@ export default class AeroflyMissionDescription {
    */
   get description() {
     let weatherAdjectives = this.weatherAdjectives;
-    let weatherAdjectivesString = "";
-    if (weatherAdjectives.length > 0) {
-      weatherAdjectivesString = ` ${this.#getAorAn(weatherAdjectives[0])} ${weatherAdjectives.join(", ")}`;
-    }
+    let weatherAdjectivesString =
+      weatherAdjectives.length > 0 ? ` ${this.#getAorAn(weatherAdjectives[0])} ${weatherAdjectives.join(", ")}` : "";
 
-    let description = `It is${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind}.`;
-    if (this.#mission.flightSetting === "cold_and_dark") {
-      description += ` Your aircraft is cold and dark.`;
-    }
-
-    return description;
+    return `It is${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind}. Your ${this.aircraftName} is ${this.flightSetting}.`;
   }
 
   /**
@@ -60,6 +54,8 @@ export default class AeroflyMissionDescription {
     }
     if (this.#mission.flightSetting === "cold_and_dark") {
       tags.push("cold_and_dark");
+    } else if (this.#mission.flightSetting === "before_start") {
+      tags.push("before_start");
     }
 
     return tags;
@@ -127,6 +123,21 @@ export default class AeroflyMissionDescription {
   }
 
   /**
+   * Setting a target plane in around 1 meter distance in front of the aircraft.
+   */
+  removeGuides() {
+    const directionRad = (this.#mission.origin.dir * Math.PI) / 180;
+    const offset = 0.00001;
+
+    this.#mission.finish = new AeroflyMissionTargetPlane(
+      this.#mission.origin.longitude + Math.sin(directionRad) * offset,
+      this.#mission.origin.latitude + Math.cos(directionRad) * offset,
+      this.#mission.origin.dir,
+    );
+  }
+
+  /**
+   * Will also add the bearing between the given checkpoints.
    * @returns {number} in meters
    */
   get distance() {
@@ -138,7 +149,7 @@ export default class AeroflyMissionDescription {
 
     for (const cp of this.#mission.checkpoints) {
       if (lastCp !== null) {
-        const vector = AeroflyMissionDescription.getDistanceBetweenCheckpoints(lastCp, cp);
+        const vector = AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, cp);
         distance += vector.distance;
         cp.direction = vector.bearing;
       }
@@ -149,36 +160,97 @@ export default class AeroflyMissionDescription {
     return distance;
   }
 
-  get nauticalTime() {
+  /**
+   * @returns {number}
+   */
+  get nauticalTimeHours() {
     return (this.#mission.conditions.time.getUTCHours() + this.nauticalTimezoneOffset + 24) % 24;
   }
 
+  /**
+   * @returns {number}
+   */
   get nauticalTimezoneOffset() {
     return Math.round((this.#mission.origin.longitude ?? 0) / 15);
   }
 
+  /**
+   * @returns {string}
+   */
   get timeOfDay() {
-    const nauticalTime = this.nauticalTime;
-    if (nauticalTime < 5 || nauticalTime >= 19) {
+    const nauticalTimeHours = this.nauticalTimeHours;
+    if (nauticalTimeHours < 5 || nauticalTimeHours >= 19) {
       return "night";
     }
-    if (nauticalTime < 8) {
+    if (nauticalTimeHours < 8) {
       return "early morning";
     }
-    if (nauticalTime < 11) {
+    if (nauticalTimeHours < 11) {
       return "morning";
     }
-    if (nauticalTime < 13) {
+    if (nauticalTimeHours < 13) {
       return "noon";
     }
-    if (nauticalTime < 15) {
+    if (nauticalTimeHours < 15) {
       return "afternoon";
     }
-    if (nauticalTime < 19) {
+    if (nauticalTimeHours < 19) {
       return "late afternoon";
     }
 
     return "day";
+  }
+
+  /**
+   * @returns {string}
+   */
+  get aircraftName() {
+    switch (this.#mission.aircraft.name) {
+      case "f15e":
+      case "f18":
+      case "mb339":
+      case "p38":
+      case "uh60":
+        return this.#mission.aircraft.name.toUpperCase().replace(/^(\D+)(\d+)/, "$1-$2");
+      case "camel":
+      case "concorde":
+      case "jungmeister":
+      case "pitts":
+      case "swift":
+        return this.#mission.aircraft.name[0].toUpperCase() + String(this.#mission.aircraft.name).slice(1);
+      default:
+        return this.#mission.aircraft.name.toUpperCase().replace(/_/, "-");
+    }
+  }
+
+  /**
+   * @returns {string}
+   */
+  get flightSetting() {
+    switch (this.#mission.flightSetting) {
+      case "cold_and_dark":
+        return "cold and dark";
+      case "before_start":
+        return "just before engine start";
+      case "taxi":
+        return "ready to taxi";
+      case "takeoff":
+        return "read for take-off";
+      case "cruise":
+        return "cruising";
+      case "approach":
+        return "in approach configuration";
+      case "landing":
+        return "in landing configuration";
+      case "pushback":
+        return "ready for push-back";
+      case "aerotow":
+        return "towed by a tow-plane";
+      case "winch_launch":
+        return "ready for winch-launch";
+      default:
+        return "ready to go";
+    }
   }
 
   get wind() {

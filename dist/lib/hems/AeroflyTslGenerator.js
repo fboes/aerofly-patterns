@@ -32,7 +32,7 @@ export class AeroflyTslGenerator {
     <[tmsimulator_scenery_place_simple][][]
         <[string8u] [coordinate_system] [lonlat]>
         <[bool][autoheight][true]>
-        <[string8u][cultivation][${this.environmentId}_emergency_sites]>
+        <[string8u][cultivation][${this.environmentId}_emergency_sites]> # TOC file
         <[list_tmsimulator_scenery_object][objects][]
 ${this.sceneryObjectList.join("\n")}
         >

@@ -1,13 +1,6 @@
 // @ts-check
 
 /**
- * @callback MissionTypeDescription
- * @param {import("../../lib/hems/GeoJsonLocations").GeoJsonFeature} from
- * @param {import("../../lib/hems/GeoJsonLocations").GeoJsonFeature} to
- * @returns {string}
- */
-
-/**
  * @typedef MissionTypeLight
  * @type {{
  * height?: number,
@@ -20,8 +13,8 @@
 /**
  * @typedef MissionType
  * @type {object}
- * @property {MissionTypeDescription} title
- * @property {MissionTypeDescription} description
+ * @property {string} title with ${origin} and ${destination} placeholders
+ * @property {string} description with ${origin} and ${destination} placeholders
  * @property {MissionTypeLight[]} lights in order of xrefs
  * @property {string[]} xrefs xref model name
  */
@@ -31,23 +24,15 @@
  */
 export const MissionTypes = {
   patientTransfer: {
-    title: (from, to) => {
-      return `Transfer from ${from.properties.title} to ${to.properties.title}`;
-    },
-    description: (from, to) => {
-      return `You will need to transfer a patient from ${from.properties.title} to ${to.properties.title}.`;
-    },
+    title: "Transfer from ${origin} to ${destination}",
+    description: "You will need to transfer a patient from ${origin} to ${destination}.",
     lights: [],
     xrefs: [],
   },
   medEvac: {
-    // eslint-disable-next-line no-unused-vars
-    title: (from, to) => {
-      return `MedEvac at ${from.properties.title}`;
-    },
-    description: (from, to) => {
-      return `Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ${to.properties.title}.`;
-    },
+    title: "MedEvac at ${origin}",
+    description:
+      "Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ${destination}.",
     lights: [
       {
         height: 3,
@@ -63,13 +48,9 @@ export const MissionTypes = {
     xrefs: ["ambulance", "police_car"],
   },
   lostPerson: {
-    // eslint-disable-next-line no-unused-vars
-    title: (from, to) => {
-      return `Locate person in distress at ${from.properties.title}`;
-    },
-    description: (from, to) => {
-      return `Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to ${to.properties.title}.`;
-    },
+    title: "Locate person in distress at ${origin}",
+    description:
+      "Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to ${destination}.",
     lights: [
       {
         height: 1.4,
@@ -81,13 +62,9 @@ export const MissionTypes = {
     xrefs: ["staticpeople_man01"],
   },
   ship: {
-    // eslint-disable-next-line no-unused-vars
-    title: (from, to) => {
-      return `Ship rescue at ${from.properties.title}`;
-    },
-    description: (from, to) => {
-      return `Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ${to.properties.title}.`;
-    },
+    title: "Ship rescue at ${origin}",
+    description:
+      "Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ${destination}.",
     lights: [
       {
         height: 20,
@@ -98,13 +75,9 @@ export const MissionTypes = {
     xrefs: ["police_car"],
   },
   car: {
-    // eslint-disable-next-line no-unused-vars
-    title: (from, to) => {
-      return `Car accident on ${from.properties.title}`;
-    },
-    description: (from, to) => {
-      return `Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ${to.properties.title}.`;
-    },
+    title: "Car accident on ${origin}",
+    description:
+      "Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ${destination}.",
     lights: [
       {
         height: 1.7,
@@ -176,13 +149,8 @@ export const MissionTypeFinder = {
     xrefs = ["ambulance"],
   ) {
     return {
-      // eslint-disable-next-line no-unused-vars
-      title: (from, to) => {
-        return `${accidentType} at ${from.properties.title}`;
-      },
-      description: (from, to) => {
-        return `Fly to the specified ${accidentType.toLowerCase()} site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ${to.properties.title}.`;
-      },
+      title: `${accidentType} at \${origin}`,
+      description: `Fly to the specified ${accidentType.toLowerCase()} site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to \${destination}.`,
       lights,
       xrefs,
     };

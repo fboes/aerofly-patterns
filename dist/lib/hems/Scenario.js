@@ -6,7 +6,7 @@ import {
 } from "@fboes/aerofly-custom-missions";
 import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
-import AeroflyMissionDescription from "../general/AeroflyMissionDescription.js";
+import AeroflyMissionAutofill from "../general/AeroflyMissionAutofill.js";
 import { Point } from "@fboes/geojson";
 import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
 
@@ -62,8 +62,32 @@ export class Scenario {
     });
 
     const mission = MissionTypeFinder.get(waypoint1);
-    const title = `HEMS #${index + 1}: ` + mission.title(waypoint1, waypoint2);
-    const description = mission.description(waypoint1, waypoint2);
+    const title =
+      `HEMS #${index + 1}: ` +
+      mission.title.replace(/\$\{(.+?)\}/g, (matches, variableName) => {
+        const location = variableName === "origin" ? waypoint1 : waypoint2;
+        return location.properties.title;
+      });
+
+    const description = mission.description.replace(/\$\{(.+?)\}/g, (matches, variableName) => {
+      const location = variableName === "origin" ? waypoint1 : waypoint2;
+      let description = location.properties.title;
+      if (location.properties.icaoCode || location.properties.direction) {
+        const extraInformation = [];
+        if (location.properties.icaoCode) {
+          extraInformation.push(location.properties.icaoCode);
+        }
+        if (location.properties.direction !== undefined) {
+          extraInformation.push(
+            String(Math.round(location.properties.direction / 10)).padStart(2, "0") +
+              "/" +
+              String(Math.round(((location.properties.direction + 180) % 360) / 10)).padStart(2, "0"),
+          );
+        }
+        description += ` (${extraInformation.join(" ")})`;
+      }
+      return description;
+    });
 
     this.mission = new AeroflyMission(title, {
       description,
@@ -73,7 +97,7 @@ export class Scenario {
         livery: this.configuration.livery,
       },
       callsign: aircraft.callsign,
-      flightSetting: this.configuration.isColdAndDark ? "cold_and_dark" : "taxi",
+      flightSetting: this.configuration.isColdAndDark ? "cold_and_dark" : "takeoff",
       conditions,
       tags: ["medical", "dropoff"],
       origin: {
@@ -122,11 +146,14 @@ export class Scenario {
       return AeroflyMissionConditionsCloud.createInFeet(c.coverOctas / 8, c.base);
     });
 
-    const describer = new AeroflyMissionDescription(this.mission);
+    const describer = new AeroflyMissionAutofill(this.mission);
     this.mission.description = describer.description + "\n" + this.mission.description;
     this.mission.tags = this.mission.tags.concat(describer.tags);
     this.mission.distance = describer.distance;
     this.mission.duration = describer.calculateDuration(this.aircraft.cruiseSpeed);
+    if (this.configuration.noGuides) {
+      describer.removeGuides();
+    }
   }
 
   /**
@@ -194,7 +221,7 @@ export class Scenario {
       location.geometry.coordinates[0],
       location.geometry.coordinates[1],
       {
-        altitude: this.configuration.noGuides ? -100 : location.geometry.coordinates[2] ?? 150,
+        altitude: 150,
         flyOver: true,
       },
     );

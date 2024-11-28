@@ -5,95 +5,96 @@ This file contains 10 Helicopter Emergency Medical Service (HEMS) missions for t
 - See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import [the missions into Aerofly FS 4](missions/custom_missions_user.tmc) and all other files.
 - See [the Aerofly FS 4 manual on challenges / missions](https://www.aerofly.com/tutorials/missions/) on how to access these missions in Aerofly FS 4.
 
-## HEMS #1: MedEvac at Inch Kenneth
+## HEMS #1: MedEvac at Glenforsa Airfield
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 28 min   | 98 km           |
+| EGEO      | 20 min   | 65 km           |
 
-It is early morning with wind from 250° at 13 kts. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
+It is early morning with almost no wind. Your EC135 is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital (14/32).
 
-## HEMS #2: MedEvac at Cuan ferry
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EGEO      | 17 min   | 53 km           |
-
-It is an overcast early morning with wind from 140° at 17 kts. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
-
-## HEMS #3: Farming accident at farm near Loch Spelve
+## HEMS #2: Car accident on Glen Lonan Road
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 16 min   | 49 km           |
+| EGEO      | 10 min   | 25 km           |
 
-It is a gusty, overcast morning with wind from 70° at 16 kts. Your aircraft is cold and dark.
-Fly to the specified farming accident site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
+It is a misty early morning with almost no wind. Your EC135 is cold and dark.
+Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Lorn & Islands Hospital (GB-0174 09/27).
 
-## HEMS #4: MedEvac at Appin
+## HEMS #3: MedEvac at Kingairloch
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EGEO      | 18 min   | 58 km           |
+
+It is morning with wind from 100° at 11 kts. Your EC135 is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital (14/32).
+
+## HEMS #4: MedEvac at Rhunacairn Cottage
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EGEO      | 11 min   | 27 km           |
+
+It is a gusty, clear morning with wind from 170° at 17 kts. Your EC135 is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174 09/27).
+
+## HEMS #5: MedEvac at Tobermory high school
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EGEO      | 26 min   | 92 km           |
+
+It is noon with no wind. Your EC135 is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital (14/32).
+
+## HEMS #6: MedEvac at Lochaline
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EGEO      | 17 min   | 52 km           |
+
+It is a misty noon with no wind. Your EC135 is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital (14/32).
+
+## HEMS #7: Locate person in distress at Beinn Bhreac
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
 | EGEO      | 14 min   | 40 km           |
 
-It is a misty morning with wind from 100° at 11 kts. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
+It is afternoon with almost no wind. Your EC135 is cold and dark.
+Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB-0174 09/27).
 
-## HEMS #5: MedEvac at Kingairloch
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EGEO      | 17 min   | 53 km           |
-
-It is a clear noon with almost no wind. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
-
-## HEMS #6: MedEvac at Cruachan Power Station
+## HEMS #8: Locate person in distress at position near Loch Nant
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 16 min   | 50 km           |
+| EGEO      | 13 min   | 38 km           |
 
-It is an overcast noon with wind from 210° at 12 kts. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
+It is a clear late afternoon with no wind. Your EC135 is cold and dark.
+Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB-0174 09/27).
 
-## HEMS #7: MedEvac at hotel at Kilmelford
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EGEO      | 16 min   | 47 km           |
-
-It is afternoon with no wind. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
-
-## HEMS #8: Logging accident at north of Loch Etive
+## HEMS #9: MedEvac at Iverinan
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 16 min   | 50 km           |
+| EGEO      | 15 min   | 47 km           |
 
-It is late afternoon with wind from 220° at 15 kts. Your aircraft is cold and dark.
-Fly to the specified logging accident site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
+It is late afternoon with wind from 350° at 7 kts. Your EC135 is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174 09/27).
 
-## HEMS #9: MedEvac at Inverawe Smokehouse
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EGEO      | 14 min   | 39 km           |
-
-It is late afternoon with wind from 220° at 6 kts. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
-
-## HEMS #10: MedEvac at Bonawe Iron Furnace
+## HEMS #10: MedEvac at Aird
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 13 min   | 36 km           |
+| EGEO      | 22 min   | 76 km           |
 
-It is a windy, misty late afternoon with wind from 90° at 27 kts. Your aircraft is cold and dark.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital.
+It is late afternoon with wind from 90° at 7 kts. Your EC135 is cold and dark.
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174 09/27).
+
 
 ---
 
