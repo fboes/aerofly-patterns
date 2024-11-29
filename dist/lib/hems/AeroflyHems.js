@@ -95,14 +95,22 @@ export class AeroflyHems {
     const scenarioMarkdown = this.scenarios
       .map((s) => {
         return `\
-## ${s.mission.title}
+### ${s.mission.title}
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
 | ${s.mission.origin.icao}      | ${Math.ceil((s.mission.duration ?? 0) / 60)} min   | ${Math.ceil((s.mission.distance ?? 0) / 1000)} km           |
 
-${s.mission.description}
+${s.mission.description.replace(/\n/g, "  \n")}
 `;
+      })
+      .join("\n");
+
+    const featuredSitesMarkdown = (this.locations?.heliports ?? [])
+      .concat(this.locations?.hospitals ?? [])
+      .map((l) => {
+        const title = l.properties.url ? `[${l.properties.title}](${l.properties.url})` : l.properties.title;
+        return "- " + title;
       })
       .join("\n");
 
@@ -113,6 +121,14 @@ This file contains ${this.configuration.numberOfMissions} Helicopter Emergency M
 
 - See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import [the missions into Aerofly FS 4](missions/custom_missions_user.tmc) and all other files.
 - See [the Aerofly FS 4 manual on challenges / missions](https://www.aerofly.com/tutorials/missions/) on how to access these missions in Aerofly FS 4.
+
+## Featured sites
+
+${featuredSitesMarkdown}
+
+## Included missions
+
+There are ${this.configuration.numberOfMissions} missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
 ${scenarioMarkdown}
 

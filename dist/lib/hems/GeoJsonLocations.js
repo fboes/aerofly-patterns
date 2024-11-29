@@ -12,7 +12,9 @@ import * as fs from "node:fs";
  *   title: string,
  *   "marker-symbol": string|null,
  *   icaoCode?: string,
- *   direction?: number
+ *   direction?: number,
+ *   approaches?: number[],
+ *   url?: string
  * }} properties
  * @property {{
  *   coordinates: [number, number, number?],

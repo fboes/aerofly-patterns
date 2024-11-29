@@ -72,19 +72,21 @@ export class Scenario {
     const description = mission.description.replace(/\$\{(.+?)\}/g, (matches, variableName) => {
       const location = variableName === "origin" ? waypoint1 : waypoint2;
       let description = location.properties.title;
-      if (location.properties.icaoCode || location.properties.direction) {
-        const extraInformation = [];
-        if (location.properties.icaoCode) {
-          extraInformation.push(location.properties.icaoCode);
-        }
-        if (location.properties.direction !== undefined) {
-          extraInformation.push(
-            String(Math.round(location.properties.direction / 10)).padStart(2, "0") +
-              "/" +
-              String(Math.round(((location.properties.direction + 180) % 360) / 10)).padStart(2, "0"),
-          );
-        }
-        description += ` (${extraInformation.join(" ")})`;
+      if (location.properties.icaoCode) {
+        description += ` (${location.properties.icaoCode})`;
+      }
+
+      if (location.properties.approaches || location.properties.direction) {
+        let approaches = location.properties.approaches ?? [
+          location.properties.direction,
+          (location.properties.direction + 180) % 360,
+        ];
+
+        description += ` with possible approaches from ${approaches
+          .map((a) => {
+            return `${String(Math.round(a)).padStart(3, "0")}°`;
+          })
+          .join(" / ")}`;
       }
       return description;
     });

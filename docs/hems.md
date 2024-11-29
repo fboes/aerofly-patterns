@@ -103,31 +103,24 @@ At the base of this file it needs a `FeatureCollection`, in which a list of `Fea
 
 To create the different types of locations, you will need to add properties to every GeoJSON `Feature`. Find the list of properties below:
 
-### Properties of heliports
+### Properties of heliports & hospitals
 
-| Property                   | Type     | Description                        |
-| -------------------------- | -------- | ---------------------------------- |
-| `properties.marker-symbol` | `string` | `heliport`                         |
-| `properties.title`         | `string` | Name of location                   |
-| `properties.icaoCode`      | `string` | ICAO code                          |
-| `properties.direction`     | `number` | Optional orientation of helicopter |
-
-### Properties of hospitals
-
-| Property                   | Type     | Description                         |
-| -------------------------- | -------- | ----------------------------------- |
-| `properties.marker-symbol` | `string` | `hospital` or `hospital-JP`         |
-| `properties.title`         | `string` | Name of location                    |
-| `properties.icaoCode`      | `string` | Optional ICAO code                  |
-| `properties.direction`     | `number` | Optional orientation of landing pad |
+| Property                   | Type       | Description                                       |
+| -------------------------- | ---------- | ------------------------------------------------- |
+| `properties.marker-symbol` | `string`   | `heliport` / `hospital` or `hospital-JP`          |
+| `properties.title`         | `string`   | Name of location                                  |
+| `properties.icaoCode`      | `string`   | ICAO code                                         |
+| `properties.direction`     | `number`   | _Optional_ orientation of helicopter              |
+| `properties.approaches`    | `number[]` | _Optional_ list of approach directions            |
+| `properties.url`           | `string`   | _Optional_ URL which links to further information |
 
 ### Properties of emergency sites
 
-| Property                   | Type     | Description                 |
-| -------------------------- | -------- | --------------------------- |
-| `properties.marker-symbol` | `string` | Optional, see below         |
-| `properties.title`         | `string` | Name of location¹           |
-| `properties.direction`     | `number` | Optional orientation of POI |
+| Property                   | Type     | Description                   |
+| -------------------------- | -------- | ----------------------------- |
+| `properties.marker-symbol` | `string` | _Optional_, see below         |
+| `properties.title`         | `string` | Name of location¹             |
+| `properties.direction`     | `number` | _Optional_ orientation of POI |
 
 ¹) If the location does not have a unique name, use "location near …" to describe the location.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+# 2.5.3
+
+- Added `approaches` and `url` to GeoJSON for improved HEMS descriptions
+
 # 2.5.2
 
 - Improved mission description generator
