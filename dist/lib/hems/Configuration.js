@@ -33,7 +33,7 @@ export class Configuration {
     },
     callsign: {
       type: "string",
-      default: "",
+      default: "MEDEVAC",
       description: "Optional callsign, else default callsign will be used.",
     },
     "no-guides": {

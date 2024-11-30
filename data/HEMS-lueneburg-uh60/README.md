@@ -16,95 +16,95 @@ This file contains 10 Helicopter Emergency Medical Service (HEMS) missions for t
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-### HEMS #1: Car accident on A39
+### HEMS #1: MedEvac at Tätendorf
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 13 min   | 42 km           |
+| EDHG      | 14 min   | 63 km           |
 
-It is an overcast early morning with almost no wind. Your UH-60 is cold and dark.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches from 132° / 312°.
+It is a clear early morning with wind from 160° at 7 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Uelzen (de0999) with possible approaches 231° / 051°.
 
-### HEMS #2: Car accident on B4 near Melbeck
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 10 min   | 24 km           |
-
-It is a misty early morning with wind from 310° at 20 kts. Your UH-60 is cold and dark.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches from 280° / 178°.
-
-### HEMS #3: MedEvac at Kloster Ebstorf
+### HEMS #2: Car accident on B4 near Bargdorf
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 18 min   | 66 km           |
+| EDHG      | 8 min    | 33 km           |
 
-It is an overcast morning with wind from 210° at 7 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Uelzen (de0999) with possible approaches from 231° / 051°.
+It is early morning with no wind. Your UH-60 is read for take-off.  
+Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
 
-### HEMS #4: MedEvac at Maschen train yard
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 18 min   | 63 km           |
-
-It is a clear morning with wind from 210° at 11 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches from 132° / 312°.
-
-### HEMS #5: Car accident on A7 near Toppenstedt
+### HEMS #3: MedEvac at Maschen train yard
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 17 min   | 58 km           |
+| EDHG      | 14 min   | 63 km           |
 
-It is a clear noon with wind from 190° at 14 kts. Your UH-60 is cold and dark.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches from 132° / 312°.
+It is a gusty morning with wind from 310° at 19 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches 132° / 312°.
 
-### HEMS #6: MedEvac at Scharnebeck Schiffshebewerk
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 8 min    | 19 km           |
-
-It is a clear noon with wind from 210° at 16 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches from 280° / 178°.
-
-### HEMS #7: MedEvac at Tätendorf
+### HEMS #4: MedEvac at Ravener Dorfstraße
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 18 min   | 63 km           |
+| EDHG      | 10 min   | 44 km           |
 
-It is a clear afternoon with wind from 200° at 11 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Uelzen (de0999) with possible approaches from 231° / 051°.
+It is a misty morning with almost no wind. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
 
-### HEMS #8: Ship rescue at position near Altstadt
+### HEMS #5: MedEvac at Salzhausen supermarket
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 16 min   | 56 km           |
+| EDHG      | 12 min   | 55 km           |
 
-It is late afternoon with wind from 220° at 17 kts. Your UH-60 is cold and dark.  
-Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches from 132° / 312°.
+It is a clear noon with wind from 220° at 11 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches 132° / 312°.
+
+### HEMS #6: MedEvac at Kloster Ebstorf
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 14 min   | 66 km           |
+
+It is a gusty, clear noon with wind from 190° at 16 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Uelzen (de0999) with possible approaches 231° / 051°.
+
+### HEMS #7: MedEvac at Barum center
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 7 min    | 29 km           |
+
+It is a clear afternoon with wind from 200° at 14 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
+
+### HEMS #8: MedEvac at Hohnstorf
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 8 min    | 37 km           |
+
+It is a clear late afternoon with wind from 180° at 9 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
 
 ### HEMS #9: MedEvac at Lauenburg train station
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 13 min   | 38 km           |
+| EDHG      | 9 min    | 38 km           |
 
-It is late afternoon with wind from 200° at 7 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches from 280° / 178°.
+It is late afternoon with wind from 220° at 15 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
 
-### HEMS #10: MedEvac at Neetze lake
+### HEMS #10: MedEvac at Bad Bevensen, Neptunbrunnen
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 10 min   | 28 km           |
+| EDHG      | 14 min   | 64 km           |
 
-It is late afternoon with wind from 290° at 8 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches from 280° / 178°.
+It is late afternoon with almost no wind. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Uelzen (de0999) with possible approaches 231° / 051°.
 
 ---
 

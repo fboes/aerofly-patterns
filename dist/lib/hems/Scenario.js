@@ -82,7 +82,7 @@ export class Scenario {
           (location.properties.direction + 180) % 360,
         ];
 
-        description += ` with possible approaches from ${approaches
+        description += ` with possible approaches ${approaches
           .map((a) => {
             return `${String(Math.round(a)).padStart(3, "0")}°`;
           })

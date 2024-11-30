@@ -15,95 +15,95 @@ This file contains 10 Helicopter Emergency Medical Service (HEMS) missions for t
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-### HEMS #1: MedEvac at Achnacroish
+### HEMS #1: Farming accident at Musdale
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 11 min   | 29 km           |
+| EGEO      | 7 min    | 33 km           |
 
-It is a gusty, foggy early morning with wind from 0° at 7 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches from 090° / 270°.
+It is a clear early morning with no wind. Your UH-60 is read for take-off.  
+Fly to the specified farming accident site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches 090° / 270°.
 
-### HEMS #2: MedEvac at Inveraray
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EGEO      | 20 min   | 73 km           |
-
-It is early morning with almost no wind. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches from 090° / 270°.
-
-### HEMS #3: MedEvac at location east of Tom Ard
+### HEMS #2: Locate person in distress at River Esragan
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 8 min    | 18 km           |
+| EGEO      | 8 min    | 35 km           |
 
-It is morning with no wind. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches from 090° / 270°.
+It is early morning with almost no wind. Your UH-60 is read for take-off.  
+Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches 090° / 270°.
 
-### HEMS #4: Car accident on A85
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EGEO      | 10 min   | 25 km           |
-
-It is morning with almost no wind. Your UH-60 is cold and dark.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches from 090° / 270°.
-
-### HEMS #5: Farming accident at Musdale
+### HEMS #3: Ship rescue at Loch Linnhe
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 11 min   | 33 km           |
+| EGEO      | 9 min    | 40 km           |
 
-It is noon with wind from 340° at 6 kts. Your UH-60 is cold and dark.  
-Fly to the specified farming accident site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches from 090° / 270°.
+It is morning with wind from 70° at 14 kts. Your UH-60 is read for take-off.  
+Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.
 
-### HEMS #6: MedEvac at Fishnish Ferry
+### HEMS #4: Farming accident at farm near Loch Spelve
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 16 min   | 53 km           |
+| EGEO      | 11 min   | 51 km           |
 
-It is an overcast noon with wind from 70° at 10 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches from 135° / 315°.
+It is morning with wind from 40° at 10 kts. Your UH-60 is read for take-off.  
+Fly to the specified farming accident site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.
+
+### HEMS #5: MedEvac at Iverinan
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EGEO      | 10 min   | 47 km           |
+
+It is a foggy noon with almost no wind. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches 090° / 270°.
+
+### HEMS #6: MedEvac at location east of Tom Ard
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EGEO      | 4 min    | 18 km           |
+
+It is noon with wind from 110° at 13 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches 090° / 270°.
 
 ### HEMS #7: MedEvac at Appin
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 13 min   | 40 km           |
+| EGEO      | 9 min    | 40 km           |
 
-It is a foggy afternoon with wind from 350° at 6 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches from 090° / 270°.
+It is afternoon with almost no wind. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches 090° / 270°.
 
-### HEMS #8: MedEvac at Kingairloch
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EGEO      | 17 min   | 58 km           |
-
-It is a misty late afternoon with wind from 300° at 14 kts. Your UH-60 is cold and dark.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches from 135° / 315°.
-
-### HEMS #9: Ship rescue at Loch Linnhe
+### HEMS #8: Locate person in distress at position near Loch Nant
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 13 min   | 40 km           |
+| EGEO      | 8 min    | 38 km           |
 
-It is a clear late afternoon with wind from 170° at 8 kts. Your UH-60 is cold and dark.  
-Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Mull and Iona Community Hospital with possible approaches from 135° / 315°.
+It is late afternoon with wind from 110° at 12 kts. Your UH-60 is read for take-off.  
+Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches 090° / 270°.
 
-### HEMS #10: Locate person in distress at position near Loch Nant
+### HEMS #9: Car accident on A85
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EGEO      | 12 min   | 38 km           |
+| EGEO      | 6 min    | 25 km           |
 
-It is late afternoon with wind from 90° at 11 kts. Your UH-60 is cold and dark.  
-Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches from 090° / 270°.
+It is a clear late afternoon with wind from 130° at 10 kts. Your UH-60 is read for take-off.  
+Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Lorn & Islands Hospital (GB-0174) with possible approaches 090° / 270°.
+
+### HEMS #10: MedEvac at Strontian
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EGEO      | 16 min   | 74 km           |
+
+It is late afternoon with wind from 90° at 9 kts. Your UH-60 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.
 
 ---
 
