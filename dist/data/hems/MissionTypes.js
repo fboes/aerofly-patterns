@@ -11,12 +11,19 @@
  */
 
 /**
+ * @typedef MissionTypeObject
+ * @type {{
+ * xref: string,
+ * light?: MissionTypeLight
+ * }}
+ */
+
+/**
  * @typedef MissionType
  * @type {object}
  * @property {string} title with ${origin} and ${destination} placeholders
  * @property {string} description with ${origin} and ${destination} placeholders
- * @property {MissionTypeLight[]} lights in order of xrefs
- * @property {string[]} xrefs xref model name
+ * @property {MissionTypeObject[]} objects
  */
 
 /**
@@ -26,66 +33,79 @@ export const MissionTypes = {
   patientTransfer: {
     title: "Transfer from ${origin} to ${destination}",
     description: "You will need to transfer a patient from ${origin} to ${destination}.",
-    lights: [],
-    xrefs: [],
+    objects: [],
   },
   medEvac: {
     title: "MedEvac at ${origin}",
     description:
       "Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ${destination}.",
-    lights: [
+    objects: [
       {
-        height: 3,
-        color: [0, 0, 1],
-        flashing: [10, 0, 100, 0],
+        xref: "ambulance",
+        light: {
+          height: 3,
+          color: [0, 0, 1],
+          flashing: [10, 0, 100, 0],
+        },
       },
       {
-        height: 1.7,
-        color: [0, 0, 1],
-        flashing: [20, 0, 100, 0],
+        xref: "police_car",
+        light: {
+          height: 1.7,
+          color: [0, 0, 1],
+          flashing: [20, 0, 100, 0],
+        },
       },
     ],
-    xrefs: ["ambulance", "police_car"],
   },
   lostPerson: {
     title: "Locate person in distress at ${origin}",
     description:
       "Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to ${destination}.",
-    lights: [
+    objects: [
       {
-        height: 1.4,
-        color: [1, 1, 1],
-        flashing: [20, 0, 100, 0],
-        intensity: 10,
+        xref: "staticpeople_man01",
+        light: {
+          height: 1.4,
+          color: [1, 1, 1],
+          flashing: [20, 0, 100, 0],
+          intensity: 10,
+        },
       },
     ],
-    xrefs: ["staticpeople_man01"],
   },
   ship: {
     title: "Ship rescue at ${origin}",
     description:
       "Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ${destination}.",
-    lights: [
+    objects: [
       {
-        height: 20,
-        color: [1, 1, 1],
-        flashing: [20, 0, 100, 0],
+        xref: "police_car",
+        light: {
+          height: 1.7,
+          color: [0, 0, 1],
+          flashing: [20, 0, 100, 0],
+        },
       },
     ],
-    xrefs: ["police_car"],
   },
   car: {
     title: "Car accident on ${origin}",
     description:
       "Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ${destination}.",
-    lights: [
+    objects: [
       {
-        height: 1.7,
-        color: [0, 0, 1],
-        flashing: [20, 0, 100, 0],
+        xref: "police_car",
+        light: {
+          height: 1.7,
+          color: [0, 0, 1],
+          flashing: [20, 0, 100, 0],
+        },
+      },
+      {
+        xref: "car_01",
       },
     ],
-    xrefs: ["police_car", "car_01"],
   },
 };
 
@@ -133,26 +153,26 @@ export const MissionTypeFinder = {
   /**
    * This generates quick fallback `MissionType`, which at least changes title and description.
    * @param {string} accidentType
-   * @param {MissionTypeLight[]} lights
-   * @param {string[]} xrefs
+   * @param {MissionTypeObject[]} objects
    * @returns {MissionType}
    */
   _quickMission(
     accidentType,
-    lights = [
+    objects = [
       {
-        height: 3,
-        color: [0, 0, 1],
-        flashing: [10, 0, 100, 0],
+        xref: "ambulance",
+        light: {
+          height: 3,
+          color: [0, 0, 1],
+          flashing: [10, 0, 100, 0],
+        },
       },
     ],
-    xrefs = ["ambulance"],
   ) {
     return {
       title: `${accidentType} at \${origin}`,
       description: `Fly to the specified ${accidentType.toLowerCase()} site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to \${destination}.`,
-      lights,
-      xrefs,
+      objects,
     };
   },
 };

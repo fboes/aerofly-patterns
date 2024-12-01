@@ -2,6 +2,7 @@
 
 # 2.5.3
 
+- Improved scenery generator
 - Set new default callsign "MEDEVAC"
 - Added `approaches` and `url` to GeoJSON for improved HEMS descriptions
 

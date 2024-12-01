@@ -12,43 +12,43 @@ export class AeroflyTocGenerator {
   }
 
   /**
-   * @returns {string[]}
+   * @returns {{
+   *  xrefList: string[],
+   *  lightList: string[],
+   * }}
    */
-  get lightList() {
-    return this.locations.map((location) => {
-      return MissionTypeFinder.get(location)
-        .lights.map((light, index) => {
-          const coordinates = this.#getLonLat(location, index);
-          return `\
-            <[light][element][0]
-                <[vector3_float64][position][${coordinates.longitude} ${coordinates.latitude} ${light.height ?? 1}]>
-                <[vector3_float32][color][${light.color.join(" ")}]>
-                <[float32][intensity][${light.intensity ?? 100}]>
-                <[vector4_float32][flashing][${light.flashing.join(" ")}]>
-                <[uint32][group_index][1]>
-            >`;
-        })
-        .join("\n");
-    });
-  }
+  get objectList() {
+    /** @type {string[]} */
+    const lightList = [];
+    const xrefList = [];
 
-  /**
-   * @returns {string[]}
-   */
-  get xrefList() {
-    return this.locations.map((location) => {
-      return MissionTypeFinder.get(location)
-        .xrefs.map((xref, index) => {
-          const coordinates = this.#getLonLat(location, index);
-          return `\
+    this.locations.forEach((location) => {
+      return MissionTypeFinder.get(location).objects.map((object, index) => {
+        const coordinates = this.#getLonLat(location, index);
+        xrefList.push(`\
             <[xref][element][0]
                 <[vector3_float64][position][${coordinates.longitude} ${coordinates.latitude} 0]>
                 <[float64][direction][${location.properties?.direction ?? 0}]>
-                <[string8u][name][${xref}]>
-            >`;
-        })
-        .join("\n");
+                <[string8u][name][${object.xref}]>
+            >`);
+
+        if (object.light) {
+          lightList.push(`\
+            <[light][element][0]
+                <[vector3_float64][position][${coordinates.longitude} ${coordinates.latitude} ${object.light.height ?? 1}]>
+                <[vector3_float32][color][${object.light.color.join(" ")}]>
+                <[float32][intensity][${object.light.intensity ?? 100}]>
+                <[vector4_float32][flashing][${object.light.flashing.join(" ")}]>
+                <[uint32][group_index][1]>
+            >`);
+        }
+      });
     });
+
+    return {
+      xrefList,
+      lightList,
+    };
   }
 
   /**
@@ -68,17 +68,22 @@ export class AeroflyTocGenerator {
   }
 
   toString() {
+    const objectList = this.objectList;
     return `\
 <[file][][]
     <[cultivation][][]
         <[string8][coordinate_system][lonlat]>
         <[list_light][light_list][]
-${this.lightList.join("\n")}
+${objectList.lightList.join("\n")}
         >
         <[list_xref][xref_list][]
-${this.xrefList.join("\n")}
+${objectList.xrefList.join("\n")}
         >
     >
 >`;
   }
 }
+
+/**
+ *     =
+ */
