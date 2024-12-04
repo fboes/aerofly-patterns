@@ -106,8 +106,7 @@ ${s.mission.description.replace(/\n/g, "  \n")}
       })
       .join("\n");
 
-    const featuredSitesMarkdown = (this.locations?.heliports ?? [])
-      .concat(this.locations?.hospitals ?? [])
+    const featuredSitesMarkdown = this.locations?.heliportsAndHospitals
       .map((l) => {
         const title = l.properties.url ? `[${l.properties.title}](${l.properties.url})` : l.properties.title;
         return "- " + title;

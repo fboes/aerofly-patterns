@@ -23,6 +23,10 @@ import * as fs from "node:fs";
  */
 
 export class GeoJsonLocations {
+  static MARKER_HOSPITAL = "hospital";
+  static MARKER_HELIPORT = "heliport";
+  static MARKER_HELIPORT_HOSPITAL = "hospital-JP";
+
   /**
    *
    * @param {string} filename
@@ -54,7 +58,11 @@ export class GeoJsonLocations {
      * @type {GeoJsonFeature[]}
      */
     this.heliports = pointFeatures.filter((f) => {
-      return f.properties && f.properties["marker-symbol"] === "heliport";
+      return (
+        f.properties &&
+        (f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT ||
+          f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL)
+      );
     });
     if (this.heliports.length === 0) {
       throw Error("Missing heliports in GeoJson file");
@@ -66,7 +74,8 @@ export class GeoJsonLocations {
     this.hospitals = pointFeatures.filter((f) => {
       return (
         f.properties &&
-        (f.properties["marker-symbol"] === "hospital" || f.properties["marker-symbol"] === "hospital-JP")
+        (f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HOSPITAL ||
+          f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL)
       );
     });
     if (this.hospitals.length === 0) {
@@ -79,9 +88,9 @@ export class GeoJsonLocations {
     this.other = pointFeatures.filter((f) => {
       return (
         f.properties &&
-        f.properties["marker-symbol"] !== "heliport" &&
-        f.properties["marker-symbol"] !== "hospital" &&
-        f.properties["marker-symbol"] !== "hospital-JP"
+        f.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HELIPORT &&
+        f.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HOSPITAL &&
+        f.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HELIPORT_HOSPITAL
       );
     });
     if (this.other.length === 0) {
@@ -93,6 +102,26 @@ export class GeoJsonLocations {
      */
 
     this.randomEmergencySite = this.#yieldRandomEmergencySite();
+  }
+
+  /**
+   * @returns {GeoJsonFeature[]}
+   */
+  get heliportsAndHospitals() {
+    return (this.heliports ?? []).concat(
+      this.hospitals?.filter((l) => {
+        return l.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HELIPORT_HOSPITAL;
+      }) ?? [],
+    );
+  }
+
+  /**
+   *
+   * @param {GeoJsonFeature} location
+   * @returns {boolean}
+   */
+  static isHeliportHospital(location) {
+    return location.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL;
   }
 
   /**

@@ -261,7 +261,7 @@ export default class AeroflyMissionAutofill {
     } else if (conditions.wind.speed <= 5) {
       wind = `almost no wind`;
     } else {
-      wind = `wind from ${conditions.wind.direction}° at ${conditions.wind.speed} kts`;
+      wind = `wind from ${String(conditions.wind.direction).padStart(3, "0")}° at ${conditions.wind.speed} kts`;
     }
     return wind;
   }

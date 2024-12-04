@@ -107,12 +107,20 @@ To create the different types of locations, you will need to add properties to e
 
 | Property                   | Type       | Description                                       |
 | -------------------------- | ---------- | ------------------------------------------------- |
-| `properties.marker-symbol` | `string`   | `heliport` / `hospital` or `hospital-JP`          |
+| `properties.marker-symbol` | `string`   | `heliport`, `hospital` or `hospital-JP`           |
 | `properties.title`         | `string`   | Name of location                                  |
 | `properties.icaoCode`      | `string`   | ICAO code                                         |
 | `properties.direction`     | `number`   | _Optional_ orientation of helicopter              |
 | `properties.approaches`    | `number[]` | _Optional_ list of approach directions            |
 | `properties.url`           | `string`   | _Optional_ URL which links to further information |
+
+There are special `properties.marker-symbol` values for these locations:
+
+| `properties.marker-symbol` | Mission purpose                                       |
+| -------------------------- | ----------------------------------------------------- |
+| `heliport`                 | Landing pad position to start / end flights           |
+| `hospital`                 | Landing pad position at hospital to ferry patients to |
+| `hospital-JP`              | Combined `hospital` and `heliport`                    |
 
 ### Properties of emergency sites
 

@@ -9,6 +9,7 @@ import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/A
 import AeroflyMissionAutofill from "../general/AeroflyMissionAutofill.js";
 import { Point } from "@fboes/geojson";
 import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
+import { GeoJsonLocations } from "./GeoJsonLocations.js";
 
 export class Scenario {
   /**
@@ -40,9 +41,6 @@ export class Scenario {
      */
     this.aircraft = aircraft;
 
-    const destination = this.#getRandLocation(locations.heliports);
-    this.#checkIcao(destination);
-
     const isTransfer = this.configuration.canTransfer && locations.hospitals.length > 1 && Math.random() <= 0.1;
     /**
      * @type {import("./GeoJsonLocations.js").GeoJsonFeature}
@@ -53,9 +51,29 @@ export class Scenario {
     /**
      * @type {import("./GeoJsonLocations.js").GeoJsonFeature}
      */
-    const waypoint2 = isTransfer
+    let waypoint2 = isTransfer
       ? this.#getRandLocation(locations.hospitals, waypoint1)
       : this.#getNearestLocation(locations.hospitals, waypoint1);
+
+    const bringPatientToOrigin =
+      GeoJsonLocations.isHeliportHospital(this.origin) && !GeoJsonLocations.isHeliportHospital(waypoint2);
+    const destination = bringPatientToOrigin ? this.origin : this.#getRandLocation(locations.heliports);
+    this.#checkIcao(destination);
+    if (bringPatientToOrigin) {
+      waypoint2 = destination;
+    }
+    const checkpoints = bringPatientToOrigin
+      ? [
+          this.#makeCheckpoint(this.origin, "origin"),
+          this.#makeCheckpoint(waypoint1),
+          this.#makeCheckpoint(destination, "destination"),
+        ]
+      : [
+          this.#makeCheckpoint(this.origin, "origin"),
+          this.#makeCheckpoint(waypoint1),
+          this.#makeCheckpoint(waypoint2),
+          this.#makeCheckpoint(destination, "destination"),
+        ];
 
     const conditions = new AeroflyMissionConditions({
       time,
@@ -116,12 +134,7 @@ export class Scenario {
         alt: destination.geometry.coordinates[2] ?? 0,
         dir: destination.properties?.direction ?? 0,
       },
-      checkpoints: [
-        this.#makeCheckpoint(this.origin, "origin"),
-        this.#makeCheckpoint(waypoint1),
-        this.#makeCheckpoint(waypoint2),
-        this.#makeCheckpoint(destination, "destination"),
-      ],
+      checkpoints,
     });
   }
 
@@ -223,7 +236,7 @@ export class Scenario {
       location.geometry.coordinates[0],
       location.geometry.coordinates[1],
       {
-        altitude: 150,
+        altitude: location.geometry.coordinates[2] ?? 243.83,
         flyOver: true,
       },
     );
@@ -234,8 +247,8 @@ export class Scenario {
    * @returns {boolean}
    */
   #checkIcao(location) {
-    if (!location.properties.icaoCode.match(/^[a-zA-Z0-9]+$/)) {
-      throw Error(`Not an ICAO code: ${location.properties.title}`);
+    if (!location.properties.icaoCode?.match(/^[a-zA-Z0-9]+$/)) {
+      throw Error(`No property "icaCode" found on location ${location.properties.title}`);
     }
 
     return true;

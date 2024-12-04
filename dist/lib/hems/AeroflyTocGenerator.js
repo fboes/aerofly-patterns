@@ -83,7 +83,3 @@ ${objectList.xrefList.join("\n")}
 >`;
   }
 }
-
-/**
- *     =
- */
