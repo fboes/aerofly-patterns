@@ -1,5 +1,6 @@
 // @ts-check
 
+import { Point } from "@fboes/geojson";
 import * as fs from "node:fs";
 
 /**
@@ -46,122 +47,168 @@ export class GeoJsonLocations {
       throw Error("Missing FeatureCollection with features in GeoJSON file");
     }
 
-    const pointFeatures = featureCollection.features.filter((f) => {
-      return f.type === "Feature" && f.geometry.type === "Point";
-    });
+    const pointFeatures = featureCollection.features
+      .filter((f) => {
+        return f.type === "Feature" && f.geometry.type === "Point";
+      })
+      .map((f) => {
+        return new GeoJsonLocation(f);
+      });
+
     if (pointFeatures.length === 0) {
       throw Error("Missing Features in GeoJson file");
     }
-    this.#validateGeoJsonFeatures(pointFeatures);
 
     /**
-     * @type {GeoJsonFeature[]}
+     * @type {GeoJsonLocation[]}
      */
     this.heliports = pointFeatures.filter((f) => {
-      return (
-        f.properties &&
-        (f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT ||
-          f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL)
-      );
+      return f.isHeliport;
     });
     if (this.heliports.length === 0) {
       throw Error("Missing heliports in GeoJson file");
     }
 
     /**
-     * @type {GeoJsonFeature[]}
+     * @type {GeoJsonLocation[]}
      */
     this.hospitals = pointFeatures.filter((f) => {
-      return (
-        f.properties &&
-        (f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HOSPITAL ||
-          f.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL)
-      );
+      return f.isHospital;
     });
     if (this.hospitals.length === 0) {
       this.hospitals = this.heliports;
     }
 
     /**
-     * @type {GeoJsonFeature[]}
+     * @type {GeoJsonLocation[]}
      */
     this.other = pointFeatures.filter((f) => {
-      return (
-        f.properties &&
-        f.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HELIPORT &&
-        f.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HOSPITAL &&
-        f.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HELIPORT_HOSPITAL
-      );
+      return !f.isHeliport && !f.isHospital;
     });
     if (this.other.length === 0) {
       throw Error("Missing mission locations in GeoJson file");
     }
 
     /**
-     * @type {Generator<GeoJsonFeature, void, unknown>}
+     * @type {Generator<GeoJsonLocation, void, unknown>}
      */
 
     this.randomEmergencySite = this.#yieldRandomEmergencySite();
   }
 
   /**
-   * @returns {GeoJsonFeature[]}
+   * @returns {GeoJsonLocation[]}
    */
   get heliportsAndHospitals() {
     return (this.heliports ?? []).concat(
       this.hospitals?.filter((l) => {
-        return l.properties["marker-symbol"] !== GeoJsonLocations.MARKER_HELIPORT_HOSPITAL;
+        return l.markerSymbol !== GeoJsonLocations.MARKER_HELIPORT_HOSPITAL;
       }) ?? [],
     );
   }
 
   /**
-   *
-   * @param {GeoJsonFeature} location
-   * @returns {boolean}
-   */
-  static isHeliportHospital(location) {
-    return location.properties["marker-symbol"] === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL;
-  }
-
-  /**
    * Infinite generator of randomized `this.other`. On end of list will return to beginning, but keeping the random order.
-   * @yields {GeoJsonFeature}
+   * @yields {GeoJsonLocation}
    * @generator
    */
   *#yieldRandomEmergencySite() {
     let i = this.other.length;
     let j = 0;
     let temp;
-    const emergencySites = structuredClone(this.other);
+    //const emergencySites = structuredClone(this.other);
+    /**
+     * @type {number[]}
+     */
+    const emergencySiteIndexes = [...Array(i).keys()];
 
     while (i--) {
       j = Math.floor(Math.random() * (i + 1));
 
       // swap randomly chosen element with current element
-      temp = emergencySites[i];
-      emergencySites[i] = emergencySites[j];
-      emergencySites[j] = temp;
+      temp = emergencySiteIndexes[i];
+      emergencySiteIndexes[i] = emergencySiteIndexes[j];
+      emergencySiteIndexes[j] = temp;
     }
 
-    while (emergencySites.length) {
-      for (const location of emergencySites) {
-        yield location;
+    while (emergencySiteIndexes.length) {
+      for (const locationIndex of emergencySiteIndexes) {
+        yield this.other[locationIndex];
       }
     }
   }
+}
 
+export class GeoJsonLocation {
   /**
-   * @param {GeoJsonFeature[]} geoJsonFeatures
+   * @param {object} json
    */
-  #validateGeoJsonFeatures(geoJsonFeatures) {
-    for (const geoJsonFeature of geoJsonFeatures) {
-      if (!geoJsonFeature.properties.title) {
-        throw Error(`Missing properties.title in GeoJSONFeature ${geoJsonFeature.id}`);
-      }
-      if (!geoJsonFeature.geometry.coordinates) {
-        throw Error(`Missing properties.geometry.coordinates in GeoJSONFeature ${geoJsonFeature.id}`);
-      }
+  constructor(json) {
+    if (!json.properties.title) {
+      throw Error(`Missing properties.title in GeoJSONFeature ${json.id}`);
     }
+    if (!json.geometry.coordinates) {
+      throw Error(`Missing properties.geometry.coordinates in GeoJSONFeature ${json.id}`);
+    }
+
+    /**
+     * @type {string}
+     */
+    this.type = json.type;
+
+    /**
+     * @type {string?}
+     */
+    this.id = json.id ?? null;
+
+    this.coordinates = new Point(
+      json.geometry.coordinates[0],
+      json.geometry.coordinates[1],
+      json.geometry.coordinates[2] ?? null,
+    );
+
+    /**
+     * @type {string}
+     */
+    this.markerSymbol = json.properties["marker-symbol"] ?? "";
+
+    /**
+     * @type {string}
+     */
+    this.title = json.properties.title;
+
+    /**
+     * @type {string?}
+     */
+    this.icaoCode = json.properties.icaoCode ?? null;
+
+    /**
+     * @type {number}
+     */
+    this.direction = json.properties.direction ?? 0;
+
+    /**
+     * @type {number[]}
+     */
+    this.approaches = json.properties.approaches ?? [];
+
+    /**
+     * @type {string?}
+     */
+    this.url = json.properties.url ?? null;
+  }
+
+  get isHeliport() {
+    return (
+      this.markerSymbol === GeoJsonLocations.MARKER_HELIPORT ||
+      this.markerSymbol === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL
+    );
+  }
+
+  get isHospital() {
+    return (
+      this.markerSymbol === GeoJsonLocations.MARKER_HOSPITAL ||
+      this.markerSymbol === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL
+    );
   }
 }

@@ -15,95 +15,95 @@ This file contains 10 Helicopter Emergency Medical Service (HEMS) missions for t
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-### HEMS #1: MedEvac at Battery Davis
+### HEMS #1: Car accident on Oakland Bay Bridge
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 4 min    | 16 km           |
+| CN02      | 7 min    | 29 km           |
 
-It is early morning with almost no wind. Your EC135 is read for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches 282° / 102°.
+It is early morning with no wind. Your EC135 is read for take-off.  
+Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches .
 
-### HEMS #2: Car accident on Bayshore Freeway
+### HEMS #2: MedEvac at Harding Park golf course
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 8 min    | 33 km           |
+| CN02      | 4 min    | 14 km           |
 
-It is early morning with almost no wind. Your EC135 is read for take-off.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches 090° / 270°.
+It is early morning with no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches .
 
-### HEMS #3: MedEvac at Alcatraz
+### HEMS #3: MedEvac at Chinese Cemetery
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
 | CN02      | 7 min    | 27 km           |
 
-It is morning with wind from 150° at 7 kts. Your EC135 is read for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches 090° / 270°.
+It is morning with no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches .
 
-### HEMS #4: Locate person in distress at Tenessee Valley Trail
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 4 min    | 17 km           |
-
-It is morning with wind from 80° at 9 kts. Your EC135 is read for take-off.  
-Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches 282° / 102°.
-
-### HEMS #5: Car accident on Junipero Serra Freeway
+### HEMS #4: MedEvac at Fort Scott Field
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 10 min   | 39 km           |
+| CN02      | 2 min    | 8 km            |
 
-It is noon with almost no wind. Your EC135 is read for take-off.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches 090° / 270°.
+It is morning with no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches .
 
-### HEMS #6: MedEvac at Everett Middle School
+### HEMS #5: MedEvac at Radio Beach
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 5 min    | 21 km           |
+| CN02      | 9 min    | 37 km           |
 
-It is a misty noon with almost no wind. Your EC135 is read for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches 090° / 270°.
+It is noon with no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches .
 
-### HEMS #7: MedEvac at Golden Gate Vista Point
+### HEMS #6: Ship rescue at position near Point Bonita
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 3 min    | 10 km           |
+
+It is a clear noon with almost no wind. Your EC135 is read for take-off.  
+Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches .
+
+### HEMS #7: MedEvac at Christmas Tree Point
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 6 min    | 22 km           |
+
+It is afternoon with almost no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches .
+
+### HEMS #8: MedEvac at Alcatraz
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 7 min    | 27 km           |
+
+It is late afternoon with almost no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches .
+
+### HEMS #9: MedEvac at Christopher Drive
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 3 min    | 11 km           |
+
+It is late afternoon with almost no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches .
+
+### HEMS #10: MedEvac at Golden Gate Vista Point
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
 | CN02      | 3 min    | 13 km           |
 
-It is afternoon with almost no wind. Your EC135 is read for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches 282° / 102°.
-
-### HEMS #8: Locate person in distress at Angle Island State Park
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 6 min    | 23 km           |
-
-It is late afternoon with wind from 260° at 9 kts. Your EC135 is read for take-off.  
-Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches 282° / 102°.
-
-### HEMS #9: MedEvac at Chinese Cemetery
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 7 min    | 27 km           |
-
-It is a gusty, misty late afternoon with wind from 130° at 13 kts. Your EC135 is read for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches 282° / 102°.
-
-### HEMS #10: Tram accident at Castro Street
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 5 min    | 22 km           |
-
-It is late afternoon with wind from 180° at 12 kts. Your EC135 is read for take-off.  
-Fly to the specified tram accident site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (CA03) with possible approaches 090° / 270°.
+It is late afternoon with almost no wind. Your EC135 is read for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CA02) with possible approaches .
 
 ---
 

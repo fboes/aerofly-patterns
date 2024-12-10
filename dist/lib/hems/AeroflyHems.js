@@ -46,7 +46,7 @@ export class AeroflyHems {
 
   async build() {
     this.locations = new GeoJsonLocations(this.configuration.geoJsonFile);
-    this.nauticalTimezone = Math.round((this.locations.heliports[0]?.geometry?.coordinates[0] ?? 0) / 15);
+    this.nauticalTimezone = Math.round((this.locations.heliports[0]?.coordinates.longitude ?? 0) / 15);
 
     const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.nauticalTimezone);
     const dates = dateYielder.entries();
@@ -108,7 +108,7 @@ ${s.mission.description.replace(/\n/g, "  \n")}
 
     const featuredSitesMarkdown = this.locations?.heliportsAndHospitals
       .map((l) => {
-        const title = l.properties.url ? `[${l.properties.title}](${l.properties.url})` : l.properties.title;
+        const title = l.url ? `[${l.title}](${l.url})` : l.title;
         return "- " + title;
       })
       .join("\n");
@@ -116,7 +116,7 @@ ${s.mission.description.replace(/\n/g, "  \n")}
     return `\
 # Landegerät: Helicopter Emergency Medical Service Missions
 
-This file contains ${this.configuration.numberOfMissions} Helicopter Emergency Medical Service (HEMS) missions for the ${this.aircraft.name} starting at ${this.locations?.heliports[0]?.properties?.title ?? "a random heliport"}.
+This file contains ${this.configuration.numberOfMissions} Helicopter Emergency Medical Service (HEMS) missions for the ${this.aircraft.name} starting at ${this.locations?.heliports[0]?.title ?? "a random heliport"}.
 
 - See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import [the missions into Aerofly FS 4](missions/custom_missions_user.tmc) and all other files.
 - See [the Aerofly FS 4 manual on challenges / missions](https://www.aerofly.com/tutorials/missions/) on how to access these missions in Aerofly FS 4.
@@ -142,16 +142,16 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
    * @returns {string} like e01045n5324
    */
   getEmergencySitesFolderSuffix() {
-    const coordinates = this.locations?.heliports[0].geometry.coordinates;
+    const coordinates = this.locations?.heliports[0].coordinates;
     if (!coordinates) {
       return "";
     }
 
     return (
-      (coordinates[0] > 0 ? "e" : "w") +
-      String(Math.abs(Math.round(coordinates[0] * 100))).padStart(5, "0") +
-      (coordinates[1] > 0 ? "n" : "s") +
-      String(Math.abs(Math.round(coordinates[1] * 100))).padStart(4, "0") +
+      (coordinates.longitude > 0 ? "e" : "w") +
+      String(Math.abs(Math.round(coordinates.longitude * 100))).padStart(5, "0") +
+      (coordinates.latitude > 0 ? "n" : "s") +
+      String(Math.abs(Math.round(coordinates.latitude * 100))).padStart(4, "0") +
       "_"
     );
   }

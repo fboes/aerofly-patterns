@@ -1,5 +1,9 @@
 # Changelog
 
+# 2.5.4
+
+- Added improved `GeoJsonLocation` to incorporate `Point` geo positions
+
 # 2.5.3
 
 - Added `hospital-JP` as combined heliport / hospital.

@@ -7,9 +7,7 @@ import {
 import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import AeroflyMissionAutofill from "../general/AeroflyMissionAutofill.js";
-import { Point } from "@fboes/geojson";
 import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
-import { GeoJsonLocations } from "./GeoJsonLocations.js";
 
 export class Scenario {
   /**
@@ -26,7 +24,7 @@ export class Scenario {
     this.configuration = configuration;
 
     /**
-     * @type {import('./GeoJsonLocations.js').GeoJsonFeature}
+     * @type {import('./GeoJsonLocations.js').GeoJsonLocation}
      */
     this.origin = this.#getRandLocation(locations.heliports);
     this.#checkIcao(this.origin);
@@ -43,20 +41,19 @@ export class Scenario {
 
     const isTransfer = this.configuration.canTransfer && locations.hospitals.length > 1 && Math.random() <= 0.1;
     /**
-     * @type {import("./GeoJsonLocations.js").GeoJsonFeature}
+     * @type {import("./GeoJsonLocations.js").GeoJsonLocation}
      */
     const waypoint1 = isTransfer
       ? this.#getRandLocation(locations.hospitals)
       : locations.randomEmergencySite.next().value;
     /**
-     * @type {import("./GeoJsonLocations.js").GeoJsonFeature}
+     * @type {import("./GeoJsonLocations.js").GeoJsonLocation}
      */
     let waypoint2 = isTransfer
       ? this.#getRandLocation(locations.hospitals, waypoint1)
       : this.#getNearestLocation(locations.hospitals, waypoint1);
 
-    const bringPatientToOrigin =
-      GeoJsonLocations.isHeliportHospital(this.origin) && !GeoJsonLocations.isHeliportHospital(waypoint2);
+    const bringPatientToOrigin = this.origin.isHeliportHospital && !waypoint2.isHeliportHospital;
     const destination = bringPatientToOrigin ? this.origin : this.#getRandLocation(locations.heliports);
     this.#checkIcao(destination);
     if (bringPatientToOrigin) {
@@ -84,21 +81,18 @@ export class Scenario {
       `HEMS #${index + 1}: ` +
       mission.title.replace(/\$\{(.+?)\}/g, (matches, variableName) => {
         const location = variableName === "origin" ? waypoint1 : waypoint2;
-        return location.properties.title;
+        return location.title;
       });
 
     const description = mission.description.replace(/\$\{(.+?)\}/g, (matches, variableName) => {
       const location = variableName === "origin" ? waypoint1 : waypoint2;
-      let description = location.properties.title;
-      if (location.properties.icaoCode) {
-        description += ` (${location.properties.icaoCode})`;
+      let description = location.title;
+      if (location.icaoCode) {
+        description += ` (${location.icaoCode})`;
       }
 
-      if (location.properties.approaches || location.properties.direction) {
-        let approaches = location.properties.approaches ?? [
-          location.properties.direction,
-          (location.properties.direction + 180) % 360,
-        ];
+      if (location.approaches || location.direction) {
+        let approaches = location.approaches ?? [location.direction, (location.direction + 180) % 360];
 
         description += ` with possible approaches ${approaches
           .map((a) => {
@@ -121,25 +115,25 @@ export class Scenario {
       conditions,
       tags: ["medical", "dropoff"],
       origin: {
-        icao: this.origin.properties.icaoCode ?? this.origin.properties.title,
-        longitude: this.origin.geometry.coordinates[0],
-        latitude: this.origin.geometry.coordinates[1],
-        alt: this.origin.geometry.coordinates[2] ?? 0,
-        dir: this.origin.properties?.direction ?? 0,
+        icao: this.origin.icaoCode ?? this.origin.title,
+        longitude: this.origin.coordinates.longitude,
+        latitude: this.origin.coordinates.latitude,
+        alt: this.origin.coordinates.elevation ?? 0,
+        dir: this.origin.direction ?? 0,
       },
       destination: {
-        icao: destination.properties.icaoCode ?? destination.properties.title,
-        longitude: destination.geometry.coordinates[0],
-        latitude: destination.geometry.coordinates[1],
-        alt: destination.geometry.coordinates[2] ?? 0,
-        dir: destination.properties?.direction ?? 0,
+        icao: destination.icaoCode ?? destination.title,
+        longitude: destination.coordinates.longitude,
+        latitude: destination.coordinates.latitude,
+        alt: destination.coordinates.elevation ?? 0,
+        dir: destination.direction ?? 0,
       },
       checkpoints,
     });
   }
 
   async build() {
-    const id = this.configuration.icaoCode ?? this.origin.properties.title;
+    const id = this.configuration.icaoCode ?? this.origin.title;
     if (id === null) {
       return;
     }
@@ -172,9 +166,9 @@ export class Scenario {
   }
 
   /**
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature[]} locations
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature?} butNot
-   * @returns {import('./GeoJsonLocations.js').GeoJsonFeature}
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation[]} locations
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation?} butNot
+   * @returns {import('./GeoJsonLocations.js').GeoJsonLocation}
    */
   #getRandLocation(locations, butNot = null) {
     if (butNot && locations.length < 2) {
@@ -183,14 +177,14 @@ export class Scenario {
     let location = null;
     do {
       location = locations[Math.floor(Math.random() * locations.length)];
-    } while (butNot && location.properties.title === butNot?.properties.title);
+    } while (butNot && location.title === butNot?.title);
     return location;
   }
 
   /**
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature[]} locations
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} location
-   * @returns {import('./GeoJsonLocations.js').GeoJsonFeature}
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation[]} locations
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
+   * @returns {import('./GeoJsonLocations.js').GeoJsonLocation}
    */
   #getNearestLocation(locations, location) {
     let distance = null;
@@ -208,24 +202,18 @@ export class Scenario {
 
   /**
    *
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} lastCp
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} cp
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} lastCp
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} cp
    * @returns {number} distance in meters
    */
   #getDistanceBetweenLocations(lastCp, cp) {
-    const vector = new Point(
-      cp.geometry.coordinates[0],
-      cp.geometry.coordinates[1],
-      cp.geometry.coordinates[2] ?? null,
-    ).getVectorTo(
-      new Point(lastCp.geometry.coordinates[0], lastCp.geometry.coordinates[1], lastCp.geometry.coordinates[2] ?? null),
-    );
+    const vector = cp.coordinates.getVectorTo(lastCp.coordinates);
     return vector.meters;
   }
 
   /**
    *
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} location
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
    * @param {import("@fboes/aerofly-custom-missions").AeroflyMissionCheckpointType} type
    * @returns {AeroflyMissionCheckpoint}
    */
@@ -233,22 +221,22 @@ export class Scenario {
     return new AeroflyMissionCheckpoint(
       this.#makeCheckpointName(location),
       type,
-      location.geometry.coordinates[0],
-      location.geometry.coordinates[1],
+      location.coordinates.longitude,
+      location.coordinates.latitude,
       {
-        altitude: location.geometry.coordinates[2] ?? 243.83,
+        altitude: location.coordinates.elevation ?? 243.83,
         flyOver: true,
       },
     );
   }
 
   /**
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} location
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
    * @returns {boolean}
    */
   #checkIcao(location) {
-    if (!location.properties.icaoCode?.match(/^[a-zA-Z0-9]+$/)) {
-      throw Error(`No property "icaCode" found on location ${location.properties.title}`);
+    if (!location.icaoCode?.match(/^[a-zA-Z0-9]+$/)) {
+      throw Error(`No property "icaCode" found on location ${location.title}`);
     }
 
     return true;
@@ -256,14 +244,14 @@ export class Scenario {
 
   /**
    *
-   * @param {import('./GeoJsonLocations.js').GeoJsonFeature} location
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
    * @returns {string}
    */
   #makeCheckpointName(location) {
-    if (location.properties.icaoCode) {
-      return location.properties.icaoCode.toUpperCase();
+    if (location.icaoCode) {
+      return location.icaoCode.toUpperCase();
     }
-    let name = location.properties["marker-symbol"] === "hospital" ? "HOSPITAL" : "EVAC";
+    let name = location.isHospital ? "HOSPITAL" : "EVAC";
 
     return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-]/, "");
   }

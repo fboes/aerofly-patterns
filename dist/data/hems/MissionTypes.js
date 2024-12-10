@@ -112,11 +112,11 @@ export const MissionTypes = {
 export const MissionTypeFinder = {
   /**
    *
-   * @param {import("../../lib/hems/GeoJsonLocations").GeoJsonFeature} location
+   * @param {import("../../lib/hems/GeoJsonLocations").GeoJsonLocation} location
    * @returns {MissionType}
    */
   get(location) {
-    switch (location.properties["marker-symbol"]) {
+    switch (location.markerSymbol) {
       case `hospital`:
         return MissionTypes.patientTransfer;
       case `car`:

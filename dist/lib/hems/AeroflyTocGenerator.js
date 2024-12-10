@@ -5,7 +5,7 @@ import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
 export class AeroflyTocGenerator {
   /**
    *
-   * @param {import("./GeoJsonLocations").GeoJsonFeature[]} locations
+   * @param {import("./GeoJsonLocations").GeoJsonLocation[]} locations
    */
   constructor(locations) {
     this.locations = locations;
@@ -28,7 +28,7 @@ export class AeroflyTocGenerator {
         xrefList.push(`\
             <[xref][element][0]
                 <[vector3_float64][position][${coordinates.longitude} ${coordinates.latitude} 0]>
-                <[float64][direction][${location.properties?.direction ?? 0}]>
+                <[float64][direction][${location.direction}]>
                 <[string8u][name][${object.xref}]>
             >`);
 
@@ -53,7 +53,7 @@ export class AeroflyTocGenerator {
 
   /**
    *
-   * @param {import("./GeoJsonLocations").GeoJsonFeature} location
+   * @param {import("./GeoJsonLocations").GeoJsonLocation} location
    * @param {number} index
    * @returns {{
    *   longitude: number,
@@ -62,8 +62,8 @@ export class AeroflyTocGenerator {
    */
   #getLonLat(location, index) {
     return {
-      longitude: location.geometry.coordinates[0] + 0.00035 * index,
-      latitude: location.geometry.coordinates[1] + 0.000064 * index,
+      longitude: location.coordinates.longitude + 0.00035 * index,
+      latitude: location.coordinates.latitude + 0.000064 * index,
     };
   }
 

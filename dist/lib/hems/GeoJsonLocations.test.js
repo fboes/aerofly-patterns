@@ -20,7 +20,7 @@ export default class GeoJsonLocationsTest {
     const g = new GeoJsonLocations(this.geoJsonFileName);
 
     while (i--) {
-      assert.ok(g.randomEmergencySite.next().value?.properties?.title);
+      assert.ok(g.randomEmergencySite.next().value?.title);
     }
     console.log(`✅ ${this.constructor.name}.testRandomEmergencySites successful`);
   }
