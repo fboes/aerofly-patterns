@@ -28,7 +28,7 @@ The Landegerät is a Command Line Interface (CLI) tool, which means you need to 
 
 ```
 Usage: npx @fboes/aerofly-patterns@latest ICAO_AIRPORT_CODE [AEROFLY_AIRCRAFT_CODE] [...options]
-Create landing pattern lessons for Aerofly FS 4.
+Create random custom missions for Aerofly FS 4.
 
 Arguments:
   ICAO_AIRPORT_CODE         ICAO airport code which needs to be available in Aerofly FS 4.

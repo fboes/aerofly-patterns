@@ -27,12 +27,12 @@ The Landegerät is a Command Line Interface (CLI) tool, which means you need to 
 
 ```
 Usage: npx -p @fboes/aerofly-patterns@latest aerofly-hems GEOJSON_FILE [AFS_AIRCRAFT_CODE] [AFS_LIVERY_CODE] [...options]
-Create landing pattern lessons for Aerofly FS 4.
+Create random custom missions for Aerofly FS 4.
 
 Arguments:
   GEOJSON_FILE              GeoJSON file containing possible mission locations.
   AFS_AIRCRAFT_CODE         Internal aircraft code in Aerofly FS 4. Defaults to "ec135".
-  AFS_LIVERY_CODE           Internal aircraft code in Aerofly FS 4. Defaults to "adac".
+  AFS_LIVERY_CODE           Internal livery code in Aerofly FS 4. Defaults to "adac".
 
 Options:
   --metar-icao=.., -m=..    Use this ICAO station code to find weather reports

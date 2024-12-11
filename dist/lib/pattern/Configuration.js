@@ -1,105 +1,114 @@
 // @ts-check
 
-import { parseArgs } from "node:util";
+import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 
-/**
- * @typedef ParseArgsParameters
- * @type {object}
- * @property {"string"|"boolean"} type
- * @property {string} [short]
- * @property {boolean|string} [default]
- * @property {string} [description]
- * @property {string} [example]
- */
-
-export class Configuration {
-  /**
-   * @type {{[key:string]: ParseArgsParameters}}
-   */
-  static options = {
-    "right-pattern": {
-      type: "string",
-      default: "",
-      description: "Comma-separated list of runway names with right-turn pattern.",
-      example: "24,33",
-    },
-    "min-altitude": {
-      type: "string",
-      default: "0",
-      description: "Minimum safe altitude of aircraft, in 100ft MSL. At least airport elevation.",
-      example: "145",
-    },
-    missions: {
-      type: "string",
-      default: "10",
-      description: "Number of missions in file.",
-    },
-    distance: {
-      type: "string",
-      default: "8",
-      description: "Initial aircraft distance from airport in Nautical Miles.",
-    },
-    "pattern-altitude": {
-      type: "string",
-      default: "1000",
-      description: "Pattern altitude in ft AGL. For MSL see `--pattern-altitude-msl`",
-    },
-    "pattern-distance": {
-      type: "string",
-      default: "1",
-      description: "Pattern distance from airport runway in Nautical Miles.",
-    },
-    "pattern-final-distance": {
-      type: "string",
-      default: "1",
-      description: "Pattern final distance from airport runway edge in Nautical Miles.",
-    },
-    "rnd-heading": {
-      type: "string",
-      default: "0",
-      description: "Randomized aircraft heading deviation from direct heading to airport in degree.",
-    },
-    "prefer-rwy": {
-      type: "string",
-      default: "",
-      description: "Comma-separated list of runway names which are preferred if wind is indecisive.",
-      example: "24,33",
-    },
-    "pattern-altitude-msl": {
-      type: "boolean",
-      short: "m",
-      default: false,
-      description: "Pattern altitude is in MSL instead of AGL",
-    },
-    "no-guides": {
-      type: "boolean",
-      default: false,
-      description: "Try to remove virtual guides from missions.",
-    },
-    directory: {
-      type: "boolean",
-      short: "d",
-      default: false,
-      description: "Create files in a subdirectory instead of current directory.",
-    },
-    help: {
-      type: "boolean",
-      short: "h",
-      default: false,
-      description: "Will output the help.",
-    },
-  };
-
+export class Configuration extends ConfigurationAbstract {
   /**
    *
    * @param {string[]} args
    */
   constructor(args) {
-    const { values, positionals } = parseArgs({
-      args: args.slice(2),
-      options: Configuration.options,
-      allowPositionals: true,
-    });
+    super(args);
+
+    /**
+     * @type {import("../general/ConfigurationAbstract.js").ConfigurationPositional[]}
+     */
+    this._arguments = [
+      {
+        name: "ICAO_AIRPORT_CODE",
+        description: "ICAO airport code which needs to be available in Aerofly FS 4.",
+        default: "KEYW",
+      },
+      {
+        name: "AFS_AIRCRAFT_CODE",
+        description: "Internal aircraft code in Aerofly FS 4.",
+        default: "c172",
+      },
+      {
+        name: "AFS_LIVERY_CODE",
+        description: "Internal livery code in Aerofly FS 4.",
+        default: "",
+      },
+    ];
+
+    /**
+     * @type {{[key:string]: import("../general/ConfigurationAbstract").ParseArgsParameters}}
+     */
+    this._options = {
+      "right-pattern": {
+        type: "string",
+        default: "",
+        description: "Comma-separated list of runway names with right-turn pattern.",
+        example: "24,33",
+      },
+      "min-altitude": {
+        type: "string",
+        default: "0",
+        description: "Minimum safe altitude of aircraft, in 100ft MSL. At least airport elevation.",
+        example: "145",
+      },
+      missions: {
+        type: "string",
+        default: "10",
+        description: "Number of missions in file.",
+      },
+      distance: {
+        type: "string",
+        default: "8",
+        description: "Initial aircraft distance from airport in Nautical Miles.",
+      },
+      "pattern-altitude": {
+        type: "string",
+        default: "1000",
+        description: "Pattern altitude in ft AGL. For MSL see `--pattern-altitude-msl`",
+      },
+      "pattern-distance": {
+        type: "string",
+        default: "1",
+        description: "Pattern distance from airport runway in Nautical Miles.",
+      },
+      "pattern-final-distance": {
+        type: "string",
+        default: "1",
+        description: "Pattern final distance from airport runway edge in Nautical Miles.",
+      },
+      "rnd-heading": {
+        type: "string",
+        default: "0",
+        description: "Randomized aircraft heading deviation from direct heading to airport in degree.",
+      },
+      "prefer-rwy": {
+        type: "string",
+        default: "",
+        description: "Comma-separated list of runway names which are preferred if wind is indecisive.",
+        example: "24,33",
+      },
+      "pattern-altitude-msl": {
+        type: "boolean",
+        short: "m",
+        default: false,
+        description: "Pattern altitude is in MSL instead of AGL",
+      },
+      "no-guides": {
+        type: "boolean",
+        default: false,
+        description: "Try to remove virtual guides from missions.",
+      },
+      directory: {
+        type: "boolean",
+        short: "d",
+        default: false,
+        description: "Create files in a subdirectory instead of current directory.",
+      },
+      help: {
+        type: "boolean",
+        short: "h",
+        default: false,
+        description: "Will output the help.",
+      },
+    };
+
+    const { values, positionals } = this.parseArgs(args);
 
     /**
      * @type {string}
@@ -188,41 +197,5 @@ export class Configuration {
      * @type {boolean}
      */
     this.help = Boolean(values["help"]);
-  }
-
-  /**
-   * @returns {string}
-   */
-  static argumentList() {
-    /**
-     * @type {string[]}
-     */
-    let parameters = [];
-
-    for (let parameterName in Configuration.options) {
-      const option = Configuration.options[parameterName];
-
-      let parameter = `--${parameterName}`;
-      if (option.type === "string") {
-        parameter += "=..";
-      }
-      if (option.short) {
-        parameter += `, -${option.short}`;
-        if (option.type === "string") {
-          parameter += "=..";
-        }
-      }
-
-      parameters.push(`\x1b[94m  ${parameter.padEnd(24, " ")} \x1b[0m ${option.description}`);
-
-      if (option.default) {
-        parameters.push(`                            Default value: \x1b[4m${option.default}\x1b[0m`);
-      }
-      if (option.example) {
-        parameters.push(`                            Example value: \x1b[4m${option.example}\x1b[0m`);
-      }
-    }
-
-    return parameters.join("\n");
   }
 }

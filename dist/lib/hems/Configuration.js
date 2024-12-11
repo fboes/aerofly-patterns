@@ -1,87 +1,87 @@
 // @ts-check
 
-import { parseArgs } from "node:util";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 
-/**
- * @typedef ParseArgsParameters
- * @type {object}
- * @property {"string"|"boolean"} type
- * @property {string} [short]
- * @property {boolean|string} [default]
- * @property {string} [description]
- * @property {string} [example]
- */
-
-export class Configuration {
-  /**
-   * @type {{[key:string]: ParseArgsParameters}}
-   */
-  static options = {
-    "metar-icao": {
-      type: "string",
-      short: "m",
-      default: "",
-      description: "Use this ICAO station code to find weather reports",
-      example: "EHAM",
-    },
-    missions: {
-      type: "string",
-      default: "10",
-      description: "Number of missions in file.",
-    },
-    callsign: {
-      type: "string",
-      default: "MEDEVAC",
-      description: "Optional callsign, else default callsign will be used.",
-    },
-    "no-guides": {
-      type: "boolean",
-      default: false,
-      description: "Try to remove virtual guides from missions.",
-    },
-    "cold-dark": {
-      type: "boolean",
-      default: false,
-      description: "Start cold & dark.",
-    },
-    transfer: {
-      type: "boolean",
-      short: "t",
-      default: false,
-      description: "Mission types can also be transfers.",
-    },
-    "no-poi": {
-      type: "boolean",
-      short: "p",
-      default: false,
-      description: "Do not generate POI files.",
-    },
-    directory: {
-      type: "boolean",
-      short: "d",
-      default: false,
-      description: "Create files in another directory instead of current directory.",
-    },
-    help: {
-      type: "boolean",
-      short: "h",
-      default: false,
-      description: "Will output the help.",
-    },
-  };
-
+export class Configuration extends ConfigurationAbstract {
   /**
    *
    * @param {string[]} args
    */
   constructor(args) {
-    const { values, positionals } = parseArgs({
-      args: args.slice(2),
-      options: Configuration.options,
-      allowPositionals: true,
-    });
+    super(args);
+
+    /**
+     * @type {import("../general/ConfigurationAbstract").ConfigurationPositional[]}
+     */
+    this._arguments = [
+      {
+        name: "GEOJSON_FILE",
+        description: "GeoJSON file containing possible mission locations.",
+      },
+      { name: "AFS_AIRCRAFT_CODE", description: "Internal aircraft code in Aerofly FS 4.", default: "ec135" },
+      { name: "AFS_LIVERY_CODE", description: "Internal livery code in Aerofly FS 4", default: "adac" },
+    ];
+
+    /**
+     * @type {{[key:string]: import("../general/ConfigurationAbstract").ParseArgsParameters}}
+     */
+    this._options = {
+      "metar-icao": {
+        type: "string",
+        short: "m",
+        default: "",
+        description: "Use this ICAO station code to find weather reports",
+        example: "EHAM",
+      },
+      missions: {
+        type: "string",
+        default: "10",
+        description: "Number of missions in file.",
+      },
+      callsign: {
+        type: "string",
+        default: "MEDEVAC",
+        description: "Optional callsign, else default callsign will be used.",
+      },
+      "no-guides": {
+        type: "boolean",
+        default: false,
+        description: "Try to remove virtual guides from missions.",
+      },
+      "cold-dark": {
+        type: "boolean",
+        default: false,
+        description: "Start cold & dark.",
+      },
+      transfer: {
+        type: "boolean",
+        short: "t",
+        default: false,
+        description: "Mission types can also be transfers.",
+      },
+      "no-poi": {
+        type: "boolean",
+        short: "p",
+        default: false,
+        description: "Do not generate POI files.",
+      },
+      directory: {
+        type: "boolean",
+        short: "d",
+        default: false,
+        description: "Create files in another directory instead of current directory.",
+      },
+      help: {
+        type: "boolean",
+        short: "h",
+        default: false,
+        description: "Will output the help.",
+      },
+    };
+
+    const { values, positionals } = this.parseArgs(args);
 
     /**
      * @type {string}
@@ -159,41 +159,5 @@ export class Configuration {
      * @type {boolean}
      */
     this.help = Boolean(values["help"]);
-  }
-
-  /**
-   * @returns {string}
-   */
-  static argumentList() {
-    /**
-     * @type {string[]}
-     */
-    let parameters = [];
-
-    for (let parameterName in Configuration.options) {
-      const option = Configuration.options[parameterName];
-
-      let parameter = `--${parameterName}`;
-      if (option.type === "string") {
-        parameter += "=..";
-      }
-      if (option.short) {
-        parameter += `, -${option.short}`;
-        if (option.type === "string") {
-          parameter += "=..";
-        }
-      }
-
-      parameters.push(`\x1b[94m  ${parameter.padEnd(24, " ")} \x1b[0m ${option.description}`);
-
-      if (option.default) {
-        parameters.push(`                            Default value: \x1b[4m${option.default}\x1b[0m`);
-      }
-      if (option.example) {
-        parameters.push(`                            Example value: \x1b[4m${option.example}\x1b[0m`);
-      }
-    }
-
-    return parameters.join("\n");
   }
 }

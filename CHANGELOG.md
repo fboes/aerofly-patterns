@@ -2,6 +2,7 @@
 
 # 2.5.4
 
+- Improved CLI output
 - Added improved `GeoJsonLocation` to incorporate `Point` geo positions
 
 # 2.5.3
