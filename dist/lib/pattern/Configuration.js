@@ -8,7 +8,7 @@ export class Configuration extends ConfigurationAbstract {
    * @param {string[]} args
    */
   constructor(args) {
-    super(args);
+    super();
 
     /**
      * @type {import("../general/ConfigurationAbstract.js").ConfigurationPositional[]}

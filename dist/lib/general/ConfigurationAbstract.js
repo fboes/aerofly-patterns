@@ -29,10 +29,7 @@ const packageJson = JSON.parse(
  */
 
 export class ConfigurationAbstract {
-  /**
-   * @param {string[]} args
-   */
-  constructor(args) {
+  constructor() {
     /**
      * @type {import("../general/ConfigurationAbstract").ConfigurationPositional[]}
      */
@@ -50,12 +47,10 @@ export class ConfigurationAbstract {
       },
     };
 
-    const values = this.parseArgs(args);
-
     /**
      * @type {boolean}
      */
-    this.help = Boolean(values["help"]);
+    this.help = false;
   }
 
   /**

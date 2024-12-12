@@ -92,7 +92,9 @@ export class Scenario {
       }
 
       if (location.approaches || location.direction) {
-        let approaches = location.approaches ?? [location.direction, (location.direction + 180) % 360];
+        let approaches = location.approaches.length
+          ? location.approaches
+          : [location.direction, (location.direction + 180) % 360];
 
         description += ` with possible approaches ${approaches
           .map((a) => {

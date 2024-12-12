@@ -2,6 +2,7 @@
 
 # 2.5.4
 
+- Extended San Francisco POIs
 - Improved CLI output
 - Added improved `GeoJsonLocation` to incorporate `Point` geo positions
 
