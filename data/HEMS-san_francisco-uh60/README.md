@@ -14,83 +14,84 @@ This file contains 10 Helicopter Emergency Medical Service (HEMS) missions for t
 - [Washington Hospital Fremont](https://skyvector.com/airport/CL64)
 - [Children's Hospital Oakland ](https://skyvector.com/airport/7CL1)
 - [John Muir Walnut Creek Medical Center](https://skyvector.com/airport/CA63)
+- [Queen Of The Valley Hospital](https://skyvector.com/airport/CN14)
 - [Stanford Health Care-Valleycare](https://skyvector.com/airport/55CA)
 
 ## Included missions
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-### HEMS #1: Transfer from Washington Hospital Fremont to Sutter Medical Center Castro Valley
+### HEMS #1: MedEvac at Golden Gate Vista Point
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 24 min   | 110 km          |
+| CN02      | 3 min    | 12 km           |
 
-It is early morning with no wind. Your UH-60 is read for take-off.  
-You will need to transfer a patient from Washington Hospital Fremont (CL64) with possible approaches 135° / 315° to Sutter Medical Center Castro Valley (0CA1) with possible approaches 090° / 270°.
+It is early morning with wind from 270° at 15 kts. Your UH-60 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
-### HEMS #2: Ship rescue at position near Point Bonita
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 2 min    | 9 km            |
-
-It is early morning with wind from 130° at 7 kts. Your UH-60 is read for take-off.  
-Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
-
-### HEMS #3: Car accident on Oakland Bay Bridge
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 7 min    | 29 km           |
-
-It is morning with wind from 070° at 15 kts. Your UH-60 is read for take-off.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ICSF Medial Center Mission Bay (18CN) with possible approaches 090° / 270°.
-
-### HEMS #4: Car accident on Junipero Serra Freeway
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 11 min   | 49 km           |
-
-It is a misty morning with no wind. Your UH-60 is read for take-off.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Mills Peninsula Medical Center (CA36) with possible approaches 000° / 180°.
-
-### HEMS #5: MedEvac at Christmas Tree Point
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 5 min    | 22 km           |
-
-It is a misty noon with almost no wind. Your UH-60 is read for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (18CN) with possible approaches 090° / 270°.
-
-### HEMS #6: MedEvac at Everett Middle School
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 5 min    | 21 km           |
-
-It is noon with no wind. Your UH-60 is read for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (18CN) with possible approaches 090° / 270°.
-
-### HEMS #7: MedEvac at Bon Tempe Lake
+### HEMS #2: MedEvac at Bon Tempe Lake
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
 | CN02      | 10 min   | 44 km           |
 
-It is afternoon with almost no wind. Your UH-60 is read for take-off.  
+It is early morning with no wind. Your UH-60 is ready for take-off.  
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
-### HEMS #8: Locate person in distress at Tenessee Valley Trail
+### HEMS #3: MedEvac at Christopher Drive
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 4 min    | 17 km           |
+| CN02      | 3 min    | 11 km           |
 
-It is late afternoon with almost no wind. Your UH-60 is read for take-off.  
-Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
+It is morning with wind from 040° at 8 kts. Your UH-60 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
+
+### HEMS #4: MedEvac at Muir Beach
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 5 min    | 21 km           |
+
+It is morning with wind from 140° at 9 kts. Your UH-60 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
+
+### HEMS #5: Car accident on Muir Valley Road
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 6 min    | 25 km           |
+
+It is a misty noon with no wind. Your UH-60 is ready for take-off.  
+Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
+
+### HEMS #6: Transfer from ICSF Medial Center Mission Bay to Children's Hospital Oakland
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 10 min   | 46 km           |
+
+It is noon with almost no wind. Your UH-60 is ready for take-off.  
+You will need to transfer a patient from ICSF Medial Center Mission Bay (18CN) with possible approaches 090° / 270° to Children's Hospital Oakland (7CL1) with possible approaches 080° / 260°.
+
+### HEMS #7: MedEvac at Niles Canyon
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 25 min   | 116 km          |
+
+It is afternoon with almost no wind. Your UH-60 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Washington Hospital Fremont (CL64) with possible approaches 135° / 315°.
+
+### HEMS #8: MedEvac at Fort Scott Field
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 2 min    | 8 km            |
+
+It is late afternoon with almost no wind. Your UH-60 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
 ### HEMS #9: MedEvac at Police Pistol Range Heliport
 
@@ -98,17 +99,17 @@ Fly to the specified location and locate the person in distress. You will need t
 | --------- | -------- | --------------- |
 | CN02      | 4 min    | 15 km           |
 
-It is late afternoon with almost no wind. Your UH-60 is read for take-off.  
+It is late afternoon with wind from 290° at 13 kts. Your UH-60 is ready for take-off.  
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
-### HEMS #10: Transfer from Children's Hospital Oakland to Mills Peninsula Medical Center
+### HEMS #10: Locate person in distress at Tennessee Valley Trail
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 16 min   | 75 km           |
+| CN02      | 4 min    | 17 km           |
 
-It is late afternoon with wind from 290° at 10 kts. Your UH-60 is read for take-off.  
-You will need to transfer a patient from Children's Hospital Oakland (7CL1) with possible approaches 080° / 260° to Mills Peninsula Medical Center (CA36) with possible approaches 000° / 180°.
+It is a clear late afternoon with wind from 290° at 13 kts. Your UH-60 is ready for take-off.  
+Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
 ---
 

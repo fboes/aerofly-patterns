@@ -191,6 +191,13 @@ export class GeoJsonLocation {
      * @type {number[]}
      */
     this.approaches = json.properties.approaches ?? [];
+    if (
+      json.properties.approaches == undefined &&
+      json.properties.direction !== undefined &&
+      json.properties.icaoCode !== undefined
+    ) {
+      this.approaches = [json.properties.direction, (json.properties.direction + 180) % 360];
+    }
 
     /**
      * @type {string?}
@@ -198,6 +205,9 @@ export class GeoJsonLocation {
     this.url = json.properties.url ?? null;
   }
 
+  /**
+   * @returns {boolean}
+   */
   get isHeliport() {
     return (
       this.markerSymbol === GeoJsonLocations.MARKER_HELIPORT ||
@@ -205,6 +215,9 @@ export class GeoJsonLocation {
     );
   }
 
+  /**
+   * @returns {boolean}
+   */
   get isHospital() {
     return (
       this.markerSymbol === GeoJsonLocations.MARKER_HOSPITAL ||

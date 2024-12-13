@@ -21,16 +21,16 @@ Get [more information about Key West International Airport on SkyVector](https:/
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-11-22  |       05:15 | 340° @ 13 kts | FEW @ 4,300 ft |      15 SM | 27      | ↖ To the north-west |
-| #2  | 2024-11-21  |       06:45 | 340° @ 11 kts | FEW @ 2,100 ft |      15 SM | 27      | ← To the west        |
-| #3  | 2024-11-20  |       08:15 | 190° @ 15 kts | CLR            |      15 SM | 27      | ↗ To the north-east |
-| #4  | 2024-11-19  |       09:45 | 160° @ 11 kts | SCT @ 3,300 ft |      15 SM | 09 (RP) | ↙ To the south-west |
-| #5  | 2024-11-18  |       11:15 | 140° @ 11 kts | OVC @ 4,900 ft |      15 SM | 09 (RP) | ↘ To the south-east |
-| #6  | 2024-11-17  |       12:45 | 70° @ 12 kts  | BKN @ 3,400 ft |      15 SM | 09 (RP) | ↗ To the north-east |
-| #7  | 2024-11-16  |       14:15 | 70° @ 10 kts  | FEW @ 3,500 ft |      15 SM | 09 (RP) | ← To the west        |
-| #8  | 2024-11-15  |       15:45 | 360° @ 5 kts  | CLR            |      15 SM | 09 (RP) | ↘ To the south-east |
-| #9  | 2024-11-14  |       17:15 | 100° @ 8 kts  | SCT @ 3,900 ft |      15 SM | 09 (RP) | → To the east        |
-| #10 | 2024-11-13  |       18:45 | 70° @ 15 kts  | FEW @ 3,600 ft |      15 SM | 09 (RP) | → To the east        |
+| #1  | 2024-12-13  |       05:15 | 40° @ 8 kts   | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
+| #2  | 2024-12-12  |       06:45 | 10° @ 15 kts  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
+| #3  | 2024-12-11  |       08:15 | 160° @ 8 kts  | SCT @ 1,800 ft |      15 SM | 09 (RP) | → To the east        |
+| #4  | 2024-12-10  |       09:45 | 110° @ 8 kts  | CLR            |      15 SM | 09 (RP) | ↓ To the south       |
+| #5  | 2024-12-09  |       11:15 | 100° @ 8 kts  | BKN @ 4,100 ft |      15 SM | 09 (RP) | ← To the west        |
+| #6  | 2024-12-08  |       12:45 | 50° @ 8 kts   | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
+| #7  | 2024-12-07  |       14:15 | 40° @ 10 kts  | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
+| #8  | 2024-12-06  |       15:45 | 360° @ 10 kts | CLR            |      15 SM | 09 (RP) | ↑ To the north       |
+| #9  | 2024-12-05  |       17:15 | 30° @ 3 kts   | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
+| #10 | 2024-12-04  |       18:45 | 60° @ 7 kts   | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

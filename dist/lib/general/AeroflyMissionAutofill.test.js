@@ -2,9 +2,9 @@
 
 import { AeroflyMission } from "@fboes/aerofly-custom-missions";
 import { strict as assert } from "node:assert";
-import AeroflyMissionAutofill from "./AeroflyMissionAutofill.js";
+import { AeroflyMissionAutofill } from "./AeroflyMissionAutofill.js";
 
-export default class AeroflyMissionAutofillTest {
+export class AeroflyMissionAutofillTest {
   constructor() {
     this.checkConversion();
   }

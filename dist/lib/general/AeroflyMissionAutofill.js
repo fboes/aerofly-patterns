@@ -3,7 +3,7 @@
 import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
 
-export default class AeroflyMissionAutofill {
+export class AeroflyMissionAutofill {
   /**
    * @type {AeroflyMission}
    */
@@ -235,7 +235,7 @@ export default class AeroflyMissionAutofill {
       case "taxi":
         return "ready to taxi";
       case "takeoff":
-        return "read for take-off";
+        return "ready for take-off";
       case "cruise":
         return "cruising";
       case "approach":

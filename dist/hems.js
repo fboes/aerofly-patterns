@@ -16,8 +16,7 @@ ${configuration.helpText}
   process.exit(0);
 }
 
-const app = new AeroflyHems(configuration);
-await app.build();
+const app = await AeroflyHems.init(configuration);
 await FileWriter.writeFile(app, process.cwd());
 
 console.log(`✅  Done`);

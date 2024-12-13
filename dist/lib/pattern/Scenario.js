@@ -82,13 +82,21 @@ export class Scenario {
     this.entryWaypoint = null;
   }
 
-  async build() {
-    const weather = await AviationWeatherApi.fetchMetar([this.airport.id], this.date);
+  /**
+   * @param {import('./Airport.js').Airport} airport
+   * @param {Configuration} configuration
+   * @param {Date?} date
+   * @returns {Promise<Scenario>}
+   */
+  static async init(airport, configuration, date) {
+    const self = new Scenario(airport, configuration, date);
+    const weather = await AviationWeatherApi.fetchMetar([self.airport.id], self.date);
     if (!weather.length) {
-      throw new Error("No METAR information from API for " + this.airport.id);
+      throw new Error("No METAR information from API for " + self.airport.id);
     }
-    this.weather = new ScenarioWeather(weather[0]);
-    this.getActiveRunway();
+    self.weather = new ScenarioWeather(weather[0]);
+    self.getActiveRunway();
+    return self;
   }
 
   getActiveRunway() {

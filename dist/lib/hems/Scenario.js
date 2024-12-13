@@ -6,7 +6,7 @@ import {
 } from "@fboes/aerofly-custom-missions";
 import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
-import AeroflyMissionAutofill from "../general/AeroflyMissionAutofill.js";
+import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
 
 export class Scenario {
@@ -91,12 +91,8 @@ export class Scenario {
         description += ` (${location.icaoCode})`;
       }
 
-      if (location.approaches || location.direction) {
-        let approaches = location.approaches.length
-          ? location.approaches
-          : [location.direction, (location.direction + 180) % 360];
-
-        description += ` with possible approaches ${approaches
+      if (location.approaches.length > 0) {
+        description += ` with possible approaches ${location.approaches
           .map((a) => {
             return `${String(Math.round(a)).padStart(3, "0")}°`;
           })
@@ -134,37 +130,48 @@ export class Scenario {
     });
   }
 
-  async build() {
-    const id = this.configuration.icaoCode ?? this.origin.title;
+  /**
+   * @param {import('./GeoJsonLocations.js').GeoJsonLocations} locations
+   * @param {Configuration} configuration
+   * @param {import('../../data/AeroflyAircraft.js').AeroflyAircraft} aircraft
+   * @param {Date} time
+   * @param {number} index
+   * @returns {Promise<Scenario>}
+   */
+  static async init(locations, configuration, aircraft, time, index = 0) {
+    const self = new Scenario(locations, configuration, aircraft, time, index);
+
+    const id = self.configuration.icaoCode ?? self.origin.title;
     if (id === null) {
-      return;
+      return self;
     }
 
-    const weathers = await AviationWeatherApi.fetchMetar([id], this.date);
+    const weathers = await AviationWeatherApi.fetchMetar([id], self.date);
     if (!weathers.length) {
       throw new Error("No METAR information from API for " + id);
     }
     const weather = new AviationWeatherNormalizedMetar(weathers[0]);
 
-    this.mission.conditions.wind = {
+    self.mission.conditions.wind = {
       direction: weather.wdir ?? 0,
       speed: weather.wspd,
       gusts: weather.wgst ?? 0,
     };
-    this.mission.conditions.temperature = weather.temp;
-    this.mission.conditions.visibility_sm = Math.min(15, weather.visib);
-    this.mission.conditions.clouds = weather.clouds.map((c) => {
+    self.mission.conditions.temperature = weather.temp;
+    self.mission.conditions.visibility_sm = Math.min(15, weather.visib);
+    self.mission.conditions.clouds = weather.clouds.map((c) => {
       return AeroflyMissionConditionsCloud.createInFeet(c.coverOctas / 8, c.base);
     });
 
-    const describer = new AeroflyMissionAutofill(this.mission);
-    this.mission.description = describer.description + "\n" + this.mission.description;
-    this.mission.tags = this.mission.tags.concat(describer.tags);
-    this.mission.distance = describer.distance;
-    this.mission.duration = describer.calculateDuration(this.aircraft.cruiseSpeed);
-    if (this.configuration.noGuides) {
+    const describer = new AeroflyMissionAutofill(self.mission);
+    self.mission.description = describer.description + "\n" + self.mission.description;
+    self.mission.tags = self.mission.tags.concat(describer.tags);
+    self.mission.distance = describer.distance;
+    self.mission.duration = describer.calculateDuration(self.aircraft.cruiseSpeed);
+    if (self.configuration.noGuides) {
       describer.removeGuides();
     }
+    return self;
   }
 
   /**

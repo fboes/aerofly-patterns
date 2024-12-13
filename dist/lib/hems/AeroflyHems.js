@@ -44,26 +44,33 @@ export class AeroflyHems {
     }
   }
 
-  async build() {
-    this.locations = new GeoJsonLocations(this.configuration.geoJsonFile);
-    this.nauticalTimezone = Math.round((this.locations.heliports[0]?.coordinates.longitude ?? 0) / 15);
+  /**
+   *
+   * @param {Configuration} configuration
+   * @returns {Promise<AeroflyHems>}
+   */
+  static async init(configuration) {
+    const self = new AeroflyHems(configuration);
+    self.locations = new GeoJsonLocations(self.configuration.geoJsonFile);
+    self.nauticalTimezone = Math.round((self.locations.heliports[0]?.coordinates.longitude ?? 0) / 15);
 
-    const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.nauticalTimezone);
+    const dateYielder = new DateYielder(self.configuration.numberOfMissions, self.nauticalTimezone);
     const dates = dateYielder.entries();
     let index = 0;
     for (const date of dates) {
-      const scenario = new Scenario(this.locations, this.configuration, this.aircraft, date, index++);
       try {
-        await scenario.build();
-        this.scenarios.push(scenario);
+        const scenario = await Scenario.init(self.locations, self.configuration, self.aircraft, date, index++);
+        self.scenarios.push(scenario);
       } catch (error) {
         console.error(error);
       }
     }
 
-    if (this.scenarios.length === 0) {
+    if (self.scenarios.length === 0) {
       throw Error("No scenarios generated, possibly because of missing weather data");
     }
+
+    return self;
   }
 
   /**

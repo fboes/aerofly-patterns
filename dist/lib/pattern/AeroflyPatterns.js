@@ -45,31 +45,39 @@ export class AeroflyPatterns {
     this.scenarios = [];
   }
 
-  async build() {
-    const airport = await AviationWeatherApi.fetchAirports([this.configuration.icaoCode]);
+  /**
+   *
+   * @param {Configuration} configuration
+   * @returns {Promise<AeroflyPatterns>}
+   */
+  static async init(configuration) {
+    const self = new AeroflyPatterns(configuration);
+
+    const airport = await AviationWeatherApi.fetchAirports([self.configuration.icaoCode]);
     if (!airport.length) {
       throw new Error("No airport information from API");
     }
-    this.airport = new Airport(airport[0], this.configuration);
+    self.airport = new Airport(airport[0], self.configuration);
 
-    const navaids = await AviationWeatherApi.fetchNavaid(this.airport.position, 10000);
-    this.airport.setNavaids(navaids);
+    const navaids = await AviationWeatherApi.fetchNavaid(self.airport.position, 10000);
+    self.airport.setNavaids(navaids);
 
-    const dateYielder = new DateYielder(this.configuration.numberOfMissions, this.airport.nauticalTimezone);
+    const dateYielder = new DateYielder(self.configuration.numberOfMissions, self.airport.nauticalTimezone);
     const dates = dateYielder.entries();
     for (const date of dates) {
-      const scenario = new Scenario(this.airport, this.configuration, date);
       try {
-        await scenario.build();
-        this.scenarios.push(scenario);
+        const scenario = await Scenario.init(self.airport, self.configuration, date);
+        self.scenarios.push(scenario);
       } catch (error) {
         console.error(error);
       }
     }
 
-    if (this.scenarios.length === 0) {
+    if (self.scenarios.length === 0) {
       throw Error("No scenarios generated, possibly because of missing weather data");
     }
+
+    return self;
   }
 
   /**

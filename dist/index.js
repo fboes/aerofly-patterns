@@ -16,8 +16,7 @@ ${configuration.helpText}
   process.exit(0);
 }
 
-const app = new AeroflyPatterns(configuration);
-await app.build();
+const app = await AeroflyPatterns.init(configuration);
 await FileWriter.writeFile(app, process.cwd());
 
 console.log(`✅  Done with ${app.airport?.name} (${app.airport?.id})`);
