@@ -15,6 +15,7 @@ import {
 } from "@fboes/aerofly-custom-missions";
 import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { Vector } from "@fboes/geojson";
+import { Markdown } from "../general/Markdown.js";
 
 /**
  * @typedef AeroflyPatternsWaypointable
@@ -249,19 +250,6 @@ export class AeroflyPatterns {
     }
 
     /**
-     * @param {number|string|undefined} value
-     * @param {number} targetLength
-     * @param {boolean} start
-     * @returns {string}
-     */
-    const pad = (value, targetLength = 2, start = false) => {
-      if (value === undefined) {
-        return "";
-      }
-      return start ? String(value).padStart(targetLength, " ") : String(value).padEnd(targetLength, " ");
-    };
-
-    /**
      * @param {number|string} value
      * @param {number} targetLength
      * @returns {string}
@@ -271,88 +259,69 @@ export class AeroflyPatterns {
     };
 
     const firstMission = this.scenarios[0];
+    const markdownTable = Markdown.table([
+      [`No `, `Local date¹`, `Local time¹`, `Wind`, `Clouds`, `Visibility`, `Runway`, `Aircraft position`],
+      [`:-:`, `-----------`, `----------:`, `----`, `------`, `---------:`, `------`, `-----------------`],
+      ...this.scenarios.map((s, index) => {
+        const localNauticalTime = LocalTime(s.date, s.airport.nauticalTimezone);
+        const clouds =
+          s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
+            ? `${s.weather?.clouds[0]?.cloudCoverCode} @ ${s.weather?.clouds[0]?.cloudBase.toLocaleString("en")} ft`
+            : s.weather?.clouds[0]?.cloudCoverCode;
 
-    let output = [`# Landing Challenges: ${this.airport.name} (${this.airport.id})`];
-
-    output.push(
-      "",
-      "This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.",
-      "",
-      `Your ${firstMission.aircraft.data.name} is ${this.configuration.initialDistance} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.`,
-      "",
-      "## Airport details",
-    );
-
+        return [
+          "#" + String(index + 1),
+          localNauticalTime.fullYear +
+            "-" +
+            padNumber(localNauticalTime.month + 1) +
+            "-" +
+            padNumber(localNauticalTime.date),
+          padNumber(localNauticalTime.hours) + ":" + padNumber(localNauticalTime.minutes),
+          !s.weather?.windSpeed ? "Calm" : `${s.weather?.windDirection}° @ ${s.weather?.windSpeed} kts`,
+          clouds,
+          Math.round(s.weather?.visibility ?? 0) + " SM",
+          s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""),
+          Formatter.getDirectionArrow(s.aircraft.vectorFromAirport.bearing) +
+            " To the " +
+            Formatter.getDirection(s.aircraft.vectorFromAirport.bearing),
+        ];
+      }),
+    ]);
     const airportDescription = this.airport.getDescription(firstMission.aircraft.data.hasNoRadioNav !== true);
-    if (airportDescription) {
-      output.push(airportDescription);
-    }
 
-    output.push(
-      "",
-      `Get [more information about ${this.airport.name} Airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}):`,
-      "",
-      `- What is the tower / CTAF frequency?
+    return `\
+# Landing Challenges: ${this.airport.name} (${this.airport.id})
+
+This [\`custom_missions_user.tmc\`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
+
+Your ${firstMission.aircraft.data.name} is ${this.configuration.initialDistance} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.
+
+## Airport details
+
+${airportDescription.trim()}
+
+Get [more information about ${this.airport.name} Airport on SkyVector](https://skyvector.com/airport/${encodeURIComponent(this.airport.id)}):
+
+- What is the tower / CTAF frequency?
 - What is the Traffic Pattern Altitude (TPA) for this airport?
 - Has the runway standard left turns, or right turns?
 - Are there additional navigational aids like ILS for your assigned runways?
-- Are there special noises abatement procedures in effect?`,
-    );
+- Are there special noise abatement procedures in effect?
 
-    output.push(
-      "",
-      "## Included missions",
-      "",
-      `| No  | Local date¹ | Local time¹ | Wind          | Clouds          | Visibility | Runway   | Aircraft position   |`,
-      `| :-: | ----------- | ----------: | ------------- | --------------- | ---------: | -------- | ------------------- |`,
-    );
-    this.scenarios.forEach((s, index) => {
-      const localNauticalTime = LocalTime(s.date, s.airport.nauticalTimezone);
-      const clouds =
-        s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
-          ? `${pad(s.weather?.clouds[0]?.cloudCoverCode, 3, true)} @ ${pad(s.weather?.clouds[0]?.cloudBase.toLocaleString("en"), 6, true)} ft`
-          : pad(s.weather?.clouds[0]?.cloudCoverCode, 15);
+## Included missions
 
-      output.push(
-        "| " +
-          [
-            "#" + pad(index + 1),
-            pad(
-              localNauticalTime.fullYear +
-                "-" +
-                padNumber(localNauticalTime.month + 1) +
-                "-" +
-                padNumber(localNauticalTime.date),
-              11,
-              true,
-            ),
-            pad(padNumber(localNauticalTime.hours) + ":" + padNumber(localNauticalTime.minutes), 11, true),
-            !s.weather?.windSpeed
-              ? pad("Calm", 13)
-              : `${pad(s.weather?.windDirection, 3, true)}° @ ${pad(s.weather?.windSpeed, 2, true)} kts`,
-            clouds,
-            pad(Math.round(s.weather?.visibility ?? 0), 7, true) + " SM",
-            pad(s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""), 8),
-            Formatter.getDirectionArrow(s.aircraft.vectorFromAirport.bearing) +
-              " To the " +
-              pad(Formatter.getDirection(s.aircraft.vectorFromAirport.bearing), 10),
-          ].join(" | ") +
-          " |",
-      );
-    });
+${markdownTable}
 
-    output.push(
-      "",
-      "¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)",
-      "",
-      "## Installation instructions",
-      "",
-      "1. Download the [`custom_missions_user.tmc`](missions/custom_missions_user.tmc)",
-      `2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.`,
-    );
+¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 
-    output.push("", `---`, ``, `Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)`, ``);
+## Installation instructions
 
-    return output.join("\n");
+1. Download the [\`custom_missions_user.tmc\`](missions/custom_missions_user.tmc)
+2. See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
+
+---
+
+Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
+`;
   }
 }

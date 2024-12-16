@@ -8,6 +8,7 @@ import { AeroflyMissionsList } from "@fboes/aerofly-custom-missions";
 import { AeroflyAircraftFinder } from "../../data/AeroflyAircraft.js";
 import { AeroflyTocGenerator } from "./AeroflyTocGenerator.js";
 import { AeroflyTslGenerator } from "./AeroflyTslGenerator.js";
+import { Markdown } from "../general/Markdown.js";
 
 export class AeroflyHems {
   /**
@@ -101,12 +102,20 @@ export class AeroflyHems {
   buildMarkdown() {
     const scenarioMarkdown = this.scenarios
       .map((s) => {
+        const markdownTable = Markdown.table([
+          ["Departure", "Duration", "Flight distance"],
+          ["---------", "--------", "---------------"],
+          [
+            s.mission.origin.icao,
+            `${Math.ceil((s.mission.duration ?? 0) / 60)} min`,
+            `${Math.ceil((s.mission.distance ?? 0) / 1000)} km`,
+          ],
+        ]);
+
         return `\
 ### ${s.mission.title}
 
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| ${s.mission.origin.icao}      | ${Math.ceil((s.mission.duration ?? 0) / 60)} min   | ${Math.ceil((s.mission.distance ?? 0) / 1000)} km           |
+${markdownTable}
 
 ${s.mission.description.replace(/\n/g, "  \n")}
 `;
