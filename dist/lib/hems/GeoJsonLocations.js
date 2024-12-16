@@ -137,6 +137,57 @@ export class GeoJsonLocations {
       }
     }
   }
+
+  /**
+   *
+   * @param {GeoJsonLocation} location
+   * @returns {GeoJsonLocation}
+   */
+  getNearesHospital(location) {
+    /** @type {number?} */
+    let distance = null;
+    let nearestLocation = this.hospitals[0];
+    for (const testLocation of this.hospitals) {
+      const vector = location.coordinates.getVectorTo(testLocation.coordinates);
+      if (distance === null || vector.meters < distance) {
+        nearestLocation = testLocation;
+        distance = vector.meters;
+      }
+    }
+
+    return nearestLocation;
+  }
+
+  /**
+   * @param {GeoJsonLocation?} butNot
+   * @returns {GeoJsonLocation}
+   */
+  getRandHospital(butNot = null) {
+    return this.getRandLocation(this.hospitals, butNot);
+  }
+
+  /**
+   * @returns {GeoJsonLocation}
+   */
+  getRandHeliport() {
+    return this.getRandLocation(this.heliports);
+  }
+
+  /**
+   * @param {GeoJsonLocation[]} locations
+   * @param {GeoJsonLocation?} butNot
+   * @returns {GeoJsonLocation}
+   */
+  getRandLocation(locations, butNot = null) {
+    if (butNot && locations.length < 2) {
+      throw Error("Not enough locations to search for an alternate");
+    }
+    let location = null;
+    do {
+      location = locations[Math.floor(Math.random() * locations.length)];
+    } while (butNot && location.title === butNot?.title);
+    return location;
+  }
 }
 
 export class GeoJsonLocation {
@@ -180,7 +231,10 @@ export class GeoJsonLocation {
     /**
      * @type {string?}
      */
-    this.icaoCode = json.properties.icaoCode ?? null;
+    this.icaoCode = json.properties.icaoCode?.replace(/[-]+/g, "") || null;
+    if (this.icaoCode !== null && !this.icaoCode.match(/^[a-zA-Z0-9]+$/)) {
+      throw new Error("Invalid icaoCode: " + this.icaoCode);
+    }
 
     /**
      * @type {number}
@@ -223,5 +277,17 @@ export class GeoJsonLocation {
       this.markerSymbol === GeoJsonLocations.MARKER_HOSPITAL ||
       this.markerSymbol === GeoJsonLocations.MARKER_HELIPORT_HOSPITAL
     );
+  }
+
+  /**
+   * @returns {string}
+   */
+  get checkPointName() {
+    if (this.icaoCode) {
+      return this.icaoCode.toUpperCase();
+    }
+    let name = this.isHospital ? "HOSPITAL" : "EVAC";
+
+    return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-]/, "");
   }
 }

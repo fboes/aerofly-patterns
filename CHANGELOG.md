@@ -2,6 +2,7 @@
 
 # 2.5.4
 
+- Refactored location methods
 - Changed to `init` pattern for `async` class instantiation
 - Extended San Francisco POIs
 - Improved CLI output

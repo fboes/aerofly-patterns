@@ -29,6 +29,7 @@ export class GeoJsonLocationsTest {
 export class GeoJsonLocationTest {
   constructor() {
     this.testApproaches();
+    this.tesIcaoCode();
   }
 
   testApproaches() {
@@ -113,5 +114,68 @@ export class GeoJsonLocationTest {
     }
 
     console.log(`✅ ${this.constructor.name}.testApproaches successful`);
+  }
+
+  tesIcaoCode() {
+    {
+      const json = {
+        properties: {
+          title: "Test",
+          icaoCode: "",
+        },
+        geometry: {
+          coordinates: [1, 2, 3],
+        },
+      };
+      const location = new GeoJsonLocation(json);
+
+      assert.strictEqual(location.icaoCode, null);
+    }
+
+    {
+      const json = {
+        properties: {
+          title: "Test",
+          icaoCode: "TEST",
+        },
+        geometry: {
+          coordinates: [1, 2, 3],
+        },
+      };
+      const location = new GeoJsonLocation(json);
+
+      assert.strictEqual(location.icaoCode, "TEST");
+    }
+
+    {
+      const json = {
+        properties: {
+          title: "Test",
+          icaoCode: "TE-ST-123",
+        },
+        geometry: {
+          coordinates: [1, 2, 3],
+        },
+      };
+      const location = new GeoJsonLocation(json);
+
+      assert.strictEqual(location.icaoCode, "TEST123");
+    }
+
+    assert.throws(() => {
+      const json = {
+        properties: {
+          title: "Test",
+          icaoCode: "ü-()",
+        },
+        geometry: {
+          coordinates: [1, 2, 3],
+        },
+      };
+      const location = new GeoJsonLocation(json);
+      assert.ok(location.icaoCode);
+    });
+
+    console.log(`✅ ${this.constructor.name}.tesIcaoCode successful`);
   }
 }

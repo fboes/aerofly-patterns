@@ -26,8 +26,7 @@ export class Scenario {
     /**
      * @type {import('./GeoJsonLocations.js').GeoJsonLocation}
      */
-    this.origin = this.#getRandLocation(locations.heliports);
-    this.#checkIcao(this.origin);
+    this.origin = locations.getRandHeliport();
 
     /**
      * @type {Date}
@@ -43,19 +42,14 @@ export class Scenario {
     /**
      * @type {import("./GeoJsonLocations.js").GeoJsonLocation}
      */
-    const waypoint1 = isTransfer
-      ? this.#getRandLocation(locations.hospitals)
-      : locations.randomEmergencySite.next().value;
+    const waypoint1 = isTransfer ? locations.getRandHospital() : locations.randomEmergencySite.next().value;
     /**
      * @type {import("./GeoJsonLocations.js").GeoJsonLocation}
      */
-    let waypoint2 = isTransfer
-      ? this.#getRandLocation(locations.hospitals, waypoint1)
-      : this.#getNearestLocation(locations.hospitals, waypoint1);
+    let waypoint2 = isTransfer ? locations.getRandHospital(waypoint1) : locations.getNearesHospital(waypoint1);
 
     const bringPatientToOrigin = this.origin.isHeliportHospital && !waypoint2.isHeliportHospital;
-    const destination = bringPatientToOrigin ? this.origin : this.#getRandLocation(locations.heliports);
-    this.#checkIcao(destination);
+    const destination = bringPatientToOrigin ? this.origin : locations.getRandHeliport();
     if (bringPatientToOrigin) {
       waypoint2 = destination;
     }
@@ -175,52 +169,6 @@ export class Scenario {
   }
 
   /**
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation[]} locations
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation?} butNot
-   * @returns {import('./GeoJsonLocations.js').GeoJsonLocation}
-   */
-  #getRandLocation(locations, butNot = null) {
-    if (butNot && locations.length < 2) {
-      throw Error("Not enough locations to search for an alternate");
-    }
-    let location = null;
-    do {
-      location = locations[Math.floor(Math.random() * locations.length)];
-    } while (butNot && location.title === butNot?.title);
-    return location;
-  }
-
-  /**
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation[]} locations
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
-   * @returns {import('./GeoJsonLocations.js').GeoJsonLocation}
-   */
-  #getNearestLocation(locations, location) {
-    let distance = null;
-    let nearestLocation = locations[0];
-    for (const testLocation of locations) {
-      const testDistance = this.#getDistanceBetweenLocations(testLocation, location);
-      if (distance === null || testDistance < distance) {
-        nearestLocation = testLocation;
-        distance = testDistance;
-      }
-    }
-
-    return nearestLocation;
-  }
-
-  /**
-   *
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} lastCp
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} cp
-   * @returns {number} distance in meters
-   */
-  #getDistanceBetweenLocations(lastCp, cp) {
-    const vector = cp.coordinates.getVectorTo(lastCp.coordinates);
-    return vector.meters;
-  }
-
-  /**
    *
    * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
    * @param {import("@fboes/aerofly-custom-missions").AeroflyMissionCheckpointType} type
@@ -228,7 +176,7 @@ export class Scenario {
    */
   #makeCheckpoint(location, type = "waypoint") {
     return new AeroflyMissionCheckpoint(
-      this.#makeCheckpointName(location),
+      location.checkPointName,
       type,
       location.coordinates.longitude,
       location.coordinates.latitude,
@@ -237,31 +185,5 @@ export class Scenario {
         flyOver: true,
       },
     );
-  }
-
-  /**
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
-   * @returns {boolean}
-   */
-  #checkIcao(location) {
-    if (!location.icaoCode?.match(/^[a-zA-Z0-9]+$/)) {
-      throw Error(`No property "icaCode" found on location ${location.title}`);
-    }
-
-    return true;
-  }
-
-  /**
-   *
-   * @param {import('./GeoJsonLocations.js').GeoJsonLocation} location
-   * @returns {string}
-   */
-  #makeCheckpointName(location) {
-    if (location.icaoCode) {
-      return location.icaoCode.toUpperCase();
-    }
-    let name = location.isHospital ? "HOSPITAL" : "EVAC";
-
-    return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-]/, "");
   }
 }
