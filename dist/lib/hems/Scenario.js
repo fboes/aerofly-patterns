@@ -24,11 +24,6 @@ export class Scenario {
     this.configuration = configuration;
 
     /**
-     * @type {import('./GeoJsonLocations.js').GeoJsonLocation}
-     */
-    this.origin = locations.getRandHeliport();
-
-    /**
      * @type {Date}
      */
     this.date = time;
@@ -37,6 +32,11 @@ export class Scenario {
      * @type {import("../../data/AeroflyAircraft.js").AeroflyAircraft}
      */
     this.aircraft = aircraft;
+
+    /**
+     * @type {import('./GeoJsonLocations.js').GeoJsonLocation}
+     */
+    const origin = locations.getRandHeliport();
 
     const isTransfer = this.configuration.canTransfer && locations.hospitals.length > 1 && Math.random() <= 0.1;
     /**
@@ -48,19 +48,19 @@ export class Scenario {
      */
     let waypoint2 = isTransfer ? locations.getRandHospital(waypoint1) : locations.getNearesHospital(waypoint1);
 
-    const bringPatientToOrigin = this.origin.isHeliportHospital && !waypoint2.isHeliportHospital;
-    const destination = bringPatientToOrigin ? this.origin : locations.getRandHeliport();
+    const bringPatientToOrigin = origin.isHeliportHospital && !waypoint2.isHeliportHospital;
+    const destination = bringPatientToOrigin ? origin : locations.getRandHeliport();
     if (bringPatientToOrigin) {
       waypoint2 = destination;
     }
     const checkpoints = bringPatientToOrigin
       ? [
-          this.#makeCheckpoint(this.origin, "origin"),
+          this.#makeCheckpoint(origin, "origin"),
           this.#makeCheckpoint(waypoint1),
           this.#makeCheckpoint(destination, "destination"),
         ]
       : [
-          this.#makeCheckpoint(this.origin, "origin"),
+          this.#makeCheckpoint(origin, "origin"),
           this.#makeCheckpoint(waypoint1),
           this.#makeCheckpoint(waypoint2),
           this.#makeCheckpoint(destination, "destination"),
@@ -107,11 +107,11 @@ export class Scenario {
       conditions,
       tags: ["medical", "dropoff"],
       origin: {
-        icao: this.origin.icaoCode ?? this.origin.title,
-        longitude: this.origin.coordinates.longitude,
-        latitude: this.origin.coordinates.latitude,
-        alt: this.origin.coordinates.elevation ?? 0,
-        dir: this.origin.direction ?? 0,
+        icao: origin.icaoCode ?? origin.title,
+        longitude: origin.coordinates.longitude,
+        latitude: origin.coordinates.latitude,
+        alt: origin.coordinates.elevation ?? 0,
+        dir: origin.direction ?? 0,
       },
       destination: {
         icao: destination.icaoCode ?? destination.title,
@@ -135,7 +135,7 @@ export class Scenario {
   static async init(locations, configuration, aircraft, time, index = 0) {
     const self = new Scenario(locations, configuration, aircraft, time, index);
 
-    const id = self.configuration.icaoCode ?? self.origin.title;
+    const id = self.configuration.icaoCode ?? self.mission.origin.icao;
     if (id === null) {
       return self;
     }
