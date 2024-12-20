@@ -118,6 +118,9 @@ export class Scenario {
    * @returns {GeoJsonLocation[]}
    */
   static getMissionLocations(locations, isTransfer) {
+    /**
+     * @type {GeoJsonLocation[]}
+     */
     const missionLocations = [
       locations.getRandHeliport(),
       isTransfer ? locations.getRandHospital() : locations.randomEmergencySite.next().value,
@@ -125,8 +128,8 @@ export class Scenario {
     missionLocations.push(
       isTransfer ? locations.getRandHospital(missionLocations[1]) : locations.getNearesHospital(missionLocations[1]),
     );
-    const bringPatientToOrigin = missionLocations[0].isHeliportHospital && !missionLocations[2].isHeliportHospital;
-    if (!bringPatientToOrigin) {
+    const broughtPatientToOrigin = missionLocations[0] === missionLocations[2];
+    if (!broughtPatientToOrigin) {
       missionLocations.push(locations.getRandHeliport());
     }
     return missionLocations;
@@ -227,7 +230,7 @@ export class Scenario {
     });
 
     const course = (approach + (asDeparture ? 180 : 0)) % 360;
-    const vector = new Vector(1852 * 1.5, (approach + 180) % 360);
+    const vector = new Vector(1852 * (asDeparture ? 0.25 : 1.5), (approach + 180) % 360);
     return missionLocation.clone(`${String(Math.round(course / 10)).padStart(2, "0")}H`, vector, 500);
   }
 
@@ -260,7 +263,7 @@ export class Scenario {
       location.coordinates.latitude,
       {
         altitude: location.coordinates.elevation ?? 0,
-        flyOver: !location.checkPointName.match(/[+]\d+$/),
+        flyOver: !location.checkPointName.match(/\d+H$/),
       },
     );
   }
