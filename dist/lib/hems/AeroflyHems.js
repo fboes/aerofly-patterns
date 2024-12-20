@@ -117,10 +117,9 @@ export class AeroflyHems {
 
 ${markdownTable}
 
-${s.mission.description.replace(/\n/g, "  \n")}
-`;
+${s.mission.description.replace(/\n/g, "  \n")}`;
       })
-      .join("\n");
+      .join("\n\n");
 
     const featuredSitesMarkdown = this.locations?.heliportsAndHospitals
       .map((l) => {

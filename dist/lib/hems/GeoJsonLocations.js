@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Point } from "@fboes/geojson";
+import { Point, Vector } from "@fboes/geojson";
 import * as fs from "node:fs";
 
 /**
@@ -167,7 +167,7 @@ export class GeoJsonLocations {
   }
 
   /**
-   * @returns {GeoJsonLocation}
+   * @returns {GeoJsonLocation} heliports or hospitals with heliport
    */
   getRandHeliport() {
     return this.getRandLocation(this.heliports);
@@ -232,7 +232,7 @@ export class GeoJsonLocation {
      * @type {string?}
      */
     this.icaoCode = json.properties.icaoCode?.replace(/[-]+/g, "") || null;
-    if (this.icaoCode !== null && !this.icaoCode.match(/^[a-zA-Z0-9]+$/)) {
+    if (this.icaoCode !== null && !this.icaoCode.match(/^[a-zA-Z0-9-+]+$/)) {
       throw new Error("Invalid icaoCode: " + this.icaoCode);
     }
 
@@ -288,6 +288,31 @@ export class GeoJsonLocation {
     }
     let name = this.isHospital ? "HOSPITAL" : "EVAC";
 
-    return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-]/, "");
+    return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-+]/, "");
+  }
+
+  /**
+   *
+   * @param {string} title
+   * @param {Vector?} vector
+   * @param {number} [altitudeChange] in feet
+   * @returns {GeoJsonLocation}
+   */
+  clone(title = "", vector = null, altitudeChange = 0) {
+    const coordinates = vector ? this.coordinates.getPointBy(vector) : this.coordinates;
+    let altitude = (coordinates.elevation ?? 0) * 3.28084; // in feet
+    altitude += altitudeChange; // plus feet
+    altitude = Math.ceil(altitude / 100) * 100; // rounded to the next 100ft
+    altitude /= 3.28084; // in meters
+
+    return new GeoJsonLocation({
+      properties: {
+        title: title,
+        icaoCode: title,
+      },
+      geometry: {
+        coordinates: [coordinates.longitude, coordinates.latitude, altitude],
+      },
+    });
   }
 }

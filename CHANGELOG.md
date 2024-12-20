@@ -2,6 +2,7 @@
 
 # 2.5.4
 
+- Added option to add approaches to HEMS missions
 - Improved Markdown table output
 - Refactored location methods
 - Changed to `init` pattern for `async` class instantiation

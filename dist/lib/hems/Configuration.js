@@ -61,6 +61,12 @@ export class Configuration extends ConfigurationAbstract {
         default: false,
         description: "Mission types can also be transfers.",
       },
+      approach: {
+        type: "boolean",
+        short: "a",
+        default: false,
+        description: "Add approach guides to flight plan.",
+      },
       "no-poi": {
         type: "boolean",
         short: "p",
@@ -151,7 +157,12 @@ export class Configuration extends ConfigurationAbstract {
     this.canTransfer = Boolean(values["transfer"]);
 
     /**
-     * @type {boolean} missions types can also be "transfer"
+     * @type {boolean} Add approach guides to flight plan.
+     */
+    this.withApproaches = Boolean(values["approach"]);
+
+    /**
+     * @type {boolean} Do not generate POI files.
      */
     this.doNotGeneratePois = Boolean(values["no-poi"]);
 
