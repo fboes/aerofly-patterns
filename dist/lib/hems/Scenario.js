@@ -215,14 +215,12 @@ export class Scenario {
    * @returns {GeoJsonLocation}
    */
   #getApproachLocation(missionLocation, weather, asDeparture = false) {
-    const windDirection = (weather.wdir + (asDeparture ? 0 : 180)) % 360;
-
     /**
      * @param {number} alignment
      * @returns {number}
      */
     const difference = (alignment) => {
-      return Math.abs(degreeDifference(alignment, windDirection));
+      return Math.abs(degreeDifference((alignment + (asDeparture ? 180 : 0)) % 360, weather.wdir));
     };
 
     let approach = missionLocation.approaches.reduce((a, b) => {
@@ -230,8 +228,9 @@ export class Scenario {
     });
 
     const course = (approach + (asDeparture ? 180 : 0)) % 360;
-    const vector = new Vector(1852 * (asDeparture ? 0.25 : 1.5), (approach + 180) % 360);
-    return missionLocation.clone(`${String(Math.round(course / 10)).padStart(2, "0")}H`, vector, 500);
+    const vector = new Vector(1852 * (asDeparture ? 0.75 : 1.5), (approach + 180) % 360);
+
+    return missionLocation.clone(`${String(Math.round(course / 10) % 36).padStart(2, "0")}H`, vector, 500);
   }
 
   /**

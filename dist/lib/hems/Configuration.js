@@ -52,6 +52,7 @@ export class Configuration extends ConfigurationAbstract {
       },
       "cold-dark": {
         type: "boolean",
+        short: "c",
         default: false,
         description: "Start cold & dark.",
       },

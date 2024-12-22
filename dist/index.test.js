@@ -7,6 +7,7 @@ import { FormatterTest } from "./lib/general/Formatter.test.js";
 import { AeroflyMissionAutofillTest } from "./lib/general/AeroflyMissionAutofill.test.js";
 import { GeoJsonLocationsTest, GeoJsonLocationTest } from "./lib/hems/GeoJsonLocations.test.js";
 import { MarkdownTest } from "./lib/general/Markdown.test.js";
+import { ScenarioTest } from "./lib/hems/Scenario.test.js";
 
 new AirportTest();
 new AviationWeatherApiTest();
@@ -17,5 +18,6 @@ new AeroflyMissionAutofillTest();
 new GeoJsonLocationsTest();
 new GeoJsonLocationTest();
 new MarkdownTest();
+new ScenarioTest();
 
 process.exit();

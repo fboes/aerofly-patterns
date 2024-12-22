@@ -26,13 +26,15 @@ The Landegerät is a Command Line Interface (CLI) tool, which means you need to 
 ### CLI usage
 
 ```
-Usage: npx -p @fboes/aerofly-patterns@latest aerofly-hems GEOJSON_FILE [AFS_AIRCRAFT_CODE] [AFS_LIVERY_CODE] [...options]
-Create random custom missions for Aerofly FS 4.
+Usage: npx -p @fboes/aerofly-patterns@latest aerofly-hems GEOJSON_FILE [AFS_AIRCRAFT_CODE] [AFS_LIVERY_CODE] [...options]      
+v2.5.4: Landegerät - Create random custom missions for Aerofly FS 4.
 
 Arguments:
   GEOJSON_FILE              GeoJSON file containing possible mission locations.
-  AFS_AIRCRAFT_CODE         Internal aircraft code in Aerofly FS 4. Defaults to "ec135".
-  AFS_LIVERY_CODE           Internal livery code in Aerofly FS 4. Defaults to "adac".
+  AFS_AIRCRAFT_CODE         Internal aircraft code in Aerofly FS 4.
+                            Default value: ec135
+  AFS_LIVERY_CODE           Internal livery code in Aerofly FS 4
+                            Default value: adac
 
 Options:
   --metar-icao=.., -m=..    Use this ICAO station code to find weather reports
@@ -40,9 +42,11 @@ Options:
   --missions=..             Number of missions in file.
                             Default value: 10
   --callsign=..             Optional callsign, else default callsign will be used.
+                            Default value: MEDEVAC
   --no-guides               Try to remove virtual guides from missions.
-  --cold-dark               Start cold & dark.
+  --cold-dark, -c           Start cold & dark.
   --transfer, -t            Mission types can also be transfers.
+  --approach, -a            Add approach guides to flight plan.
   --no-poi, -p              Do not generate POI files.
   --directory, -d           Create files in another directory instead of current directory.
   --help, -h                Will output the help.
