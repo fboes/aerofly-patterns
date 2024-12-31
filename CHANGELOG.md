@@ -1,6 +1,10 @@
 # Changelog
 
-# 2.5.4
+## 2.5.5
+
+- Improved mission description generator `AeroflyMissionAutofill`.
+
+## 2.5.4
 
 - Added option to add approaches to HEMS missions
 - Improved Markdown table output
@@ -10,42 +14,42 @@
 - Improved CLI output
 - Added improved `GeoJsonLocation` to incorporate `Point` geo positions
 
-# 2.5.3
+## 2.5.3
 
 - Added `hospital-JP` as combined heliport / hospital.
 - Improved scenery generator
 - Set new default callsign "MEDEVAC"
 - Added `approaches` and `url` to GeoJSON for improved HEMS descriptions
 
-# 2.5.2
+## 2.5.2
 
 - Improved mission description generator
 
-# 2.5.1
+## 2.5.1
 
 - Fixed removal of guides
 
-# 2.5.0
+## 2.5.0
 
 - Added Robin DR 400
 
-# 2.5.0-0
+## 2.5.0-0
 
 - Changed directories for HEMS mission output
 - Added `README.md` export for HEMS missions
 - Changed folder export behavior so all exports are meant to be used from the user directory (instead of the `missions`directory)
 - Exporting GeoJSON files for HEMS missions
 
-# 2.4.0-0
+## 2.4.0-0
 
 - Added HEMS mission generator
 - Added `--no-guides` parameter to remove guides from missions
 
-# 2.3.8
+## 2.3.8
 
 - Added new cloud properties
 
-# 2.3.7
+## 2.3.7
 
 - Updated mission file generator, adding tags
 - Added Data Transfer Objects for Aviation Weather API

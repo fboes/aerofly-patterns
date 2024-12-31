@@ -7,106 +7,107 @@ This file contains 10 Helicopter Emergency Medical Service (HEMS) missions for t
 
 ## Featured sites
 
-- [Lüneburg airfield](https://aip.dfs.de/BasicVFR/2024NOV14/pages/E0E85B4C1707CBD69A599402F931EF2B.html)
-- [Hospital Winsen/Luhe](https://aip.dfs.de/BasicVFR/2024NOV14/pages/96CBC2C4BD976E059BA38B44DC6608E0.html)
-- [Klinikum Uelzen](https://aip.dfs.de/BasicVFR/2024NOV14/pages/B9542FE4F8FF7580CADA1873E385C223.html)
-- [Klinikum Lüneburg](https://aip.dfs.de/BasicVFR/2024NOV14/pages/40ff7f1f0a9d83ba77a680996b897ed3.html)
-- [Buchholz hospital](https://aip.dfs.de/BasicVFR/2024NOV14/pages/C52C830CE7D53C64C769A71576C8FAB7.html)
+- [Lüneburg airfield](https://aip.dfs.de/BasicVFR/)
+- [Hospital Winsen/Luhe](https://aip.dfs.de/BasicVFR/)
+- [Klinikum Uelzen](https://aip.dfs.de/BasicVFR/)
+- [Klinikum Lüneburg](https://aip.dfs.de/BasicVFR/)
+- [Buchholz hospital](https://aip.dfs.de/BasicVFR/)
 - Soltau Klinikum
+- Johanniter Hospital Geesthacht
 
 ## Included missions
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-### HEMS #1: MedEvac at Kloster Ebstorf
+### HEMS #1: Ship rescue at position near Altstadt
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 10 min   | 43 km           |
+
+It is an overcast early morning with wind from 230° at 14 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified ship's position to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Johanniter Hospital Geesthacht (DE0493) with possible approaches 080° / 260°.
+
+### HEMS #2: MedEvac at Hohnstorf
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 12 min   | 49 km           |
+
+It is early morning with wind from 240° at 13 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Johanniter Hospital Geesthacht (DE0493) with possible approaches 080° / 260°.
+
+### HEMS #3: MedEvac at Scharnebeck Schiffshebewerk
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 5 min    | 19 km           |
+
+It is a misty morning with wind from 220° at 8 kts under IFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
+
+### HEMS #4: MedEvac at B216 near Norndorf
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 6 min    | 26 km           |
+
+It is a foggy morning with almost no wind under IFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
+
+### HEMS #5: MedEvac at Heinsen
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 7 min    | 27 km           |
+
+It is a foggy noon with wind from 150° at 6 kts under IFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
+
+### HEMS #6: MedEvac at Heiligenthal, Hauptstraße
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| EDHG      | 5 min    | 18 km           |
+
+It is an overcast noon with almost no wind under IFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
+
+### HEMS #7: MedEvac at Kloster Ebstorf
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
 | EDHG      | 16 min   | 66 km           |
 
-It is an overcast early morning with wind from 110° at 11 kts. Your EC135 is ready for take-off.  
+It is an overcast afternoon with almost no wind under IFR conditions. Your EC135 is ready for take-off.  
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Uelzen (de0999) with possible approaches 231° / 051°.
 
-### HEMS #2: MedEvac at Bispingen Tank & Rast
+### HEMS #8: MedEvac at Elbe Fischtreppe
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 24 min   | 101 km          |
+| EDHG      | 11 min   | 46 km           |
 
-It is a misty early morning with almost no wind. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Soltau Klinikum.
+It is late afternoon with wind from 220° at 6 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Johanniter Hospital Geesthacht (DE0493) with possible approaches 080° / 260°.
 
-### HEMS #3: MedEvac at Amt Neuhaus
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 19 min   | 77 km           |
-
-It is an overcast morning with almost no wind. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
-
-### HEMS #4: Car accident on B4 near Melbeck
+### HEMS #9: MedEvac at Barum center
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 6 min    | 24 km           |
+| EDHG      | 10 min   | 43 km           |
 
-It is an overcast morning with wind from 070° at 10 kts. Your EC135 is ready for take-off.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
+It is a clear late afternoon with wind from 290° at 11 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Johanniter Hospital Geesthacht (DE0493) with possible approaches 080° / 260°.
 
-### HEMS #5: MedEvac at Salzhausen school
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 13 min   | 55 km           |
-
-It is a gusty noon with wind from 050° at 15 kts. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches 132° / 312°.
-
-### HEMS #6: MedEvac at Elbe Fischtreppe
+### HEMS #10: MedEvac at Ratzeburg town hall
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| EDHG      | 13 min   | 55 km           |
+| EDHG      | 28 min   | 115 km          |
 
-It is an overcast noon with wind from 060° at 8 kts. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Hospital Winsen/Luhe (de1034) with possible approaches 132° / 312°.
-
-### HEMS #7: MedEvac at Amelinghausen, Sportplatz
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 11 min   | 43 km           |
-
-It is afternoon with wind from 140° at 13 kts. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
-
-### HEMS #8: MedEvac at Ravener Dorfstraße
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 11 min   | 44 km           |
-
-It is late afternoon with wind from 310° at 7 kts. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
-
-### HEMS #9: MedEvac at Neetze lake
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 7 min    | 28 km           |
-
-It is late afternoon with wind from 150° at 16 kts. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
-
-### HEMS #10: Car accident on B4 near Bargdorf
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| EDHG      | 8 min    | 33 km           |
-
-It is late afternoon with wind from 290° at 7 kts. Your EC135 is ready for take-off.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Klinikum Lüneburg (de0819) with possible approaches 280° / 178°.
+It is late afternoon with wind from 260° at 11 kts under IFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Johanniter Hospital Geesthacht (DE0493) with possible approaches 080° / 260°.
 
 ---
 

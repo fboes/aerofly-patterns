@@ -21,94 +21,94 @@ This file contains 10 Helicopter Emergency Medical Service (HEMS) missions for t
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-### HEMS #1: MedEvac at West Marin School, Point Reyes Station
+### HEMS #1: Car accident on Muir Valley Road
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 20 min   | 83 km           |
+| CN02      | 6 min    | 25 km           |
 
-It is early morning with wind from 270° at 15 kts. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
+It is a clear early morning with almost no wind under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
-### HEMS #2: Car accident on Junipero Serra Freeway
+### HEMS #2: Car accident on Cabrillo Highway
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 12 min   | 49 km           |
+| CN02      | 15 min   | 61 km           |
 
-It is early morning with no wind. Your EC135 is ready for take-off.  
+It is a gusty early morning with wind from 200° at 16 kts under VFR conditions. Your EC135 is ready for take-off.  
 Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Mills Peninsula Medical Center (CA36) with possible approaches 000° / 180°.
 
-### HEMS #3: MedEvac at Christopher Drive
+### HEMS #3: MedEvac at Centennial Drive
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 3 min    | 11 km           |
+| CN02      | 13 min   | 52 km           |
 
-It is morning with wind from 040° at 8 kts. Your EC135 is ready for take-off.  
+It is morning with wind from 140° at 6 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Children's Hospital Oakland  (7CL1) with possible approaches 080° / 260°.
+
+### HEMS #4: MedEvac at Alcatraz
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 7 min    | 27 km           |
+
+It is morning with wind from 280° at 10 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to ICSF Medial Center Mission Bay (18CN) with possible approaches 090° / 270°.
+
+### HEMS #5: MedEvac at Golden Gate Vista Point
+
+| Departure | Duration | Flight distance |
+| --------- | -------- | --------------- |
+| CN02      | 3 min    | 12 km           |
+
+It is noon with wind from 120° at 6 kts under VFR conditions. Your EC135 is ready for take-off.  
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
-### HEMS #4: MedEvac at Antenna Test Range
+### HEMS #6: MedEvac at Cypress Grove
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 16 min   | 65 km           |
+| CN02      | 26 min   | 110 km          |
 
-It is morning with wind from 140° at 9 kts. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mills Peninsula Medical Center (CA36) with possible approaches 000° / 180°.
+It is noon with almost no wind under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
-### HEMS #5: MedEvac at Half Moon Bay beach
+### HEMS #7: MedEvac at Infineon Raceway
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 18 min   | 75 km           |
+| CN02      | 31 min   | 128 km          |
 
-It is a misty noon with no wind. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mills Peninsula Medical Center (CA36) with possible approaches 000° / 180°.
+It is a gusty afternoon with wind from 280° at 15 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Queen Of The Valley Hospital (CN14) with possible approaches 090° / 270°.
 
-### HEMS #6: MedEvac at Fort Scott Field
+### HEMS #8: MedEvac at Fort Scott Field
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
 | CN02      | 2 min    | 8 km            |
 
-It is noon with almost no wind. Your EC135 is ready for take-off.  
+It is late afternoon with almost no wind under VFR conditions. Your EC135 is ready for take-off.  
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
-### HEMS #7: Locate person in distress at Tennessee Valley Trail
+### HEMS #9: MedEvac at Antenna Test Range
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 4 min    | 17 km           |
+| CN02      | 16 min   | 65 km           |
 
-It is afternoon with almost no wind. Your EC135 is ready for take-off.  
-Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
+It is late afternoon with wind from 010° at 6 kts under VFR conditions. Your EC135 is ready for take-off.  
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mills Peninsula Medical Center (CA36) with possible approaches 000° / 180°.
 
-### HEMS #8: MedEvac at Google Campus West
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 30 min   | 126 km          |
-
-It is late afternoon with almost no wind. Your EC135 is ready for take-off.  
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Washington Hospital Fremont (CL64) with possible approaches 135° / 315°.
-
-### HEMS #9: Car accident on Oakland Bay Bridge
+### HEMS #10: MedEvac at Christopher Drive
 
 | Departure | Duration | Flight distance |
 | --------- | -------- | --------------- |
-| CN02      | 7 min    | 29 km           |
+| CN02      | 3 min    | 11 km           |
 
-It is late afternoon with wind from 290° at 13 kts. Your EC135 is ready for take-off.  
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to ICSF Medial Center Mission Bay (18CN) with possible approaches 090° / 270°.
-
-### HEMS #10: MedEvac at Egret Way in Harbor Point
-
-| Departure | Duration | Flight distance |
-| --------- | -------- | --------------- |
-| CN02      | 6 min    | 23 km           |
-
-It is a clear late afternoon with wind from 290° at 13 kts. Your EC135 is ready for take-off.  
+It is a misty late afternoon with wind from 010° at 6 kts under IFR conditions. Your EC135 is ready for take-off.  
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to San Francisco VA Medical Center (CN02) with possible approaches 282° / 102°.
 
 ---

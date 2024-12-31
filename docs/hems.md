@@ -26,7 +26,7 @@ The Landegerät is a Command Line Interface (CLI) tool, which means you need to 
 ### CLI usage
 
 ```
-Usage: npx -p @fboes/aerofly-patterns@latest aerofly-hems GEOJSON_FILE [AFS_AIRCRAFT_CODE] [AFS_LIVERY_CODE] [...options]      
+Usage: npx -p @fboes/aerofly-patterns@latest aerofly-hems GEOJSON_FILE [AFS_AIRCRAFT_CODE] [AFS_LIVERY_CODE] [...options]
 v2.5.4: Landegerät - Create random custom missions for Aerofly FS 4.
 
 Arguments:
