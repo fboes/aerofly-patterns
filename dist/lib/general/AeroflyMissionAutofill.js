@@ -18,15 +18,6 @@ export class AeroflyMissionAutofill {
   }
 
   /**
-   *
-   * @param {string} text
-   * @returns {string}
-   */
-  #getAorAn(text) {
-    return text.match(/^[aeiou]/) ? "an" : "a";
-  }
-
-  /**
    * @returns {string}
    */
   get title() {
@@ -41,10 +32,9 @@ export class AeroflyMissionAutofill {
    */
   get description() {
     let weatherAdjectives = this.weatherAdjectives;
-    let weatherAdjectivesString =
-      weatherAdjectives.length > 0 ? ` ${this.#getAorAn(weatherAdjectives[0])} ${weatherAdjectives.join(", ")}` : "";
+    let weatherAdjectivesString = weatherAdjectives.length > 0 ? ` ${weatherAdjectives.join(", ")}` : "";
 
-    return `It is${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind} under ${this.flightConditions} conditions. Your ${this.aircraftName} is ${this.flightSetting}.`;
+    return `Your ${this.aircraftName} is ${this.flightSetting} on this${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind} (${this.flightConditions} conditions).`;
   }
 
   /**
@@ -128,6 +118,14 @@ export class AeroflyMissionAutofill {
       if (this.#mission.conditions.visibility >= 5000 && cloud_base_feet > 1500) {
         return "VFR";
       }
+
+      if (
+        ["uh60", "ec135", "r22"].indexOf(this.#mission.aircraft.name) !== -1 &&
+        this.#mission.conditions.visibility >= 1500
+      ) {
+        return "VFR";
+      }
+
       return "IFR";
     }
 

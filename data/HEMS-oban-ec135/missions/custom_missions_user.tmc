@@ -3,9 +3,9 @@
         <[list_tmmission_definition][missions][]
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #1: Locate person in distress at River Esragan]>
-                <[string8][description][It is early morning with almost no wind under VFR conditions. Your EC135 is ready for take-off.
-Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
+                <[string8][title][HEMS #1: MedEvac at Cruachan Power Station]>
+                <[string8][description][Your EC135 is ready for take-off on this early morning with no wind (VFR conditions).
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
                 <[string8u][tags][medical dropoff]>
                 <[string8][flight_setting][takeoff]>
                 <[string8u][aircraft_name][ec135]>
@@ -19,27 +19,29 @@ Fly to the specified location and locate the person in distress. You will need t
                 <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
                 <[float64][destination_alt][7]> // 23 ft MSL
                 <[float64][destination_dir][281]>
-                <[float64][distance][34829.110178757284]> // 35 km
-                <[float64][duration][494.17791239112665]> // 8 min
+                <[float64][distance][49670.58329627303]> // 50 km
+                <[float64][duration][704.7583195384863]> // 12 min
                 <[tmmission_target_plane][finish][]
                     <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
                     <[float64][direction][281]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][12]>
-                        <[int32][time_day][31]>
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][1]>
+                        <[int32][time_day][1]>
                         <[float64][time_hours][5.25]> // 05:15:00 UTC
                     >
-                    <[float64][wind_direction][300]>
-                    <[float64][wind_speed][5]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.8464]> // 31 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][487.6799843942405]> // 1600 ft AGL
+                    <[float64][thermal_strength][0.5476]> // 22 °C
+                    <[float64][visibility][12874.752]> // 8 SM
+                    <[float64][cloud_cover][0.25]> // FEW
+                    <[float64][cloud_base][1402.0799551334414]> // 4600 ft AGL
+                    <[float64][cirrus_cover][0.5]> // SCT
+                    <[float64][cirrus_base][1828.799941478402]> // 6000 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -54,9 +56,9 @@ Fly to the specified location and locate the person in distress. You will need t
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][W-EVAC]>
-                        <[vector2_float64][lon_lat][-5.252706805658789 56.48859922553183]>
+                        <[vector2_float64][lon_lat][-5.116530166654769 56.39460828668339]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][73.3201075092777]>
+                        <[float64][direction][114.05231539778083]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -65,7 +67,7 @@ Fly to the specified location and locate the person in distress. You will need t
                         <[string8u][name][GB0174]>
                         <[vector2_float64][lon_lat][-5.474652806281114 56.399445314371434]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][234.08610616005674]>
+                        <[float64][direction][271.5471653862263]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -82,9 +84,9 @@ Fly to the specified location and locate the person in distress. You will need t
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #2: MedEvac at Inch Kenneth]>
-                <[string8][description][It is early morning with wind from 190° at 19 kts under VFR conditions. Your EC135 is ready for take-off.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.]>
+                <[string8][title][HEMS #2: Farming accident at farm near Loch Spelve]>
+                <[string8][description][Your EC135 is ready for take-off on this gusty early morning with wind from 040° at 17 kts (VFR conditions).
+Fly to the specified farming accident site to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.]>
                 <[string8u][tags][medical dropoff]>
                 <[string8][flight_setting][takeoff]>
                 <[string8u][aircraft_name][ec135]>
@@ -98,8 +100,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
                 <[float64][destination_alt][7]> // 23 ft MSL
                 <[float64][destination_dir][281]>
-                <[float64][distance][93792.68241044272]> // 94 km
-                <[float64][duration][1330.7911615676633]> // 22 min
+                <[float64][distance][50322.331888264496]> // 50 km
+                <[float64][duration][714.0057495457748]> // 12 min
                 <[tmmission_target_plane][finish][]
                     <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
                     <[float64][direction][281]>
@@ -108,21 +110,17 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][12]>
-                        <[int32][time_day][30]>
+                        <[int32][time_day][31]>
                         <[float64][time_hours][6.75]> // 06:45:00 UTC
                     >
-                    <[float64][wind_direction][190]>
-                    <[float64][wind_speed][19]> // kts
-                    <[float64][wind_gusts][0]> // kts
+                    <[float64][wind_direction][40]>
+                    <[float64][wind_speed][17]> // kts
+                    <[float64][wind_gusts][27]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.4624000000000001]> // 19 °C
+                    <[float64][thermal_strength][0.9603999999999999]> // 34 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][731.5199765913608]> // 2400 ft AGL
-                    <[float64][cirrus_cover][0.25]> // FEW
-                    <[float64][cirrus_base][1219.1999609856014]> // 4000.0000000000005 ft AGL
-                    <[float64][cumulus_mediocris_cover][0.5]> // SCT
-                    <[float64][cumulus_mediocris_base][2834.639909291523]> // 9300 ft AGL
+                    <[float64][cloud_cover][0.25]> // FEW
+                    <[float64][cloud_base][2621.279916119043]> // 8600 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -137,9 +135,9 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][W-EVAC]>
-                        <[vector2_float64][lon_lat][-6.157876302258018 56.442148988004504]>
+                        <[vector2_float64][lon_lat][-5.754860959012916 56.411492128834226]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][267.2579671356864]>
+                        <[float64][direction][255.07092021424592]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -148,7 +146,7 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][name][W-HOSPITAL]>
                         <[vector2_float64][lon_lat][-5.716356261586526 56.48048411820514]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][80.88504825789386]>
+                        <[float64][direction][17.127735891129134]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -165,8 +163,166 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #3: Locate person in distress at Creag Ruisgte]>
-                <[string8][description][It is a clear morning with no wind under VFR conditions. Your EC135 is ready for take-off.
+                <[string8][title][HEMS #3: MedEvac at Bishop's house at Iona]>
+                <[string8][description][Your EC135 is ready for take-off on this overcast morning with wind from 260° at 8 kts (VFR conditions).
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.]>
+                <[string8u][tags][medical dropoff]>
+                <[string8][flight_setting][takeoff]>
+                <[string8u][aircraft_name][ec135]>
+                <[stringt8c][aircraft_icao][EC35]>
+                <[stringt8c][callsign][MEDEVAC]>
+                <[stringt8c][origin_icao][EGEO]>
+                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][origin_alt][7]> // 23 ft MSL
+                <[float64][origin_dir][281]>
+                <[stringt8c][destination_icao][EGEO]>
+                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][destination_alt][7]> // 23 ft MSL
+                <[float64][destination_dir][281]>
+                <[float64][distance][127131.71616937795]> // 127 km
+                <[float64][duration][1803.82690722896]> // 30 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
+                    <[float64][direction][281]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][12]>
+                        <[int32][time_day][30]>
+                        <[float64][time_hours][8.25]> // 08:15:00 UTC
+                    >
+                    <[float64][wind_direction][260]>
+                    <[float64][wind_speed][8]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.06760000000000001]> // -2 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][cloud_base][304.79999024640034]> // 1000.0000000000001 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][-6.391553432650625 56.332559168976275]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][256.9071278664999]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-HOSPITAL]>
+                        <[vector2_float64][lon_lat][-5.716356261586526 56.48048411820514]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][68.11736962909174]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][destination]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][95.04548243847506]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HEMS #4: MedEvac at Rhunacairn Cottage]>
+                <[string8][description][Your EC135 is ready for take-off on this foggy morning with wind from 260° at 6 kts (IFR conditions).
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
+                <[string8u][tags][medical dropoff low_visibility]>
+                <[string8][flight_setting][takeoff]>
+                <[string8u][aircraft_name][ec135]>
+                <[stringt8c][aircraft_icao][EC35]>
+                <[stringt8c][callsign][MEDEVAC]>
+                <[stringt8c][origin_icao][EGEO]>
+                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][origin_alt][7]> // 23 ft MSL
+                <[float64][origin_dir][281]>
+                <[stringt8c][destination_icao][EGEO]>
+                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][destination_alt][7]> // 23 ft MSL
+                <[float64][destination_dir][281]>
+                <[float64][distance][26182.281290493767]> // 26 km
+                <[float64][duration][371.49111887632847]> // 6 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
+                    <[float64][direction][281]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][12]>
+                        <[int32][time_day][29]>
+                        <[float64][time_hours][9.75]> // 09:45:00 UTC
+                    >
+                    <[float64][wind_direction][260]>
+                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.07840000000000001]> // -0.9999999999999982 °C
+                    <[float64][visibility][643.7376]> // 0.4 SM
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][-5.308223663270439 56.453799735711556]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][102.15461159442577]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GB0174]>
+                        <[vector2_float64][lon_lat][-5.474652806281114 56.399445314371434]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][239.5042104801036]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][destination]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][32.86526169028099]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HEMS #5: Locate person in distress at Creag Ruisgte]>
+                <[string8][description][Your EC135 is ready for take-off on this overcast noon with no wind (VFR conditions).
 Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
                 <[string8u][tags][medical dropoff]>
                 <[string8][flight_setting][takeoff]>
@@ -191,17 +347,17 @@ Fly to the specified location and locate the person in distress. You will need t
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][12]>
-                        <[int32][time_day][29]>
-                        <[float64][time_hours][8.25]> // 08:15:00 UTC
+                        <[int32][time_day][28]>
+                        <[float64][time_hours][11.25]> // 11:15:00 UTC
                     >
                     <[float64][wind_direction][0]>
                     <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.5184]> // 21 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
+                    <[float64][thermal_strength][0.6400000000000001]> // 25 °C
+                    <[float64][visibility][12874.752]> // 8 SM
+                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][cloud_base][1676.3999463552018]> // 5500 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -244,8 +400,8 @@ Fly to the specified location and locate the person in distress. You will need t
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #4: MedEvac at Appin]>
-                <[string8][description][It is an overcast morning with almost no wind under IFR conditions. Your EC135 is ready for take-off.
+                <[string8][title][HEMS #6: MedEvac at Port Appin]>
+                <[string8][description][Your EC135 is ready for take-off on this noon with no wind (VFR conditions).
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
                 <[string8u][tags][medical dropoff]>
                 <[string8][flight_setting][takeoff]>
@@ -260,8 +416,8 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                 <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
                 <[float64][destination_alt][7]> // 23 ft MSL
                 <[float64][destination_dir][281]>
-                <[float64][distance][39356.410221416496]> // 39 km
-                <[float64][duration][558.4141697163035]> // 9 min
+                <[float64][distance][36443.29579010496]> // 36 km
+                <[float64][duration][517.0810204962]> // 9 min
                 <[tmmission_target_plane][finish][]
                     <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
                     <[float64][direction][281]>
@@ -270,16 +426,95 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][12]>
-                        <[int32][time_day][28]>
-                        <[float64][time_hours][9.75]> // 09:45:00 UTC
+                        <[int32][time_day][27]>
+                        <[float64][time_hours][12.75]> // 12:45:00 UTC
                     >
-                    <[float64][wind_direction][220]>
-                    <[float64][wind_speed][4]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.07840000000000001]> // -0.9999999999999982 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][thermal_strength][0.6723999999999999]> // 26 °C
+                    <[float64][visibility][25000]> // 15.534279805933348 SM
+                    <[float64][cloud_cover][0.5]> // SCT
+                    <[float64][cloud_base][2133.599931724802]> // 6999.999999999999 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][-5.409269334492279 56.55493048093186]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][356.228558551909]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GB0174]>
+                        <[vector2_float64][lon_lat][-5.474652806281114 56.399445314371434]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][193.1016437133349]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][destination]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][32.86526169028099]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HEMS #7: MedEvac at Iverinan]>
+                <[string8][description][Your EC135 is ready for take-off on this misty afternoon with wind from 070° at 12 kts (VFR conditions).
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
+                <[string8u][tags][medical dropoff low_visibility]>
+                <[string8][flight_setting][takeoff]>
+                <[string8u][aircraft_name][ec135]>
+                <[stringt8c][aircraft_icao][EC35]>
+                <[stringt8c][callsign][MEDEVAC]>
+                <[stringt8c][origin_icao][EGEO]>
+                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][origin_alt][7]> // 23 ft MSL
+                <[float64][origin_dir][281]>
+                <[stringt8c][destination_icao][EGEO]>
+                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][destination_alt][7]> // 23 ft MSL
+                <[float64][destination_dir][281]>
+                <[float64][distance][46352.30234384242]> // 46 km
+                <[float64][duration][657.6764060074439]> // 11 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
+                    <[float64][direction][281]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][12]>
+                        <[int32][time_day][26]>
+                        <[float64][time_hours][14.25]> // 14:15:00 UTC
+                    >
+                    <[float64][wind_direction][70]>
+                    <[float64][wind_speed][12]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.0484]> // -4 °C
+                    <[float64][visibility][2993.37984]> // 1.8599999999999999 SM
+                    <[float64][cloud_cover][0.5]> // SCT
                     <[float64][cloud_base][152.39999512320017]> // 500.00000000000006 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
@@ -295,9 +530,9 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][W-EVAC]>
-                        <[vector2_float64][lon_lat][-5.361130560994695 56.56334486097299]>
+                        <[vector2_float64][lon_lat][-5.2360001176813284 56.30942448933797]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][11.763531477332606]>
+                        <[float64][direction][149.83247370745744]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -306,7 +541,7 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][name][GB0174]>
                         <[vector2_float64][lon_lat][-5.474652806281114 56.399445314371434]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][200.9780545937806]>
+                        <[float64][direction][304.3466487829414]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -323,9 +558,9 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #5: Locate person in distress at position near Loch Nant]>
-                <[string8][description][It is noon with wind from 340° at 8 kts under VFR conditions. Your EC135 is ready for take-off.
-Fly to the specified location and locate the person in distress. You will need to drop off your emergency doctor / paramedic and take the person on board. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
+                <[string8][title][HEMS #8: MedEvac at Tobermory high school]>
+                <[string8][description][Your EC135 is ready for take-off on this late afternoon with wind from 080° at 8 kts (VFR conditions).
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.]>
                 <[string8u][tags][medical dropoff]>
                 <[string8][flight_setting][takeoff]>
                 <[string8u][aircraft_name][ec135]>
@@ -339,8 +574,8 @@ Fly to the specified location and locate the person in distress. You will need t
                 <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
                 <[float64][destination_alt][7]> // 23 ft MSL
                 <[float64][destination_dir][281]>
-                <[float64][distance][37374.48777492788]> // 37 km
-                <[float64][duration][530.2933738619145]> // 9 min
+                <[float64][distance][91046.35936856623]> // 91 km
+                <[float64][duration][1291.8245563164637]> // 22 min
                 <[tmmission_target_plane][finish][]
                     <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
                     <[float64][direction][281]>
@@ -349,19 +584,19 @@ Fly to the specified location and locate the person in distress. You will need t
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][12]>
-                        <[int32][time_day][27]>
-                        <[float64][time_hours][11.25]> // 11:15:00 UTC
+                        <[int32][time_day][25]>
+                        <[float64][time_hours][15.75]> // 15:45:00 UTC
                     >
-                    <[float64][wind_direction][340]>
+                    <[float64][wind_direction][80]>
                     <[float64][wind_speed][8]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.1024]> // 1 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.5]> // SCT
-                    <[float64][cloud_base][365.7599882956804]> // 1200 ft AGL
-                    <[float64][cirrus_cover][1]> // OVC
-                    <[float64][cirrus_base][548.6399824435206]> // 1800 ft AGL
+                    <[float64][thermal_strength][0.7744]> // 29 °C
+                    <[float64][visibility][9656.064]> // 6 SM
+                    <[float64][cloud_cover][0.25]> // FEW
+                    <[float64][cloud_base][914.399970739201]> // 3000 ft AGL
+                    <[float64][cirrus_cover][0.5]> // SCT
+                    <[float64][cirrus_base][2438.3999219712027]> // 8000.000000000001 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -376,88 +611,9 @@ Fly to the specified location and locate the person in distress. You will need t
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][W-EVAC]>
-                        <[vector2_float64][lon_lat][-5.253138600907334 56.3620057702212]>
+                        <[vector2_float64][lon_lat][-6.066952672067913 56.624257101579275]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][141.8498526431698]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][GB0174]>
-                        <[vector2_float64][lon_lat][-5.474652806281114 56.399445314371434]>
-                        <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][287.06779313659865]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][destination]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][32.86526169028099]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HEMS #6: MedEvac at Glenforsa Airfield]>
-                <[string8][description][It is a misty noon with almost no wind under IFR conditions. Your EC135 is ready for take-off.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.]>
-                <[string8u][tags][medical dropoff low_visibility]>
-                <[string8][flight_setting][takeoff]>
-                <[string8u][aircraft_name][ec135]>
-                <[stringt8c][aircraft_icao][EC35]>
-                <[stringt8c][callsign][MEDEVAC]>
-                <[stringt8c][origin_icao][EGEO]>
-                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][origin_alt][7]> // 23 ft MSL
-                <[float64][origin_dir][281]>
-                <[stringt8c][destination_icao][EGEO]>
-                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][destination_alt][7]> // 23 ft MSL
-                <[float64][destination_dir][281]>
-                <[float64][distance][64416.283799509794]> // 64 km
-                <[float64][duration][913.9798429720297]> // 15 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
-                    <[float64][direction][281]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][12]>
-                        <[int32][time_day][26]>
-                        <[float64][time_hours][12.75]> // 12:45:00 UTC
-                    >
-                    <[float64][wind_direction][310]>
-                    <[float64][wind_speed][4]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.06760000000000001]> // -2 °C
-                    <[float64][visibility][4795.84512]> // 2.98 SM
-                    <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][579.1199814681606]> // 1900 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][EGGLNF]>
-                        <[vector2_float64][lon_lat][-5.9127 56.5169]>
-                        <[float64][altitude][5]> // 17 ft
-                        <[float64][direction][280.65777773745225]>
+                        <[float64][direction][293.7056184448725]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -466,7 +622,7 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[string8u][name][W-HOSPITAL]>
                         <[vector2_float64][lon_lat][-5.716356261586526 56.48048411820514]>
                         <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][108.49166422499701]>
+                        <[float64][direction][126.50337556660338]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
@@ -483,10 +639,91 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HEMS #7: MedEvac at Aird]>
-                <[string8][description][It is a clear afternoon with wind from 340° at 6 kts under VFR conditions. Your EC135 is ready for take-off.
+                <[string8][title][HEMS #9: MedEvac at location east of Tom Ard]>
+                <[string8][description][Your EC135 is ready for take-off on this late afternoon with wind from 080° at 6 kts (VFR conditions).
 Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
                 <[string8u][tags][medical dropoff]>
+                <[string8][flight_setting][takeoff]>
+                <[string8u][aircraft_name][ec135]>
+                <[stringt8c][aircraft_icao][EC35]>
+                <[stringt8c][callsign][MEDEVAC]>
+                <[stringt8c][origin_icao][EGEO]>
+                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][origin_alt][7]> // 23 ft MSL
+                <[float64][origin_dir][281]>
+                <[stringt8c][destination_icao][EGEO]>
+                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
+                <[float64][destination_alt][7]> // 23 ft MSL
+                <[float64][destination_dir][281]>
+                <[float64][distance][17338.708144739387]> // 17 km
+                <[float64][duration][246.0127907531877]> // 4 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
+                    <[float64][direction][281]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2024]>
+                        <[int32][time_month][12]>
+                        <[int32][time_day][24]>
+                        <[float64][time_hours][17.25]> // 17:15:00 UTC
+                    >
+                    <[float64][wind_direction][80]>
+                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.0256]> // -7 °C
+                    <[float64][visibility][5005.05984]> // 3.11 SM
+                    <[float64][cloud_cover][0.5]> // SCT
+                    <[float64][cloud_base][365.7599882956804]> // 1200 ft AGL
+                    <[float64][cirrus_cover][1]> // OVC
+                    <[float64][cirrus_base][792.4799746406408]> // 2600 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][W-EVAC]>
+                        <[vector2_float64][lon_lat][-5.421618989371268 56.434676191717074]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][203.1846582952576]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GB0174]>
+                        <[vector2_float64][lon_lat][-5.474652806281114 56.399445314371434]>
+                        <[float64][altitude][0]> // 0 ft
+                        <[float64][direction][219.80485930421693]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][destination]>
+                        <[string8u][name][EGEO]>
+                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
+                        <[float64][altitude][7]> // 23 ft
+                        <[float64][direction][32.86526169028099]>
+                        <[float64][slope][0]>
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HEMS #10: MedEvac at Aird]>
+                <[string8][description][Your EC135 is ready for take-off on this misty late afternoon with wind from 090° at 12 kts (VFR conditions).
+Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
+                <[string8u][tags][medical dropoff low_visibility]>
                 <[string8][flight_setting][takeoff]>
                 <[string8u][aircraft_name][ec135]>
                 <[stringt8c][aircraft_icao][EC35]>
@@ -509,17 +746,17 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                     <[tm_time_utc][time][]
                         <[int32][time_year][2024]>
                         <[int32][time_month][12]>
-                        <[int32][time_day][25]>
-                        <[float64][time_hours][14.25]> // 14:15:00 UTC
+                        <[int32][time_day][23]>
+                        <[float64][time_hours][18.75]> // 18:45:00 UTC
                     >
-                    <[float64][wind_direction][340]>
-                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_direction][90]>
+                    <[float64][wind_speed][12]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.31360000000000005]> // 13.000000000000004 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
+                    <[float64][thermal_strength][0.1444]> // 4 °C
+                    <[float64][visibility][3299.1551999999997]> // 2.05 SM
+                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][cloud_base][60.95999804928006]> // 200 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -555,245 +792,6 @@ Fly to the specified location to drop off your emergency doctor / paramedic and 
                         <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
                         <[float64][altitude][7]> // 23 ft
                         <[float64][direction][32.86526169028099]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HEMS #8: MedEvac at Inveraray]>
-                <[string8][description][It is a misty late afternoon with almost no wind under IFR conditions. Your EC135 is ready for take-off.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Lorn & Islands Hospital (GB0174) with possible approaches 090° / 270°.]>
-                <[string8u][tags][medical dropoff low_visibility]>
-                <[string8][flight_setting][takeoff]>
-                <[string8u][aircraft_name][ec135]>
-                <[stringt8c][aircraft_icao][EC35]>
-                <[stringt8c][callsign][MEDEVAC]>
-                <[stringt8c][origin_icao][EGEO]>
-                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][origin_alt][7]> // 23 ft MSL
-                <[float64][origin_dir][281]>
-                <[stringt8c][destination_icao][EGEO]>
-                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][destination_alt][7]> // 23 ft MSL
-                <[float64][destination_dir][281]>
-                <[float64][distance][72300.36597473723]> // 72 km
-                <[float64][duration][1025.8442934411173]> // 17 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
-                    <[float64][direction][281]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][12]>
-                        <[int32][time_day][24]>
-                        <[float64][time_hours][15.75]> // 15:45:00 UTC
-                    >
-                    <[float64][wind_direction][20]>
-                    <[float64][wind_speed][2]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.11560000000000002]> // 2 °C
-                    <[float64][visibility][1899.02592]> // 1.18 SM
-                    <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][30.47999902464003]> // 100 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][W-EVAC]>
-                        <[vector2_float64][lon_lat][-5.073388290724523 56.232023235240604]>
-                        <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][142.10255125892127]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][GB0174]>
-                        <[vector2_float64][lon_lat][-5.474652806281114 56.399445314371434]>
-                        <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][307.1208785700432]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][destination]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][32.86526169028099]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HEMS #9: Car accident on A861]>
-                <[string8][description][It is a misty late afternoon with almost no wind under IFR conditions. Your EC135 is ready for take-off.
-Fly to the specified car accident site to drop off your emergency doctor / paramedic and take a patient on board. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.]>
-                <[string8u][tags][medical dropoff low_visibility]>
-                <[string8][flight_setting][takeoff]>
-                <[string8u][aircraft_name][ec135]>
-                <[stringt8c][aircraft_icao][EC35]>
-                <[stringt8c][callsign][MEDEVAC]>
-                <[stringt8c][origin_icao][EGEO]>
-                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][origin_alt][7]> // 23 ft MSL
-                <[float64][origin_dir][281]>
-                <[stringt8c][destination_icao][EGEO]>
-                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][destination_alt][7]> // 23 ft MSL
-                <[float64][destination_dir][281]>
-                <[float64][distance][73887.12830857336]> // 74 km
-                <[float64][duration][1048.358302371333]> // 17 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
-                    <[float64][direction][281]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][12]>
-                        <[int32][time_day][23]>
-                        <[float64][time_hours][17.25]> // 17:15:00 UTC
-                    >
-                    <[float64][wind_direction][100]>
-                    <[float64][wind_speed][4]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0]> // -15 °C
-                    <[float64][visibility][2896.8192000000004]> // 1.8000000000000003 SM
-                    <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][60.95999804928006]> // 200 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][W-EVAC]>
-                        <[vector2_float64][lon_lat][-5.400060791554665 56.68449128721866]>
-                        <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][359.77121108143757]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][W-HOSPITAL]>
-                        <[vector2_float64][lon_lat][-5.716356261586526 56.48048411820514]>
-                        <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][220.62505455600848]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][destination]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][95.04548243847506]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HEMS #10: MedEvac at Fishnish Ferry]>
-                <[string8][description][It is late afternoon with wind from 160° at 11 kts under VFR conditions. Your EC135 is ready for take-off.
-Fly to the specified location to drop off your emergency doctor / paramedic and take a patient on board if necessary. Afterwards fly to Mull and Iona Community Hospital with possible approaches 135° / 315°.]>
-                <[string8u][tags][medical dropoff]>
-                <[string8][flight_setting][takeoff]>
-                <[string8u][aircraft_name][ec135]>
-                <[stringt8c][aircraft_icao][EC35]>
-                <[stringt8c][callsign][MEDEVAC]>
-                <[stringt8c][origin_icao][EGEO]>
-                <[tmvector2d][origin_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][origin_alt][7]> // 23 ft MSL
-                <[float64][origin_dir][281]>
-                <[stringt8c][destination_icao][EGEO]>
-                <[tmvector2d][destination_lon_lat][-5.3984619465384185 56.464572641198856]>
-                <[float64][destination_alt][7]> // 23 ft MSL
-                <[float64][destination_dir][281]>
-                <[float64][distance][52342.18147074478]> // 52 km
-                <[float64][duration][742.6646801038971]> // 12 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-5.398471762810253 56.46457454928881]>
-                    <[float64][direction][281]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2024]>
-                        <[int32][time_month][12]>
-                        <[int32][time_day][22]>
-                        <[float64][time_hours][18.75]> // 18:45:00 UTC
-                    >
-                    <[float64][wind_direction][160]>
-                    <[float64][wind_speed][11]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.6400000000000001]> // 25 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.25]> // FEW
-                    <[float64][cloud_base][487.6799843942405]> // 1600 ft AGL
-                    <[float64][cirrus_cover][1]> // OVC
-                    <[float64][cirrus_base][701.0399775667207]> // 2300 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][W-EVAC]>
-                        <[vector2_float64][lon_lat][-5.81006663618524 56.514302497952514]>
-                        <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][282.5155446842547]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][W-HOSPITAL]>
-                        <[vector2_float64][lon_lat][-5.716356261586526 56.48048411820514]>
-                        <[float64][altitude][0]> // 0 ft
-                        <[float64][direction][123.1376341287563]>
-                        <[float64][slope][0]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][destination]>
-                        <[string8u][name][EGEO]>
-                        <[vector2_float64][lon_lat][-5.3984619465384185 56.464572641198856]>
-                        <[float64][altitude][7]> // 23 ft
-                        <[float64][direction][95.04548243847506]>
                         <[float64][slope][0]>
                         <[bool][fly_over][true]>
                     >
