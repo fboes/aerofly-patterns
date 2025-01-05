@@ -34,7 +34,7 @@ export class AeroflyMissionAutofill {
     let weatherAdjectives = this.weatherAdjectives;
     let weatherAdjectivesString = weatherAdjectives.length > 0 ? ` ${weatherAdjectives.join(", ")}` : "";
 
-    return `Your ${this.aircraftName} is ${this.flightSetting} on this${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind} (${this.flightConditions} conditions).`;
+    return `Your ${this.aircraftName} is ${this.flightSetting} on this${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind}.`;
   }
 
   /**
@@ -100,46 +100,6 @@ export class AeroflyMissionAutofill {
       }
     }
     return adjectives;
-  }
-
-  /**
-   * Depending on starting location US or ICAO flight conditions.
-   * @returns {"VFR"|"MVFR"|"IFR"|"LIFR"}
-   */
-  get flightConditions() {
-    let cloud_base_feet = 9999;
-    this.#mission.conditions.clouds.forEach((cloud) => {
-      if (cloud.cover > 0.5) {
-        cloud_base_feet = Math.min(cloud_base_feet, cloud.base_feet);
-      }
-    });
-
-    if (!this.#mission.origin.icao.startsWith("K")) {
-      if (this.#mission.conditions.visibility >= 5000 && cloud_base_feet > 1500) {
-        return "VFR";
-      }
-
-      if (
-        ["uh60", "ec135", "r22"].indexOf(this.#mission.aircraft.name) !== -1 &&
-        this.#mission.conditions.visibility >= 1500
-      ) {
-        return "VFR";
-      }
-
-      return "IFR";
-    }
-
-    const visibility_sm = this.#mission.conditions.visibility_sm;
-    if (visibility_sm > 5.0 && cloud_base_feet > 3000) {
-      return "VFR";
-    }
-    if (visibility_sm >= 3.0 && cloud_base_feet >= 1000) {
-      return "MVFR";
-    }
-    if (visibility_sm >= 1.0 && cloud_base_feet >= 500) {
-      return "IFR";
-    }
-    return "LIFR";
   }
 
   /**
