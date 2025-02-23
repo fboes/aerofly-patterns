@@ -2,7 +2,7 @@
 
 This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Cessna 172 is 8 NM away from Concord / Buchanan Field Airport, and you have to make a correct landing pattern entry and land safely.
+Your Cessna 172 SP Skyhawk is 8 NM away from Concord / Buchanan Field Airport, and you have to make a correct landing pattern entry and land safely.
 
 ## Airport details
 
@@ -15,22 +15,22 @@ Get [more information about Concord / Buchanan Field Airport on SkyVector](https
 - What is the Traffic Pattern Altitude (TPA) for this airport?
 - Has the runway standard left turns, or right turns?
 - Are there additional navigational aids like ILS for your assigned runways?
-- Are there special noises abatement procedures in effect?
+- Are there special noise abatement procedures in effect?
 
 ## Included missions
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | -------------------- |
-| #1  | 2024-11-21  |       05:15 | 180° @ 17 kts | SCT @ 5,000 ft |      15 SM | 19L      | ← To the west        |
-| #2  | 2024-11-20  |       06:45 | 170° @ 9 kts  | FEW @ 4,700 ft |      15 SM | 14R (RP) | ↙ To the south-west |
-| #3  | 2024-11-19  |       08:15 | 180° @ 3 kts  | CLR            |      15 SM | 19R (RP) | ↓ To the south       |
-| #4  | 2024-11-18  |       09:45 | 280° @ 6 kts  | CLR            |      15 SM | 32L      | ← To the west        |
-| #5  | 2024-11-17  |       11:15 | 200° @ 3 kts  | BKN @ 3,000 ft |      15 SM | 19R (RP) | → To the east        |
-| #6  | 2024-11-16  |       12:45 | 90° @ 3 kts   | CLR            |      15 SM | 19R (RP) | ↙ To the south-west |
-| #7  | 2024-11-15  |       14:15 | 260° @ 6 kts  | FEW @ 5,000 ft |      15 SM | 19R (RP) | ↘ To the south-east |
-| #8  | 2024-11-14  |       15:45 | 260° @ 9 kts  | FEW @ 3,100 ft |       8 SM | 19R (RP) | ↑ To the north       |
-| #9  | 2024-11-13  |       17:15 | 190° @ 12 kts | BKN @ 4,000 ft |      15 SM | 19L      | ↓ To the south       |
-| #10 | 2024-11-12  |       18:45 | Calm          | CLR            |      15 SM | 19R (RP) | ↗ To the north-east |
+| #1  | 2025-02-22  |       05:15 | 160° @ 4 kts  | CLR            |      15 SM | 19R (RP) | ↘ To the south-east |
+| #2  | 2025-02-21  |       06:45 | Calm          | CLR            |      15 SM | 19R (RP) | ↓ To the south       |
+| #3  | 2025-02-20  |       08:15 | 160° @ 3 kts  | CLR            |      15 SM | 19R (RP) | ← To the west        |
+| #4  | 2025-02-19  |       09:45 | 180° @ 9 kts  | BKN @ 4,900 ft |      15 SM | 19L      | ↗ To the north-east |
+| #5  | 2025-02-18  |       11:15 | Calm          | CLR            |      15 SM | 19R (RP) | ↗ To the north-east |
+| #6  | 2025-02-17  |       12:45 | 270° @ 10 kts | CLR            |      15 SM | 32L      | ↑ To the north       |
+| #7  | 2025-02-16  |       14:15 | 340° @ 5 kts  | OVC @ 4,100 ft |      15 SM | 19R (RP) | ↙ To the south-west |
+| #8  | 2025-02-15  |       15:45 | 360° @ 4 kts  | CLR            |      15 SM | 19R (RP) | ↗ To the north-east |
+| #9  | 2025-02-14  |       17:15 | 280° @ 10 kts | CLR            |      15 SM | 32L      | ↖ To the north-west |
+| #10 | 2025-02-13  |       18:45 | 220° @ 9 kts  | BKN @ 2,000 ft |       3 SM | 19R (RP) | ↖ To the north-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

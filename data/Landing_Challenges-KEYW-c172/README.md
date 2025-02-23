@@ -2,7 +2,7 @@
 
 This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Cessna 172 is 8 NM away from Key West International Airport, and you have to make a correct landing pattern entry and land safely.
+Your Cessna 172 SP Skyhawk is 8 NM away from Key West International Airport, and you have to make a correct landing pattern entry and land safely.
 
 ## Airport details
 
@@ -15,22 +15,22 @@ Get [more information about Key West International Airport on SkyVector](https:/
 - What is the Traffic Pattern Altitude (TPA) for this airport?
 - Has the runway standard left turns, or right turns?
 - Are there additional navigational aids like ILS for your assigned runways?
-- Are there special noises abatement procedures in effect?
+- Are there special noise abatement procedures in effect?
 
 ## Included missions
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-12-13  |       05:15 | 40° @ 8 kts   | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #2  | 2024-12-12  |       06:45 | 10° @ 15 kts  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #3  | 2024-12-11  |       08:15 | 160° @ 8 kts  | SCT @ 1,800 ft |      15 SM | 09 (RP) | → To the east        |
-| #4  | 2024-12-10  |       09:45 | 110° @ 8 kts  | CLR            |      15 SM | 09 (RP) | ↓ To the south       |
-| #5  | 2024-12-09  |       11:15 | 100° @ 8 kts  | BKN @ 4,100 ft |      15 SM | 09 (RP) | ← To the west        |
-| #6  | 2024-12-08  |       12:45 | 50° @ 8 kts   | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #7  | 2024-12-07  |       14:15 | 40° @ 10 kts  | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
-| #8  | 2024-12-06  |       15:45 | 360° @ 10 kts | CLR            |      15 SM | 09 (RP) | ↑ To the north       |
-| #9  | 2024-12-05  |       17:15 | 30° @ 3 kts   | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
-| #10 | 2024-12-04  |       18:45 | 60° @ 7 kts   | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
+| #1  | 2025-02-22  |       05:15 | 60° @ 10 kts  | BKN @ 7,500 ft |      15 SM | 09 (RP) | ↖ To the north-west |
+| #2  | 2025-02-21  |       06:45 | 30° @ 12 kts  | BKN @ 3,500 ft |      15 SM | 09 (RP) | ← To the west        |
+| #3  | 2025-02-20  |       08:15 | 340° @ 10 kts | BKN @ 1,400 ft |      15 SM | 27      | → To the east        |
+| #4  | 2025-02-19  |       09:45 | 150° @ 13 kts | FEW @ 2,500 ft |      15 SM | 09 (RP) | ↖ To the north-west |
+| #5  | 2025-02-18  |       11:15 | Calm          | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
+| #6  | 2025-02-17  |       12:45 | 10° @ 9 kts   | SCT @ 1,300 ft |      15 SM | 09 (RP) | ↓ To the south       |
+| #7  | 2025-02-16  |       14:15 | 200° @ 7 kts  | CLR            |      15 SM | 27      | ↖ To the north-west |
+| #8  | 2025-02-15  |       15:45 | 120° @ 18 kts | FEW @ 2,000 ft |      15 SM | 09 (RP) | ↖ To the north-west |
+| #9  | 2025-02-14  |       17:15 | 80° @ 12 kts  | CLR            |      15 SM | 09 (RP) | → To the east        |
+| #10 | 2025-02-13  |       18:45 | 90° @ 8 kts   | FEW @ 1,300 ft |      15 SM | 09 (RP) | ↘ To the south-east |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

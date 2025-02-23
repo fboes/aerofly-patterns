@@ -2,11 +2,12 @@
 
 This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Pitts Special S-2 is 10 NM away from Eagle County Regional Airport, and you have to make a correct landing pattern entry and land safely.
+Your Pitts S-2B is 10 NM away from Eagle County Regional Airport, and you have to make a correct landing pattern entry and land safely.
 
 ## Airport details
 
 - Local tower / CTAF frequency: 119.80
+- Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west
 
 Get [more information about Eagle County Regional Airport on SkyVector](https://skyvector.com/airport/KEGE):
 
@@ -14,22 +15,22 @@ Get [more information about Eagle County Regional Airport on SkyVector](https://
 - What is the Traffic Pattern Altitude (TPA) for this airport?
 - Has the runway standard left turns, or right turns?
 - Are there additional navigational aids like ILS for your assigned runways?
-- Are there special noises abatement procedures in effect?
+- Are there special noise abatement procedures in effect?
 
 ## Included missions
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | -------------------- |
-| #1  | 2024-11-21  |       05:15 | Calm          | CLR            |      15 SM | 25     | ← To the west        |
-| #2  | 2024-11-20  |       06:45 | 120° @ 3 kts  | CLR            |      15 SM | 25     | ↙ To the south-west |
-| #3  | 2024-11-19  |       08:15 | 20° @ 4 kts   | CLR            |       9 SM | 25     | → To the east        |
-| #4  | 2024-11-18  |       09:45 | 270° @ 3 kts  | CLR            |      15 SM | 25     | ↙ To the south-west |
-| #5  | 2024-11-17  |       11:15 | 240° @ 3 kts  | CLR            |      15 SM | 25     | ↙ To the south-west |
-| #6  | 2024-11-16  |       12:45 | 270° @ 12 kts | CLR            |      15 SM | 25     | ↓ To the south       |
-| #7  | 2024-11-15  |       14:15 | 150° @ 4 kts  | CLR            |      15 SM | 25     | ↑ To the north       |
-| #8  | 2024-11-14  |       15:45 | Calm          | CLR            |      15 SM | 25     | → To the east        |
-| #9  | 2024-11-13  |       17:15 | 110° @ 5 kts  | CLR            |      15 SM | 25     | → To the east        |
-| #10 | 2024-11-12  |       18:45 | 240° @ 9 kts  | BKN @ 5,000 ft |      15 SM | 25     | ← To the west        |
+| #1  | 2025-02-22  |       05:15 | Calm          | CLR            |      15 SM | 25     | ↓ To the south       |
+| #2  | 2025-02-21  |       06:45 | Calm          | OVC @ 3,300 ft |       6 SM | 25     | ↑ To the north       |
+| #3  | 2025-02-20  |       08:15 | 40° @ 3 kts   | FEW @ 4,200 ft |      15 SM | 25     | ↙ To the south-west |
+| #4  | 2025-02-19  |       09:45 | 110° @ 4 kts  | CLR            |      15 SM | 25     | ↑ To the north       |
+| #5  | 2025-02-18  |       11:15 | Calm          | FEW @ 6,000 ft |      15 SM | 25     | ↘ To the south-east |
+| #6  | 2025-02-17  |       12:45 | 280° @ 9 kts  | BKN @ 6,000 ft |      15 SM | 25     | → To the east        |
+| #7  | 2025-02-16  |       14:15 | 340° @ 3 kts  | SCT @ 8,000 ft |       9 SM | 25     | ↗ To the north-east |
+| #8  | 2025-02-15  |       15:45 | 280° @ 13 kts | BKN @ 7,000 ft |       9 SM | 25     | ↗ To the north-east |
+| #9  | 2025-02-14  |       17:15 | Calm          | FEW @ 1,700 ft |       9 SM | 25     | ↗ To the north-east |
+| #10 | 2025-02-13  |       18:45 | 80° @ 4 kts   | OVC @ 6,000 ft |      15 SM | 25     | ↑ To the north       |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

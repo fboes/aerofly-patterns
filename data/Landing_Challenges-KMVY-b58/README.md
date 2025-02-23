@@ -15,22 +15,22 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 - What is the Traffic Pattern Altitude (TPA) for this airport?
 - Has the runway standard left turns, or right turns?
 - Are there additional navigational aids like ILS for your assigned runways?
-- Are there special noises abatement procedures in effect?
+- Are there special noise abatement procedures in effect?
 
 ## Included missions
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2024-11-22  |       05:15 | 200° @ 18 kts | FEW @ 3,500 ft |      15 SM | 24 (RP) | → To the east        |
-| #2  | 2024-11-21  |       06:45 | 80° @ 10 kts  | OVC @ 1,400 ft |      15 SM | 06      | ↘ To the south-east |
-| #3  | 2024-11-20  |       08:15 | 350° @ 6 kts  | CLR            |      15 SM | 33 (RP) | ↖ To the north-west |
-| #4  | 2024-11-19  |       09:45 | 330° @ 14 kts | CLR            |      15 SM | 33 (RP) | ↓ To the south       |
-| #5  | 2024-11-18  |       11:15 | 50° @ 4 kts   | CLR            |      15 SM | 24 (RP) | ↗ To the north-east |
-| #6  | 2024-11-17  |       12:45 | 310° @ 11 kts | CLR            |      15 SM | 33 (RP) | ↖ To the north-west |
-| #7  | 2024-11-16  |       14:15 | 340° @ 7 kts  | CLR            |      15 SM | 33 (RP) | ↖ To the north-west |
-| #8  | 2024-11-15  |       15:45 | 270° @ 8 kts  | CLR            |      15 SM | 33 (RP) | ↖ To the north-west |
-| #9  | 2024-11-14  |       17:15 | 350° @ 8 kts  | CLR            |      15 SM | 33 (RP) | ↖ To the north-west |
-| #10 | 2024-11-13  |       18:45 | 20° @ 9 kts   | CLR            |      15 SM | 06      | ↗ To the north-east |
+| #1  | 2025-02-22  |       05:15 | 320° @ 17 kts | CLR            |      15 SM | 33 (RP) | ↘ To the south-east |
+| #2  | 2025-02-21  |       06:45 | 320° @ 15 kts | CLR            |      15 SM | 33 (RP) | ← To the west        |
+| #3  | 2025-02-20  |       08:15 | 360° @ 6 kts  | CLR            |      15 SM | 06      | ↓ To the south       |
+| #4  | 2025-02-19  |       09:45 | 300° @ 16 kts | CLR            |      15 SM | 33 (RP) | ← To the west        |
+| #5  | 2025-02-18  |       11:15 | 280° @ 17 kts | CLR            |      15 SM | 33 (RP) | ↙ To the south-west |
+| #6  | 2025-02-17  |       12:45 | 270° @ 20 kts | BKN @ 5,000 ft |       9 SM | 33 (RP) | ↗ To the north-east |
+| #7  | 2025-02-16  |       14:15 | 210° @ 8 kts  | OVX @ 0 ft     |       0 SM | 24 (RP) | ↙ To the south-west |
+| #8  | 2025-02-15  |       15:45 | 230° @ 5 kts  | OVC @ 7,500 ft |      15 SM | 24 (RP) | ← To the west        |
+| #9  | 2025-02-14  |       17:15 | 300° @ 12 kts | CLR            |      15 SM | 33 (RP) | ↗ To the north-east |
+| #10 | 2025-02-13  |       18:45 | 260° @ 11 kts | SCT @ 700 ft   |      15 SM | 24 (RP) | → To the east        |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

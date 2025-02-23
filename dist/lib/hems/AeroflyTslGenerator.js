@@ -1,33 +1,26 @@
-// @ts-check
-
 export class AeroflyTslGenerator {
-  /**
-   *
-   * @param {import("./GeoJsonLocations").GeoJsonLocation[]} locations
-   * @param {string} environmentId
-   */
-  constructor(locations, environmentId) {
-    this.locations = locations;
-    this.environmentId = environmentId;
-  }
-
-  /**
-   * @returns {string[]}
-   */
-  get sceneryObjectList() {
-    return this.locations.map((location) => {
-      return `\
+    /**
+     *
+     * @param {GeoJsonLocation[]} locations
+     * @param {string} environmentId
+     */
+    constructor(locations, environmentId) {
+        this.locations = locations;
+        this.environmentId = environmentId;
+    }
+    get sceneryObjectList() {
+        return this.locations.map((location) => {
+            return `\
             <[tmsimulator_scenery_object][element][0]
                 <[vector3_float64][position][${location.coordinates.longitude} ${location.coordinates.latitude} -10]>
                 <[int32][autoheight_override][-1]>
                 <[string8][geometry][fallback/fallback]>
                 <[string8u][type][object]>
             >`;
-    });
-  }
-
-  toString() {
-    return `\
+        });
+    }
+    toString() {
+        return `\
 <[file][][]
     <[tmsimulator_scenery_place_simple][][]
         <[string8u] [coordinate_system] [lonlat]>
@@ -39,5 +32,5 @@ ${this.sceneryObjectList.join("\n")}
     >
 >
 `;
-  }
+    }
 }

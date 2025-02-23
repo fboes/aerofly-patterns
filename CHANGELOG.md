@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.6.0
+
+- Switched code base to TypeScript
+
 ## 2.5.5
 
 - Improved mission description generator `AeroflyMissionAutofill`.
