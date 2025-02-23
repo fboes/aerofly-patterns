@@ -1,7 +1,7 @@
 /**
  * @see https://www.icao.int/publications/doc8643/pages/search.aspx
  */
-export const AeroflyAircrafts = [
+export const AeroflyAircraftCollection = [
     {
         name: "A319",
         nameFull: "Airbus A319-115",
@@ -2128,7 +2128,7 @@ export const AeroflyAircraftFinder = {
      * @returns {AeroflyAircraft}
      */
     get: (aeroflyAircraftCode) => {
-        const aircraft = AeroflyAircrafts.find((a) => {
+        const aircraft = AeroflyAircraftCollection.find((a) => {
             return a.aeroflyCode === aeroflyAircraftCode;
         });
         if (aircraft === undefined) {
@@ -2144,9 +2144,11 @@ export const AeroflyAircraftFinder = {
         const isAirliner = aircraft.tags.includes("airliner");
         const runwayTakeoff = isAirliner ? 8000 : null;
         const runwayLanding = isAirliner ? 6000 : null;
-        const callsign = "N" +
-            String.fromCharCode((aircraft.icaoCode.charCodeAt(1) % 9) + 49, // Numeric 1..9
-            AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(0)), AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(3) ?? 0), AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(2) ?? 0));
+        const callsign = aircraft.icaoCode
+            ? "N" +
+                String.fromCharCode((aircraft.icaoCode.charCodeAt(1) % 9) + 49, // Numeric 1..9
+                AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(0)), AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(Math.min(aircraft.icaoCode.length - 1, 3)) ?? 0), AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(Math.min(aircraft.icaoCode.length - 1, 2)) ?? 0))
+            : "N0XXX";
         const hasNoRadioNav = aircraft.tags.includes("historical") || aircraft.tags.includes("aerobatics");
         return {
             ...aircraft,
