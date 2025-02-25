@@ -47,148 +47,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 453,
     maximumRangeNm: 3747,
     aeroflyCode: "a319",
-    liveries: [
-      {
-        aeroflyCode: "air_france",
-        name: "Air France",
-      },
-      {
-        aeroflyCode: "air_mauritius",
-        name: "Air Mauritius",
-      },
-      {
-        aeroflyCode: "allegiant",
-        name: "Allegiant",
-      },
-      {
-        aeroflyCode: "american",
-        name: "American",
-      },
-      {
-        aeroflyCode: "avianca",
-        name: "Avianca",
-      },
-      {
-        aeroflyCode: "azerbaijan",
-        name: "Azerbaijan",
-      },
-      {
-        aeroflyCode: "bangkok_air",
-        name: "Bangkok Air",
-      },
-      {
-        aeroflyCode: "bhutan_air",
-        name: "Bhutan Airlines",
-      },
-      {
-        aeroflyCode: "braathens",
-        name: "Braathens",
-      },
-      {
-        aeroflyCode: "brazil",
-        name: "Brazilian Air Force",
-      },
-      {
-        aeroflyCode: "british_airways",
-        name: "British Airways",
-      },
-      {
-        aeroflyCode: "brussels",
-        name: "Brussels",
-      },
-      {
-        aeroflyCode: "chair",
-        name: "Chair",
-      },
-      {
-        aeroflyCode: "china_eastern",
-        name: "China Eastern",
-      },
-      {
-        aeroflyCode: "cyprus",
-        name: "Cyprus",
-      },
-      {
-        aeroflyCode: "delta",
-        name: "Delta",
-      },
-      {
-        aeroflyCode: "drukair",
-        name: "Drukair",
-      },
-      {
-        aeroflyCode: "easyjet",
-        name: "easyJet",
-      },
-      {
-        aeroflyCode: "easyjet_com",
-        name: "easyJet",
-      },
-      {
-        aeroflyCode: "finnair",
-        name: "Finnair",
-      },
-      {
-        aeroflyCode: "iberia",
-        name: "Iberia",
-      },
-      {
-        aeroflyCode: "ita_airways",
-        name: "ITA Airways",
-      },
-      {
-        aeroflyCode: "latam",
-        name: "LATAM",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa",
-      },
-      {
-        aeroflyCode: "royalair",
-        name: "Royalair",
-      },
-      {
-        aeroflyCode: "sas",
-        name: "SAS",
-      },
-      {
-        aeroflyCode: "slovakia",
-        name: "Slovenska Republika",
-      },
-      {
-        aeroflyCode: "spirit",
-        name: "Spirit",
-      },
-      {
-        aeroflyCode: "swiss",
-        name: "SWISS",
-      },
-      {
-        aeroflyCode: "tap",
-        name: "TAP Portugal",
-      },
-      {
-        aeroflyCode: "tibet",
-        name: "Tibet",
-      },
-      {
-        aeroflyCode: "united",
-        name: "United",
-      },
-      {
-        aeroflyCode: "volaris",
-        name: "Volaris",
-      },
-      {
-        aeroflyCode: "volotea",
-        name: "Volotea",
-      },
-      {
-        aeroflyCode: "vueling",
-        name: "Vueling",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "A320",
@@ -211,148 +70,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 453,
     maximumRangeNm: 3321,
     aeroflyCode: "a320",
-    liveries: [
-      {
-        aeroflyCode: "aeroflot",
-        name: "Aeroflot",
-      },
-      {
-        aeroflyCode: "aer_lingus",
-        name: "Aer Lingus",
-      },
-      {
-        aeroflyCode: "air_asia",
-        name: "Air Asia",
-      },
-      {
-        aeroflyCode: "air_berlin",
-        name: "airberlin",
-      },
-      {
-        aeroflyCode: "air_china",
-        name: "Air China",
-      },
-      {
-        aeroflyCode: "air_france",
-        name: "Air France",
-      },
-      {
-        aeroflyCode: "air_jamaica",
-        name: "Air Jamaica",
-      },
-      {
-        aeroflyCode: "air_new_zealand",
-        name: "Air New Zealand",
-      },
-      {
-        aeroflyCode: "air_seychelles",
-        name: "Air Seychelles",
-      },
-      {
-        aeroflyCode: "alitalia",
-        name: "Alitalia",
-      },
-      {
-        aeroflyCode: "american",
-        name: "American Airlines",
-      },
-      {
-        aeroflyCode: "ana",
-        name: "All Nippon Airlines",
-      },
-      {
-        aeroflyCode: "avianca",
-        name: "Avianca",
-      },
-      {
-        aeroflyCode: "british_airways",
-        name: "British Airways",
-      },
-      {
-        aeroflyCode: "cathay_pacific",
-        name: "Cathay Pacific",
-      },
-      {
-        aeroflyCode: "china_eastern",
-        name: "China Eastern",
-      },
-      {
-        aeroflyCode: "china_southern",
-        name: "China Southern",
-      },
-      {
-        aeroflyCode: "citilink",
-        name: "Citilink",
-      },
-      {
-        aeroflyCode: "delta",
-        name: "Delta",
-      },
-      {
-        aeroflyCode: "easyjet",
-        name: "easyJet",
-      },
-      {
-        aeroflyCode: "edelweiss",
-        name: "Edelweiss",
-      },
-      {
-        aeroflyCode: "germanwings",
-        name: "germanwings",
-      },
-      {
-        aeroflyCode: "gulf_air",
-        name: "Gulf Air",
-      },
-      {
-        aeroflyCode: "indigo",
-        name: "Indigo",
-      },
-      {
-        aeroflyCode: "lan",
-        name: "LAN",
-      },
-      {
-        aeroflyCode: "lufthansa_classic",
-        name: "Lufthansa classic",
-      },
-      {
-        aeroflyCode: "malta",
-        name: "Malta",
-      },
-      {
-        aeroflyCode: "northwest",
-        name: "Northwest",
-      },
-      {
-        aeroflyCode: "s7",
-        name: "S7",
-      },
-      {
-        aeroflyCode: "shenzhen",
-        name: "Shenzhen Airlines",
-      },
-      {
-        aeroflyCode: "sichuan",
-        name: "Sichuan Airlines",
-      },
-      {
-        aeroflyCode: "swiss",
-        name: "Swiss",
-      },
-      {
-        aeroflyCode: "tam",
-        name: "TAM",
-      },
-      {
-        aeroflyCode: "tap",
-        name: "TAP",
-      },
-      {
-        aeroflyCode: "vietnam",
-        name: "Vietnam Airlines",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "A321",
@@ -375,140 +93,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 453,
     maximumRangeNm: 3186,
     aeroflyCode: "a321",
-    liveries: [
-      {
-        aeroflyCode: "air_busan",
-        name: "Air Busan",
-      },
-      {
-        aeroflyCode: "air_canada_rouge",
-        name: "Air Canada Rouge",
-      },
-      {
-        aeroflyCode: "air_france",
-        name: "Air France",
-      },
-      {
-        aeroflyCode: "air_lingus",
-        name: "Aer Lingus",
-      },
-      {
-        aeroflyCode: "air_transat",
-        name: "Air Transat",
-      },
-      {
-        aeroflyCode: "american",
-        name: "American",
-      },
-      {
-        aeroflyCode: "ana",
-        name: "ANA",
-      },
-      {
-        aeroflyCode: "avianca",
-        name: "Avianca",
-      },
-      {
-        aeroflyCode: "british_airways",
-        name: "British Airways",
-      },
-      {
-        aeroflyCode: "cebu_pacific",
-        name: "Cebu Pacific",
-      },
-      {
-        aeroflyCode: "china_southern",
-        name: "China Southern",
-      },
-      {
-        aeroflyCode: "delta",
-        name: "Delta",
-      },
-      {
-        aeroflyCode: "egyptair",
-        name: "EgyptAir",
-      },
-      {
-        aeroflyCode: "eurowings",
-        name: "Eurowings",
-      },
-      {
-        aeroflyCode: "eva_air",
-        name: "EVA Air",
-      },
-      {
-        aeroflyCode: "finnair",
-        name: "Finnair",
-      },
-      {
-        aeroflyCode: "jet2",
-        name: "Jet2",
-      },
-      {
-        aeroflyCode: "jetblue",
-        name: "jetBlue",
-      },
-      {
-        aeroflyCode: "latam",
-        name: "LATAM",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa",
-      },
-      {
-        aeroflyCode: "luftwaffe",
-        name: "Luftwaffe",
-      },
-      {
-        aeroflyCode: "sas",
-        name: "SAS",
-      },
-      {
-        aeroflyCode: "small_planet",
-        name: "Small Planet",
-      },
-      {
-        aeroflyCode: "spirit",
-        name: "Spirit",
-      },
-      {
-        aeroflyCode: "sunclass",
-        name: "Sunclass",
-      },
-      {
-        aeroflyCode: "swiss",
-        name: "SWISS",
-      },
-      {
-        aeroflyCode: "turkish",
-        name: "Turkish Airlines",
-      },
-      {
-        aeroflyCode: "vietjet_air",
-        name: "VietJet Air",
-      },
-      {
-        aeroflyCode: "vietnam",
-        name: "Vietnam",
-      },
-      {
-        aeroflyCode: "viva",
-        name: "Viva",
-      },
-      {
-        aeroflyCode: "volaris",
-        name: "Volaris",
-      },
-      {
-        aeroflyCode: "vueling",
-        name: "Vueling",
-      },
-      {
-        aeroflyCode: "wizzair",
-        name: "Wizz Air",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "A380",
@@ -531,76 +116,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 517,
     maximumRangeNm: 8207,
     aeroflyCode: "a380",
-    liveries: [
-      {
-        aeroflyCode: "air_france",
-        name: "Air France",
-      },
-      {
-        aeroflyCode: "ana_kai",
-        name: "ANA Kai",
-      },
-      {
-        aeroflyCode: "ana_kala",
-        name: "ANA Kala",
-      },
-      {
-        aeroflyCode: "ana_lani",
-        name: "ANA Lani",
-      },
-      {
-        aeroflyCode: "asiana",
-        name: "Asiana",
-      },
-      {
-        aeroflyCode: "china_southern",
-        name: "China Southern",
-      },
-      {
-        aeroflyCode: "emirates",
-        name: "Emirates",
-      },
-      {
-        aeroflyCode: "emirates_expo",
-        name: "Emirates Expo",
-      },
-      {
-        aeroflyCode: "etihad",
-        name: "Etihad",
-      },
-      {
-        aeroflyCode: "korean",
-        name: "Korean Air",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa",
-      },
-      {
-        aeroflyCode: "lufthansa_classic",
-        name: "Lufthansa",
-      },
-      {
-        aeroflyCode: "malaysia",
-        name: "Malaysia Airlines",
-      },
-      {
-        aeroflyCode: "qantas",
-        name: "Qantas",
-      },
-      {
-        aeroflyCode: "qatar",
-        name: "Qatar",
-      },
-      {
-        aeroflyCode: "singapore",
-        name: "Singapore Airlines",
-      },
-      {
-        aeroflyCode: "thai_airways",
-        name: "Thai Airways",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Antares 21E",
@@ -624,12 +140,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 81,
     maximumRangeNm: 313,
     aeroflyCode: "antares",
-    liveries: [
-      {
-        aeroflyCode: "orange",
-        name: "G-KJTD",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "ASG 29",
@@ -641,12 +152,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 76,
     maximumRangeNm: 0,
     aeroflyCode: "asg29",
-    liveries: [
-      {
-        aeroflyCode: "red",
-        name: "Red",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "ASK 21",
@@ -658,12 +164,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 59,
     maximumRangeNm: 0,
     aeroflyCode: "ask21",
-    liveries: [
-      {
-        aeroflyCode: "blue",
-        name: "Blue",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Baron 58",
@@ -675,12 +176,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 202,
     maximumRangeNm: 1229,
     aeroflyCode: "b58",
-    liveries: [
-      {
-        aeroflyCode: "black_red",
-        name: "Black",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "B737-500",
@@ -702,72 +198,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 490,
     maximumRangeNm: 2808,
     aeroflyCode: "b737",
-    liveries: [
-      {
-        aeroflyCode: "air_busan",
-        name: "Air Busan",
-      },
-      {
-        aeroflyCode: "air_france",
-        name: "Air France",
-      },
-      {
-        aeroflyCode: "america_west",
-        name: "America West",
-      },
-      {
-        aeroflyCode: "ana",
-        name: "All Nippon Airways",
-      },
-      {
-        aeroflyCode: "british_airways",
-        name: "British Airways",
-      },
-      {
-        aeroflyCode: "british_midland",
-        name: "British Midland",
-      },
-      {
-        aeroflyCode: "continental",
-        name: "Continental Airlines",
-      },
-      {
-        aeroflyCode: "delta",
-        name: "Delta",
-      },
-      {
-        aeroflyCode: "egypt_air",
-        name: "Egypt Air",
-      },
-      {
-        aeroflyCode: "estonian",
-        name: "Estonian Air",
-      },
-      {
-        aeroflyCode: "garuda",
-        name: "Garuda Indonesia",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa",
-      },
-      {
-        aeroflyCode: "southwest",
-        name: "Southwest",
-      },
-      {
-        aeroflyCode: "sun_country",
-        name: "Sun Country",
-      },
-      {
-        aeroflyCode: "united",
-        name: "United Airlines",
-      },
-      {
-        aeroflyCode: "us_airways",
-        name: "US Airways",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "B737-900ER",
@@ -789,52 +220,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 453,
     maximumRangeNm: 2948,
     aeroflyCode: "b737_900",
-    liveries: [
-      {
-        aeroflyCode: "continental",
-        name: "Continental Airlines",
-      },
-      {
-        aeroflyCode: "delta",
-        name: "Delta",
-      },
-      {
-        aeroflyCode: "elal",
-        name: "El Al",
-      },
-      {
-        aeroflyCode: "klm",
-        name: "KLM",
-      },
-      {
-        aeroflyCode: "korean",
-        name: "Korean Airlines",
-      },
-      {
-        aeroflyCode: "lionair",
-        name: "Lionair",
-      },
-      {
-        aeroflyCode: "omanair",
-        name: "Oman Air",
-      },
-      {
-        aeroflyCode: "skyup",
-        name: "SkyUp",
-      },
-      {
-        aeroflyCode: "spicejet",
-        name: "Spicejet",
-      },
-      {
-        aeroflyCode: "turkish",
-        name: "Turkish Airlines",
-      },
-      {
-        aeroflyCode: "united",
-        name: "United Airlines",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "B737 MAX 9",
@@ -856,48 +242,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 453,
     maximumRangeNm: 3548,
     aeroflyCode: "b737_max9",
-    liveries: [
-      {
-        aeroflyCode: "air_tanzania",
-        name: "Air Tanzania",
-      },
-      {
-        aeroflyCode: "alaska",
-        name: "Alaska Airlines",
-      },
-      {
-        aeroflyCode: "copa",
-        name: "Copa Airlines",
-      },
-      {
-        aeroflyCode: "corendon",
-        name: "Corendon",
-      },
-      {
-        aeroflyCode: "flydubai",
-        name: "FlyDubai",
-      },
-      {
-        aeroflyCode: "icelandair",
-        name: "Icelandair",
-      },
-      {
-        aeroflyCode: "lionair",
-        name: "Lionair",
-      },
-      {
-        aeroflyCode: "scat",
-        name: "SCAT",
-      },
-      {
-        aeroflyCode: "turkish",
-        name: "Turkish Airlines",
-      },
-      {
-        aeroflyCode: "united",
-        name: "United Airlines",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "B747-400",
@@ -921,60 +266,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 492,
     maximumRangeNm: 7262,
     aeroflyCode: "b747",
-    liveries: [
-      {
-        aeroflyCode: "air_canada",
-        name: "Air Canada",
-      },
-      {
-        aeroflyCode: "air_china",
-        name: "Air China",
-      },
-      {
-        aeroflyCode: "air_france",
-        name: "Air France",
-      },
-      {
-        aeroflyCode: "air_india",
-        name: "Air India",
-      },
-      {
-        aeroflyCode: "british_airways",
-        name: "British Airways",
-      },
-      {
-        aeroflyCode: "cathay_pacific",
-        name: "Cathay Pacific",
-      },
-      {
-        aeroflyCode: "corsair",
-        name: "Corsair",
-      },
-      {
-        aeroflyCode: "delta",
-        name: "Delta",
-      },
-      {
-        aeroflyCode: "eva",
-        name: "Eva Air",
-      },
-      {
-        aeroflyCode: "korean",
-        name: "Korean Air",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa",
-      },
-      {
-        aeroflyCode: "saudi_arabian",
-        name: "Saudia",
-      },
-      {
-        aeroflyCode: "united",
-        name: "United",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "B777F",
@@ -997,96 +289,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 482,
     maximumRangeNm: 9750,
     aeroflyCode: "b777f",
-    liveries: [
-      {
-        aeroflyCode: "aerologic",
-        name: "Aero Logic",
-      },
-      {
-        aeroflyCode: "air_france",
-        name: "Air France Cargo",
-      },
-      {
-        aeroflyCode: "ana",
-        name: "ANA Cargo",
-      },
-      {
-        aeroflyCode: "china_airlines",
-        name: "China Airlines Cargo",
-      },
-      {
-        aeroflyCode: "china_eastern",
-        name: "China Eastern Cargo",
-      },
-      {
-        aeroflyCode: "china_southern",
-        name: "China Southern Cargo",
-      },
-      {
-        aeroflyCode: "cma_cgm",
-        name: "CMA CGM Cargo",
-      },
-      {
-        aeroflyCode: "emirates",
-        name: "Emirates Cargo",
-      },
-      {
-        aeroflyCode: "ethiopian",
-        name: "Ethiopian Cargo",
-      },
-      {
-        aeroflyCode: "etihad",
-        name: "Etihad Cargo",
-      },
-      {
-        aeroflyCode: "eva_air",
-        name: "Eva Air Cargo",
-      },
-      {
-        aeroflyCode: "fedex",
-        name: "FedEx",
-      },
-      {
-        aeroflyCode: "korean",
-        name: "Korean Air Cargo",
-      },
-      {
-        aeroflyCode: "latam",
-        name: "Latam Cargo",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa Cargo",
-      },
-      {
-        aeroflyCode: "msc",
-        name: "MSC Cargo",
-      },
-      {
-        aeroflyCode: "qatar",
-        name: "Qatar Cargo",
-      },
-      {
-        aeroflyCode: "saudi",
-        name: "Saudi Cargo",
-      },
-      {
-        aeroflyCode: "silkway",
-        name: "Silkway",
-      },
-      {
-        aeroflyCode: "thai",
-        name: "ThaiCargo",
-      },
-      {
-        aeroflyCode: "tnt",
-        name: "TNT Cargo",
-      },
-      {
-        aeroflyCode: "turkish",
-        name: "Turkish Cargo",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "B777-300ER",
@@ -1109,176 +312,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 482,
     maximumRangeNm: 7370,
     aeroflyCode: "b777_300er",
-    liveries: [
-      {
-        aeroflyCode: "aeroflot",
-        name: "Aeroflot",
-      },
-      {
-        aeroflyCode: "air_austral_green",
-        name: "Air Austral",
-      },
-      {
-        aeroflyCode: "air_austral_red",
-        name: "Air Austral",
-      },
-      {
-        aeroflyCode: "air_canada",
-        name: "Air Canada",
-      },
-      {
-        aeroflyCode: "air_china",
-        name: "Air China",
-      },
-      {
-        aeroflyCode: "air_france",
-        name: "Air France",
-      },
-      {
-        aeroflyCode: "air_new_zealand",
-        name: "Air New Zealand",
-      },
-      {
-        aeroflyCode: "air_new_zealand_blue",
-        name: "Air New Zealand",
-      },
-      {
-        aeroflyCode: "alitalia",
-        name: "Alitalia",
-      },
-      {
-        aeroflyCode: "american",
-        name: "American Airlines",
-      },
-      {
-        aeroflyCode: "ana",
-        name: "All Nippon Airways",
-      },
-      {
-        aeroflyCode: "bangladesh",
-        name: "Bangladesh Airlines",
-      },
-      {
-        aeroflyCode: "cathay",
-        name: "Cathay Pacific",
-      },
-      {
-        aeroflyCode: "china_airlines",
-        name: "China Airlines",
-      },
-      {
-        aeroflyCode: "china_eastern",
-        name: "China Eastern",
-      },
-      {
-        aeroflyCode: "china_southern",
-        name: "China Southern",
-      },
-      {
-        aeroflyCode: "egyptair",
-        name: "Egypt Air",
-      },
-      {
-        aeroflyCode: "emirates",
-        name: "Emirates",
-      },
-      {
-        aeroflyCode: "ethiopian",
-        name: "Ethiopian",
-      },
-      {
-        aeroflyCode: "eva_air",
-        name: "EVA Air",
-      },
-      {
-        aeroflyCode: "garuda_indonesia",
-        name: "Garuda Indonesia",
-      },
-      {
-        aeroflyCode: "gulf_air",
-        name: "Gulf Air",
-      },
-      {
-        aeroflyCode: "india",
-        name: "Gouverment of India",
-      },
-      {
-        aeroflyCode: "indigo",
-        name: "IndiGo",
-      },
-      {
-        aeroflyCode: "japan",
-        name: "Japan Airlines",
-      },
-      {
-        aeroflyCode: "jasdf",
-        name: "Japan",
-      },
-      {
-        aeroflyCode: "jet_airways",
-        name: "Jet Airways",
-      },
-      {
-        aeroflyCode: "kenya",
-        name: "Kenya Airways",
-      },
-      {
-        aeroflyCode: "klm",
-        name: "KLM",
-      },
-      {
-        aeroflyCode: "klm_orange_pride",
-        name: "KLM Orange Pride",
-      },
-      {
-        aeroflyCode: "korean",
-        name: "Korean Air",
-      },
-      {
-        aeroflyCode: "latam",
-        name: "LATAM",
-      },
-      {
-        aeroflyCode: "pakistan",
-        name: "Pakistan",
-      },
-      {
-        aeroflyCode: "philippine",
-        name: "Philippine Airlines",
-      },
-      {
-        aeroflyCode: "qatar",
-        name: "Qatar Airways",
-      },
-      {
-        aeroflyCode: "saudi_arabian",
-        name: "Saudi Arabian",
-      },
-      {
-        aeroflyCode: "singapore",
-        name: "Singapore Airlines",
-      },
-      {
-        aeroflyCode: "swiss",
-        name: "Swiss",
-      },
-      {
-        aeroflyCode: "tam",
-        name: "TAM",
-      },
-      {
-        aeroflyCode: "thai",
-        name: "Thai",
-      },
-      {
-        aeroflyCode: "turkish",
-        name: "Turkish Airlines",
-      },
-      {
-        aeroflyCode: "united",
-        name: "United",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "B787-10",
@@ -1301,36 +335,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 482,
     maximumRangeNm: 6425,
     aeroflyCode: "b787",
-    liveries: [
-      {
-        aeroflyCode: "british_airways",
-        name: "British Airways",
-      },
-      {
-        aeroflyCode: "etihad",
-        name: "Etihad",
-      },
-      {
-        aeroflyCode: "eva",
-        name: "EVA Airlines",
-      },
-      {
-        aeroflyCode: "klm",
-        name: "KLM",
-      },
-      {
-        aeroflyCode: "singapore",
-        name: "Singapore Airlines",
-      },
-      {
-        aeroflyCode: "united",
-        name: "United Airlines",
-      },
-      {
-        aeroflyCode: "vietnam",
-        name: "Vietnam Airlines",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Bf 109E",
@@ -1354,24 +359,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 130,
     maximumRangeNm: 1031,
     aeroflyCode: "c172",
-    liveries: [
-      {
-        aeroflyCode: "blue_split",
-        name: "Blue Split",
-      },
-      {
-        aeroflyCode: "blue_wave",
-        name: "Blue Wave",
-      },
-      {
-        aeroflyCode: "classic",
-        name: "Classic",
-      },
-      {
-        aeroflyCode: "highway_patrol",
-        name: "Highway Patrol",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "King Air",
@@ -1383,16 +371,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 272,
     maximumRangeNm: 1192,
     aeroflyCode: "c90gtx",
-    liveries: [
-      {
-        aeroflyCode: "red_black",
-        name: "Elegance",
-      },
-      {
-        aeroflyCode: "stars_and_stripes",
-        name: "Stars and Stripes",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Camel",
@@ -1427,20 +406,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 1177,
     maximumRangeNm: 3900,
     aeroflyCode: "concorde",
-    liveries: [
-      {
-        aeroflyCode: "british_airways_1976",
-        name: "British Airways 1976",
-      },
-      {
-        aeroflyCode: "british_airways_1985",
-        name: "British Airways 1985",
-      },
-      {
-        aeroflyCode: "british_airways_1998",
-        name: "British Airways 1998",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "CRJ-900LR",
@@ -1463,44 +429,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 470,
     maximumRangeNm: 1550,
     aeroflyCode: "crj900",
-    liveries: [
-      {
-        aeroflyCode: "adria",
-        name: "Adria",
-      },
-      {
-        aeroflyCode: "air_canada",
-        name: "Air Canada",
-      },
-      {
-        aeroflyCode: "american",
-        name: "American Airlines",
-      },
-      {
-        aeroflyCode: "delta",
-        name: "Delta Airways",
-      },
-      {
-        aeroflyCode: "iberia",
-        name: "Iberia",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa",
-      },
-      {
-        aeroflyCode: "nordica",
-        name: "Nordica",
-      },
-      {
-        aeroflyCode: "scandinavian",
-        name: "Scandinavian Airlines",
-      },
-      {
-        aeroflyCode: "us_airways",
-        name: "US Airways",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Dr.I",
@@ -1512,16 +441,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 100,
     maximumRangeNm: 162,
     aeroflyCode: "dr1",
-    liveries: [
-      {
-        aeroflyCode: "camo",
-        name: "Camo",
-      },
-      {
-        aeroflyCode: "camo2",
-        name: "Camo2",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "DR400",
@@ -1545,28 +465,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 135,
     maximumRangeNm: 343,
     aeroflyCode: "ec135",
-    liveries: [
-      {
-        aeroflyCode: "adac",
-        name: "ADAC",
-      },
-      {
-        aeroflyCode: "drf",
-        name: "DRF",
-      },
-      {
-        aeroflyCode: "german_army",
-        name: "German Army",
-      },
-      {
-        aeroflyCode: "police",
-        name: "Blue",
-      },
-      {
-        aeroflyCode: "sheriff",
-        name: "Sheriff",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Extra 330",
@@ -1578,12 +477,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 220,
     maximumRangeNm: 459,
     aeroflyCode: "extra330",
-    liveries: [
-      {
-        aeroflyCode: "red",
-        name: " Red ",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "F-15E",
@@ -1595,16 +489,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 1458,
     maximumRangeNm: 3100,
     aeroflyCode: "f15e",
-    liveries: [
-      {
-        aeroflyCode: "desert",
-        name: "Desert Scheme",
-      },
-      {
-        aeroflyCode: "splinter",
-        name: "Splinter Scheme",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "F/A-18C",
@@ -1628,44 +513,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 1034,
     maximumRangeNm: 1080,
     aeroflyCode: "f18",
-    liveries: [
-      {
-        aeroflyCode: "australia_33",
-        name: "Australia 33",
-      },
-      {
-        aeroflyCode: "blue_angels",
-        name: "Blue Angels",
-      },
-      {
-        aeroflyCode: "canada_150",
-        name: "Canada 150",
-      },
-      {
-        aeroflyCode: "century_of_flight",
-        name: "Century of Flight",
-      },
-      {
-        aeroflyCode: "digital_camo",
-        name: "Digital Camo",
-      },
-      {
-        aeroflyCode: "finnland_h11",
-        name: "Finnland",
-      },
-      {
-        aeroflyCode: "nasa",
-        name: "NASA",
-      },
-      {
-        aeroflyCode: "norad",
-        name: "Norad",
-      },
-      {
-        aeroflyCode: "swiss_air_force",
-        name: "Swiss Air Force",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Corsair",
@@ -1688,16 +536,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 389,
     maximumRangeNm: 930,
     aeroflyCode: "f4u",
-    liveries: [
-      {
-        aeroflyCode: "nrtu",
-        name: "NAVY",
-      },
-      {
-        aeroflyCode: "racing",
-        name: "Racing",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Ju 52",
@@ -1709,12 +548,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 136,
     maximumRangeNm: 1080,
     aeroflyCode: "ju52",
-    liveries: [
-      {
-        aeroflyCode: "silver",
-        name: "Silver",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Jungmeister",
@@ -1726,20 +560,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 119,
     maximumRangeNm: 270,
     aeroflyCode: "jungmeister",
-    liveries: [
-      {
-        aeroflyCode: "beige",
-        name: "Beige",
-      },
-      {
-        aeroflyCode: "blue",
-        name: "Blue",
-      },
-      {
-        aeroflyCode: "silver",
-        name: "Silver",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Learjet 45",
@@ -1760,20 +581,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 486,
     maximumRangeNm: 1710,
     aeroflyCode: "lj45",
-    liveries: [
-      {
-        aeroflyCode: "black_red",
-        name: "Elegance",
-      },
-      {
-        aeroflyCode: "blue",
-        name: "Blue",
-      },
-      {
-        aeroflyCode: "silver",
-        name: "Silver Wave",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "MB-339",
@@ -1785,24 +593,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 486,
     maximumRangeNm: 1188,
     aeroflyCode: "mb339",
-    liveries: [
-      {
-        aeroflyCode: "argentina",
-        name: "Argentina",
-      },
-      {
-        aeroflyCode: "malaysia",
-        name: "Malaysia",
-      },
-      {
-        aeroflyCode: "new_zealand",
-        name: "New Zealand",
-      },
-      {
-        aeroflyCode: "uae",
-        name: "UAE Air Force",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "P-38",
@@ -1814,16 +605,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 315,
     maximumRangeNm: 1031,
     aeroflyCode: "p38",
-    liveries: [
-      {
-        aeroflyCode: "aluminum",
-        name: "Aluminum",
-      },
-      {
-        aeroflyCode: "yippee",
-        name: "YIPPEE",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Pitts",
@@ -1835,24 +617,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 132,
     maximumRangeNm: 216,
     aeroflyCode: "pitts",
-    liveries: [
-      {
-        aeroflyCode: "blue",
-        name: "Power Blue",
-      },
-      {
-        aeroflyCode: "stars",
-        name: "Stars",
-      },
-      {
-        aeroflyCode: "yellow",
-        name: "Rocket Yellow",
-      },
-      {
-        aeroflyCode: "yellow_black",
-        name: "Yellow Black",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Q400",
@@ -1874,164 +639,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 286,
     maximumRangeNm: 2808,
     aeroflyCode: "q400",
-    liveries: [
-      {
-        aeroflyCode: "airberlin",
-        name: "Airberlin",
-      },
-      {
-        aeroflyCode: "air_baltic",
-        name: "Air Baltic",
-      },
-      {
-        aeroflyCode: "air_canada",
-        name: "Air Canada",
-      },
-      {
-        aeroflyCode: "air_tanzania",
-        name: "Air Tanzania",
-      },
-      {
-        aeroflyCode: "alaska",
-        name: "Alaska",
-      },
-      {
-        aeroflyCode: "ana",
-        name: "ANA",
-      },
-      {
-        aeroflyCode: "arik",
-        name: "Arik",
-      },
-      {
-        aeroflyCode: "austrian",
-        name: "Austrian",
-      },
-      {
-        aeroflyCode: "camairco",
-        name: "Camair-Co",
-      },
-      {
-        aeroflyCode: "connect",
-        name: "Connect",
-      },
-      {
-        aeroflyCode: "continental",
-        name: "Continental",
-      },
-      {
-        aeroflyCode: "croatia",
-        name: "Croatia",
-      },
-      {
-        aeroflyCode: "darwin",
-        name: "Darwin",
-      },
-      {
-        aeroflyCode: "ethiopian",
-        name: "Ethiopian",
-      },
-      {
-        aeroflyCode: "flybe",
-        name: "FlyBe",
-      },
-      {
-        aeroflyCode: "horizon_celebration",
-        name: "Horizon Celebration",
-      },
-      {
-        aeroflyCode: "horizon_green",
-        name: "Horizon Green",
-      },
-      {
-        aeroflyCode: "hydro_quebec",
-        name: "Hydro Quebec",
-      },
-      {
-        aeroflyCode: "icelandair",
-        name: "Icelandair",
-      },
-      {
-        aeroflyCode: "jal",
-        name: "Japan Air Commuter",
-      },
-      {
-        aeroflyCode: "lan",
-        name: "LAN",
-      },
-      {
-        aeroflyCode: "lot",
-        name: "LOT Polish Airlines",
-      },
-      {
-        aeroflyCode: "lufthansa",
-        name: "Lufthansa Regional",
-      },
-      {
-        aeroflyCode: "luxair",
-        name: "Luxair",
-      },
-      {
-        aeroflyCode: "malev",
-        name: "Malev",
-      },
-      {
-        aeroflyCode: "passionair",
-        name: "Passionair",
-      },
-      {
-        aeroflyCode: "porter",
-        name: "Porter",
-      },
-      {
-        aeroflyCode: "qantas",
-        name: "Qantas",
-      },
-      {
-        aeroflyCode: "qazaq",
-        name: "Qazaq",
-      },
-      {
-        aeroflyCode: "royal_jordanian",
-        name: "Royal Jordanian",
-      },
-      {
-        aeroflyCode: "sas",
-        name: "SAS Commuter",
-      },
-      {
-        aeroflyCode: "sata",
-        name: "Sata",
-      },
-      {
-        aeroflyCode: "sa_express",
-        name: "sa express",
-      },
-      {
-        aeroflyCode: "skyalps",
-        name: "Skyalps",
-      },
-      {
-        aeroflyCode: "skywork",
-        name: "SkyWork",
-      },
-      {
-        aeroflyCode: "spicejet",
-        name: "Spicejet",
-      },
-      {
-        aeroflyCode: "starperu",
-        name: "StarPeru",
-      },
-      {
-        aeroflyCode: "westjet",
-        name: "Westjet",
-      },
-      {
-        aeroflyCode: "wideroe",
-        name: "Wideroe",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "R22",
@@ -2043,40 +651,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 105,
     maximumRangeNm: 208,
     aeroflyCode: "r22",
-    liveries: [
-      {
-        aeroflyCode: "aurora",
-        name: "Aurora",
-      },
-      {
-        aeroflyCode: "blue",
-        name: "Blue",
-      },
-      {
-        aeroflyCode: "champagne",
-        name: "Champagne",
-      },
-      {
-        aeroflyCode: "gold",
-        name: "Gold",
-      },
-      {
-        aeroflyCode: "green",
-        name: "Green",
-      },
-      {
-        aeroflyCode: "red",
-        name: "Red",
-      },
-      {
-        aeroflyCode: "white",
-        name: "White",
-      },
-      {
-        aeroflyCode: "yellow",
-        name: "Yellow",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "Swift",
@@ -2088,12 +663,7 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 65,
     maximumRangeNm: 0,
     aeroflyCode: "swift",
-    liveries: [
-      {
-        aeroflyCode: "airc2fly",
-        name: "AIRC2fly",
-      },
-    ],
+    liveries: [],
   },
   {
     name: "UH-60M",
@@ -2105,54 +675,17 @@ export const AeroflyAircraftCollection: AeroflyAircraftBasic[] = [
     cruiseSpeedKts: 160,
     maximumRangeNm: 252,
     aeroflyCode: "uh60",
-    liveries: [
-      {
-        aeroflyCode: "army",
-        name: "US Army",
-      },
-      {
-        aeroflyCode: "firefighter",
-        name: "Firefighter",
-      },
-      {
-        aeroflyCode: "firehawk",
-        name: "Firehawk",
-      },
-      {
-        aeroflyCode: "marineone",
-        name: "Marine One",
-      },
-      {
-        aeroflyCode: "mexico",
-        name: "Mexico",
-      },
-      {
-        aeroflyCode: "sar",
-        name: "NAS Fallon",
-      },
-      {
-        aeroflyCode: "slovakia",
-        name: "Slovakia",
-      },
-      {
-        aeroflyCode: "sweden",
-        name: "Sweden",
-      },
-      {
-        aeroflyCode: "taiwan",
-        name: "Taiwan",
-      },
-    ],
+    liveries: [],
   },
 ];
 
-export const AeroflyAircraftFinder = {
+export class AeroflyAircraftFinder {
   /**
    *
    * @param {string} aeroflyAircraftCode
    * @returns {AeroflyAircraft}
    */
-  get: (aeroflyAircraftCode: string): AeroflyAircraft => {
+  static get(aeroflyAircraftCode: string): AeroflyAircraft {
     const aircraft = AeroflyAircraftCollection.find((a) => {
       return a.aeroflyCode === aeroflyAircraftCode;
     });
@@ -2169,21 +702,13 @@ export const AeroflyAircraftFinder = {
       type = "G";
     }
 
-    const isAirliner = aircraft.tags.includes("airliner");
-    const runwayTakeoff = isAirliner ? 8000 : null;
-    const runwayLanding = isAirliner ? 6000 : null;
-
     const callsign = aircraft.icaoCode
       ? "N" +
         String.fromCharCode(
           (aircraft.icaoCode.charCodeAt(1) % 9) + 49, // Numeric 1..9
           AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(0)),
-          AeroflyAircraftFinder.randomizedLetter(
-            aircraft.icaoCode.charCodeAt(Math.min(aircraft.icaoCode.length - 1, 3)) ?? 0,
-          ),
-          AeroflyAircraftFinder.randomizedLetter(
-            aircraft.icaoCode.charCodeAt(Math.min(aircraft.icaoCode.length - 1, 2)) ?? 0,
-          ),
+          AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(3)),
+          AeroflyAircraftFinder.randomizedLetter(aircraft.icaoCode.charCodeAt(2)),
         )
       : "N0XXX";
     const hasNoRadioNav = aircraft.tags.includes("historical") || aircraft.tags.includes("aerobatics");
@@ -2193,21 +718,81 @@ export const AeroflyAircraftFinder = {
       type,
       callsign,
       hasNoRadioNav,
-      runwayTakeoff,
-      runwayLanding,
+      ...AeroflyAircraftFinder.getRunwayLengths(aircraft),
     };
-  },
+  }
 
   /**
    * Letterchar code, without I and O
    */
-  randomizedLetter(seed: number): number {
-    let code = (seed % 26) + 65;
+  static randomizedLetter(seed: number): number {
+    let code = ((Number.isNaN(seed) ? 0 : seed) % 26) + 65;
 
     // Skip I and O
     if (code === 73 || code === 79) {
       code += 1;
     }
     return code;
-  },
-};
+  }
+
+  static getRunwayLengths(aircraft: AeroflyAircraftBasic): {
+    runwayTakeoff: number | null;
+    runwayLanding: number | null;
+  } {
+    let runwayTakeoff: number | null = null;
+    let runwayLanding: number | null = null;
+
+    switch (aircraft.aeroflyCode) {
+      case "a320":
+        runwayTakeoff = 7186;
+        runwayLanding = 4725;
+        break;
+      case "b58":
+        runwayTakeoff = 1373;
+        runwayLanding = 1440;
+        break;
+      case "c172":
+        runwayTakeoff = 960;
+        runwayLanding = 575;
+        break;
+      case "c90gtx":
+        runwayTakeoff = 2557;
+        runwayLanding = 3417;
+        break;
+      case "dr400":
+        runwayTakeoff = 1150;
+        runwayLanding = 820;
+        break;
+      case "f15e":
+        runwayTakeoff = 985;
+        runwayLanding = 1641;
+        break;
+      case "f18":
+        runwayTakeoff = 1477;
+        runwayLanding = 1313;
+        break;
+      case "jungmeister":
+        runwayTakeoff = 380;
+        runwayLanding = 374;
+        break;
+      case "lj45":
+        runwayTakeoff = 4348;
+        runwayLanding = 2658;
+        break;
+      case "mb339":
+        runwayTakeoff = 1772;
+        runwayLanding = 1542;
+        break;
+      default:
+        if (aircraft.tags.includes("airliner")) {
+          runwayTakeoff = 8000;
+          runwayLanding = 6000;
+        } else if (aircraft.tags.includes("helicopter")) {
+          runwayTakeoff = 0;
+          runwayLanding = 0;
+        }
+        break;
+    }
+    return { runwayTakeoff, runwayLanding };
+  }
+}
