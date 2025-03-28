@@ -28,14 +28,7 @@ export class ConfigurationAbstract {
   help: boolean;
 
   constructor() {
-    /**
-     * @type {ConfigurationPositional[]}
-     */
     this._arguments = [];
-
-    /**
-     * @type {{[key:string]: ParseArgsParameters}}
-     */
     this._options = {
       help: {
         type: "boolean",
@@ -44,10 +37,6 @@ export class ConfigurationAbstract {
         description: "Will output the help.",
       },
     };
-
-    /**
-     * @type {boolean}
-     */
     this.help = false;
   }
 
@@ -72,7 +61,7 @@ export class ConfigurationAbstract {
   }
 
   get helpText(): string {
-    let parameters: string[] = [`v${this.version}: ${this.description}`];
+    const parameters: string[] = [`v${this.version}: ${this.description}`];
 
     if (this._arguments) {
       parameters.push("", "Arguments:");
@@ -92,7 +81,7 @@ export class ConfigurationAbstract {
     if (this._options) {
       parameters.push("", "Options:");
 
-      for (let parameterName in this._options) {
+      for (const parameterName in this._options) {
         const option = this._options[parameterName];
 
         let parameter = `--${parameterName}`;

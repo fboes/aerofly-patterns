@@ -11,8 +11,8 @@ import {
   AeroflyMissionConditions,
   AeroflyMissionConditionsCloud,
   AeroflyMissionsList,
+  AeroflyMissionTargetPlane,
 } from "@fboes/aerofly-custom-missions";
-import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { Vector } from "@fboes/geojson";
 import { Markdown } from "../general/Markdown.js";
 
@@ -40,11 +40,6 @@ export class AeroflyPatterns {
     this.scenarios = [];
   }
 
-  /**
-   *
-   * @param {Configuration} configuration
-   * @returns {Promise<AeroflyPatterns>}
-   */
   static async init(configuration: Configuration): Promise<AeroflyPatterns> {
     const self = new AeroflyPatterns(configuration);
 
@@ -75,10 +70,6 @@ export class AeroflyPatterns {
     return self;
   }
 
-  /**
-   *
-   * @returns {?FeatureCollection}
-   */
   buildGeoJson(): FeatureCollection | null {
     if (!this.airport) {
       return null;
@@ -166,9 +157,6 @@ export class AeroflyPatterns {
     return geoJson;
   }
 
-  /**
-   * @returns {string}
-   */
   buildCustomMissionTmc(): string {
     /**
      * @type {AeroflyMission[]}
@@ -234,20 +222,11 @@ export class AeroflyPatterns {
     return new AeroflyMissionsList(missions).toString();
   }
 
-  /**
-   *
-   * @returns {string}
-   */
   buildReadmeMarkdown(): string {
     if (!this.airport) {
       return "";
     }
 
-    /**
-     * @param {number|string} value
-     * @param {number} targetLength
-     * @returns {string}
-     */
     const padNumber = (value: number | string, targetLength: number = 2): string => {
       return String(value).padStart(targetLength, "0");
     };

@@ -4,9 +4,6 @@ import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 export class Configuration extends ConfigurationAbstract {
     constructor(args) {
         super();
-        /**
-         * @type {ConfigurationPositional[]}
-         */
         this._arguments = [
             {
                 name: "GEOJSON_FILE",
@@ -15,9 +12,6 @@ export class Configuration extends ConfigurationAbstract {
             { name: "AFS_AIRCRAFT_CODE", description: "Internal aircraft code in Aerofly FS 4.", default: "ec135" },
             { name: "AFS_LIVERY_CODE", description: "Internal livery code in Aerofly FS 4", default: "adac" },
         ];
-        /**
-         * @type {{[key:string]: ParseArgsParameters}}
-         */
         this._options = {
             "metar-icao": {
                 type: "string",
@@ -79,9 +73,6 @@ export class Configuration extends ConfigurationAbstract {
             },
         };
         const { values, positionals } = this.parseArgs(args);
-        /**
-         * @type {string}
-         */
         this.geoJsonFile =
             positionals[0] ??
                 path.join(path.dirname(fileURLToPath(import.meta.url)), "../../../src/data/hems/san_francisco.geojson");

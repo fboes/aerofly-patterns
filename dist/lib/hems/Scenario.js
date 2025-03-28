@@ -11,14 +11,6 @@ import { MissionTypeFinder } from "../../data/hems/MissionTypes.js";
 import { Vector } from "@fboes/geojson";
 import { degreeDifference } from "../general/Degree.js";
 export class Scenario {
-    /**
-     * @param {GeoJsonLocations} locations
-     * @param {Configuration} configuration
-     * @param {AeroflyAircraft} aircraft
-     * @param {Date} time
-     * @param {number} index
-     * @returns {Promise<Scenario>}
-     */
     static async init(locations, configuration, aircraft, time, index = 0) {
         const missionLocations = Scenario.getMissionLocations(locations, configuration.canTransfer && locations.hospitals.length > 1 && Math.random() <= 0.1);
         const metarIcaoCode = configuration.icaoCode ?? missionLocations[0].icaoCode;
@@ -32,14 +24,6 @@ export class Scenario {
         const weather = new AviationWeatherNormalizedMetar(weathers[0]);
         return new Scenario(missionLocations, configuration, aircraft, time, weather, index);
     }
-    /**
-     * @param {GeoJsonLocation[]} missionLocations
-     * @param {Configuration} configuration
-     * @param {AeroflyAircraft} aircraft
-     * @param {Date} time
-     * @param {AviationWeatherNormalizedMetar} weather
-     * @param {number} index
-     */
     constructor(missionLocations, configuration, aircraft, time, weather, index = 0) {
         _Scenario_instances.add(this);
         this.date = time;

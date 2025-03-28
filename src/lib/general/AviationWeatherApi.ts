@@ -20,6 +20,10 @@ export interface AviationWeatherApiMetar {
   altim: number;
   lat: number;
   lon: number;
+
+  /**
+   * meters MSL
+   */
   elev: number;
   clouds: AviationWeatherApiCloud[];
 }
@@ -50,6 +54,10 @@ export interface AviationWeatherApiAirport {
   type: "ARP" | "HEL";
   lat: number;
   lon: number;
+
+  /**
+   * meters MSL
+   */
   elev: number;
   magdec: string;
   rwyNum: string;
@@ -130,6 +138,7 @@ export class AviationWeatherApi {
     );
   }
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   /**
    *
    * @param {string} route
@@ -166,6 +175,10 @@ export class AviationWeatherNormalizedAirport {
   type: "ARP" | "HEL";
   lat: number;
   lon: number;
+
+  /**
+   * meters MSL
+   */
   elev: number;
   magdec: number;
   rwyNum: number;
@@ -296,12 +309,19 @@ export class AviationWeatherNormalizedMetar {
    * in °, null on VRB
    */
   wdir: number | null;
+  /**
+   * in kts
+   */
   wspd: number;
   wgst: number | null;
   visib: number;
   altim: number;
   lat: number;
   lon: number;
+
+  /**
+   * meters MSL
+   */
   elev: number;
   clouds: AviationWeatherNormalizedCloud[];
   /**
@@ -327,12 +347,7 @@ export class AviationWeatherNormalizedMetar {
     this.reportTime = new Date(Date.parse(reportTime + " GMT"));
     this.temp = temp;
     this.dewp = dewp;
-
     this.wdir = wdir !== "VRB" ? wdir : null;
-
-    /**
-     * @type {number} in kts
-     */
     this.wspd = wspd;
 
     /**
@@ -349,20 +364,8 @@ export class AviationWeatherNormalizedMetar {
      * @type {number} in hPa
      */
     this.altim = altim;
-
-    /**
-     * @type {number}
-     */
     this.lat = lat;
-
-    /**
-     * @type {number}
-     */
     this.lon = lon;
-
-    /**
-     * @type {number} meters MSL
-     */
     this.elev = elev;
 
     /**
@@ -376,11 +379,17 @@ export class AviationWeatherNormalizedMetar {
 
 export class AviationWeatherNormalizedCloud {
   cover: "CLR" | "FEW" | "SCT" | "BKN" | "OVC";
-  coverOctas: number;
-  base: number | null;
+
   /**
-   * @param {AviationWeatherApiCloud} apiData
+   *  0..8
    */
+  coverOctas: number;
+
+  /**
+   *  in feet AGL
+   */
+  base: number | null;
+
   constructor({ cover, base }: AviationWeatherApiCloud) {
     this.cover = cover === "CAVOK" || cover === "SKC" ? "CLR" : cover;
 
@@ -392,14 +401,7 @@ export class AviationWeatherNormalizedCloud {
       OVC: 8,
     };
 
-    /**
-     * @type {number} 0..8
-     */
     this.coverOctas = coverOctas[this.cover] ?? 0;
-
-    /**
-     * @type {number?} in feet AGL
-     */
     this.base = base;
   }
 }

@@ -16,8 +16,8 @@ export class AeroflyMissionAutofill {
   }
 
   get description(): string {
-    let weatherAdjectives = this.weatherAdjectives;
-    let weatherAdjectivesString = weatherAdjectives.length > 0 ? ` ${weatherAdjectives.join(", ")}` : "";
+    const weatherAdjectives = this.weatherAdjectives;
+    const weatherAdjectivesString = weatherAdjectives.length > 0 ? ` ${weatherAdjectives.join(", ")}` : "";
 
     return `Your ${this.aircraftName} is ${this.flightSetting} on this${weatherAdjectivesString} ${this.timeOfDay} with ${this.wind}.`;
   }

@@ -171,6 +171,7 @@ export class GeoJsonLocation {
   approaches: number[];
   url: string | null;
 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   constructor(json: any) {
     if (!json?.properties?.title) {
       throw Error(`Missing properties.title in GeoJSONFeature ${json.id}`);
@@ -230,7 +231,7 @@ export class GeoJsonLocation {
     if (this.icaoCode) {
       return this.icaoCode.toUpperCase();
     }
-    let name = this.isHospital ? "HOSPITAL" : "EVAC";
+    const name = this.isHospital ? "HOSPITAL" : "EVAC";
 
     return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-+]/, "");
   }

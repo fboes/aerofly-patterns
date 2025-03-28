@@ -72,12 +72,6 @@ export class Scenario {
     this.entryWaypoint = null;
   }
 
-  /**
-   * @param {Airport} airport
-   * @param {Configuration} configuration
-   * @param {Date?} date
-   * @returns {Promise<Scenario>}
-   */
   static async init(airport: Airport, configuration: Configuration, date: Date | null): Promise<Scenario> {
     const self = new Scenario(airport, configuration, date);
     const weather = await AviationWeatherApi.fetchMetar([self.airport.id], self.date);
@@ -92,10 +86,6 @@ export class Scenario {
   getActiveRunway() {
     const counterWindDirection = this.weather?.windDirection ?? 0;
 
-    /**
-     * @param {number} alignment
-     * @returns {number}
-     */
     const difference = (alignment: number): number => {
       return Math.abs(degreeDifference(alignment, counterWindDirection));
     };
@@ -222,9 +212,6 @@ export class Scenario {
     };
   }
 
-  /**
-   * @returns {string[]}
-   */
   get tags(): string[] {
     const tags = ["approach", "pattern", "practice"];
     if (this.activeRunwayCrosswindComponent > 4.5) {
@@ -249,9 +236,6 @@ export class Scenario {
     return tags;
   }
 
-  /**
-   * @returns {string?}
-   */
   get description(): string | null {
     if (!this.activeRunway) {
       return null;

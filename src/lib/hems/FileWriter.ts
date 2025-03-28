@@ -4,21 +4,12 @@ import { fileURLToPath } from "node:url";
 import { AeroflyHems } from "./AeroflyHems.js";
 
 export class FileWriter {
-  /**
-   *
-   * @param {AeroflyHems} app
-   * @param {string} saveDirectory
-   */
   static async writeFile(app: AeroflyHems, saveDirectory: string) {
-    /**
-     * @param {string} saveDirectory
-     */
     if (app.configuration.directoryMode) {
       saveDirectory = `${saveDirectory}/data/HEMS-${app.configuration.environmentId}-${app.configuration.aircraft}`;
-
-      await fs.mkdir(path.join(saveDirectory, "missions"), { recursive: true });
     }
 
+    await fs.mkdir(path.join(saveDirectory, "missions"), { recursive: true });
     const promises = [fs.writeFile(`${saveDirectory}/missions/custom_missions_user.tmc`, app.buildCustomMissionTmc())];
 
     if (app.configuration.directoryMode) {

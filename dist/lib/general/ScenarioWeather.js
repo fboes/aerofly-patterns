@@ -43,10 +43,10 @@ export class ScenarioWeatherCloud {
     constructor(cloud) {
         this.cloudCoverCode = cloud.cover;
         const cover = {
-            CLR: [0, 0], // 0
-            FEW: [1 / 8, 1 / 8], // 1/8 .. 2/8
-            SCT: [2 / 8, 2 / 8], // 2/8 .. 4/8
-            BKN: [4 / 8, 3 / 8], // 4/8 .. 7/8
+            CLR: [0, 0],
+            FEW: [1 / 8, 1 / 8],
+            SCT: [2 / 8, 2 / 8],
+            BKN: [4 / 8, 3 / 8],
             OVC: [7 / 8, 1 / 8], // 7/8 .. 1
         };
         const actualCover = cover[this.cloudCoverCode] ? cover[this.cloudCoverCode] : cover.CLR;

@@ -24,11 +24,6 @@ export class AeroflyHems {
             this.aircraft.callsign = this.configuration.callsign;
         }
     }
-    /**
-     *
-     * @param {Configuration} configuration
-     * @returns {Promise<AeroflyHems>}
-     */
     static async init(configuration) {
         const self = new AeroflyHems(configuration);
         self.locations = new GeoJsonLocations(self.configuration.geoJsonFile);

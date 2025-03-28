@@ -20,14 +20,6 @@ export class Scenario {
   aircraft: AeroflyAircraft;
   mission: AeroflyMission;
 
-  /**
-   * @param {GeoJsonLocations} locations
-   * @param {Configuration} configuration
-   * @param {AeroflyAircraft} aircraft
-   * @param {Date} time
-   * @param {number} index
-   * @returns {Promise<Scenario>}
-   */
   static async init(
     locations: GeoJsonLocations,
     configuration: Configuration,
@@ -54,14 +46,6 @@ export class Scenario {
     return new Scenario(missionLocations, configuration, aircraft, time, weather, index);
   }
 
-  /**
-   * @param {GeoJsonLocation[]} missionLocations
-   * @param {Configuration} configuration
-   * @param {AeroflyAircraft} aircraft
-   * @param {Date} time
-   * @param {AviationWeatherNormalizedMetar} weather
-   * @param {number} index
-   */
   constructor(
     missionLocations: GeoJsonLocation[],
     configuration: Configuration,

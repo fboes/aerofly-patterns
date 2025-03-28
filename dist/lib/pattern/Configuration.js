@@ -2,9 +2,6 @@ import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 export class Configuration extends ConfigurationAbstract {
     constructor(args) {
         super();
-        /**
-         * @type {ConfigurationPositional[]}
-         */
         this._arguments = [
             {
                 name: "ICAO_AIRPORT_CODE",
@@ -99,17 +96,8 @@ export class Configuration extends ConfigurationAbstract {
             },
         };
         const { values, positionals } = this.parseArgs(args);
-        /**
-         * @type {string}
-         */
         this.icaoCode = (positionals[0] ?? "KEYW").toUpperCase();
-        /**
-         * @type {string} as in Aerofly Aircraft Codes
-         */
         this.aircraft = (positionals[1] ?? "c172").toLowerCase();
-        /**
-         * @type {string} as in Aerofly Aircraft Codes
-         */
         this.livery = (positionals[2] ?? "").toLowerCase();
         /**
          * @type {string[]} runway IDs which will be right pattern runways

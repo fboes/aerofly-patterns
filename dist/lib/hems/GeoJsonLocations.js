@@ -121,6 +121,7 @@ GeoJsonLocations.MARKER_HOSPITAL = "hospital";
 GeoJsonLocations.MARKER_HELIPORT = "heliport";
 GeoJsonLocations.MARKER_HELIPORT_HOSPITAL = "hospital-JP";
 export class GeoJsonLocation {
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     constructor(json) {
         if (!json?.properties?.title) {
             throw Error(`Missing properties.title in GeoJSONFeature ${json.id}`);
@@ -161,7 +162,7 @@ export class GeoJsonLocation {
         if (this.icaoCode) {
             return this.icaoCode.toUpperCase();
         }
-        let name = this.isHospital ? "HOSPITAL" : "EVAC";
+        const name = this.isHospital ? "HOSPITAL" : "EVAC";
         return ("W-" + name).toUpperCase().replace(/[^A-Z0-9-+]/, "");
     }
     clone(title = "", vector = null, altitudeChange = 0) {

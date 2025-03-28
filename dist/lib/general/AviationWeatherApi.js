@@ -44,6 +44,7 @@ export class AviationWeatherApi {
             bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
         }));
     }
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     /**
      *
      * @param {string} route
@@ -158,9 +159,6 @@ export class AviationWeatherNormalizedMetar {
         this.temp = temp;
         this.dewp = dewp;
         this.wdir = wdir !== "VRB" ? wdir : null;
-        /**
-         * @type {number} in kts
-         */
         this.wspd = wspd;
         /**
          * @type {number?} in kts
@@ -174,17 +172,8 @@ export class AviationWeatherNormalizedMetar {
          * @type {number} in hPa
          */
         this.altim = altim;
-        /**
-         * @type {number}
-         */
         this.lat = lat;
-        /**
-         * @type {number}
-         */
         this.lon = lon;
-        /**
-         * @type {number} meters MSL
-         */
         this.elev = elev;
         /**
          * @type {AviationWeatherNormalizedCloud[]}
@@ -195,9 +184,6 @@ export class AviationWeatherNormalizedMetar {
     }
 }
 export class AviationWeatherNormalizedCloud {
-    /**
-     * @param {AviationWeatherApiCloud} apiData
-     */
     constructor({ cover, base }) {
         this.cover = cover === "CAVOK" || cover === "SKC" ? "CLR" : cover;
         const coverOctas = {
@@ -207,13 +193,7 @@ export class AviationWeatherNormalizedCloud {
             BKN: 4,
             OVC: 8,
         };
-        /**
-         * @type {number} 0..8
-         */
         this.coverOctas = coverOctas[this.cover] ?? 0;
-        /**
-         * @type {number?} in feet AGL
-         */
         this.base = base;
     }
 }

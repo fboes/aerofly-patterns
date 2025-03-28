@@ -41,12 +41,6 @@ export class Scenario {
         this.patternWaypoints = [];
         this.entryWaypoint = null;
     }
-    /**
-     * @param {Airport} airport
-     * @param {Configuration} configuration
-     * @param {Date?} date
-     * @returns {Promise<Scenario>}
-     */
     static async init(airport, configuration, date) {
         const self = new Scenario(airport, configuration, date);
         const weather = await AviationWeatherApi.fetchMetar([self.airport.id], self.date);
@@ -59,10 +53,6 @@ export class Scenario {
     }
     getActiveRunway() {
         const counterWindDirection = this.weather?.windDirection ?? 0;
-        /**
-         * @param {number} alignment
-         * @returns {number}
-         */
         const difference = (alignment) => {
             return Math.abs(degreeDifference(alignment, counterWindDirection));
         };
@@ -158,9 +148,6 @@ export class Scenario {
             position: activeRunwayEntry.getPointBy(new Vector(0.5 * Units.meterPerNauticalMile, Degree(patternOrientation + (this.activeRunway.isRightPattern ? -45 : 45)))),
         };
     }
-    /**
-     * @returns {string[]}
-     */
     get tags() {
         const tags = ["approach", "pattern", "practice"];
         if (this.activeRunwayCrosswindComponent > 4.5) {
@@ -183,9 +170,6 @@ export class Scenario {
         }
         return tags;
     }
-    /**
-     * @returns {string?}
-     */
     get description() {
         if (!this.activeRunway) {
             return null;
@@ -260,12 +244,12 @@ export class Scenario {
          */
         const waypoints = [
             makeCheckpoint(this.airport, "origin"),
-            makeCheckpoint(this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1_000_000),
+            makeCheckpoint(this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1000000),
         ];
         this.patternWaypoints.forEach((p) => {
             waypoints.push(makeCheckpoint(p, "waypoint"));
         });
-        waypoints.push(makeCheckpoint(this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1_000_000), makeCheckpoint(this.airport, "destination"));
+        waypoints.push(makeCheckpoint(this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1000000), makeCheckpoint(this.airport, "destination"));
         return waypoints;
     }
 }

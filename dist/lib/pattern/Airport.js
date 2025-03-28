@@ -90,9 +90,6 @@ export class Airport {
                         .join(", ");
         }
     }
-    /**
-     * @returns {string}
-     */
     get description() {
         return this.getDescription();
     }

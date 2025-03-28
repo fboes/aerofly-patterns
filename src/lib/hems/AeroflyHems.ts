@@ -36,11 +36,6 @@ export class AeroflyHems {
     }
   }
 
-  /**
-   *
-   * @param {Configuration} configuration
-   * @returns {Promise<AeroflyHems>}
-   */
   static async init(configuration: Configuration): Promise<AeroflyHems> {
     const self = new AeroflyHems(configuration);
     self.locations = new GeoJsonLocations(self.configuration.geoJsonFile);

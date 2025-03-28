@@ -3,6 +3,7 @@
 ## 2.6.0
 
 - Switched code base to TypeScript
+- Added air races
 
 ## 2.5.5
 

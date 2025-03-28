@@ -5,13 +5,7 @@ import * as fs from "node:fs";
 const packageJson = JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "../../../package.json"), "utf8"));
 export class ConfigurationAbstract {
     constructor() {
-        /**
-         * @type {ConfigurationPositional[]}
-         */
         this._arguments = [];
-        /**
-         * @type {{[key:string]: ParseArgsParameters}}
-         */
         this._options = {
             help: {
                 type: "boolean",
@@ -20,9 +14,6 @@ export class ConfigurationAbstract {
                 description: "Will output the help.",
             },
         };
-        /**
-         * @type {boolean}
-         */
         this.help = false;
     }
     parseArgs(args) {
@@ -42,7 +33,7 @@ export class ConfigurationAbstract {
         return packageJson.name;
     }
     get helpText() {
-        let parameters = [`v${this.version}: ${this.description}`];
+        const parameters = [`v${this.version}: ${this.description}`];
         if (this._arguments) {
             parameters.push("", "Arguments:");
             for (const argument of this._arguments) {
@@ -57,7 +48,7 @@ export class ConfigurationAbstract {
         }
         if (this._options) {
             parameters.push("", "Options:");
-            for (let parameterName in this._options) {
+            for (const parameterName in this._options) {
                 const option = this._options[parameterName];
                 let parameter = `--${parameterName}`;
                 if (option.type === "string") {

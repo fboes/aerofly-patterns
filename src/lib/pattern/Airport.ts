@@ -125,9 +125,6 @@ export class Airport {
     }
   }
 
-  /**
-   * @returns {string}
-   */
   get description(): string {
     return this.getDescription();
   }

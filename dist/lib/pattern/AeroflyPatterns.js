@@ -5,8 +5,7 @@ import { Scenario } from "./Scenario.js";
 import { DateYielder } from "../general/DateYielder.js";
 import { Formatter } from "../general/Formatter.js";
 import { LocalTime } from "../general/LocalTime.js";
-import { AeroflyMission, AeroflyMissionConditions, AeroflyMissionConditionsCloud, AeroflyMissionsList, } from "@fboes/aerofly-custom-missions";
-import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
+import { AeroflyMission, AeroflyMissionConditions, AeroflyMissionConditionsCloud, AeroflyMissionsList, AeroflyMissionTargetPlane, } from "@fboes/aerofly-custom-missions";
 import { Vector } from "@fboes/geojson";
 import { Markdown } from "../general/Markdown.js";
 export class AeroflyPatterns {
@@ -21,11 +20,6 @@ export class AeroflyPatterns {
          */
         this.scenarios = [];
     }
-    /**
-     *
-     * @param {Configuration} configuration
-     * @returns {Promise<AeroflyPatterns>}
-     */
     static async init(configuration) {
         const self = new AeroflyPatterns(configuration);
         const airport = await AviationWeatherApi.fetchAirports([self.configuration.icaoCode]);
@@ -51,10 +45,6 @@ export class AeroflyPatterns {
         }
         return self;
     }
-    /**
-     *
-     * @returns {?FeatureCollection}
-     */
     buildGeoJson() {
         if (!this.airport) {
             return null;
@@ -118,9 +108,6 @@ export class AeroflyPatterns {
         });
         return geoJson;
     }
-    /**
-     * @returns {string}
-     */
     buildCustomMissionTmc() {
         /**
          * @type {AeroflyMission[]}
@@ -176,19 +163,10 @@ export class AeroflyPatterns {
         });
         return new AeroflyMissionsList(missions).toString();
     }
-    /**
-     *
-     * @returns {string}
-     */
     buildReadmeMarkdown() {
         if (!this.airport) {
             return "";
         }
-        /**
-         * @param {number|string} value
-         * @param {number} targetLength
-         * @returns {string}
-         */
         const padNumber = (value, targetLength = 2) => {
             return String(value).padStart(targetLength, "0");
         };
