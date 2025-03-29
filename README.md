@@ -6,7 +6,7 @@ This nice little project generates `custom_missions_user.tmc` to use with Aerofl
 
 1. The main tool creates missions containing landing pattern lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern correctly.
 2. Also there is a HEMS missions generator, which will put your helicopter on a random heliport, sets time of day as well as weather, and create flight plans to nearby MedEvac locations. See the [HEMS missions generator documentation](docs/hems.md).
-2. Also there is an air race missions generator, which will put your aircraft in a random spot and lets you follow a random course. See the [air race missions generator documentation](docs/airrace.md).
+3. Also there is an air race missions generator, which will put your aircraft in a random spot and lets you follow a random course. See the [air race missions generator documentation](docs/airrace.md).
 
 The main documentation centers around the landing pattern lessons:
 

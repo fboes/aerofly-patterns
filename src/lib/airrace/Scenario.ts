@@ -169,11 +169,9 @@ export class Scenario {
    */
   #getRandomLegDistance(configuration: Configuration) {
     if (configuration.minLegDistance === configuration.maxLegDistance) {
-      return configuration.minLegDistance * Units.meterPerNauticalMile;
+      return configuration.minLegDistance * 1000;
     }
-    return (
-      this.#getRandomArbitrary(configuration.minLegDistance, configuration.maxLegDistance) * Units.meterPerNauticalMile
-    );
+    return this.#getRandomArbitrary(configuration.minLegDistance, configuration.maxLegDistance) * 1000;
   }
 
   /**

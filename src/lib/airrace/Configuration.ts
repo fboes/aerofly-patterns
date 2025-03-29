@@ -20,12 +20,12 @@ export class Configuration extends ConfigurationAbstract {
   maxAngleChange: number;
 
   /**
-   * in Nautical miles
+   * in kilometers
    */
   minLegDistance: number;
 
   /**
-   * in Nautical miles
+   * in kilometers
    */
   maxLegDistance: number;
 
@@ -94,12 +94,12 @@ export class Configuration extends ConfigurationAbstract {
       "min-leg-dist": {
         type: "string",
         default: "1",
-        description: "Minimum distance between checkpoints in Nautical miles.",
+        description: "Minimum distance between checkpoints in kilometers.",
       },
       "max-leg-dist": {
         type: "string",
         default: "5",
-        description: "Maximum distance between checkpoints in Nautical miles.",
+        description: "Maximum distance between checkpoints in kilometers.",
       },
       "min-alt": {
         type: "string",

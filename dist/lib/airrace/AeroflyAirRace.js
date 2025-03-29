@@ -3,6 +3,7 @@ import { AeroflyAircraftFinder } from "../../data/AeroflyAircraft.js";
 import { AviationWeatherApi, AviationWeatherNormalizedAirport } from "../general/AviationWeatherApi.js";
 import { DateYielder } from "../general/DateYielder.js";
 import { Scenario } from "./Scenario.js";
+import { Feature, FeatureCollection, LineString, Point } from "@fboes/geojson";
 export class AeroflyAirRace {
     constructor(configuration) {
         this.airport = null;
@@ -41,5 +42,39 @@ export class AeroflyAirRace {
         return new AeroflyMissionsList(this.scenarios.map((s) => {
             return s.mission;
         })).toString();
+    }
+    buildReadmeMarkdown() {
+        // TODO
+        return `\
+# README
+`;
+    }
+    buildGeoJson() {
+        const geoJson = new FeatureCollection();
+        const scenario = this.scenarios.at(0);
+        if (scenario == undefined) {
+            return "";
+        }
+        this.scenarios.forEach((scenario, scenarioIndex) => {
+            if (scenarioIndex > 0) {
+                return;
+            }
+            const opacity = scenarioIndex === 0 ? 1 : 0.2;
+            scenario.mission.checkpoints.forEach((cp, index) => {
+                geoJson.addFeature(new Feature(new Point(cp.longitude, cp.latitude, cp.altitude), {
+                    title: cp.name,
+                    "marker-symbol": index === 0 ? "airfield" : index === scenario.mission.checkpoints.length - 1 ? "racetrack" : "triangle",
+                    "fill-opacity": opacity,
+                }));
+            });
+            geoJson.addFeature(new Feature(new LineString(scenario.mission.checkpoints.map((cp) => {
+                return new Point(cp.longitude, cp.latitude, cp.altitude);
+            })), {
+                title: scenario.mission.title,
+                stroke: "#ff1493",
+                "stroke-opacity": opacity,
+            }));
+        });
+        return JSON.stringify(geoJson, null, 2);
     }
 }

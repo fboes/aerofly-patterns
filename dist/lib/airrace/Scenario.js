@@ -114,9 +114,9 @@ _Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_get
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
 }, _Scenario_getRandomLegDistance = function _Scenario_getRandomLegDistance(configuration) {
     if (configuration.minLegDistance === configuration.maxLegDistance) {
-        return configuration.minLegDistance * Units.meterPerNauticalMile;
+        return configuration.minLegDistance * 1000;
     }
-    return (__classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomArbitrary).call(this, configuration.minLegDistance, configuration.maxLegDistance) * Units.meterPerNauticalMile);
+    return __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomArbitrary).call(this, configuration.minLegDistance, configuration.maxLegDistance) * 1000;
 }, _Scenario_getRandomAltitude = function _Scenario_getRandomAltitude(configuration) {
     if (configuration.minAltitude === configuration.maxAltitude) {
         return configuration.minAltitude / Units.feetPerMeter;
