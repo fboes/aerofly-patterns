@@ -31,12 +31,6 @@ export class AviationWeatherApi {
             format: "json",
         }));
     }
-    /**
-     *
-     * @param {Point} position
-     * @param {number} distance in meters
-     * @returns {Promise<AviationWeatherApiNavaid[]>}
-     */
     static async fetchNavaid(position, distance = 1000) {
         return AviationWeatherApi.doRequest("/api/data/navaid", new URLSearchParams({
             // ids: ids.join(","),
@@ -45,12 +39,6 @@ export class AviationWeatherApi {
         }));
     }
     /* eslint-disable  @typescript-eslint/no-explicit-any */
-    /**
-     *
-     * @param {string} route
-     * @param {URLSearchParams} query
-     * @returns {Promise}
-     */
     static async doRequest(route, query) {
         const url = new URL(route + "?" + query, "https://aviationweather.gov");
         //console.log(url);

@@ -6,9 +6,11 @@ import { FormatterTest } from "./lib/general/Formatter.test.js";
 import { AeroflyMissionAutofillTest } from "./lib/general/AeroflyMissionAutofill.test.js";
 import { GeoJsonLocationsTest, GeoJsonLocationTest } from "./lib/hems/GeoJsonLocations.test.js";
 import { MarkdownTest } from "./lib/general/Markdown.test.js";
+import { OpenStreetMapApiTest } from "./lib/general/OpenStreetMapApi.test.js";
+import { LocalTimeTest } from "./lib/general/LocalTime.test.js";
 
 new AirportTest();
-new AviationWeatherApiTest();
+await AviationWeatherApiTest.init();
 new DateYielderTest();
 new DegreeTest();
 new FormatterTest();
@@ -16,5 +18,7 @@ new AeroflyMissionAutofillTest();
 new GeoJsonLocationsTest();
 new GeoJsonLocationTest();
 new MarkdownTest();
+await OpenStreetMapApiTest.init();
+new LocalTimeTest();
 
 process.exit();

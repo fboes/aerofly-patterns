@@ -6,10 +6,11 @@ export class Configuration extends ConfigurationAbstract {
          * If file(s) should be created in sub directory
          */
         this.directoryMode = false;
+        this.startingLocation = "";
         this._arguments = [
             {
                 name: "ICAO_AIRPORT_CODE",
-                description: "ICAO airport code which needs to be available in Aerofly FS 4.",
+                description: "ICAO airport code for fetching weather and as fallback starting location.",
                 default: "KROW",
             },
             {
@@ -28,6 +29,12 @@ export class Configuration extends ConfigurationAbstract {
                 type: "string",
                 default: "10",
                 description: "Number of missions in file.",
+            },
+            "starting-location": {
+                type: "string",
+                default: "",
+                short: "l",
+                description: "ICAO airport code for starting location. The original airport code will be used for weather fetching only.",
             },
             "min-checkpoints": {
                 type: "string",
@@ -90,12 +97,13 @@ export class Configuration extends ConfigurationAbstract {
         this.minCheckpointCount = Number(values["min-checkpoints"]);
         this.maxCheckpointCount = Number(values["max-checkpoints"]);
         this.minAngleChange = Number(values["min-angle"]);
-        this.maxAngleChange = Number(values["max-angle"]);
+        this.maxAngleChange = Math.max(Number(values["max-angle"]), this.minAngleChange);
         this.minLegDistance = Number(values["min-leg-dist"]);
-        this.maxLegDistance = Number(values["max-leg-dist"]);
+        this.maxLegDistance = Math.max(Number(values["max-leg-dist"]), this.minLegDistance);
         this.minAltitude = Number(values["min-alt"]);
-        this.maxAltitude = Number(values["max-alt"]);
+        this.maxAltitude = Math.max(Number(values["max-alt"]), this.minAltitude);
         this.directoryMode = Boolean(values["directory"]);
+        this.startingLocation = String(values["starting-location"] || this.icaoCode);
         this.help = Boolean(values["help"]);
     }
 }

@@ -121,12 +121,6 @@ export class AviationWeatherApi {
     );
   }
 
-  /**
-   *
-   * @param {Point} position
-   * @param {number} distance in meters
-   * @returns {Promise<AviationWeatherApiNavaid[]>}
-   */
   static async fetchNavaid(position: Point, distance: number = 1000): Promise<AviationWeatherApiNavaid[]> {
     return AviationWeatherApi.doRequest(
       "/api/data/navaid",
@@ -139,12 +133,6 @@ export class AviationWeatherApi {
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  /**
-   *
-   * @param {string} route
-   * @param {URLSearchParams} query
-   * @returns {Promise}
-   */
   static async doRequest(route: string, query: URLSearchParams): Promise<any> {
     const url = new URL(route + "?" + query, "https://aviationweather.gov");
     //console.log(url);

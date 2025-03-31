@@ -8,14 +8,11 @@ import {
 } from "@fboes/aerofly-custom-missions";
 import { AeroflyAircraft } from "../../data/AeroflyAircraft.js";
 import { Configuration } from "./Configuration.js";
-import {
-  AviationWeatherApi,
-  AviationWeatherNormalizedAirport,
-  AviationWeatherNormalizedMetar,
-} from "../general/AviationWeatherApi.js";
+import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import { Units } from "../../data/Units.js";
 import { Point, Vector } from "@fboes/geojson";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
+import { OpenStreetMapApiAirport } from "../general/OpenStreetMapApi.js";
 
 export class Scenario {
   date: Date;
@@ -25,7 +22,7 @@ export class Scenario {
   static async init(
     configuration: Configuration,
     aircraft: AeroflyAircraft,
-    airport: AviationWeatherNormalizedAirport,
+    airport: OpenStreetMapApiAirport,
     date: Date,
     index: number = 0,
   ): Promise<Scenario> {
@@ -41,7 +38,7 @@ export class Scenario {
   constructor(
     configuration: Configuration,
     aircraft: AeroflyAircraft,
-    airport: AviationWeatherNormalizedAirport,
+    airport: OpenStreetMapApiAirport,
     date: Date,
     weather: AviationWeatherNormalizedMetar,
     index: number = 0,
@@ -49,11 +46,13 @@ export class Scenario {
     this.date = date;
     this.aircraft = aircraft;
 
-    if (configuration.minAltitude === 0) {
-      configuration.minAltitude = airport.elev * Units.feetPerMeter + 1500;
-    }
-    if (configuration.maxAltitude === 0) {
-      configuration.maxAltitude = airport.elev * Units.feetPerMeter + 3500;
+    if (airport.elev !== null) {
+      if (configuration.minAltitude === 0) {
+        configuration.minAltitude = airport.elev * Units.feetPerMeter + 1500;
+      }
+      if (configuration.maxAltitude === 0) {
+        configuration.maxAltitude = airport.elev * Units.feetPerMeter + 3500;
+      }
     }
 
     const title = this.#getTitle(index, airport);
@@ -86,7 +85,7 @@ export class Scenario {
     this.mission.duration = describer.calculateDuration(this.aircraft.cruiseSpeedKts);
   }
 
-  #getTitle(index: number, airport: AviationWeatherNormalizedAirport) {
+  #getTitle(index: number, airport: OpenStreetMapApiAirport) {
     return `Air Race #${index + 1} at ${airport.name}`;
   }
 
@@ -106,9 +105,9 @@ export class Scenario {
     });
   }
 
-  #makeOrigin(airport: AviationWeatherNormalizedAirport, configuration: Configuration): AeroflyMissionPosition {
+  #makeOrigin(airport: OpenStreetMapApiAirport, configuration: Configuration): AeroflyMissionPosition {
     return {
-      icao: airport.icaoId,
+      icao: airport.icaoId ?? configuration.icaoCode,
       longitude: airport.lon,
       latitude: airport.lat,
       dir: (Math.random() * 360 + 360) % 360,
@@ -133,18 +132,25 @@ export class Scenario {
 
     for (let i = 0; i < numberOfLegs; i++) {
       distance = this.#getRandomLegDistance(configuration);
-      direction = direction + this.#geRandomAngleChange(configuration);
+      if (i !== 0) {
+        direction = direction + this.#geRandomAngleChange(configuration);
+      }
 
       position = position.getPointBy(new Vector(distance, direction));
       position.elevation = this.#getRandomAltitude(configuration);
 
       checkpoints.push(
-        new AeroflyMissionCheckpoint(`CP-${i + 1}`, "waypoint", position.longitude, position.latitude, {
-          altitude: position.elevation ?? 0,
-          altitudeConstraint: Boolean(position.elevation),
-          flyOver: true,
-          direction,
-        }),
+        new AeroflyMissionCheckpoint(
+          `CP-${i === numberOfLegs - 1 ? "FINISH" : String(i + 1)}`,
+          "waypoint",
+          position.longitude,
+          position.latitude,
+          {
+            altitude: position.elevation ?? 0,
+            altitudeConstraint: Boolean(position.elevation),
+            direction,
+          },
+        ),
       );
     }
 
@@ -159,8 +165,8 @@ export class Scenario {
       return configuration.minCheckpointCount;
     }
 
-    const minCeiled = Math.ceil(Math.min(configuration.minCheckpointCount, configuration.maxCheckpointCount));
-    const maxFloored = Math.floor(Math.max(configuration.minCheckpointCount, configuration.maxCheckpointCount));
+    const minCeiled = Math.ceil(configuration.minCheckpointCount);
+    const maxFloored = Math.floor(configuration.maxCheckpointCount);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
   }
 
@@ -195,7 +201,7 @@ export class Scenario {
    * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
    */
   #getRandomArbitrary(min: number, max: number) {
-    return Math.random() * (Math.max(min, max) - Math.min(min, max)) + Math.min(min, max);
+    return Math.random() * (max - min) + min;
   }
 
   /**

@@ -2,9 +2,10 @@ import { strict as assert } from "node:assert";
 import { AviationWeatherApi, AviationWeatherNormalizedAirport } from "./AviationWeatherApi.js";
 
 export class AviationWeatherApiTest {
-  constructor() {
-    this.fetchAirports();
-    this.fetchMetar();
+  static async init() {
+    const self = new AviationWeatherApiTest();
+    await self.fetchAirports();
+    await self.fetchMetar();
   }
 
   async fetchAirports() {

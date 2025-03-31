@@ -227,29 +227,21 @@ export class AeroflyPatterns {
       return "";
     }
 
-    const padNumber = (value: number | string, targetLength: number = 2): string => {
-      return String(value).padStart(targetLength, "0");
-    };
-
     const firstMission = this.scenarios[0];
     const markdownTable = Markdown.table([
       [`No `, `Local date¹`, `Local time¹`, `Wind`, `Clouds`, `Visibility`, `Runway`, `Aircraft position`],
       [`:-:`, `-----------`, `----------:`, `----`, `------`, `---------:`, `------`, `-----------------`],
       ...this.scenarios.map((s, index) => {
-        const localNauticalTime = LocalTime(s.date, s.airport.nauticalTimezone);
+        const localNauticalTime = new LocalTime(s.date, s.airport.nauticalTimezone);
         const clouds =
           s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
             ? `${s.weather?.clouds[0]?.cloudCoverCode} @ ${s.weather?.clouds[0]?.cloudBase.toLocaleString("en")} ft`
             : s.weather?.clouds[0]?.cloudCoverCode;
 
         return [
-          "#" + String(index + 1),
-          localNauticalTime.fullYear +
-            "-" +
-            padNumber(localNauticalTime.month + 1) +
-            "-" +
-            padNumber(localNauticalTime.date),
-          padNumber(localNauticalTime.hours) + ":" + padNumber(localNauticalTime.minutes),
+          `#${String(index + 1).padStart(2, "0")}`,
+          localNauticalTime.toDateString(),
+          localNauticalTime.toTimeString(),
           !s.weather?.windSpeed ? "Calm" : `${s.weather?.windDirection}° @ ${s.weather?.windSpeed} kts`,
           clouds,
           Math.round(s.weather?.visibility ?? 0) + " SM",

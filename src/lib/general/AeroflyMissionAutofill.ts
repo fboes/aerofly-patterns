@@ -227,6 +227,13 @@ export class AeroflyMissionAutofill {
     } else {
       wind = `wind from ${String(conditions.wind.direction).padStart(3, "0")}° at ${conditions.wind.speed} kts`;
     }
+
+    if (this.#mission.conditions.thermalStrength > 0.8) {
+      wind += ` and lots of thermal activity`;
+    } else if (this.#mission.conditions.thermalStrength > 0.4) {
+      wind += ` and moderate thermal activity`;
+    }
+
     return wind;
   }
 
