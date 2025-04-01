@@ -9,18 +9,18 @@ This file contains 10 air racing missions for the Pitts S-2B starting at [Roswel
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-| No  | Local date¹ | Local time¹ |          Wind | Clouds | Duration | Flight distance |
-| :-: | ----------- | ----------: | ------------: | ------ | -------: | --------------: |
-| #01 | 2025-03-31  |       05:15 |  5 kts @ 280° | CLR    |    4 min |           13 km |
-| #02 | 2025-03-30  |       06:45 | 11 kts @ 010° | CLR    |    2 min |            5 km |
-| #03 | 2025-03-29  |       09:15 |  4 kts @ 120° | CLR    |    4 min |           16 km |
-| #04 | 2025-03-28  |       10:45 |  8 kts @ 170° | CLR    |    3 min |           10 km |
-| #05 | 2025-03-27  |       12:15 |  8 kts @ 140° | CLR    |    4 min |           16 km |
-| #06 | 2025-03-26  |       13:45 |  7 kts @ 130° | CLR    |    4 min |           15 km |
-| #07 | 2025-03-25  |       15:15 |  3 kts @ 140° | CLR    |    2 min |            5 km |
-| #08 | 2025-03-24  |       16:45 | 14 kts @ 200° | CLR    |    4 min |           13 km |
-| #09 | 2025-03-23  |       18:15 |  5 kts @ 070° | CLR    |    4 min |           13 km |
-| #10 | 2025-03-22  |       19:45 |  5 kts @ 310° | CLR    |    2 min |            6 km |
+| No  | Local date¹ | Local time¹ |          Wind | Clouds          | Thermal | Duration | Flight distance |
+| :-: | ----------- | ----------: | ------------: | --------------- | ------- | -------: | --------------: |
+| #01 | 2025-04-01  |       05:15 |  8 kts @ 200° | CLR             | Medium  |    3 min |           10 km |
+| #02 | 2025-03-31  |       06:45 |  8 kts @ 360° | CLR             | Medium  |    2 min |            6 km |
+| #03 | 2025-03-30  |       08:15 | 14 kts @ 340° | CLR             | Medium  |    2 min |            6 km |
+| #04 | 2025-03-29  |       10:45 |  4 kts @ 140° | CLR             | Medium  |    3 min |            9 km |
+| #05 | 2025-03-28  |       12:15 | 11 kts @ 150° | CLR             | Medium  |    3 min |           10 km |
+| #06 | 2025-03-27  |       13:45 |  7 kts @ 140° | CLR             | Medium  |    5 min |           17 km |
+| #07 | 2025-03-26  |       15:15 |  8 kts @ 210° | CLR             | Medium  |    3 min |           12 km |
+| #08 | 2025-03-25  |       16:45 |  5 kts @ 000° | CLR             | Medium  |    2 min |            5 km |
+| #09 | 2025-03-24  |       18:15 |  9 kts @ 160° | CLR             | Medium  |    3 min |           10 km |
+| #10 | 2025-03-23  |       19:45 |  6 kts @ 080° | FEW @ 12,000 ft | Medium  |    3 min |           10 km |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC-07:00 (G)
 

@@ -146,8 +146,7 @@ export class Scenario {
           position.longitude,
           position.latitude,
           {
-            altitude: position.elevation ?? 0,
-            altitudeConstraint: Boolean(position.elevation),
+            altitude: position.elevation,
             direction,
           },
         ),

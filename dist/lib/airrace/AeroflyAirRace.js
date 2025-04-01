@@ -50,8 +50,8 @@ export class AeroflyAirRace {
             return "";
         }
         const markdownTable = Markdown.table([
-            [`No `, `Local date¹`, `Local time¹`, `        Wind`, `Clouds`, `Duration`, `Flight distance`],
-            [`:-:`, `-----------`, `----------:`, `-----------:`, `------`, `-------:`, `--------------:`],
+            [`No `, `Local date¹`, `Local time¹`, `        Wind`, `Clouds`, `Thermal`, `Duration`, `Flight distance`],
+            [`:-:`, `-----------`, `----------:`, `-----------:`, `------`, `-------`, `-------:`, `--------------:`],
             ...this.scenarios.map((s, index) => {
                 const localNauticalTime = new LocalTime(s.date, this.nauticalTimezone);
                 const conditions = s.mission.conditions;
@@ -61,12 +61,14 @@ export class AeroflyAirRace {
                 const clouds = conditions.clouds[0]?.cover_code !== "CLR"
                     ? `${conditions.clouds[0]?.cover_code} @ ${conditions.clouds[0]?.base_feet.toLocaleString("en")} ft`
                     : conditions.clouds[0]?.cover_code;
+                const thermalStrength = conditions.thermalStrength > 0.8 ? "High" : conditions.thermalStrength > 0.2 ? "Medium" : "Low";
                 return [
                     `#${String(index + 1).padStart(2, "0")}`,
                     localNauticalTime.toDateString(),
                     localNauticalTime.toTimeString(),
                     wind,
                     clouds,
+                    thermalStrength,
                     `${Math.ceil((s.mission.duration ?? 0) / 60)} min`,
                     `${Math.ceil((s.mission.distance ?? 0) / 1000)} km`,
                 ];
@@ -100,8 +102,9 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
         if (scenario == undefined) {
             return "";
         }
+        const colors = ["#FF1493", "#C2E812", "#91F5AD", "#F96900", "#3B429F"];
         this.scenarios.forEach((scenario, scenarioIndex) => {
-            const opacity = scenarioIndex === 0 ? 1 : 0.2;
+            const opacity = scenarioIndex === 0 ? 1 : 0.33;
             const lastCp = scenario.mission.checkpoints.at(-1);
             if (scenarioIndex === 0) {
                 scenario.mission.checkpoints.forEach((cp, index) => {
@@ -129,7 +132,7 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
                 id: scenarioIndex * 100,
                 title: scenario.mission.title,
                 description: `${scenario.mission.description.replace(/\n/g, "  \n")} The flight distance is ${Math.ceil((scenario.mission.distance ?? 0) / 1000)} km.`,
-                stroke: "#ff1493",
+                stroke: colors[scenarioIndex % colors.length],
                 "stroke-opacity": opacity,
             }));
         });

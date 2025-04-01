@@ -102,8 +102,7 @@ _Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_get
         position = position.getPointBy(new Vector(distance, direction));
         position.elevation = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomAltitude).call(this, configuration);
         checkpoints.push(new AeroflyMissionCheckpoint(`CP-${i === numberOfLegs - 1 ? "FINISH" : String(i + 1)}`, "waypoint", position.longitude, position.latitude, {
-            altitude: position.elevation ?? 0,
-            altitudeConstraint: Boolean(position.elevation),
+            altitude: position.elevation,
             direction,
         }));
     }
