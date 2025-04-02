@@ -3,7 +3,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _Scenario_instances, _Scenario_getTitle, _Scenario_makeConditions, _Scenario_makeOrigin, _Scenario_getCheckpoints, _Scenario_getRandomCheckpointCount, _Scenario_getRandomLegDistance, _Scenario_getRandomAltitude, _Scenario_geRandomAngleChange, _Scenario_getRandomArbitrary, _Scenario_getRandomSign, _Scenario_getFinish;
+var _Scenario_instances, _Scenario_getTitle, _Scenario_makeConditions, _Scenario_makeOrigin, _Scenario_getCheckpoints, _Scenario_getRandomCheckpointCount, _Scenario_getRandomLegDistance, _Scenario_getRandomAltitude, _Scenario_roundAltitude, _Scenario_geRandomAngleChange, _Scenario_getRandomArbitrary, _Scenario_getRandomSign, _Scenario_getFinish;
 import { AeroflyMission, AeroflyMissionCheckpoint, AeroflyMissionConditions, AeroflyMissionConditionsCloud, AeroflyMissionTargetPlane, } from "@fboes/aerofly-custom-missions";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import { Units } from "../../data/Units.js";
@@ -24,10 +24,10 @@ export class Scenario {
         this.aircraft = aircraft;
         if (airport.elev !== null) {
             if (configuration.minAltitude === 0) {
-                configuration.minAltitude = airport.elev * Units.feetPerMeter + 1500;
+                configuration.minAltitude = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_roundAltitude).call(this, airport.elev * Units.feetPerMeter + 1500);
             }
             if (configuration.maxAltitude === 0) {
-                configuration.maxAltitude = airport.elev * Units.feetPerMeter + 3500;
+                configuration.maxAltitude = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_roundAltitude).call(this, airport.elev * Units.feetPerMeter + 3500);
             }
         }
         const title = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getTitle).call(this, index, airport);
@@ -80,7 +80,7 @@ _Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_get
         longitude: airport.lon,
         latitude: airport.lat,
         dir: (Math.random() * 360 + 360) % 360,
-        alt: configuration.minAltitude,
+        alt: configuration.minAltitude / Units.feetPerMeter,
     };
 }, _Scenario_getCheckpoints = function _Scenario_getCheckpoints(origin, configuration) {
     const numberOfLegs = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomCheckpointCount).call(this, configuration);
@@ -100,7 +100,7 @@ _Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_get
             direction = direction + __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_geRandomAngleChange).call(this, configuration);
         }
         position = position.getPointBy(new Vector(distance, direction));
-        position.elevation = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomAltitude).call(this, configuration);
+        position.elevation = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_roundAltitude).call(this, __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomAltitude).call(this, configuration));
         checkpoints.push(new AeroflyMissionCheckpoint(`CP-${i === numberOfLegs - 1 ? "FINISH" : String(i + 1)}`, "waypoint", position.longitude, position.latitude, {
             altitude: position.elevation,
             direction,
@@ -124,6 +124,8 @@ _Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_get
         return configuration.minAltitude / Units.feetPerMeter;
     }
     return __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomArbitrary).call(this, configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
+}, _Scenario_roundAltitude = function _Scenario_roundAltitude(meters) {
+    return (Math.ceil((meters * Units.feetPerMeter) / 100) * 100) / Units.feetPerMeter;
 }, _Scenario_geRandomAngleChange = function _Scenario_geRandomAngleChange(configuration) {
     if (configuration.minAngleChange === configuration.maxAngleChange) {
         return configuration.minAngleChange;

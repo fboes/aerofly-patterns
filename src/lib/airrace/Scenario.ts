@@ -48,10 +48,10 @@ export class Scenario {
 
     if (airport.elev !== null) {
       if (configuration.minAltitude === 0) {
-        configuration.minAltitude = airport.elev * Units.feetPerMeter + 1500;
+        configuration.minAltitude = this.#roundAltitude(airport.elev * Units.feetPerMeter + 1500);
       }
       if (configuration.maxAltitude === 0) {
-        configuration.maxAltitude = airport.elev * Units.feetPerMeter + 3500;
+        configuration.maxAltitude = this.#roundAltitude(airport.elev * Units.feetPerMeter + 3500);
       }
     }
 
@@ -111,7 +111,7 @@ export class Scenario {
       longitude: airport.lon,
       latitude: airport.lat,
       dir: (Math.random() * 360 + 360) % 360,
-      alt: configuration.minAltitude,
+      alt: configuration.minAltitude / Units.feetPerMeter,
     };
   }
 
@@ -137,7 +137,7 @@ export class Scenario {
       }
 
       position = position.getPointBy(new Vector(distance, direction));
-      position.elevation = this.#getRandomAltitude(configuration);
+      position.elevation = this.#roundAltitude(this.#getRandomAltitude(configuration));
 
       checkpoints.push(
         new AeroflyMissionCheckpoint(
@@ -187,6 +187,15 @@ export class Scenario {
       return configuration.minAltitude / Units.feetPerMeter;
     }
     return this.#getRandomArbitrary(configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
+  }
+
+  /**
+   *
+   * @param meters
+   * @returns in meters, rounded to next 100ft
+   */
+  #roundAltitude(meters: number): number {
+    return (Math.ceil((meters * Units.feetPerMeter) / 100) * 100) / Units.feetPerMeter;
   }
 
   #geRandomAngleChange(configuration: Configuration) {
