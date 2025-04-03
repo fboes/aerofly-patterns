@@ -4,7 +4,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #1 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this clear early morning with wind from 200° at 8 kts.]>
+                <[string8][description][Your Pitts is racing through the sky on this overcast early morning with no wind.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -13,32 +13,32 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][287.823329435465]>
+                <[float64][origin_dir][124.7330184777066]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][287.823329435465]>
-                <[float64][distance][14747.459741147444]> // 15 km
-                <[float64][duration][217.1724878433258]> // 4 min
+                <[float64][destination_dir][124.7330184777066]>
+                <[float64][distance][11442.28176355613]> // 11 km
+                <[float64][duration][168.50012414425873]> // 3 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.66059883734496 33.336638194864584]>
-                    <[float64][direction][214.83073724994358]>
+                    <[vector2_float64][lon_lat][-104.42261363024066 33.291538965093395]>
+                    <[float64][direction][55.47661767558276]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][4]>
-                        <[int32][time_day][1]>
+                        <[int32][time_day][3]>
                         <[float64][time_hours][12.25]> // 12:15:00 UTC
                     >
-                    <[float64][wind_direction][200]>
-                    <[float64][wind_speed][8]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][null]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.29593600000000003]> // 12.200000000000003 °C
+                    <[float64][thermal_strength][0.3203560000000001]> // 13.300000000000004 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
+                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][cloud_base][2895.599907340803]> // 9500 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -54,41 +54,33 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-1]>
-                        <[vector2_float64][lon_lat][-104.57094229537061 33.311242846710925]>
-                        <[float64][altitude][1767.8399434291218]> // 5800 ft
-                        <[float64][direction][287.82332943548147]>
+                        <[vector2_float64][lon_lat][-104.49929755220293 33.28193450190462]>
+                        <[float64][altitude][1859.2799405030419]> // 6100 ft
+                        <[float64][direction][124.73301847771427]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-2]>
-                        <[vector2_float64][lon_lat][-104.59486966006374 33.33574709851542]>
-                        <[float64][altitude][2133.599931724802]> // 7000 ft
-                        <[float64][direction][320.79520138442297]>
+                        <[vector2_float64][lon_lat][-104.45027895987846 33.28645125671499]>
+                        <[float64][altitude][1859.2799405030419]> // 6100 ft
+                        <[float64][direction][83.69650420364349]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-3]>
-                        <[vector2_float64][lon_lat][-104.62377649423308 33.34068919182195]>
-                        <[float64][altitude][2194.5599297740823]> // 7200 ft
-                        <[float64][direction][281.5733800085313]>
+                        <[vector2_float64][lon_lat][-104.4418591581043 33.280474411754376]>
+                        <[float64][altitude][1828.799941478402]> // 6000 ft
+                        <[float64][direction][130.33375866106473]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CP-4]>
-                        <[vector2_float64][lon_lat][-104.6477213894114 33.352100667619496]>
-                        <[float64][altitude][1889.759939527682]> // 6200 ft
-                        <[float64][direction][299.7112390557289]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.66059883734496 33.336638194864584]>
-                        <[float64][altitude][1615.4399483059217]> // 5300 ft
-                        <[float64][direction][214.83073724994674]>
+                        <[vector2_float64][lon_lat][-104.42261363024066 33.291538965093395]>
+                        <[float64][altitude][1767.8399434291218]> // 5800 ft
+                        <[float64][direction][55.47661767557611]>
                         <[float64][slope][0]>
                     >
                 >
@@ -96,7 +88,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #2 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this clear early morning with wind from 360° at 8 kts.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear early morning with almost no wind.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -105,29 +97,29 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][344.68604511133776]>
+                <[float64][origin_dir][192.36561476239967]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][344.68604511133776]>
-                <[float64][distance][4871.815224519876]> // 5 km
-                <[float64][duration][71.74281206341855]> // 1 min
+                <[float64][destination_dir][192.36561476239967]>
+                <[float64][distance][1566.7741544064177]> // 2 km
+                <[float64][duration][23.072464476827278]> // 0 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.54550884676364 33.34295044561969]>
-                    <[float64][direction][344.68604511133776]>
+                    <[vector2_float64][lon_lat][-104.53526706194693 33.28693009148065]>
+                    <[float64][direction][192.36561476239967]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][3]>
-                        <[int32][time_day][31]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][2]>
                         <[float64][time_hours][13.75]> // 13:45:00 UTC
                     >
-                    <[float64][wind_direction][360]>
-                    <[float64][wind_speed][8]> // kts
+                    <[float64][wind_direction][320]>
+                    <[float64][wind_speed][5]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.238144]> // 9.399999999999999 °C
+                    <[float64][thermal_strength][0.21715600000000002]> // 8.3 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -146,9 +138,9 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.54550884676364 33.34295044561969]>
-                        <[float64][altitude][1798.3199424537618]> // 5900 ft
-                        <[float64][direction][344.6860451113277]>
+                        <[vector2_float64][lon_lat][-104.53526706194693 33.28693009148065]>
+                        <[float64][altitude][1676.3999463552018]> // 5500 ft
+                        <[float64][direction][192.3656147624408]>
                         <[float64][slope][0]>
                     >
                 >
@@ -156,7 +148,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #3 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this gusty, clear morning with wind from 340° at 14 kts and moderate thermal activity.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear morning with wind from 190° at 9 kts and moderate thermal activity.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -165,29 +157,29 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][243.05937965584553]>
+                <[float64][origin_dir][175.05990699653353]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][243.05937965584553]>
-                <[float64][distance][1764.5185844292828]> // 2 km
-                <[float64][duration][25.98446766781783]> // 0 min
+                <[float64][destination_dir][175.05990699653353]>
+                <[float64][distance][14300.320730836727]> // 14 km
+                <[float64][duration][210.5878764603877]> // 4 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.54858177541601 33.29350287255408]>
-                    <[float64][direction][243.05937965584553]>
+                    <[vector2_float64][lon_lat][-104.4522439036212 33.28032424630943]>
+                    <[float64][direction][-21.716622737200524]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][3]>
-                        <[int32][time_day][30]>
+                        <[int32][time_month][4]>
+                        <[int32][time_day][1]>
                         <[float64][time_hours][15.25]> // 15:15:00 UTC
                     >
-                    <[float64][wind_direction][340]>
-                    <[float64][wind_speed][14]> // kts
-                    <[float64][wind_gusts][22]> // kts
+                    <[float64][wind_direction][190]>
+                    <[float64][wind_speed][9]> // kts
+                    <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.41473600000000005]> // 17.200000000000003 °C
+                    <[float64][thermal_strength][0.47334399999999993]> // 19.4 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -205,10 +197,42 @@
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.54858177541601 33.29350287255408]>
+                        <[string8u][name][CP-1]>
+                        <[vector2_float64][lon_lat][-104.52997348121154 33.284407589732126]>
                         <[float64][altitude][2133.599931724802]> // 7000 ft
-                        <[float64][direction][243.05937965582723]>
+                        <[float64][direction][175.05990699651818]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-2]>
+                        <[vector2_float64][lon_lat][-104.49352856259965 33.25256146411846]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][136.25324307988421]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-3]>
+                        <[vector2_float64][lon_lat][-104.45555654112523 33.24727482092598]>
+                        <[float64][altitude][1889.759939527682]> // 6200 ft
+                        <[float64][direction][99.44148202519978]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-4]>
+                        <[vector2_float64][lon_lat][-104.44539490468838 33.265948439887396]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][24.46502725995549]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-FINISH]>
+                        <[vector2_float64][lon_lat][-104.4522439036212 33.28032424630943]>
+                        <[float64][altitude][1981.199936601602]> // 6500 ft
+                        <[float64][direction][338.283377262851]>
                         <[float64][slope][0]>
                     >
                 >
@@ -216,7 +240,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #4 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this clear morning with almost no wind and moderate thermal activity.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear morning with almost no wind.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -225,29 +249,29 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][35.337430146770146]>
+                <[float64][origin_dir][284.76210986351884]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][35.337430146770146]>
-                <[float64][distance][12397.57642419406]> // 12 km
-                <[float64][duration][182.56788372561448]> // 3 min
+                <[float64][destination_dir][284.76210986351884]>
+                <[float64][distance][11407.951925163514]> // 11 km
+                <[float64][duration][167.9945796951234]> // 3 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.43448968096972 33.347882394033434]>
-                    <[float64][direction][28.74907640102252]>
+                    <[vector2_float64][lon_lat][-104.62073582603243 33.32839889300539]>
+                    <[float64][direction][359.60662950287207]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][3]>
-                        <[int32][time_day][29]>
-                        <[float64][time_hours][17.75]> // 17:45:00 UTC
+                        <[int32][time_day][31]>
+                        <[float64][time_hours][16.75]> // 16:45:00 UTC
                     >
-                    <[float64][wind_direction][140]>
-                    <[float64][wind_speed][4]> // kts
+                    <[float64][wind_direction][90]>
+                    <[float64][wind_speed][5]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.48999999999999994]> // 20 °C
+                    <[float64][thermal_strength][0.386884]> // 16.1 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -266,33 +290,33 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-1]>
-                        <[vector2_float64][lon_lat][-104.50152801610264 33.33619232495618]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][35.337430146783674]>
+                        <[vector2_float64][lon_lat][-104.57018047174114 33.30917103329724]>
+                        <[float64][altitude][1859.2799405030419]> // 6100 ft
+                        <[float64][direction][284.7621098635019]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-2]>
-                        <[vector2_float64][lon_lat][-104.48262832872314 33.339155637312615]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][79.3655155161569]>
+                        <[vector2_float64][lon_lat][-104.5975764878386 33.29401322963278]>
+                        <[float64][altitude][2194.5599297740823]> // 7200 ft
+                        <[float64][direction][236.50341093654032]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-3]>
-                        <[vector2_float64][lon_lat][-104.44605541385708 33.33027182288547]>
-                        <[float64][altitude][1645.9199473305616]> // 5400 ft
-                        <[float64][direction][106.20127804072837]>
+                        <[vector2_float64][lon_lat][-104.6206271900077 33.31517824910199]>
+                        <[float64][altitude][1828.799941478402]> // 6000 ft
+                        <[float64][direction][317.6970801461027]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.43448968096972 33.347882394033434]>
-                        <[float64][altitude][1798.3199424537618]> // 5900 ft
-                        <[float64][direction][28.749076400985018]>
+                        <[vector2_float64][lon_lat][-104.62073582603243 33.32839889300539]>
+                        <[float64][altitude][2133.599931724802]> // 7000 ft
+                        <[float64][direction][359.6066295029061]>
                         <[float64][slope][0]>
                     >
                 >
@@ -300,7 +324,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #5 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this gusty, clear noon with wind from 150° at 11 kts and moderate thermal activity.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear noon with almost no wind and moderate thermal activity.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -309,29 +333,29 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][117.69865314032296]>
+                <[float64][origin_dir][203.77032656128688]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][117.69865314032296]>
-                <[float64][distance][4774.132570679135]> // 5 km
-                <[float64][duration][70.3043280583026]> // 1 min
+                <[float64][destination_dir][203.77032656128688]>
+                <[float64][distance][19397.910729441977]> // 19 km
+                <[float64][duration][285.6554692142447]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.48618486705483 33.28072830995001]>
-                    <[float64][direction][117.69865314032296]>
+                    <[vector2_float64][lon_lat][-104.62255055395475 33.16110144491739]>
+                    <[float64][direction][195.67186111251613]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][3]>
-                        <[int32][time_day][28]>
-                        <[float64][time_hours][19.25]> // 19:15:00 UTC
+                        <[int32][time_day][30]>
+                        <[float64][time_hours][18.25]> // 18:15:00 UTC
                     >
-                    <[float64][wind_direction][150]>
-                    <[float64][wind_speed][11]> // kts
-                    <[float64][wind_gusts][17]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][4]> // kts
+                    <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.7123360000000002]> // 27.200000000000003 °C
+                    <[float64][thermal_strength][0.5535360000000001]> // 22.200000000000003 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -349,10 +373,42 @@
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
+                        <[string8u][name][CP-1]>
+                        <[vector2_float64][lon_lat][-104.5434707991358 33.27826928569648]>
+                        <[float64][altitude][1737.359944404482]> // 5700 ft
+                        <[float64][direction][203.77032656130942]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-2]>
+                        <[vector2_float64][lon_lat][-104.57061905955719 33.25465149266008]>
+                        <[float64][altitude][1737.359944404482]> // 5700 ft
+                        <[float64][direction][223.8715620225936]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-3]>
+                        <[vector2_float64][lon_lat][-104.57049495388748 33.21169477344354]>
+                        <[float64][altitude][1767.8399434291218]> // 5800 ft
+                        <[float64][direction][179.86150711101538]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-4]>
+                        <[vector2_float64][lon_lat][-104.61019452040065 33.19797036363223]>
+                        <[float64][altitude][2042.1599346508822]> // 6700 ft
+                        <[float64][direction][247.56192760572532]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.48618486705483 33.28072830995001]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][117.6986531403179]>
+                        <[vector2_float64][lon_lat][-104.62255055395475 33.16110144491739]>
+                        <[float64][altitude][1737.359944404482]> // 5700 ft
+                        <[float64][direction][195.6718611125126]>
                         <[float64][slope][0]>
                     >
                 >
@@ -360,8 +416,8 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #6 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this clear afternoon with wind from 140° at 7 kts and moderate thermal activity.]>
-                <[string8u][tags][airrace]>
+                <[string8][description][Your Pitts is racing through the sky on this gusty, misty afternoon with wind from 260° at 20 kts and moderate thermal activity.]>
+                <[string8u][tags][airrace low_visibility]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
                 <[stringt8c][aircraft_icao][PTS2]>
@@ -369,32 +425,36 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][143.85281936437138]>
+                <[float64][origin_dir][314.78752528862515]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][143.85281936437138]>
-                <[float64][distance][10117.554145276832]> // 10 km
-                <[float64][duration][148.99205986565136]> // 2 min
+                <[float64][destination_dir][314.78752528862515]>
+                <[float64][distance][10681.102885376753]> // 11 km
+                <[float64][duration][157.2909319464474]> // 3 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.47708826702993 33.23498199974587]>
-                    <[float64][direction][91.22088372512675]>
+                    <[vector2_float64][lon_lat][-104.61507384089015 33.276354262497954]>
+                    <[float64][direction][213.32946073322734]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][3]>
-                        <[int32][time_day][27]>
+                        <[int32][time_day][29]>
                         <[float64][time_hours][20.75]> // 20:45:00 UTC
                     >
-                    <[float64][wind_direction][140]>
-                    <[float64][wind_speed][7]> // kts
-                    <[float64][wind_gusts][0]> // kts
+                    <[float64][wind_direction][260]>
+                    <[float64][wind_speed][20]> // kts
+                    <[float64][wind_gusts][30]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.5387560000000001]> // 21.700000000000003 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
+                    <[float64][thermal_strength][0.47334399999999993]> // 19.4 °C
+                    <[float64][visibility][4828.032]> // 3 SM
+                    <[float64][cloud_cover][0.25]> // FEW
+                    <[float64][cloud_base][761.9999756160008]> // 2500 ft AGL
+                    <[float64][cirrus_cover][0.5]> // SCT
+                    <[float64][cirrus_base][2285.9999268480024]> // 7500 ft AGL
+                    //<[float64][cumulus_mediocris_cover][1]> // OVC
+                    //<[float64][cumulus_mediocris_base][2743.199912217603]> // 9000 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -410,33 +470,33 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-1]>
-                        <[vector2_float64][lon_lat][-104.52089419711413 33.288376263595005]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][143.8528193643827]>
+                        <[vector2_float64][lon_lat][-104.55434327609119 33.319508240587545]>
+                        <[float64][altitude][1798.3199424537618]> // 5900 ft
+                        <[float64][direction][314.7875252886186]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-2]>
-                        <[vector2_float64][lon_lat][-104.51951686265379 33.26919312505855]>
+                        <[vector2_float64][lon_lat][-104.59004752170092 33.29456913502285]>
                         <[float64][altitude][2164.079930749442]> // 7100 ft
-                        <[float64][direction][176.5645695144832]>
+                        <[float64][direction][230.12173778505928]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-3]>
-                        <[vector2_float64][lon_lat][-104.49959324460856 33.23538519320375]>
-                        <[float64][altitude][2103.1199327001623]> // 6900 ft
-                        <[float64][direction][153.75928557712302]>
+                        <[vector2_float64][lon_lat][-104.60118590701947 33.294010972292604]>
+                        <[float64][altitude][2133.599931724802]> // 7000 ft
+                        <[float64][direction][266.5721647580859]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.47708826702993 33.23498199974587]>
+                        <[vector2_float64][lon_lat][-104.61507384089015 33.276354262497954]>
                         <[float64][altitude][1950.719937576962]> // 6400 ft
-                        <[float64][direction][91.2208837251057]>
+                        <[float64][direction][213.32946073322722]>
                         <[float64][slope][0]>
                     >
                 >
@@ -444,7 +504,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #7 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this clear late afternoon with wind from 210° at 8 kts and moderate thermal activity.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear late afternoon with wind from 180° at 7 kts and lots of thermal activity.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -453,29 +513,29 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][228.42328996485776]>
+                <[float64][origin_dir][272.35103360640755]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][228.42328996485776]>
-                <[float64][distance][18329.824406132262]> // 18 km
-                <[float64][duration][269.92672893381496]> // 4 min
+                <[float64][destination_dir][272.35103360640755]>
+                <[float64][distance][8502.412265389718]> // 9 km
+                <[float64][duration][125.20732768588825]> // 2 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.59119132691264 33.16670067947234]>
-                    <[float64][direction][200.26941734423784]>
+                    <[vector2_float64][lon_lat][-104.51873039466501 33.34108221436457]>
+                    <[float64][direction][418.4701658719455]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][3]>
-                        <[int32][time_day][26]>
+                        <[int32][time_day][28]>
                         <[float64][time_hours][22.25]> // 22:15:00 UTC
                     >
-                    <[float64][wind_direction][210]>
-                    <[float64][wind_speed][8]> // kts
+                    <[float64][wind_direction][180]>
+                    <[float64][wind_speed][7]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.7327359999999999]> // 27.799999999999997 °C
+                    <[float64][thermal_strength][0.831744]> // 30.6 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -494,41 +554,25 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-1]>
-                        <[vector2_float64][lon_lat][-104.56812159109923 33.27364347205185]>
-                        <[float64][altitude][2164.079930749442]> // 7100 ft
-                        <[float64][direction][228.4232899648646]>
+                        <[vector2_float64][lon_lat][-104.55481392005696 33.30148605922112]>
+                        <[float64][altitude][1859.2799405030419]> // 6100 ft
+                        <[float64][direction][272.35103360640557]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-2]>
-                        <[vector2_float64][lon_lat][-104.56137169888093 33.24439781809979]>
+                        <[vector2_float64][lon_lat][-104.5560821251814 33.32194352477563]>
                         <[float64][altitude][1676.3999463552018]> // 5500 ft
-                        <[float64][direction][169.0746632653271]>
+                        <[float64][direction][357.03469703167235]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CP-3]>
-                        <[vector2_float64][lon_lat][-104.58366341891347 33.23944470389329]>
-                        <[float64][altitude][1889.759939527682]> // 6200 ft
-                        <[float64][direction][255.1281114801914]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CP-4]>
-                        <[vector2_float64][lon_lat][-104.5778585060902 33.19692216696407]>
-                        <[float64][altitude][2103.1199327001623]> // 6900 ft
-                        <[float64][direction][173.48310845011997]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.59119132691264 33.16670067947234]>
-                        <[float64][altitude][1828.799941478402]> // 6000 ft
-                        <[float64][direction][200.26941734425188]>
+                        <[vector2_float64][lon_lat][-104.51873039466501 33.34108221436457]>
+                        <[float64][altitude][1950.719937576962]> // 6400 ft
+                        <[float64][direction][58.47016587193099]>
                         <[float64][slope][0]>
                     >
                 >
@@ -536,7 +580,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #8 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this clear late afternoon with almost no wind and moderate thermal activity.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear late afternoon with wind from 220° at 9 kts and moderate thermal activity.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -545,29 +589,29 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][13.388770559919976]>
+                <[float64][origin_dir][212.47801920322104]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][13.388770559919976]>
-                <[float64][distance][15567.646377529101]> // 16 km
-                <[float64][duration][229.25063387290058]> // 4 min
+                <[float64][destination_dir][212.47801920322104]>
+                <[float64][distance][12570.275986621333]> // 13 km
+                <[float64][duration][185.11107382615353]> // 3 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.41986635936065 33.29056202152142]>
-                    <[float64][direction][91.07279010487186]>
+                    <[vector2_float64][lon_lat][-104.60161407052519 33.320062599453394]>
+                    <[float64][direction][375.9865077376029]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][3]>
-                        <[int32][time_day][25]>
+                        <[int32][time_day][27]>
                         <[float64][time_hours][23.75]> // 23:45:00 UTC
                     >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][5]> // kts
+                    <[float64][wind_direction][220]>
+                    <[float64][wind_speed][9]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.788544]> // 29.4 °C
+                    <[float64][thermal_strength][0.5715359999999998]> // 22.799999999999997 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -586,41 +630,33 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-1]>
-                        <[vector2_float64][lon_lat][-104.52496436608608 33.32418885219026]>
-                        <[float64][altitude][1828.799941478402]> // 6000 ft
-                        <[float64][direction][13.388770559939132]>
+                        <[vector2_float64][lon_lat][-104.55018256729743 33.27636086514166]>
+                        <[float64][altitude][2164.079930749442]> // 7100 ft
+                        <[float64][direction][212.47801920323457]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-2]>
-                        <[vector2_float64][lon_lat][-104.5160689383652 33.33668053619456]>
-                        <[float64][altitude][1645.9199473305616]> // 5400 ft
-                        <[float64][direction][30.74924223692824]>
+                        <[vector2_float64][lon_lat][-104.5933463134331 33.27469559020784]>
+                        <[float64][altitude][2164.079930749442]> // 7100 ft
+                        <[float64][direction][267.36971566960176]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-3]>
-                        <[vector2_float64][lon_lat][-104.47577171052917 33.32778371805406]>
-                        <[float64][altitude][2042.1599346508822]> // 6700 ft
-                        <[float64][direction][104.79096073672099]>
+                        <[vector2_float64][lon_lat][-104.60693487569961 33.30454337050783]>
+                        <[float64][altitude][2011.679935626242]> // 6600 ft
+                        <[float64][direction][339.16907275061374]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CP-4]>
-                        <[vector2_float64][lon_lat][-104.44659521519243 33.29098326735219]>
-                        <[float64][altitude][1798.3199424537618]> // 5900 ft
-                        <[float64][direction][146.46426064500838]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.41986635936065 33.29056202152142]>
-                        <[float64][altitude][1828.799941478402]> // 6000 ft
-                        <[float64][direction][91.0727901049018]>
+                        <[vector2_float64][lon_lat][-104.60161407052519 33.320062599453394]>
+                        <[float64][altitude][2011.679935626242]> // 6600 ft
+                        <[float64][direction][15.98650773764274]>
                         <[float64][slope][0]>
                     >
                 >
@@ -628,7 +664,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #9 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this clear late afternoon with wind from 160° at 9 kts and moderate thermal activity.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear late afternoon with wind from 070° at 12 kts and moderate thermal activity.]>
                 <[string8u][tags][airrace]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -637,29 +673,29 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][18.38722427868288]>
+                <[float64][origin_dir][243.4846963412881]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][18.38722427868288]>
-                <[float64][distance][6385.778597910245]> // 6 km
-                <[float64][duration][94.03757998100694]> // 2 min
+                <[float64][destination_dir][243.4846963412881]>
+                <[float64][distance][12513.330077735085]> // 13 km
+                <[float64][duration][184.27248298255083]> // 3 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.48171079151852 33.31272643683257]>
-                    <[float64][direction][103.42764616118077]>
+                    <[vector2_float64][lon_lat][-104.49818857101573 33.2356983543999]>
+                    <[float64][direction][96.14038447328748]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][3]>
-                        <[int32][time_day][25]>
+                        <[int32][time_day][27]>
                         <[float64][time_hours][1.25]> // 01:15:00 UTC
                     >
-                    <[float64][wind_direction][160]>
-                    <[float64][wind_speed][9]> // kts
+                    <[float64][wind_direction][70]>
+                    <[float64][wind_speed][12]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.659344]> // 25.6 °C
+                    <[float64][thermal_strength][0.605284]> // 23.9 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -678,17 +714,33 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-1]>
-                        <[vector2_float64][lon_lat][-104.52354730571525 33.32108043961878]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][18.387224278673727]>
+                        <[vector2_float64][lon_lat][-104.54650481872218 33.29450099854421]>
+                        <[float64][altitude][1798.3199424537618]> // 5900 ft
+                        <[float64][direction][243.48469634127542]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
+                        <[string8u][name][CP-2]>
+                        <[vector2_float64][lon_lat][-104.5563709931383 33.263446230015205]>
+                        <[float64][altitude][2042.1599346508822]> // 6700 ft
+                        <[float64][direction][194.87715787257372]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-3]>
+                        <[vector2_float64][lon_lat][-104.54865934047457 33.24025011523838]>
+                        <[float64][altitude][2133.599931724802]> // 7000 ft
+                        <[float64][direction][164.46082677780146]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.48171079151852 33.31272643683257]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][103.4276461611853]>
+                        <[vector2_float64][lon_lat][-104.49818857101573 33.2356983543999]>
+                        <[float64][altitude][1615.4399483059217]> // 5300 ft
+                        <[float64][direction][96.14038447328534]>
                         <[float64][slope][0]>
                     >
                 >
@@ -696,7 +748,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][Air Race #10 at Roswell Industrial Air Center Airport]>
-                <[string8][description][Your Pitts is racing through the sky on this night with wind from 080° at 6 kts and moderate thermal activity.]>
+                <[string8][description][Your Pitts is racing through the sky on this clear night with almost no wind and moderate thermal activity.]>
                 <[string8u][tags][airrace night]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
@@ -705,32 +757,32 @@
                 <[stringt8c][origin_icao][KROW]>
                 <[tmvector2d][origin_lon_lat][-104.5316574 33.3006936]>
                 <[float64][origin_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][origin_dir][166.39075181976693]>
+                <[float64][origin_dir][311.2346472552979]>
                 <[stringt8c][destination_icao][KROW]>
                 <[tmvector2d][destination_lon_lat][-104.5316574 33.3006936]>
                 <[float64][destination_alt][1579.3515789214973]> // 5182 ft MSL
-                <[float64][destination_dir][166.39075181976693]>
-                <[float64][distance][11147.885052570033]> // 11 km
-                <[float64][duration][164.1648103166606]> // 3 min
+                <[float64][destination_dir][311.2346472552979]>
+                <[float64][distance][13688.320983026122]> // 14 km
+                <[float64][duration][201.57551025465526]> // 3 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-104.59034437617885 33.22598020834966]>
-                    <[float64][direction][237.5691714688319]>
+                    <[vector2_float64][lon_lat][-104.64642143044559 33.29724633744075]>
+                    <[float64][direction][286.25010947780277]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][3]>
-                        <[int32][time_day][24]>
+                        <[int32][time_day][26]>
                         <[float64][time_hours][2.75]> // 02:45:00 UTC
                     >
-                    <[float64][wind_direction][80]>
-                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_direction][140]>
+                    <[float64][wind_speed][5]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.4435559999999999]> // 18.299999999999997 °C
+                    <[float64][thermal_strength][0.5867559999999998]> // 23.299999999999997 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][3657.599882956804]> // 12000 ft AGL
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -746,25 +798,41 @@
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-1]>
-                        <[vector2_float64][lon_lat][-104.52516072838536 33.27825889328125]>
-                        <[float64][altitude][1920.239938552322]> // 6300 ft
-                        <[float64][direction][166.39075181972976]>
+                        <[vector2_float64][lon_lat][-104.56720321989462 33.32672097603222]>
+                        <[float64][altitude][2194.5599297740823]> // 7200 ft
+                        <[float64][direction][311.2346472553015]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CP-2]>
-                        <[vector2_float64][lon_lat][-104.54981724617265 33.247526980222965]>
-                        <[float64][altitude][2133.599931724802]> // 7000 ft
-                        <[float64][direction][213.86290749851838]>
+                        <[vector2_float64][lon_lat][-104.58553961386103 33.31122332034545]>
+                        <[float64][altitude][2164.079930749442]> // 7100 ft
+                        <[float64][direction][224.67915509198974]>
                         <[float64][slope][0]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
+                        <[string8u][name][CP-3]>
+                        <[vector2_float64][lon_lat][-104.59251225144666 33.29907557735196]>
+                        <[float64][altitude][1920.239938552322]> // 6300 ft
+                        <[float64][direction][205.6295828572619]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CP-4]>
+                        <[vector2_float64][lon_lat][-104.61528900148394 33.28966557842458]>
+                        <[float64][altitude][1981.199936601602]> // 6500 ft
+                        <[float64][direction][243.70448018404375]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
                         <[string8u][name][CP-FINISH]>
-                        <[vector2_float64][lon_lat][-104.59034437617885 33.22598020834966]>
-                        <[float64][altitude][2164.079930749442]> // 7100 ft
-                        <[float64][direction][237.5691714688419]>
+                        <[vector2_float64][lon_lat][-104.64642143044559 33.29724633744075]>
+                        <[float64][altitude][1676.3999463552018]> // 5500 ft
+                        <[float64][direction][286.25010947782283]>
                         <[float64][slope][0]>
                     >
                 >
