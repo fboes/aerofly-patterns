@@ -3,7 +3,6 @@ import {
   AeroflyMissionCheckpoint,
   AeroflyMissionConditions,
   AeroflyMissionConditionsCloud,
-  AeroflyMissionPosition,
   AeroflyMissionTargetPlane,
 } from "@fboes/aerofly-custom-missions";
 import { AeroflyAircraft } from "../../data/AeroflyAircraft.js";
@@ -13,6 +12,7 @@ import { Units } from "../../data/Units.js";
 import { Point, Vector } from "@fboes/geojson";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { OpenStreetMapApiAirport } from "../general/OpenStreetMapApi.js";
+import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission.js";
 
 export class Scenario {
   date: Date;

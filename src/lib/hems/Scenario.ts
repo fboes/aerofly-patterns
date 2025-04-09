@@ -1,10 +1,8 @@
 import {
   AeroflyMission,
   AeroflyMissionCheckpoint,
-  AeroflyMissionCheckpointType,
   AeroflyMissionConditions,
   AeroflyMissionConditionsCloud,
-  AeroflyMissionPosition,
 } from "@fboes/aerofly-custom-missions";
 import { Configuration } from "./Configuration.js";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
@@ -14,6 +12,8 @@ import { GeoJsonLocation, GeoJsonLocations } from "./GeoJsonLocations.js";
 import { Vector } from "@fboes/geojson";
 import { degreeDifference } from "../general/Degree.js";
 import { AeroflyAircraft } from "../../data/AeroflyAircraft.js";
+import { AeroflyMissionCheckpointType } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMissionCheckpoint.js";
+import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission.js";
 
 export class Scenario {
   date: Date;
