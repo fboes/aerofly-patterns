@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.1
+- Added Airbus A350
+
 ## 2.6.0
 - Added air races
 - Switched to TypeScript

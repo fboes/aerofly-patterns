@@ -15,7 +15,7 @@ export class OpenStreetMapApiTest {
     assert.ok(result.length > 0);
 
     const moreResult = new OpenStreetMapApiAirport(result[0]);
-    console.log(moreResult);
+    //console.log(moreResult);
     assert.ok(moreResult);
 
     console.log(`✅ ${this.constructor.name}.testQuery successful`);
