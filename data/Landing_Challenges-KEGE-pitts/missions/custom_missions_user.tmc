@@ -4,7 +4,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][KEGE #1: Eagle County Regional]>
-                <[string8][description][It is a clear early morning, and you are 10 NM to the south of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a overcast early morning, and you are 10 NM to the north of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
@@ -15,29 +15,269 @@
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.88253554358657 39.47815596092837]>
-                <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
-                <[float64][origin_dir][351.0782522543042]>
+                <[tmvector2d][origin_lon_lat][-106.91921474280285 39.80923600844716]>
+                <[float64][origin_alt][4724.399848819205]> // 15500 ft MSL
+                <[float64][origin_dir][179.15044292212906]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.88253735052533 39.47816484533613]>
-                    <[float64][direction][351.0782522543042]>
+                    <[vector2_float64][lon_lat][-106.9192145692204 39.809227016219694]>
+                    <[float64][direction][179.15044292212906]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][22]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][27]>
                         <[float64][time_hours][12.25]> // 12:15:00 UTC
                     >
                     <[float64][wind_direction][0]>
                     <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.020736000000000004]> // -7.799999999999999 °C
+                    <[float64][thermal_strength][0.133956]> // 3.3000000000000007 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0.9270619845136516]> // OVC
+                    <[float64][cloud_base][3657.599882956804]> // 12000 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]> // 9000 ft
+                        <[float64][frequency][109750000]> // 109.75 MHz
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-CROSS]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-DOWN]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-ENTRY]>
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-BASE]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7189 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-FINAL]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6869 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]> // 9000 ft
+                        <[float64][frequency][109750000]> // 109.75 MHz
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][KEGE #2: Eagle County Regional]>
+                <[string8][description][It is a cloudy early morning, and you are 10 NM to the north-east of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
+
+- Local tower / CTAF frequency: 119.80
+- Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
+                <[string8u][tags][approach pattern practice instruments]>
+                <[float64][difficulty][0.51]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][pitts]>
+                <[stringt8c][aircraft_icao][PTS2]>
+                <[stringt8c][callsign][N4CYF]>
+                <[stringt8c][origin_icao][KEGE]>
+                <[tmvector2d][origin_lon_lat][-106.77476841278474 39.76893233345186]>
+                <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
+                <[float64][origin_dir][220.6751004196908]>
+                <[stringt8c][destination_icao][KEGE]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
+                <[float64][destination_alt][1996]> // 6549 ft MSL
+                <[float64][destination_dir][262]>
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-106.77477603868263 39.7689255128378]>
+                    <[float64][direction][220.6751004196908]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][26]>
+                        <[float64][time_hours][13.75]> // 13:45:00 UTC
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.1936]> // 7 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0.752445303744429]> // BKN
+                    <[float64][cloud_base][487.6799843942405]> // 1600 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][origin]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][departure_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]> // 9000 ft
+                        <[float64][frequency][109750000]> // 109.75 MHz
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-CROSS]>
+                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
+                        <[float64][altitude][2300.7999902464003]> // 7549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-DOWN]>
+                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
+                        <[float64][altitude][2300.7999902464003]> // 7549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-ENTRY]>
+                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
+                        <[float64][altitude][2300.7999902464003]> // 7549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-BASE]>
+                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
+                        <[float64][altitude][2190.950073761598]> // 7189 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][25-FINAL]>
+                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
+                        <[float64][altitude][2093.475036880799]> // 6869 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][destination_runway]>
+                        <[string8u][name][25]>
+                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                        <[float64][length][2743.199912217603]> // 9000 ft
+                        <[float64][frequency][109750000]> // 109.75 MHz
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][destination]>
+                        <[string8u][name][KEGE]>
+                        <[vector2_float64][lon_lat][-106.916 39.6427]>
+                        <[float64][altitude][1996]> // 6549 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][KEGE #3: Eagle County Regional]>
+                <[string8][description][It is a clear morning, and you are 10 NM to the east of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
+
+- Local tower / CTAF frequency: 119.80
+- Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
+                <[string8u][tags][approach pattern practice instruments]>
+                <[float64][difficulty][0.52]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][pitts]>
+                <[stringt8c][aircraft_icao][PTS2]>
+                <[stringt8c][callsign][N4CYF]>
+                <[stringt8c][origin_icao][KEGE]>
+                <[tmvector2d][origin_lon_lat][-106.70511187567051 39.67989457873589]>
+                <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
+                <[float64][origin_dir][257.0287310028564]>
+                <[stringt8c][destination_icao][KEGE]>
+                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
+                <[float64][destination_alt][1996]> // 6549 ft MSL
+                <[float64][destination_dir][262]>
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-106.70512326270826 39.67989256009623]>
+                    <[float64][direction][257.0287310028564]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][25]>
+                        <[float64][time_hours][15.25]> // 15:15:00 UTC
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.29593600000000003]> // 12.200000000000003 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -123,250 +363,8 @@
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][KEGE #2: Eagle County Regional]>
-                <[string8][description][It is a overcast early morning, and you are 10 NM to the north of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
-
-- Local tower / CTAF frequency: 119.80
-- Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
-                <[string8u][tags][approach pattern practice instruments]>
-                <[float64][difficulty][0.51]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][pitts]>
-                <[stringt8c][aircraft_icao][PTS2]>
-                <[stringt8c][callsign][N4CYF]>
-                <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.99160846265885 39.7987714068839]>
-                <[float64][origin_alt][4724.399848819205]> // 15500 ft MSL
-                <[float64][origin_dir][159.58765126412572]>
-                <[stringt8c][destination_icao][KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
-                <[float64][destination_alt][1996]> // 6549 ft MSL
-                <[float64][destination_dir][262]>
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.99160438012439 39.79876297838021]>
-                    <[float64][direction][159.58765126412572]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][21]>
-                        <[float64][time_hours][13.75]> // 13:45:00 UTC
-                    >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][0]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.05475599999999999]> // -3.3000000000000007 °C
-                    <[float64][visibility][9656.064]> // 6 SM
-                    <[float64][cloud_cover][0.9594698265153074]> // OVC
-                    <[float64][cloud_base][1005.839967813121]> // 3300 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.916 39.6427]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]> // 9000 ft
-                        <[float64][frequency][109750000]> // 109.75 MHz
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
-                        <[float64][altitude][2300.7999902464003]> // 7549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
-                        <[float64][altitude][2300.7999902464003]> // 7549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
-                        <[float64][altitude][2300.7999902464003]> // 7549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
-                        <[float64][altitude][2190.950073761598]> // 7189 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
-                        <[float64][altitude][2093.475036880799]> // 6869 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]> // 9000 ft
-                        <[float64][frequency][109750000]> // 109.75 MHz
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.916 39.6427]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][KEGE #3: Eagle County Regional]>
-                <[string8][description][It is morning, and you are 10 NM to the south-west of the towered airport Eagle County Regional (6,549ft). As there is almost no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
-
-- Local tower / CTAF frequency: 119.80
-- Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
-                <[string8u][tags][approach pattern practice instruments]>
-                <[float64][difficulty][0.52]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][pitts]>
-                <[stringt8c][aircraft_icao][PTS2]>
-                <[stringt8c][callsign][N4CYF]>
-                <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-107.09880048141281 39.55381468376916]>
-                <[float64][origin_alt][4724.399848819205]> // 15500 ft MSL
-                <[float64][origin_dir][57.80443477175993]>
-                <[stringt8c][destination_icao][KEGE]>
-                <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
-                <[float64][destination_alt][1996]> // 6549 ft MSL
-                <[float64][destination_dir][262]>
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-107.09879061097863 39.553819475451185]>
-                    <[float64][direction][57.80443477175993]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][20]>
-                        <[float64][time_hours][15.25]> // 15:15:00 UTC
-                    >
-                    <[float64][wind_direction][40]>
-                    <[float64][wind_speed][3]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0.0375]>
-                    <[float64][thermal_strength][0.05475599999999999]> // -3.3000000000000007 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.2040706670403998]> // FEW
-                    <[float64][cloud_base][1280.1599590348812]> // 4200 ft AGL
-                    <[float64][cirrus_cover][0.4187130821183866]> // SCT
-                    <[float64][cirrus_base][1828.799941478402]> // 6000 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][origin]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.916 39.6427]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][departure_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]> // 9000 ft
-                        <[float64][frequency][109750000]> // 109.75 MHz
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-CROSS]>
-                        <[vector2_float64][lon_lat][-106.95327829224019 39.638652111085385]>
-                        <[float64][altitude][2300.7999902464003]> // 7549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-DOWN]>
-                        <[vector2_float64][lon_lat][-106.95026895954258 39.62215872567397]>
-                        <[float64][altitude][2300.7999902464003]> // 7549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-ENTRY]>
-                        <[vector2_float64][lon_lat][-106.91299049126278 39.626206614583]>
-                        <[float64][altitude][2300.7999902464003]> // 7549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-BASE]>
-                        <[vector2_float64][lon_lat][-106.8757068798492 39.63023827073841]>
-                        <[float64][altitude][2190.950073761598]> // 7189 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][25-FINAL]>
-                        <[vector2_float64][lon_lat][-106.87871656395545 39.64673165616097]>
-                        <[float64][altitude][2093.475036880799]> // 6869 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][destination_runway]>
-                        <[string8u][name][25]>
-                        <[vector2_float64][lon_lat][-106.90013668700388 39.64441563453717]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[float64][length][2743.199912217603]> // 9000 ft
-                        <[float64][frequency][109750000]> // 109.75 MHz
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][destination]>
-                        <[string8u][name][KEGE]>
-                        <[vector2_float64][lon_lat][-106.916 39.6427]>
-                        <[float64][altitude][1996]> // 6549 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
                 <[string8][title][KEGE #4: Eagle County Regional]>
-                <[string8][description][It is a clear morning, and you are 10 NM to the north of the towered airport Eagle County Regional (6,549ft). As there is almost no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a clear morning, and you are 10 NM to the north-west of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
@@ -377,29 +375,29 @@
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.93752508122157 39.808429537340274]>
+                <[tmvector2d][origin_lon_lat][-107.01610597724127 39.7903851364753]>
                 <[float64][origin_alt][4724.399848819205]> // 15500 ft MSL
-                <[float64][origin_dir][174.30234279124193]>
+                <[float64][origin_dir][152.49443502707663]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.93752391895872 39.80842058855402]>
-                    <[float64][direction][174.30234279124193]>
+                    <[vector2_float64][lon_lat][-107.0161005719467 39.790377159798474]>
+                    <[float64][direction][152.49443502707663]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][19]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][24]>
                         <[float64][time_hours][16.75]> // 16:45:00 UTC
                     >
-                    <[float64][wind_direction][110]>
-                    <[float64][wind_speed][4]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0.05]>
-                    <[float64][thermal_strength][0.05475599999999999]> // -3.3000000000000007 °C
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.41473600000000005]> // 17.200000000000003 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -486,45 +484,43 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][KEGE #5: Eagle County Regional]>
-                <[string8][description][It is noon, and you are 10 NM to the south-east of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a gusty, clear noon, and you are 10 NM to the north-east of the towered airport Eagle County Regional (6,549ft). As the wind is 18 kts from 300°, the main landing runway is 25 (253° / 2,743m / 12 kts crosswind component). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
-                <[string8u][tags][approach pattern practice instruments]>
+                <[string8u][tags][approach pattern practice crosswind instruments]>
                 <[float64][difficulty][0.54]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.81603070730748 39.49504576780399]>
+                <[tmvector2d][origin_lon_lat][-106.73123557590252 39.72943761540439]>
                 <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
-                <[float64][origin_dir][332.407625104255]>
+                <[float64][origin_dir][238.5566836552839]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.81603610522292 39.49505373817855]>
-                    <[float64][direction][332.407625104255]>
+                    <[vector2_float64][lon_lat][-106.73124555237936 39.72943292404984]>
+                    <[float64][direction][238.5566836552839]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][18]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][23]>
                         <[float64][time_hours][18.25]> // 18:15:00 UTC
                     >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][0]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.11833599999999998]> // 2.1999999999999993 °C
+                    <[float64][wind_direction][300]>
+                    <[float64][wind_speed][18]> // kts
+                    <[float64][wind_gusts][24]> // kts
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.605284]> // 23.9 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.20373486414892267]> // FEW
-                    <[float64][cloud_base][1828.799941478402]> // 6000 ft AGL
-                    <[float64][cirrus_cover][0.5703534032236662]> // BKN
-                    <[float64][cirrus_base][2438.3999219712027]> // 8000.000000000001 ft AGL
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -608,7 +604,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][KEGE #6: Eagle County Regional]>
-                <[string8][description][It is a cloudy noon, and you are 10 NM to the east of the towered airport Eagle County Regional (6,549ft). As the wind is 9 kts from 280°, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a gusty, cloudy noon, and you are 10 NM to the south of the towered airport Eagle County Regional (6,549ft). As the wind is 11 kts from 210°, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
@@ -619,34 +615,32 @@
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.70233451774305 39.61700923395661]>
+                <[tmvector2d][origin_lon_lat][-106.88435165584744 39.4779425290574]>
                 <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
-                <[float64][origin_dir][278.80506313027945]>
+                <[float64][origin_dir][351.566039897377]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.70234605474587 39.617010610576074]>
-                    <[float64][direction][278.80506313027945]>
+                    <[vector2_float64][lon_lat][-106.88435336472385 39.47795142501697]>
+                    <[float64][direction][351.566039897377]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][17]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][22]>
                         <[float64][time_hours][19.75]> // 19:45:00 UTC
                     >
-                    <[float64][wind_direction][280]>
-                    <[float64][wind_speed][9]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0.1125]>
-                    <[float64][thermal_strength][0.16974400000000003]> // 5.600000000000001 °C
+                    <[float64][wind_direction][210]>
+                    <[float64][wind_speed][11]> // kts
+                    <[float64][wind_gusts][17]> // kts
+                    <[float64][turbulence_strength][0.9875]>
+                    <[float64][thermal_strength][0.6209439999999998]> // 24.4 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.6742434949929078]> // BKN
-                    <[float64][cloud_base][1828.799941478402]> // 6000 ft AGL
-                    <[float64][cirrus_cover][0.5485540212099748]> // BKN
-                    <[float64][cirrus_base][2285.9999268480024]> // 7500 ft AGL
+                    <[float64][cloud_cover][0.8279254230776562]> // BKN
+                    <[float64][cloud_base][3352.7998927104036]> // 11000 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -730,43 +724,43 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][KEGE #7: Eagle County Regional]>
-                <[string8][description][It is afternoon, and you are 10 NM to the north-east of the towered airport Eagle County Regional (6,549ft). As there is almost no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a gusty, clear afternoon, and you are 10 NM to the south of the towered airport Eagle County Regional (6,549ft). As the wind is 25 kts from 240°, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
-                <[string8u][tags][approach pattern practice instruments]>
+                <[string8u][tags][approach pattern practice windy instruments]>
                 <[float64][difficulty][0.56]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][pitts]>
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.75060024805744 39.75014286984105]>
-                <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
-                <[float64][origin_dir][229.77465201728546]>
+                <[tmvector2d][origin_lon_lat][-106.94776083746852 39.477955395719675]>
+                <[float64][origin_alt][4724.399848819205]> // 15500 ft MSL
+                <[float64][origin_dir][8.46415643833518]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.750609178929 39.75013706206195]>
-                    <[float64][direction][229.77465201728546]>
+                    <[vector2_float64][lon_lat][-106.94775912251795 39.47796429098285]>
+                    <[float64][direction][8.46415643833518]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][16]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][21]>
                         <[float64][time_hours][21.25]> // 21:15:00 UTC
                     >
-                    <[float64][wind_direction][340]>
-                    <[float64][wind_speed][3]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0.0375]>
-                    <[float64][thermal_strength][0.133956]> // 3.3000000000000007 °C
-                    <[float64][visibility][14484.096000000001]> // 9 SM
-                    <[float64][cloud_cover][0.4944817414621917]> // SCT
-                    <[float64][cloud_base][2438.3999219712027]> // 8000.000000000001 ft AGL
+                    <[float64][wind_direction][240]>
+                    <[float64][wind_speed][25]> // kts
+                    <[float64][wind_gusts][29]> // kts
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.521284]> // 21.1 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -850,7 +844,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][KEGE #8: Eagle County Regional]>
-                <[string8][description][It is a cloudy late afternoon, and you are 10 NM to the north-east of the towered airport Eagle County Regional (6,549ft). As the wind is 13 kts from 280°, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a gusty, cloudy late afternoon, and you are 10 NM to the south-east of the towered airport Eagle County Regional (6,549ft). As the wind is 17 kts from 250°, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
@@ -861,34 +855,32 @@
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.77568664346904 39.76953736724344]>
+                <[tmvector2d][origin_lon_lat][-106.77908971373405 39.51383961724001]>
                 <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
-                <[float64][origin_dir][220.35530541094022]>
+                <[float64][origin_dir][320.64218277476664]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.77569421978654 39.76953051401997]>
-                    <[float64][direction][220.35530541094022]>
+                    <[vector2_float64][lon_lat][-106.77909710630222 39.51384657080045]>
+                    <[float64][direction][320.64218277476664]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][15]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][20]>
                         <[float64][time_hours][22.75]> // 22:45:00 UTC
                     >
-                    <[float64][wind_direction][280]>
-                    <[float64][wind_speed][13]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0.1625]>
-                    <[float64][thermal_strength][0.11155599999999997]> // 1.6999999999999993 °C
-                    <[float64][visibility][14484.096000000001]> // 9 SM
-                    <[float64][cloud_cover][0.5413437476651531]> // BKN
-                    <[float64][cloud_base][2133.599931724802]> // 6999.999999999999 ft AGL
-                    <[float64][cirrus_cover][0.6909746458105396]> // BKN
-                    <[float64][cirrus_base][3352.7998927104036]> // 11000 ft AGL
+                    <[float64][wind_direction][250]>
+                    <[float64][wind_speed][17]> // kts
+                    <[float64][wind_gusts][27]> // kts
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.386884]> // 16.1 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0.5852446647554296]> // BKN
+                    <[float64][cloud_base][2743.199912217603]> // 9000 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -972,7 +964,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][KEGE #9: Eagle County Regional]>
-                <[string8][description][It is late afternoon, and you are 10 NM to the north-east of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a cloudy late afternoon, and you are 10 NM to the south-west of the towered airport Eagle County Regional (6,549ft). As there is no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
@@ -983,36 +975,34 @@
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.72478501752843 39.720702496335655]>
-                <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
-                <[float64][origin_dir][242.01300275461517]>
+                <[tmvector2d][origin_lon_lat][-107.09245351981765 39.546510422889654]>
+                <[float64][origin_alt][4724.399848819205]> // 15500 ft MSL
+                <[float64][origin_dir][54.779504518779845]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.72479534230624 39.720698276078146]>
-                    <[float64][direction][242.01300275461517]>
+                    <[vector2_float64][lon_lat][-107.09244399209072 39.546515609498044]>
+                    <[float64][direction][54.779504518779845]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][15]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][20]>
                         <[float64][time_hours][0.25]> // 00:15:00 UTC
                     >
                     <[float64][wind_direction][0]>
                     <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.1024]> // 1 °C
-                    <[float64][visibility][14484.096000000001]> // 9 SM
-                    <[float64][cloud_cover][0.13212133390057448]> // FEW
-                    <[float64][cloud_base][518.1599834188805]> // 1700 ft AGL
-                    <[float64][cirrus_cover][0.4575154472778467]> // SCT
-                    <[float64][cirrus_base][822.9599736652808]> // 2700 ft AGL
-                    //<[float64][cumulus_mediocris_cover][0.8950768851184847]> // OVC
-                    //<[float64][cumulus_mediocris_base][1249.6799600102413]> // 4100 ft AGL
+                    <[float64][thermal_strength][0.238144]> // 9.399999999999999 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0.5790958700053519]> // BKN
+                    <[float64][cloud_base][1402.0799551334414]> // 4600 ft AGL
+                    <[float64][cirrus_cover][0.886374347159384]> // OVC
+                    <[float64][cirrus_base][1981.199936601602]> // 6500 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
@@ -1096,7 +1086,7 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][KEGE #10: Eagle County Regional]>
-                <[string8][description][It is a overcast late afternoon, and you are 10 NM to the north of the towered airport Eagle County Regional (6,549ft). As there is almost no wind, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern and land safely.
+                <[string8][description][It is a gusty, cloudy late afternoon, and you are 10 NM to the east of the towered airport Eagle County Regional (6,549ft). As the wind is 20 kts from 270°, the main landing runway is 25 (253° / 2,743m). You may want to use the ILS (109.75). Fly the pattern or selected instrument approach procedure and land safely.
 
 - Local tower / CTAF frequency: 119.80
 - Local navigational aids: VOR/DME SXW (109.20) 3.6 NM to the west]>
@@ -1107,32 +1097,32 @@
                 <[stringt8c][aircraft_icao][PTS2]>
                 <[stringt8c][callsign][N4CYF]>
                 <[stringt8c][origin_icao][KEGE]>
-                <[tmvector2d][origin_lon_lat][-106.95220834573114 39.806909648185005]>
-                <[float64][origin_alt][4724.399848819205]> // 15500 ft MSL
-                <[float64][origin_dir][170.3862340483654]>
+                <[tmvector2d][origin_lon_lat][-106.70527222806332 39.60534870597202]>
+                <[float64][origin_alt][5029.199839065605]> // 16500 ft MSL
+                <[float64][origin_dir][282.89208785769927]>
                 <[stringt8c][destination_icao][KEGE]>
                 <[tmvector2d][destination_lon_lat][-106.916 39.6427]>
                 <[float64][destination_alt][1996]> // 6549 ft MSL
                 <[float64][destination_dir][262]>
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-106.9522063906345 39.806900781270194]>
-                    <[float64][direction][170.3862340483654]>
+                    <[vector2_float64][lon_lat][-106.70528360644342 39.60535071249742]>
+                    <[float64][direction][282.89208785769927]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][2]>
-                        <[int32][time_day][14]>
+                        <[int32][time_month][5]>
+                        <[int32][time_day][19]>
                         <[float64][time_hours][1.75]> // 01:45:00 UTC
                     >
-                    <[float64][wind_direction][80]>
-                    <[float64][wind_speed][4]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0.05]>
-                    <[float64][thermal_strength][0.097344]> // 0.5999999999999996 °C
+                    <[float64][wind_direction][270]>
+                    <[float64][wind_speed][20]> // kts
+                    <[float64][wind_gusts][25]> // kts
+                    <[float64][turbulence_strength][1]>
+                    <[float64][thermal_strength][0.27040000000000003]> // 11 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.976671233776562]> // OVC
-                    <[float64][cloud_base][1828.799941478402]> // 6000 ft AGL
+                    <[float64][cloud_cover][0.7128856692946891]> // BKN
+                    <[float64][cloud_base][2133.599931724802]> // 6999.999999999999 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]

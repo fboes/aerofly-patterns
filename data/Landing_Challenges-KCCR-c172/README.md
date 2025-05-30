@@ -2,7 +2,7 @@
 
 This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Cessna 172 SP Skyhawk is 8 NM away from Concord / Buchanan Field Airport, and you have to make a correct landing pattern entry and land safely.
+Your Cessna 172 SP Skyhawk is 8 NM away from Concord / Buchanan Field Airport, and you have to make a correct landing pattern or instrument approach procedure entry and land safely.
 
 ## Airport details
 
@@ -19,18 +19,18 @@ Get [more information about Concord / Buchanan Field Airport on SkyVector](https
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | -------------------- |
-| #1  | 2025-02-22  |       05:15 | 160° @ 4 kts  | CLR            |      15 SM | 19R (RP) | ↘ To the south-east |
-| #2  | 2025-02-21  |       06:45 | Calm          | CLR            |      15 SM | 19R (RP) | ↓ To the south       |
-| #3  | 2025-02-20  |       08:15 | 160° @ 3 kts  | CLR            |      15 SM | 19R (RP) | ← To the west        |
-| #4  | 2025-02-19  |       09:45 | 180° @ 9 kts  | BKN @ 4,900 ft |      15 SM | 19L      | ↗ To the north-east |
-| #5  | 2025-02-18  |       11:15 | Calm          | CLR            |      15 SM | 19R (RP) | ↗ To the north-east |
-| #6  | 2025-02-17  |       12:45 | 270° @ 10 kts | CLR            |      15 SM | 32L      | ↑ To the north       |
-| #7  | 2025-02-16  |       14:15 | 340° @ 5 kts  | OVC @ 4,100 ft |      15 SM | 19R (RP) | ↙ To the south-west |
-| #8  | 2025-02-15  |       15:45 | 360° @ 4 kts  | CLR            |      15 SM | 19R (RP) | ↗ To the north-east |
-| #9  | 2025-02-14  |       17:15 | 280° @ 10 kts | CLR            |      15 SM | 32L      | ↖ To the north-west |
-| #10 | 2025-02-13  |       18:45 | 220° @ 9 kts  | BKN @ 2,000 ft |       3 SM | 19R (RP) | ↖ To the north-west |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position   |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | ------------------- |
+| #01 | 2025-05-27  |       05:15 | 190° @ 12 kts | CLR            |      15 SM | 19L      | ↘ To the south-east |
+| #02 | 2025-05-26  |       06:45 | 0° @ 3 kts    | OVC @ 1,800 ft |      15 SM | 19R (RP) | ↖ To the north-west |
+| #03 | 2025-05-25  |       08:15 | 190° @ 14 kts | CLR            |      15 SM | 19L      | → To the east       |
+| #04 | 2025-05-24  |       09:45 | 200° @ 15 kts | CLR            |      15 SM | 19L      | ↙ To the south-west |
+| #05 | 2025-05-23  |       11:15 | 160° @ 13 kts | CLR            |      15 SM | 14R (RP) | → To the east       |
+| #06 | 2025-05-22  |       12:45 | 300° @ 12 kts | CLR            |      15 SM | 32L      | ↖ To the north-west |
+| #07 | 2025-05-21  |       14:15 | 290° @ 11 kts | CLR            |      15 SM | 32L      | ↓ To the south      |
+| #08 | 2025-05-20  |       15:45 | 270° @ 9 kts  | CLR            |      15 SM | 32L      | ← To the west       |
+| #09 | 2025-05-19  |       17:15 | 240° @ 12 kts | CLR            |      15 SM | 19R (RP) | ↙ To the south-west |
+| #10 | 2025-05-18  |       18:45 | 270° @ 10 kts | CLR            |      15 SM | 32L      | ↖ To the north-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

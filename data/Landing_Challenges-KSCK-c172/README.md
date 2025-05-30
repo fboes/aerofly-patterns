@@ -2,7 +2,7 @@
 
 This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Cessna 172 SP Skyhawk is 8 NM away from Stockton Metro Airport, and you have to make a correct landing pattern entry and land safely.
+Your Cessna 172 SP Skyhawk is 8 NM away from Stockton Metro Airport, and you have to make a correct landing pattern or instrument approach procedure entry and land safely.
 
 ## Airport details
 
@@ -18,18 +18,18 @@ Get [more information about Stockton Metro Airport on SkyVector](https://skyvect
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | -------------------- |
-| #1  | 2025-02-22  |       05:15 | 40° @ 3 kts   | CLR            |      15 SM | 11L      | ↙ To the south-west |
-| #2  | 2025-02-21  |       06:45 | 140° @ 3 kts  | CLR            |       4 SM | 11R (RP) | ↓ To the south       |
-| #3  | 2025-02-20  |       08:15 | 310° @ 9 kts  | CLR            |      15 SM | 29R (RP) | ↖ To the north-west |
-| #4  | 2025-02-19  |       09:45 | Calm          | CLR            |      15 SM | 29R (RP) | ↑ To the north       |
-| #5  | 2025-02-18  |       11:15 | 320° @ 4 kts  | CLR            |      15 SM | 29R (RP) | ↓ To the south       |
-| #6  | 2025-02-17  |       12:45 | 0° @ 4 kts    | CLR            |      15 SM | 29R (RP) | ← To the west        |
-| #7  | 2025-02-16  |       14:15 | 100° @ 5 kts  | BKN @ 6,000 ft |      15 SM | 11L      | ↖ To the north-west |
-| #8  | 2025-02-15  |       15:45 | Calm          | CLR            |      15 SM | 29R (RP) | ↘ To the south-east |
-| #9  | 2025-02-14  |       17:15 | 280° @ 13 kts | CLR            |      15 SM | 29L      | ↙ To the south-west |
-| #10 | 2025-02-13  |       18:45 | 230° @ 11 kts | BKN @ 3,600 ft |      15 SM | 29L      | ↘ To the south-east |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway   | Aircraft position   |
+| :-: | ----------- | ----------: | ------------- | ------ | ---------: | -------- | ------------------- |
+| #01 | 2025-05-27  |       05:15 | Calm          | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
+| #02 | 2025-05-26  |       06:45 | 270° @ 7 kts  | CLR    |      15 SM | 29L      | → To the east       |
+| #03 | 2025-05-25  |       08:15 | 290° @ 8 kts  | CLR    |      15 SM | 29L      | ← To the west       |
+| #04 | 2025-05-24  |       09:45 | 280° @ 8 kts  | CLR    |      15 SM | 29L      | ↙ To the south-west |
+| #05 | 2025-05-23  |       11:15 | 290° @ 9 kts  | CLR    |      15 SM | 29L      | ↖ To the north-west |
+| #06 | 2025-05-22  |       12:45 | 290° @ 13 kts | CLR    |      15 SM | 29L      | ↓ To the south      |
+| #07 | 2025-05-21  |       14:15 | 350° @ 9 kts  | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
+| #08 | 2025-05-20  |       15:45 | 290° @ 10 kts | CLR    |      15 SM | 29L      | ↑ To the north      |
+| #09 | 2025-05-19  |       17:15 | 270° @ 15 kts | CLR    |      15 SM | 29L      | → To the east       |
+| #10 | 2025-05-18  |       18:45 | 300° @ 17 kts | CLR    |      15 SM | 29L      | ↑ To the north      |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

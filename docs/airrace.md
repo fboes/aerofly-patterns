@@ -70,6 +70,9 @@ npx -p @fboes/aerofly-patterns@latest aerofly-airrace SCVM asg29 --min-checkpoin
   -d
 ```
 
+Aircraft codes can be found at [the complete list of available internal aircraft codes in Aerofly FS 4](https://fboes.github.io/aerofly-data/data/aircraft.html).
+
+
 ## Download the missions
 
 There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/airrace-[LOCATION_NAME]-[AEROFLY_AIRCRAFT_CODE]/`.

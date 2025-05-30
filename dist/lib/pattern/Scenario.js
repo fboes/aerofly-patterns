@@ -206,7 +206,7 @@ export class Scenario {
         if (this.activeRunway.ilsFrequency && !this.aircraft.data.hasNoRadioNav) {
             description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}). `;
         }
-        description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
+        description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern or selected instrument approach procedure and land safely.`;
         const airportDescription = this.airport.getDescription(this.aircraft.data.hasNoRadioNav !== true);
         if (airportDescription) {
             description += "\n" + airportDescription;
@@ -244,12 +244,12 @@ export class Scenario {
          */
         const waypoints = [
             makeCheckpoint(this.airport, "origin"),
-            makeCheckpoint(this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1_000_000),
+            makeCheckpoint(this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1000000),
         ];
         this.patternWaypoints.forEach((p) => {
             waypoints.push(makeCheckpoint(p, "waypoint"));
         });
-        waypoints.push(makeCheckpoint(this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1_000_000), makeCheckpoint(this.airport, "destination"));
+        waypoints.push(makeCheckpoint(this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1000000), makeCheckpoint(this.airport, "destination"));
         return waypoints;
     }
 }

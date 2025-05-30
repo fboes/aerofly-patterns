@@ -259,7 +259,7 @@ export class AeroflyPatterns {
 
 This [\`custom_missions_user.tmc\`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your ${firstMission.aircraft.data.nameFull} is ${this.configuration.initialDistance} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern entry and land safely.
+Your ${firstMission.aircraft.data.nameFull} is ${this.configuration.initialDistance} NM away from ${this.airport.name} Airport, and you have to make a correct landing pattern or instrument approach procedure entry and land safely.
 
 ## Airport details
 

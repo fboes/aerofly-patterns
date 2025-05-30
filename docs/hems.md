@@ -58,7 +58,7 @@ Example:
 npx -p @fboes/aerofly-patterns@latest aerofly-hems C:\User\example\Downloads\hamptons.geojson ec135 --metar-icao=KISP --callsign=MEDEVAC11
 ```
 
-As of present there are three helicopters in Aerofly FS 4:
+Aircraft codes can be found at [the complete list of available internal aircraft codes in Aerofly FS 4](https://fboes.github.io/aerofly-data/data/aircraft.html). As of present there are three helicopters in Aerofly FS 4:
 
 | `AEROFLY_AIRCRAFT_CODE` | Type                      |
 | ----------------------- | ------------------------- |
@@ -143,7 +143,7 @@ There are special `properties.marker-symbol` values for emergency sites, which w
 | default                    | Patient recovery                                                  |
 | `car`, `road-accident`     | Car accident                                                      |
 | `person`², `cricket`       | Lost person                                                       |
-| `ship`², `ferry`           | Ship SAR                                                          |
+| `ship`², `ferry`           | Ship SAR (not yet fully implemented)                              |
 | `bicycle`                  | Bicycle accident (not yet fully implemented)                      |
 | `bus`                      | Bus accident (not yet fully implemented)                          |
 | `farm`                     | Farming accident (not yet fully implemented)                      |

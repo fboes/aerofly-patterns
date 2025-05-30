@@ -279,7 +279,7 @@ export class Scenario {
       description += `You may want to use the ILS (${this.activeRunway.ilsFrequency.toFixed(2)}). `;
     }
 
-    description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern and land safely.`;
+    description += `Fly the ${this.activeRunway.isRightPattern ? "right-turn " : ""}pattern or selected instrument approach procedure and land safely.`;
 
     const airportDescription = this.airport.getDescription(this.aircraft.data.hasNoRadioNav !== true);
     if (airportDescription) {

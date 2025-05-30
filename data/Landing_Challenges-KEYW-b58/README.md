@@ -2,7 +2,7 @@
 
 This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Beechcraft Baron 58 is 8 NM away from Key West International Airport, and you have to make a correct landing pattern entry and land safely.
+Your Beechcraft Baron 58 is 8 NM away from Key West International Airport, and you have to make a correct landing pattern or instrument approach procedure entry and land safely.
 
 ## Airport details
 
@@ -19,18 +19,18 @@ Get [more information about Key West International Airport on SkyVector](https:/
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2025-02-22  |       05:15 | 60° @ 10 kts  | BKN @ 7,500 ft |      15 SM | 09 (RP) | ← To the west        |
-| #2  | 2025-02-21  |       06:45 | 30° @ 12 kts  | BKN @ 3,500 ft |      15 SM | 09 (RP) | ↓ To the south       |
-| #3  | 2025-02-20  |       08:15 | 340° @ 10 kts | BKN @ 1,400 ft |      15 SM | 27      | ↓ To the south       |
-| #4  | 2025-02-19  |       09:45 | 150° @ 13 kts | FEW @ 2,500 ft |      15 SM | 09 (RP) | ↘ To the south-east |
-| #5  | 2025-02-18  |       11:15 | Calm          | CLR            |      15 SM | 09 (RP) | ← To the west        |
-| #6  | 2025-02-17  |       12:45 | 10° @ 9 kts   | SCT @ 1,300 ft |      15 SM | 09 (RP) | ↘ To the south-east |
-| #7  | 2025-02-16  |       14:15 | 200° @ 7 kts  | CLR            |      15 SM | 27      | → To the east        |
-| #8  | 2025-02-15  |       15:45 | 120° @ 18 kts | FEW @ 2,000 ft |      15 SM | 09 (RP) | ↖ To the north-west |
-| #9  | 2025-02-14  |       17:15 | 80° @ 12 kts  | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
-| #10 | 2025-02-13  |       18:45 | 90° @ 8 kts   | FEW @ 1,300 ft |      15 SM | 09 (RP) | ← To the west        |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position   |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | ------------------- |
+| #01 | 2025-05-28  |       05:15 | 140° @ 12 kts | CLR            |      15 SM | 09 (RP) | → To the east       |
+| #02 | 2025-05-27  |       06:45 | 140° @ 10 kts | CLR            |      15 SM | 09 (RP) | → To the east       |
+| #03 | 2025-05-26  |       08:15 | 130° @ 11 kts | CLR            |      15 SM | 09 (RP) | ↗ To the north-east |
+| #04 | 2025-05-25  |       09:45 | 130° @ 10 kts | CLR            |      15 SM | 09 (RP) | ↙ To the south-west |
+| #05 | 2025-05-24  |       11:15 | 130° @ 8 kts  | CLR            |      15 SM | 09 (RP) | ↘ To the south-east |
+| #06 | 2025-05-23  |       12:45 | 0° @ 6 kts    | CLR            |      15 SM | 09 (RP) | ↘ To the south-east |
+| #07 | 2025-05-22  |       14:15 | Calm          | SCT @ 2,900 ft |      15 SM | 09 (RP) | ← To the west       |
+| #08 | 2025-05-21  |       15:45 | 190° @ 6 kts  | BKN @ 2,500 ft |      15 SM | 27      | ↙ To the south-west |
+| #09 | 2025-05-20  |       17:15 | 110° @ 7 kts  | CLR            |      15 SM | 09 (RP) | ↘ To the south-east |
+| #10 | 2025-05-19  |       18:45 | 100° @ 9 kts  | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

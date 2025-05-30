@@ -17,6 +17,10 @@ export const Airports: { [key: string]: AirportsAirport } = {
       { id: "26G", isRightPattern: true },
     ],
   },
+  KCEC: {
+    runways: [{ id: "12", ilsFrequency: 108.7, isPreferred: true }],
+    minimumSafeAltitude: 4_700,
+  },
   KEGE: {
     runways: [
       { id: "07", isRightPattern: true },
@@ -39,6 +43,10 @@ export const Airports: { [key: string]: AirportsAirport } = {
       { id: "32", isRightPattern: true, ilsFrequency: 111.9, isPreferred: true },
     ],
     minimumSafeAltitude: 12_000,
+  },
+  KSIY: {
+    runways: [{ id: "35", isRightPattern: true, isPreferred: true }],
+    minimumSafeAltitude: 9_600,
   },
   KSPG: {
     runways: [

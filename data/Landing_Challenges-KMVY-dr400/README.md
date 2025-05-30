@@ -2,7 +2,7 @@
 
 This [`custom_missions_user.tmc`](missions/custom_missions_user.tmc) file contains random landing scenarios for Aerofly FS 4.
 
-Your Robin DR400 is 8 NM away from Vineyard Haven / Martha's Vineyard Airport, and you have to make a correct landing pattern entry and land safely.
+Your Robin DR400 is 8 NM away from Vineyard Haven / Martha's Vineyard Airport, and you have to make a correct landing pattern or instrument approach procedure entry and land safely.
 
 ## Airport details
 
@@ -19,18 +19,18 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #1  | 2025-02-22  |       05:15 | 320° @ 17 kts | CLR            |      15 SM | 33 (RP) | ← To the west        |
-| #2  | 2025-02-21  |       06:45 | 320° @ 15 kts | CLR            |      15 SM | 33 (RP) | → To the east        |
-| #3  | 2025-02-20  |       08:15 | 360° @ 6 kts  | CLR            |      15 SM | 06      | ↙ To the south-west |
-| #4  | 2025-02-19  |       09:45 | 300° @ 16 kts | CLR            |      15 SM | 33 (RP) | ↗ To the north-east |
-| #5  | 2025-02-18  |       11:15 | 280° @ 17 kts | CLR            |      15 SM | 33 (RP) | ↘ To the south-east |
-| #6  | 2025-02-17  |       12:45 | 270° @ 20 kts | BKN @ 5,000 ft |       9 SM | 33 (RP) | ↖ To the north-west |
-| #7  | 2025-02-16  |       14:15 | 210° @ 8 kts  | OVX @ 0 ft     |       0 SM | 24 (RP) | → To the east        |
-| #8  | 2025-02-15  |       15:45 | 230° @ 5 kts  | OVC @ 7,500 ft |      15 SM | 24 (RP) | → To the east        |
-| #9  | 2025-02-14  |       17:15 | 300° @ 12 kts | CLR            |      15 SM | 33 (RP) | ↘ To the south-east |
-| #10 | 2025-02-13  |       18:45 | 260° @ 11 kts | SCT @ 700 ft   |      15 SM | 24 (RP) | ↖ To the north-west |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position   |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | ------------------- |
+| #01 | 2025-05-28  |       05:15 | 220° @ 3 kts  | CLR            |      15 SM | 24 (RP) | ↖ To the north-west |
+| #02 | 2025-05-27  |       06:45 | Calm          | CLR            |      15 SM | 24 (RP) | ↓ To the south      |
+| #03 | 2025-05-26  |       08:15 | 350° @ 5 kts  | CLR            |      15 SM | 24 (RP) | ↗ To the north-east |
+| #04 | 2025-05-25  |       09:45 | 320° @ 12 kts | SCT @ 2,500 ft |      15 SM | 33 (RP) | ↗ To the north-east |
+| #05 | 2025-05-24  |       11:15 | 260° @ 14 kts | FEW @ 3,300 ft |      15 SM | 24 (RP) | ↓ To the south      |
+| #06 | 2025-05-23  |       12:45 | 230° @ 10 kts | SCT @ 2,500 ft |      15 SM | 24 (RP) | ↓ To the south      |
+| #07 | 2025-05-22  |       14:15 | 40° @ 23 kts  | OVC @ 900 ft   |       1 SM | 06      | ↗ To the north-east |
+| #08 | 2025-05-21  |       15:45 | 70° @ 10 kts  | OVC @ 2,100 ft |      15 SM | 06      | ↓ To the south      |
+| #09 | 2025-05-20  |       17:15 | 10° @ 9 kts   | BKN @ 2,100 ft |      15 SM | 06      | ↘ To the south-east |
+| #10 | 2025-05-19  |       18:45 | 340° @ 15 kts | OVC @ 5,500 ft |      15 SM | 33 (RP) | ↗ To the north-east |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

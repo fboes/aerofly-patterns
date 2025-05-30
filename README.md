@@ -4,7 +4,7 @@
 
 This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4.
 
-1. The main tool creates missions containing landing pattern lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern correctly.
+1. The main tool creates missions containing landing pattern or instrument aporoach procedure lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern or instrument approach procedure correctly.
 2. Also there is a HEMS missions generator, which will put your helicopter on a random heliport, sets time of day as well as weather, and create flight plans to nearby MedEvac locations. See the [HEMS missions generator documentation](docs/hems.md).
 3. Also there is an air race missions generator, which will put your aircraft in a random spot and lets you follow a random course. See the [air race missions generator documentation](docs/airrace.md).
 
@@ -68,7 +68,7 @@ Example:
 npx @fboes/aerofly-patterns@latest KMVY c172 --right-pattern 24,33
 ```
 
-The complete list of available internal aircraft codes in Aerofly FS 4 is available in `…\Aerofly FS 4 Flight Simulator\aircraft`. Improved flight planning is available for aircraft listed in [`dist/data/AeroflyAircraft.js`](./dist/data/AeroflyAircraft.js). Examples of codes:
+Aircraft codes can be found at [the complete list of available internal aircraft codes in Aerofly FS 4](https://fboes.github.io/aerofly-data/data/aircraft.html). Examples of codes:
 
 | `AEROFLY_AIRCRAFT_CODE` | Type                                 |
 | ----------------------- | ------------------------------------ |
