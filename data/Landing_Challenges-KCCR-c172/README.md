@@ -19,16 +19,16 @@ Get [more information about Concord / Buchanan Field Airport on SkyVector](https
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position   |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | ------------------- |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway   | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | -------- | -------------------- |
 | #01 | 2025-05-27  |       05:15 | 190° @ 12 kts | CLR            |      15 SM | 19L      | ↘ To the south-east |
 | #02 | 2025-05-26  |       06:45 | 0° @ 3 kts    | OVC @ 1,800 ft |      15 SM | 19R (RP) | ↖ To the north-west |
-| #03 | 2025-05-25  |       08:15 | 190° @ 14 kts | CLR            |      15 SM | 19L      | → To the east       |
+| #03 | 2025-05-25  |       08:15 | 190° @ 14 kts | CLR            |      15 SM | 19L      | → To the east        |
 | #04 | 2025-05-24  |       09:45 | 200° @ 15 kts | CLR            |      15 SM | 19L      | ↙ To the south-west |
-| #05 | 2025-05-23  |       11:15 | 160° @ 13 kts | CLR            |      15 SM | 14R (RP) | → To the east       |
+| #05 | 2025-05-23  |       11:15 | 160° @ 13 kts | CLR            |      15 SM | 14R (RP) | → To the east        |
 | #06 | 2025-05-22  |       12:45 | 300° @ 12 kts | CLR            |      15 SM | 32L      | ↖ To the north-west |
-| #07 | 2025-05-21  |       14:15 | 290° @ 11 kts | CLR            |      15 SM | 32L      | ↓ To the south      |
-| #08 | 2025-05-20  |       15:45 | 270° @ 9 kts  | CLR            |      15 SM | 32L      | ← To the west       |
+| #07 | 2025-05-21  |       14:15 | 290° @ 11 kts | CLR            |      15 SM | 32L      | ↓ To the south       |
+| #08 | 2025-05-20  |       15:45 | 270° @ 9 kts  | CLR            |      15 SM | 32L      | ← To the west        |
 | #09 | 2025-05-19  |       17:15 | 240° @ 12 kts | CLR            |      15 SM | 19R (RP) | ↙ To the south-west |
 | #10 | 2025-05-18  |       18:45 | 270° @ 10 kts | CLR            |      15 SM | 32L      | ↖ To the north-west |
 

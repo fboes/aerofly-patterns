@@ -19,17 +19,17 @@ Get [more information about Jackson Hole Airport on SkyVector](https://skyvector
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position   |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | ------------------- |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | -------------------- |
 | #01 | 2025-05-27  |       05:15 | 20° @ 4 kts   | CLR            |      15 SM | 19     | ↖ To the north-west |
-| #02 | 2025-05-26  |       06:45 | 0° @ 4 kts    | CLR            |      15 SM | 19     | ← To the west       |
-| #03 | 2025-05-25  |       08:15 | 110° @ 3 kts  | CLR            |      15 SM | 19     | ↑ To the north      |
+| #02 | 2025-05-26  |       06:45 | 0° @ 4 kts    | CLR            |      15 SM | 19     | ← To the west        |
+| #03 | 2025-05-25  |       08:15 | 110° @ 3 kts  | CLR            |      15 SM | 19     | ↑ To the north       |
 | #04 | 2025-05-23  |       11:15 | 200° @ 5 kts  | FEW @ 7,000 ft |      15 SM | 19     | ↘ To the south-east |
 | #05 | 2025-05-22  |       12:45 | 180° @ 6 kts  | FEW @ 9,500 ft |      15 SM | 19     | ↘ To the south-east |
-| #06 | 2025-05-21  |       14:15 | 240° @ 9 kts  | BKN @ 8,000 ft |      15 SM | 19     | ↓ To the south      |
-| #07 | 2025-05-20  |       15:45 | 280° @ 9 kts  | BKN @ 3,700 ft |      15 SM | 19     | ↓ To the south      |
-| #08 | 2025-05-19  |       17:15 | 280° @ 17 kts | OVC @ 6,000 ft |      15 SM | 19     | ↓ To the south      |
-| #09 | 2025-05-18  |       18:45 | 210° @ 13 kts | BKN @ 3,800 ft |      15 SM | 19     | ↓ To the south      |
+| #06 | 2025-05-21  |       14:15 | 240° @ 9 kts  | BKN @ 8,000 ft |      15 SM | 19     | ↓ To the south       |
+| #07 | 2025-05-20  |       15:45 | 280° @ 9 kts  | BKN @ 3,700 ft |      15 SM | 19     | ↓ To the south       |
+| #08 | 2025-05-19  |       17:15 | 280° @ 17 kts | OVC @ 6,000 ft |      15 SM | 19     | ↓ To the south       |
+| #09 | 2025-05-18  |       18:45 | 210° @ 13 kts | BKN @ 3,800 ft |      15 SM | 19     | ↓ To the south       |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

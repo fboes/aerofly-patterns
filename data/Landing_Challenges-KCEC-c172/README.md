@@ -18,18 +18,18 @@ Get [more information about Crescent City / Jack Mc Namara Field Airport on SkyV
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position   |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | ------------------- |
-| #01 | 2025-05-27  |       05:15 | Calm          | CLR            |      15 SM | 12     | ← To the west       |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------ | -------------------- |
+| #01 | 2025-05-27  |       05:15 | Calm          | CLR            |      15 SM | 12     | ← To the west        |
 | #02 | 2025-05-26  |       06:45 | Calm          | OVC @ 8,000 ft |       3 SM | 12     | ↙ To the south-west |
-| #03 | 2025-05-25  |       08:15 | 190° @ 5 kts  | FEW @ 2,100 ft |      15 SM | 12     | → To the east       |
+| #03 | 2025-05-25  |       08:15 | 190° @ 5 kts  | FEW @ 2,100 ft |      15 SM | 12     | → To the east        |
 | #04 | 2025-05-24  |       09:45 | 140° @ 4 kts  | OVC @ 1,000 ft |      15 SM | 12     | ↙ To the south-west |
 | #05 | 2025-05-23  |       11:15 | 320° @ 7 kts  | CLR            |      15 SM | 30     | ↘ To the south-east |
 | #06 | 2025-05-22  |       12:45 | 320° @ 8 kts  | CLR            |      15 SM | 30     | ↘ To the south-east |
 | #07 | 2025-05-21  |       14:15 | 310° @ 5 kts  | CLR            |      15 SM | 12     | ↗ To the north-east |
-| #08 | 2025-05-20  |       15:45 | 320° @ 15 kts | CLR            |      15 SM | 30     | ↓ To the south      |
+| #08 | 2025-05-20  |       15:45 | 320° @ 15 kts | CLR            |      15 SM | 30     | ↓ To the south       |
 | #09 | 2025-05-19  |       17:15 | 330° @ 4 kts  | OVC @ 1,800 ft |      15 SM | 12     | ↖ To the north-west |
-| #10 | 2025-05-18  |       18:45 | 330° @ 4 kts  | FEW @ 5,500 ft |      15 SM | 12     | ↑ To the north      |
+| #10 | 2025-05-18  |       18:45 | 330° @ 4 kts  | FEW @ 5,500 ft |      15 SM | 12     | ↑ To the north       |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

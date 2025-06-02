@@ -19,18 +19,18 @@ Get [more information about Key West International Airport on SkyVector](https:/
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position   |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | ------------------- |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
 | #01 | 2025-05-28  |       05:15 | 140° @ 12 kts | CLR            |      15 SM | 09 (RP) | ↘ To the south-east |
 | #02 | 2025-05-27  |       06:45 | 140° @ 10 kts | CLR            |      15 SM | 09 (RP) | ↖ To the north-west |
-| #03 | 2025-05-26  |       08:15 | 130° @ 11 kts | CLR            |      15 SM | 09 (RP) | ↑ To the north      |
-| #04 | 2025-05-25  |       09:45 | 130° @ 10 kts | CLR            |      15 SM | 09 (RP) | → To the east       |
-| #05 | 2025-05-24  |       11:15 | 130° @ 8 kts  | CLR            |      15 SM | 09 (RP) | ← To the west       |
-| #06 | 2025-05-23  |       12:45 | 0° @ 6 kts    | CLR            |      15 SM | 09 (RP) | ← To the west       |
+| #03 | 2025-05-26  |       08:15 | 130° @ 11 kts | CLR            |      15 SM | 09 (RP) | ↑ To the north       |
+| #04 | 2025-05-25  |       09:45 | 130° @ 10 kts | CLR            |      15 SM | 09 (RP) | → To the east        |
+| #05 | 2025-05-24  |       11:15 | 130° @ 8 kts  | CLR            |      15 SM | 09 (RP) | ← To the west        |
+| #06 | 2025-05-23  |       12:45 | 0° @ 6 kts    | CLR            |      15 SM | 09 (RP) | ← To the west        |
 | #07 | 2025-05-22  |       14:15 | Calm          | SCT @ 2,900 ft |      15 SM | 09 (RP) | ↖ To the north-west |
-| #08 | 2025-05-21  |       15:45 | 190° @ 6 kts  | BKN @ 2,500 ft |      15 SM | 27      | ↓ To the south      |
-| #09 | 2025-05-20  |       17:15 | 110° @ 7 kts  | CLR            |      15 SM | 09 (RP) | ↓ To the south      |
-| #10 | 2025-05-19  |       18:45 | 100° @ 9 kts  | CLR            |      15 SM | 09 (RP) | → To the east       |
+| #08 | 2025-05-21  |       15:45 | 190° @ 6 kts  | BKN @ 2,500 ft |      15 SM | 27      | ↓ To the south       |
+| #09 | 2025-05-20  |       17:15 | 110° @ 7 kts  | CLR            |      15 SM | 09 (RP) | ↓ To the south       |
+| #10 | 2025-05-19  |       18:45 | 100° @ 9 kts  | CLR            |      15 SM | 09 (RP) | → To the east        |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

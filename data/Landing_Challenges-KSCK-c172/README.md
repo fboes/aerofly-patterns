@@ -18,18 +18,18 @@ Get [more information about Stockton Metro Airport on SkyVector](https://skyvect
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway   | Aircraft position   |
-| :-: | ----------- | ----------: | ------------- | ------ | ---------: | -------- | ------------------- |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway   | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | ------ | ---------: | -------- | -------------------- |
 | #01 | 2025-05-27  |       05:15 | Calm          | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
-| #02 | 2025-05-26  |       06:45 | 270° @ 7 kts  | CLR    |      15 SM | 29L      | → To the east       |
-| #03 | 2025-05-25  |       08:15 | 290° @ 8 kts  | CLR    |      15 SM | 29L      | ← To the west       |
+| #02 | 2025-05-26  |       06:45 | 270° @ 7 kts  | CLR    |      15 SM | 29L      | → To the east        |
+| #03 | 2025-05-25  |       08:15 | 290° @ 8 kts  | CLR    |      15 SM | 29L      | ← To the west        |
 | #04 | 2025-05-24  |       09:45 | 280° @ 8 kts  | CLR    |      15 SM | 29L      | ↙ To the south-west |
 | #05 | 2025-05-23  |       11:15 | 290° @ 9 kts  | CLR    |      15 SM | 29L      | ↖ To the north-west |
-| #06 | 2025-05-22  |       12:45 | 290° @ 13 kts | CLR    |      15 SM | 29L      | ↓ To the south      |
+| #06 | 2025-05-22  |       12:45 | 290° @ 13 kts | CLR    |      15 SM | 29L      | ↓ To the south       |
 | #07 | 2025-05-21  |       14:15 | 350° @ 9 kts  | CLR    |      15 SM | 29R (RP) | ↘ To the south-east |
-| #08 | 2025-05-20  |       15:45 | 290° @ 10 kts | CLR    |      15 SM | 29L      | ↑ To the north      |
-| #09 | 2025-05-19  |       17:15 | 270° @ 15 kts | CLR    |      15 SM | 29L      | → To the east       |
-| #10 | 2025-05-18  |       18:45 | 300° @ 17 kts | CLR    |      15 SM | 29L      | ↑ To the north      |
+| #08 | 2025-05-20  |       15:45 | 290° @ 10 kts | CLR    |      15 SM | 29L      | ↑ To the north       |
+| #09 | 2025-05-19  |       17:15 | 270° @ 15 kts | CLR    |      15 SM | 29L      | → To the east        |
+| #10 | 2025-05-18  |       18:45 | 300° @ 17 kts | CLR    |      15 SM | 29L      | ↑ To the north       |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

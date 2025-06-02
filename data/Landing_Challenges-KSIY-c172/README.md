@@ -18,16 +18,16 @@ Get [more information about Montague / Siskiyou County Airport on SkyVector](htt
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway  | Aircraft position   |
-| :-: | ----------- | ----------: | ------------- | ------ | ---------: | ------- | ------------------- |
-| #01 | 2025-05-27  |       05:15 | 90° @ 3 kts   | CLR    |      15 SM | 35 (RP) | → To the east       |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway  | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | ------ | ---------: | ------- | -------------------- |
+| #01 | 2025-05-27  |       05:15 | 90° @ 3 kts   | CLR    |      15 SM | 35 (RP) | → To the east        |
 | #02 | 2025-05-26  |       06:45 | 350° @ 9 kts  | CLR    |      15 SM | 35 (RP) | ↘ To the south-east |
 | #03 | 2025-05-25  |       08:15 | 30° @ 5 kts   | CLR    |      15 SM | 35 (RP) | ↘ To the south-east |
-| #04 | 2025-05-24  |       09:45 | 270° @ 3 kts  | CLR    |      15 SM | 35 (RP) | ↑ To the north      |
+| #04 | 2025-05-24  |       09:45 | 270° @ 3 kts  | CLR    |      15 SM | 35 (RP) | ↑ To the north       |
 | #05 | 2025-05-23  |       11:15 | 20° @ 3 kts   | CLR    |      15 SM | 35 (RP) | ↖ To the north-west |
-| #06 | 2025-05-22  |       12:45 | 0° @ 3 kts    | CLR    |      15 SM | 35 (RP) | ← To the west       |
-| #07 | 2025-05-21  |       14:15 | 320° @ 3 kts  | CLR    |      15 SM | 35 (RP) | ↓ To the south      |
-| #08 | 2025-05-20  |       15:45 | 0° @ 4 kts    | CLR    |      15 SM | 35 (RP) | → To the east       |
+| #06 | 2025-05-22  |       12:45 | 0° @ 3 kts    | CLR    |      15 SM | 35 (RP) | ← To the west        |
+| #07 | 2025-05-21  |       14:15 | 320° @ 3 kts  | CLR    |      15 SM | 35 (RP) | ↓ To the south       |
+| #08 | 2025-05-20  |       15:45 | 0° @ 4 kts    | CLR    |      15 SM | 35 (RP) | → To the east        |
 | #09 | 2025-05-19  |       17:15 | 260° @ 10 kts | CLR    |      15 SM | 17      | ↘ To the south-east |
 | #10 | 2025-05-18  |       18:45 | 30° @ 14 kts  | CLR    |      15 SM | 35 (RP) | ↗ To the north-east |
 
