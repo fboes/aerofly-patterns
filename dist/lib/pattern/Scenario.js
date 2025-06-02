@@ -244,12 +244,12 @@ export class Scenario {
          */
         const waypoints = [
             makeCheckpoint(this.airport, "origin"),
-            makeCheckpoint(this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1000000),
+            makeCheckpoint(this.activeRunway, "departure_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1_000_000),
         ];
         this.patternWaypoints.forEach((p) => {
             waypoints.push(makeCheckpoint(p, "waypoint"));
         });
-        waypoints.push(makeCheckpoint(this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1000000), makeCheckpoint(this.airport, "destination"));
+        waypoints.push(makeCheckpoint(this.activeRunway, "destination_runway", this.activeRunway.dimension[0] / Units.feetPerMeter, this.activeRunway.ilsFrequency * 1_000_000), makeCheckpoint(this.airport, "destination"));
         return waypoints;
     }
 }

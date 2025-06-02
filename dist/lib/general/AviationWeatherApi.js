@@ -1,14 +1,5 @@
 import { Vector } from "@fboes/geojson";
-/**
- * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
- */
 export class AviationWeatherApi {
-    /**
-     *
-     * @param {string[]} ids
-     * @param {?Date} date to yyyy-mm-ddThh:mm:ssZ
-     * @returns {Promise<AviationWeatherApiMetar[]>}
-     */
     static async fetchMetar(ids, date = null) {
         return AviationWeatherApi.doRequest("/api/data/metar", new URLSearchParams({
             ids: ids.join(","),
@@ -20,10 +11,22 @@ export class AviationWeatherApi {
         }));
     }
     /**
-     *
-     * @param {string[]} ids
-     * @returns {Promise<AviationWeatherApiAirport[]>}
+     * @param position center of search area
+     * @param distance in meters, default 1000
+     * @param date if given, only metars for this date will be returned, otherwise the latest metars
+     * @see https://aviationweather.gov/data/api/#/Data/dataMetar
+     * @returns {Promise<AviationWeatherApiMetar[]>}
      */
+    static async fetchMetarByPosition(position, distance = 1000, date = null) {
+        return AviationWeatherApi.doRequest("/api/data/metar", new URLSearchParams({
+            // ids: ids.join(","),
+            format: "json",
+            // taf,
+            // hours,
+            bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
+            date: date ? date.toISOString().replace(/\.\d+(Z)/, "$1") : "",
+        }));
+    }
     static async fetchAirports(ids) {
         return AviationWeatherApi.doRequest("/api/data/airport", new URLSearchParams({
             ids: ids.join(","),
@@ -31,12 +34,41 @@ export class AviationWeatherApi {
             format: "json",
         }));
     }
-    static async fetchNavaid(position, distance = 1000) {
+    static async fetchNavaids(ids) {
+        return AviationWeatherApi.doRequest("/api/data/navaid", new URLSearchParams({
+            ids: ids.join(","),
+            format: "json",
+            // bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
+        })).then((data) => {
+            return AviationWeatherApi.normalizeNavAid(data);
+        });
+    }
+    /**
+     * @param position center of search area
+     * @param distance in meters, default 1000
+     * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
+     * @returns {Promise<AviationWeatherApiNavaid[]>}
+     */
+    static async fetchNavaidsByPosition(position, distance = 1000) {
         return AviationWeatherApi.doRequest("/api/data/navaid", new URLSearchParams({
             // ids: ids.join(","),
             format: "json",
             bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
-        }));
+        })).then((data) => {
+            return AviationWeatherApi.normalizeNavAid(data);
+        });
+    }
+    static normalizeNavAid(data) {
+        return data.map((navaid) => {
+            return {
+                ...navaid,
+                lat: Number(navaid.lat),
+                lon: Number(navaid.lon),
+                elev: Number(navaid.elev),
+                freq: Number(navaid.freq),
+                mag_dec: magDecConverter(navaid.mag_dec),
+            };
+        });
     }
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     static async doRequest(route, query) {
@@ -61,6 +93,20 @@ export class AviationWeatherApi {
         return [southEast.latitude, southEast.longitude, northWest.latitude, northWest.longitude];
     }
 }
+/**
+ * @returns {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
+ */
+export const magDecConverter = (magdec) => {
+    let magDec = 0;
+    const magdecMatch = magdec.match(/^(\d+)(E|W)$/);
+    if (magdecMatch) {
+        magDec = Number(magdecMatch[1]);
+        if (magdecMatch[2] === "W") {
+            magDec *= -1;
+        }
+    }
+    return magDec;
+};
 export class AviationWeatherNormalizedAirport {
     /**
      * @param {AviationWeatherApiAirport} apiData
@@ -82,17 +128,7 @@ export class AviationWeatherNormalizedAirport {
         this.lat = lat;
         this.lon = lon;
         this.elev = elev;
-        /**
-         * @type {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
-         */
-        this.magdec = 0;
-        const magdecMatch = magdec.match(/^(\d+)(E|W)$/);
-        if (magdecMatch) {
-            this.magdec = Number(magdecMatch[1]);
-            if (magdecMatch[2] === "W") {
-                this.magdec *= -1;
-            }
-        }
+        this.magdec = magDecConverter(magdec);
         this.rwyNum = Number(rwyNum);
         this.tower = tower === "T";
         this.beacon = beacon === "B";

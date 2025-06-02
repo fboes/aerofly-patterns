@@ -1,11 +1,15 @@
 import { strict as assert } from "node:assert";
 import { AviationWeatherApi, AviationWeatherNormalizedAirport } from "./AviationWeatherApi.js";
+import { Point } from "@fboes/geojson";
 
 export class AviationWeatherApiTest {
   static async init() {
     const self = new AviationWeatherApiTest();
     await self.fetchAirports();
     await self.fetchMetar();
+    await self.fetchMetarByPosition();
+    await self.fetchNavaids();
+    await self.fetchNavaidsByPosition();
   }
 
   async fetchAirports() {
@@ -62,5 +66,52 @@ export class AviationWeatherApiTest {
     });
 
     console.log(`✅ ${this.constructor.name}.fetchMetar successful`);
+  }
+
+  async fetchNavaids() {
+    const navaids = await AviationWeatherApi.fetchNavaids(["GND"]);
+    assert.ok(Array.isArray(navaids), "navaids is an array");
+    assert.ok(navaids.length > 0, "navaids array is not empty");
+
+    navaids.forEach((navaid) => {
+      assert.strictEqual(typeof navaid.id, "string", "navaid.id");
+      assert.strictEqual(typeof navaid.type, "string", "navaid.type");
+    });
+
+    console.log(`✅ ${this.constructor.name}.fetchNavaids successful`);
+  }
+
+  async fetchNavaidsByPosition() {
+    const point = new Point(-61.782, 12.0001, 0);
+    assert.ok(point instanceof Point, "point is an instance of Point");
+
+    const navaids = await AviationWeatherApi.fetchNavaidsByPosition(point, 10000);
+
+    assert.ok(Array.isArray(navaids), "navaids is an array");
+    assert.ok(navaids.length > 0, "navaids array is not empty");
+
+    navaids.forEach((navaid) => {
+      assert.strictEqual(typeof navaid.id, "string", "navaid.id");
+      assert.strictEqual(typeof navaid.type, "string", "navaid.type");
+    });
+    console.log(`✅ ${this.constructor.name}.fetchNavaidsByPosition successful`);
+  }
+
+  async fetchMetarByPosition() {
+    const point = new Point(-61.782, 12.0001, 0);
+    assert.ok(point instanceof Point, "point is an instance of Point");
+
+    const metars = await AviationWeatherApi.fetchMetarByPosition(point, 10000);
+
+    assert.ok(Array.isArray(metars), "metars is an array");
+    assert.ok(metars.length > 0, "metars array is not empty");
+
+    metars.forEach((metar) => {
+      assert.strictEqual(typeof metar.lat, "number", "metar.lat");
+      assert.strictEqual(typeof metar.lon, "number", "metar.lon");
+      assert.strictEqual(typeof metar.elev, "number", "metar.elev");
+    });
+
+    console.log(`✅ ${this.constructor.name}.fetchMetarByPosition successful`);
   }
 }

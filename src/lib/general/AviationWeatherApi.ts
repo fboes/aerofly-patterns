@@ -1,13 +1,16 @@
 import { Vector, Point } from "@fboes/geojson";
 
+/**
+ * @see https://aviationweather.gov/data/api/#/Data/dataMetar
+ */
 export interface AviationWeatherApiCloud {
   cover: "CAVOK" | "CLR" | "SKC" | "FEW" | "SCT" | "BKN" | "OVC";
   base: number | null;
 }
+
 /**
  * @see https://aviationweather.gov/data/api/#/Data/dataMetar
  */
-
 export interface AviationWeatherApiMetar {
   icaoId: string;
   reportTime: string;
@@ -27,27 +30,30 @@ export interface AviationWeatherApiMetar {
   elev: number;
   clouds: AviationWeatherApiCloud[];
 }
-/**
- * @see https://aviationweather.gov/data/api/#/Data/dataMetar
- */
 
 type AviationWeatherApiRunwaySurface = "A" | "C" | "G" | "W" | "T" | "H";
 
+/**
+ * @see https://aviationweather.gov/data/api/#/Data/dataAirport
+ */
 export interface AviationWeatherApiRunway {
   id: string;
   dimension: string;
   surface: AviationWeatherApiRunwaySurface;
   alignment: string;
 }
+
 /**
  * @see https://aviationweather.gov/data/api/#/Data/dataAirport
  */
-
 export interface AviationWeatherApiFrequency {
   type: string;
   freq?: number;
 }
 
+/**
+ * @see https://aviationweather.gov/data/api/#/Data/dataAirport
+ */
 export interface AviationWeatherApiAirport {
   icaoId: string;
   name: string;
@@ -66,31 +72,35 @@ export interface AviationWeatherApiAirport {
   runways: AviationWeatherApiRunway[];
   freqs: AviationWeatherApiFrequency[] | string;
 }
+
+export type AviationWeatherApiNavaidType = "VORTAC" | "VOR/DME" | "TACAN" | "NDB" | "VOR";
+
 /**
- * @see https://aviationweather.gov/data/api/#/Data/dataAirport
+ * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
  */
+export interface AviationWeatherApiNavaidRaw {
+  id: string;
+  type: AviationWeatherApiNavaidType;
+  name: string;
+  lat: number | string;
+  lon: number | string;
+  elev: number | string;
+  freq: number | string;
+  mag_dec: string;
+}
 
 export interface AviationWeatherApiNavaid {
   id: string;
-  type: "VORTAC" | "VOR/DME" | "TACAN" | "NDB" | "VOR";
+  type: AviationWeatherApiNavaidType;
   name: string;
   lat: number;
   lon: number;
   elev: number;
   freq: number;
-  mag_dec: string;
+  mag_dec: number;
 }
-/**
- * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
- */
 
 export class AviationWeatherApi {
-  /**
-   *
-   * @param {string[]} ids
-   * @param {?Date} date to yyyy-mm-ddThh:mm:ssZ
-   * @returns {Promise<AviationWeatherApiMetar[]>}
-   */
   static async fetchMetar(ids: string[], date: Date | null = null): Promise<AviationWeatherApiMetar[]> {
     return AviationWeatherApi.doRequest(
       "/api/data/metar",
@@ -106,10 +116,30 @@ export class AviationWeatherApi {
   }
 
   /**
-   *
-   * @param {string[]} ids
-   * @returns {Promise<AviationWeatherApiAirport[]>}
+   * @param position center of search area
+   * @param distance in meters, default 1000
+   * @param date if given, only metars for this date will be returned, otherwise the latest metars
+   * @see https://aviationweather.gov/data/api/#/Data/dataMetar
+   * @returns {Promise<AviationWeatherApiMetar[]>}
    */
+  static async fetchMetarByPosition(
+    position: Point,
+    distance: number = 1000,
+    date: Date | null = null,
+  ): Promise<AviationWeatherApiMetar[]> {
+    return AviationWeatherApi.doRequest(
+      "/api/data/metar",
+      new URLSearchParams({
+        // ids: ids.join(","),
+        format: "json",
+        // taf,
+        // hours,
+        bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
+        date: date ? date.toISOString().replace(/\.\d+(Z)/, "$1") : "",
+      }),
+    );
+  }
+
   static async fetchAirports(ids: string[]): Promise<AviationWeatherApiAirport[]> {
     return AviationWeatherApi.doRequest(
       "/api/data/airport",
@@ -121,7 +151,26 @@ export class AviationWeatherApi {
     );
   }
 
-  static async fetchNavaid(position: Point, distance: number = 1000): Promise<AviationWeatherApiNavaid[]> {
+  static async fetchNavaids(ids: string[]): Promise<AviationWeatherApiNavaid[]> {
+    return AviationWeatherApi.doRequest(
+      "/api/data/navaid",
+      new URLSearchParams({
+        ids: ids.join(","),
+        format: "json",
+        // bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
+      }),
+    ).then((data) => {
+      return AviationWeatherApi.normalizeNavAid(data);
+    });
+  }
+
+  /**
+   * @param position center of search area
+   * @param distance in meters, default 1000
+   * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
+   * @returns {Promise<AviationWeatherApiNavaid[]>}
+   */
+  static async fetchNavaidsByPosition(position: Point, distance: number = 1000): Promise<AviationWeatherApiNavaid[]> {
     return AviationWeatherApi.doRequest(
       "/api/data/navaid",
       new URLSearchParams({
@@ -129,7 +178,22 @@ export class AviationWeatherApi {
         format: "json",
         bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
       }),
-    );
+    ).then((data) => {
+      return AviationWeatherApi.normalizeNavAid(data);
+    });
+  }
+
+  private static normalizeNavAid(data: AviationWeatherApiNavaidRaw[]): AviationWeatherApiNavaid[] {
+    return data.map((navaid: AviationWeatherApiNavaidRaw): AviationWeatherApiNavaid => {
+      return {
+        ...navaid,
+        lat: Number(navaid.lat),
+        lon: Number(navaid.lon),
+        elev: Number(navaid.elev),
+        freq: Number(navaid.freq),
+        mag_dec: magDecConverter(navaid.mag_dec),
+      };
+    });
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -156,6 +220,21 @@ export class AviationWeatherApi {
     return [southEast.latitude, southEast.longitude, northWest.latitude, northWest.longitude];
   }
 }
+
+/**
+ * @returns {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
+ */
+export const magDecConverter = (magdec: string): number => {
+  let magDec = 0;
+  const magdecMatch = magdec.match(/^(\d+)(E|W)$/);
+  if (magdecMatch) {
+    magDec = Number(magdecMatch[1]);
+    if (magdecMatch[2] === "W") {
+      magDec *= -1;
+    }
+  }
+  return magDec;
+};
 
 export class AviationWeatherNormalizedAirport {
   icaoId: string;
@@ -210,19 +289,7 @@ export class AviationWeatherNormalizedAirport {
     this.lat = lat;
     this.lon = lon;
     this.elev = elev;
-
-    /**
-     * @type {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
-     */
-    this.magdec = 0;
-    const magdecMatch = magdec.match(/^(\d+)(E|W)$/);
-    if (magdecMatch) {
-      this.magdec = Number(magdecMatch[1]);
-      if (magdecMatch[2] === "W") {
-        this.magdec *= -1;
-      }
-    }
-
+    this.magdec = magDecConverter(magdec);
     this.rwyNum = Number(rwyNum);
     this.tower = tower === "T";
     this.beacon = beacon === "B";

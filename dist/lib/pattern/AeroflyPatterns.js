@@ -27,7 +27,7 @@ export class AeroflyPatterns {
             throw new Error("No airport information from API");
         }
         self.airport = new Airport(airport[0], self.configuration);
-        const navaids = await AviationWeatherApi.fetchNavaid(self.airport.position, 10000);
+        const navaids = await AviationWeatherApi.fetchNavaidsByPosition(self.airport.position, 10000);
         self.airport.setNavaids(navaids);
         const dateYielder = new DateYielder(self.configuration.numberOfMissions, self.airport.nauticalTimezone);
         const dates = dateYielder.entries();
