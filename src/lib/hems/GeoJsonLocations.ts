@@ -1,5 +1,6 @@
 import { Point, Vector } from "@fboes/geojson";
 import * as fs from "node:fs";
+import { Rand } from "../general/Rand";
 
 interface GeoJsonFeature {
   type: string;
@@ -107,7 +108,7 @@ export class GeoJsonLocations {
     const emergencySiteIndexes = [...Array(i).keys()];
 
     while (i--) {
-      j = Math.floor(Math.random() * (i + 1));
+      j = Rand.getRandomInt(0, i);
 
       // swap randomly chosen element with current element
       temp = emergencySiteIndexes[i];

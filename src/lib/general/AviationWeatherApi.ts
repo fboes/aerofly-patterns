@@ -96,8 +96,20 @@ export interface AviationWeatherApiNavaid {
   lat: number;
   lon: number;
   elev: number;
+
+  /**
+   * in kHz for NDB, MHz for VOR/TACAN
+   * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
+   */
   freq: number;
   mag_dec: number;
+}
+
+export interface AviationWeatherApiFix {
+  id: string;
+  type: "I" | "L" | "H" | "S" | "D" | "-" | string;
+  lat: number;
+  lon: number;
 }
 
 export class AviationWeatherApi {
@@ -162,6 +174,17 @@ export class AviationWeatherApi {
     ).then((data) => {
       return AviationWeatherApi.normalizeNavAid(data);
     });
+  }
+
+  static async fetchFix(ids: string[]): Promise<AviationWeatherApiFix[]> {
+    return AviationWeatherApi.doRequest(
+      "/api/data/fix",
+      new URLSearchParams({
+        ids: ids.join(","),
+        format: "json",
+        // bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
+      }),
+    );
   }
 
   /**

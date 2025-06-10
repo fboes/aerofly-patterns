@@ -119,17 +119,17 @@ export class Scenario {
     /**
      * @type {number} in meters
      */
-    const exitDistance: number = this.configuration.patternDistance * Units.meterPerNauticalMile;
+    const exitDistance: number = this.configuration.patternDistance * Units.metersPerNauticalMile;
 
     /**
      * @type {number} in meters
      */
-    const downwindDistance: number = this.configuration.patternDistance * Units.meterPerNauticalMile;
+    const downwindDistance: number = this.configuration.patternDistance * Units.metersPerNauticalMile;
 
     /**
      * @type {number} in meters
      */
-    const finalDistance: number = this.configuration.patternFinalDistance * Units.meterPerNauticalMile;
+    const finalDistance: number = this.configuration.patternFinalDistance * Units.metersPerNauticalMile;
 
     /**
      * @type {number} in degree
@@ -149,7 +149,7 @@ export class Scenario {
     /**
      * @type {number} meters to sink per meter distance to have 3° glide slope
      */
-    const glideSlope: number = 319.8 / Units.feetPerMeter / Units.meterPerNauticalMile;
+    const glideSlope: number = 319.8 / Units.feetPerMeter / Units.metersPerNauticalMile;
 
     if (this.weather?.windDirection) {
       const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.windDirection);
@@ -205,7 +205,7 @@ export class Scenario {
       id: this.activeRunway.id + "-VENTRY",
       position: activeRunwayEntry.getPointBy(
         new Vector(
-          0.5 * Units.meterPerNauticalMile,
+          0.5 * Units.metersPerNauticalMile,
           Degree(patternOrientation + (this.activeRunway.isRightPattern ? -45 : 45)),
         ),
       ),
@@ -391,7 +391,7 @@ class ScenarioAircraft {
     /**
      * @type {Vector} how the aircraft relates to the airport
      */
-    this.vectorFromAirport = new Vector(distanceFromAirport * Units.meterPerNauticalMile, Math.random() * 360);
+    this.vectorFromAirport = new Vector(distanceFromAirport * Units.metersPerNauticalMile, Math.random() * 360);
 
     this.position = airport.position.getPointBy(this.vectorFromAirport);
 

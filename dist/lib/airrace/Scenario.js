@@ -3,12 +3,13 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _Scenario_instances, _Scenario_getTitle, _Scenario_makeConditions, _Scenario_makeOrigin, _Scenario_getCheckpoints, _Scenario_getRandomCheckpointCount, _Scenario_getRandomLegDistance, _Scenario_getRandomAltitude, _Scenario_roundAltitude, _Scenario_geRandomAngleChange, _Scenario_getRandomArbitrary, _Scenario_getRandomSign, _Scenario_getFinish;
+var _Scenario_instances, _Scenario_getTitle, _Scenario_makeConditions, _Scenario_makeOrigin, _Scenario_getCheckpoints, _Scenario_getRandomCheckpointCount, _Scenario_getRandomLegDistance, _Scenario_getRandomAltitude, _Scenario_roundAltitude, _Scenario_geRandomAngleChange, _Scenario_getRandomSign, _Scenario_getFinish;
 import { AeroflyMission, AeroflyMissionCheckpoint, AeroflyMissionConditions, AeroflyMissionConditionsCloud, AeroflyMissionTargetPlane, } from "@fboes/aerofly-custom-missions";
 import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import { Units } from "../../data/Units.js";
 import { Point, Vector } from "@fboes/geojson";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
+import { Rand } from "../general/Rand.js";
 export class Scenario {
     static async init(configuration, aircraft, airport, date, index = 0) {
         const weathers = await AviationWeatherApi.fetchMetar([configuration.icaoCode], date);
@@ -118,21 +119,19 @@ _Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_get
     if (configuration.minLegDistance === configuration.maxLegDistance) {
         return configuration.minLegDistance * 1000;
     }
-    return __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomArbitrary).call(this, configuration.minLegDistance, configuration.maxLegDistance) * 1000;
+    return Rand.getRandomArbitrary(configuration.minLegDistance, configuration.maxLegDistance) * 1000;
 }, _Scenario_getRandomAltitude = function _Scenario_getRandomAltitude(configuration) {
     if (configuration.minAltitude === configuration.maxAltitude) {
         return configuration.minAltitude / Units.feetPerMeter;
     }
-    return __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomArbitrary).call(this, configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
+    return Rand.getRandomArbitrary(configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
 }, _Scenario_roundAltitude = function _Scenario_roundAltitude(meters) {
     return (Math.ceil((meters * Units.feetPerMeter) / 100) * 100) / Units.feetPerMeter;
 }, _Scenario_geRandomAngleChange = function _Scenario_geRandomAngleChange(configuration) {
     if (configuration.minAngleChange === configuration.maxAngleChange) {
         return configuration.minAngleChange;
     }
-    return __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomArbitrary).call(this, configuration.minAngleChange, configuration.maxAngleChange) * __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomSign).call(this);
-}, _Scenario_getRandomArbitrary = function _Scenario_getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+    return Rand.getRandomArbitrary(configuration.minAngleChange, configuration.maxAngleChange) * __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomSign).call(this);
 }, _Scenario_getRandomSign = function _Scenario_getRandomSign() {
     return Math.random() < 0.5 ? -1 : 1;
 }, _Scenario_getFinish = function _Scenario_getFinish(checkpoints) {

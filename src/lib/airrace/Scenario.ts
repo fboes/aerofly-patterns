@@ -13,6 +13,7 @@ import { Point, Vector } from "@fboes/geojson";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { OpenStreetMapApiAirport } from "../general/OpenStreetMapApi.js";
 import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission.js";
+import { Rand } from "../general/Rand.js";
 
 export class Scenario {
   date: Date;
@@ -176,7 +177,7 @@ export class Scenario {
     if (configuration.minLegDistance === configuration.maxLegDistance) {
       return configuration.minLegDistance * 1000;
     }
-    return this.#getRandomArbitrary(configuration.minLegDistance, configuration.maxLegDistance) * 1000;
+    return Rand.getRandomArbitrary(configuration.minLegDistance, configuration.maxLegDistance) * 1000;
   }
 
   /**
@@ -186,7 +187,7 @@ export class Scenario {
     if (configuration.minAltitude === configuration.maxAltitude) {
       return configuration.minAltitude / Units.feetPerMeter;
     }
-    return this.#getRandomArbitrary(configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
+    return Rand.getRandomArbitrary(configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
   }
 
   /**
@@ -202,14 +203,7 @@ export class Scenario {
     if (configuration.minAngleChange === configuration.maxAngleChange) {
       return configuration.minAngleChange;
     }
-    return this.#getRandomArbitrary(configuration.minAngleChange, configuration.maxAngleChange) * this.#getRandomSign();
-  }
-
-  /**
-   * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-   */
-  #getRandomArbitrary(min: number, max: number) {
-    return Math.random() * (max - min) + min;
+    return Rand.getRandomArbitrary(configuration.minAngleChange, configuration.maxAngleChange) * this.#getRandomSign();
   }
 
   /**

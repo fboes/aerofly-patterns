@@ -12,7 +12,7 @@ export class AeroflyHems {
         this.scenarios = [];
         this.locations = null;
         /**
-         * @type {number} a tome zone which only considers the longitude, rounded to the full hour, in hours difference to UTC
+         * @type {number} a time zone which only considers the longitude, rounded to the full hour, in hours difference to UTC
          * @see https://en.wikipedia.org/wiki/Nautical_time
          */
         this.nauticalTimezone = 0;

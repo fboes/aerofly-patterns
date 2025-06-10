@@ -6,6 +6,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var _GeoJsonLocations_instances, _GeoJsonLocations_yieldRandomEmergencySite;
 import { Point } from "@fboes/geojson";
 import * as fs from "node:fs";
+import { Rand } from "../general/Rand";
 export class GeoJsonLocations {
     constructor(filename) {
         _GeoJsonLocations_instances.add(this);
@@ -105,7 +106,7 @@ _GeoJsonLocations_instances = new WeakSet(), _GeoJsonLocations_yieldRandomEmerge
      */
     const emergencySiteIndexes = [...Array(i).keys()];
     while (i--) {
-        j = Math.floor(Math.random() * (i + 1));
+        j = Rand.getRandomInt(0, i);
         // swap randomly chosen element with current element
         temp = emergencySiteIndexes[i];
         emergencySiteIndexes[i] = emergencySiteIndexes[j];

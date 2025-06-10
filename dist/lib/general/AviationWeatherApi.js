@@ -43,6 +43,13 @@ export class AviationWeatherApi {
             return AviationWeatherApi.normalizeNavAid(data);
         });
     }
+    static async fetchFix(ids) {
+        return AviationWeatherApi.doRequest("/api/data/fix", new URLSearchParams({
+            ids: ids.join(","),
+            format: "json",
+            // bbox: AviationWeatherApi.buildBbox(position, distance).join(","),
+        }));
+    }
     /**
      * @param position center of search area
      * @param distance in meters, default 1000

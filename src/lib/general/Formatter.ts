@@ -31,7 +31,7 @@ export class Formatter {
   /**
    * Get a readable direction
    * @param {number} heading
-   * @returns {string}
+   * @returns {"north"|"north-east"|"east"|"south-east"|"south"|"south-west"|"west"|"north-west"}
    */
   static getDirection(heading: number): string {
     const headings = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"];
@@ -43,7 +43,7 @@ export class Formatter {
    * @returns {string}
    */
   static getDistance(distance: number): string {
-    const nauticalMiles = distance / Units.meterPerNauticalMile;
+    const nauticalMiles = distance / Units.metersPerNauticalMile;
 
     if (nauticalMiles > 10) {
       return Math.round(nauticalMiles).toLocaleString("en") + " NM";
@@ -58,7 +58,7 @@ export class Formatter {
    * @returns {string}
    */
   static getVector(vector: Vector, onSite: string = "on field"): string {
-    if (vector.meters < Units.meterPerNauticalMile) {
+    if (vector.meters < Units.metersPerNauticalMile) {
       return onSite;
     }
 

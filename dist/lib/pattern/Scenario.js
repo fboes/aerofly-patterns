@@ -79,15 +79,15 @@ export class Scenario {
         /**
          * @type {number} in meters
          */
-        const exitDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+        const exitDistance = this.configuration.patternDistance * Units.metersPerNauticalMile;
         /**
          * @type {number} in meters
          */
-        const downwindDistance = this.configuration.patternDistance * Units.meterPerNauticalMile;
+        const downwindDistance = this.configuration.patternDistance * Units.metersPerNauticalMile;
         /**
          * @type {number} in meters
          */
-        const finalDistance = this.configuration.patternFinalDistance * Units.meterPerNauticalMile;
+        const finalDistance = this.configuration.patternFinalDistance * Units.metersPerNauticalMile;
         /**
          * @type {number} in degree
          */
@@ -102,7 +102,7 @@ export class Scenario {
         /**
          * @type {number} meters to sink per meter distance to have 3° glide slope
          */
-        const glideSlope = 319.8 / Units.feetPerMeter / Units.meterPerNauticalMile;
+        const glideSlope = 319.8 / Units.feetPerMeter / Units.metersPerNauticalMile;
         if (this.weather?.windDirection) {
             const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.windDirection);
             this.activeRunwayCrosswindComponent = Math.sin(degreeToRad(crosswindAngle)) * this.weather.windSpeed;
@@ -145,7 +145,7 @@ export class Scenario {
         ];
         this.entryWaypoint = {
             id: this.activeRunway.id + "-VENTRY",
-            position: activeRunwayEntry.getPointBy(new Vector(0.5 * Units.meterPerNauticalMile, Degree(patternOrientation + (this.activeRunway.isRightPattern ? -45 : 45)))),
+            position: activeRunwayEntry.getPointBy(new Vector(0.5 * Units.metersPerNauticalMile, Degree(patternOrientation + (this.activeRunway.isRightPattern ? -45 : 45)))),
         };
     }
     get tags() {
@@ -270,7 +270,7 @@ class ScenarioAircraft {
         /**
          * @type {Vector} how the aircraft relates to the airport
          */
-        this.vectorFromAirport = new Vector(distanceFromAirport * Units.meterPerNauticalMile, Math.random() * 360);
+        this.vectorFromAirport = new Vector(distanceFromAirport * Units.metersPerNauticalMile, Math.random() * 360);
         this.position = airport.position.getPointBy(this.vectorFromAirport);
         const altitude = this.vectorFromAirport.bearing > 180 // bearing - 180 = course
             ? Math.ceil((minimumSafeAltitude - 1500) / 2000) * 2000 + 1500 // 3500, 5500, ..
