@@ -19,18 +19,18 @@ Get [more information about Vineyard Haven / Martha's Vineyard Airport on SkyVec
 
 ## Included missions
 
-| No  | Local date¹ | Local time¹ | Wind          | Clouds         | Visibility | Runway  | Aircraft position    |
-| :-: | ----------- | ----------: | ------------- | -------------- | ---------: | ------- | -------------------- |
-| #01 | 2025-05-28  |       05:15 | 220° @ 3 kts  | CLR            |      15 SM | 24 (RP) | ↙ To the south-west |
-| #02 | 2025-05-27  |       06:45 | Calm          | CLR            |      15 SM | 24 (RP) | ↘ To the south-east |
-| #03 | 2025-05-26  |       08:15 | 350° @ 5 kts  | CLR            |      15 SM | 24 (RP) | ↖ To the north-west |
-| #04 | 2025-05-25  |       09:45 | 320° @ 12 kts | SCT @ 2,500 ft |      15 SM | 33 (RP) | ↗ To the north-east |
-| #05 | 2025-05-24  |       11:15 | 260° @ 14 kts | FEW @ 3,300 ft |      15 SM | 24 (RP) | ↓ To the south       |
-| #06 | 2025-05-23  |       12:45 | 230° @ 10 kts | SCT @ 2,500 ft |      15 SM | 24 (RP) | ↘ To the south-east |
-| #07 | 2025-05-22  |       14:15 | 40° @ 23 kts  | OVC @ 900 ft   |       1 SM | 06      | ← To the west        |
-| #08 | 2025-05-21  |       15:45 | 70° @ 10 kts  | OVC @ 2,100 ft |      15 SM | 06      | ← To the west        |
-| #09 | 2025-05-20  |       17:15 | 10° @ 9 kts   | BKN @ 2,100 ft |      15 SM | 06      | ↙ To the south-west |
-| #10 | 2025-05-19  |       18:45 | 340° @ 15 kts | OVC @ 5,500 ft |      15 SM | 33 (RP) | ↘ To the south-east |
+| No  | Local date¹ | Local time¹ | Wind          | Clouds       | Visibility | Runway  | Aircraft position    |
+| :-: | ----------- | ----------: | ------------- | ------------ | ---------: | ------- | -------------------- |
+| #01 | 2025-06-11  |       05:15 | 260° @ 3 kts  | FEW @ 200 ft |       3 SM | 24 (RP) | ↓ To the south       |
+| #02 | 2025-06-10  |       06:45 | 200° @ 6 kts  | OVC @ 200 ft |       1 SM | 24 (RP) | ↘ To the south-east |
+| #03 | 2025-06-09  |       08:15 | 60° @ 11 kts  | OVC @ 400 ft |       4 SM | 06      | → To the east        |
+| #04 | 2025-06-08  |       09:45 | 50° @ 10 kts  | FEW @ 800 ft |       8 SM | 06      | ↙ To the south-west |
+| #05 | 2025-06-07  |       11:15 | 170° @ 8 kts  | OVC @ 300 ft |       6 SM | 15      | ↙ To the south-west |
+| #06 | 2025-06-06  |       12:45 | 220° @ 12 kts | FEW @ 500 ft |       6 SM | 24 (RP) | ↓ To the south       |
+| #07 | 2025-06-05  |       14:15 | 200° @ 8 kts  | CLR          |      10 SM | 24 (RP) | ↙ To the south-west |
+| #08 | 2025-06-04  |       15:45 | 220° @ 10 kts | CLR          |      10 SM | 24 (RP) | ← To the west        |
+| #09 | 2025-06-03  |       17:15 | 180° @ 7 kts  | CLR          |      10 SM | 24 (RP) | ↑ To the north       |
+| #10 | 2025-06-02  |       18:45 | 220° @ 8 kts  | CLR          |      10 SM | 24 (RP) | ↗ To the north-east |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

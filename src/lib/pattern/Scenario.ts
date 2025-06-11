@@ -1,15 +1,15 @@
 import { Point, Vector } from "@fboes/geojson";
 import { Units } from "../../data/Units.js";
 import { Configuration } from "./Configuration.js";
-import { AviationWeatherApi } from "../general/AviationWeatherApi.js";
+import { AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import { Formatter } from "../general/Formatter.js";
 import { AeroflyAircraft, AeroflyAircraftFinder } from "../../data/AeroflyAircraft.js";
 import { Degree, degreeDifference, degreeToRad } from "../general/Degree.js";
 import { Airports } from "../../data/Airports.js";
 import { AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
-import { ScenarioWeather } from "../general/ScenarioWeather.js";
 import { AeroflyPatternsWaypointable } from "./AeroflyPatterns.js";
 import { Airport, AirportRunway } from "./Airport.js";
+import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js";
 
 /**
  * A scenario consists of the plane and its position relative to the airport,
@@ -21,14 +21,24 @@ export class Scenario {
   airport: Airport;
   configuration: Configuration;
   aircraft: ScenarioAircraft;
-  weather: ScenarioWeather | null;
+  weather: AviationWeatherNormalizedMetar;
   date: Date;
-  activeRunway: AirportRunway | null;
+  activeRunway: AirportRunway;
   activeRunwayCrosswindComponent: number;
   patternWaypoints: AeroflyPatternsWaypointable[];
   entryWaypoint: AeroflyPatternsWaypointable | null;
 
-  constructor(airport: Airport, configuration: Configuration, date: Date | null = null) {
+  static async init(airport: Airport, configuration: Configuration, date: Date): Promise<Scenario> {
+    return new Scenario(airport, configuration, await AviationWeatherApiHelper.getWeather(airport.id, date), date);
+  }
+
+  constructor(
+    airport: Airport,
+    configuration: Configuration,
+    weather: AviationWeatherNormalizedMetar,
+    date: Date | null = null,
+  ) {
+    this.weather = weather;
     this.airport = airport;
     this.configuration = configuration;
 
@@ -56,35 +66,10 @@ export class Scenario {
       configuration.livery,
     );
 
-    this.weather = null;
     this.date = date ?? new Date();
-
-    /**
-     * @type {AirportRunway?}
-     */
-    this.activeRunway = null;
-
-    /**
-     * @type {number} in feet per second
-     */
     this.activeRunwayCrosswindComponent = 0;
-    this.patternWaypoints = [];
-    this.entryWaypoint = null;
-  }
 
-  static async init(airport: Airport, configuration: Configuration, date: Date | null): Promise<Scenario> {
-    const self = new Scenario(airport, configuration, date);
-    const weather = await AviationWeatherApi.fetchMetar([self.airport.id], self.date);
-    if (!weather.length) {
-      throw new Error("No METAR information from API for " + self.airport.id);
-    }
-    self.weather = new ScenarioWeather(weather[0]);
-    self.getActiveRunway();
-    return self;
-  }
-
-  getActiveRunway() {
-    const counterWindDirection = this.weather?.windDirection ?? 0;
+    const counterWindDirection = this.weather.wdir ?? 0;
 
     const difference = (alignment: number): number => {
       return Math.abs(degreeDifference(alignment, counterWindDirection));
@@ -102,7 +87,7 @@ export class Scenario {
         );
       });
 
-    if (!this.weather || this.weather?.windSpeed <= 5) {
+    if (!this.weather || this.weather.wspd <= 5) {
       const preferredRunways = possibleRunways.filter((r) => {
         return r.isPreferred;
       });
@@ -151,9 +136,9 @@ export class Scenario {
      */
     const glideSlope: number = 319.8 / Units.feetPerMeter / Units.metersPerNauticalMile;
 
-    if (this.weather?.windDirection) {
-      const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.windDirection);
-      this.activeRunwayCrosswindComponent = Math.sin(degreeToRad(crosswindAngle)) * this.weather.windSpeed;
+    if (this.weather.wdir) {
+      const crosswindAngle = degreeDifference(this.activeRunway.alignment, this.weather.wdir);
+      this.activeRunwayCrosswindComponent = Math.sin(degreeToRad(crosswindAngle)) * this.weather.wspd;
     }
 
     // Final
@@ -217,10 +202,10 @@ export class Scenario {
     if (this.activeRunwayCrosswindComponent > 4.5) {
       tags.push("crosswind");
     }
-    if (this.weather?.windSpeed && this.weather.windSpeed >= 22) {
+    if (this.weather.wspd && this.weather.wspd >= 22) {
       tags.push("windy");
     }
-    if (this.weather?.visibility && this.weather.visibility <= 3) {
+    if (this.weather.visib && this.weather.visib <= 3) {
       tags.push("low_visibility");
     }
     if (Formatter.getLocalDaytime(this.date, this.airport.nauticalTimezone) === "night") {
@@ -264,12 +249,12 @@ export class Scenario {
 
     let wind = ``;
     if (this.weather) {
-      if (this.weather.windSpeed < 1) {
+      if (this.weather.wspd < 1) {
         wind = `As there is no wind`;
-      } else if (this.weather.windSpeed <= 5) {
+      } else if (this.weather.wspd <= 5) {
         wind = `As there is almost no wind`;
       } else {
-        wind = `As the wind is ${this.weather.windSpeed ?? 0} kts from ${this.weather.windDirection ?? 0}°`;
+        wind = `As the wind is ${this.weather.wspd ?? 0} kts from ${this.weather.wdir ?? 0}°`;
       }
     }
 

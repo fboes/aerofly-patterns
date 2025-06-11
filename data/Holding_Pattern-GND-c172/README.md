@@ -9,18 +9,18 @@ This file contains 10 holding procedure lessons for the Cessna 172 SP Skyhawk st
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-| No  | Local date¹ | Local time¹ |          Wind | Clouds         | Radial | Area       |  DME | Turn |  Altitude |
-| :-: | ----------- | ----------: | ------------: | -------------- | -----: | ---------- | ---: | :--: | --------: |
-| #01 | 2025-06-09  |       05:15 | 11 kts @ 100° | FEW @ 1,800 ft |   180° | north      |    — |  R   |  8,400 ft |
-| #02 | 2025-06-08  |       06:45 |  9 kts @ 110° | FEW @ 1,700 ft |   215° | north-east |    — |  L   | 11,600 ft |
-| #03 | 2025-06-07  |       08:15 | 12 kts @ 090° | SCT @ 1,900 ft |   086° | west       |    — |  R   |  5,400 ft |
-| #04 | 2025-06-06  |       09:45 | 15 kts @ 100° | FEW @ 1,800 ft |   356° | south      |    — |  L   | 12,300 ft |
-| #05 | 2025-06-05  |       11:15 | 16 kts @ 130° | FEW @ 2,000 ft |   049° | south-west |    — |  R   |  9,100 ft |
-| #06 | 2025-06-04  |       12:45 | 16 kts @ 110° | FEW @ 1,900 ft |   078° | west       |    — |  R   | 14,400 ft |
-| #07 | 2025-06-03  |       14:15 | 14 kts @ 110° | FEW @ 1,900 ft |   235° | north-east |    — |  R   | 12,400 ft |
-| #08 | 2025-06-02  |       15:45 | 16 kts @ 120° | FEW @ 2,000 ft |   199° | north      |    — |  R   |  4,900 ft |
-| #09 | 2025-06-01  |       17:15 | 17 kts @ 080° | FEW @ 2,000 ft |   358° | south      | 9 NM |  R   | 13,300 ft |
-| #10 | 2025-05-31  |       18:45 | 14 kts @ 120° | FEW @ 1,800 ft |   220° | north-east |    — |  R   |  5,600 ft |
+| No  | Local date¹ | Local time¹ |          Wind | Clouds         | Radial | Area       | DME | Turn |  Altitude |
+| :-: | ----------- | ----------: | ------------: | -------------- | -----: | ---------- | --: | :--: | --------: |
+| #01 | 2025-06-11  |       05:15 | 10 kts @ 090° | FEW @ 1,300 ft |   195° | north      |   — |  R   |  7,700 ft |
+| #02 | 2025-06-10  |       06:45 | 13 kts @ 110° | FEW @ 1,800 ft |   252° | east       |   — |  R   |  7,800 ft |
+| #03 | 2025-06-09  |       08:15 | 15 kts @ 100° | FEW @ 2,000 ft |   064° | south-west |   — |  R   | 11,400 ft |
+| #04 | 2025-06-08  |       09:45 | 12 kts @ 120° | FEW @ 1,800 ft |   010° | south      |   — |  R   | 10,100 ft |
+| #05 | 2025-06-07  |       11:15 | 12 kts @ 120° | FEW @ 1,900 ft |   011° | south      |   — |  R   | 12,800 ft |
+| #06 | 2025-06-06  |       12:45 | 15 kts @ 100° | FEW @ 1,900 ft |   006° | south      |   — |  R   | 12,300 ft |
+| #07 | 2025-06-05  |       14:15 | 14 kts @ 110° | FEW @ 2,000 ft |   280° | east       |   — |  R   |  4,200 ft |
+| #08 | 2025-06-04  |       15:45 | 13 kts @ 120° | FEW @ 1,800 ft |   108° | west       |   — |  R   | 12,400 ft |
+| #09 | 2025-06-03  |       17:15 | 14 kts @ 120° | FEW @ 1,900 ft |   158° | north      |   — |  R   | 10,200 ft |
+| #10 | 2025-06-02  |       18:45 | 12 kts @ 090° | FEW @ 2,000 ft |   240° | north-east |   — |  R   | 12,900 ft |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC-04:00 (D)
 ²) DME procedure is holding _toward_ the Maurice Bishop VOR/DME, instead of _away_ from it.

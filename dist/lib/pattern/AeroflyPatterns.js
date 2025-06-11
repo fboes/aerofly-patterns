@@ -5,28 +5,28 @@ import { Scenario } from "./Scenario.js";
 import { DateYielder } from "../general/DateYielder.js";
 import { Formatter } from "../general/Formatter.js";
 import { LocalTime } from "../general/LocalTime.js";
-import { AeroflyMission, AeroflyMissionConditions, AeroflyMissionConditionsCloud, AeroflyMissionsList, AeroflyMissionTargetPlane, } from "@fboes/aerofly-custom-missions";
+import { AeroflyMission, AeroflyMissionsList, AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { Vector } from "@fboes/geojson";
 import { Markdown } from "../general/Markdown.js";
+import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js";
 export class AeroflyPatterns {
-    constructor(configuration) {
+    constructor(configuration, airport) {
         this.configuration = configuration;
         /**
-         * @type {Airport?} the airport to build scenarios for
+         * @type {Airport} the airport to build scenarios for
          */
-        this.airport = null;
+        this.airport = airport;
         /**
          * @type {Scenario[]} the scenarios to
          */
         this.scenarios = [];
     }
     static async init(configuration) {
-        const self = new AeroflyPatterns(configuration);
-        const airport = await AviationWeatherApi.fetchAirports([self.configuration.icaoCode]);
+        const airport = await AviationWeatherApi.fetchAirports([configuration.icaoCode]);
         if (!airport.length) {
             throw new Error("No airport information from API");
         }
-        self.airport = new Airport(airport[0], self.configuration);
+        const self = new AeroflyPatterns(configuration, new Airport(airport[0], configuration));
         const navaids = await AviationWeatherApi.fetchNavaidsByPosition(self.airport.position, 10000);
         self.airport.setNavaids(navaids);
         const dateYielder = new DateYielder(self.configuration.numberOfMissions, self.airport.nauticalTimezone);
@@ -113,20 +113,7 @@ export class AeroflyPatterns {
          * @type {AeroflyMission[]}
          */
         const missions = this.scenarios.map((s, index) => {
-            const conditions = new AeroflyMissionConditions({
-                time: s.date,
-                wind: {
-                    direction: s.weather?.windDirection ?? 0,
-                    speed: s.weather?.windSpeed ?? 0,
-                    gusts: s.weather?.windGusts ?? 0,
-                },
-                turbulenceStrength: s.weather?.turbulenceStrength ?? 0,
-                visibility_sm: s.weather?.visibility ?? 15,
-                clouds: s.weather?.clouds.map((c) => {
-                    return AeroflyMissionConditionsCloud.createInFeet(c.cloudCover, c.cloudBase);
-                }) ?? [],
-            });
-            conditions.temperature = s.weather?.temperature ?? 0;
+            const conditions = AviationWeatherApiHelper.makeConditions(s.date, s.weather);
             const mission = new AeroflyMission(`${s.airport.id} #${index + 1}: ${s.airport.name}`, {
                 checkpoints: s.waypoints,
                 description: s.description ?? "",
@@ -173,16 +160,16 @@ export class AeroflyPatterns {
             [`:-:`, `-----------`, `----------:`, `----`, `------`, `---------:`, `------`, `-----------------`],
             ...this.scenarios.map((s, index) => {
                 const localNauticalTime = new LocalTime(s.date, s.airport.nauticalTimezone);
-                const clouds = s.weather?.clouds[0]?.cloudCoverCode !== "CLR"
-                    ? `${s.weather?.clouds[0]?.cloudCoverCode} @ ${s.weather?.clouds[0]?.cloudBase.toLocaleString("en")} ft`
-                    : s.weather?.clouds[0]?.cloudCoverCode;
+                const clouds = s.weather.clouds[0]?.cover !== "CLR"
+                    ? `${s.weather.clouds[0]?.cover} @ ${s.weather.clouds[0]?.base?.toLocaleString("en")} ft`
+                    : s.weather.clouds[0]?.cover;
                 return [
                     `#${String(index + 1).padStart(2, "0")}`,
                     localNauticalTime.toDateString(),
                     localNauticalTime.toTimeString(),
-                    !s.weather?.windSpeed ? "Calm" : `${s.weather?.windDirection}° @ ${s.weather?.windSpeed} kts`,
+                    !s.weather.wspd ? "Calm" : `${s.weather.wdir}° @ ${s.weather.wspd} kts`,
                     clouds,
-                    Math.round(s.weather?.visibility ?? 0) + " SM",
+                    Math.round(Math.min(s.weather.visib, 10)) + " SM",
                     s.activeRunway?.id + (s.activeRunway?.isRightPattern ? " (RP)" : ""),
                     Formatter.getDirectionArrow(s.aircraft.vectorFromAirport.bearing) +
                         " To the " +

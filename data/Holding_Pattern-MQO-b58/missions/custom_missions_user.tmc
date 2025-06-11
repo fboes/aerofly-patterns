@@ -4,49 +4,49 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #1: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this overcast early morning with almost no wind.
-Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 10,200'.]>
+                <[string8][description][Your B58 is cruising on this overcast early morning with wind from 300° at 8 kts.
+Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 8,900'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-120.91669479178712 35.40142493055146]>
-                <[float64][origin_alt][4138451.576]> // 13577598 ft MSL
-                <[float64][origin_dir][280.11550334099866]>
+                <[tmvector2d][origin_lon_lat][-121.1230094793289 35.31451061443603]>
+                <[float64][origin_alt][3392060.476]> // 11128808 ft MSL
+                <[float64][origin_dir][40.35611021256432]>
                 <[stringt8c][destination_icao][KSBP]>
                 <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][33464.568]> // 109792 ft MSL
+                <[float64][destination_alt][29199.476]> // 95799 ft MSL
                 <[float64][destination_dir][292]>
-                <[float64][distance][24788.51116639971]> // 25 km
-                <[float64][duration][238.53965795350743]> // 4 min
+                <[float64][distance][32272.92750901944]> // 32 km
+                <[float64][duration][310.5621405611006]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-120.91670463634405 35.401426686882566]>
-                    <[float64][direction][280.11550334099866]>
+                    <[vector2_float64][lon_lat][-121.12300300396534 35.31451823478161]>
+                    <[float64][direction][40.35611021256432]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][9]>
+                        <[int32][time_day][11]>
                         <[float64][time_hours][13.25]> // 13:15:00 UTC
                     >
-                    <[float64][wind_direction][310]>
-                    <[float64][wind_speed][5]> // kts
+                    <[float64][wind_direction][300]>
+                    <[float64][wind_speed][8]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.3091360000000001]> // 12.800000000000004 °C
-                    <[float64][visibility][14484.096000000001]> // 9 SM
+                    <[float64][thermal_strength][0.29593600000000003]> // 12.200000000000003 °C
+                    <[float64][visibility][8046.72]> // 5 SM
                     <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][121.91999609856012]> // 400 ft AGL
+                    <[float64][cloud_base][91.4399970739201]> // 300 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3108.959900513283]> // 10200 ft
+                        <[float64][altitude][2712.719913192963]> // 8900 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -55,40 +55,46 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-120.98655539838227 35.44811807676334]>
-                        <[float64][altitude][3108.959900513283]> // 10200 ft
-                        <[float64][direction][38.00000000000131]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-121.03538840058833 35.427624249280505]>
+                        <[float64][altitude][2712.719913192963]> // 8900 ft
+                        <[float64][direction][308.0000000000123]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-120.91810851867533 35.40451096210296]>
-                        <[float64][altitude][3108.959900513283]> // 10200 ft
-                        <[float64][direction][128.00000000000108]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.00707153708032 35.45714342790655]>
+                        <[float64][altitude][2712.719913192963]> // 8900 ft
+                        <[float64][direction][37.99999999997948]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-120.94879738179645 35.372477971173645]>
-                        <[float64][altitude][3108.959900513283]> // 10200 ft
-                        <[float64][direction][217.99999999999858]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-120.90303482248319 35.390835716299335]>
+                        <[float64][altitude][2712.719913192963]> // 8900 ft
+                        <[float64][direction][127.99999999999926]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-120.93131803532626 35.36130993659197]>
+                        <[float64][altitude][2712.719913192963]> // 8900 ft
+                        <[float64][direction][218.0000000000076]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3108.959900513283]> // 10200 ft
-                        <[float64][direction][308.02187174632485]>
+                        <[float64][altitude][2712.719913192963]> // 8900 ft
+                        <[float64][direction][308.04264060810283]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][112400000]> // 112.4 MHz
@@ -99,49 +105,49 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #2: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this overcast early morning with wind from 310° at 6 kts.
-Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 10,000'.]>
+                <[string8][description][Your B58 is cruising on this overcast early morning with no wind.
+Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 14,300'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-120.92866135723317 35.457598329089386]>
-                <[float64][origin_alt][2719816.36]> // 8923283 ft MSL
-                <[float64][origin_dir][240.0800173313628]>
+                <[tmvector2d][origin_lon_lat][-120.85457595822614 35.40304592533673]>
+                <[float64][origin_alt][3048228.444]> // 10000750 ft MSL
+                <[float64][origin_dir][275.57215060975386]>
                 <[stringt8c][destination_icao][KSBP]>
                 <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][32808.4]> // 107640 ft MSL
+                <[float64][destination_alt][46916.012]> // 153924 ft MSL
                 <[float64][destination_dir][292]>
-                <[float64][distance][23297.372235132607]> // 23 km
-                <[float64][duration][224.19043914654048]> // 4 min
+                <[float64][distance][32272.92750901944]> // 32 km
+                <[float64][duration][310.5621405611006]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-120.92867002446158 35.457593341188876]>
-                    <[float64][direction][240.0800173313628]>
+                    <[vector2_float64][lon_lat][-120.85458591097327 35.40304689632817]>
+                    <[float64][direction][275.57215060975386]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][8]>
+                        <[int32][time_day][10]>
                         <[float64][time_hours][14.75]> // 14:45:00 UTC
                     >
-                    <[float64][wind_direction][310]>
-                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.3203560000000001]> // 13.300000000000004 °C
-                    <[float64][visibility][12874.752]> // 8 SM
+                    <[float64][thermal_strength][0.3091360000000001]> // 12.800000000000004 °C
+                    <[float64][visibility][11265.408]> // 6.999999999999999 SM
                     <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][121.91999609856012]> // 400 ft AGL
+                    <[float64][cloud_base][152.39999512320017]> // 500.00000000000006 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3047.9999024640033]> // 10000 ft
+                        <[float64][altitude][4358.6398605235245]> // 14300 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -150,40 +156,46 @@ Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-121.04796634664271 35.38405986315433]>
-                        <[float64][altitude][3047.9999024640033]> // 10000 ft
-                        <[float64][direction][217.99999999998894]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-121.03538840058833 35.427624249280505]>
+                        <[float64][altitude][4358.6398605235245]> // 14300 ft
+                        <[float64][direction][308.0000000000123]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-121.1099836191239 35.42352804470687]>
-                        <[float64][altitude][3047.9999024640033]> // 10000 ft
-                        <[float64][direction][308.0000000000002]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.00707153708032 35.45714342790655]>
+                        <[float64][altitude][4358.6398605235245]> // 14300 ft
+                        <[float64][direction][37.99999999997948]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-121.07926310096947 35.45555326465631]>
-                        <[float64][altitude][3047.9999024640033]> // 10000 ft
-                        <[float64][direction][38.00000000000159]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-120.90303482248319 35.390835716299335]>
+                        <[float64][altitude][4358.6398605235245]> // 14300 ft
+                        <[float64][direction][127.99999999999926]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-120.93131803532626 35.36130993659197]>
+                        <[float64][altitude][4358.6398605235245]> // 14300 ft
+                        <[float64][direction][218.0000000000076]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3047.9999024640033]> // 10000 ft
-                        <[float64][direction][127.98185616808809]>
+                        <[float64][altitude][4358.6398605235245]> // 14300 ft
+                        <[float64][direction][308.04264060810283]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][112400000]> // 112.4 MHz
@@ -194,49 +206,49 @@ Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #3: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this overcast morning with almost no wind.
-Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 14,700'.]>
+                <[string8][description][Your B58 is cruising on this overcast morning with wind from 290° at 6 kts.
+Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 10,300'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-121.0210555454083 35.4993130237119]>
-                <[float64][origin_alt][3156824.248]> // 10357036 ft MSL
-                <[float64][origin_dir][177.88085478186986]>
+                <[tmvector2d][origin_lon_lat][-121.14938805531975 35.33767142628544]>
+                <[float64][origin_alt][2793307.176]> // 9164394 ft MSL
+                <[float64][origin_dir][53.983568526438376]>
                 <[stringt8c][destination_icao][KSBP]>
                 <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][48228.348]> // 158230 ft MSL
+                <[float64][destination_alt][33792.652]> // 110869 ft MSL
                 <[float64][destination_dir][292]>
-                <[float64][distance][25265.28006713029]> // 25 km
-                <[float64][duration][243.12760152703268]> // 4 min
+                <[float64][distance][31004.10748276148]> // 31 km
+                <[float64][duration][298.35229491783383]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-121.02105517563201 35.49930303055096]>
-                    <[float64][direction][177.88085478186986]>
+                    <[vector2_float64][lon_lat][-121.14937996683581 35.33767730645785]>
+                    <[float64][direction][53.983568526438376]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][7]>
+                        <[int32][time_day][9]>
                         <[float64][time_hours][16.25]> // 16:15:00 UTC
                     >
                     <[float64][wind_direction][290]>
-                    <[float64][wind_speed][5]> // kts
+                    <[float64][wind_speed][6]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.33408399999999994]> // 13.899999999999999 °C
-                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][visibility][14484.096000000001]> // 9 SM
                     <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][274.3199912217603]> // 900 ft AGL
+                    <[float64][cloud_base][182.8799941478402]> // 600 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
+                        <[float64][altitude][3139.4398995379233]> // 10300 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -245,40 +257,46 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-120.98521929268107 35.44951030114669]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][38.00000000000841]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-120.99916294065503 35.40455875797033]>
+                        <[float64][altitude][3139.4398995379233]> // 10300 ft
+                        <[float64][direction][127.9999999999817]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-120.91640849484337 35.405671863787475]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][128.00000000000142]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.02745096240172 35.375032976590695]>
+                        <[float64][altitude][3139.4398995379233]> // 10300 ft
+                        <[float64][direction][217.99999999998863]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-120.94843156419792 35.372245957960814]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][218.0000000000005]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-121.12607763519733 35.4377736406145]>
+                        <[float64][altitude][3139.4398995379233]> // 10300 ft
+                        <[float64][direction][307.9999999999997]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-121.09775719853316 35.467292818000864]>
+                        <[float64][altitude][3139.4398995379233]> // 10300 ft
+                        <[float64][direction][38.00000000000654]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][308.0213096575533]>
+                        <[float64][altitude][3139.4398995379233]> // 10300 ft
+                        <[float64][direction][127.96057350639114]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][112400000]> // 112.4 MHz
@@ -289,39 +307,39 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #4: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this overcast morning with no wind.
-Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 12,900'.]>
+                <[string8][description][Your B58 is cruising on this overcast morning with wind from 300° at 8 kts.
+Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 9,300'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-120.9151442952374 35.413374125668646]>
-                <[float64][origin_alt][2616797.984]> // 8585296 ft MSL
-                <[float64][origin_dir][271.84126202744517]>
+                <[tmvector2d][origin_lon_lat][-120.8879686848794 35.334619138876576]>
+                <[float64][origin_alt][3721784.896]> // 12210581 ft MSL
+                <[float64][origin_dir][307.65804927722843]>
                 <[stringt8c][destination_icao][KSBP]>
                 <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][42322.836]> // 138855 ft MSL
+                <[float64][destination_alt][30511.811999999998]> // 100105 ft MSL
                 <[float64][destination_dir][292]>
-                <[float64][distance][24788.51116639971]> // 25 km
-                <[float64][duration][238.53965795350743]> // 4 min
+                <[float64][distance][32272.92750901944]> // 32 km
+                <[float64][duration][310.5621405611006]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-120.9151542900742 35.41337444697418]>
-                    <[float64][direction][271.84126202744517]>
+                    <[vector2_float64][lon_lat][-120.88797660159007 35.334625248352175]>
+                    <[float64][direction][307.65804927722843]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][6]>
+                        <[int32][time_day][8]>
                         <[float64][time_hours][17.75]> // 17:45:00 UTC
                     >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][0]> // kts
+                    <[float64][wind_direction][300]>
+                    <[float64][wind_speed][8]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.34574399999999994]> // 14.399999999999999 °C
+                    <[float64][thermal_strength][0.36]> // 15 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][1]> // OVC
                     <[float64][cloud_base][304.79999024640034]> // 1000.0000000000001 ft AGL
@@ -329,9 +347,9 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][altitude][2834.639909291523]> // 9300 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -340,40 +358,46 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-120.98655539838227 35.44811807676334]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][38.00000000000131]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-121.03538840058833 35.427624249280505]>
+                        <[float64][altitude][2834.639909291523]> // 9300 ft
+                        <[float64][direction][308.0000000000123]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-120.91810851867533 35.40451096210296]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][128.00000000000108]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.00707153708032 35.45714342790655]>
+                        <[float64][altitude][2834.639909291523]> // 9300 ft
+                        <[float64][direction][37.99999999997948]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-120.94879738179645 35.372477971173645]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][217.99999999999858]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-120.90303482248319 35.390835716299335]>
+                        <[float64][altitude][2834.639909291523]> // 9300 ft
+                        <[float64][direction][127.99999999999926]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-120.93131803532626 35.36130993659197]>
+                        <[float64][altitude][2834.639909291523]> // 9300 ft
+                        <[float64][direction][218.0000000000076]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][308.02187174632485]>
+                        <[float64][altitude][2834.639909291523]> // 9300 ft
+                        <[float64][direction][308.04264060810283]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][112400000]> // 112.4 MHz
@@ -384,49 +408,49 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #5: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this overcast noon with almost no wind and moderate thermal activity.
-Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 12,500'.]>
+                <[string8][description][Your B58 is cruising on this clear noon with almost no wind and moderate thermal activity.
+Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 13,300'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-121.01152227788738 35.332947795714055]>
-                <[float64][origin_alt][3579068.356]> // 11742351 ft MSL
-                <[float64][origin_dir][356.7704538465731]>
+                <[tmvector2d][origin_lon_lat][-121.08048085587637 35.53899273096409]>
+                <[float64][origin_alt][3370078.8479999998]> // 11056690 ft MSL
+                <[float64][origin_dir][157.2934697766184]>
                 <[stringt8c][destination_icao][KSBP]>
                 <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][41010.5]> // 134549 ft MSL
+                <[float64][destination_alt][43635.172]> // 143161 ft MSL
                 <[float64][destination_dir][292]>
-                <[float64][distance][23297.372235132607]> // 23 km
-                <[float64][duration][224.19043914654048]> // 4 min
+                <[float64][distance][32272.92750901944]> // 32 km
+                <[float64][duration][310.5621405611006]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-121.0115228412511 35.33295777983251]>
-                    <[float64][direction][356.7704538465731]>
+                    <[vector2_float64][lon_lat][-121.08047699576453 35.53898350602309]>
+                    <[float64][direction][157.2934697766184]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][5]>
+                        <[int32][time_day][7]>
                         <[float64][time_hours][19.25]> // 19:15:00 UTC
                     >
                     <[float64][wind_direction][0]>
                     <[float64][wind_speed][3]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.40195600000000004]> // 16.7 °C
+                    <[float64][thermal_strength][0.4303359999999999]> // 17.799999999999997 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][518.1599834188805]> // 1700 ft AGL
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3809.999878080004]> // 12500 ft
+                        <[float64][altitude][4053.839870277124]> // 13300 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -435,40 +459,46 @@ Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-121.04796634664271 35.38405986315433]>
-                        <[float64][altitude][3809.999878080004]> // 12500 ft
-                        <[float64][direction][217.99999999998894]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-121.03538840058833 35.427624249280505]>
+                        <[float64][altitude][4053.839870277124]> // 13300 ft
+                        <[float64][direction][308.0000000000123]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-121.1099836191239 35.42352804470687]>
-                        <[float64][altitude][3809.999878080004]> // 12500 ft
-                        <[float64][direction][308.0000000000002]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.00707153708032 35.45714342790655]>
+                        <[float64][altitude][4053.839870277124]> // 13300 ft
+                        <[float64][direction][37.99999999997948]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-121.07926310096947 35.45555326465631]>
-                        <[float64][altitude][3809.999878080004]> // 12500 ft
-                        <[float64][direction][38.00000000000159]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-120.90303482248319 35.390835716299335]>
+                        <[float64][altitude][4053.839870277124]> // 13300 ft
+                        <[float64][direction][127.99999999999926]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-120.93131803532626 35.36130993659197]>
+                        <[float64][altitude][4053.839870277124]> // 13300 ft
+                        <[float64][direction][218.0000000000076]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3809.999878080004]> // 12500 ft
-                        <[float64][direction][127.98185616808809]>
+                        <[float64][altitude][4053.839870277124]> // 13300 ft
+                        <[float64][direction][308.04264060810283]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][112400000]> // 112.4 MHz
@@ -479,36 +509,36 @@ Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #6: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this clear noon with wind from 220° at 7 kts and moderate thermal activity.
-Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 13,000'.]>
+                <[string8][description][Your B58 is cruising on this clear noon with almost no wind and moderate thermal activity.
+Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 7,600'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-120.92369070571742 35.38268447344833]>
-                <[float64][origin_alt][3144028.972]> // 10315057 ft MSL
-                <[float64][origin_dir][293.62428672683654]>
+                <[tmvector2d][origin_lon_lat][-120.91814937491473 35.52209583574629]>
+                <[float64][origin_alt][3071194.324]> // 10076098 ft MSL
+                <[float64][origin_dir][217.26323106496397]>
                 <[stringt8c][destination_icao][KSBP]>
                 <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][42650.92]> // 139931 ft MSL
+                <[float64][destination_alt][24934.384]> // 81806 ft MSL
                 <[float64][destination_dir][292]>
-                <[float64][distance][24788.51116639971]> // 25 km
-                <[float64][duration][238.53965795350743]> // 4 min
+                <[float64][distance][32272.92750901944]> // 32 km
+                <[float64][duration][310.5621405611006]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-120.92369986764687 35.3826884808226]>
-                    <[float64][direction][293.62428672683654]>
+                    <[vector2_float64][lon_lat][-120.91815542969263 35.52208787712426]>
+                    <[float64][direction][217.26323106496397]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][4]>
+                        <[int32][time_day][6]>
                         <[float64][time_hours][20.75]> // 20:45:00 UTC
                     >
-                    <[float64][wind_direction][220]>
-                    <[float64][wind_speed][7]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][3]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.47334399999999993]> // 19.4 °C
@@ -519,9 +549,9 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
+                        <[float64][altitude][2316.4799258726425]> // 7600 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -530,40 +560,46 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-120.98655539838227 35.44811807676334]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][38.00000000000131]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-121.03538840058833 35.427624249280505]>
+                        <[float64][altitude][2316.4799258726425]> // 7600 ft
+                        <[float64][direction][308.0000000000123]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-120.91810851867533 35.40451096210296]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][128.00000000000108]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.00707153708032 35.45714342790655]>
+                        <[float64][altitude][2316.4799258726425]> // 7600 ft
+                        <[float64][direction][37.99999999997948]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-120.94879738179645 35.372477971173645]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][217.99999999999858]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-120.90303482248319 35.390835716299335]>
+                        <[float64][altitude][2316.4799258726425]> // 7600 ft
+                        <[float64][direction][127.99999999999926]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-120.93131803532626 35.36130993659197]>
+                        <[float64][altitude][2316.4799258726425]> // 7600 ft
+                        <[float64][direction][218.0000000000076]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][308.02187174632485]>
+                        <[float64][altitude][2316.4799258726425]> // 7600 ft
+                        <[float64][direction][308.04264060810283]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][112400000]> // 112.4 MHz
@@ -574,321 +610,36 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #7: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this clear afternoon with wind from 310° at 12 kts and moderate thermal activity.
-Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 7,700'.]>
+                <[string8][description][Your B58 is cruising on this clear afternoon with wind from 200° at 8 kts and moderate thermal activity.
+Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 15,000'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-121.0398445300091 35.49731511968651]>
-                <[float64][origin_alt][3037729.756]> // 9966306 ft MSL
-                <[float64][origin_dir][167.25188396126725]>
+                <[tmvector2d][origin_lon_lat][-121.01882528686778 35.54933034983274]>
+                <[float64][origin_alt][3168963.356]> // 10396862 ft MSL
+                <[float64][origin_dir][179.45693385583945]>
                 <[stringt8c][destination_icao][KSBP]>
                 <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][25262.468]> // 82883 ft MSL
+                <[float64][destination_alt][49212.6]> // 161459 ft MSL
                 <[float64][destination_dir][292]>
-                <[float64][distance][23297.372235132607]> // 23 km
-                <[float64][duration][224.19043914654048]> // 4 min
+                <[float64][distance][31004.10748276148]> // 31 km
+                <[float64][duration][298.35229491783383]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-121.03984232335546 35.497305366190744]>
-                    <[float64][direction][167.25188396126725]>
+                    <[vector2_float64][lon_lat][-121.01882519208628 35.54932035028193]>
+                    <[float64][direction][179.45693385583945]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][3]>
+                        <[int32][time_day][5]>
                         <[float64][time_hours][22.25]> // 22:15:00 UTC
                     >
-                    <[float64][wind_direction][310]>
-                    <[float64][wind_speed][12]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.5069440000000001]> // 20.6 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
-                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][2346.9599248972822]> // 7700 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][112400000]> // 112.4 MHz
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-121.04796634664271 35.38405986315433]>
-                        <[float64][altitude][2346.9599248972822]> // 7700 ft
-                        <[float64][direction][217.99999999998894]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-121.1099836191239 35.42352804470687]>
-                        <[float64][altitude][2346.9599248972822]> // 7700 ft
-                        <[float64][direction][308.0000000000002]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-121.07926310096947 35.45555326465631]>
-                        <[float64][altitude][2346.9599248972822]> // 7700 ft
-                        <[float64][direction][38.00000000000159]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
-                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][2346.9599248972822]> // 7700 ft
-                        <[float64][direction][127.98185616808809]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][112400000]> // 112.4 MHz
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HOLD #8: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this overcast late afternoon with no wind and moderate thermal activity.
-Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 11,600'.]>
-                <[string8u][tags][holding]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][b58]>
-                <[stringt8c][aircraft_icao][BE58]>
-                <[stringt8c][callsign][N7PEB]>
-                <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-121.1123410663675 35.44666519915779]>
-                <[float64][origin_alt][2465551.26]> // 8089080 ft MSL
-                <[float64][origin_dir][111.56538270781311]>
-                <[stringt8c][destination_icao][KSBP]>
-                <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][38057.744]> // 124862 ft MSL
-                <[float64][destination_dir][292]>
-                <[float64][distance][23297.372235132607]> // 23 km
-                <[float64][duration][224.19043914654048]> // 4 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-121.1123317663802 35.446661523530516]>
-                    <[float64][direction][111.56538270781311]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][6]>
-                        <[int32][time_day][2]>
-                        <[float64][time_hours][23.75]> // 23:45:00 UTC
-                    >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][null]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.4303359999999999]> // 17.799999999999997 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][1]> // OVC
-                    <[float64][cloud_base][640.0799795174406]> // 2100 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
-                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][112400000]> // 112.4 MHz
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-121.04796634664271 35.38405986315433]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][217.99999999998894]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-121.1099836191239 35.42352804470687]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][308.0000000000002]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-121.07926310096947 35.45555326465631]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][38.00000000000159]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
-                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][127.98185616808809]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][112400000]> // 112.4 MHz
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HOLD #9: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 310° at 13 kts and moderate thermal activity.
-Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 9,300'.]>
-                <[string8u][tags][holding]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][b58]>
-                <[stringt8c][aircraft_icao][BE58]>
-                <[stringt8c][callsign][N7PEB]>
-                <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-121.09135471659597 35.473474669647736]>
-                <[float64][origin_alt][3634186.468]> // 11923185 ft MSL
-                <[float64][origin_dir][133.5761160072782]>
-                <[stringt8c][destination_icao][KSBP]>
-                <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][30511.811999999998]> // 100105 ft MSL
-                <[float64][destination_dir][292]>
-                <[float64][distance][23297.372235132607]> // 23 km
-                <[float64][duration][224.19043914654048]> // 4 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-121.09134747200328 35.47346777647164]>
-                    <[float64][direction][133.5761160072782]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][6]>
-                        <[int32][time_day][2]>
-                        <[float64][time_hours][1.25]> // 01:15:00 UTC
-                    >
-                    <[float64][wind_direction][310]>
-                    <[float64][wind_speed][13]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.40195600000000004]> // 16.7 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
-                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][2834.639909291523]> // 9300 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][112400000]> // 112.4 MHz
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-121.04796634664271 35.38405986315433]>
-                        <[float64][altitude][2834.639909291523]> // 9300 ft
-                        <[float64][direction][217.99999999998894]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-121.1099836191239 35.42352804470687]>
-                        <[float64][altitude][2834.639909291523]> // 9300 ft
-                        <[float64][direction][308.0000000000002]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-121.07926310096947 35.45555326465631]>
-                        <[float64][altitude][2834.639909291523]> // 9300 ft
-                        <[float64][direction][38.00000000000159]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
-                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][2834.639909291523]> // 9300 ft
-                        <[float64][direction][127.98185616808809]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][112400000]> // 112.4 MHz
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HOLD #10: Morro Bay VORTAC with DME fix]>
-                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 270° at 6 kts and moderate thermal activity.
-Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 10,700'.]>
-                <[string8u][tags][holding]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][b58]>
-                <[stringt8c][aircraft_icao][BE58]>
-                <[stringt8c][callsign][N7PEB]>
-                <[stringt8c][origin_icao][KSBP]>
-                <[tmvector2d][origin_lon_lat][-120.91555953367397 35.42412576195675]>
-                <[float64][origin_alt][4476378.096]> // 14686281 ft MSL
-                <[float64][origin_dir][264.4351765185701]>
-                <[stringt8c][destination_icao][KSBP]>
-                <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
-                <[float64][destination_alt][35104.988]> // 115174 ft MSL
-                <[float64][destination_dir][292]>
-                <[float64][distance][24788.51116639971]> // 25 km
-                <[float64][duration][238.53965795350743]> // 4 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-120.9155694865452 35.424124792238096]>
-                    <[float64][direction][264.4351765185701]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][6]>
-                        <[int32][time_day][1]>
-                        <[float64][time_hours][2.75]> // 02:45:00 UTC
-                    >
-                    <[float64][wind_direction][270]>
-                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_direction][200]>
+                    <[float64][wind_speed][8]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.48999999999999994]> // 20 °C
@@ -899,9 +650,9 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -910,40 +661,349 @@ Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 N
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-ABEAM]>
-                        <[vector2_float64][lon_lat][-120.98655539838227 35.44811807676334]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][38.00000000000131]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-120.99916294065503 35.40455875797033]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][127.9999999999817]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-OUTBND]>
-                        <[vector2_float64][lon_lat][-120.91810851867533 35.40451096210296]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][128.00000000000108]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.02745096240172 35.375032976590695]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][217.99999999998863]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO-INBND]>
-                        <[vector2_float64][lon_lat][-120.94879738179645 35.372477971173645]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][217.99999999999858]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-121.12607763519733 35.4377736406145]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][307.9999999999997]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MQO]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-121.09775719853316 35.467292818000864]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][38.00000000000654]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
                         <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][308.02187174632485]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][127.96057350639114]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][112400000]> // 112.4 MHz
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HOLD #8: Morro Bay VORTAC with DME fix]>
+                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 000° at 6 kts and moderate thermal activity.
+Hold west of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 20 NM DME, make right-hand turns, maintain 9,500'.]>
+                <[string8u][tags][holding]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
+                <[stringt8c][origin_icao][KSBP]>
+                <[tmvector2d][origin_lon_lat][-120.91987175334239 35.309113908285994]>
+                <[float64][origin_alt][3879265.216]> // 12727249 ft MSL
+                <[float64][origin_dir][323.37810101460923]>
+                <[stringt8c][destination_icao][KSBP]>
+                <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
+                <[float64][destination_alt][31167.98]> // 102258 ft MSL
+                <[float64][destination_dir][292]>
+                <[float64][distance][31004.10748276148]> // 31 km
+                <[float64][duration][298.35229491783383]> // 5 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-120.91987771865915 35.309121934181334]>
+                    <[float64][direction][323.37810101460923]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][6]>
+                        <[int32][time_day][4]>
+                        <[float64][time_hours][23.75]> // 23:45:00 UTC
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.47334399999999993]> // 19.4 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
+                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
+                        <[float64][altitude][2895.599907340803]> // 9500 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][112400000]> // 112.4 MHz
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-120.99916294065503 35.40455875797033]>
+                        <[float64][altitude][2895.599907340803]> // 9500 ft
+                        <[float64][direction][127.9999999999817]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.02745096240172 35.375032976590695]>
+                        <[float64][altitude][2895.599907340803]> // 9500 ft
+                        <[float64][direction][217.99999999998863]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-121.12607763519733 35.4377736406145]>
+                        <[float64][altitude][2895.599907340803]> // 9500 ft
+                        <[float64][direction][307.9999999999997]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-121.09775719853316 35.467292818000864]>
+                        <[float64][altitude][2895.599907340803]> // 9500 ft
+                        <[float64][direction][38.00000000000654]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
+                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
+                        <[float64][altitude][2895.599907340803]> // 9500 ft
+                        <[float64][direction][127.96057350639114]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][112400000]> // 112.4 MHz
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HOLD #9: Morro Bay VORTAC with DME fix]>
+                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 310° at 10 kts and moderate thermal activity.
+Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 10,400'.]>
+                <[string8u][tags][holding]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
+                <[stringt8c][origin_icao][KSBP]>
+                <[tmvector2d][origin_lon_lat][-121.10032214286277 35.53089484083126]>
+                <[float64][origin_alt][3570538.172]> // 11714365 ft MSL
+                <[float64][origin_dir][149.52027349257844]>
+                <[stringt8c][destination_icao][KSBP]>
+                <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
+                <[float64][destination_alt][34120.736]> // 111945 ft MSL
+                <[float64][destination_dir][292]>
+                <[float64][distance][32272.92750901944]> // 32 km
+                <[float64][duration][310.5621405611006]> // 5 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-121.10031707052823 35.53088622274432]>
+                    <[float64][direction][149.52027349257844]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][6]>
+                        <[int32][time_day][4]>
+                        <[float64][time_hours][1.25]> // 01:15:00 UTC
+                    >
+                    <[float64][wind_direction][310]>
+                    <[float64][wind_speed][10]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.4435559999999999]> // 18.299999999999997 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
+                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
+                        <[float64][altitude][3169.919898562563]> // 10400 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][112400000]> // 112.4 MHz
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-121.03538840058833 35.427624249280505]>
+                        <[float64][altitude][3169.919898562563]> // 10400 ft
+                        <[float64][direction][308.0000000000123]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.00707153708032 35.45714342790655]>
+                        <[float64][altitude][3169.919898562563]> // 10400 ft
+                        <[float64][direction][37.99999999997948]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-120.90303482248319 35.390835716299335]>
+                        <[float64][altitude][3169.919898562563]> // 10400 ft
+                        <[float64][direction][127.99999999999926]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-120.93131803532626 35.36130993659197]>
+                        <[float64][altitude][3169.919898562563]> // 10400 ft
+                        <[float64][direction][218.0000000000076]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
+                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
+                        <[float64][altitude][3169.919898562563]> // 10400 ft
+                        <[float64][direction][308.04264060810283]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][112400000]> // 112.4 MHz
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HOLD #10: Morro Bay VORTAC with DME fix]>
+                <[string8][description][Your B58 is cruising on this overcast late afternoon with wind from 240° at 6 kts.
+Hold east of Morro Bay VORTAC (MQO, 112.4 MHz) on the radial 292°, between 16 NM and 12 NM DME, make right-hand turns, maintain 9,700'.]>
+                <[string8u][tags][holding]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
+                <[stringt8c][origin_icao][KSBP]>
+                <[tmvector2d][origin_lon_lat][-120.85497592858273 35.43230777933959]>
+                <[float64][origin_alt][2867782.244]> // 9408735 ft MSL
+                <[float64][origin_dir][262.9630956100748]>
+                <[stringt8c][destination_icao][KSBP]>
+                <[tmvector2d][destination_lon_lat][-121.01727307813813 35.41609285574526]>
+                <[float64][destination_alt][31824.148]> // 104410 ft MSL
+                <[float64][destination_dir][292]>
+                <[float64][distance][32272.92750901944]> // 32 km
+                <[float64][duration][310.5621405611006]> // 5 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-120.85498585325722 35.43230655425339]>
+                    <[float64][direction][262.9630956100748]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][6]>
+                        <[int32][time_day][3]>
+                        <[float64][time_hours][2.75]> // 02:45:00 UTC
+                    >
+                    <[float64][wind_direction][240]>
+                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.386884]> // 16.1 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][cloud_base][609.5999804928007]> // 2000.0000000000002 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
+                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
+                        <[float64][altitude][2956.5599053900833]> // 9700 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][112400000]> // 112.4 MHz
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-TURN]>
+                        <[vector2_float64][lon_lat][-121.03538840058833 35.427624249280505]>
+                        <[float64][altitude][2956.5599053900833]> // 9700 ft
+                        <[float64][direction][308.0000000000123]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-ABEAM]>
+                        <[vector2_float64][lon_lat][-121.00707153708032 35.45714342790655]>
+                        <[float64][altitude][2956.5599053900833]> // 9700 ft
+                        <[float64][direction][37.99999999997948]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-OUTBND]>
+                        <[vector2_float64][lon_lat][-120.90303482248319 35.390835716299335]>
+                        <[float64][altitude][2956.5599053900833]> // 9700 ft
+                        <[float64][direction][127.99999999999926]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16-INBND]>
+                        <[vector2_float64][lon_lat][-120.93131803532626 35.36130993659197]>
+                        <[float64][altitude][2956.5599053900833]> // 9700 ft
+                        <[float64][direction][218.0000000000076]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MQO+16]>
+                        <[vector2_float64][lon_lat][-121.01727307813813 35.41609285574526]>
+                        <[float64][altitude][2956.5599053900833]> // 9700 ft
+                        <[float64][direction][308.04264060810283]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][112400000]> // 112.4 MHz

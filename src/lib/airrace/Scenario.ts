@@ -1,19 +1,14 @@
-import {
-  AeroflyMission,
-  AeroflyMissionCheckpoint,
-  AeroflyMissionConditions,
-  AeroflyMissionConditionsCloud,
-  AeroflyMissionTargetPlane,
-} from "@fboes/aerofly-custom-missions";
+import { AeroflyMission, AeroflyMissionCheckpoint, AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { AeroflyAircraft } from "../../data/AeroflyAircraft.js";
 import { Configuration } from "./Configuration.js";
-import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
+import { AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import { Units } from "../../data/Units.js";
 import { Point, Vector } from "@fboes/geojson";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { OpenStreetMapApiAirport } from "../general/OpenStreetMapApi.js";
 import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission.js";
 import { Rand } from "../general/Rand.js";
+import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js";
 
 export class Scenario {
   date: Date;
@@ -27,13 +22,14 @@ export class Scenario {
     date: Date,
     index: number = 0,
   ): Promise<Scenario> {
-    const weathers = await AviationWeatherApi.fetchMetar([configuration.icaoCode], date);
-    if (!weathers.length) {
-      throw new Error("No METAR information from API for " + configuration.icaoCode);
-    }
-    const weather = new AviationWeatherNormalizedMetar(weathers[0]);
-
-    return new Scenario(configuration, aircraft, airport, date, weather, index);
+    return new Scenario(
+      configuration,
+      aircraft,
+      airport,
+      date,
+      await AviationWeatherApiHelper.getWeather(configuration.icaoCode, date),
+      index,
+    );
   }
 
   constructor(
@@ -57,7 +53,7 @@ export class Scenario {
     }
 
     const title = this.#getTitle(index, airport);
-    const conditions = this.#makeConditions(date, weather);
+    const conditions = AviationWeatherApiHelper.makeConditions(date, weather);
     const origin = this.#makeOrigin(airport, configuration);
     const destination = origin;
     const checkpoints = this.#getCheckpoints(origin, configuration);
@@ -88,22 +84,6 @@ export class Scenario {
 
   #getTitle(index: number, airport: OpenStreetMapApiAirport) {
     return `Air Race #${index + 1} at ${airport.name}`;
-  }
-
-  #makeConditions(time: Date, weather: AviationWeatherNormalizedMetar) {
-    return new AeroflyMissionConditions({
-      time,
-      wind: {
-        direction: weather.wdir ?? 0,
-        speed: weather.wspd,
-        gusts: weather.wgst ?? 0,
-      },
-      temperature: weather.temp,
-      visibility_sm: Math.min(15, weather.visib),
-      clouds: weather.clouds.map((c) => {
-        return AeroflyMissionConditionsCloud.createInFeet(c.coverOctas / 8, c.base ?? 0);
-      }),
-    });
   }
 
   #makeOrigin(airport: OpenStreetMapApiAirport, configuration: Configuration): AeroflyMissionPosition {

@@ -91,15 +91,19 @@ export class HoldingPattern {
         : 0;
     this.patternAltitudeFt =
       Math.round(Rand.getRandomInt(configuration.minimumSafeAltitude, configuration.maximumAltitude) / 100) * 100;
-    this.patternSpeedKts = this.#getPatternSpeedKts(aircraft, this.patternAltitudeFt);
+    this.patternSpeedKts = Math.min(
+      aircraft.cruiseSpeedKts + 10,
+      this.#getMaxPatternSpeedKts(aircraft, this.patternAltitudeFt),
+    );
     this.legTimeMin = this.#getLegTimeMin(this.patternAltitudeFt);
     this.id =
-      this.dmeDistanceNm > 0 ? holdingNavAid.id : `${holdingNavAid.id}+${String(this.dmeDistanceNm).padStart(2, "0")}`;
+      this.dmeDistanceNm <= 0 ? holdingNavAid.id : `${holdingNavAid.id}+${String(this.dmeDistanceNm).padStart(2, "0")}`;
     this.holdingFix = this.#getHoldingFix(holdingNavAid);
     this.turnRadiusMeters = this.#getTurnRadius(this.patternSpeedKts);
     this.legDistanceMeters = this.#getLegDistance(this.patternSpeedKts, this.legTimeMin);
     this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingTowardNavaid ? 0 : 180));
     this.holdingAreaDirectionTrue = Degree(this.holdingAreaDirection + holdingNavAid.mag_dec);
+    //console.log(this);
   }
 
   #getHoldingFix(holdingNavAid: HoldingPatternFix): Point {
@@ -108,9 +112,11 @@ export class HoldingPattern {
     );
   }
 
-  #getPatternSpeedKts(aircraft: AeroflyAircraft, patternAltitudeFt: number): number {
+  #getMaxPatternSpeedKts(aircraft: AeroflyAircraft, patternAltitudeFt: number): number {
     // TODO: Turbulence: 280
-    // TODO: helicopter: 1000 @ 6000ft, 170
+    if (aircraft.tags.includes("helicopter")) {
+      return patternAltitudeFt <= 6000 ? 100 : 170;
+    }
     if (patternAltitudeFt <= 14000) {
       return 230;
     }

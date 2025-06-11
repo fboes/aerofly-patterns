@@ -20,16 +20,16 @@ Get [more information about Montague / Siskiyou County Airport on SkyVector](htt
 
 | No  | Local date¹ | Local time¹ | Wind          | Clouds | Visibility | Runway  | Aircraft position    |
 | :-: | ----------- | ----------: | ------------- | ------ | ---------: | ------- | -------------------- |
-| #01 | 2025-05-27  |       05:15 | 90° @ 3 kts   | CLR    |      15 SM | 35 (RP) | → To the east        |
-| #02 | 2025-05-26  |       06:45 | 350° @ 9 kts  | CLR    |      15 SM | 35 (RP) | ↘ To the south-east |
-| #03 | 2025-05-25  |       08:15 | 30° @ 5 kts   | CLR    |      15 SM | 35 (RP) | ↘ To the south-east |
-| #04 | 2025-05-24  |       09:45 | 270° @ 3 kts  | CLR    |      15 SM | 35 (RP) | ↑ To the north       |
-| #05 | 2025-05-23  |       11:15 | 20° @ 3 kts   | CLR    |      15 SM | 35 (RP) | ↖ To the north-west |
-| #06 | 2025-05-22  |       12:45 | 0° @ 3 kts    | CLR    |      15 SM | 35 (RP) | ← To the west        |
-| #07 | 2025-05-21  |       14:15 | 320° @ 3 kts  | CLR    |      15 SM | 35 (RP) | ↓ To the south       |
-| #08 | 2025-05-20  |       15:45 | 0° @ 4 kts    | CLR    |      15 SM | 35 (RP) | → To the east        |
-| #09 | 2025-05-19  |       17:15 | 260° @ 10 kts | CLR    |      15 SM | 17      | ↘ To the south-east |
-| #10 | 2025-05-18  |       18:45 | 30° @ 14 kts  | CLR    |      15 SM | 35 (RP) | ↗ To the north-east |
+| #01 | 2025-06-11  |       05:15 | 300° @ 3 kts  | CLR    |      10 SM | 35 (RP) | ↓ To the south       |
+| #02 | 2025-06-10  |       06:45 | Calm          | CLR    |      10 SM | 35 (RP) | ↑ To the north       |
+| #03 | 2025-06-09  |       08:15 | Calm          | CLR    |      10 SM | 35 (RP) | ↑ To the north       |
+| #04 | 2025-06-08  |       09:45 | 60° @ 4 kts   | CLR    |      10 SM | 35 (RP) | ↓ To the south       |
+| #05 | 2025-06-07  |       11:15 | 80° @ 3 kts   | CLR    |      10 SM | 35 (RP) | ↖ To the north-west |
+| #06 | 2025-06-06  |       12:45 | 360° @ 3 kts  | CLR    |      10 SM | 35 (RP) | ↗ To the north-east |
+| #07 | 2025-06-05  |       14:15 | Calm          | CLR    |      10 SM | 35 (RP) | ← To the west        |
+| #08 | 2025-06-04  |       15:45 | 10° @ 12 kts  | CLR    |      10 SM | 35 (RP) | ↗ To the north-east |
+| #09 | 2025-06-03  |       17:15 | 350° @ 16 kts | CLR    |      10 SM | 35 (RP) | ↘ To the south-east |
+| #10 | 2025-06-02  |       18:45 | 360° @ 15 kts | CLR    |      10 SM | 35 (RP) | ↓ To the south       |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time)
 

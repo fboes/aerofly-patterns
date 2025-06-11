@@ -1,11 +1,6 @@
-import {
-  AeroflyMission,
-  AeroflyMissionCheckpoint,
-  AeroflyMissionConditions,
-  AeroflyMissionConditionsCloud,
-} from "@fboes/aerofly-custom-missions";
+import { AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
 import { Configuration } from "./Configuration.js";
-import { AviationWeatherApi, AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
+import { AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { MissionType, MissionTypeFinder } from "../../data/hems/MissionTypes.js";
 import { GeoJsonLocation, GeoJsonLocations } from "./GeoJsonLocations.js";
@@ -14,6 +9,7 @@ import { degreeDifference } from "../general/Degree.js";
 import { AeroflyAircraft } from "../../data/AeroflyAircraft.js";
 import { AeroflyMissionCheckpointType } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMissionCheckpoint.js";
 import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission.js";
+import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js";
 
 export class Scenario {
   date: Date;
@@ -31,19 +27,18 @@ export class Scenario {
       locations,
       configuration.canTransfer && locations.hospitals.length > 1 && Math.random() <= 0.1,
     );
-
-    const metarIcaoCode = configuration.icaoCode ?? missionLocations[0].icaoCode;
-    if (metarIcaoCode === null) {
-      throw new Error("No ICAO code for METAR informaton found");
-    }
-
-    const weathers = await AviationWeatherApi.fetchMetar([metarIcaoCode], time);
-    if (!weathers.length) {
-      throw new Error("No METAR information from API for " + metarIcaoCode);
-    }
-    const weather = new AviationWeatherNormalizedMetar(weathers[0]);
-
-    return new Scenario(missionLocations, configuration, aircraft, time, weather, index);
+    return new Scenario(
+      missionLocations,
+      configuration,
+      aircraft,
+      time,
+      await AviationWeatherApiHelper.getWeather(
+        configuration.icaoCode ?? missionLocations[0].icaoCode,
+        time,
+        missionLocations[0].coordinates,
+      ),
+      index,
+    );
   }
 
   constructor(
@@ -62,7 +57,7 @@ export class Scenario {
     // Building the actual mission
     const title = this.#getTitle(index, mission, missionLocations);
     const description = this.#getDescription(mission, missionLocations);
-    const conditions = this.#makeConditions(time, weather);
+    const conditions = AviationWeatherApiHelper.makeConditions(time, weather);
     const origin = this.#makeMissionPosition(missionLocations[0]);
     const destination = this.#makeMissionPosition(missionLocations[missionLocations.length - 1]);
     const checkpoints = this.#getCheckpoints(missionLocations, configuration.withApproaches ? weather : null);
@@ -91,22 +86,6 @@ export class Scenario {
     if (configuration.noGuides) {
       describer.removeGuides();
     }
-  }
-
-  #makeConditions(time: Date, weather: AviationWeatherNormalizedMetar) {
-    return new AeroflyMissionConditions({
-      time,
-      wind: {
-        direction: weather.wdir ?? 0,
-        speed: weather.wspd,
-        gusts: weather.wgst ?? 0,
-      },
-      temperature: weather.temp,
-      visibility_sm: Math.min(15, weather.visib),
-      clouds: weather.clouds.map((c) => {
-        return AeroflyMissionConditionsCloud.createInFeet(c.coverOctas / 8, c.base ?? 0);
-      }),
-    });
   }
 
   static getMissionLocations(locations: GeoJsonLocations, isTransfer: boolean): GeoJsonLocation[] {

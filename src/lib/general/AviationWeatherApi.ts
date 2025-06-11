@@ -245,7 +245,7 @@ export class AviationWeatherApi {
 }
 
 /**
- * @returns {number} with "+" to the east and "-" to the west. Substracted to a true heading this will give the magnetic heading.
+ * @returns {number} with "+" to the east and "-" to the west. Substracted from a true heading this will give the magnetic heading.
  */
 export const magDecConverter = (magdec: string): number => {
   let magDec = 0;
@@ -392,6 +392,10 @@ export class AviationWeatherNormalizedMetar {
    */
   wspd: number;
   wgst: number | null;
+
+  /**
+   * in SM, 99 on any distance being open-ended
+   */
   visib: number;
   altim: number;
   lat: number;

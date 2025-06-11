@@ -4,49 +4,51 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #1: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this early morning with wind from 100° at 11 kts and moderate thermal activity.
-Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 180°, make right-hand turns, maintain 8,400'.]>
+                <[string8][description][Your C172 is cruising on this early morning with wind from 090° at 10 kts and moderate thermal activity.
+Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 195°, make right-hand turns, maintain 7,700'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.820427586291984 11.923428992910265]>
-                <[float64][origin_alt][4006561.808]> // 13144889 ft MSL
-                <[float64][origin_dir][22.978856945698453]>
+                <[tmvector2d][origin_lon_lat][-61.91690550667903 12.04084299493248]>
+                <[float64][origin_alt][1965879.328]> // 6449736 ft MSL
+                <[float64][origin_dir][107.81850505271291]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][27559.056]> // 90417 ft MSL
-                <[float64][destination_dir][180]>
-                <[float64][distance][23237.13532144086]> // 23 km
-                <[float64][duration][347.45675011292195]> // 6 min
+                <[float64][destination_alt][25262.468]> // 82883 ft MSL
+                <[float64][destination_dir][195]>
+                <[float64][distance][19646.775659398365]> // 20 km
+                <[float64][duration][293.7713589210588]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.82042368237777 11.923438199400033]>
-                    <[float64][direction][22.978856945698453]>
+                    <[vector2_float64][lon_lat][-61.916895986372914 12.040839934904458]>
+                    <[float64][direction][107.81850505271291]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][9]>
+                        <[int32][time_day][11]>
                         <[float64][time_hours][9.25]> // 09:15:00 UTC
                     >
-                    <[float64][wind_direction][100]>
-                    <[float64][wind_speed][11]> // kts
+                    <[float64][wind_direction][90]>
+                    <[float64][wind_speed][10]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.7395999999999999]> // 28 °C
-                    <[float64][visibility][7998.4396799999995]> // 4.97 SM
+                    <[float64][thermal_strength][0.7055999999999999]> // 27 °C
+                    <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][548.6399824435206]> // 1800 ft AGL
+                    <[float64][cloud_base][396.2399873203204]> // 1300 ft AGL
+                    <[float64][cirrus_cover][0.25]> // FEW
+                    <[float64][cirrus_base][1341.1199570841613]> // 4400 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][2560.3199180697625]> // 8400 ft
+                        <[float64][altitude][2346.9599248972822]> // 7700 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -55,40 +57,46 @@ Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 180°, make 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.828753583467375 12.000096935560645]>
-                        <[float64][altitude][2560.3199180697625]> // 8400 ft
-                        <[float64][direction][270.0000000000023]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.790473072875635 11.988151114728613]>
+                        <[float64][altitude][2346.9599248972822]> // 7700 ft
+                        <[float64][direction][195.00000000000298]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.828753583467375 12.063942774103504]>
-                        <[float64][altitude][2560.3199180697625]> // 8400 ft
-                        <[float64][direction][0]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.81490420140686 11.994553434387054]>
+                        <[float64][altitude][2346.9599248972822]> // 7700 ft
+                        <[float64][direction][285.0000000000014]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.78719013003581 12.063939692870056]>
-                        <[float64][altitude][2560.3199180697625]> // 8400 ft
-                        <[float64][direction][90]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.798071153246646 12.055989134002182]>
+                        <[float64][altitude][2346.9599248972822]> // 7700 ft
+                        <[float64][direction][15.000000000004377]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.77363502700414 12.04958469165044]>
+                        <[float64][altitude][2346.9599248972822]> // 7700 ft
+                        <[float64][direction][104.9999999999917]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][2560.3199180697625]> // 8400 ft
-                        <[float64][direction][180.0086646642749]>
+                        <[float64][altitude][2346.9599248972822]> // 7700 ft
+                        <[float64][direction][195.00998911067703]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -99,49 +107,51 @@ Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 180°, make 
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #2: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this early morning with wind from 110° at 9 kts and moderate thermal activity.
-Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 215°, make left-hand turns, maintain 11,600'.]>
+                <[string8][description][Your C172 is cruising on this early morning with wind from 110° at 13 kts and moderate thermal activity.
+Hold east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 252°, make right-hand turns, maintain 7,800'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.71970378739305 11.949350950525826]>
-                <[float64][origin_alt][2391076.192]> // 7844739 ft MSL
-                <[float64][origin_dir][307.5390684987335]>
+                <[tmvector2d][origin_lon_lat][-61.769637787246566 12.132232032906305]>
+                <[float64][origin_alt][2044619.488]> // 6708070 ft MSL
+                <[float64][origin_dir][187.40381763724372]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][38057.744]> // 124862 ft MSL
-                <[float64][destination_dir][215]>
-                <[float64][distance][23236.644930467788]> // 23 km
-                <[float64][duration][347.44941746836696]> // 6 min
+                <[float64][destination_alt][25590.552]> // 83959 ft MSL
+                <[float64][destination_dir][252]>
+                <[float64][distance][19647.391849627198]> // 20 km
+                <[float64][duration][293.7805725978481]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.719711716773624 11.94935704354837]>
-                    <[float64][direction][307.5390684987335]>
+                    <[vector2_float64][lon_lat][-61.76963907586328 12.13222211628052]>
+                    <[float64][direction][187.40381763724372]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][8]>
+                        <[int32][time_day][10]>
                         <[float64][time_hours][10.75]> // 10:45:00 UTC
                     >
                     <[float64][wind_direction][110]>
-                    <[float64][wind_speed][9]> // kts
+                    <[float64][wind_speed][13]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.7395999999999999]> // 28 °C
+                    <[float64][thermal_strength][0.7055999999999999]> // 27 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][518.1599834188805]> // 1700 ft AGL
+                    <[float64][cloud_base][548.6399824435206]> // 1800 ft AGL
+                    <[float64][cirrus_cover][0.25]> // FEW
+                    <[float64][cirrus_base][1036.319966837761]> // 3400 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
+                        <[float64][altitude][2377.4399239219224]> // 7800 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -150,40 +160,46 @@ Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 215°, 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.75316423890208 11.976784630869435]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][125.0000000000033]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.799227596677035 11.996277086679994]>
+                        <[float64][altitude][2377.4399239219224]> // 7800 ft
+                        <[float64][direction][251.99999999999255]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.71572160798143 12.02908159340617]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][35.000000000001535]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.8070442853463 12.019806832812975]>
+                        <[float64][altitude][2377.4399239219224]> // 7800 ft
+                        <[float64][direction][342.0000000000053]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.74976692914486 12.052392844881023]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][304.99999999999574]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.7451933615965 12.039454572961558]>
+                        <[float64][altitude][2377.4399239219224]> // 7800 ft
+                        <[float64][direction][71.99999999999909]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.737376785677476 12.015924609654572]>
+                        <[float64][altitude][2377.4399239219224]> // 7800 ft
+                        <[float64][direction][161.9999999999818]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][3535.6798868582437]> // 11600 ft
-                        <[float64][direction][215.0007072440687]>
+                        <[float64][altitude][2377.4399239219224]> // 7800 ft
+                        <[float64][direction][252.0155048401371]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -194,49 +210,49 @@ Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 215°, 
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #3: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this morning with wind from 090° at 12 kts and moderate thermal activity.
-Hold west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 086°, make right-hand turns, maintain 5,400'.]>
+                <[string8][description][Your C172 is cruising on this morning with wind from 100° at 15 kts and moderate thermal activity.
+Hold south-west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 064°, make right-hand turns, maintain 11,400'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.707919335369304 11.969757045686217]>
-                <[float64][origin_alt][4112532.94]> // 13492563 ft MSL
-                <[float64][origin_dir][291.36002583735876]>
+                <[tmvector2d][origin_lon_lat][-61.69882116985389 11.898720254317448]>
+                <[float64][origin_alt][2221456.764]> // 7288245 ft MSL
+                <[float64][origin_dir][319.5309786910502]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][17716.536]> // 58126 ft MSL
-                <[float64][destination_dir][86]>
-                <[float64][distance][23236.800312456922]> // 23 km
-                <[float64][duration][347.4517408408578]> // 6 min
+                <[float64][destination_alt][37401.576]> // 122709 ft MSL
+                <[float64][destination_dir][64]>
+                <[float64][distance][19646.379748734173]> // 20 km
+                <[float64][duration][293.76543900748885]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.70792864847087 11.969760687957375]>
-                    <[float64][direction][291.36002583735876]>
+                    <[vector2_float64][lon_lat][-61.698827660222065 11.89872786188743]>
+                    <[float64][direction][319.5309786910502]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][7]>
+                        <[int32][time_day][9]>
                         <[float64][time_hours][12.25]> // 12:15:00 UTC
                     >
-                    <[float64][wind_direction][90]>
-                    <[float64][wind_speed][12]> // kts
+                    <[float64][wind_direction][100]>
+                    <[float64][wind_speed][15]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.7744]> // 29 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.5]> // SCT
-                    <[float64][cloud_base][579.1199814681606]> // 1900 ft AGL
+                    <[float64][visibility][5005.05984]> // 3.11 SM
+                    <[float64][cloud_cover][0.125]> // FEW
+                    <[float64][cloud_base][609.5999804928007]> // 2000.0000000000002 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][1645.9199473305616]> // 5400 ft
+                        <[float64][altitude][3474.719888808964]> // 11400 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -245,40 +261,46 @@ Hold west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 086°, make r
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.7843018039904 11.959553472359236]>
-                        <[float64][altitude][1645.9199473305616]> // 5400 ft
-                        <[float64][direction][175.99999999999739]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.775832954077686 12.005522586845006]>
+                        <[float64][altitude][3474.719888808964]> // 11400 ft
+                        <[float64][direction][64.00000000001017]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.8494041713057 11.955092314610809]>
-                        <[float64][altitude][1645.9199473305616]> // 5400 ft
-                        <[float64][direction][266.0000000000005]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.764745711119566 11.983285526980103]>
+                        <[float64][altitude][3474.719888808964]> // 11400 ft
+                        <[float64][direction][153.9999999999959]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.852302754576236 11.995638812486254]>
-                        <[float64][altitude][1645.9199473305616]> // 5400 ft
-                        <[float64][direction][355.9999999999937]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.82317958030347 11.955397567227381]>
+                        <[float64][altitude][3474.719888808964]> // 11400 ft
+                        <[float64][direction][244.00000000000003]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.834266591205406 11.977634191447242]>
+                        <[float64][altitude][3474.719888808964]> // 11400 ft
+                        <[float64][direction][333.99999999998704]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][1645.9199473305616]> // 5400 ft
-                        <[float64][direction][85.98588680593525]>
+                        <[float64][altitude][3474.719888808964]> // 11400 ft
+                        <[float64][direction][63.98444451052302]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -289,49 +311,49 @@ Hold west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 086°, make r
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #4: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this morning with wind from 100° at 15 kts and lots of thermal activity.
-Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 356°, make left-hand turns, maintain 12,300'.]>
+                <[string8][description][Your C172 is cruising on this morning with wind from 120° at 12 kts and lots of thermal activity.
+Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 010°, make right-hand turns, maintain 10,100'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.7288749472308 12.060771775318367]>
-                <[float64][origin_alt][3512795.388]> // 11524920 ft MSL
-                <[float64][origin_dir][223.2287680807692]>
+                <[tmvector2d][origin_lon_lat][-61.92135477096664 11.977016517090552]>
+                <[float64][origin_alt][4737861.044]> // 15544165 ft MSL
+                <[float64][origin_dir][80.03751826693383]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][40354.332]> // 132397 ft MSL
-                <[float64][destination_dir][356]>
-                <[float64][distance][23238.422132150237]> // 23 km
-                <[float64][duration][347.4759913430007]> // 6 min
+                <[float64][destination_alt][33136.484]> // 108716 ft MSL
+                <[float64][destination_dir][10]>
+                <[float64][distance][19646.987385341024]> // 20 km
+                <[float64][duration][293.774524784963]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.72888179636113 12.060764489070106]>
-                    <[float64][direction][223.2287680807692]>
+                    <[vector2_float64][lon_lat][-61.92134492175414 11.977018247123265]>
+                    <[float64][direction][80.03751826693383]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][6]>
+                        <[int32][time_day][8]>
                         <[float64][time_hours][13.75]> // 13:45:00 UTC
                     >
-                    <[float64][wind_direction][100]>
-                    <[float64][wind_speed][15]> // kts
+                    <[float64][wind_direction][120]>
+                    <[float64][wind_speed][12]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.81]> // 30 °C
-                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][visibility][8996.23296]> // 5.59 SM
                     <[float64][cloud_cover][0.125]> // FEW
                     <[float64][cloud_base][548.6399824435206]> // 1800 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][altitude][3078.479901488643]> // 10100 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -340,40 +362,46 @@ Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 356°, make 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.828651925050856 11.99726166236892]>
-                        <[float64][altitude][3749.039880030724]> // 12300 ft
-                        <[float64][direction][265.99999999999727]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.78500381685422 12.012282434246567]>
+                        <[float64][altitude][3078.479901488643]> // 10100 ft
+                        <[float64][direction][9.999999999996874]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.82409988673734 11.933571312369084]>
-                        <[float64][altitude][3749.039880030724]> // 12300 ft
-                        <[float64][direction][176.00000000000534]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.760093867028125 12.007985145356006]>
+                        <[float64][altitude][3078.479901488643]> // 10100 ft
+                        <[float64][direction][100.00000000000682]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.78265729269004 11.93640356835177]>
-                        <[float64][altitude][3749.039880030724]> // 12300 ft
-                        <[float64][direction][86.00000000000136]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.77138294549628 11.94534776092367]>
+                        <[float64][altitude][3078.479901488643]> // 10100 ft
+                        <[float64][direction][189.99999999999528]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.796287514221966 11.949642851496336]>
+                        <[float64][altitude][3078.479901488643]> // 10100 ft
+                        <[float64][direction][279.99999999999176]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][3749.039880030724]> // 12300 ft
-                        <[float64][direction][356.0095363730524]>
+                        <[float64][altitude][3078.479901488643]> // 10100 ft
+                        <[float64][direction][9.991129596138308]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -384,49 +412,49 @@ Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 356°, make 
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #5: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this noon with wind from 130° at 16 kts and lots of thermal activity.
-Hold south-west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 049°, make right-hand turns, maintain 9,100'.]>
+                <[string8][description][Your C172 is cruising on this noon with wind from 120° at 12 kts and lots of thermal activity.
+Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 011°, make right-hand turns, maintain 12,800'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.70408928344112 11.98204874267273]>
-                <[float64][origin_alt][2759514.524]> // 9053526 ft MSL
-                <[float64][origin_dir][282.51023475593263]>
+                <[tmvector2d][origin_lon_lat][-61.75056203056668 11.871768772401325]>
+                <[float64][origin_alt][4536745.552]> // 14884337 ft MSL
+                <[float64][origin_dir][344.38994777929224]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][29855.644]> // 97952 ft MSL
-                <[float64][destination_dir][49]>
-                <[float64][distance][23237.459037676286]> // 23 km
-                <[float64][duration][347.46159052847077]> // 6 min
+                <[float64][destination_alt][41994.752]> // 137779 ft MSL
+                <[float64][destination_dir][11]>
+                <[float64][distance][19646.97546392057]> // 20 km
+                <[float64][duration][293.7743465281361]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.70409904601441 11.982050908812793]>
-                    <[float64][direction][282.51023475593263]>
+                    <[vector2_float64][lon_lat][-61.75056472145466 11.871778403555039]>
+                    <[float64][direction][344.38994777929224]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][5]>
+                        <[int32][time_day][7]>
                         <[float64][time_hours][15.25]> // 15:15:00 UTC
                     >
-                    <[float64][wind_direction][130]>
-                    <[float64][wind_speed][16]> // kts
+                    <[float64][wind_direction][120]>
+                    <[float64][wind_speed][12]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.81]> // 30 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][609.5999804928007]> // 2000.0000000000002 ft AGL
+                    <[float64][cloud_base][579.1199814681606]> // 1900 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][2773.6799112422427]> // 9100 ft
+                        <[float64][altitude][3901.439875153924]> // 12800 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -435,40 +463,46 @@ Hold south-west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 049°, 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.75994149571705 11.969423116529256]>
-                        <[float64][altitude][2773.6799112422427]> // 9100 ft
-                        <[float64][direction][139.0000000000016]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.784786778945055 12.012243087627192]>
+                        <[float64][altitude][3901.439875153924]> // 12800 ft
+                        <[float64][direction][11.00000000001711]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.8091898400066 11.927532187870094]>
-                        <[float64][altitude][2773.6799112422427]> // 9100 ft
-                        <[float64][direction][228.99999999999787]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.75995732192976 12.007521234305955]>
+                        <[float64][altitude][3901.439875153924]> // 12800 ft
+                        <[float64][direction][100.9999999999983]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.83644721356072 11.958206441602378]>
-                        <[float64][altitude][2773.6799112422427]> // 9100 ft
-                        <[float64][direction][318.9999999999993]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.772362033985566 11.945086098167893]>
+                        <[float64][altitude][3901.439875153924]> // 12800 ft
+                        <[float64][direction][191.00000000000531]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.797186184978635 11.949805767376112]>
+                        <[float64][altitude][3901.439875153924]> // 12800 ft
+                        <[float64][direction][281.0000000000058]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][2773.6799112422427]> // 9100 ft
-                        <[float64][direction][48.984140428124476]>
+                        <[float64][altitude][3901.439875153924]> // 12800 ft
+                        <[float64][direction][10.990907993580322]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -479,49 +513,49 @@ Hold south-west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 049°, 
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #6: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this noon with wind from 110° at 16 kts and lots of thermal activity.
-Hold west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 078°, make right-hand turns, maintain 14,400'.]>
+                <[string8][description][Your C172 is cruising on this noon with wind from 100° at 15 kts and lots of thermal activity.
+Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 006°, make right-hand turns, maintain 12,300'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.71191248981279 12.038993293039615]>
-                <[float64][origin_alt][1667322.888]> // 5470220 ft MSL
-                <[float64][origin_dir][242.15021247173127]>
+                <[tmvector2d][origin_lon_lat][-61.82926198172691 11.873370747604762]>
+                <[float64][origin_alt][3196522.412]> // 10487279 ft MSL
+                <[float64][origin_dir][17.994386614204245]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][47244.096]> // 155001 ft MSL
-                <[float64][destination_dir][78]>
-                <[float64][distance][31654.606970083645]> // 32 km
-                <[float64][duration][473.32025707053134]> // 8 min
+                <[float64][destination_alt][40354.332]> // 132397 ft MSL
+                <[float64][destination_dir][6]>
+                <[float64][distance][19647.034625460125]> // 20 km
+                <[float64][duration][293.7752311499271]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.71192133156651 12.038988621488352]>
-                    <[float64][direction][242.15021247173127]>
+                    <[vector2_float64][lon_lat][-61.82925889248875 11.87338025847263]>
+                    <[float64][direction][17.994386614204245]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][4]>
+                        <[int32][time_day][6]>
                         <[float64][time_hours][16.75]> // 16:45:00 UTC
                     >
-                    <[float64][wind_direction][110]>
-                    <[float64][wind_speed][16]> // kts
+                    <[float64][wind_direction][100]>
+                    <[float64][wind_speed][15]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.81]> // 30 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.25]> // FEW
+                    <[float64][cloud_cover][0.125]> // FEW
                     <[float64][cloud_base][579.1199814681606]> // 1900 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][4389.119859548165]> // 14400 ft
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -530,40 +564,46 @@ Hold west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 078°, make r
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.77818628044626 11.958613955776983]>
-                        <[float64][altitude][4389.119859548165]> // 14400 ft
-                        <[float64][direction][168.0000000000059]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.7858779950427 12.012402607305923]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][6.000000000084242]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.87809590903394 11.937819147493622]>
-                        <[float64][altitude][4389.119859548165]> // 14400 ft
-                        <[float64][direction][257.9999999999982]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.76072216255645 12.009815370291953]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][96.00000000000199]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.887110318659985 11.979304904014194]>
-                        <[float64][altitude][4389.119859548165]> // 14400 ft
-                        <[float64][direction][348.0000000000141]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.76751771502575 11.946560277099222]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][186.00000000001202]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.79266789617584 11.949145272084523]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][276.00000000000205]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][4389.119859548165]> // 14400 ft
-                        <[float64][direction][77.97740956434046]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][5.992042366126782]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -575,31 +615,31 @@ Hold west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 078°, make r
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #7: Maurice Bishop VOR/DME]>
                 <[string8][description][Your C172 is cruising on this afternoon with wind from 110° at 14 kts and lots of thermal activity.
-Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 235°, make right-hand turns, maintain 12,400'.]>
+Hold east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 280°, make right-hand turns, maintain 4,200'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.702219956894 11.995047556405636]>
-                <[float64][origin_alt][4236220.608]> // 13898363 ft MSL
-                <[float64][origin_dir][273.46944968422576]>
+                <[tmvector2d][origin_lon_lat][-61.72029922551816 12.11617514692457]>
+                <[float64][origin_alt][2177821.592]> // 7145085 ft MSL
+                <[float64][origin_dir][209.40039946642503]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][40682.416]> // 133473 ft MSL
-                <[float64][destination_dir][235]>
-                <[float64][distance][23238.306191285083]> // 23 km
-                <[float64][duration][347.4742577198301]> // 6 min
+                <[float64][destination_alt][13779.528]> // 45209 ft MSL
+                <[float64][destination_dir][280]>
+                <[float64][distance][19647.53529278183]> // 20 km
+                <[float64][duration][293.7827174531259]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.70222993856608 11.995048161568853]>
-                    <[float64][direction][273.46944968422576]>
+                    <[vector2_float64][lon_lat][-61.72030413461644 12.116166434820686]>
+                    <[float64][direction][209.40039946642503]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][3]>
+                        <[int32][time_day][5]>
                         <[float64][time_hours][18.25]> // 18:15:00 UTC
                     >
                     <[float64][wind_direction][110]>
@@ -609,14 +649,14 @@ Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 235°, 
                     <[float64][thermal_strength][0.81]> // 30 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][579.1199814681606]> // 1900 ft AGL
+                    <[float64][cloud_base][609.5999804928007]> // 2000.0000000000002 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][altitude][1280.1599590348812]> // 4200 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -625,40 +665,46 @@ Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 235°, 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.81103710345595 12.03339385420707]>
-                        <[float64][altitude][3779.519879055364]> // 12400 ft
-                        <[float64][direction][324.9999999999975]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.79965470969875 12.002247818047284]>
+                        <[float64][altitude][1280.1599590348812]> // 4200 ft
+                        <[float64][direction][279.99999999999443]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.75755532652436 12.07000922883369]>
-                        <[float64][altitude][3779.519879055364]> // 12400 ft
-                        <[float64][direction][54.99999999999716]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.795262109601296 12.026612669396306]>
+                        <[float64][altitude][1280.1599590348812]> // 4200 ft
+                        <[float64][direction][10.000000000008527]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.733717928636274 12.036713352237975]>
-                        <[float64][altitude][3779.519879055364]> // 12400 ft
-                        <[float64][direction][144.99999999998653]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.73122190034858 12.015560756680681]>
+                        <[float64][altitude][1280.1599590348812]> // 4200 ft
+                        <[float64][direction][99.99999999999773]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.73561392290015 11.991195836806513]>
+                        <[float64][altitude][1280.1599590348812]> // 4200 ft
+                        <[float64][direction][190.00000000001177]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][3779.519879055364]> // 12400 ft
-                        <[float64][direction][235.01612127530586]>
+                        <[float64][altitude][1280.1599590348812]> // 4200 ft
+                        <[float64][direction][280.0128176692566]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -669,49 +715,51 @@ Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 235°, 
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #8: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this late afternoon with wind from 120° at 16 kts and lots of thermal activity.
-Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 199°, make right-hand turns, maintain 4,900'.]>
+                <[string8][description][Your C172 is cruising on this late afternoon with wind from 120° at 13 kts and moderate thermal activity.
+Hold west of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 108°, make right-hand turns, maintain 12,400'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.72153645779469 12.053114966977496]>
-                <[float64][origin_alt][3632546.048]> // 11917803 ft MSL
-                <[float64][origin_dir][230.45377276171166]>
+                <[tmvector2d][origin_lon_lat][-61.827892803740106 11.872943561903906]>
+                <[float64][origin_alt][1561351.756]> // 5122546 ft MSL
+                <[float64][origin_dir][17.389647587182935]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][16076.116]> // 52744 ft MSL
-                <[float64][destination_dir][199]>
-                <[float64][distance][23237.521926920617]> // 23 km
-                <[float64][duration][347.4625308893264]> // 6 min
+                <[float64][destination_alt][40682.416]> // 133473 ft MSL
+                <[float64][destination_dir][108]>
+                <[float64][distance][19646.15660300095]> // 20 km
+                <[float64][duration][293.762102387454]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.72154416890602 12.053108599971763]>
-                    <[float64][direction][230.45377276171166]>
+                    <[vector2_float64][lon_lat][-61.82788981505639 11.872953104847353]>
+                    <[float64][direction][17.389647587182935]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][2]>
+                        <[int32][time_day][4]>
                         <[float64][time_hours][19.75]> // 19:45:00 UTC
                     >
                     <[float64][wind_direction][120]>
-                    <[float64][wind_speed][16]> // kts
+                    <[float64][wind_speed][13]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.81]> // 30 °C
+                    <[float64][thermal_strength][0.7744]> // 29 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][609.5999804928007]> // 2000.0000000000002 ft AGL
+                    <[float64][cloud_base][548.6399824435206]> // 1800 ft AGL
+                    <[float64][cirrus_cover][0.25]> // FEW
+                    <[float64][cirrus_base][1280.1599590348812]> // 4200 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][1493.5199522073615]> // 4900 ft
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -720,40 +768,46 @@ Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 199°, make 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.826491614682816 12.013330147222966]>
-                        <[float64][altitude][1493.5199522073615]> // 4900 ft
-                        <[float64][direction][288.9999999999954]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.77517240332295 11.996277086679994]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][108.00000000000745]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.805235242226715 12.073696769678515]>
-                        <[float64][altitude][1493.5199522073615]> // 4900 ft
-                        <[float64][direction][18.999999999995282]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.78298772788883 11.972747123774747]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][197.99999999998934]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.76593673515816 12.060461125897996]>
-                        <[float64][altitude][1493.5199522073615]> // 4900 ft
-                        <[float64][direction][109.00000000000193]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.84482783972764 11.992394891338465]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][288.00000000000233]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.8370112638078 12.015924637507576]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][18.000000000001364]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][1493.5199522073615]> // 4900 ft
-                        <[float64][direction][199.01262847311884]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][107.98856383512975]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -763,50 +817,50 @@ Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 199°, make 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #9: Maurice Bishop VOR/DME with DME fix]>
-                <[string8][description][Your C172 is cruising on this late afternoon with wind from 080° at 17 kts and moderate thermal activity.
-Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 358°, between 9 NM and 5 NM DME, make right-hand turns, maintain 13,300'.]>
+                <[string8][title][HOLD #9: Maurice Bishop VOR/DME]>
+                <[string8][description][Your C172 is cruising on this late afternoon with wind from 120° at 14 kts and moderate thermal activity.
+Hold north of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 158°, make right-hand turns, maintain 10,200'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.746988776668445 12.220275408242363]>
-                <[float64][origin_alt][1492126.032]> // 4895427 ft MSL
-                <[float64][origin_dir][212.32502227466273]>
+                <[tmvector2d][origin_lon_lat][-61.652539749004646 11.980024575615806]>
+                <[float64][origin_alt][1937992.188]> // 6358243 ft MSL
+                <[float64][origin_dir][278.6516027505387]>
                 <[stringt8c][destination_icao][TGPY]>
-                <[tmvector2d][destination_lon_lat][-61.792551257778214 12.149907559898178]>
-                <[float64][destination_alt][43635.172]> // 143161 ft MSL
-                <[float64][destination_dir][358]>
-                <[float64][distance][26211.599583683063]> // 26 km
-                <[float64][duration][391.93287299077514]> // 7 min
+                <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
+                <[float64][destination_alt][33464.568]> // 109792 ft MSL
+                <[float64][destination_dir][158]>
+                <[float64][distance][19646.373815227053]> // 20 km
+                <[float64][duration][293.76535028583396]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.746994123882864 12.220266957958467]>
-                    <[float64][direction][212.32502227466273]>
+                    <[vector2_float64][lon_lat][-61.652549635217675 11.980026079873747]>
+                    <[float64][direction][278.6516027505387]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][1]>
+                        <[int32][time_day][3]>
                         <[float64][time_hours][21.25]> // 21:15:00 UTC
                     >
-                    <[float64][wind_direction][80]>
-                    <[float64][wind_speed][17]> // kts
+                    <[float64][wind_direction][120]>
+                    <[float64][wind_speed][14]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.7744]> // 29 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][609.5999804928007]> // 2000.0000000000002 ft AGL
+                    <[float64][cloud_base][579.1199814681606]> // 1900 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
                         <[string8u][name][GND]>
-                        <[vector2_float64][lon_lat][-61.792551257778214 12.149907559898178]>
-                        <[float64][altitude][4053.839870277124]> // 13300 ft
+                        <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
+                        <[float64][altitude][3108.959900513283]> // 10200 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -815,40 +869,46 @@ Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 358°, betwe
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.75099953137708 12.15132296798666]>
-                        <[float64][altitude][4053.839870277124]> // 13300 ft
-                        <[float64][direction][87.9999999999975]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.78246264824181 11.988630346698711]>
+                        <[float64][altitude][3108.959900513283]> // 10200 ft
+                        <[float64][direction][157.99999999996703]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.748243823482454 12.074155522937792]>
-                        <[float64][altitude][4053.839870277124]> // 13300 ft
-                        <[float64][direction][178.0000000000016]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.8059125571738 11.979361322571293]>
+                        <[float64][altitude][3108.959900513283]> // 10200 ft
+                        <[float64][direction][247.99999999999892]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND-INBND]>
-                        <[vector2_float64][lon_lat][-61.78978332073005 12.0727339346055]>
-                        <[float64][altitude][4053.839870277124]> // 13300 ft
-                        <[float64][direction][267.9999999999952]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.83027458284067 12.038332349914297]>
+                        <[float64][altitude][3108.959900513283]> // 10200 ft
+                        <[float64][direction][338.00000000001273]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.8068187299301 12.04759941964917]>
+                        <[float64][altitude][3108.959900513283]> // 10200 ft
+                        <[float64][direction][68]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
                         <[string8u][name][GND]>
-                        <[vector2_float64][lon_lat][-61.792551257778214 12.149907559898178]>
-                        <[float64][altitude][4053.839870277124]> // 13300 ft
-                        <[float64][direction][357.9918625821673]>
+                        <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
+                        <[float64][altitude][3108.959900513283]> // 10200 ft
+                        <[float64][direction][158.000752724555]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz
@@ -859,49 +919,49 @@ Hold south of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 358°, betwe
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #10: Maurice Bishop VOR/DME]>
-                <[string8][description][Your C172 is cruising on this late afternoon with wind from 120° at 14 kts and moderate thermal activity.
-Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 220°, make right-hand turns, maintain 5,600'.]>
+                <[string8][description][Your C172 is cruising on this late afternoon with wind from 090° at 12 kts and moderate thermal activity.
+Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 240°, make right-hand turns, maintain 12,900'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][TGPY]>
-                <[tmvector2d][origin_lon_lat][-61.86693282119185 12.029310271890258]>
-                <[float64][origin_alt][4822178.632]> // 15820797 ft MSL
-                <[float64][origin_dir][110.54207879197929]>
+                <[tmvector2d][origin_lon_lat][-61.744620862308004 11.873536164753864]>
+                <[float64][origin_alt][4538714.056]> // 14890795 ft MSL
+                <[float64][origin_dir][341.7766600419327]>
                 <[stringt8c][destination_icao][TGPY]>
                 <[tmvector2d][destination_lon_lat][-61.78719999999999 12.0001]>
-                <[float64][destination_alt][18372.704]> // 60278 ft MSL
-                <[float64][destination_dir][220]>
-                <[float64][distance][23237.98530470746]> // 23 km
-                <[float64][duration][347.4694596151639]> // 6 min
+                <[float64][destination_alt][42322.836]> // 138855 ft MSL
+                <[float64][destination_dir][240]>
+                <[float64][distance][19647.288382061797]> // 20 km
+                <[float64][duration][293.77902548356235]> // 5 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-61.86692345704446 12.029306762938344]>
-                    <[float64][direction][110.54207879197929]>
+                    <[vector2_float64][lon_lat][-61.74462398952673 11.873545663201266]>
+                    <[float64][direction][341.7766600419327]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
-                        <[int32][time_month][5]>
-                        <[int32][time_day][31]>
+                        <[int32][time_month][6]>
+                        <[int32][time_day][2]>
                         <[float64][time_hours][22.75]> // 22:45:00 UTC
                     >
-                    <[float64][wind_direction][120]>
-                    <[float64][wind_speed][14]> // kts
+                    <[float64][wind_direction][90]>
+                    <[float64][wind_speed][12]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.7744]> // 29 °C
-                    <[float64][visibility][8996.23296]> // 5.59 SM
-                    <[float64][cloud_cover][0.25]> // FEW
-                    <[float64][cloud_base][548.6399824435206]> // 1800 ft AGL
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0.125]> // FEW
+                    <[float64][cloud_base][609.5999804928007]> // 2000.0000000000002 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -910,40 +970,46 @@ Hold north-east of Maurice Bishop VOR/DME (GND, 117.1 MHz) on the radial 220°, 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-61.8190349796182 12.026224638954677]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][309.9999999999938]>
+                        <[string8u][name][GND-TURN]>
+                        <[vector2_float64][lon_lat][-61.79815214934597 11.99391459883916]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][240.00000000000603]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-61.777067094589256 12.075130252922486]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][39.99999999999886]>
+                        <[string8u][name][GND-ABEAM]>
+                        <[vector2_float64][lon_lat][-61.810799607476014 12.015340435774158]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][329.99999999999295]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00-INBND]>
-                        <[vector2_float64][lon_lat][-61.74522941612395 12.04900200581316]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][130.0000000000054]>
+                        <[string8u][name][GND-OUTBND]>
+                        <[vector2_float64][lon_lat][-61.754476980244846 12.047136513717055]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][60.00000000000222]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][GND+00]>
+                        <[string8u][name][GND-INBND]>
+                        <[vector2_float64][lon_lat][-61.741829034706484 12.025710108083516]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][150.0000000000001]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][GND]>
                         <[vector2_float64][lon_lat][-61.78719999999999 12.0001]>
-                        <[float64][altitude][1706.8799453798417]> // 5600 ft
-                        <[float64][direction][220.015392250424]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][240.01555145823204]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][117100000]> // 117.1 MHz

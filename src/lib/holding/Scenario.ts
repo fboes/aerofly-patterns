@@ -1,15 +1,6 @@
-import {
-  AeroflyMission,
-  AeroflyMissionCheckpoint,
-  AeroflyMissionConditions,
-  AeroflyMissionConditionsCloud,
-} from "@fboes/aerofly-custom-missions";
+import { AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
 import { AeroflyAircraft } from "../../data/AeroflyAircraft.js";
-import {
-  AviationWeatherApi,
-  AviationWeatherApiMetar,
-  AviationWeatherNormalizedMetar,
-} from "../general/AviationWeatherApi.js";
+import { AviationWeatherNormalizedMetar } from "../general/AviationWeatherApi.js";
 import { Configuration } from "./Configuration.js";
 import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission.js";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
@@ -20,6 +11,7 @@ import { HoldingPattern } from "./HoldingPattern.js";
 import { Rand } from "../general/Rand.js";
 import { Formatter } from "../general/Formatter.js";
 import { HoldingPatternFix } from "./HoldingPatternFix.js";
+import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js";
 
 /**
  * Represents a scenario for a holding pattern mission in Aerofly.
@@ -38,24 +30,15 @@ export class Scenario {
     aircraft: AeroflyAircraft,
     date: Date,
     index: number = 0,
-  ) {
-    const getWeather = async () => {
-      let weatherAttempt = 0;
-      let weathers: AviationWeatherApiMetar[] = [];
-      while (weatherAttempt <= 5 && !weathers.length) {
-        weathers = await AviationWeatherApi.fetchMetarByPosition(holdingNavAid.position, weatherAttempt * 10000, date);
-        weatherAttempt++;
-      }
-      if (!weathers.length) {
-        throw new Error("No METAR information near " + holdingNavAid.name + " found");
-      }
-      const weather = new AviationWeatherNormalizedMetar(weathers[0]);
-      return weather;
-    };
-
-    const weather = await getWeather();
-    const self = new Scenario(configuration, aircraft, date, weather, holdingNavAid, index);
-    return self;
+  ): Promise<Scenario> {
+    return new Scenario(
+      configuration,
+      aircraft,
+      date,
+      await AviationWeatherApiHelper.getWeather(configuration.airportCode, date, holdingNavAid.position),
+      holdingNavAid,
+      index,
+    );
   }
 
   constructor(
@@ -71,7 +54,7 @@ export class Scenario {
     // Building the actual mission
     const title = this.#getTitle(index);
     const description = this.#getDescription(this.pattern);
-    const conditions = this.#makeConditions(this.date, this.weather);
+    const conditions = AviationWeatherApiHelper.makeConditions(this.date, this.weather);
     const origin = this.#makeOriginPosition(this.pattern);
     const destination = this.#makeDestinationPosition(this.pattern);
     const checkpoints = this.#getCheckpoints(this.pattern);
@@ -139,22 +122,6 @@ maintain ${altitude}'.`;
     return `between ${pattern.dmeDistanceNm} NM and ${pattern.dmeDistanceOutboundNm} NM DME, `;
   }
 
-  #makeConditions(time: Date, weather: AviationWeatherNormalizedMetar) {
-    return new AeroflyMissionConditions({
-      time,
-      wind: {
-        direction: weather.wdir ?? 0,
-        speed: weather.wspd,
-        gusts: weather.wgst ?? 0,
-      },
-      temperature: weather.temp,
-      visibility_sm: Math.min(15, weather.visib),
-      clouds: weather.clouds.map((c) => {
-        return AeroflyMissionConditionsCloud.createInFeet(c.coverOctas / 8, c.base ?? 0);
-      }),
-    });
-  }
-
   #makeOriginPosition(pattern: HoldingPattern): AeroflyMissionPosition {
     const bearing = Math.random() * 360;
     const origin = pattern.holdingFix.getPointBy(
@@ -186,11 +153,14 @@ maintain ${altitude}'.`;
   #getCheckpoints(pattern: HoldingPattern): AeroflyMissionCheckpoint[] {
     const turnMultiplier = pattern.isLeftTurn ? -1 : 1;
 
-    const pointAbeam = pattern.holdingFix.getPointBy(
+    const pointAfterFix = pattern.holdingFix.getPointBy(
+      new Vector(pattern.turnRadiusMeters, Degree(pattern.holdingAreaDirectionTrue + 180)),
+    );
+    const pointAbeam = pointAfterFix.getPointBy(
       new Vector(2 * pattern.turnRadiusMeters, Degree(pattern.holdingAreaDirectionTrue - turnMultiplier * 90)),
     );
     const pointOutbound = pointAbeam.getPointBy(
-      new Vector(pattern.legDistanceMeters, Degree(pattern.holdingAreaDirectionTrue)),
+      new Vector(pattern.legDistanceMeters + 2 * pattern.turnRadiusMeters, Degree(pattern.holdingAreaDirectionTrue)),
     );
     const pointInbound = pointOutbound.getPointBy(
       new Vector(2 * pattern.turnRadiusMeters, Degree(pattern.holdingAreaDirectionTrue + turnMultiplier * 90)),
@@ -199,14 +169,21 @@ maintain ${altitude}'.`;
     const moreCheckpointProperties = {
       altitude: pattern.patternAltitudeFt / Units.feetPerMeter,
       altitudeConstraint: true,
-      flyOver: true,
     };
 
     return [
       new AeroflyMissionCheckpoint(pattern.id, "waypoint", pattern.holdingFix.longitude, pattern.holdingFix.latitude, {
         ...moreCheckpointProperties,
         frequency: this.holdingNavAid.frequency,
+        flyOver: true,
       }),
+      new AeroflyMissionCheckpoint(
+        pattern.id + "-TURN",
+        "waypoint",
+        pointAfterFix.longitude,
+        pointAfterFix.latitude,
+        moreCheckpointProperties,
+      ),
       new AeroflyMissionCheckpoint(
         pattern.id + "-ABEAM",
         "waypoint",
@@ -231,6 +208,7 @@ maintain ${altitude}'.`;
       new AeroflyMissionCheckpoint(pattern.id, "waypoint", pattern.holdingFix.longitude, pattern.holdingFix.latitude, {
         ...moreCheckpointProperties,
         frequency: this.holdingNavAid.frequency,
+        flyOver: true,
       }),
     ];
   }

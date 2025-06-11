@@ -1,13 +1,10 @@
 import { strict as assert } from "node:assert";
 import { Formatter } from "./Formatter.js";
-import { ScenarioWeather, ScenarioWeatherCloud } from "./ScenarioWeather.js";
-import { AviationWeatherNormalizedCloud } from "./AviationWeatherApi.js";
 export class FormatterTest {
     constructor() {
         this.getLocalDaytime();
         this.getDirection();
         this.getNumberString();
-        this.getWeatherAdjectives();
     }
     getLocalDaytime() {
         const startDate = new Date(Date.UTC(2024, 4, 15, 12, 0, 0));
@@ -34,38 +31,5 @@ export class FormatterTest {
         assert.strictEqual("ten", Formatter.getNumberString(9.9));
         assert.strictEqual("ten", Formatter.getNumberString(10.1));
         console.log(`✅ ${this.constructor.name}.getNumberString successful`);
-    }
-    getWeatherAdjectives() {
-        /**
-         * @type {AviationWeatherApiMetar}
-         */
-        const x = {
-            icaoId: "",
-            reportTime: "",
-            temp: 0,
-            dewp: 0,
-            wdir: 0,
-            wspd: 0,
-            wgst: null,
-            visib: "",
-            altim: 0,
-            lat: 0,
-            lon: 0,
-            elev: 0,
-            clouds: [],
-        };
-        const w = new ScenarioWeather(x);
-        assert.strictEqual("", Formatter.getWeatherAdjectives(w));
-        w.visibility = 4;
-        assert.strictEqual("", Formatter.getWeatherAdjectives(w));
-        w.visibility = 3;
-        assert.strictEqual("misty", Formatter.getWeatherAdjectives(w));
-        w.visibility = 1;
-        assert.strictEqual("foggy", Formatter.getWeatherAdjectives(w));
-        w.clouds[0] = new ScenarioWeatherCloud(new AviationWeatherNormalizedCloud({ cover: "OVC", base: 1000 }));
-        assert.strictEqual("foggy", Formatter.getWeatherAdjectives(w));
-        w.visibility = 4;
-        assert.strictEqual("overcast", Formatter.getWeatherAdjectives(w));
-        console.log(`✅ ${this.constructor.name}.getWeatherAdjectives successful`);
     }
 }

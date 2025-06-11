@@ -3,7 +3,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _HoldingPattern_instances, _HoldingPattern_getHoldingFix, _HoldingPattern_getPatternSpeedKts, _HoldingPattern_getTurnRadius, _HoldingPattern_getLegDistance, _HoldingPattern_getLegTimeMin;
+var _HoldingPattern_instances, _HoldingPattern_getHoldingFix, _HoldingPattern_getMaxPatternSpeedKts, _HoldingPattern_getTurnRadius, _HoldingPattern_getLegDistance, _HoldingPattern_getLegTimeMin;
 import { Vector } from "@fboes/geojson";
 import { Rand } from "../general/Rand.js";
 import { Units } from "../../data/Units.js";
@@ -35,22 +35,25 @@ export class HoldingPattern {
                 : 0;
         this.patternAltitudeFt =
             Math.round(Rand.getRandomInt(configuration.minimumSafeAltitude, configuration.maximumAltitude) / 100) * 100;
-        this.patternSpeedKts = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getPatternSpeedKts).call(this, aircraft, this.patternAltitudeFt);
+        this.patternSpeedKts = Math.min(aircraft.cruiseSpeedKts + 10, __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getMaxPatternSpeedKts).call(this, aircraft, this.patternAltitudeFt));
         this.legTimeMin = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getLegTimeMin).call(this, this.patternAltitudeFt);
         this.id =
-            this.dmeDistanceNm > 0 ? holdingNavAid.id : `${holdingNavAid.id}+${String(this.dmeDistanceNm).padStart(2, "0")}`;
+            this.dmeDistanceNm <= 0 ? holdingNavAid.id : `${holdingNavAid.id}+${String(this.dmeDistanceNm).padStart(2, "0")}`;
         this.holdingFix = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getHoldingFix).call(this, holdingNavAid);
         this.turnRadiusMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getTurnRadius).call(this, this.patternSpeedKts);
         this.legDistanceMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getLegDistance).call(this, this.patternSpeedKts, this.legTimeMin);
         this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingTowardNavaid ? 0 : 180));
         this.holdingAreaDirectionTrue = Degree(this.holdingAreaDirection + holdingNavAid.mag_dec);
+        //console.log(this);
     }
 }
 _HoldingPattern_instances = new WeakSet(), _HoldingPattern_getHoldingFix = function _HoldingPattern_getHoldingFix(holdingNavAid) {
     return holdingNavAid.position.getPointBy(new Vector(this.dmeDistanceNm * Units.metersPerNauticalMile, Degree(this.inboundHeadingTrue)));
-}, _HoldingPattern_getPatternSpeedKts = function _HoldingPattern_getPatternSpeedKts(aircraft, patternAltitudeFt) {
+}, _HoldingPattern_getMaxPatternSpeedKts = function _HoldingPattern_getMaxPatternSpeedKts(aircraft, patternAltitudeFt) {
     // TODO: Turbulence: 280
-    // TODO: helicopter: 1000 @ 6000ft, 170
+    if (aircraft.tags.includes("helicopter")) {
+        return patternAltitudeFt <= 6000 ? 100 : 170;
+    }
     if (patternAltitudeFt <= 14000) {
         return 230;
     }

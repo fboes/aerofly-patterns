@@ -1,6 +1,6 @@
 import { Vector } from "@fboes/geojson";
 import { Units } from "../../data/Units.js";
-import { ScenarioWeather } from "./ScenarioWeather.js";
+import { AviationWeatherNormalizedMetar } from "./AviationWeatherApi.js";
 
 export class Formatter {
   static getLocalDaytime(date: Date, offset: number): string {
@@ -100,32 +100,32 @@ export class Formatter {
   }
 
   /**
-   * @param  {ScenarioWeather} weather
+   * @param  {AviationWeatherNormalizedMetar} weather
    * @returns {string}
    */
-  static getWeatherAdjectives(weather: ScenarioWeather): string {
+  static getWeatherAdjectives(weather: AviationWeatherNormalizedMetar): string {
     /**
      * @type {string[]}
      */
     const adjectives: string[] = [];
 
-    if (weather.windSpeed >= 48) {
+    if (weather.wspd >= 48) {
       adjectives.push("stormy");
-    } else if (weather.windSpeed >= 34) {
+    } else if (weather.wspd >= 34) {
       adjectives.push("very windy");
-    } else if (weather.windGusts >= 10) {
+    } else if (weather.wgst && weather.wgst >= 10) {
       // Gusty being more interesting as windy
       adjectives.push("gusty");
-    } else if (weather.windSpeed >= 22) {
+    } else if (weather.wspd >= 22) {
       adjectives.push("windy");
     }
 
-    if (weather.visibility <= 1) {
+    if (weather.visib <= 1) {
       adjectives.push("foggy");
-    } else if (weather.visibility <= 3) {
+    } else if (weather.visib <= 3) {
       adjectives.push("misty");
     } else {
-      switch (weather.clouds[0]?.cloudCoverCode) {
+      switch (weather.clouds[0]?.cover) {
         case "OVC":
           adjectives.push("overcast");
           break;

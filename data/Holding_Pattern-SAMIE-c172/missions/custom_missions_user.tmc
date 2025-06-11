@@ -4,39 +4,39 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #1: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this clear early morning with no wind and moderate thermal activity.
-Hold west of SAMIE FIX on the inbound course 292°, outbound leg 4 NM DME, make right-hand turns, maintain 11,400'.]>
+                <[string8][description][Your C172 is cruising on this clear early morning with no wind.
+Hold south-west of SAMIE FIX on the inbound course 229°, outbound leg 4 NM DME, make right-hand turns, maintain 15,000'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-122.90290086399486 42.647753031311574]>
-                <[float64][origin_alt][4782808.552]> // 15691630 ft MSL
-                <[float64][origin_dir][268.8930877745381]>
+                <[tmvector2d][origin_lon_lat][-123.18704350065299 42.60223750742866]>
+                <[float64][origin_alt][4490813.792]> // 14733642 ft MSL
+                <[float64][origin_dir][70.79270302974442]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][37401.576]> // 122709 ft MSL
-                <[float64][destination_dir][292]>
-                <[float64][distance][20773.640071893322]> // 21 km
-                <[float64][duration][310.6209680130252]> // 5 min
+                <[float64][destination_alt][49212.6]> // 161459 ft MSL
+                <[float64][destination_dir][229]>
+                <[float64][distance][24758.500204622796]> // 25 km
+                <[float64][duration][370.2051866449662]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.90291086212875 42.64775283813096]>
-                    <[float64][direction][268.8930877745381]>
+                    <[vector2_float64][lon_lat][-123.1870340573082 42.602240797297824]>
+                    <[float64][direction][70.79270302974442]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][9]>
+                        <[int32][time_day][11]>
                         <[float64][time_hours][13.25]> // 13:15:00 UTC
                     >
                     <[float64][wind_direction][0]>
                     <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.4096]> // 17 °C
+                    <[float64][thermal_strength][0.27040000000000003]> // 11 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -44,9 +44,9 @@ Hold west of SAMIE FIX on the inbound course 292°, outbound leg 4 NM DME, make 
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3474.719888808964]> // 11400 ft
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -54,40 +54,46 @@ Hold west of SAMIE FIX on the inbound course 292°, outbound leg 4 NM DME, make 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-123.03678770663262 42.608512265324244]>
-                        <[float64][altitude][3474.719888808964]> // 11400 ft
-                        <[float64][direction][201.9999999999716]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.00340576234655 42.65431499658309]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][48.99999999997249]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-123.10330728932236 42.628267142328625]>
-                        <[float64][altitude][3474.719888808964]> // 11400 ft
-                        <[float64][direction][291.99999999999295]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.9813425214929 42.63564079580478]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][139.0000000000208]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-123.0826004781473 42.665951151422]>
-                        <[float64][altitude][3474.719888808964]> // 11400 ft
-                        <[float64][direction][21.999999999973568]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.070100256842 42.578792945058545]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][229.00000000000034]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-123.09214997537545 42.59746291511057]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][319.0000000000006]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3474.719888808964]> // 11400 ft
-                        <[float64][direction][111.96895620482974]>
+                        <[float64][altitude][4571.999853696005]> // 15000 ft
+                        <[float64][direction][48.92104147328007]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -98,125 +104,32 @@ Hold west of SAMIE FIX on the inbound course 292°, outbound leg 4 NM DME, make 
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #2: SAMIE FIX]>
                 <[string8][description][Your C172 is cruising on this clear early morning with no wind and moderate thermal activity.
-Hold north-west of SAMIE FIX on the inbound course 303°, outbound leg 4 NM DME, make right-hand turns, maintain 12,900'.]>
+Hold south-west of SAMIE FIX on the inbound course 219°, outbound leg 4 NM DME, make right-hand turns, maintain 12,900'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.12621720907138 42.66560748268817]>
-                <[float64][origin_alt][4797572.332]> // 15740068 ft MSL
-                <[float64][origin_dir][103.51381998462625]>
+                <[tmvector2d][origin_lon_lat][-122.88541308833048 42.738542697435705]>
+                <[float64][origin_alt][3473425.308]> // 11395753 ft MSL
+                <[float64][origin_dir][226.08470771600525]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
                 <[float64][destination_alt][42322.836]> // 138855 ft MSL
-                <[float64][destination_dir][303]>
-                <[float64][distance][20773.476336195214]> // 21 km
-                <[float64][duration][310.61851973044844]> // 5 min
+                <[float64][destination_dir][219]>
+                <[float64][distance][24759.11237154193]> // 25 km
+                <[float64][duration][370.214340162614]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.12620748593554 42.6656051458892]>
-                    <[float64][direction][103.51381998462625]>
+                    <[vector2_float64][lon_lat][-122.88542029199064 42.73853576149451]>
+                    <[float64][direction][226.08470771600525]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][8]>
+                        <[int32][time_day][10]>
                         <[float64][time_hours][14.75]> // 14:45:00 UTC
-                    >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][0]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.4624000000000001]> // 19 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
-                        <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][-1]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-123.04617951140187 42.612107860149095]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][212.9999999999785]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-123.1063609813045 42.64084162068405]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][303.00000000001006]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-123.07625108290519 42.67492588361294]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][33.000000000015746]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
-                        <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3931.919874178564]> // 12900 ft
-                        <[float64][direction][122.97962009158772]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HOLD #3: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this clear morning with no wind and moderate thermal activity.
-Hold south of SAMIE FIX on the inbound course 196°, outbound leg 4 NM DME, make right-hand turns, maintain 10,700'.]>
-                <[string8u][tags][holding]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
-                <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.07083738712572 42.719110558549794]>
-                <[float64][origin_alt][3837926.6319999998]> // 12591624 ft MSL
-                <[float64][origin_dir][151.12472501125944]>
-                <[stringt8c][destination_icao][K3S8]>
-                <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][35104.988]> // 115174 ft MSL
-                <[float64][destination_dir][196]>
-                <[float64][distance][20780.080635879534]> // 21 km
-                <[float64][duration][310.71727151173917]> // 5 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.07083255808026 42.71910180181982]>
-                    <[float64][direction][151.12472501125944]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][6]>
-                        <[int32][time_day][7]>
-                        <[float64][time_hours][16.25]> // 16:15:00 UTC
                     >
                     <[float64][wind_direction][0]>
                     <[float64][wind_speed][0]> // kts
@@ -230,9 +143,9 @@ Hold south of SAMIE FIX on the inbound course 196°, outbound leg 4 NM DME, make
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -240,40 +153,145 @@ Hold south of SAMIE FIX on the inbound course 196°, outbound leg 4 NM DME, make
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.96299159314653 42.634984308868546]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][106.00000000000375]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.00551455727847 42.65581310101436]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][38.999999999977774]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.98275285672912 42.58424111772689]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][196.00000000000207]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.979377235222 42.64024026917907]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][129.00000000000023]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-123.03582754441557 42.59543229613001]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][286.00000000000597]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.05338157343921 42.57291694494258]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][218.99999999999696]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-123.07949718274358 42.588483840679906]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][309.00000000001376]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
+                        <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
+                        <[float64][altitude][3931.919874178564]> // 12900 ft
+                        <[float64][direction][38.92806234693279]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
                     >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HOLD #3: SAMIE FIX]>
+                <[string8][description][Your C172 is cruising on this clear morning with no wind and moderate thermal activity.
+Hold east of SAMIE FIX on the inbound course 106°, outbound leg 4 NM DME, make right-hand turns, maintain 12,300'.]>
+                <[string8u][tags][holding]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][c172]>
+                <[stringt8c][aircraft_icao][C172]>
+                <[stringt8c][callsign][N5PYD]>
+                <[stringt8c][origin_icao][K3S8]>
+                <[tmvector2d][origin_lon_lat][-123.0838420750585 42.76979595108467]>
+                <[float64][origin_alt][4912729.816]> // 16117881 ft MSL
+                <[float64][origin_dir][158.08587335675475]>
+                <[stringt8c][destination_icao][K3S8]>
+                <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
+                <[float64][destination_alt][40354.332]> // 132397 ft MSL
+                <[float64][destination_dir][106]>
+                <[float64][distance][24764.651803715984]> // 25 km
+                <[float64][duration][370.29716935278924]> // 6 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-123.08383834289315 42.76978667364204]>
+                    <[float64][direction][158.08587335675475]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][6]>
+                        <[int32][time_day][9]>
+                        <[float64][time_hours][16.25]> // 16:15:00 UTC
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.6084]> // 24 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
+                        <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][-1]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.03226722704521 42.649608601306824]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][285.9999999999799]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-123.02299192468173 42.673390565704175]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][15.999999999953275]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-122.9098142080166 42.64946512896482]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][105.99999999999994]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-122.91908239891532 42.62568241690254]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][196.0000000000227]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3261.3598956364835]> // 10700 ft
-                        <[float64][direction][15.950692341626223]>
+                        <[float64][altitude][3749.039880030724]> // 12300 ft
+                        <[float64][direction][286.0711636079503]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -284,38 +302,38 @@ Hold south of SAMIE FIX on the inbound course 196°, outbound leg 4 NM DME, make
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #4: SAMIE FIX]>
                 <[string8][description][Your C172 is cruising on this clear morning with no wind and moderate thermal activity.
-Hold south of SAMIE FIX on the inbound course 180°, outbound leg 4 NM DME, make right-hand turns, maintain 13,000'.]>
+Hold north-east of SAMIE FIX on the inbound course 023°, outbound leg 4 NM DME, make right-hand turns, maintain 12,400'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.1039097116091 42.593665347614696]>
-                <[float64][origin_alt][4901246.876]> // 16080207 ft MSL
-                <[float64][origin_dir][50.91755002909872]>
+                <[tmvector2d][origin_lon_lat][-123.18613383567131 42.60037242954951]>
+                <[float64][origin_alt][3812336.08]> // 12507665 ft MSL
+                <[float64][origin_dir][69.94057683438632]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][42650.92]> // 139931 ft MSL
-                <[float64][destination_dir][180]>
-                <[float64][distance][20781.251147880183]> // 21 km
-                <[float64][duration][310.7347737679376]> // 5 min
+                <[float64][destination_alt][40682.416]> // 133473 ft MSL
+                <[float64][destination_dir][23]>
+                <[float64][distance][24761.159929423324]> // 25 km
+                <[float64][duration][370.2449565788502]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.10390194921361 42.5936716519954]>
-                    <[float64][direction][50.91755002909872]>
+                    <[vector2_float64][lon_lat][-123.18612444229736 42.60037585949493]>
+                    <[float64][direction][69.94057683438632]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][6]>
+                        <[int32][time_day][8]>
                         <[float64][time_hours][17.75]> // 17:45:00 UTC
                     >
                     <[float64][wind_direction][0]>
                     <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.5476]> // 22 °C
+                    <[float64][thermal_strength][0.7055999999999999]> // 27 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -323,9 +341,9 @@ Hold south of SAMIE FIX on the inbound course 180°, outbound leg 4 NM DME, make
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -333,40 +351,46 @@ Hold south of SAMIE FIX on the inbound course 180°, outbound leg 4 NM DME, make
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.96084140553609 42.64618672148408]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][90.00000000001347]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.02267004928406 42.634812820546]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][203.00000000008905]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.96084140553609 42.59340037577899]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][180]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-123.05363099001286 42.644475635029686]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][292.99999999999386]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-123.01605316193886 42.59338712179812]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][269.999999999991]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.00757146839643 42.724180541643314]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][22.999999999997442]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-122.9765756114682 42.714509379996656]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][113.00000000000011]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3962.399873203204]> // 13000 ft
-                        <[float64][direction][359.96262385317084]>
+                        <[float64][altitude][3779.519879055364]> // 12400 ft
+                        <[float64][direction][203.05647374847248]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -376,39 +400,39 @@ Hold south of SAMIE FIX on the inbound course 180°, outbound leg 4 NM DME, make
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #5: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this gusty, clear noon with wind from 340° at 8 kts and moderate thermal activity.
-Hold north-east of SAMIE FIX on the inbound course 063°, outbound leg 4 NM DME, make right-hand turns, maintain 14,700'.]>
+                <[string8][description][Your C172 is cruising on this clear noon with almost no wind and moderate thermal activity.
+Hold west of SAMIE FIX on the inbound course 253°, outbound leg 4 NM DME, make right-hand turns, maintain 11,700'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.11992599190218 42.679455606654486]>
-                <[float64][origin_alt][4730971.28]> // 15521560 ft MSL
-                <[float64][origin_dir][113.57187017233059]>
+                <[tmvector2d][origin_lon_lat][-122.87396482083284 42.728893104510526]>
+                <[float64][origin_alt][4725721.936]> // 15504338 ft MSL
+                <[float64][origin_dir][231.59067804151528]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][48228.348]> // 158230 ft MSL
-                <[float64][destination_dir][63]>
-                <[float64][distance][20859.943867959264]> // 21 km
-                <[float64][duration][311.91143846425217]> // 5 min
+                <[float64][destination_alt][38385.828]> // 125938 ft MSL
+                <[float64][destination_dir][253]>
+                <[float64][distance][24757.32985072022]> // 25 km
+                <[float64][duration][370.1876867527529]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.11991682631044 42.6794516076636]>
-                    <[float64][direction][113.57187017233059]>
+                    <[vector2_float64][lon_lat][-122.8739726567567 42.728886891757746]>
+                    <[float64][direction][231.59067804151528]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][5]>
+                        <[int32][time_day][7]>
                         <[float64][time_hours][19.25]> // 19:15:00 UTC
                     >
-                    <[float64][wind_direction][340]>
-                    <[float64][wind_speed][8]> // kts
-                    <[float64][wind_gusts][13]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][3]> // kts
+                    <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.5776]> // 23 °C
+                    <[float64][thermal_strength][0.7744]> // 29 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -416,9 +440,9 @@ Hold north-east of SAMIE FIX on the inbound course 063°, outbound leg 4 NM DME,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
+                        <[float64][altitude][3566.159885882884]> // 11700 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -426,40 +450,46 @@ Hold north-east of SAMIE FIX on the inbound course 063°, outbound leg 4 NM DME,
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-123.04229352939566 42.683987027624305]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][332.99999999999295]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.00001608899456 42.64981562319213]>
+                        <[float64][altitude][3566.159885882884]> // 11700 ft
+                        <[float64][direction][72.9999999999689]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.9799967472954 42.707294919936906]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][62.99999999999761]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.99018513789177 42.62615550280763]>
+                        <[float64][altitude][3566.159885882884]> // 11700 ft
+                        <[float64][direction][163.0000000000109]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-122.95380932287263 42.66950192602047]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][153.0000000000009]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.10269121392278 42.600781566554275]>
+                        <[float64][altitude][3566.159885882884]> // 11700 ft
+                        <[float64][direction][252.99999999999912]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-123.11252189425414 42.62444084644848]>
+                        <[float64][altitude][3566.159885882884]> // 11700 ft
+                        <[float64][direction][342.999999999992]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][4480.559856622084]> // 14700 ft
-                        <[float64][direction][243.0599694512125]>
+                        <[float64][altitude][3566.159885882884]> // 11700 ft
+                        <[float64][direction][72.91421284089995]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -469,39 +499,39 @@ Hold north-east of SAMIE FIX on the inbound course 063°, outbound leg 4 NM DME,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #6: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this clear noon with wind from 320° at 9 kts and moderate thermal activity.
-Hold south-west of SAMIE FIX on the inbound course 217°, outbound leg 4 NM DME, make right-hand turns, maintain 12,700'.]>
+                <[string8][description][Your C172 is cruising on this clear noon with no wind and lots of thermal activity.
+Hold north-east of SAMIE FIX on the inbound course 050°, outbound leg 4 NM DME, make right-hand turns, maintain 11,800'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.04977068777958 42.56669575299497]>
-                <[float64][origin_alt][4895341.364]> // 16060832 ft MSL
-                <[float64][origin_dir][17.324217656007136]>
+                <[tmvector2d][origin_lon_lat][-122.99513044315084 42.77854964546615]>
+                <[float64][origin_alt][3832021.12]> // 12572249 ft MSL
+                <[float64][origin_dir][186.63320692481796]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][41666.668]> // 136702 ft MSL
-                <[float64][destination_dir][217]>
-                <[float64][distance][20778.351499778775]> // 21 km
-                <[float64][duration][310.6914163449227]> // 5 min
+                <[float64][destination_alt][38713.912]> // 127015 ft MSL
+                <[float64][destination_dir][50]>
+                <[float64][distance][24762.903134361994]> // 25 km
+                <[float64][duration][370.271022112075]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.04976770999555 42.56670529934517]>
-                    <[float64][direction][17.324217656007136]>
+                    <[vector2_float64][lon_lat][-122.99513159827944 42.77853971240631]>
+                    <[float64][direction][186.63320692481796]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][4]>
+                        <[int32][time_day][6]>
                         <[float64][time_hours][20.75]> // 20:45:00 UTC
                     >
-                    <[float64][wind_direction][320]>
-                    <[float64][wind_speed][9]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.6400000000000001]> // 25 °C
+                    <[float64][thermal_strength][0.81]> // 30 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -509,9 +539,9 @@ Hold south-west of SAMIE FIX on the inbound course 217°, outbound leg 4 NM DME,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3870.959876129284]> // 12700 ft
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -519,40 +549,46 @@ Hold south-west of SAMIE FIX on the inbound course 217°, outbound leg 4 NM DME,
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.97198586559865 42.62173044886507]>
-                        <[float64][altitude][3870.959876129284]> // 12700 ft
-                        <[float64][direction][126.99999999998761]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.02898156286294 42.63824775353759]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][229.99999999994805]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-123.01512854593987 42.57956530197487]>
-                        <[float64][altitude][3870.959876129284]> // 12700 ft
-                        <[float64][direction][216.99999999998818]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-123.05060597880586 42.65719823703359]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][319.99999999999295]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-123.0592301361248 42.60401793429379]>
-                        <[float64][altitude][3870.959876129284]> // 12700 ft
-                        <[float64][direction][307.00000000001654]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-122.96032088623109 42.71282710089483]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][49.99999999999926]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-122.93868370487384 42.69387254770927]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][139.99999999998056]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3870.959876129284]> // 12700 ft
-                        <[float64][direction][36.94093227527196]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][230.0797536430499]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -562,39 +598,39 @@ Hold south-west of SAMIE FIX on the inbound course 217°, outbound leg 4 NM DME,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #7: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this clear afternoon with wind from 010° at 11 kts and moderate thermal activity.
-Hold south-east of SAMIE FIX on the inbound course 151°, outbound leg 4 NM DME, make right-hand turns, maintain 9,800'.]>
+                <[string8][description][Your C172 is cruising on this gusty, clear afternoon with wind from 320° at 9 kts and moderate thermal activity.
+Hold south-west of SAMIE FIX on the inbound course 210°, outbound leg 4 NM DME, make right-hand turns, maintain 10,000'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.08536301704538 42.58034562981338]>
-                <[float64][origin_alt][3592847.884]> // 11787560 ft MSL
-                <[float64][origin_dir][37.764498717725246]>
+                <[tmvector2d][origin_lon_lat][-123.17827979496757 42.70567247289944]>
+                <[float64][origin_alt][3458005.36]> // 11345163 ft MSL
+                <[float64][origin_dir][116.56432272751476]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][32152.232]> // 105487 ft MSL
-                <[float64][destination_dir][151]>
-                <[float64][distance][20782.740569124086]> // 21 km
-                <[float64][duration][310.7570445624136]> // 5 min
+                <[float64][destination_alt][32808.4]> // 107640 ft MSL
+                <[float64][destination_dir][210]>
+                <[float64][distance][24759.704118970763]> // 25 km
+                <[float64][duration][370.2231883547713]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.08535689287193 42.580353535159645]>
-                    <[float64][direction][37.764498717725246]>
+                    <[vector2_float64][lon_lat][-123.1782708506388 42.705668000877196]>
+                    <[float64][direction][116.56432272751476]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][3]>
+                        <[int32][time_day][5]>
                         <[float64][time_hours][22.25]> // 22:15:00 UTC
                     >
-                    <[float64][wind_direction][10]>
-                    <[float64][wind_speed][11]> // kts
-                    <[float64][wind_gusts][0]> // kts
+                    <[float64][wind_direction][320]>
+                    <[float64][wind_speed][9]> // kts
+                    <[float64][wind_gusts][15]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.6723999999999999]> // 26 °C
+                    <[float64][thermal_strength][0.7055999999999999]> // 27 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -602,9 +638,9 @@ Hold south-east of SAMIE FIX on the inbound course 151°, outbound leg 4 NM DME,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][2987.039904414723]> // 9800 ft
+                        <[float64][altitude][3047.9999024640033]> // 10000 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -612,40 +648,46 @@ Hold south-east of SAMIE FIX on the inbound course 151°, outbound leg 4 NM DME,
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.96775442655769 42.6658951786545]>
-                        <[float64][altitude][2987.039904414723]> // 9800 ft
-                        <[float64][direction][61.000000000003865]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.00768963380389 42.65691275284942]>
+                        <[float64][altitude][3047.9999024640033]> // 10000 ft
+                        <[float64][direction][29.99999999998505]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.932977179291 42.61972193831638]>
-                        <[float64][altitude][2987.039904414723]> // 9800 ft
-                        <[float64][direction][150.99999999999528]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.9785610658007 42.644538685989495]>
+                        <[float64][altitude][3047.9999024640033]> // 10000 ft
+                        <[float64][direction][119.99999999999892]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-122.98127159741819 42.60000645401022]>
-                        <[float64][altitude][2987.039904414723]> // 9800 ft
-                        <[float64][direction][240.99999999999756]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.03735489323843 42.56952734425792]>
+                        <[float64][altitude][3047.9999024640033]> // 10000 ft
+                        <[float64][direction][209.99999999999991]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-123.06645417678071 42.58189403989074]>
+                        <[float64][altitude][3047.9999024640033]> // 10000 ft
+                        <[float64][direction][300.0000000000075]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][2987.039904414723]> // 9800 ft
-                        <[float64][direction][330.99084830019325]>
+                        <[float64][altitude][3047.9999024640033]> // 10000 ft
+                        <[float64][direction][29.936252833962044]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -655,39 +697,39 @@ Hold south-east of SAMIE FIX on the inbound course 151°, outbound leg 4 NM DME,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #8: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this gusty, clear late afternoon with wind from 360° at 14 kts and moderate thermal activity.
-Hold south of SAMIE FIX on the inbound course 183°, outbound leg 4 NM DME, make right-hand turns, maintain 10,900'.]>
+                <[string8][description][Your C172 is cruising on this gusty, clear late afternoon with wind from 340° at 10 kts and moderate thermal activity.
+Hold south-west of SAMIE FIX on the inbound course 245°, outbound leg 4 NM DME, make right-hand turns, maintain 11,800'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-122.99468708537607 42.564427809060696]>
-                <[float64][origin_alt][4196194.36]> // 13767043 ft MSL
-                <[float64][origin_dir][349.08342949380017]>
+                <[tmvector2d][origin_lon_lat][-122.94656346665452 42.523185471838524]>
+                <[float64][origin_alt][3367454.176]> // 11048079 ft MSL
+                <[float64][origin_dir][337.3795604906784]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][35761.156]> // 117327 ft MSL
-                <[float64][destination_dir][183]>
-                <[float64][distance][20781.046513567097]> // 21 km
-                <[float64][duration][310.7317139426879]> // 5 min
+                <[float64][destination_alt][38713.912]> // 127015 ft MSL
+                <[float64][destination_dir][245]>
+                <[float64][distance][24757.66421628386]> // 25 km
+                <[float64][duration][370.19268640397866]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.99468897917035 42.56443762810053]>
-                    <[float64][direction][349.08342949380017]>
+                    <[vector2_float64][lon_lat][-122.94656731290094 42.523194702569185]>
+                    <[float64][direction][337.3795604906784]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][2]>
+                        <[int32][time_day][4]>
                         <[float64][time_hours][23.75]> // 23:45:00 UTC
                     >
-                    <[float64][wind_direction][360]>
-                    <[float64][wind_speed][14]> // kts
-                    <[float64][wind_gusts][20]> // kts
+                    <[float64][wind_direction][340]>
+                    <[float64][wind_speed][10]> // kts
+                    <[float64][wind_gusts][19]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.6723999999999999]> // 26 °C
+                    <[float64][thermal_strength][0.7055999999999999]> // 27 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -695,9 +737,9 @@ Hold south of SAMIE FIX on the inbound course 183°, outbound leg 4 NM DME, make
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3322.3198936857634]> // 10900 ft
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -705,40 +747,46 @@ Hold south of SAMIE FIX on the inbound course 183°, outbound leg 4 NM DME, make
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.96091902240441 42.6440595361617]>
-                        <[float64][altitude][3322.3198936857634]> // 10900 ft
-                        <[float64][direction][92.99999999999545]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.00085658380159 42.651426936669246]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][65.00000000000807]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.96467157067762 42.591345471042395]>
-                        <[float64][altitude][3322.3198936857634]> // 10900 ft
-                        <[float64][direction][182.99999999999687]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.9866454631575 42.62900332090807]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][155.0000000000157]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-123.01980772527425 42.5934594760109]>
-                        <[float64][altitude][3322.3198936857634]> // 10900 ft
-                        <[float64][direction][272.99999999999096]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.09325513943938 42.59235587216526]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][244.99999999999713]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-123.10746301344932 42.61477773199832]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][334.9999999999825]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][3322.3198936857634]> // 10900 ft
-                        <[float64][direction][2.960134788893072]>
+                        <[float64][altitude][3596.6398849075235]> // 11800 ft
+                        <[float64][direction][64.91484912107114]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -748,39 +796,39 @@ Hold south of SAMIE FIX on the inbound course 183°, outbound leg 4 NM DME, make
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #9: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this gusty, clear late afternoon with wind from 330° at 19 kts and moderate thermal activity.
-Hold south-east of SAMIE FIX on the inbound course 135°, outbound leg 4 NM DME, make right-hand turns, maintain 14,600'.]>
+                <[string8][description][Your C172 is cruising on this gusty, clear late afternoon with wind from 340° at 12 kts and moderate thermal activity.
+Hold south-west of SAMIE FIX on the inbound course 245°, outbound leg 4 NM DME, make right-hand turns, maintain 13,400'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.10311359227858 42.59295333044193]>
-                <[float64][origin_alt][3909448.944]> // 12826277 ft MSL
-                <[float64][origin_dir][50.283057238067045]>
+                <[tmvector2d][origin_lon_lat][-123.03041962717909 42.77902742279194]>
+                <[float64][origin_alt][3568569.668]> // 11707907 ft MSL
+                <[float64][origin_dir][175.47578238067535]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][47900.264]> // 157154 ft MSL
-                <[float64][destination_dir][135]>
-                <[float64][distance][20862.95776309193]> // 21 km
-                <[float64][duration][311.9565041831324]> // 5 min
+                <[float64][destination_alt][43963.256]> // 144237 ft MSL
+                <[float64][destination_dir][245]>
+                <[float64][distance][24757.66421628386]> // 25 km
+                <[float64][duration][370.19268640397866]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.10310590017224 42.592959720394994]>
-                    <[float64][direction][50.283057238067045]>
+                    <[vector2_float64][lon_lat][-123.03041883837446 42.77901745395112]>
+                    <[float64][direction][175.47578238067535]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][2]>
+                        <[int32][time_day][4]>
                         <[float64][time_hours][1.25]> // 01:15:00 UTC
                     >
-                    <[float64][wind_direction][330]>
-                    <[float64][wind_speed][19]> // kts
-                    <[float64][wind_gusts][25]> // kts
+                    <[float64][wind_direction][340]>
+                    <[float64][wind_speed][12]> // kts
+                    <[float64][wind_gusts][17]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.5776]> // 23 °C
+                    <[float64][thermal_strength][0.6723999999999999]> // 26 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -788,9 +836,9 @@ Hold south-east of SAMIE FIX on the inbound course 135°, outbound leg 4 NM DME,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][4450.079857597445]> // 14601 ft
+                        <[float64][altitude][4084.3198693017644]> // 13400 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -798,40 +846,46 @@ Hold south-east of SAMIE FIX on the inbound course 135°, outbound leg 4 NM DME,
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.97530774321861 42.676183087828605]>
-                        <[float64][altitude][4450.079857597445]> // 14601 ft
-                        <[float64][direction][44.99999999999784]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.00085658380159 42.651426936669246]>
+                        <[float64][altitude][4084.3198693017644]> // 13400 ft
+                        <[float64][direction][65.00000000000807]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.92592236930611 42.63984330137795]>
-                        <[float64][altitude][4450.079857597445]> // 14601 ft
-                        <[float64][direction][134.9999999999967]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.9866454631575 42.62900332090807]>
+                        <[float64][altitude][4084.3198693017644]> // 13400 ft
+                        <[float64][direction][155.0000000000157]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-122.96667115404149 42.60984575687953]>
-                        <[float64][altitude][4450.079857597445]> // 14601 ft
-                        <[float64][direction][225.0000000000071]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.09325513943938 42.59235587216526]>
+                        <[float64][altitude][4084.3198693017644]> // 13400 ft
+                        <[float64][direction][244.99999999999713]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-123.10746301344932 42.61477773199832]>
+                        <[float64][altitude][4084.3198693017644]> // 13400 ft
+                        <[float64][direction][334.9999999999825]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][4450.079857597445]> // 14601 ft
-                        <[float64][direction][315.0058481038046]>
+                        <[float64][altitude][4084.3198693017644]> // 13400 ft
+                        <[float64][direction][64.91484912107114]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -841,37 +895,37 @@ Hold south-east of SAMIE FIX on the inbound course 135°, outbound leg 4 NM DME,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #10: SAMIE FIX]>
-                <[string8][description][Your C172 is cruising on this gusty, clear late afternoon with wind from 360° at 11 kts and moderate thermal activity.
-Hold north of SAMIE FIX on the inbound course 355°, outbound leg 4 NM DME, make right-hand turns, maintain 14,200'.]>
+                <[string8][description][Your C172 is cruising on this gusty, clear late afternoon with wind from 350° at 11 kts and moderate thermal activity.
+Hold west of SAMIE FIX on the inbound course 287°, outbound leg 4 NM DME, make right-hand turns, maintain 10,700'.]>
                 <[string8u][tags][holding]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][c172]>
                 <[stringt8c][aircraft_icao][C172]>
                 <[stringt8c][callsign][N5PYD]>
                 <[stringt8c][origin_icao][K3S8]>
-                <[tmvector2d][origin_lon_lat][-123.11085028103821 42.69182285708112]>
-                <[float64][origin_alt][3388779.636]> // 11118044 ft MSL
-                <[float64][origin_dir][123.25128788090512]>
+                <[tmvector2d][origin_lon_lat][-122.95415715015007 42.52100517011681]>
+                <[float64][origin_alt][3447178.588]> // 11309642 ft MSL
+                <[float64][origin_dir][339.9625682822805]>
                 <[stringt8c][destination_icao][K3S8]>
                 <[tmvector2d][destination_lon_lat][-123.01609999999998 42.6462]>
-                <[float64][destination_alt][46587.928]> // 152848 ft MSL
-                <[float64][destination_dir][355]>
-                <[float64][distance][20854.385198732314]> // 21 km
-                <[float64][duration][311.828321629159]> // 5 min
+                <[float64][destination_alt][35104.988]> // 115174 ft MSL
+                <[float64][destination_dir][287]>
+                <[float64][distance][24756.686580736587]> // 25 km
+                <[float64][duration][370.17806816186953]> // 6 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-123.1108419182999 42.69181737396085]>
-                    <[float64][direction][123.25128788090512]>
+                    <[vector2_float64][lon_lat][-122.95416057648984 42.52101456480657]>
+                    <[float64][direction][339.9625682822805]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][1]>
+                        <[int32][time_day][3]>
                         <[float64][time_hours][2.75]> // 02:45:00 UTC
                     >
-                    <[float64][wind_direction][360]>
+                    <[float64][wind_direction][350]>
                     <[float64][wind_speed][11]> // kts
-                    <[float64][wind_gusts][17]> // kts
+                    <[float64][wind_gusts][19]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.6084]> // 24 °C
                     <[float64][visibility][24140.16]> // 15 SM
@@ -881,9 +935,9 @@ Hold north of SAMIE FIX on the inbound course 355°, outbound leg 4 NM DME, make
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][4328.159861498884]> // 14200 ft
+                        <[float64][altitude][3261.3598956364835]> // 10700 ft
                         <[float64][direction][-1]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
@@ -891,40 +945,46 @@ Hold north of SAMIE FIX on the inbound course 355°, outbound leg 4 NM DME, make
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-ABEAM]>
-                        <[vector2_float64][lon_lat][-123.07353831032647 42.64248914064249]>
-                        <[float64][altitude][4328.159861498884]> // 14200 ft
-                        <[float64][direction][265.0000000000036]>
+                        <[string8u][name][SAMIE-TURN]>
+                        <[vector2_float64][lon_lat][-123.00001795911173 42.64258212716988]>
+                        <[float64][altitude][3261.3598956364835]> // 10700 ft
+                        <[float64][direction][107.00000000002711]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-OUTBND]>
-                        <[vector2_float64][lon_lat][-123.07963066750905 42.69367068677807]>
-                        <[float64][altitude][4328.159861498884]> // 14200 ft
-                        <[float64][direction][355.00000000000483]>
+                        <[string8u][name][SAMIE-ABEAM]>
+                        <[vector2_float64][lon_lat][-123.00984776809175 42.61892200689185]>
+                        <[float64][altitude][3261.3598956364835]> // 10700 ft
+                        <[float64][direction][197.00000000005826]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00-INBND]>
-                        <[vector2_float64][lon_lat][-123.02214163551889 42.69735282537062]>
-                        <[float64][altitude][4328.159861498884]> // 14200 ft
-                        <[float64][direction][84.99999999999079]>
+                        <[string8u][name][SAMIE-OUTBND]>
+                        <[vector2_float64][lon_lat][-123.12243230503204 42.64418578792385]>
+                        <[float64][altitude][3261.3598956364835]> // 10700 ft
+                        <[float64][direction][287.0000000000018]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][SAMIE+00]>
+                        <[string8u][name][SAMIE-INBND]>
+                        <[vector2_float64][lon_lat][-123.11259476317974 42.66784506717871]>
+                        <[float64][altitude][3261.3598956364835]> // 10700 ft
+                        <[float64][direction][17.00000000002069]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][SAMIE]>
                         <[vector2_float64][lon_lat][-123.01609999999998 42.6462]>
-                        <[float64][altitude][4328.159861498884]> // 14200 ft
-                        <[float64][direction][175.03484612495913]>
+                        <[float64][altitude][3261.3598956364835]> // 10700 ft
+                        <[float64][direction][106.92967559087288]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>

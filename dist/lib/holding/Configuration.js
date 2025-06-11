@@ -57,7 +57,7 @@ export class Configuration extends ConfigurationAbstract {
             },
             distance: {
                 type: "string",
-                default: "5",
+                default: "8",
                 description: "Initial aircraft distance from holding fix in Nautical Miles.",
             },
             "left-probability": {
@@ -74,6 +74,11 @@ export class Configuration extends ConfigurationAbstract {
                 type: "string",
                 default: "0.5",
                 description: "Probability of an DME procedure holding toward the navaid instead of away from.",
+            },
+            "airport-code": {
+                type: "string",
+                default: "",
+                description: "Optional ICAO airport code to fetch METAR weather information for.",
             },
             "no-guides": {
                 type: "boolean",
@@ -107,6 +112,7 @@ export class Configuration extends ConfigurationAbstract {
         this.inboundHeading = Number(values["inbound-heading"]);
         this.numberOfMissions = Number(values["missions"]);
         this.initialDistance = Number(values["distance"]);
+        this.airportCode = String(values["airport-code"]);
         /**
          * @type {boolean} if guides should be removed from missions
          */
