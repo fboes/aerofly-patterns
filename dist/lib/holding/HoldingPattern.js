@@ -3,7 +3,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _HoldingPattern_instances, _HoldingPattern_getHoldingFix, _HoldingPattern_getMaxPatternSpeedKts, _HoldingPattern_getTurnRadius, _HoldingPattern_getLegDistance, _HoldingPattern_getLegTimeMin;
+var _HoldingPattern_instances, _HoldingPattern_getHoldingFix, _HoldingPattern_getMaxPatternSpeedKts, _HoldingPattern_getTurnRadiusMeters, _HoldingPattern_getLegDistanceMeters, _HoldingPattern_getLegTimeMin;
 import { Vector } from "@fboes/geojson";
 import { Rand } from "../general/Rand.js";
 import { Units } from "../../data/Units.js";
@@ -40,10 +40,11 @@ export class HoldingPattern {
         this.id =
             this.dmeDistanceNm <= 0 ? holdingNavAid.id : `${holdingNavAid.id}+${String(this.dmeDistanceNm).padStart(2, "0")}`;
         this.holdingFix = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getHoldingFix).call(this, holdingNavAid);
-        this.turnRadiusMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getTurnRadius).call(this, this.patternSpeedKts);
-        this.legDistanceMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getLegDistance).call(this, this.patternSpeedKts, this.legTimeMin);
+        this.turnRadiusMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getTurnRadiusMeters).call(this, this.patternSpeedKts);
+        this.legDistanceMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getLegDistanceMeters).call(this, this.patternSpeedKts, this.legTimeMin);
         this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingTowardNavaid ? 0 : 180));
         this.holdingAreaDirectionTrue = Degree(this.holdingAreaDirection + holdingNavAid.mag_dec);
+        this.furtherClearanceInMin = Rand.getRandomInt(3, 5) * 5;
         //console.log(this);
     }
 }
@@ -54,16 +55,20 @@ _HoldingPattern_instances = new WeakSet(), _HoldingPattern_getHoldingFix = funct
     if (aircraft.tags.includes("helicopter")) {
         return patternAltitudeFt <= 6000 ? 100 : 170;
     }
+    if (patternAltitudeFt <= 6000) {
+        return 200; // FAA
+    }
     if (patternAltitudeFt <= 14000) {
-        return 230;
+        return 230; // ICAO / FAA
     }
     if (patternAltitudeFt <= 20000) {
-        return 240;
+        return 240; // ICAO
     }
-    return 265;
-}, _HoldingPattern_getTurnRadius = function _HoldingPattern_getTurnRadius(patternSpeedKts) {
-    return (patternSpeedKts / (20 * Math.PI * 3)) * Units.metersPerNauticalMile; // 3 degrees per second
-}, _HoldingPattern_getLegDistance = function _HoldingPattern_getLegDistance(patternSpeedKts, legTimeMin) {
+    return 265; // ICAO
+}, _HoldingPattern_getTurnRadiusMeters = function _HoldingPattern_getTurnRadiusMeters(patternSpeedKts) {
+    return (patternSpeedKts / (20 * Math.PI * 3)) * Units.metersPerNauticalMile; // turn radius at 3 degrees per second
+    //return (patternSpeedKts ** 2 / (11.26 * Math.tan(25 * (Math.PI / 180)))) * Units.metersPerNauticalMile; // turn radius at 25 degrees bank angle
+}, _HoldingPattern_getLegDistanceMeters = function _HoldingPattern_getLegDistanceMeters(patternSpeedKts, legTimeMin) {
     if (this.dmeDistanceOutboundNm > 0) {
         return Math.abs(Math.sqrt((this.dmeDistanceOutboundNm * Units.metersPerNauticalMile) ** 2 - (this.turnRadiusMeters * 2) ** 2) -
             this.dmeDistanceNm * Units.metersPerNauticalMile);

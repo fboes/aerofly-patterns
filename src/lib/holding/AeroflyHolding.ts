@@ -153,6 +153,8 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
       );
     });
 
+    const colors = ["#FF1493", "#C2E812", "#91F5AD", "#F96900", "#3B429F"];
+
     this.scenarios.forEach((scenario, index) => {
       geoJson.addFeature(
         new Feature(
@@ -166,8 +168,8 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
             id: index * 10,
             title: scenario.mission.title,
             description: scenario.mission.description,
-            stroke: "#ff1493",
-            "stroke-opacity": index === 0 ? 1 : 0.33,
+            stroke: colors[index % colors.length],
+            "stroke-opacity": index === 0 ? 1 : 0.3,
             isLeftTurn: scenario.pattern.isLeftTurn,
             holdingAreaDirection: scenario.pattern.holdingAreaDirection,
             inboundHeading: scenario.pattern.inboundHeading,

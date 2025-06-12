@@ -57,7 +57,7 @@ export class Configuration extends ConfigurationAbstract {
             },
             distance: {
                 type: "string",
-                default: "8",
+                default: "5",
                 description: "Initial aircraft distance from holding fix in Nautical Miles.",
             },
             "left-probability": {

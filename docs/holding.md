@@ -2,7 +2,7 @@
 
 > Create random custom missions for Aerofly FS 4.
 
-The generator creates [holding patterns](https://skybrary.aero/articles/holding-pattern) for practicing entries and flying the pattern.
+The generator creates holding patterns for practicing entries and flying the pattern. See ["Holding" at Code 7700](https://www.code7700.com/holding.htm) and ["Holding Pattern" at SKYBrary Aviation Safety](https://skybrary.aero/articles/holding-pattern)
 
 ## What does it do?
 

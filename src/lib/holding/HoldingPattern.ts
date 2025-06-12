@@ -73,6 +73,8 @@ export class HoldingPattern {
    */
   legDistanceMeters: number;
 
+  furtherClearanceInMin: number;
+
   constructor(configuration: Configuration, holdingNavAid: HoldingPatternFix, aircraft: AeroflyAircraft) {
     this.inboundHeading =
       configuration.inboundHeading === -1 ? Rand.getRandomInt(0, 359) : configuration.inboundHeading;
@@ -99,10 +101,11 @@ export class HoldingPattern {
     this.id =
       this.dmeDistanceNm <= 0 ? holdingNavAid.id : `${holdingNavAid.id}+${String(this.dmeDistanceNm).padStart(2, "0")}`;
     this.holdingFix = this.#getHoldingFix(holdingNavAid);
-    this.turnRadiusMeters = this.#getTurnRadius(this.patternSpeedKts);
-    this.legDistanceMeters = this.#getLegDistance(this.patternSpeedKts, this.legTimeMin);
+    this.turnRadiusMeters = this.#getTurnRadiusMeters(this.patternSpeedKts);
+    this.legDistanceMeters = this.#getLegDistanceMeters(this.patternSpeedKts, this.legTimeMin);
     this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingTowardNavaid ? 0 : 180));
     this.holdingAreaDirectionTrue = Degree(this.holdingAreaDirection + holdingNavAid.mag_dec);
+    this.furtherClearanceInMin = Rand.getRandomInt(3, 5) * 5;
     //console.log(this);
   }
 
@@ -112,25 +115,38 @@ export class HoldingPattern {
     );
   }
 
+  /**
+   * @see https://www.code7700.com/holding.htm
+   */
   #getMaxPatternSpeedKts(aircraft: AeroflyAircraft, patternAltitudeFt: number): number {
     // TODO: Turbulence: 280
     if (aircraft.tags.includes("helicopter")) {
       return patternAltitudeFt <= 6000 ? 100 : 170;
     }
+    if (patternAltitudeFt <= 6000) {
+      return 200; // FAA
+    }
     if (patternAltitudeFt <= 14000) {
-      return 230;
+      return 230; // ICAO / FAA
     }
     if (patternAltitudeFt <= 20000) {
-      return 240;
+      return 240; // ICAO
     }
-    return 265;
+    return 265; // ICAO
   }
 
-  #getTurnRadius(patternSpeedKts: number): number {
-    return (patternSpeedKts / (20 * Math.PI * 3)) * Units.metersPerNauticalMile; // 3 degrees per second
+  /**
+   * @see https://skybrary.aero/articles/holding-pattern
+   * During entry and holding, pilots manually flying the aircraft are expected
+   * to make all turns to achieve an average bank angle of at least 25˚ or
+   * a rate of turn of 3˚ per second, whichever requires the lesser bank.
+   */
+  #getTurnRadiusMeters(patternSpeedKts: number): number {
+    return (patternSpeedKts / (20 * Math.PI * 3)) * Units.metersPerNauticalMile; // turn radius at 3 degrees per second
+    //return (patternSpeedKts ** 2 / (11.26 * Math.tan(25 * (Math.PI / 180)))) * Units.metersPerNauticalMile; // turn radius at 25 degrees bank angle
   }
 
-  #getLegDistance(patternSpeedKts: number, legTimeMin: number): number {
+  #getLegDistanceMeters(patternSpeedKts: number, legTimeMin: number): number {
     if (this.dmeDistanceOutboundNm > 0) {
       return Math.abs(
         Math.sqrt((this.dmeDistanceOutboundNm * Units.metersPerNauticalMile) ** 2 - (this.turnRadiusMeters * 2) ** 2) -

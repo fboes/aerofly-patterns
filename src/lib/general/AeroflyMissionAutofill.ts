@@ -1,5 +1,6 @@
 import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
+import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission";
 
 export class AeroflyMissionAutofill {
   #mission: AeroflyMission;
@@ -116,25 +117,20 @@ export class AeroflyMissionAutofill {
   }
 
   /**
-   * Will also add the bearing between the given checkpoints.
+   * Will also set the bearing between the given checkpoints.
    * @returns {number} in meters
    */
   get distance(): number {
-    /**
-     * @type {AeroflyMissionCheckpoint?}
-     */
-    let lastCp: AeroflyMissionCheckpoint | null = null;
+    let lastCp: AeroflyMissionCheckpoint | AeroflyMissionPosition = this.#mission.origin;
     let distance = 0;
 
     for (const cp of this.#mission.checkpoints) {
-      if (lastCp !== null) {
-        const vector = AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, cp);
-        distance += vector.distance;
-        cp.direction = vector.bearing;
-      }
-
+      const vector = AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, cp);
+      distance += vector.distance;
+      cp.direction = vector.bearing;
       lastCp = cp;
     }
+    distance += AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, this.#mission.destination).distance;
 
     return distance;
   }
@@ -244,8 +240,8 @@ export class AeroflyMissionAutofill {
    * @returns {{distance:number,bearing:number}} distance in meters
    */
   static getDistanceBetweenCheckpoints(
-    lastCp: AeroflyMissionCheckpoint,
-    cp: AeroflyMissionCheckpoint,
+    lastCp: AeroflyMissionCheckpoint | AeroflyMissionPosition,
+    cp: AeroflyMissionCheckpoint | AeroflyMissionPosition,
   ): { distance: number; bearing: number } {
     const lat1 = (lastCp.latitude / 180) * Math.PI;
     const lon1 = (lastCp.longitude / 180) * Math.PI;

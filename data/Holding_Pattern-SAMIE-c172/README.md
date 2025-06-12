@@ -11,16 +11,16 @@ There are 10 missions included in this [custom missions file](missions/custom_mi
 
 | No  | Local date¹ | Local time¹ |          Wind | Clouds | Radial | Area        | DME | Turn |  Altitude |
 | :-: | ----------- | ----------: | ------------: | ------ | -----: | ----------- | --: | :--: | --------: |
-| #01 | 2025-06-11  |       05:15 |          Calm | CLR    |   229° | south-west² |   — |  R   | 15,000 ft |
-| #02 | 2025-06-10  |       06:45 |          Calm | CLR    |   219° | south-west² |   — |  R   | 12,900 ft |
-| #03 | 2025-06-09  |       08:15 |          Calm | CLR    |   106° | east²       |   — |  R   | 12,300 ft |
-| #04 | 2025-06-08  |       09:45 |          Calm | CLR    |   023° | north-east² |   — |  R   | 12,400 ft |
-| #05 | 2025-06-07  |       11:15 |  3 kts @ 000° | CLR    |   253° | west²       |   — |  R   | 11,700 ft |
-| #06 | 2025-06-06  |       12:45 |          Calm | CLR    |   050° | north-east² |   — |  R   | 11,800 ft |
-| #07 | 2025-06-05  |       14:15 |  9 kts @ 320° | CLR    |   210° | south-west² |   — |  R   | 10,000 ft |
-| #08 | 2025-06-04  |       15:45 | 10 kts @ 340° | CLR    |   245° | south-west² |   — |  R   | 11,800 ft |
-| #09 | 2025-06-03  |       17:15 | 12 kts @ 340° | CLR    |   245° | south-west² |   — |  R   | 13,400 ft |
-| #10 | 2025-06-02  |       18:45 | 11 kts @ 350° | CLR    |   287° | west²       |   — |  R   | 10,700 ft |
+| #01 | 2025-06-11  |       05:15 |          Calm | CLR    |   123° | south-east² |   — |  R   | 11,200 ft |
+| #02 | 2025-06-10  |       06:45 |          Calm | CLR    |   177° | south²      |   — |  R   | 13,600 ft |
+| #03 | 2025-06-09  |       08:15 |          Calm | CLR    |   255° | west²       |   — |  R   | 12,400 ft |
+| #04 | 2025-06-08  |       09:45 |          Calm | CLR    |   093° | east²       |   — |  R   | 14,700 ft |
+| #05 | 2025-06-07  |       11:15 |  3 kts @ 000° | CLR    |   288° | west²       |   — |  R   | 13,800 ft |
+| #06 | 2025-06-06  |       12:45 |          Calm | CLR    |   314° | north-west² |   — |  R   | 13,300 ft |
+| #07 | 2025-06-05  |       14:15 |  9 kts @ 320° | CLR    |   083° | east²       |   — |  R   | 11,700 ft |
+| #08 | 2025-06-04  |       15:45 | 10 kts @ 340° | CLR    |   339° | north²      |   — |  R   | 12,900 ft |
+| #09 | 2025-06-03  |       17:15 | 12 kts @ 340° | CLR    |   099° | east²       |   — |  R   | 13,300 ft |
+| #10 | 2025-06-02  |       18:45 | 11 kts @ 350° | CLR    |   118° | south-east² |   — |  R   | 10,900 ft |
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC-08:00 (H)
 ²) DME procedure is holding _toward_ the SAMIE FIX, instead of _away_ from it.

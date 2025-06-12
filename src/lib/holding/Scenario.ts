@@ -79,7 +79,7 @@ export class Scenario {
     this.mission.description = describer.description + "\n" + this.mission.description;
     this.mission.tags = this.mission.tags.concat(describer.tags);
     this.mission.distance = describer.distance;
-    this.mission.duration = describer.calculateDuration(this.aircraft.cruiseSpeedKts);
+    this.mission.duration = this.pattern.furtherClearanceInMin * 60;
     if (configuration.noGuides) {
       describer.removeGuides();
     }
@@ -89,37 +89,35 @@ export class Scenario {
     return `HOLD #${index + 1}: ${this.holdingNavAid.name}${this.pattern.dmeDistanceNm > 0 ? ` with DME fix` : ""}`;
   }
 
+  /**
+   * @see https://www.code7700.com/holding.htm
+   */
   #getDescription(pattern: HoldingPattern): string {
     const direction = Formatter.getDirection(pattern.holdingAreaDirection);
+    const dmeFix = pattern.dmeDistanceNm > 0 ? `the ${pattern.dmeDistanceNm} DME fix, ` : "";
     const radial =
       (this.holdingNavAid.type === "NDB" || this.holdingNavAid.type === "FIX" ? "inbound course " : "radial ") +
       String(Math.round(pattern.inboundHeading)).padStart(3, "0") +
       "°";
-    const dmeInfo = this.#getDmeInfo(pattern);
+    const dmeInfo =
+      pattern.dmeDistanceOutboundNm > 0
+        ? `${Math.abs(pattern.dmeDistanceNm - pattern.dmeDistanceOutboundNm)}-mile legs, `
+        : "";
     const turnInfo = pattern.isLeftTurn ? "make left-hand turns, " : "make right-hand turns, ";
     const altitude = new Intl.NumberFormat("en-US").format(pattern.patternAltitudeFt);
+    const efcDate = new Date(this.date);
+    efcDate.setMinutes(efcDate.getMinutes() + pattern.furtherClearanceInMin);
+    const efcString = `${efcDate.getUTCHours().toString().padStart(2, "0")}:${efcDate
+      .getUTCMinutes()
+      .toString()
+      .padStart(2, "0")}Z`;
 
-    return `Hold ${direction} of ${this.holdingNavAid.fullName} \
+    return `Hold ${direction} of ${dmeFix + this.holdingNavAid.fullName} \
 on the ${radial}, \
 ${dmeInfo}\
 ${turnInfo}\
-maintain ${altitude}'.`;
-  }
-
-  #getDmeInfo(pattern: HoldingPattern): string {
-    if (pattern.dmeDistanceNm === 0 && pattern.dmeDistanceOutboundNm === 0) {
-      return "";
-    }
-
-    if (pattern.dmeDistanceOutboundNm === 0) {
-      return `at ${pattern.dmeDistanceNm} NM DME, `;
-    }
-
-    if (pattern.dmeDistanceNm === 0) {
-      return `outbound leg ${pattern.dmeDistanceOutboundNm} NM DME, `;
-    }
-
-    return `between ${pattern.dmeDistanceNm} NM and ${pattern.dmeDistanceOutboundNm} NM DME, `;
+maintain ${altitude}'. \
+Expect further clearance at ${efcString}.`;
   }
 
   #makeOriginPosition(pattern: HoldingPattern): AeroflyMissionPosition {

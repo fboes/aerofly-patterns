@@ -114,23 +114,19 @@ export class AeroflyMissionAutofill {
         __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").finish = new AeroflyMissionTargetPlane(__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.longitude + Math.sin(directionRad) * offset, __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.latitude + Math.cos(directionRad) * offset, __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.dir);
     }
     /**
-     * Will also add the bearing between the given checkpoints.
+     * Will also set the bearing between the given checkpoints.
      * @returns {number} in meters
      */
     get distance() {
-        /**
-         * @type {AeroflyMissionCheckpoint?}
-         */
-        let lastCp = null;
+        let lastCp = __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin;
         let distance = 0;
         for (const cp of __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").checkpoints) {
-            if (lastCp !== null) {
-                const vector = AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, cp);
-                distance += vector.distance;
-                cp.direction = vector.bearing;
-            }
+            const vector = AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, cp);
+            distance += vector.distance;
+            cp.direction = vector.bearing;
             lastCp = cp;
         }
+        distance += AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").destination).distance;
         return distance;
     }
     get nauticalTimeHours() {

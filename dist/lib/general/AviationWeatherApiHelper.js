@@ -12,7 +12,7 @@ export class AviationWeatherApiHelper {
             weatherAttempt++;
         }
         if (!weathers.length) {
-            throw new Error("No METAR informationfound");
+            throw new Error(`No METAR information found for "${airportCode}" or position "${position ? position.coordinates.join(", ") : "unknown"}" on ${date.toISOString()}`);
         }
         const weather = new AviationWeatherNormalizedMetar(weathers[0]);
         return weather;

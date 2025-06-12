@@ -3,7 +3,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _Scenario_instances, _Scenario_getTitle, _Scenario_getDescription, _Scenario_getDmeInfo, _Scenario_makeOriginPosition, _Scenario_makeDestinationPosition, _Scenario_getCheckpoints;
+var _Scenario_instances, _Scenario_getTitle, _Scenario_getDescription, _Scenario_makeOriginPosition, _Scenario_makeDestinationPosition, _Scenario_getCheckpoints;
 import { AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
 import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { Vector } from "@fboes/geojson";
@@ -57,7 +57,7 @@ export class Scenario {
         this.mission.description = describer.description + "\n" + this.mission.description;
         this.mission.tags = this.mission.tags.concat(describer.tags);
         this.mission.distance = describer.distance;
-        this.mission.duration = describer.calculateDuration(this.aircraft.cruiseSpeedKts);
+        this.mission.duration = this.pattern.furtherClearanceInMin * 60;
         if (configuration.noGuides) {
             describer.removeGuides();
         }
@@ -67,28 +67,27 @@ _Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_get
     return `HOLD #${index + 1}: ${this.holdingNavAid.name}${this.pattern.dmeDistanceNm > 0 ? ` with DME fix` : ""}`;
 }, _Scenario_getDescription = function _Scenario_getDescription(pattern) {
     const direction = Formatter.getDirection(pattern.holdingAreaDirection);
+    const dmeFix = pattern.dmeDistanceNm > 0 ? `the ${pattern.dmeDistanceNm} DME fix, ` : "";
     const radial = (this.holdingNavAid.type === "NDB" || this.holdingNavAid.type === "FIX" ? "inbound course " : "radial ") +
         String(Math.round(pattern.inboundHeading)).padStart(3, "0") +
         "°";
-    const dmeInfo = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getDmeInfo).call(this, pattern);
+    const dmeInfo = pattern.dmeDistanceOutboundNm > 0
+        ? `${Math.abs(pattern.dmeDistanceNm - pattern.dmeDistanceOutboundNm)}-mile legs, `
+        : "";
     const turnInfo = pattern.isLeftTurn ? "make left-hand turns, " : "make right-hand turns, ";
     const altitude = new Intl.NumberFormat("en-US").format(pattern.patternAltitudeFt);
-    return `Hold ${direction} of ${this.holdingNavAid.fullName} \
+    const efcDate = new Date(this.date);
+    efcDate.setMinutes(efcDate.getMinutes() + pattern.furtherClearanceInMin);
+    const efcString = `${efcDate.getUTCHours().toString().padStart(2, "0")}:${efcDate
+        .getUTCMinutes()
+        .toString()
+        .padStart(2, "0")}Z`;
+    return `Hold ${direction} of ${dmeFix + this.holdingNavAid.fullName} \
 on the ${radial}, \
 ${dmeInfo}\
 ${turnInfo}\
-maintain ${altitude}'.`;
-}, _Scenario_getDmeInfo = function _Scenario_getDmeInfo(pattern) {
-    if (pattern.dmeDistanceNm === 0 && pattern.dmeDistanceOutboundNm === 0) {
-        return "";
-    }
-    if (pattern.dmeDistanceOutboundNm === 0) {
-        return `at ${pattern.dmeDistanceNm} NM DME, `;
-    }
-    if (pattern.dmeDistanceNm === 0) {
-        return `outbound leg ${pattern.dmeDistanceOutboundNm} NM DME, `;
-    }
-    return `between ${pattern.dmeDistanceNm} NM and ${pattern.dmeDistanceOutboundNm} NM DME, `;
+maintain ${altitude}'. \
+Expect further clearance at ${efcString}.`;
 }, _Scenario_makeOriginPosition = function _Scenario_makeOriginPosition(pattern) {
     const bearing = Math.random() * 360;
     const origin = pattern.holdingFix.getPointBy(new Vector(this.configuration.initialDistance * Units.metersPerNauticalMile, bearing));
