@@ -90,7 +90,7 @@ export class AeroflyHolding {
           wind,
           clouds,
           s.pattern.inboundHeading.toFixed(0).padStart(3, "0") + "°",
-          Formatter.getDirection(s.pattern.holdingAreaDirection) + (s.pattern.dmeHoldingTowardNavaid ? "²" : ""),
+          Formatter.getDirection(s.pattern.holdingAreaDirection) + (s.pattern.dmeHoldingAwayFromNavaid ? "²" : ""),
           s.pattern.dmeDistanceNm > 0 ? `${s.pattern.dmeDistanceNm} NM` : "—",
           s.pattern.isLeftTurn ? "L" : "R",
           s.pattern.patternAltitudeFt.toLocaleString("en") + " ft",
@@ -113,7 +113,7 @@ There are ${this.configuration.numberOfMissions} missions included in this [cust
 ${markdownTable}
 
 ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC${localTime.timeZone} (${localTime.nauticalZoneId})
-²) DME procedure is holding _toward_ the ${this.holdingFix.name}, instead of _away_ from it.
+²) DME procedure is holding _away from_ the ${this.holdingFix.name}, instead of _towards_ it.
 
 ---
 
@@ -179,6 +179,7 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
             patternAltitudeFt: scenario.pattern.patternAltitudeFt,
             patternSpeedKts: scenario.pattern.patternSpeedKts,
             legTimeMin: scenario.pattern.legTimeMin,
+            patternEntry: scenario.patternEntry,
           },
         ),
       );

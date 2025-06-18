@@ -1,24 +1,18 @@
 # Aerofly Landegerät: Holding Pattern Generator
 
-> Create random custom missions for Aerofly FS 4.
-
-The generator creates holding patterns for practicing entries and flying the pattern. See ["Holding" at Code 7700](https://www.code7700.com/holding.htm) and ["Holding Pattern" at SKYBrary Aviation Safety](https://skybrary.aero/articles/holding-pattern)
+The generator creates holding patterns for practicing entries and flying the pattern. See ["Holding" at Code 7700](https://www.code7700.com/holding.htm) and ["Holding Pattern" at SKYBrary Aviation Safety](https://skybrary.aero/articles/holding-pattern).
 
 ## What does it do?
 
-1. The Landegerät gets data for a VOR / NDB…
-2. …and creates a holding pattern.
-3. Depending on your configuration it may also use a DME fix.
-4. In the last step some real weather is added…
-5. …and a random starting location for your aircraft.
+1. The Landegerät gets data for a VOR, NDB or fix…
+2. …and creates a holding pattern
+3. …with either left-hand turns or right-hand-turns.
+4. Depending on your configuration it may also use a DME fix.
+5. Actual weather data for the given time and date is added…
+6. …and a random starting location for your aircraft
+7. …which will set the entry procedure.
 
 ## How to use it
-
-This tool requires [Node.js](https://nodejs.org/en) (at least version 20) to be installed on your local computer.
-
-The Landegerät is a Command Line Interface (CLI) tool, which means you need to open a terminal to run it. The tool itself does not need to be installed, as the Node.js tool `npx` will take care of downloading as well as executing the Landegerät.
-
-## CLI usage
 
 ```
 Usage: npx @fboes/aerofly-patterns@latest aerofly-holding NAVAID_CODE [AFS_AIRCRAFT_CODE] [AFS_LIVERY_CODE] [...options]
@@ -40,6 +34,12 @@ Options:
   --max-altitude=..         Maximum altitude of aircraft, in 100ft MSL. '0' means that the minimum altitude will be used.
                             Default value: 0
                             Example value: 200
+  --min-hold-altitude=..    Minimum altitude of holding pattern, in 100ft MSL. '0' means the rgular altitude will be used.
+                            Default value: 0
+                            Example value: 200
+  --max-hold-altitude=..    Maximum altitude of holding pattern, in 100ft MSL. '0' means the rgular altitude will be used
+                            Default value: 0
+                            Example value: 200
   --min-dme-dist=..         Minimum DME distance in Nautical Miles.
                             Default value: 5
   --max-dme-dist=..         Maximum DME distance in Nautical Miles.
@@ -52,8 +52,9 @@ Options:
                             Default value: 0.1
   --dme-probability=..      Probability of an DME procedure being used in the mission.
                             Default value: 0.1
-  --dme-holding-toward-probability=..  Probability of an DME procedure holding toward the navaid instead of away from.
-                            Default value: 0.5
+  --dme-holding-away-probability=..  Probability of an DME procedure holding away from the navaid instead of towards.
+                            Default value: 0.1
+  --airport-code=..         Optional ICAO airport code to fetch METAR weather information for.
   --no-guides               Try to remove virtual guides from missions.
   --directory, -d           Create files in a subdirectory instead of current directory.
   --help, -h                Will output the help.

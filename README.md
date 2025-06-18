@@ -1,101 +1,17 @@
 # Aerofly Landegerät
 
-> Create random custom missions for Aerofly FS 4.
+This project generates random custom missions for Aerofly FS 4 by utilizing the `custom_missions_user.tmc` file. There are multiple types of missions:
 
-This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4.
-
-1. The main tool creates missions containing landing pattern or instrument approach procedure lessons, which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern or instrument approach procedure correctly.
-2. Instead of landing patterns you can also give holding patterns a try, using the [landing pattern generator](docs/holding.md). Using NDBs or VORs, you will need to find the correct entry and make the perfectly timed turns to match the holding pattern.
+1. The tool creates missions containing [landing pattern or instrument approach procedure lessons](docs/pattern.md), which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern or instrument approach procedure correctly.
+2. Instead of landing patterns you can also give holding patterns a try, using the [holding pattern generator](docs/holding.md). Using NDBs, VORs or fixes, you will need to find the correct entry and make the perfectly timed turns to match the holding pattern.
 3. Also there is a HEMS missions generator, which will put your helicopter on a random heliport, sets time of day as well as weather, and create flight plans to nearby MedEvac locations. See the [HEMS missions generator documentation](docs/hems.md).
-4. Also there is an air race missions generator, which will put your aircraft in a random spot and lets you follow a random course. See the [air race missions generator documentation](docs/airrace.md).
-
-The main documentation centers around the landing pattern lessons:
-
-## What does it do?
-
-1. It downloads data for an airport selected by you,
-2. and places an aircraft selected by you in a random spot around this airport,
-3. considering an optional Minimum Safe Altitude.
-4. It downloads METAR weather data for the last few days,
-5. and determines which will be the active runway by taking a look at the wind (or using a default runway if there is almost no wind)
-6. considering if your aircraft is able to land on this runway.
-7. From this data it will create multiple random missions,
-8. and write these to a `custom_missions_user.tmc` which you then can use in Aerofly FS 4.
+4. Last but not least there is an air race missions generator, which will put your aircraft in a random spot and lets you follow a random course. See the [air race missions generator documentation](docs/airrace.md).
 
 ## How to use it
 
 This tool requires [Node.js](https://nodejs.org/en) in at least version 20 to be installed on your local computer.
 
 The Landegerät is a Command Line Interface (CLI) tool, which means you need to open a terminal to run it. The tool itself does not need to be installed, as the Node.js tool `npx` will take care of downloading as well as executing the Landegerät.
-
-```
-Usage: npx @fboes/aerofly-patterns@latest ICAO_AIRPORT_CODE [AEROFLY_AIRCRAFT_CODE] [...options]
-Create random custom missions for Aerofly FS 4.
-
-Arguments:
-  ICAO_AIRPORT_CODE         ICAO airport code which needs to be available in Aerofly FS 4.
-  AEROFLY_AIRCRAFT_CODE     Internal aircraft code in Aerofly FS 4.
-
-Options:
-  --right-pattern=..        Comma-separated list of runway names with right-turn pattern.
-                            Example value: 24,33
-  --min-altitude=..         Minimum safe altitude of aircraft, in 100ft MSL. At least airport elevation.
-                            Default value: 0
-                            Example value: 145
-  --missions=..             Number of missions in file.
-                            Default value: 10
-  --distance=..             Initial aircraft distance from airport in Nautical Miles.
-                            Default value: 8
-  --pattern-altitude=..     Pattern altitude in ft AGL. For MSL see `--pattern-altitude-msl`
-                            Default value: 1000
-  --pattern-distance=..     Pattern distance from airport runway in Nautical Miles.
-                            Default value: 1
-  --pattern-final-distance=..  Pattern final distance from airport runway edge in Nautical Miles.
-                            Default value: 1
-  --rnd-heading=..          Randomized aircraft heading deviation from direct heading to airport in degree.
-                            Default value: 0
-  --prefer-rwy=..           Comma-separated list of runway names which are preferred if wind is indecisive.
-                            Example value: 24,33
-  --pattern-altitude-msl, -m  Pattern altitude is in MSL instead of AGL
-  --directory, -d           Create files in a subdirectory instead of current directory.
-  --geojson, -g             Create a GeoJSON file.
-  --readme, -r              Create a `README.md`.
-  --help, -h                Will output the help.
-```
-
-Example:
-
-```bash
-npx @fboes/aerofly-patterns@latest KMVY c172 --right-pattern 24,33
-```
-
-Aircraft codes can be found at [the complete list of available internal aircraft codes in Aerofly FS 4](https://fboes.github.io/aerofly-data/data/aircraft.html). Examples of codes:
-
-| `AEROFLY_AIRCRAFT_CODE` | Type                                 |
-| ----------------------- | ------------------------------------ |
-| `a320`                  | Airbus A320                          |
-| `b58`                   | Beechcraft Baron 58                  |
-| `c172`                  | Cessna 172                           |
-| `c90gtx`                | Beechcraft King Air C90              |
-| `dr400`                 | Robin DR 400                         |
-| `ec135`                 | Eurocopter EC135                     |
-| `uh60`                  | Sikorsky UH-60 Black Hawk            |
-| `f15e`                  | McDonnell Douglas F-15E Strike Eagle |
-| `jungmeister`           | Bücker Bü 133 Jungmeister            |
-| `lj45`                  | Learjet 45                           |
-| `mb339`                 | Aermacchi MB-339                     |
-| `pitts`                 | Pitts Special S-2                    |
-| `r22`                   | Robinson R22                         |
-
-## Download the missions
-
-There are already multiple mission files generated in [`/data`](./data/). They are stored in directories with the pattern `data/Landing_Challenges-[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE]/`. These files are in each directory:
-
-- `custom_missions_user.tmc`: Mission file with multiple emissions
-- `[ICAO_AIRPORT_CODE]-[AEROFLY_AIRCRAFT_CODE].geojson`: A GeoJSON file containing the airport properties and the plane in mission #1
-- `README.md`: Quick summary of all missions
-
-See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import the missions into Aerofly FS 4.
 
 ## Technical stuff
 

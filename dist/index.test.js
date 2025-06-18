@@ -8,6 +8,7 @@ import { GeoJsonLocationsTest, GeoJsonLocationTest } from "./lib/hems/GeoJsonLoc
 import { MarkdownTest } from "./lib/general/Markdown.test.js";
 import { OpenStreetMapApiTest } from "./lib/general/OpenStreetMapApi.test.js";
 import { LocalTimeTest } from "./lib/general/LocalTime.test.js";
+import { HoldingPatternTest } from "./lib/holding/HoldingPattern.test.js";
 new AirportTest();
 await AviationWeatherApiTest.init();
 new DateYielderTest();
@@ -19,4 +20,5 @@ new GeoJsonLocationTest();
 new MarkdownTest();
 await OpenStreetMapApiTest.init();
 new LocalTimeTest();
+new HoldingPatternTest();
 process.exit();

@@ -1,7 +1,7 @@
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 //import { fileURLToPath } from "node:url";
-import { AeroflyAirRace } from "./AeroflyAirRace";
+import { AeroflyAirRace } from "./AeroflyAirRace.js";
 
 export class FileWriter {
   static async writeFile(app: AeroflyAirRace, saveDirectory: string) {

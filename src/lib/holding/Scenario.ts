@@ -7,7 +7,7 @@ import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { Vector } from "@fboes/geojson";
 import { Units } from "../../data/Units.js";
 import { Degree } from "../general/Degree.js";
-import { HoldingPattern } from "./HoldingPattern.js";
+import { HoldingPattern, HoldingPatternEntry } from "./HoldingPattern.js";
 import { Rand } from "../general/Rand.js";
 import { Formatter } from "../general/Formatter.js";
 import { HoldingPatternFix } from "./HoldingPatternFix.js";
@@ -23,6 +23,7 @@ export class Scenario {
   //aircraft: AeroflyAircraft;
   mission: AeroflyMission;
   pattern: HoldingPattern;
+  patternEntry: HoldingPatternEntry;
 
   static async init(
     holdingNavAid: HoldingPatternFix,
@@ -52,12 +53,15 @@ export class Scenario {
     this.pattern = new HoldingPattern(configuration, holdingNavAid, aircraft);
 
     // Building the actual mission
+    const bearing = Math.random() * 360;
+    this.patternEntry = this.pattern.getEntry(bearing);
+
     const title = this.#getTitle(index);
     const description = this.#getDescription(this.pattern);
     const conditions = AviationWeatherApiHelper.makeConditions(this.date, this.weather);
-    const origin = this.#makeOriginPosition(this.pattern);
+    const origin = this.#makeOriginPosition(this.pattern, bearing);
     const destination = this.#makeDestinationPosition(this.pattern);
-    const checkpoints = this.#getCheckpoints(this.pattern);
+    const checkpoints = this.#getCheckpoints(this.pattern, this.patternEntry);
 
     this.mission = new AeroflyMission(title, {
       description,
@@ -69,7 +73,7 @@ export class Scenario {
       callsign: aircraft.callsign,
       flightSetting: "cruise",
       conditions,
-      tags: ["holding"],
+      tags: ["holding", "pattern", "practice", "instrument"],
       origin,
       destination,
       checkpoints,
@@ -100,13 +104,12 @@ export class Scenario {
       String(Math.round(pattern.inboundHeading)).padStart(3, "0") +
       "°";
     const dmeInfo =
-      pattern.dmeDistanceOutboundNm > 0
+      pattern.dmeDistanceOutboundNm !== 0
         ? `${Math.abs(pattern.dmeDistanceNm - pattern.dmeDistanceOutboundNm)}-mile legs, `
         : "";
     const turnInfo = pattern.isLeftTurn ? "make left-hand turns, " : "make right-hand turns, ";
     const altitude = new Intl.NumberFormat("en-US").format(pattern.patternAltitudeFt);
-    const efcDate = new Date(this.date);
-    efcDate.setMinutes(efcDate.getMinutes() + pattern.furtherClearanceInMin);
+    const efcDate = this.pattern.getFurtherClearance(this.date);
     const efcString = `${efcDate.getUTCHours().toString().padStart(2, "0")}:${efcDate
       .getUTCMinutes()
       .toString()
@@ -120,8 +123,7 @@ maintain ${altitude}'. \
 Expect further clearance at ${efcString}.`;
   }
 
-  #makeOriginPosition(pattern: HoldingPattern): AeroflyMissionPosition {
-    const bearing = Math.random() * 360;
+  #makeOriginPosition(pattern: HoldingPattern, bearing: number): AeroflyMissionPosition {
     const origin = pattern.holdingFix.getPointBy(
       new Vector(this.configuration.initialDistance * Units.metersPerNauticalMile, bearing),
     );
@@ -148,7 +150,7 @@ Expect further clearance at ${efcString}.`;
     };
   }
 
-  #getCheckpoints(pattern: HoldingPattern): AeroflyMissionCheckpoint[] {
+  #getCheckpoints(pattern: HoldingPattern, patternEntry: HoldingPatternEntry): AeroflyMissionCheckpoint[] {
     const turnMultiplier = pattern.isLeftTurn ? -1 : 1;
 
     const pointAfterFix = pattern.holdingFix.getPointBy(
@@ -170,6 +172,7 @@ Expect further clearance at ${efcString}.`;
     };
 
     return [
+      ...this.#getEntryCheckpoints(pattern, patternEntry),
       new AeroflyMissionCheckpoint(pattern.id, "waypoint", pattern.holdingFix.longitude, pattern.holdingFix.latitude, {
         ...moreCheckpointProperties,
         frequency: this.holdingNavAid.frequency,
@@ -208,6 +211,100 @@ Expect further clearance at ${efcString}.`;
         frequency: this.holdingNavAid.frequency,
         flyOver: true,
       }),
+    ];
+  }
+
+  #getEntryCheckpoints(pattern: HoldingPattern, patternEntry: HoldingPatternEntry): AeroflyMissionCheckpoint[] {
+    if (patternEntry === "direct") {
+      // Direct entry does not need extra checkpoints
+      return [];
+    }
+
+    const turnMultiplier = pattern.isLeftTurn ? -1 : 1;
+    const entryLegDistance = pattern.legDistanceMeters + pattern.turnRadiusMeters;
+    const moreCheckpointProperties = {
+      altitude: pattern.patternAltitudeFt / Units.feetPerMeter,
+      altitudeConstraint: true,
+    };
+
+    if (patternEntry === "offset") {
+      // Is offset / teardrop entry
+      const pointAfterFix = pattern.holdingFix.getPointBy(
+        new Vector(entryLegDistance, Degree(pattern.holdingAreaDirectionTrue + turnMultiplier * -30)),
+      );
+      const pointInbound = pattern.holdingFix.getPointBy(
+        new Vector(entryLegDistance, Degree(pattern.holdingAreaDirectionTrue)),
+      );
+
+      return [
+        new AeroflyMissionCheckpoint(
+          pattern.id,
+          "waypoint",
+          pattern.holdingFix.longitude,
+          pattern.holdingFix.latitude,
+          {
+            ...moreCheckpointProperties,
+            frequency: this.holdingNavAid.frequency,
+            flyOver: true,
+          },
+        ),
+        new AeroflyMissionCheckpoint(
+          pattern.id + "-OFF1",
+          "waypoint",
+          pointAfterFix.longitude,
+          pointAfterFix.latitude,
+          moreCheckpointProperties,
+        ),
+        new AeroflyMissionCheckpoint(
+          pattern.id + "-OFF2",
+          "waypoint",
+          pointInbound.longitude,
+          pointInbound.latitude,
+          moreCheckpointProperties,
+        ),
+      ];
+    }
+
+    // Else it is a parallel entry
+    const pointAlmostFix = pattern.holdingFix.getPointBy(
+      new Vector(100, Degree(pattern.holdingAreaDirectionTrue + turnMultiplier * 90)),
+    );
+    const pointTurnOutbound = pointAlmostFix.getPointBy(
+      new Vector(entryLegDistance, Degree(pattern.holdingAreaDirectionTrue)),
+    );
+    const pointTurnInbound = pointAlmostFix.getPointBy(
+      new Vector(entryLegDistance, Degree(pattern.holdingAreaDirectionTrue + turnMultiplier * -30)),
+    );
+    const pointInbound = pattern.holdingFix.getPointBy(
+      new Vector(pattern.turnRadiusMeters, Degree(pattern.holdingAreaDirectionTrue)),
+    );
+
+    return [
+      new AeroflyMissionCheckpoint(pattern.id + "PRL0", "waypoint", pointAlmostFix.longitude, pointAlmostFix.latitude, {
+        ...moreCheckpointProperties,
+        frequency: this.holdingNavAid.frequency,
+      }),
+      new AeroflyMissionCheckpoint(
+        pattern.id + "-PRL1",
+        "waypoint",
+        pointTurnOutbound.longitude,
+        pointTurnOutbound.latitude,
+        moreCheckpointProperties,
+      ),
+      new AeroflyMissionCheckpoint(
+        pattern.id + "-PRL2",
+        "waypoint",
+        pointTurnInbound.longitude,
+        pointTurnInbound.latitude,
+        moreCheckpointProperties,
+      ),
+      new AeroflyMissionCheckpoint(
+        pattern.id + "-PRL3",
+        "waypoint",
+        pointInbound.longitude,
+        pointInbound.latitude,
+        moreCheckpointProperties,
+      ),
     ];
   }
 }

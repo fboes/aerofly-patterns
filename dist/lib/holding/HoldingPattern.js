@@ -7,7 +7,7 @@ var _HoldingPattern_instances, _HoldingPattern_getHoldingFix, _HoldingPattern_ge
 import { Vector } from "@fboes/geojson";
 import { Rand } from "../general/Rand.js";
 import { Units } from "../../data/Units.js";
-import { Degree } from "../general/Degree.js";
+import { Degree, degreeDifference } from "../general/Degree.js";
 /**
  * Represents a holding pattern for an aircraft.
  * This class encapsulates the properties and calculations needed to define a holding pattern,
@@ -26,15 +26,13 @@ export class HoldingPattern {
             Math.random() < configuration.dmeProcedureProbability && ["VORTAC", "VOR/DME"].includes(holdingNavAid.type)
                 ? Rand.getRandomInt(configuration.minimumDmeDistance, configuration.maximumDmeDistance)
                 : 0;
-        this.dmeHoldingTowardNavaid =
-            (this.dmeDistanceNm > 0 && Math.random() > configuration.dmeHoldingTowardNavaidProbability) ||
-                holdingNavAid.type === "FIX";
+        this.dmeHoldingAwayFromNavaid =
+            this.dmeDistanceNm > 0 && Math.random() <= configuration.dmeHoldingAwayFromNavaidProbability;
         this.dmeDistanceOutboundNm =
-            this.dmeDistanceNm > 0 || holdingNavAid.type === "FIX"
-                ? this.dmeDistanceNm + (this.dmeHoldingTowardNavaid ? 4 : -4)
-                : 0;
+            this.dmeDistanceNm > 0 ? this.dmeDistanceNm + (this.dmeHoldingAwayFromNavaid ? -4 : 4) : 0;
         this.patternAltitudeFt =
-            Math.round(Rand.getRandomInt(configuration.minimumSafeAltitude, configuration.maximumAltitude) / 100) * 100;
+            Math.round(Rand.getRandomInt(configuration.minimumHoldingAltitude, configuration.maximumHoldingAltitude) / 100) *
+                100;
         this.patternSpeedKts = Math.min(aircraft.cruiseSpeedKts + 10, __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getMaxPatternSpeedKts).call(this, aircraft, this.patternAltitudeFt));
         this.legTimeMin = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getLegTimeMin).call(this, this.patternAltitudeFt);
         this.id =
@@ -42,14 +40,28 @@ export class HoldingPattern {
         this.holdingFix = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getHoldingFix).call(this, holdingNavAid);
         this.turnRadiusMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getTurnRadiusMeters).call(this, this.patternSpeedKts);
         this.legDistanceMeters = __classPrivateFieldGet(this, _HoldingPattern_instances, "m", _HoldingPattern_getLegDistanceMeters).call(this, this.patternSpeedKts, this.legTimeMin);
-        this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingTowardNavaid ? 0 : 180));
+        this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingAwayFromNavaid ? 0 : 180));
         this.holdingAreaDirectionTrue = Degree(this.holdingAreaDirection + holdingNavAid.mag_dec);
         this.furtherClearanceInMin = Rand.getRandomInt(3, 5) * 5;
         //console.log(this);
     }
+    getEntry(bearing) {
+        const delta = degreeDifference(this.holdingAreaDirectionTrue, bearing) * (this.isLeftTurn ? -1 : 1);
+        if (delta >= 110) {
+            return "offset";
+        }
+        if (delta <= -70) {
+            return "parallel";
+        }
+        return "direct";
+    }
+    getFurtherClearance(date) {
+        const furtherClearanceInMs = this.furtherClearanceInMin * 60 * 1000;
+        return new Date(date.getTime() + furtherClearanceInMs);
+    }
 }
 _HoldingPattern_instances = new WeakSet(), _HoldingPattern_getHoldingFix = function _HoldingPattern_getHoldingFix(holdingNavAid) {
-    return holdingNavAid.position.getPointBy(new Vector(this.dmeDistanceNm * Units.metersPerNauticalMile, Degree(this.inboundHeadingTrue)));
+    return holdingNavAid.position.getPointBy(new Vector(this.dmeDistanceNm * Units.metersPerNauticalMile, Degree(this.inboundHeadingTrue + 180)));
 }, _HoldingPattern_getMaxPatternSpeedKts = function _HoldingPattern_getMaxPatternSpeedKts(aircraft, patternAltitudeFt) {
     // TODO: Turbulence: 280
     if (aircraft.tags.includes("helicopter")) {
@@ -69,7 +81,7 @@ _HoldingPattern_instances = new WeakSet(), _HoldingPattern_getHoldingFix = funct
     return (patternSpeedKts / (20 * Math.PI * 3)) * Units.metersPerNauticalMile; // turn radius at 3 degrees per second
     //return (patternSpeedKts ** 2 / (11.26 * Math.tan(25 * (Math.PI / 180)))) * Units.metersPerNauticalMile; // turn radius at 25 degrees bank angle
 }, _HoldingPattern_getLegDistanceMeters = function _HoldingPattern_getLegDistanceMeters(patternSpeedKts, legTimeMin) {
-    if (this.dmeDistanceOutboundNm > 0) {
+    if (this.dmeDistanceOutboundNm !== 0) {
         return Math.abs(Math.sqrt((this.dmeDistanceOutboundNm * Units.metersPerNauticalMile) ** 2 - (this.turnRadiusMeters * 2) ** 2) -
             this.dmeDistanceNm * Units.metersPerNauticalMile);
     }

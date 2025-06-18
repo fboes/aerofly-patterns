@@ -1,6 +1,6 @@
 import { Point, Vector } from "@fboes/geojson";
 import * as fs from "node:fs";
-import { Rand } from "../general/Rand";
+import { Rand } from "../general/Rand.js";
 
 interface GeoJsonFeature {
   type: string;

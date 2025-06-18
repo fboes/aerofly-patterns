@@ -3,8 +3,10 @@ import { Rand } from "../general/Rand.js";
 import { Configuration } from "./Configuration.js";
 import { Units } from "../../data/Units.js";
 import { AeroflyAircraft } from "../../data/AeroflyAircraft.js";
-import { Degree } from "../general/Degree.js";
+import { Degree, degreeDifference } from "../general/Degree.js";
 import { HoldingPatternFix } from "./HoldingPatternFix.js";
+
+export type HoldingPatternEntry = "direct" | "parallel" | "offset";
 
 /**
  * Represents a holding pattern for an aircraft.
@@ -33,9 +35,9 @@ export class HoldingPattern {
   dmeDistanceOutboundNm: number;
 
   /**
-   * Indicates if the DME procedure is flown towards the VOR (true) or away from it (false).
+   * Indicates if the DME procedure is flown towards the VOR (false) or away from it (true).
    */
-  dmeHoldingTowardNavaid: boolean;
+  dmeHoldingAwayFromNavaid: boolean;
 
   /**
    * The direction of the holding pattern.
@@ -84,15 +86,13 @@ export class HoldingPattern {
       Math.random() < configuration.dmeProcedureProbability && ["VORTAC", "VOR/DME"].includes(holdingNavAid.type)
         ? Rand.getRandomInt(configuration.minimumDmeDistance, configuration.maximumDmeDistance)
         : 0;
-    this.dmeHoldingTowardNavaid =
-      (this.dmeDistanceNm > 0 && Math.random() > configuration.dmeHoldingTowardNavaidProbability) ||
-      holdingNavAid.type === "FIX";
+    this.dmeHoldingAwayFromNavaid =
+      this.dmeDistanceNm > 0 && Math.random() <= configuration.dmeHoldingAwayFromNavaidProbability;
     this.dmeDistanceOutboundNm =
-      this.dmeDistanceNm > 0 || holdingNavAid.type === "FIX"
-        ? this.dmeDistanceNm + (this.dmeHoldingTowardNavaid ? 4 : -4)
-        : 0;
+      this.dmeDistanceNm > 0 ? this.dmeDistanceNm + (this.dmeHoldingAwayFromNavaid ? -4 : 4) : 0;
     this.patternAltitudeFt =
-      Math.round(Rand.getRandomInt(configuration.minimumSafeAltitude, configuration.maximumAltitude) / 100) * 100;
+      Math.round(Rand.getRandomInt(configuration.minimumHoldingAltitude, configuration.maximumHoldingAltitude) / 100) *
+      100;
     this.patternSpeedKts = Math.min(
       aircraft.cruiseSpeedKts + 10,
       this.#getMaxPatternSpeedKts(aircraft, this.patternAltitudeFt),
@@ -103,7 +103,7 @@ export class HoldingPattern {
     this.holdingFix = this.#getHoldingFix(holdingNavAid);
     this.turnRadiusMeters = this.#getTurnRadiusMeters(this.patternSpeedKts);
     this.legDistanceMeters = this.#getLegDistanceMeters(this.patternSpeedKts, this.legTimeMin);
-    this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingTowardNavaid ? 0 : 180));
+    this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingAwayFromNavaid ? 0 : 180));
     this.holdingAreaDirectionTrue = Degree(this.holdingAreaDirection + holdingNavAid.mag_dec);
     this.furtherClearanceInMin = Rand.getRandomInt(3, 5) * 5;
     //console.log(this);
@@ -111,7 +111,7 @@ export class HoldingPattern {
 
   #getHoldingFix(holdingNavAid: HoldingPatternFix): Point {
     return holdingNavAid.position.getPointBy(
-      new Vector(this.dmeDistanceNm * Units.metersPerNauticalMile, Degree(this.inboundHeadingTrue)),
+      new Vector(this.dmeDistanceNm * Units.metersPerNauticalMile, Degree(this.inboundHeadingTrue + 180)),
     );
   }
 
@@ -147,7 +147,7 @@ export class HoldingPattern {
   }
 
   #getLegDistanceMeters(patternSpeedKts: number, legTimeMin: number): number {
-    if (this.dmeDistanceOutboundNm > 0) {
+    if (this.dmeDistanceOutboundNm !== 0) {
       return Math.abs(
         Math.sqrt((this.dmeDistanceOutboundNm * Units.metersPerNauticalMile) ** 2 - (this.turnRadiusMeters * 2) ** 2) -
           this.dmeDistanceNm * Units.metersPerNauticalMile,
@@ -159,5 +159,21 @@ export class HoldingPattern {
 
   #getLegTimeMin(patternAltitudeFt: number): number {
     return patternAltitudeFt > 14000 ? 1.5 : 1;
+  }
+
+  getEntry(bearing: number): HoldingPatternEntry {
+    const delta = degreeDifference(this.holdingAreaDirectionTrue, bearing) * (this.isLeftTurn ? -1 : 1);
+    if (delta >= 110) {
+      return "offset";
+    }
+    if (delta <= -70) {
+      return "parallel";
+    }
+    return "direct";
+  }
+
+  getFurtherClearance(date: Date): Date {
+    const furtherClearanceInMs = this.furtherClearanceInMin * 60 * 1000;
+    return new Date(date.getTime() + furtherClearanceInMs);
   }
 }

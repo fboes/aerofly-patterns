@@ -6,7 +6,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var _GeoJsonLocations_instances, _GeoJsonLocations_yieldRandomEmergencySite;
 import { Point } from "@fboes/geojson";
 import * as fs from "node:fs";
-import { Rand } from "../general/Rand";
+import { Rand } from "../general/Rand.js";
 export class GeoJsonLocations {
     constructor(filename) {
         _GeoJsonLocations_instances.add(this);

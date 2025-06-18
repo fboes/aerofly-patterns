@@ -5,7 +5,7 @@ type MissionTypeLight = {
   intensity?: number;
 };
 
-import { GeoJsonLocation } from "../../lib/hems/GeoJsonLocations";
+import { GeoJsonLocation } from "../../lib/hems/GeoJsonLocations.js";
 
 type MissionTypeObject = {
   xref: string;

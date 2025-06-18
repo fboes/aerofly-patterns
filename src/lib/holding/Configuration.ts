@@ -35,7 +35,7 @@ export class Configuration extends ConfigurationAbstract {
   /**
    * Probability of an DME procedure being inverse.
    */
-  dmeHoldingTowardNavaidProbability: number;
+  dmeHoldingAwayFromNavaidProbability: number;
 
   /**
    * Minimum DME distance in Nautical Miles.
@@ -56,6 +56,16 @@ export class Configuration extends ConfigurationAbstract {
    * Maximum altitude of aircraft, in ft MSL.
    **/
   maximumAltitude: number;
+
+  /**
+   * Minimum altitude of holding pattern, in ft MSL.
+   */
+  minimumHoldingAltitude: number;
+
+  /**
+   * Maximum altitude of holding pattern, in ft MSL.
+   */
+  maximumHoldingAltitude: number;
 
   /**
    * Heading of inbound leg in degrees.
@@ -115,6 +125,18 @@ export class Configuration extends ConfigurationAbstract {
         description: "Maximum altitude of aircraft, in 100ft MSL. '0' means that the minimum altitude will be used.",
         example: "200",
       },
+      "min-hold-altitude": {
+        type: "string",
+        default: "0",
+        description: "Minimum altitude of holding pattern, in 100ft MSL. '0' means the rgular altitude will be used.",
+        example: "200",
+      },
+      "max-hold-altitude": {
+        type: "string",
+        default: "0",
+        description: "Maximum altitude of holding pattern, in 100ft MSL. '0' means the rgular altitude will be used",
+        example: "200",
+      },
       "min-dme-dist": {
         type: "string",
         default: "5",
@@ -145,10 +167,10 @@ export class Configuration extends ConfigurationAbstract {
         default: "0.1",
         description: "Probability of an DME procedure being used in the mission.",
       },
-      "dme-holding-toward-probability": {
+      "dme-holding-away-probability": {
         type: "string",
-        default: "0.5",
-        description: "Probability of an DME procedure holding toward the navaid instead of away from.",
+        default: "0.1",
+        description: "Probability of an DME procedure holding away from the navaid instead of towards.",
       },
       "airport-code": {
         type: "string",
@@ -182,11 +204,13 @@ export class Configuration extends ConfigurationAbstract {
 
     this.leftHandPatternProbability = Number(values["left-probability"]);
     this.dmeProcedureProbability = Number(values["dme-probability"]);
-    this.dmeHoldingTowardNavaidProbability = Number(values["dme-holding-toward-probability"]);
+    this.dmeHoldingAwayFromNavaidProbability = Number(values["dme-holding-away-probability"]);
     this.minimumDmeDistance = Math.max(Number(values["min-dme-dist"]), 0);
     this.maximumDmeDistance = Math.max(Number(values["max-dme-dist"]), this.minimumDmeDistance);
     this.minimumSafeAltitude = Math.max(Number(values["min-altitude"]) * 100, 0);
     this.maximumAltitude = Math.max(Number(values["max-altitude"]) * 100, this.minimumSafeAltitude);
+    this.minimumHoldingAltitude = Number(values["min-hold-altitude"]) * 100 || this.minimumSafeAltitude;
+    this.maximumHoldingAltitude = Number(values["max-hold-altitude"]) * 100 || this.maximumAltitude;
     this.inboundHeading = Number(values["inbound-heading"]);
     this.numberOfMissions = Number(values["missions"]);
     this.initialDistance = Number(values["distance"]);

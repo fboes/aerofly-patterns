@@ -1,7 +1,5 @@
 # Aerofly Landegerät: Helicopter Emergency Medical Services
 
-> Create random custom missions for Aerofly FS 4.
-
 This nice little project generates `custom_missions_user.tmc` to use with Aerofly FS 4. The HEMS version of this tool generates random Helicopter Emergency Medical Services (HEMS) missions.
 
 ## What does it do?
@@ -18,12 +16,6 @@ This nice little project generates `custom_missions_user.tmc` to use with Aerofl
 1. …as well as Point of Interest (POI) files, which will contain cars and persons for every emergency site.
 
 ## How to use it
-
-This tool requires [Node.js](https://nodejs.org/en) (at least version 20) to be installed on your local computer.
-
-The Landegerät is a Command Line Interface (CLI) tool, which means you need to open a terminal to run it. The tool itself does not need to be installed, as the Node.js tool `npx` will take care of downloading as well as executing the Landegerät.
-
-### CLI usage
 
 ```
 Usage: npx -p @fboes/aerofly-patterns@latest aerofly-hems GEOJSON_FILE [AFS_AIRCRAFT_CODE] [AFS_LIVERY_CODE] [...options]

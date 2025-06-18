@@ -1,5 +1,4 @@
-import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
-import { AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
+import { AeroflyMissionTargetPlane, AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
 import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission";
 
 export class AeroflyMissionAutofill {
