@@ -4,26 +4,26 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #1: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this clear early morning with no wind.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 13:40Z.]>
+                <[string8][description][Your B58 is cruising on this clear early morning with no wind.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 13:35Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.20975752993587 41.667997245566276]>
-                <[float64][origin_alt][3784120.856]> // 12415096 ft MSL
-                <[float64][origin_dir][226.78237068683575]>
+                <[tmvector2d][origin_lon_lat][-124.17991486050754 41.60497531025178]>
+                <[float64][origin_alt][3220472.5439999998]> // 10565856 ft MSL
+                <[float64][origin_dir][274.1118053513535]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43523.76976117131]> // 44 km
-                <[float64][duration][1500]> // 25 min
+                <[float64][distance][37331.56122397677]> // 37 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.20976481751552 41.667990397852584]>
-                    <[float64][direction][226.78237068683575]>
+                    <[vector2_float64][lon_lat][-124.17992483476785 41.60497602728136]>
+                    <[float64][direction][274.1118053513535]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -44,92 +44,56 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCAPRL0]>
-                        <[vector2_float64][lon_lat][-124.29204167519157 41.610550334495535]>
+                        <[string8u][name][CIGCA]>
+                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][226.97635575643343]>
+                        <[float64][direction][274.1855692803547]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
+                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL1]>
-                        <[vector2_float64][lon_lat][-124.25780367150814 41.56617612107015]>
+                        <[string8u][name][CIGCA-TURN]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.0000000000033]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL2]>
-                        <[vector2_float64][lon_lat][-124.23272249553455 41.5849185543478]>
+                        <[string8u][name][CIGCA-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][45.02273203616687]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL3]>
-                        <[vector2_float64][lon_lat][-124.28272876229784 41.60028664313573]>
+                        <[string8u][name][CIGCA-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][292.3555239061218]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA]>
-                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
+                        <[string8u][name][CIGCA-INBND]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0054921007009]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][9]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -139,26 +103,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #2: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this early morning with no wind.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 15:10Z.]>
+                <[string8][description][Your B58 is cruising on this early morning with no wind.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 15:00Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.34145106063222 41.68525544157846]>
-                <[float64][origin_alt][3126640.52]> // 10258008 ft MSL
-                <[float64][origin_dir][153.10011951814022]>
+                <[tmvector2d][origin_lon_lat][-124.40236461434678 41.6125338581219]>
+                <[float64][origin_alt][4380905.652]> // 14373051 ft MSL
+                <[float64][origin_dir][91.09235103817946]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43432.337102786514]> // 43 km
-                <[float64][duration][1500]> // 25 min
+                <[float64][distance][57821.02130517688]> // 58 km
+                <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.34144653630374 41.685246523593726]>
-                    <[float64][direction][153.10011951814022]>
+                    <[vector2_float64][lon_lat][-124.40235461616412 41.612533667482225]>
+                    <[float64][direction][91.09235103817946]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -181,92 +145,84 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCAPRL0]>
-                        <[vector2_float64][lon_lat][-124.29204167519157 41.610550334495535]>
+                        <[string8u][name][CIGCA]>
+                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][153.684047160781]>
+                        <[float64][direction][91.01839603710101]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
+                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL1]>
-                        <[vector2_float64][lon_lat][-124.25780367150814 41.56617612107015]>
+                        <[string8u][name][CIGCA-OFF1]>
+                        <[vector2_float64][lon_lat][-124.2062721463983 41.574373841728224]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.0000000000033]>
+                        <[float64][direction][119.99999999999545]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL2]>
-                        <[vector2_float64][lon_lat][-124.23272249553455 41.5849185543478]>
+                        <[string8u][name][CIGCA-OFF2]>
+                        <[vector2_float64][lon_lat][-124.2421026218865 41.54760515982319]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][45.02273203616687]>
+                        <[float64][direction][225.0562332773963]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL3]>
-                        <[vector2_float64][lon_lat][-124.28272876229784 41.60028664313573]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][292.3555239061218]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0054921007009]>
+                        <[float64][direction][330.03245104620396]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
+                        <[float64][direction][329.9999999999777]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CIGCA-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
+                        <[float64][altitude][731.5199765913608]> // 2400 ft
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
+                        <[string8u][name][CIGCA-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
+                        <[string8u][name][CIGCA-INBND]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][9]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -276,26 +232,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #3: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this clear morning with almost no wind.
+                <[string8][description][Your B58 is cruising on this clear morning with almost no wind.
 Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 16:30Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.38646060474929 41.65394605746886]>
-                <[float64][origin_alt][3600721.9]> // 11813393 ft MSL
-                <[float64][origin_dir][121.07596768513622]>
+                <[tmvector2d][origin_lon_lat][-124.31909931204667 41.53041986320841]>
+                <[float64][origin_alt][4016732.412]> // 13178257 ft MSL
+                <[float64][origin_dir][14.631024115460264]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43251.743260773736]> // 43 km
+                <[float64][distance][37331.561223976714]> // 37 km
                 <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.38645203991263 41.65394089572757]>
-                    <[float64][direction][121.07596768513622]>
+                    <[vector2_float64][lon_lat][-124.31909678611358 41.53042953893381]>
+                    <[float64][direction][14.631024115460264]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -319,81 +275,53 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][121.01254842650417]>
+                        <[float64][direction][14.612378985065789]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OFF1]>
-                        <[vector2_float64][lon_lat][-124.23168040722685 41.585368219611276]>
+                        <[string8u][name][CIGCA-TURN]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][120.00000000000495]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OFF2]>
-                        <[vector2_float64][lon_lat][-124.25676175803012 41.56662578649435]>
+                        <[string8u][name][CIGCA-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][225.03937670311814]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA]>
-                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
+                        <[string8u][name][CIGCA-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.02272666888894]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
+                        <[string8u][name][CIGCA-INBND]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -403,26 +331,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #4: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this overcast morning with no wind.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 18:00Z.]>
+                <[string8][description][Your B58 is cruising on this overcast morning with no wind.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 18:05Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.3661494686577 41.67249077184109]>
-                <[float64][origin_alt][4403215.364]> // 14446246 ft MSL
-                <[float64][origin_dir][137.61913362195128]>
+                <[tmvector2d][origin_lon_lat][-124.36337014707486 41.674325957796846]>
+                <[float64][origin_alt][4635826.92]> // 15209407 ft MSL
+                <[float64][origin_dir][139.52561493441704]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43251.74326077495]> // 43 km
-                <[float64][duration][900]> // 15 min
+                <[float64][distance][57821.02130517653]> // 58 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.36614272810023 41.6724833850363]>
-                    <[float64][direction][137.61913362195128]>
+                    <[vector2_float64][lon_lat][-124.36336365599453 41.6743183508345]>
+                    <[float64][direction][139.52561493441704]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -446,7 +374,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][137.56919897734866]>
+                        <[float64][direction][139.47752620220786]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -454,18 +382,18 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OFF1]>
-                        <[vector2_float64][lon_lat][-124.23168040722685 41.585368219611276]>
+                        <[vector2_float64][lon_lat][-124.2062721463983 41.574373841728224]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][120.00000000000495]>
+                        <[float64][direction][119.99999999999545]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OFF2]>
-                        <[vector2_float64][lon_lat][-124.25676175803012 41.56662578649435]>
+                        <[vector2_float64][lon_lat][-124.2421026218865 41.54760515982319]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][225.03937670311814]>
+                        <[float64][direction][225.0562332773963]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -474,7 +402,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.02272666888894]>
+                        <[float64][direction][330.03245104620396]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -482,36 +410,36 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -520,7 +448,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -530,26 +458,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #5: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this clear noon with wind from 240° at 6 kts.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 19:30Z.]>
+                <[string8][description][Your B58 is cruising on this clear noon with wind from 240° at 6 kts.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 19:35Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.17980609337683 41.6062132235815]>
-                <[float64][origin_alt][2950459.412]> // 9679986 ft MSL
-                <[float64][origin_dir][273.25826064141177]>
+                <[tmvector2d][origin_lon_lat][-124.39347124539425 41.578406960351444]>
+                <[float64][origin_alt][4219816.408]> // 13844543 ft MSL
+                <[float64][origin_dir][66.99361428781867]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][28909.120822321063]> // 29 km
-                <[float64][duration][900]> // 15 min
+                <[float64][distance][37331.56122397735]> // 37 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.1798160772117 41.606213791948804]>
-                    <[float64][direction][273.25826064141177]>
+                    <[vector2_float64][lon_lat][-124.39346204078124 41.57841086868862]>
+                    <[float64][direction][66.99361428781867]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -573,7 +501,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][273.3320976932506]>
+                        <[float64][direction][66.92558801295644]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -581,36 +509,36 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -619,7 +547,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -629,26 +557,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #6: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this gusty, clear noon with wind from 340° at 11 kts.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 21:00Z.]>
+                <[string8][description][Your B58 is cruising on this gusty, clear noon with wind from 340° at 11 kts.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 21:10Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.2725830895723 41.69313235323885]>
-                <[float64][origin_alt][3447834.756]> // 11311795 ft MSL
-                <[float64][origin_dir][189.50526135050848]>
+                <[tmvector2d][origin_lon_lat][-124.18631856448164 41.639496251188696]>
+                <[float64][origin_alt][3246063.096]> // 10649814 ft MSL
+                <[float64][origin_dir][249.95515139200336]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43490.325118434834]> // 43 km
-                <[float64][duration][900]> // 15 min
+                <[float64][distance][58195.31584100626]> // 58 km
+                <[float64][duration][1500]> // 25 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.27258474095403 41.693122490534435]>
-                    <[float64][direction][189.50526135050848]>
+                    <[vector2_float64][lon_lat][-124.18632795872779 41.639492823632814]>
+                    <[float64][direction][249.95515139200336]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -672,34 +600,34 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCAPRL0]>
                         <[vector2_float64][lon_lat][-124.29204167519157 41.610550334495535]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][189.99163601499276]>
+                        <[float64][direction][249.9188455816298]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-PRL1]>
-                        <[vector2_float64][lon_lat][-124.25780367150814 41.56617612107015]>
+                        <[vector2_float64][lon_lat][-124.24314463715955 41.54715549448247]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.0000000000033]>
+                        <[float64][direction][149.99999999999676]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-PRL2]>
-                        <[vector2_float64][lon_lat][-124.23272249553455 41.5849185543478]>
+                        <[vector2_float64][lon_lat][-124.20731441142722 41.573924176715416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][45.02273203616687]>
+                        <[float64][direction][45.032462220140076]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-PRL3]>
-                        <[vector2_float64][lon_lat][-124.28272876229784 41.60028664313573]>
+                        <[vector2_float64][lon_lat][-124.27918478682308 41.59569502303979]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][292.3555239061218]>
+                        <[float64][direction][292.07105341947886]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -708,7 +636,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0054921007009]>
+                        <[float64][direction][330.00784494598827]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -716,36 +644,36 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -754,7 +682,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -764,26 +692,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #7: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this gusty, clear afternoon with wind from 330° at 18 kts.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 22:30Z.]>
+                <[string8][description][Your B58 is cruising on this gusty, clear afternoon with wind from 330° at 18 kts.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 22:40Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.32123728525866 41.69115375116664]>
-                <[float64][origin_alt][3451443.68]> // 11323635 ft MSL
-                <[float64][origin_dir][164.26813599684533]>
+                <[tmvector2d][origin_lon_lat][-124.19529761428291 41.56843526181796]>
+                <[float64][origin_alt][4276903.024]> // 14031835 ft MSL
+                <[float64][origin_dir][300.7067728132199]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43451.54277134381]> // 43 km
-                <[float64][duration][900]> // 15 min
+                <[float64][distance][37331.56122397781]> // 37 km
+                <[float64][duration][1500]> // 25 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.32123457390078 41.69114412575556]>
-                    <[float64][direction][164.26813599684533]>
+                    <[vector2_float64][lon_lat][-124.19530621220206 41.568440368263516]>
+                    <[float64][direction][300.7067728132199]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -804,92 +732,56 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCAPRL0]>
-                        <[vector2_float64][lon_lat][-124.29204167519157 41.610550334495535]>
+                        <[string8u][name][CIGCA]>
+                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][164.84608568132558]>
+                        <[float64][direction][300.77029930399635]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
+                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL1]>
-                        <[vector2_float64][lon_lat][-124.25780367150814 41.56617612107015]>
+                        <[string8u][name][CIGCA-TURN]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.0000000000033]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL2]>
-                        <[vector2_float64][lon_lat][-124.23272249553455 41.5849185543478]>
+                        <[string8u][name][CIGCA-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][45.02273203616687]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL3]>
-                        <[vector2_float64][lon_lat][-124.28272876229784 41.60028664313573]>
+                        <[string8u][name][CIGCA-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][292.3555239061218]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA]>
-                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
+                        <[string8u][name][CIGCA-INBND]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0054921007009]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][9]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -899,26 +791,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #8: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this late afternoon with wind from 180° at 13 kts.
+                <[string8][description][Your B58 is cruising on this late afternoon with wind from 180° at 13 kts.
 Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 00:05Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.39495459446874 41.64094839396004]>
-                <[float64][origin_alt][3194881.992]> // 10481897 ft MSL
-                <[float64][origin_dir][111.11156753918976]>
+                <[tmvector2d][origin_lon_lat][-124.36039521750911 41.67615965398582]>
+                <[float64][origin_alt][4640092.012]> // 15223400 ft MSL
+                <[float64][origin_dir][141.5078548663157]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43251.743260772935]> // 43 km
+                <[float64][distance][57821.02130517487]> // 58 km
                 <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.39494526566038 41.64094479210848]>
-                    <[float64][direction][111.11156753918976]>
+                    <[vector2_float64][lon_lat][-124.3603889934357 41.6761518270509]>
+                    <[float64][direction][141.5078548663157]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -942,7 +834,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][111.0425141121982]>
+                        <[float64][direction][141.46174209424385]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -950,18 +842,18 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OFF1]>
-                        <[vector2_float64][lon_lat][-124.23168040722685 41.585368219611276]>
+                        <[vector2_float64][lon_lat][-124.2062721463983 41.574373841728224]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][120.00000000000495]>
+                        <[float64][direction][119.99999999999545]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OFF2]>
-                        <[vector2_float64][lon_lat][-124.25676175803012 41.56662578649435]>
+                        <[vector2_float64][lon_lat][-124.2421026218865 41.54760515982319]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][225.03937670311814]>
+                        <[float64][direction][225.0562332773963]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -970,7 +862,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.02272666888894]>
+                        <[float64][direction][330.03245104620396]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -978,36 +870,36 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -1016,7 +908,7 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -1026,26 +918,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #9: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this late afternoon with wind from 310° at 6 kts.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 01:35Z.]>
+                <[string8][description][Your B58 is cruising on this late afternoon with wind from 310° at 6 kts.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 01:30Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.19376131640949 41.65165423675381]>
-                <[float64][origin_alt][4238845.28]> // 13906974 ft MSL
-                <[float64][origin_dir][240.74669521717806]>
+                <[tmvector2d][origin_lon_lat][-124.28389453507575 41.527892663817035]>
+                <[float64][origin_alt][4534777.048]> // 14877878 ft MSL
+                <[float64][origin_dir][356.33769895954924]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][43526.3825646837]> // 44 km
-                <[float64][duration][1200]> // 20 min
+                <[float64][distance][37331.56122397704]> // 37 km
+                <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.19377004108772 41.65164935003815]>
-                    <[float64][direction][240.74669521717806]>
+                    <[vector2_float64][lon_lat][-124.28389517383269 41.52790264339566]>
+                    <[float64][direction][356.33769895954924]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -1066,92 +958,56 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCAPRL0]>
-                        <[vector2_float64][lon_lat][-124.29204167519157 41.610550334495535]>
+                        <[string8u][name][CIGCA]>
+                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.80331699162923]>
+                        <[float64][direction][356.34241363107486]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
+                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL1]>
-                        <[vector2_float64][lon_lat][-124.25780367150814 41.56617612107015]>
+                        <[string8u][name][CIGCA-TURN]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.0000000000033]>
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL2]>
-                        <[vector2_float64][lon_lat][-124.23272249553455 41.5849185543478]>
+                        <[string8u][name][CIGCA-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][45.02273203616687]>
+                        <[float64][direction][59.99999999999858]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-PRL3]>
-                        <[vector2_float64][lon_lat][-124.28272876229784 41.60028664313573]>
+                        <[string8u][name][CIGCA-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][292.3555239061218]>
+                        <[float64][direction][150.0000000000008]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA]>
-                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
+                        <[string8u][name][CIGCA-INBND]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0054921007009]>
+                        <[float64][direction][239.99999999999557]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
-                        <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][9]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>
@@ -1161,26 +1017,26 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #10: CIGCA FIX]>
-                <[string8][description][Your C172 is cruising on this overcast late afternoon with almost no wind.
-Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 03:05Z.]>
+                <[string8][description][Your B58 is cruising on this overcast late afternoon with almost no wind.
+Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns, maintain 2,400'. Expect further clearance at 03:00Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.25498160718462 41.53220289177878]>
-                <[float64][origin_alt][3287073.596]> // 10784363 ft MSL
-                <[float64][origin_dir][341.10884178788115]>
+                <[tmvector2d][origin_lon_lat][-124.25278294838274 41.68922799575668]>
+                <[float64][origin_alt][3023622.144]> // 9920021 ft MSL
+                <[float64][origin_dir][200.04146362287668]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.291 41.611000000000004]>
                 <[float64][destination_alt][7874.016]> // 25834 ft MSL
                 <[float64][destination_dir][330]>
-                <[float64][distance][28909.120822319288]> // 29 km
-                <[float64][duration][1200]> // 20 min
+                <[float64][distance][58173.677358384826]> // 58 km
+                <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.25498484489877 41.53221235313212]>
-                    <[float64][direction][341.10884178788115]>
+                    <[vector2_float64][lon_lat][-124.25278637538362 41.689218601308056]>
+                    <[float64][direction][200.04146362287668]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -1201,56 +1057,92 @@ Hold south-east of CIGCA FIX on the inbound course 330°, make right-hand turns,
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA]>
-                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
+                        <[string8u][name][CIGCAPRL0]>
+                        <[vector2_float64][lon_lat][-124.29204167519157 41.610550334495535]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][341.1327419961359]>
+                        <[float64][direction][200.46097194347797]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-TURN]>
-                        <[vector2_float64][lon_lat][-124.29927398538717 41.62171276382067]>
+                        <[string8u][name][CIGCA-PRL1]>
+                        <[vector2_float64][lon_lat][-124.24314463715955 41.54715549448247]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][329.99999999997686]>
+                        <[float64][direction][149.99999999999676]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.2706065603231 41.63407957987365]>
+                        <[string8u][name][CIGCA-PRL2]>
+                        <[vector2_float64][lon_lat][-124.20731441142722 41.573924176715416]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][60.00000000003672]>
+                        <[float64][direction][45.032462220140076]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.22809325718126 41.57898955147706]>
+                        <[string8u][name][CIGCA-PRL3]>
+                        <[vector2_float64][lon_lat][-124.27918478682308 41.59569502303979]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][150.00000000000045]>
+                        <[float64][direction][292.07105341947886]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CIGCA-INBND]>
-                        <[vector2_float64][lon_lat][-124.25673072845542 41.566615621560416]>
+                        <[string8u][name][CIGCA]>
+                        <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][240.0000000000017]>
+                        <[float64][direction][330.00784494598827]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CIGCA-TURN]>
+                        <[vector2_float64][lon_lat][-124.30282082069759 41.626303766667064]>
+                        <[float64][altitude][731.5199765913608]> // 2400 ft
+                        <[float64][direction][329.9999999999777]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CIGCA-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.26186107123328 41.643968464777416]>
+                        <[float64][altitude][731.5199765913608]> // 2400 ft
+                        <[float64][direction][59.99999999999858]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CIGCA-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.20114069177366 41.565263629618585]>
+                        <[float64][altitude][731.5199765913608]> // 2400 ft
+                        <[float64][direction][150.0000000000008]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CIGCA-INBND]>
+                        <[vector2_float64][lon_lat][-124.24203932074703 41.54758441574153]>
+                        <[float64][altitude][731.5199765913608]> // 2400 ft
+                        <[float64][direction][239.99999999999557]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][9]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CIGCA]>
                         <[vector2_float64][lon_lat][-124.291 41.611000000000004]>
                         <[float64][altitude][731.5199765913608]> // 2400 ft
-                        <[float64][direction][330.0059440751885]>
+                        <[float64][direction][330.0084897680562]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[bool][fly_over][true]>

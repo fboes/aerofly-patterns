@@ -23,13 +23,13 @@ export class Scenario {
         return new Scenario(configuration, aircraft, date, await AviationWeatherApiHelper.getWeather(configuration.airportCode, date, holdingNavAid.position), holdingNavAid, index);
     }
     constructor(configuration, aircraft, date, weather, holdingNavAid, index = 0) {
-        _Scenario_instances.add(this);
         this.configuration = configuration;
         this.aircraft = aircraft;
         this.date = date;
         this.weather = weather;
         this.holdingNavAid = holdingNavAid;
         this.index = index;
+        _Scenario_instances.add(this);
         this.pattern = new HoldingPattern(configuration, holdingNavAid, aircraft);
         // Building the actual mission
         const bearing = Math.random() * 360;

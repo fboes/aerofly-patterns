@@ -1,6 +1,6 @@
 # Landegerät: Holding at Crescent City VORTAC
 
-This file contains 10 holding procedure lessons for the Cessna 172 SP Skyhawk starting in the vicinity of [Crescent City VORTAC (CEC, 109 MHz))](https://skyvector.com/?ll=41.7796%2C-124.24085&chart=301&zoom=2).
+This file contains 10 holding procedure lessons for the Beechcraft Baron 58 starting in the vicinity of [Crescent City VORTAC (CEC, 109 MHz))](https://skyvector.com/?ll=41.7796%2C-124.24085&chart=301&zoom=2).
 
 - See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import [the missions into Aerofly FS 4](missions/custom_missions_user.tmc) and all other files.
 - See [the Aerofly FS 4 manual on challenges / missions](https://www.aerofly.com/tutorials/missions/) on how to access these missions in Aerofly FS 4.
@@ -11,14 +11,14 @@ There are 10 missions included in this [custom missions file](missions/custom_mi
 
 | No  | Local date¹ | Local time¹ |          Wind | Clouds         | Visibility | Radial | Area  |   DME | Turn | Altitude |
 | :-: | ----------- | ----------: | ------------: | -------------- | ---------: | -----: | ----- | ----: | :--: | -------: |
-| #01 | 2025-06-19  |       05:15 |          Calm | CLR            |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
-| #02 | 2025-06-18  |       06:45 |          Calm | FEW @ 200 ft   |      10 SM |   346° | south |     — |  R   | 3,000 ft |
+| #01 | 2025-06-19  |       05:15 |          Calm | CLR            |      10 SM |   346° | south |     — |  R   | 3,000 ft |
+| #02 | 2025-06-18  |       06:45 |          Calm | FEW @ 200 ft   |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
 | #03 | 2025-06-17  |       08:15 |  4 kts @ 200° | CLR            |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
 | #04 | 2025-06-16  |       09:45 |          Calm | OVC @ 1,200 ft |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
-| #05 | 2025-06-15  |       11:15 |  6 kts @ 240° | CLR            |      10 SM |   346° | south |     — |  R   | 3,000 ft |
-| #06 | 2025-06-14  |       12:45 | 11 kts @ 340° | CLR            |      10 SM |   346° | south |     — |  R   | 3,000 ft |
-| #07 | 2025-06-13  |       14:15 | 18 kts @ 330° | CLR            |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
-| #08 | 2025-06-12  |       15:45 | 13 kts @ 180° | FEW @ 1,000 ft |      10 SM |   346° | south |     — |  R   | 3,000 ft |
+| #05 | 2025-06-15  |       11:15 |  6 kts @ 240° | CLR            |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
+| #06 | 2025-06-14  |       12:45 | 11 kts @ 340° | CLR            |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
+| #07 | 2025-06-13  |       14:15 | 18 kts @ 330° | CLR            |      10 SM |   346° | south |     — |  R   | 3,000 ft |
+| #08 | 2025-06-12  |       15:45 | 13 kts @ 180° | FEW @ 1,000 ft |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
 | #09 | 2025-06-11  |       17:15 |  6 kts @ 310° | FEW @ 2,800 ft |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
 | #10 | 2025-06-10  |       18:45 |  3 kts @ 310° | OVC @ 900 ft   |      10 SM |   346° | south | 11 NM |  R   | 3,000 ft |
 

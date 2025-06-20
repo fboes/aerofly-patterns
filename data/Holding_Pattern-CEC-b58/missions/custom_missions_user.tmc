@@ -3,27 +3,27 @@
         <[list_tmmission_definition][missions][]
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #1: Crescent City VORTAC with DME fix]>
-                <[string8][description][Your C172 is cruising on this clear early morning with no wind.
-Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 13:40Z.]>
+                <[string8][title][HOLD #1: Crescent City VORTAC]>
+                <[string8][description][Your B58 is cruising on this clear early morning with no wind.
+Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make right-hand turns, maintain 3,000'. Expect further clearance at 13:30Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.33958620538093 41.55799566325129]>
-                <[float64][origin_alt][3492782.264]> // 11459260 ft MSL
-                <[float64][origin_dir][62.57821880539814]>
+                <[tmvector2d][origin_lon_lat][-124.28474555607583 41.703050125846104]>
+                <[float64][origin_alt][3333005.356]> // 10935058 ft MSL
+                <[float64][origin_dir][23.20262782079078]>
                 <[stringt8c][destination_icao][KCEC]>
-                <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
+                <[tmvector2d][destination_lon_lat][-124.2408 41.779599999999995]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][34808.132534337936]> // 35 km
-                <[float64][duration][1500]> // 25 min
+                <[float64][distance][37329.096754934006]> // 37 km
+                <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.33957732897719 41.558000268623864]>
-                    <[float64][direction][62.57821880539814]>
+                    <[vector2_float64][lon_lat][-124.2847416162352 41.70305931701881]>
+                    <[float64][direction][23.20262782079078]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -44,10 +44,10 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11]>
-                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
+                        <[string8u][name][CEC]>
+                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][62.512661452054886]>
+                        <[float64][direction][23.173370237702272]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -55,8 +55,8 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.60876057906825]>
+                        <[string8u][name][CEC-TURN]>
+                        <[vector2_float64][lon_lat][-124.2408 41.79727196660858]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -64,17 +64,17 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20771070530823 41.60875583509322]>
+                        <[string8u][name][CEC-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.19339079417205 41.79726222068257]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999997056]>
+                        <[float64][direction][90.00000000001035]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20771070530822 41.51862139074948]>
+                        <[string8u][name][CEC-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.19339079417205 41.70640016699332]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -82,19 +82,19 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-INBND]>
-                        <[vector2_float64][lon_lat][-124.24075387283241 41.518616661785366]>
+                        <[string8u][name][CEC-INBND]>
+                        <[vector2_float64][lon_lat][-124.24073293211431 41.7063904521318]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270]>
+                        <[float64][direction][269.9999999999948]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11]>
-                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
+                        <[string8u][name][CEC]>
+                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9745869788703]>
+                        <[float64][direction][359.9608581413195]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -104,27 +104,27 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #2: Crescent City VORTAC]>
-                <[string8][description][Your C172 is cruising on this early morning with no wind.
-Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make right-hand turns, maintain 3,000'. Expect further clearance at 15:10Z.]>
+                <[string8][title][HOLD #2: Crescent City VORTAC with DME fix]>
+                <[string8][description][Your B58 is cruising on this early morning with no wind.
+Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 15:05Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.13051696836119 41.79275822792896]>
-                <[float64][origin_alt][4318897.776]> // 14169613 ft MSL
-                <[float64][origin_dir][260.87212970635665]>
+                <[tmvector2d][origin_lon_lat][-124.12984710153495 41.6035316236449]>
+                <[float64][origin_alt][3840551.304]> // 12600235 ft MSL
+                <[float64][origin_dir][265.04373719399825]>
                 <[stringt8c][destination_icao][KCEC]>
-                <[tmvector2d][destination_lon_lat][-124.2408 41.779599999999995]>
+                <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][43523.92871073574]> // 44 km
-                <[float64][duration][1500]> // 25 min
+                <[float64][distance][62501.4303454838]> // 63 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.13052684172877 41.79275664154541]>
-                    <[float64][direction][260.87212970635665]>
+                    <[vector2_float64][lon_lat][-124.12985706414433 41.603530759692255]>
+                    <[float64][direction][265.04373719399825]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -147,18 +147,18 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CECPRL0]>
-                        <[vector2_float64][lon_lat][-124.24200598847135 41.779599993694]>
+                        <[string8u][name][CEC+11PRL0]>
+                        <[vector2_float64][lon_lat][-124.24200255897536 41.596390196176706]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][261.04273818232804]>
+                        <[float64][direction][265.1702893176874]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-PRL1]>
-                        <[vector2_float64][lon_lat][-124.24200598847135 41.72836693273754]>
+                        <[string8u][name][CEC+11-PRL1]>
+                        <[vector2_float64][lon_lat][-124.24200255897534 41.51460919277453]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -166,26 +166,26 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-PRL2]>
-                        <[vector2_float64][lon_lat][-124.20767801844877 41.7352257500068]>
+                        <[string8u][name][CEC+11-PRL2]>
+                        <[vector2_float64][lon_lat][-124.18738432520534 41.5255528368159]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][75.00000572649321]>
+                        <[float64][direction][75.00001459124996]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-PRL3]>
-                        <[vector2_float64][lon_lat][-124.2408 41.76722962337397]>
+                        <[string8u][name][CEC+11-PRL3]>
+                        <[vector2_float64][lon_lat][-124.2408 41.578718235833634]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][322.3390323618818]>
+                        <[float64][direction][323.0791094533196]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -195,8 +195,8 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.79197037662602]>
+                        <[string8u][name][CEC+11-TURN]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -204,17 +204,17 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.79196560201124]>
+                        <[string8u][name][CEC+11-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999999261]>
+                        <[float64][direction][90]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.72836216442878]>
+                        <[string8u][name][CEC+11-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -222,19 +222,19 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-INBND]>
-                        <[vector2_float64][lon_lat][-124.24076712391626 41.72835740047155]>
+                        <[string8u][name][CEC+11-INBND]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270.0000000000147]>
+                        <[float64][direction][270.00000000001546]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][9]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9725878277047]>
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -245,26 +245,26 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #3: Crescent City VORTAC with DME fix]>
-                <[string8][description][Your C172 is cruising on this clear morning with almost no wind.
+                <[string8][description][Your B58 is cruising on this clear morning with almost no wind.
 Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 16:35Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.19425709331651 41.6720539810529]>
-                <[float64][origin_alt][4746063.144]> // 15571074 ft MSL
-                <[float64][origin_dir][204.67503077740867]>
+                <[tmvector2d][origin_lon_lat][-124.12944329295888 41.59625552213347]>
+                <[float64][origin_alt][3013451.54]> // 9886653 ft MSL
+                <[float64][origin_dir][270.0556981498762]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][56778.89757104146]> // 57 km
+                <[float64][distance][62501.80021743924]> // 63 km
                 <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.19426126802762 41.67204489415094]>
-                    <[float64][direction][204.67503077740867]>
+                    <[vector2_float64][lon_lat][-124.12945329295415 41.59625553185463]>
+                    <[float64][direction][270.0556981498762]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -288,7 +288,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11PRL0]>
                         <[vector2_float64][lon_lat][-124.24200255897536 41.596390196176706]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][205.26565904066328]>
+                        <[float64][direction][270.129030389392]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -296,7 +296,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-PRL1]>
-                        <[vector2_float64][lon_lat][-124.24200255897534 41.51862612845897]>
+                        <[vector2_float64][lon_lat][-124.24200255897534 41.51460919277453]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -305,18 +305,18 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-PRL2]>
-                        <[vector2_float64][lon_lat][-124.19006428003675 41.5290328435446]>
+                        <[vector2_float64][lon_lat][-124.18738432520534 41.5255528368159]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][75.0000131930559]>
+                        <[float64][direction][75.00001459124996]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-PRL3]>
-                        <[vector2_float64][lon_lat][-124.2408 41.58401982581623]>
+                        <[vector2_float64][lon_lat][-124.2408 41.578718235833634]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][325.3937848754956]>
+                        <[float64][direction][323.0791094533196]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -334,7 +334,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.60876057906825]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -343,16 +343,16 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20771070530823 41.60875583509322]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999997056]>
+                        <[float64][direction][90]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20771070530822 41.51862139074948]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -361,9 +361,9 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-INBND]>
-                        <[vector2_float64][lon_lat][-124.24075387283241 41.518616661785366]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270]>
+                        <[float64][direction][270.00000000001546]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -372,7 +372,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11]>
                         <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9745869788703]>
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -383,26 +383,26 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #4: Crescent City VORTAC with DME fix]>
-                <[string8][description][Your C172 is cruising on this overcast morning with no wind.
+                <[string8][description][Your B58 is cruising on this overcast morning with no wind.
 Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 18:10Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.33478722236931 41.55176558567731]>
-                <[float64][origin_alt][4007874.144]> // 13149194 ft MSL
-                <[float64][origin_dir][57.62918003208233]>
+                <[tmvector2d][origin_lon_lat][-124.35209341154376 41.59925759522509]>
+                <[float64][origin_alt][3576115.6]> // 11732664 ft MSL
+                <[float64][origin_dir][92.01013638807444]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][34808.1325343368]> // 35 km
+                <[float64][distance][39239.615272944895]> // 39 km
                 <[float64][duration][1500]> // 25 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.33477877636226 41.551770939644506]>
-                    <[float64][direction][57.62918003208233]>
+                    <[vector2_float64][lon_lat][-124.35208341769739 41.59925724446207]>
+                    <[float64][direction][92.01013638807444]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -426,7 +426,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11]>
                         <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][57.56681124339963]>
+                        <[float64][direction][91.93624892280104]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -435,7 +435,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.60876057906825]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -444,16 +444,16 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20771070530823 41.60875583509322]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999997056]>
+                        <[float64][direction][90]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20771070530822 41.51862139074948]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -462,9 +462,9 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-INBND]>
-                        <[vector2_float64][lon_lat][-124.24075387283241 41.518616661785366]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270]>
+                        <[float64][direction][270.00000000001546]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -473,7 +473,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11]>
                         <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9745869788703]>
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -483,27 +483,27 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #5: Crescent City VORTAC]>
-                <[string8][description][Your C172 is cruising on this clear noon with wind from 240° at 6 kts.
-Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make right-hand turns, maintain 3,000'. Expect further clearance at 19:30Z.]>
+                <[string8][title][HOLD #5: Crescent City VORTAC with DME fix]>
+                <[string8][description][Your B58 is cruising on this clear noon with wind from 240° at 6 kts.
+Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 19:30Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.29822984900055 41.70819296865742]>
-                <[float64][origin_alt][3001312.432]> // 9846826 ft MSL
-                <[float64][origin_dir][30.986310627066132]>
+                <[tmvector2d][origin_lon_lat][-124.12980002771437 41.603106740858145]>
+                <[float64][origin_alt][4858267.8719999995]> // 15939200 ft MSL
+                <[float64][origin_dir][265.33706394904425]>
                 <[stringt8c][destination_icao][KCEC]>
-                <[tmvector2d][destination_lon_lat][-124.2408 41.779599999999995]>
+                <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][28907.91293208449]> // 29 km
+                <[float64][distance][62501.472812918255]> // 63 km
                 <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.29822470066793 41.70820154156073]>
-                    <[float64][direction][30.986310627066132]>
+                    <[vector2_float64][lon_lat][-124.1298099946162 41.60310592792035]>
+                    <[float64][direction][265.33706394904425]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -524,57 +524,94 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11PRL0]>
+                        <[vector2_float64][lon_lat][-124.24200255897536 41.596390196176706]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][30.948073698777534]>
+                        <[float64][direction][265.46052387221675]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
-                        <[bool][fly_over][true]>
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.79197037662602]>
-                        <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][0]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.79196560201124]>
-                        <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999999261]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.72836216442878]>
+                        <[string8u][name][CEC+11-PRL1]>
+                        <[vector2_float64][lon_lat][-124.24200255897534 41.51460919277453]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][4]
+                    <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-INBND]>
-                        <[vector2_float64][lon_lat][-124.24076712391626 41.72835740047155]>
+                        <[string8u][name][CEC+11-PRL2]>
+                        <[vector2_float64][lon_lat][-124.18738432520534 41.5255528368159]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270.0000000000147]>
+                        <[float64][direction][75.00001459124996]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CEC+11-PRL3]>
+                        <[vector2_float64][lon_lat][-124.2408 41.578718235833634]>
+                        <[float64][altitude][914.399970739201]> // 3000 ft
+                        <[float64][direction][323.0791094533196]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
+                        <[float64][altitude][914.399970739201]> // 3000 ft
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][109000000]> // 109 MHz
+                        <[bool][fly_over][true]>
+                    >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11-TURN]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9725878277047]>
+                        <[float64][direction][0]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][6]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CEC+11-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
+                        <[float64][altitude][914.399970739201]> // 3000 ft
+                        <[float64][direction][90]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][7]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CEC+11-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
+                        <[float64][altitude][914.399970739201]> // 3000 ft
+                        <[float64][direction][180]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][8]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CEC+11-INBND]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
+                        <[float64][altitude][914.399970739201]> // 3000 ft
+                        <[float64][direction][270.00000000001546]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][9]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
+                        <[float64][altitude][914.399970739201]> // 3000 ft
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -584,27 +621,27 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #6: Crescent City VORTAC]>
-                <[string8][description][Your C172 is cruising on this gusty, clear noon with wind from 340° at 11 kts.
-Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make right-hand turns, maintain 3,000'. Expect further clearance at 21:10Z.]>
+                <[string8][title][HOLD #6: Crescent City VORTAC with DME fix]>
+                <[string8][description][Your B58 is cruising on this gusty, clear noon with wind from 340° at 11 kts.
+Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 21:10Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.20561307474273 41.700570025225275]>
-                <[float64][origin_alt][4584973.9]> // 15042566 ft MSL
-                <[float64][origin_dir][341.61064768537926]>
+                <[tmvector2d][origin_lon_lat][-124.35193972785032 41.591244184473275]>
+                <[float64][origin_alt][4189632.68]> // 13745515 ft MSL
+                <[float64][origin_dir][86.49410699954649]>
                 <[stringt8c][destination_icao][KCEC]>
-                <[tmvector2d][destination_lon_lat][-124.2408 41.779599999999995]>
+                <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][28907.912932083836]> // 29 km
+                <[float64][distance][39239.615272941126]> // 39 km
                 <[float64][duration][1500]> // 25 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.20561622946968 41.70057951457182]>
-                    <[float64][direction][341.61064768537926]>
+                    <[vector2_float64][lon_lat][-124.35192974656518 41.59124479598527]>
+                    <[float64][direction][86.49410699954649]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -625,10 +662,10 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][341.6340734766334]>
+                        <[float64][direction][86.42032737681285]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -636,8 +673,8 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.79197037662602]>
+                        <[string8u][name][CEC+11-TURN]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -645,17 +682,17 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.79196560201124]>
+                        <[string8u][name][CEC+11-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999999261]>
+                        <[float64][direction][90]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.72836216442878]>
+                        <[string8u][name][CEC+11-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -663,19 +700,19 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-INBND]>
-                        <[vector2_float64][lon_lat][-124.24076712391626 41.72835740047155]>
+                        <[string8u][name][CEC+11-INBND]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270.0000000000147]>
+                        <[float64][direction][270.00000000001546]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9725878277047]>
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -685,27 +722,27 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #7: Crescent City VORTAC with DME fix]>
-                <[string8][description][Your C172 is cruising on this gusty, clear afternoon with wind from 330° at 18 kts.
-Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 22:30Z.]>
+                <[string8][title][HOLD #7: Crescent City VORTAC]>
+                <[string8][description][Your B58 is cruising on this gusty, clear afternoon with wind from 330° at 18 kts.
+Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make right-hand turns, maintain 3,000'. Expect further clearance at 22:35Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.32955077903833 41.54612589891025]>
-                <[float64][origin_alt][3545275.704]> // 11631483 ft MSL
-                <[float64][origin_dir][52.90284547484998]>
+                <[tmvector2d][origin_lon_lat][-124.35099775651877 41.79315114403368]>
+                <[float64][origin_alt][2852362.296]> // 9358145 ft MSL
+                <[float64][origin_dir][99.40171810533684]>
                 <[stringt8c][destination_icao][KCEC]>
-                <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
+                <[tmvector2d][destination_lon_lat][-124.2408 41.779599999999995]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][34808.13253433807]> // 35 km
-                <[float64][duration][900]> // 15 min
+                <[float64][distance][37329.096754935315]> // 37 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.32954280289948 41.546131930594015]>
-                    <[float64][direction][52.90284547484998]>
+                    <[vector2_float64][lon_lat][-124.35098789084613 41.793149510478216]>
+                    <[float64][direction][99.40171810533684]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -726,10 +763,10 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11]>
-                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
+                        <[string8u][name][CEC]>
+                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][52.84395479419885]>
+                        <[float64][direction][99.32828724592957]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -737,8 +774,8 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.60876057906825]>
+                        <[string8u][name][CEC-TURN]>
+                        <[vector2_float64][lon_lat][-124.2408 41.79727196660858]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -746,17 +783,17 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20771070530823 41.60875583509322]>
+                        <[string8u][name][CEC-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.19339079417205 41.79726222068257]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999997056]>
+                        <[float64][direction][90.00000000001035]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20771070530822 41.51862139074948]>
+                        <[string8u][name][CEC-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.19339079417205 41.70640016699332]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -764,19 +801,19 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11-INBND]>
-                        <[vector2_float64][lon_lat][-124.24075387283241 41.518616661785366]>
+                        <[string8u][name][CEC-INBND]>
+                        <[vector2_float64][lon_lat][-124.24073293211431 41.7063904521318]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270]>
+                        <[float64][direction][269.9999999999948]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC+11]>
-                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
+                        <[string8u][name][CEC]>
+                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9745869788703]>
+                        <[float64][direction][359.9608581413195]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -786,27 +823,27 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #8: Crescent City VORTAC]>
-                <[string8][description][Your C172 is cruising on this late afternoon with wind from 180° at 13 kts.
-Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make right-hand turns, maintain 3,000'. Expect further clearance at 00:10Z.]>
+                <[string8][title][HOLD #8: Crescent City VORTAC with DME fix]>
+                <[string8][description][Your B58 is cruising on this late afternoon with wind from 180° at 13 kts.
+Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 00:05Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.13331174257588 41.75706246133501]>
-                <[float64][origin_alt][4783136.636]> // 15692707 ft MSL
-                <[float64][origin_dir][285.6661212454677]>
+                <[tmvector2d][origin_lon_lat][-124.1354596334801 41.56943528947664]>
+                <[float64][origin_alt][4201443.704]> // 13784265 ft MSL
+                <[float64][origin_dir][288.85048017608574]>
                 <[stringt8c][destination_icao][KCEC]>
-                <[tmvector2d][destination_lon_lat][-124.2408 41.779599999999995]>
+                <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][43521.50571471316]> // 44 km
-                <[float64][duration][1500]> // 25 min
+                <[float64][distance][62496.492557843296]> // 62 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.13332137109171 41.75706516164664]>
-                    <[float64][direction][285.6661212454677]>
+                    <[vector2_float64][lon_lat][-124.13546909712971 41.569438520472744]>
+                    <[float64][direction][288.85048017608574]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -827,18 +864,18 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CECPRL0]>
-                        <[vector2_float64][lon_lat][-124.24200598847135 41.779599993694]>
+                        <[string8u][name][CEC+11PRL0]>
+                        <[vector2_float64][lon_lat][-124.24200255897536 41.596390196176706]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][285.57236077894197]>
+                        <[float64][direction][288.72250185663984]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
                     >
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-PRL1]>
-                        <[vector2_float64][lon_lat][-124.24200598847135 41.72836693273754]>
+                        <[string8u][name][CEC+11-PRL1]>
+                        <[vector2_float64][lon_lat][-124.24200255897534 41.51460919277453]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -846,26 +883,26 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-PRL2]>
-                        <[vector2_float64][lon_lat][-124.20767801844877 41.7352257500068]>
+                        <[string8u][name][CEC+11-PRL2]>
+                        <[vector2_float64][lon_lat][-124.18738432520534 41.5255528368159]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][75.00000572649321]>
+                        <[float64][direction][75.00001459124996]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-PRL3]>
-                        <[vector2_float64][lon_lat][-124.2408 41.76722962337397]>
+                        <[string8u][name][CEC+11-PRL3]>
+                        <[vector2_float64][lon_lat][-124.2408 41.578718235833634]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][322.3390323618818]>
+                        <[float64][direction][323.0791094533196]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -875,8 +912,8 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.79197037662602]>
+                        <[string8u][name][CEC+11-TURN]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -884,17 +921,17 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.79196560201124]>
+                        <[string8u][name][CEC+11-ABEAM]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999999261]>
+                        <[float64][direction][90]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20761629913775 41.72836216442878]>
+                        <[string8u][name][CEC+11-OUTBND]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -902,19 +939,19 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
                     >
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC-INBND]>
-                        <[vector2_float64][lon_lat][-124.24076712391626 41.72835740047155]>
+                        <[string8u][name][CEC+11-INBND]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270.0000000000147]>
+                        <[float64][direction][270.00000000001546]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][9]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][CEC]>
-                        <[vector2_float64][lon_lat][-124.2408 41.779599999999995]>
+                        <[string8u][name][CEC+11]>
+                        <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9725878277047]>
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -925,26 +962,26 @@ Hold south of Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #9: Crescent City VORTAC with DME fix]>
-                <[string8][description][Your C172 is cruising on this late afternoon with wind from 310° at 6 kts.
-Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 01:40Z.]>
+                <[string8][description][Your B58 is cruising on this late afternoon with wind from 310° at 6 kts.
+Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 01:35Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.21781292276877 41.514908932412936]>
-                <[float64][origin_alt][3392060.476]> // 11128808 ft MSL
-                <[float64][origin_dir][348.071703866432]>
+                <[tmvector2d][origin_lon_lat][-124.2943155323494 41.523372443136836]>
+                <[float64][origin_alt][4491141.876]> // 14734718 ft MSL
+                <[float64][origin_dir][28.758566055072833]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][34808.13253433679]> // 35 km
-                <[float64][duration][1500]> // 25 min
+                <[float64][distance][39239.615272944095]> // 39 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.21781498964285 41.51491871648323]>
-                    <[float64][direction][348.071703866432]>
+                    <[vector2_float64][lon_lat][-124.294310721151 41.52338120968519]>
+                    <[float64][direction][28.758566055072833]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -968,7 +1005,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11]>
                         <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][348.08695228308704]>
+                        <[float64][direction][28.72306371171794]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -977,7 +1014,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.60876057906825]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -986,16 +1023,16 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20771070530823 41.60875583509322]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999997056]>
+                        <[float64][direction][90]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20771070530822 41.51862139074948]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -1004,9 +1041,9 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-INBND]>
-                        <[vector2_float64][lon_lat][-124.24075387283241 41.518616661785366]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270]>
+                        <[float64][direction][270.00000000001546]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -1015,7 +1052,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11]>
                         <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9745869788703]>
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -1026,26 +1063,26 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #10: Crescent City VORTAC with DME fix]>
-                <[string8][description][Your C172 is cruising on this overcast late afternoon with almost no wind.
+                <[string8][description][Your B58 is cruising on this overcast late afternoon with almost no wind.
 Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 346°, 4-mile legs, make right-hand turns, maintain 3,000'. Expect further clearance at 03:00Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][c172]>
-                <[stringt8c][aircraft_icao][C172]>
-                <[stringt8c][callsign][N5PYD]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KCEC]>
-                <[tmvector2d][origin_lon_lat][-124.12952029361985 41.59954595737946]>
-                <[float64][origin_alt][3698490.932]> // 12134157 ft MSL
-                <[float64][origin_dir][267.7913412766902]>
+                <[tmvector2d][origin_lon_lat][-124.1467329566927 41.640997348408376]>
+                <[float64][origin_alt][4815616.952]> // 15799269 ft MSL
+                <[float64][origin_dir][237.5809929157748]>
                 <[stringt8c][destination_icao][KCEC]>
                 <[tmvector2d][destination_lon_lat][-124.2408 41.59639020244224]>
                 <[float64][destination_alt][9842.52]> // 32292 ft MSL
                 <[float64][destination_dir][346]>
-                <[float64][distance][56836.63312368961]> // 57 km
+                <[float64][distance][62486.369062753736]> // 62 km
                 <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-124.12953028619089 41.59954557199126]>
-                    <[float64][direction][267.7913412766902]>
+                    <[vector2_float64][lon_lat][-124.14674139819397 41.64099198733978]>
+                    <[float64][direction][237.5809929157748]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
@@ -1069,7 +1106,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11PRL0]>
                         <[vector2_float64][lon_lat][-124.24200255897536 41.596390196176706]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][267.8888109845701]>
+                        <[float64][direction][237.97218274589298]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz
@@ -1077,7 +1114,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-PRL1]>
-                        <[vector2_float64][lon_lat][-124.24200255897534 41.51862612845897]>
+                        <[vector2_float64][lon_lat][-124.24200255897534 41.51460919277453]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -1086,18 +1123,18 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-PRL2]>
-                        <[vector2_float64][lon_lat][-124.19006428003675 41.5290328435446]>
+                        <[vector2_float64][lon_lat][-124.18738432520534 41.5255528368159]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][75.0000131930559]>
+                        <[float64][direction][75.00001459124996]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-PRL3]>
-                        <[vector2_float64][lon_lat][-124.2408 41.58401982581623]>
+                        <[vector2_float64][lon_lat][-124.2408 41.578718235833634]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][325.3937848754956]>
+                        <[float64][direction][323.0791094533196]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -1115,7 +1152,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-TURN]>
-                        <[vector2_float64][lon_lat][-124.2408 41.60876057906825]>
+                        <[vector2_float64][lon_lat][-124.2408 41.61406216905083]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][0]>
                         <[float64][slope][0]>
@@ -1124,16 +1161,16 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-ABEAM]>
-                        <[vector2_float64][lon_lat][-124.20771070530823 41.60875583509322]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.6140524856652]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][89.99999999997056]>
+                        <[float64][direction][90]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
                     <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-OUTBND]>
-                        <[vector2_float64][lon_lat][-124.20771070530822 41.51862139074948]>
+                        <[vector2_float64][lon_lat][-124.19352569634088 41.514599515654425]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
                         <[float64][direction][180]>
                         <[float64][slope][0]>
@@ -1142,9 +1179,9 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                     <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
                         <[string8u][name][CEC+11-INBND]>
-                        <[vector2_float64][lon_lat][-124.24075387283241 41.518616661785366]>
+                        <[vector2_float64][lon_lat][-124.24072728580701 41.514589866072654]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][270]>
+                        <[float64][direction][270.00000000001546]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
@@ -1153,7 +1190,7 @@ Hold south of the 11 DME fix, Crescent City VORTAC (CEC, 109 MHz) on the radial 
                         <[string8u][name][CEC+11]>
                         <[vector2_float64][lon_lat][-124.2408 41.59639020244224]>
                         <[float64][altitude][914.399970739201]> // 3000 ft
-                        <[float64][direction][359.9745869788703]>
+                        <[float64][direction][359.96191136069814]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][109000000]> // 109 MHz

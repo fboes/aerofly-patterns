@@ -112,7 +112,7 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
                         id: scenarioIndex * 100 + index,
                         title: cp.name,
                         desription: scenario.mission.title,
-                        "marker-symbol": index === 0 ? "airfield" : cp === lastCp ? "racetrack" : "triangle",
+                        "marker-symbol": index === 0 ? (scenarioIndex + 1).toString() : cp === lastCp ? "racetrack" : "triangle",
                         "fill-opacity": opacity,
                     }));
                 });

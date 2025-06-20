@@ -1,6 +1,6 @@
 # Landegerät: Holding at CIGCA FIX
 
-This file contains 10 holding procedure lessons for the Cessna 172 SP Skyhawk starting in the vicinity of [CIGCA FIX)](https://skyvector.com/?ll=41.611%2C-124.2915&chart=301&zoom=2).
+This file contains 10 holding procedure lessons for the Beechcraft Baron 58 starting in the vicinity of [CIGCA FIX)](https://skyvector.com/?ll=41.611%2C-124.2915&chart=301&zoom=2).
 
 - See [the installation instructions](https://fboes.github.io/aerofly-missions/docs/generic-installation.html) on how to import [the missions into Aerofly FS 4](missions/custom_missions_user.tmc) and all other files.
 - See [the Aerofly FS 4 manual on challenges / missions](https://www.aerofly.com/tutorials/missions/) on how to access these missions in Aerofly FS 4.

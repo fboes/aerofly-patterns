@@ -25,7 +25,7 @@ This projects uses the public APIs of the [Aviation Weather Center](https://avia
 
 ## Legal stuff
 
-Author: [Frank Boës](https://3960.org/) 2024
+Author: [Frank Boës](https://3960.org/) 2024-2025
 
 Copyright & license: See [LICENSE.txt](LICENSE.txt)
 

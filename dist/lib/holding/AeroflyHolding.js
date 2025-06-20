@@ -55,8 +55,32 @@ export class AeroflyHolding {
         }
         const localTime = new LocalTime(new Date(), this.nauticalTimezone);
         const markdownTable = Markdown.table([
-            [`No `, `Local date¹`, `Local time¹`, `        Wind`, `Clouds`, `Radial`, `Area`, `DME`, `Turn`, `Altitude`],
-            [`:-:`, `-----------`, `----------:`, `-----------:`, `------`, `-----:`, `----`, `---:`, `:--:`, `-------:`],
+            [
+                `No `,
+                `Local date¹`,
+                `Local time¹`,
+                `        Wind`,
+                `Clouds`,
+                `Visibility`,
+                `Radial`,
+                `Area`,
+                `DME`,
+                `Turn`,
+                `Altitude`,
+            ],
+            [
+                `:-:`,
+                `-----------`,
+                `----------:`,
+                `-----------:`,
+                `------`,
+                `---------:`,
+                `-----:`,
+                `----`,
+                `---:`,
+                `:--:`,
+                `-------:`,
+            ],
             ...this.scenarios.map((s, index) => {
                 const conditions = s.mission.conditions;
                 const localNauticalTime = new LocalTime(conditions.time, this.nauticalTimezone);
@@ -72,6 +96,7 @@ export class AeroflyHolding {
                     localNauticalTime.toTimeString(),
                     wind,
                     clouds,
+                    Math.round(Math.min(conditions.visibility_sm, 10)) + " SM",
                     s.pattern.inboundHeading.toFixed(0).padStart(3, "0") + "°",
                     Formatter.getDirection(s.pattern.holdingAreaDirection) + (s.pattern.dmeHoldingAwayFromNavaid ? "²" : ""),
                     s.pattern.dmeDistanceNm > 0 ? `${s.pattern.dmeDistanceNm} NM` : "—",
@@ -94,8 +119,8 @@ There are ${this.configuration.numberOfMissions} missions included in this [cust
 
 ${markdownTable}
 
-¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC${localTime.timeZone} (${localTime.nauticalZoneId})
-²) DME procedure is holding _away from_ the ${this.holdingFix.name}, instead of _towards_ it.
+- ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC${localTime.timeZone} (${localTime.nauticalZoneId})
+- ²) DME procedure is holding _away from_ the ${this.holdingFix.name}, instead of _towards_ it.
 
 ---
 
@@ -153,7 +178,7 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
                 title: scenario.aircraft.icaoCode,
                 description: scenario.aircraft.nameFull,
                 id: index * 10 + 1,
-                "marker-symbol": "airfield",
+                "marker-symbol": (index + 1).toString(),
             }));
         });
         return JSON.stringify(geoJson, null, 2);
