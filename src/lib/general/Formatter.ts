@@ -1,6 +1,7 @@
 import { Vector } from "@fboes/geojson";
 import { Units } from "../../data/Units.js";
 import { AviationWeatherNormalizedMetar } from "./AviationWeatherApi.js";
+import { AeroflyMissionConditions } from "@fboes/aerofly-custom-missions";
 
 export class Formatter {
   static getLocalDaytime(date: Date, offset: number): string {
@@ -40,7 +41,7 @@ export class Formatter {
 
   /**
    * @param {number} distance in meters
-   * @returns {string}
+   * @returns {string} in nautical miles
    */
   static getDistance(distance: number): string {
     const nauticalMiles = distance / Units.metersPerNauticalMile;
@@ -138,5 +139,21 @@ export class Formatter {
       }
     }
     return adjectives.join(", ");
+  }
+
+  static getWindDescription(conditions: AeroflyMissionConditions): string {
+    return conditions.wind.speed
+      ? `${Math.ceil(conditions.wind.speed)} kts @ ${conditions.wind.direction.toFixed(0).padStart(3, "0")}°`
+      : "Calm";
+  }
+
+  static getCloudsDescription(conditions: AeroflyMissionConditions): string {
+    return conditions.clouds[0]?.cover_code !== "CLR"
+      ? `${conditions.clouds[0]?.cover_code} @ ${conditions.clouds[0]?.base_feet.toLocaleString("en")} ft`
+      : conditions.clouds[0]?.cover_code;
+  }
+
+  static getThermalStrengthDescription(conditions: AeroflyMissionConditions): string {
+    return conditions.thermalStrength > 0.8 ? "High" : conditions.thermalStrength > 0.2 ? "Medium" : "Low";
   }
 }

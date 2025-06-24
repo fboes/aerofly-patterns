@@ -7,6 +7,7 @@ import { Feature, FeatureCollection, LineString, Point } from "@fboes/geojson";
 import { OpenStreetMapApi, OpenStreetMapApiAirport } from "../general/OpenStreetMapApi.js";
 import { Markdown } from "../general/Markdown.js";
 import { LocalTime } from "../general/LocalTime.js";
+import { Formatter } from "../general/Formatter.js";
 
 export class AeroflyAirRace {
   configuration: Configuration;
@@ -70,15 +71,9 @@ export class AeroflyAirRace {
         const localNauticalTime = new LocalTime(s.date, this.nauticalTimezone);
 
         const conditions = s.mission.conditions;
-        const wind = conditions.wind.speed
-          ? `${Math.ceil(conditions.wind.speed)} kts @ ${conditions.wind.direction.toFixed(0).padStart(3, "0")}°`
-          : "Calm";
-        const clouds =
-          conditions.clouds[0]?.cover_code !== "CLR"
-            ? `${conditions.clouds[0]?.cover_code} @ ${conditions.clouds[0]?.base_feet.toLocaleString("en")} ft`
-            : conditions.clouds[0]?.cover_code;
-        const thermalStrength =
-          conditions.thermalStrength > 0.8 ? "High" : conditions.thermalStrength > 0.2 ? "Medium" : "Low";
+        const wind = Formatter.getWindDescription(conditions);
+        const clouds = Formatter.getCloudsDescription(conditions);
+        const thermalStrength = Formatter.getThermalStrengthDescription(conditions);
 
         return [
           `#${String(index + 1).padStart(2, "0")}`,

@@ -33,7 +33,7 @@ export class Formatter {
     }
     /**
      * @param {number} distance in meters
-     * @returns {string}
+     * @returns {string} in nautical miles
      */
     static getDistance(distance) {
         const nauticalMiles = distance / Units.metersPerNauticalMile;
@@ -128,5 +128,18 @@ export class Formatter {
             }
         }
         return adjectives.join(", ");
+    }
+    static getWindDescription(conditions) {
+        return conditions.wind.speed
+            ? `${Math.ceil(conditions.wind.speed)} kts @ ${conditions.wind.direction.toFixed(0).padStart(3, "0")}°`
+            : "Calm";
+    }
+    static getCloudsDescription(conditions) {
+        return conditions.clouds[0]?.cover_code !== "CLR"
+            ? `${conditions.clouds[0]?.cover_code} @ ${conditions.clouds[0]?.base_feet.toLocaleString("en")} ft`
+            : conditions.clouds[0]?.cover_code;
+    }
+    static getThermalStrengthDescription(conditions) {
+        return conditions.thermalStrength > 0.8 ? "High" : conditions.thermalStrength > 0.2 ? "Medium" : "Low";
     }
 }

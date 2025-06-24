@@ -99,13 +99,8 @@ export class AeroflyHolding {
         const conditions = s.mission.conditions;
 
         const localNauticalTime = new LocalTime(conditions.time, this.nauticalTimezone);
-        const wind = conditions.wind.speed
-          ? `${Math.ceil(conditions.wind.speed)} kts @ ${conditions.wind.direction.toFixed(0).padStart(3, "0")}°`
-          : "Calm";
-        const clouds =
-          conditions.clouds[0]?.cover_code !== "CLR"
-            ? `${conditions.clouds[0]?.cover_code} @ ${conditions.clouds[0]?.base_feet.toLocaleString("en")} ft`
-            : conditions.clouds[0]?.cover_code;
+        const wind = Formatter.getWindDescription(conditions);
+        const clouds = Formatter.getCloudsDescription(conditions);
 
         return [
           `#${String(index + 1).padStart(2, "0")}`,
