@@ -24,6 +24,10 @@ export class Rand {
    * and is less than (and not equal) max.
    */
   static getRandomArbitrary(min: number, max: number) {
+    if (min === max) {
+      return min;
+    }
+
     return Math.random() * (max - min) + min;
   }
 }

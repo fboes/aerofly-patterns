@@ -19,20 +19,24 @@ import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js
  * including the mission title, description, conditions, origin and destination positions, and checkpoints.
  */
 export class Scenario {
-    static async init(holdingNavAid, configuration, aircraft, date, index = 0) {
-        return new Scenario(configuration, aircraft, date, await AviationWeatherApiHelper.getWeather(configuration.airportCode, date, holdingNavAid.position), holdingNavAid, index);
+    static async init(holdingNavAid, configuration, aircraft, date, index = 0, initialBearing = -1) {
+        return new Scenario(configuration, aircraft, date, await AviationWeatherApiHelper.getWeather(configuration.airportCode, date, holdingNavAid.position), holdingNavAid, index, initialBearing);
     }
-    constructor(configuration, aircraft, date, weather, holdingNavAid, index = 0) {
+    constructor(configuration, aircraft, date, weather, holdingNavAid, index = 0, initialBearing = -1) {
+        _Scenario_instances.add(this);
         this.configuration = configuration;
         this.aircraft = aircraft;
         this.date = date;
         this.weather = weather;
         this.holdingNavAid = holdingNavAid;
         this.index = index;
-        _Scenario_instances.add(this);
+        this.initialBearing = initialBearing;
         this.pattern = new HoldingPattern(configuration, holdingNavAid, aircraft);
         // Building the actual mission
-        const bearing = Math.random() * 360;
+        const indexBearing = (360 / configuration.numberOfMissions) * index;
+        const bearing = Degree(indexBearing +
+            this.pattern.inboundHeading +
+            (initialBearing >= 0 ? initialBearing : Rand.getRandomArbitrary(0, 360))); // Distribute entry procedures evenly among missions
         this.patternEntry = this.pattern.getEntry(bearing);
         const title = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getTitle).call(this, index);
         const description = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getDescription).call(this, this.pattern);

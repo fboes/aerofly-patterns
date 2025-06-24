@@ -9,18 +9,18 @@ This file contains 10 holding procedure lessons for the Cessna 172 SP Skyhawk st
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-| No  | Local date¹ | Local time¹ |          Wind | Clouds         | Visibility | Radial | Area       |  DME | Turn | Altitude |
-| :-: | ----------- | ----------: | ------------: | -------------- | ---------: | -----: | ---------- | ---: | :--: | -------: |
-| #01 | 2025-06-19  |       05:15 |          Calm | CLR            |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #02 | 2025-06-18  |       06:45 |          Calm | FEW @ 200 ft   |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #03 | 2025-06-17  |       08:15 |  4 kts @ 200° | CLR            |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #04 | 2025-06-16  |       09:45 |          Calm | OVC @ 1,200 ft |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #05 | 2025-06-15  |       11:15 |  6 kts @ 240° | CLR            |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #06 | 2025-06-14  |       12:45 | 11 kts @ 340° | CLR            |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #07 | 2025-06-13  |       14:15 | 18 kts @ 330° | CLR            |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #08 | 2025-06-12  |       15:45 | 13 kts @ 180° | FEW @ 1,000 ft |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #09 | 2025-06-11  |       17:15 |  6 kts @ 310° | FEW @ 2,800 ft |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
-| #10 | 2025-06-10  |       18:45 |  3 kts @ 310° | OVC @ 900 ft   |      10 SM |   330° | south-east |    — |  R   | 2,400 ft |
+| No  | Local date¹ | Local time¹ |          Wind | Clouds         | Visibility | Radial | Area       | DME | Turn | Altitude |
+| :-: | ----------- | ----------: | ------------: | -------------- | ---------: | -----: | ---------- | --: | :--: | -------: |
+| #01 | 2025-06-24  |       05:15 |  4 kts @ 110° | OVC @ 600 ft   |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #02 | 2025-06-23  |       06:45 |          Calm | CLR            |       0 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #03 | 2025-06-22  |       08:15 |  6 kts @ 330° | CLR            |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #04 | 2025-06-21  |       09:45 |  6 kts @ 330° | CLR            |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #05 | 2025-06-20  |       11:15 |  7 kts @ 200° | SCT @ 8,500 ft |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #06 | 2025-06-19  |       12:45 |  9 kts @ 340° | CLR            |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #07 | 2025-06-18  |       14:15 | 14 kts @ 340° | CLR            |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #08 | 2025-06-17  |       15:45 |  5 kts @ 320° | CLR            |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #09 | 2025-06-16  |       17:15 |  7 kts @ 310° | CLR            |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
+| #10 | 2025-06-15  |       18:45 |  7 kts @ 330° | CLR            |      10 SM |   330° | south-east |   — |  R   | 2,400 ft |
 
 - ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC-08:00 (H)
 - ²) DME procedure is holding _away from_ the CIGCA FIX, instead of _towards_ it.

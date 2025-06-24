@@ -9,6 +9,7 @@ import { AeroflyMissionsList } from "@fboes/aerofly-custom-missions";
 import { Markdown } from "../general/Markdown.js";
 import { Formatter } from "../general/Formatter.js";
 import { HoldingPatternFix } from "./HoldingPatternFix.js";
+import { Rand } from "../general/Rand.js";
 
 export class AeroflyHolding {
   scenarios: Scenario[];
@@ -21,12 +22,20 @@ export class AeroflyHolding {
     self.holdingFix = await self.getHoldingFix(self.configuration.navaidCode);
     self.nauticalTimezone = Math.round((self.holdingFix.position.longitude ?? 0) / 15);
 
+    const initialBearing = Rand.getRandomArbitrary(0, 360);
     const dateYielder = new DateYielder(self.configuration.numberOfMissions, self.nauticalTimezone);
     const dates = dateYielder.entries();
     let index = 0;
     for (const date of dates) {
       try {
-        const scenario = await Scenario.init(self.holdingFix, self.configuration, self.aircraft, date, index++);
+        const scenario = await Scenario.init(
+          self.holdingFix,
+          self.configuration,
+          self.aircraft,
+          date,
+          index++,
+          initialBearing,
+        );
         self.scenarios.push(scenario);
       } catch (error) {
         console.error(error);

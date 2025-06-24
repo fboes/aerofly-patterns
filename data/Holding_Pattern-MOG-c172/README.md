@@ -9,18 +9,18 @@ This file contains 10 holding procedure lessons for the Cessna 172 SP Skyhawk st
 
 There are 10 missions included in this [custom missions file](missions/custom_missions_user.tmc).
 
-| No  | Local date¹ | Local time¹ |          Wind | Clouds         | Visibility | Radial | Area  |  DME | Turn | Altitude |
-| :-: | ----------- | ----------: | ------------: | -------------- | ---------: | -----: | ----- | ---: | :--: | -------: |
-| #01 | 2025-06-19  |       05:15 |  3 kts @ 070° | CLR            |       9 SM |   341° | south |    — |  R   | 6,800 ft |
-| #02 | 2025-06-18  |       06:45 |  6 kts @ 060° | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #03 | 2025-06-17  |       08:15 |          Calm | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #04 | 2025-06-16  |       09:45 |  7 kts @ 010° | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #05 | 2025-06-15  |       11:15 |  5 kts @ 010° | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #06 | 2025-06-14  |       12:45 |  5 kts @ 000° | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #07 | 2025-06-13  |       14:15 | 11 kts @ 020° | FEW @ 8,000 ft |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #08 | 2025-06-12  |       15:45 |  4 kts @ 000° | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #09 | 2025-06-11  |       17:15 | 13 kts @ 010° | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
-| #10 | 2025-06-10  |       18:45 | 10 kts @ 240° | CLR            |      10 SM |   341° | south |    — |  R   | 6,800 ft |
+| No  | Local date¹ | Local time¹ |          Wind | Clouds         | Visibility | Radial | Area  | DME | Turn | Altitude |
+| :-: | ----------- | ----------: | ------------: | -------------- | ---------: | -----: | ----- | --: | :--: | -------: |
+| #01 | 2025-06-24  |       05:15 |  6 kts @ 060° | CLR            |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #02 | 2025-06-23  |       06:45 |          Calm | CLR            |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #03 | 2025-06-22  |       08:15 |  5 kts @ 040° | FEW @ 3,400 ft |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #04 | 2025-06-21  |       09:45 |  6 kts @ 030° | FEW @ 3,700 ft |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #05 | 2025-06-20  |       11:15 | 14 kts @ 330° | OVC @ 5,500 ft |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #06 | 2025-06-19  |       12:45 |          Calm | CLR            |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #07 | 2025-06-18  |       14:15 |  6 kts @ 000° | CLR            |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #08 | 2025-06-17  |       15:45 |  4 kts @ 000° | CLR            |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #09 | 2025-06-16  |       17:15 | 14 kts @ 010° | CLR            |      10 SM |   341° | south |   — |  R   | 6,800 ft |
+| #10 | 2025-06-15  |       18:45 | 11 kts @ 340° | CLR            |      10 SM |   341° | south |   — |  R   | 6,800 ft |
 
 - ¹) Local [nautical time](https://en.wikipedia.org/wiki/Nautical_time) with UTC-08:00 (H)
 - ²) DME procedure is holding _away from_ the Montague NDB, instead of _towards_ it.

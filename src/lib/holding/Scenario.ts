@@ -31,6 +31,7 @@ export class Scenario {
     aircraft: AeroflyAircraft,
     date: Date,
     index: number = 0,
+    initialBearing: number = -1,
   ): Promise<Scenario> {
     return new Scenario(
       configuration,
@@ -39,6 +40,7 @@ export class Scenario {
       await AviationWeatherApiHelper.getWeather(configuration.airportCode, date, holdingNavAid.position),
       holdingNavAid,
       index,
+      initialBearing,
     );
   }
 
@@ -49,11 +51,17 @@ export class Scenario {
     private readonly weather: AviationWeatherNormalizedMetar,
     public readonly holdingNavAid: HoldingPatternFix,
     public readonly index: number = 0,
+    public initialBearing: number = -1,
   ) {
     this.pattern = new HoldingPattern(configuration, holdingNavAid, aircraft);
 
     // Building the actual mission
-    const bearing = Math.random() * 360;
+    const indexBearing = (360 / configuration.numberOfMissions) * index;
+    const bearing = Degree(
+      indexBearing +
+        this.pattern.inboundHeading +
+        (initialBearing >= 0 ? initialBearing : Rand.getRandomArbitrary(0, 360)),
+    ); // Distribute entry procedures evenly among missions
     this.patternEntry = this.pattern.getEntry(bearing);
 
     const title = this.#getTitle(index);

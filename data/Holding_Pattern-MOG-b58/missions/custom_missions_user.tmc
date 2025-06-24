@@ -4,56 +4,93 @@
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #1: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear early morning with almost no wind.
-Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 13:35Z.]>
+                <[string8][description][Your B58 is cruising on this clear early morning with wind from 060° at 6 kts.
+Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 13:40Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.5926816676526 41.735991742272994]>
-                <[float64][origin_alt][3618766.52]> // 11872594 ft MSL
-                <[float64][origin_dir][96.0278767648033]>
+                <[tmvector2d][origin_lon_lat][-122.38517919368181 41.76912526437655]>
+                <[float64][origin_alt][3979658.92]> // 13056625 ft MSL
+                <[float64][origin_dir][239.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][39013.804937563684]> // 39 km
-                <[float64][duration][1200]> // 20 min
+                <[float64][distance][61118.50073601515]> // 61 km
+                <[float64][duration][1500]> // 25 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.5926717229434 41.73599069214973]>
-                    <[float64][direction][96.0278767648033]>
+                    <[vector2_float64][lon_lat][-122.38518783813787 41.769120237112936]>
+                    <[float64][direction][239.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][19]>
+                        <[int32][time_day][24]>
                         <[float64][time_hours][13.25]> // 13:15:00 UTC
                     >
-                    <[float64][wind_direction][70]>
-                    <[float64][wind_speed][3]> // kts
+                    <[float64][wind_direction][60]>
+                    <[float64][wind_speed][6]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.272484]> // 11.100000000000001 °C
-                    <[float64][visibility][14484.096000000001]> // 9 SM
+                    <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
+                        <[string8u][name][MOGPRL0]>
+                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][240.15409887663066]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL1]>
+                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][176.00000000000102]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL2]>
+                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][71.00483004133832]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL3]>
+                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][318.0138482365182]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][95.95400262148752]>
+                        <[float64][direction][356.001164791043]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][1]
+                    <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-TURN]>
                         <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
@@ -62,7 +99,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][2]
+                    <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-ABEAM]>
                         <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
@@ -71,7 +108,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][3]
+                    <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-OUTBND]>
                         <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
@@ -80,7 +117,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][4]
+                    <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-INBND]>
                         <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
@@ -89,7 +126,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][9]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
@@ -105,39 +142,39 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #2: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear early morning with wind from 060° at 6 kts.
-Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 15:10Z.]>
+                <[string8][description][Your B58 is cruising on this clear early morning with no wind.
+Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 15:05Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.37701536052236 41.69851953418859]>
-                <[float64][origin_alt][4288385.964]> // 14069509 ft MSL
-                <[float64][origin_dir][290.18349687967805]>
+                <[tmvector2d][origin_lon_lat][-122.37070613796368 41.718802767837005]>
+                <[float64][origin_alt][3677165.472]> // 12064192 ft MSL
+                <[float64][origin_dir][275.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][39013.80493756363]> // 39 km
-                <[float64][duration][1500]> // 25 min
+                <[float64][distance][61127.20635288446]> // 61 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.37702474644678 41.69852298446726]>
-                    <[float64][direction][290.18349687967805]>
+                    <[vector2_float64][lon_lat][-122.37071608642695 41.718803781779094]>
+                    <[float64][direction][275.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][18]>
+                        <[int32][time_day][23]>
                         <[float64][time_hours][14.75]> // 14:45:00 UTC
                     >
-                    <[float64][wind_direction][60]>
-                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.33408399999999994]> // 13.899999999999999 °C
+                    <[float64][thermal_strength][0.228484]> // 8.899999999999999 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -145,16 +182,53 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
+                        <[string8u][name][MOGPRL0]>
+                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][275.78891849737266]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL1]>
+                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][176.00000000000102]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL2]>
+                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][71.00483004133832]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL3]>
+                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][318.0138482365182]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][290.2531539019482]>
+                        <[float64][direction][356.001164791043]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][1]
+                    <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-TURN]>
                         <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
@@ -163,7 +237,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][2]
+                    <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-ABEAM]>
                         <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
@@ -172,7 +246,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][3]
+                    <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-OUTBND]>
                         <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
@@ -181,7 +255,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][4]
+                    <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-INBND]>
                         <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
@@ -190,7 +264,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][9]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
@@ -206,93 +280,56 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #3: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear morning with no wind and moderate thermal activity.
-Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 16:35Z.]>
+                <[string8][description][Your B58 is cruising on this gusty morning with almost no wind.
+Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 16:30Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.3930257343595 41.77788473521768]>
-                <[float64][origin_alt][3698162.8479999998]> // 12133081 ft MSL
-                <[float64][origin_dir][232.56685903700145]>
+                <[tmvector2d][origin_lon_lat][-122.39861420005106 41.671742032167316]>
+                <[float64][origin_alt][3829724.532]> // 12564714 ft MSL
+                <[float64][origin_dir][311.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][61112.271186285085]> // 61 km
-                <[float64][duration][1200]> // 20 min
+                <[float64][distance][39013.80493756324]> // 39 km
+                <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.3930336749912 41.777878656865255]>
-                    <[float64][direction][232.56685903700145]>
+                    <[vector2_float64][lon_lat][-122.39862165254671 41.67174870002369]>
+                    <[float64][direction][311.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][17]>
+                        <[int32][time_day][22]>
                         <[float64][time_hours][16.25]> // 16:15:00 UTC
                     >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][0]> // kts
-                    <[float64][wind_gusts][0]> // kts
+                    <[float64][wind_direction][40]>
+                    <[float64][wind_speed][5]> // kts
+                    <[float64][wind_gusts][19]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.40195600000000004]> // 16.7 °C
+                    <[float64][thermal_strength][0.3091360000000001]> // 12.800000000000004 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
+                    <[float64][cloud_cover][0.25]> // FEW
+                    <[float64][cloud_base][1036.319966837761]> // 3400 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MOGPRL0]>
-                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][232.96376583662556]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL1]>
-                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][176.00000000000102]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL2]>
-                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][71.00483004133832]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL3]>
-                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][318.0138482365182]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][356.001164791043]>
+                        <[float64][direction][311.8747315810177]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-TURN]>
                         <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
@@ -301,7 +338,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][6]
+                    <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-ABEAM]>
                         <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
@@ -310,7 +347,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][7]
+                    <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-OUTBND]>
                         <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
@@ -319,7 +356,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][8]
+                    <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-INBND]>
                         <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
@@ -328,7 +365,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][9]
+                    <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
@@ -344,7 +381,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #4: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear morning with wind from 010° at 7 kts and moderate thermal activity.
+                <[string8][description][Your B58 is cruising on this morning with wind from 030° at 6 kts.
 Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 18:10Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
@@ -352,85 +389,52 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.37023603406742 41.73120921706925]>
-                <[float64][origin_alt][3728346.576]> // 12232109 ft MSL
-                <[float64][origin_dir][267.2723244129128]>
+                <[tmvector2d][origin_lon_lat][-122.45818644661493 41.64589518871959]>
+                <[float64][origin_alt][3668307.204]> // 12035130 ft MSL
+                <[float64][origin_dir][347.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][61128.63141907027]> // 61 km
+                <[float64][distance][39013.80493756402]> // 39 km
                 <[float64][duration][1500]> // 25 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.37024602273746 41.731208741179856]>
-                    <[float64][direction][267.2723244129128]>
+                    <[vector2_float64][lon_lat][-122.45818855654292 41.64590496359575]>
+                    <[float64][direction][347.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][16]>
+                        <[int32][time_day][21]>
                         <[float64][time_hours][17.75]> // 17:45:00 UTC
                     >
-                    <[float64][wind_direction][10]>
-                    <[float64][wind_speed][7]> // kts
+                    <[float64][wind_direction][30]>
+                    <[float64][wind_speed][6]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.5715359999999998]> // 22.799999999999997 °C
+                    <[float64][thermal_strength][0.272484]> // 11.100000000000001 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
+                    <[float64][cloud_cover][0.25]> // FEW
+                    <[float64][cloud_base][1127.759963911681]> // 3700 ft AGL
+                    <[float64][cirrus_cover][0.5]> // SCT
+                    <[float64][cirrus_base][1523.9999512320016]> // 5000 ft AGL
+                    //<[float64][cumulus_mediocris_cover][1]> // OVC
+                    //<[float64][cumulus_mediocris_base][1828.799941478402]> // 6000 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MOGPRL0]>
-                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][267.33292398997514]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL1]>
-                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][176.00000000000102]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL2]>
-                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][71.00483004133832]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL3]>
-                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][318.0138482365182]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][356.001164791043]>
+                        <[float64][direction][347.8350987180033]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-TURN]>
                         <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
@@ -439,7 +443,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][6]
+                    <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-ABEAM]>
                         <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
@@ -448,7 +452,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][7]
+                    <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-OUTBND]>
                         <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
@@ -457,7 +461,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][8]
+                    <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-INBND]>
                         <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
@@ -466,7 +470,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][9]
+                    <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
@@ -482,93 +486,56 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #5: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear noon with almost no wind and moderate thermal activity.
-Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 19:35Z.]>
+                <[string8][description][Your B58 is cruising on this gusty, overcast noon with wind from 330° at 14 kts.
+Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 19:30Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.38308176259532 41.76630372091072]>
-                <[float64][origin_alt][4535433.216]> // 14880031 ft MSL
-                <[float64][origin_dir][242.0392680160303]>
+                <[tmvector2d][origin_lon_lat][-122.52671034994847 41.65110736911962]>
+                <[float64][origin_alt][3955708.788]> // 12978048 ft MSL
+                <[float64][origin_dir][23.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][61120.12639285512]> // 61 km
-                <[float64][duration][1200]> // 20 min
+                <[float64][distance][39013.80493756241]> // 39 km
+                <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.38309059528673 41.76629903224753]>
-                    <[float64][direction][242.0392680160303]>
+                    <[vector2_float64][lon_lat][-122.52670631138803 41.6511165173451]>
+                    <[float64][direction][23.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][15]>
+                        <[int32][time_day][20]>
                         <[float64][time_hours][19.25]> // 19:15:00 UTC
                     >
-                    <[float64][wind_direction][10]>
-                    <[float64][wind_speed][5]> // kts
-                    <[float64][wind_gusts][0]> // kts
+                    <[float64][wind_direction][330]>
+                    <[float64][wind_speed][14]> // kts
+                    <[float64][wind_gusts][23]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.605284]> // 23.9 °C
+                    <[float64][thermal_strength][0.3203560000000001]> // 13.300000000000004 °C
                     <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
+                    <[float64][cloud_cover][1]> // OVC
+                    <[float64][cloud_base][1676.3999463552018]> // 5500 ft AGL
                 >
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MOGPRL0]>
-                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][242.35375378210182]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL1]>
-                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][176.00000000000102]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL2]>
-                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][71.00483004133832]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL3]>
-                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][318.0138482365182]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][356.001164791043]>
+                        <[float64][direction][23.789524966067745]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][1]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-TURN]>
                         <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
@@ -577,7 +544,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][6]
+                    <[tmmission_checkpoint][element][2]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-ABEAM]>
                         <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
@@ -586,7 +553,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][7]
+                    <[tmmission_checkpoint][element][3]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-OUTBND]>
                         <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
@@ -595,7 +562,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][8]
+                    <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-INBND]>
                         <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
@@ -604,7 +571,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][9]
+                    <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
@@ -620,7 +587,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #6: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear noon with almost no wind and moderate thermal activity.
+                <[string8][description][Your B58 is cruising on this clear noon with no wind and moderate thermal activity.
 Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 21:05Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
@@ -628,28 +595,28 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.56642364920108 41.78152452590896]>
-                <[float64][origin_alt][4693569.704]> // 15398852 ft MSL
-                <[float64][origin_dir][130.65528413941138]>
+                <[tmvector2d][origin_lon_lat][-122.5780950930813 41.68539407095652]>
+                <[float64][origin_alt][3588910.876]> // 11774643 ft MSL
+                <[float64][origin_dir][59.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][60732.632483585185]> // 61 km
+                <[float64][distance][39013.80493756273]> // 39 km
                 <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.5664160627708 41.781518010843676]>
-                    <[float64][direction][130.65528413941138]>
+                    <[vector2_float64][lon_lat][-122.57808644862524 41.68539909822013]>
+                    <[float64][direction][59.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][14]>
+                        <[int32][time_day][19]>
                         <[float64][time_hours][20.75]> // 20:45:00 UTC
                     >
                     <[float64][wind_direction][0]>
-                    <[float64][wind_speed][5]> // kts
+                    <[float64][wind_speed][0]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
                     <[float64][thermal_strength][0.6400000000000001]> // 25 °C
@@ -663,7 +630,209 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][130.5988633352572]>
+                        <[float64][direction][59.755327964442415]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-TURN]>
+                        <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][356.00000000001194]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][86.00000000001842]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-OUTBND]>
+                        <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][175.99999999999977]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-INBND]>
+                        <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][266.00000000001455]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG]>
+                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][355.9649521427889]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HOLD #7: Montague NDB]>
+                <[string8][description][Your B58 is cruising on this clear afternoon with wind from 000° at 6 kts and lots of thermal activity.
+Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 22:30Z.]>
+                <[string8u][tags][holding pattern practice instrument]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
+                <[stringt8c][origin_icao][KSIY]>
+                <[tmvector2d][origin_lon_lat][-122.59272304169824 41.73569039567176]>
+                <[float64][origin_alt][3291010.604]> // 10797280 ft MSL
+                <[float64][origin_dir][95.81946089156554]>
+                <[stringt8c][destination_icao][KSIY]>
+                <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
+                <[float64][destination_alt][22309.712]> // 73195 ft MSL
+                <[float64][destination_dir][341]>
+                <[float64][distance][39013.80493756211]> // 39 km
+                <[float64][duration][900]> // 15 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-122.59271309323496 41.73568938172967]>
+                    <[float64][direction][95.81946089156554]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][6]>
+                        <[int32][time_day][18]>
+                        <[float64][time_hours][22.25]> // 22:15:00 UTC
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][6]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.8723560000000001]> // 31.700000000000003 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG]>
+                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][95.74555942581628]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-TURN]>
+                        <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][356.00000000001194]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-ABEAM]>
+                        <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][86.00000000001842]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-OUTBND]>
+                        <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][175.99999999999977]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-INBND]>
+                        <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][266.00000000001455]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][5]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG]>
+                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][355.9649521427889]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                        <[bool][fly_over][true]>
+                    >
+                >
+            >
+// -----------------------------------------------------------------------------
+            <[tmmission_definition][mission][]
+                <[string8][title][HOLD #8: Montague NDB]>
+                <[string8][description][Your B58 is cruising on this clear late afternoon with almost no wind and lots of thermal activity.
+Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 00:10Z.]>
+                <[string8u][tags][holding pattern practice instrument]>
+                <[string8][flight_setting][cruise]>
+                <[string8u][aircraft_name][b58]>
+                <[stringt8c][aircraft_icao][BE58]>
+                <[stringt8c][callsign][N7PEB]>
+                <[stringt8c][origin_icao][KSIY]>
+                <[tmvector2d][origin_lon_lat][-122.56492954738354 41.782798014715105]>
+                <[float64][origin_alt][4794291.492]> // 15729304 ft MSL
+                <[float64][origin_dir][131.81946089156554]>
+                <[stringt8c][destination_icao][KSIY]>
+                <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
+                <[float64][destination_alt][22309.712]> // 73195 ft MSL
+                <[float64][destination_dir][341]>
+                <[float64][distance][60732.63248358609]> // 61 km
+                <[float64][duration][1500]> // 25 min
+                <[tmmission_target_plane][finish][]
+                    <[vector2_float64][lon_lat][-122.56492209488789 41.78279134685873]>
+                    <[float64][direction][131.81946089156554]>
+                >
+                <[tmmission_conditions][conditions][]
+                    <[tm_time_utc][time][]
+                        <[int32][time_year][2025]>
+                        <[int32][time_month][6]>
+                        <[int32][time_day][17]>
+                        <[float64][time_hours][23.75]> // 23:45:00 UTC
+                    >
+                    <[float64][wind_direction][0]>
+                    <[float64][wind_speed][4]> // kts
+                    <[float64][wind_gusts][0]> // kts
+                    <[float64][turbulence_strength][0]>
+                    <[float64][thermal_strength][0.81]> // 30 °C
+                    <[float64][visibility][24140.16]> // 15 SM
+                    <[float64][cloud_cover][0]> // CLR
+                    <[float64][cloud_base][0]> // 0 ft AGL
+                >
+                <[list_tmmission_checkpoint][checkpoints][]
+                    <[tmmission_checkpoint][element][0]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG]>
+                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][131.76403437834676]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
@@ -749,247 +918,8 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
             >
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
-                <[string8][title][HOLD #7: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this gusty afternoon with wind from 020° at 11 kts and moderate thermal activity.
-Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 22:35Z.]>
-                <[string8u][tags][holding pattern practice instrument]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][b58]>
-                <[stringt8c][aircraft_icao][BE58]>
-                <[stringt8c][callsign][N7PEB]>
-                <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.41963379732856 41.79652237555479]>
-                <[float64][origin_alt][3342519.792]> // 10966273 ft MSL
-                <[float64][origin_dir][213.7541869898787]>
-                <[stringt8c][destination_icao][KSIY]>
-                <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
-                <[float64][destination_alt][22309.712]> // 73195 ft MSL
-                <[float64][destination_dir][341]>
-                <[float64][distance][61090.21863047735]> // 61 km
-                <[float64][duration][1200]> // 20 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.41963935363849 41.79651406126468]>
-                    <[float64][direction][213.7541869898787]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][6]>
-                        <[int32][time_day][13]>
-                        <[float64][time_hours][22.25]> // 22:15:00 UTC
-                    >
-                    <[float64][wind_direction][20]>
-                    <[float64][wind_speed][11]> // kts
-                    <[float64][wind_gusts][21]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.659344]> // 25.6 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0.125]> // FEW
-                    <[float64][cloud_base][2438.3999219712027]> // 8000.000000000001 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOGPRL0]>
-                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][214.28150795018732]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL1]>
-                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][176.00000000000102]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL2]>
-                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][71.00483004133832]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL3]>
-                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][318.0138482365182]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG]>
-                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][356.001164791043]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-TURN]>
-                        <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][356.00000000001194]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][6]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][86.00000000001842]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][7]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][175.99999999999977]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][8]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-INBND]>
-                        <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][266.00000000001455]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][9]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG]>
-                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][355.9649521427889]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
-                <[string8][title][HOLD #8: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear late afternoon with almost no wind and moderate thermal activity.
-Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 00:00Z.]>
-                <[string8u][tags][holding pattern practice instrument]>
-                <[string8][flight_setting][cruise]>
-                <[string8u][aircraft_name][b58]>
-                <[stringt8c][aircraft_icao][BE58]>
-                <[stringt8c][callsign][N7PEB]>
-                <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.59027517008268 41.70814389948709]>
-                <[float64][origin_alt][3796588.048]> // 12455998 ft MSL
-                <[float64][origin_dir][76.73739886007797]>
-                <[stringt8c][destination_icao][KSIY]>
-                <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
-                <[float64][destination_alt][22309.712]> // 73195 ft MSL
-                <[float64][destination_dir][341]>
-                <[float64][distance][39013.8049375629]> // 39 km
-                <[float64][duration][900]> // 15 min
-                <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.59026543679441 41.70814619363171]>
-                    <[float64][direction][76.73739886007797]>
-                >
-                <[tmmission_conditions][conditions][]
-                    <[tm_time_utc][time][]
-                        <[int32][time_year][2025]>
-                        <[int32][time_month][6]>
-                        <[int32][time_day][12]>
-                        <[float64][time_hours][23.75]> // 23:45:00 UTC
-                    >
-                    <[float64][wind_direction][0]>
-                    <[float64][wind_speed][4]> // kts
-                    <[float64][wind_gusts][0]> // kts
-                    <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.788544]> // 29.4 °C
-                    <[float64][visibility][24140.16]> // 15 SM
-                    <[float64][cloud_cover][0]> // CLR
-                    <[float64][cloud_base][0]> // 0 ft AGL
-                >
-                <[list_tmmission_checkpoint][checkpoints][]
-                    <[tmmission_checkpoint][element][0]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG]>
-                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][76.66514627723001]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                        <[bool][fly_over][true]>
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-TURN]>
-                        <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][356.00000000001194]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-ABEAM]>
-                        <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][86.00000000001842]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-OUTBND]>
-                        <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][175.99999999999977]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-INBND]>
-                        <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][266.00000000001455]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][5]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG]>
-                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][355.9649521427889]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                        <[bool][fly_over][true]>
-                    >
-                >
-            >
-// -----------------------------------------------------------------------------
-            <[tmmission_definition][mission][]
                 <[string8][title][HOLD #9: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 010° at 13 kts and moderate thermal activity.
+                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 010° at 14 kts and moderate thermal activity.
 Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 01:30Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
@@ -997,31 +927,31 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.37273348683699 41.70942111318195]>
-                <[float64][origin_alt][3778215.344]> // 12395721 ft MSL
-                <[float64][origin_dir][282.36115604219276]>
+                <[tmvector2d][origin_lon_lat][-122.50527321462096 41.80870000571612]>
+                <[float64][origin_alt][3339895.12]> // 10957662 ft MSL
+                <[float64][origin_dir][167.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][61124.64873339595]> // 61 km
+                <[float64][distance][60732.63248358687]> // 61 km
                 <[float64][duration][900]> // 15 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.37274325501333 41.709423253913336]>
-                    <[float64][direction][282.36115604219276]>
+                    <[vector2_float64][lon_lat][-122.50527110469297 41.808690230839964]>
+                    <[float64][direction][167.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][12]>
+                        <[int32][time_day][17]>
                         <[float64][time_hours][1.25]> // 01:15:00 UTC
                     >
                     <[float64][wind_direction][10]>
-                    <[float64][wind_speed][13]> // kts
+                    <[float64][wind_speed][14]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.770884]> // 28.9 °C
+                    <[float64][thermal_strength][0.6756840000000001]> // 26.1 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -1029,53 +959,45 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
-                        <[string8u][name][MOGPRL0]>
-                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][282.26116301867114]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                        <[float64][frequency][404000]> // 404 kHz
-                    >
-                    <[tmmission_checkpoint][element][1]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL1]>
-                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][176.00000000000102]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][2]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL2]>
-                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][71.00483004133832]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][3]
-                        <[string8u][type][waypoint]>
-                        <[string8u][name][MOG-PRL3]>
-                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
-                        <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][318.0138482365182]>
-                        <[float64][slope][0]>
-                        <[bool][alt_cst][true]>
-                    >
-                    <[tmmission_checkpoint][element][4]
-                        <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][356.001164791043]>
+                        <[float64][direction][167.80375839172143]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-OFF1]>
+                        <[vector2_float64][lon_lat][-122.42362896150759 41.6629674011654]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][145.9999999999971]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-OFF2]>
+                        <[vector2_float64][lon_lat][-122.47445740298977 41.64990726476453]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][251.03861381163108]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG]>
+                        <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][356.00481692079217]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                        <[bool][fly_over][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-TURN]>
                         <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
@@ -1084,7 +1006,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][6]
+                    <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-ABEAM]>
                         <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
@@ -1093,7 +1015,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][7]
+                    <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-OUTBND]>
                         <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
@@ -1102,7 +1024,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][8]
+                    <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-INBND]>
                         <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
@@ -1111,7 +1033,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][9]
+                    <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
@@ -1127,39 +1049,39 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
 // -----------------------------------------------------------------------------
             <[tmmission_definition][mission][]
                 <[string8][title][HOLD #10: Montague NDB]>
-                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 240° at 10 kts and moderate thermal activity.
-Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 03:00Z.]>
+                <[string8][description][Your B58 is cruising on this clear late afternoon with wind from 340° at 11 kts and moderate thermal activity.
+Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make right-hand turns, maintain 6,800'. Expect further clearance at 03:05Z.]>
                 <[string8u][tags][holding pattern practice instrument]>
                 <[string8][flight_setting][cruise]>
                 <[string8u][aircraft_name][b58]>
                 <[stringt8c][aircraft_icao][BE58]>
                 <[stringt8c][callsign][N7PEB]>
                 <[stringt8c][origin_icao][KSIY]>
-                <[tmvector2d][origin_lon_lat][-122.58121740260253 41.6896763557714]>
-                <[float64][origin_alt][4096128.7399999998]> // 13438744 ft MSL
-                <[float64][origin_dir][63.17464698500953]>
+                <[tmvector2d][origin_lon_lat][-122.43658277495595 41.803475024822966]>
+                <[float64][origin_alt][4776903.04]> // 15672255 ft MSL
+                <[float64][origin_dir][203.81946089156554]>
                 <[stringt8c][destination_icao][KSIY]>
                 <[tmvector2d][destination_lon_lat][-122.48169999999999 41.7273]>
                 <[float64][destination_alt][22309.712]> // 73195 ft MSL
                 <[float64][destination_dir][341]>
-                <[float64][distance][39013.80493756297]> // 39 km
-                <[float64][duration][900]> // 15 min
+                <[float64][distance][61075.744745504606]> // 61 km
+                <[float64][duration][1200]> // 20 min
                 <[tmmission_target_plane][finish][]
-                    <[vector2_float64][lon_lat][-122.58120847874032 41.689680868496]>
-                    <[float64][direction][63.17464698500953]>
+                    <[vector2_float64][lon_lat][-122.4365868135164 41.803465876597485]>
+                    <[float64][direction][203.81946089156554]>
                 >
                 <[tmmission_conditions][conditions][]
                     <[tm_time_utc][time][]
                         <[int32][time_year][2025]>
                         <[int32][time_month][6]>
-                        <[int32][time_day][11]>
+                        <[int32][time_day][16]>
                         <[float64][time_hours][2.75]> // 02:45:00 UTC
                     >
-                    <[float64][wind_direction][240]>
-                    <[float64][wind_speed][10]> // kts
+                    <[float64][wind_direction][340]>
+                    <[float64][wind_speed][11]> // kts
                     <[float64][wind_gusts][0]> // kts
                     <[float64][turbulence_strength][0]>
-                    <[float64][thermal_strength][0.788544]> // 29.4 °C
+                    <[float64][thermal_strength][0.6756840000000001]> // 26.1 °C
                     <[float64][visibility][24140.16]> // 15 SM
                     <[float64][cloud_cover][0]> // CLR
                     <[float64][cloud_base][0]> // 0 ft AGL
@@ -1167,16 +1089,53 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                 <[list_tmmission_checkpoint][checkpoints][]
                     <[tmmission_checkpoint][element][0]
                         <[string8u][type][waypoint]>
+                        <[string8u][name][MOGPRL0]>
+                        <[vector2_float64][lon_lat][-122.48290206971123 41.727237260232215]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][204.3939842918123]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                        <[float64][frequency][404000]> // 404 kHz
+                    >
+                    <[tmmission_checkpoint][element][1]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL1]>
+                        <[vector2_float64][lon_lat][-122.47565947975461 41.64984452499725]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][176.00000000000102]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][2]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL2]>
+                        <[vector2_float64][lon_lat][-122.42483108780053 41.662904661429856]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][71.00483004133832]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][3]
+                        <[string8u][type][waypoint]>
+                        <[string8u][name][MOG-PRL3]>
+                        <[vector2_float64][lon_lat][-122.47994965668165 41.70861333301568]>
+                        <[float64][altitude][2072.639933675522]> // 6800 ft
+                        <[float64][direction][318.0138482365182]>
+                        <[float64][slope][0]>
+                        <[bool][alt_cst][true]>
+                    >
+                    <[tmmission_checkpoint][element][4]
+                        <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
                         <[float64][altitude][2072.639933675522]> // 6800 ft
-                        <[float64][direction][63.1084339680516]>
+                        <[float64][direction][356.001164791043]>
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                         <[float64][frequency][404000]> // 404 kHz
                         <[bool][fly_over][true]>
                     >
-                    <[tmmission_checkpoint][element][1]
+                    <[tmmission_checkpoint][element][5]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-TURN]>
                         <[vector2_float64][lon_lat][-122.48345136183222 41.74598664040729]>
@@ -1185,7 +1144,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][2]
+                    <[tmmission_checkpoint][element][6]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-ABEAM]>
                         <[vector2_float64][lon_lat][-122.43335804541543 41.74858915839518]>
@@ -1194,7 +1153,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][3]
+                    <[tmmission_checkpoint][element][7]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-OUTBND]>
                         <[vector2_float64][lon_lat][-122.42436633980827 41.65250964619167]>
@@ -1203,7 +1162,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][4]
+                    <[tmmission_checkpoint][element][8]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG-INBND]>
                         <[vector2_float64][lon_lat][-122.47438283024877 41.64988540862754]>
@@ -1212,7 +1171,7 @@ Hold south of Montague NDB (MOG, 404 kHz) on the inbound course 341°, make righ
                         <[float64][slope][0]>
                         <[bool][alt_cst][true]>
                     >
-                    <[tmmission_checkpoint][element][5]
+                    <[tmmission_checkpoint][element][9]
                         <[string8u][type][waypoint]>
                         <[string8u][name][MOG]>
                         <[vector2_float64][lon_lat][-122.48169999999999 41.7273]>
