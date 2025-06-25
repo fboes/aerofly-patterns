@@ -230,6 +230,11 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
   }
 
   async getHoldingFix(navaidCode: string): Promise<HoldingPatternFix> {
+    const holdingFixId = HoldingPatternFix.fromId(navaidCode);
+    if (holdingFixId) {
+      return holdingFixId;
+    }
+
     if (navaidCode.length <= 3) {
       const holdingFix = await AviationWeatherApi.fetchNavaids([navaidCode]);
       if (!holdingFix.length) {

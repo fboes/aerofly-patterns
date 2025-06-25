@@ -182,6 +182,10 @@ Created with [Aerofly Landegerät](https://github.com/fboes/aerofly-patterns)
         return JSON.stringify(geoJson, null, 2);
     }
     async getHoldingFix(navaidCode) {
+        const holdingFixId = HoldingPatternFix.fromId(navaidCode);
+        if (holdingFixId) {
+            return holdingFixId;
+        }
         if (navaidCode.length <= 3) {
             const holdingFix = await AviationWeatherApi.fetchNavaids([navaidCode]);
             if (!holdingFix.length) {

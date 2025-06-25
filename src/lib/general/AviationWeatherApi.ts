@@ -95,6 +95,10 @@ export interface AviationWeatherApiNavaid {
   name: string;
   lat: number;
   lon: number;
+
+  /**
+   * meters MSL
+   */
   elev: number;
 
   /**
@@ -102,6 +106,10 @@ export interface AviationWeatherApiNavaid {
    * @see https://aviationweather.gov/data/api/#/Data/dataNavaid
    */
   freq: number;
+
+  /**
+   * with "+" to the east and "-" to the west. Substracted from a true heading this will give the magnetic heading.
+   */
   mag_dec: number;
 }
 

@@ -1,4 +1,11 @@
 export const Airports = {
+    EGJJ: {
+        runways: [
+            { id: "08", isRightPattern: true, ilsFrequency: 110.9, isPreferred: true },
+            { id: "26", ilsFrequency: 110.3 },
+        ],
+        minimumSafeAltitude: 1_500,
+    },
     KBDU: {
         runways: [
             { id: "26", isRightPattern: true },

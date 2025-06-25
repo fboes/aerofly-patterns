@@ -1,6 +1,10 @@
 import { Point } from "@fboes/geojson";
 export class HoldingPatternFix {
-    constructor(id, name, type, position, mag_dec = 0, 
+    constructor(id, name, type, position, 
+    /**
+     * with "+" to the east and "-" to the west. Substracted from a true heading this will give the magnetic heading.
+     */
+    mag_dec = 0, 
     /**
      * in Hz, null if not applicable
      */
@@ -31,5 +35,21 @@ export class HoldingPatternFix {
     }
     static fromFix(fix) {
         return new HoldingPatternFix(fix.id, fix.id + " FIX", "FIX", new Point(fix.lon, fix.lat, 0));
+    }
+    /**
+     * Static method to create a HoldingPatternFix from an id.
+     * This is used to create a fix for the Jersey holding pattern.
+     * @param id VOR, NDB or FIX id
+     */
+    static fromId(id) {
+        switch (id) {
+            case "JW":
+                return new HoldingPatternFix(id, "Jersey", "NDB", new Point(-2.22, 49.2058333, 84), -0.03, 329 * 1_000);
+            case "JSY":
+                return new HoldingPatternFix(id, "Jersey", "VORTAC", new Point(-2.0461, 49.2211, 84), -0.09, 112.2 * 1_000_000);
+            case "SHARK":
+                return new HoldingPatternFix(id, id, "FIX", new Point(-2.429474, 49.189736, 0));
+        }
+        return null;
     }
 }
