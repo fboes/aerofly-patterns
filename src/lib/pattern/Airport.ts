@@ -244,6 +244,7 @@ export class AirportRunway {
   isPreferred: boolean;
   ilsFrequency: number;
   runwayType: string | null;
+
   /**
    *
    * @param {string} id

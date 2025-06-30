@@ -11,6 +11,14 @@ export interface AirportsAirport {
 }
 
 export const Airports: { [key: string]: AirportsAirport } = {
+  EGJB: {
+    runways: [
+      { id: "09", ilsFrequency: 108.1, isPreferred: true },
+      { id: "27", ilsFrequency: 108.1 },
+    ],
+    // patterntAltitude: 700,
+    minimumSafeAltitude: 1_400,
+  },
   EGJJ: {
     runways: [
       { id: "08", isRightPattern: true, ilsFrequency: 110.9, isPreferred: true },
