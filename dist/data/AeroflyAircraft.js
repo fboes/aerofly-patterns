@@ -1,4 +1,4 @@
-import AeroflyAircraftCollection from "@fboes/aerofly-data/data/aircraft.json" assert { type: "json" };
+import AeroflyAircraftCollection from "@fboes/aerofly-data/data/aircraft.json" with { type: "json" };
 export class AeroflyAircraftFinder {
     /**
      *
