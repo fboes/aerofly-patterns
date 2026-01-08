@@ -1,24 +1,25 @@
 import { strict as assert } from "node:assert";
+import { describe, it } from "node:test";
 import { DateYielder } from "./DateYielder.js";
 
-export class DateYielderTest {
-  constructor() {
-    this.checkOtherEntries(12, -6);
+describe("DateYielder", () => {
+  it("should yield dates correctly", () => {
+    checkOtherEntries(12, -6);
 
     // All time zones
     for (let i = 12; i >= -12; i--) {
-      this.checkEntries(1, i);
-      this.checkEntries(5, i);
-      this.checkEntries(12, i);
+      checkEntries(1, i);
+      checkEntries(5, i);
+      checkEntries(12, i);
     }
-  }
+  });
 
   /**
    *
    * @param {number} entries
    * @param {number} offsetHours
    */
-  checkEntries(entries: number, offsetHours: number) {
+  const checkEntries = (entries: number, offsetHours: number) => {
     const startDate = new Date(Date.UTC(2024, 4, 15, 12, 32, 0));
     const dateYielder = new DateYielder(entries, offsetHours, startDate);
     const dates = Array.from(dateYielder.entries());
@@ -31,11 +32,9 @@ export class DateYielderTest {
       assert.ok(d.valueOf() <= startDate.valueOf());
     });
     // console.log(dateYielder.startDate, dates, offsetHours);
+  };
 
-    console.log(`✅ ${this.constructor.name}.checkEntries(${entries}, ${offsetHours}) successful`);
-  }
-
-  checkOtherEntries(entries: number, offsetHours: number) {
+  const checkOtherEntries = (entries: number, offsetHours: number) => {
     const startDate = new Date();
     const dateYielder = new DateYielder(entries, offsetHours, startDate);
     const dates = Array.from(dateYielder.entries());
@@ -45,7 +44,5 @@ export class DateYielderTest {
       assert.ok(d.valueOf() <= startDate.valueOf());
     });
     // console.log(startDate, dateYielder.startDate, dates, offsetHours);
-
-    console.log(`✅ ${this.constructor.name}.checkOtherEntries(${entries}, ${offsetHours}) successful`);
-  }
-}
+  };
+});

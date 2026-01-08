@@ -1,12 +1,8 @@
 import { strict as assert } from "node:assert";
+import { describe, it } from "node:test";
 import { Airport } from "./Airport.js";
-export class AirportTest {
-    constructor() {
-        this.checkKansasCity();
-        this.checkMarthasVineyard();
-        this.checkStockton();
-    }
-    checkKansasCity() {
+describe("Airport", () => {
+    it("should handle Kansas City airport data correctly", () => {
         const airportJson = {
             icaoId: "KMCI",
             name: "KANSAS CITY/KANSAS_CITY_INTL",
@@ -60,9 +56,8 @@ export class AirportTest {
         assert.strictEqual(airport.position.latitude, 39.2976);
         assert.strictEqual(airport.position.longitude, -94.7139);
         assert.strictEqual(airport.position.elevation, 313.1);
-        console.log(`✅ ${this.constructor.name}.checkKansasCity successful`);
-    }
-    checkMarthasVineyard() {
+    });
+    it("should handle Marthas Vineyard airport data correctly", () => {
         /** @type {AviationWeatherApiAirport} */
         const airportJson = {
             icaoId: "KMVY",
@@ -102,9 +97,8 @@ export class AirportTest {
         assert.strictEqual(airport.magneticDeclination, -15);
         assert.strictEqual(airport.runways.length, 4);
         assert.strictEqual(airport.localFrequency, 121.4);
-        console.log(`✅ ${this.constructor.name}.checkMarthasVineyard successful`);
-    }
-    checkStockton() {
+    });
+    it("should handle Stockton airport data correctly", () => {
         /** @type {AviationWeatherApiAirport} */
         const airportJson = {
             icaoId: "KSCK",
@@ -158,6 +152,5 @@ export class AirportTest {
         assert.strictEqual(airport.runways[2].id, "11R");
         assert.strictEqual(airport.runways[2].isRightPattern, true);
         assert.strictEqual(airport.runways[4].runwayType, "H");
-        console.log(`✅ ${this.constructor.name}.checkStockton successful`);
-    }
-}
+    });
+});

@@ -1,17 +1,14 @@
+import { describe, it } from "node:test";
 import { strict as assert } from "node:assert";
+
 import { Point } from "@fboes/geojson";
 import { AeroflyAircraftFinder } from "../../data/AeroflyAircraft.js";
 import { Configuration } from "./Configuration.js";
 import { HoldingPattern } from "./HoldingPattern.js";
 import { HoldingPatternFix } from "./HoldingPatternFix.js";
 
-export class HoldingPatternTest {
-  constructor() {
-    this.testHoldingPattern();
-    this.testHoldingPatternDME();
-  }
-
-  testHoldingPattern() {
+describe("HoldingPattern", () => {
+  it("should handle holding pattern correctly", () => {
     const configuration = new Configuration([
       "",
       "",
@@ -68,11 +65,9 @@ export class HoldingPatternTest {
     assert.strictEqual(leftHandHoldingPattern.getEntry(270), "parallel");
     assert.strictEqual(leftHandHoldingPattern.getEntry(315), "parallel");
     assert.strictEqual(leftHandHoldingPattern.getEntry(360), "parallel");
+  });
 
-    console.log(`✅ ${this.constructor.name}.testHoldingPattern successful`);
-  }
-
-  testHoldingPatternDME() {
+  it("should handle holding pattern with DME correctly", () => {
     const configuration = new Configuration([
       "",
       "",
@@ -156,7 +151,5 @@ export class HoldingPatternTest {
     assert.strictEqual(leftHandHoldingPattern.getEntry(270), "parallel");
     assert.strictEqual(leftHandHoldingPattern.getEntry(315), "parallel");
     assert.strictEqual(leftHandHoldingPattern.getEntry(360), "parallel");
-
-    console.log(`✅ ${this.constructor.name}.testHoldingPatternDME successful`);
-  }
-}
+  });
+});

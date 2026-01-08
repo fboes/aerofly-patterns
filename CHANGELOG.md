@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Changed testing to standard Node.js testing suite
 - Replaced local aircraft definitions with aircraft package
 
 ## [2.7.0]

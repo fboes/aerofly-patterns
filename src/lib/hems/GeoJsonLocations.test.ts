@@ -1,41 +1,30 @@
+import { strict as assert } from "node:assert";
+import { describe, it } from "node:test";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import { GeoJsonLocation, GeoJsonLocations } from "./GeoJsonLocations.js";
-import { strict as assert } from "node:assert";
 
-export class GeoJsonLocationsTest {
-  geoJsonFileName: string;
-
-  constructor() {
+describe("GeoJsonLocations", () => {
+  it("should handle random emergency sites correctly", () => {
     /**
      * @type {string}
      */
-    this.geoJsonFileName = path.join(
+    const geoJsonFileName = path.join(
       path.dirname(fileURLToPath(import.meta.url)),
       "../../../src/data/hems/lueneburg.geojson",
     );
 
-    this.testRandomEmergencySites();
-  }
-
-  testRandomEmergencySites() {
     let i = 50;
-    const g = new GeoJsonLocations(this.geoJsonFileName);
+    const g = new GeoJsonLocations(geoJsonFileName);
 
     while (i--) {
       assert.ok(g.randomEmergencySite.next().value);
     }
-    console.log(`✅ ${this.constructor.name}.testRandomEmergencySites successful`);
-  }
-}
+  });
+});
 
-export class GeoJsonLocationTest {
-  constructor() {
-    this.testApproaches();
-    this.tesIcaoCode();
-  }
-
-  testApproaches() {
+describe("GeoJsonLocation", () => {
+  it("should handle approaches correctly", () => {
     {
       const json = {
         properties: {
@@ -115,11 +104,9 @@ export class GeoJsonLocationTest {
 
       assert.deepStrictEqual(location.approaches, []);
     }
+  });
 
-    console.log(`✅ ${this.constructor.name}.testApproaches successful`);
-  }
-
-  tesIcaoCode() {
+  it("should handle icaoCode correctly", () => {
     {
       const json = {
         properties: {
@@ -178,7 +165,5 @@ export class GeoJsonLocationTest {
       const location = new GeoJsonLocation(json);
       assert.ok(location.icaoCode);
     });
-
-    console.log(`✅ ${this.constructor.name}.tesIcaoCode successful`);
-  }
-}
+  });
+});

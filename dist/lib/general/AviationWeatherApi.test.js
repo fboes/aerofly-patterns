@@ -1,16 +1,9 @@
 import { strict as assert } from "node:assert";
+import { describe, it } from "node:test";
 import { AviationWeatherApi, AviationWeatherNormalizedAirport } from "./AviationWeatherApi.js";
 import { Point } from "@fboes/geojson";
-export class AviationWeatherApiTest {
-    static async init() {
-        const self = new AviationWeatherApiTest();
-        await self.fetchAirports();
-        await self.fetchMetar();
-        await self.fetchMetarByPosition();
-        await self.fetchNavaids();
-        await self.fetchNavaidsByPosition();
-    }
-    async fetchAirports() {
+describe("AviationWeatherApi", () => {
+    it("should fetch airports correctly", async () => {
         const icaoCodes = ["KEYW", "KMCI", "KMVY", "KCCR"];
         const airports = await AviationWeatherApi.fetchAirports(icaoCodes);
         //console.log(airports);
@@ -44,9 +37,8 @@ export class AviationWeatherApiTest {
             assert.ok(Array.isArray(airportNormalized.runways), "airportNormalized.runways");
             assert.ok(Array.isArray(airportNormalized.freqs), "airportNormalized.freqs");
         });
-        console.log(`✅ ${this.constructor.name}.fetchAirports successful`);
-    }
-    async fetchMetar() {
+    });
+    it("should fetch metar correctly", async () => {
         const metars = await AviationWeatherApi.fetchMetar(["KEYw"]);
         assert.strictEqual(metars.length, 1);
         metars.forEach((metar) => {
@@ -54,20 +46,18 @@ export class AviationWeatherApiTest {
             assert.strictEqual(typeof metar.lon, "number", "metar.lon");
             assert.strictEqual(typeof metar.elev, "number", "metar.elev");
         });
-        console.log(`✅ ${this.constructor.name}.fetchMetar successful`);
-    }
-    async fetchNavaids() {
-        const navaids = await AviationWeatherApi.fetchNavaids(["GND"]);
+    });
+    it("should fetch navaids correctly", async () => {
+        const navaids = await AviationWeatherApi.fetchNavaids(["MCI"]);
         assert.ok(Array.isArray(navaids), "navaids is an array");
         assert.ok(navaids.length > 0, "navaids array is not empty");
         navaids.forEach((navaid) => {
             assert.strictEqual(typeof navaid.id, "string", "navaid.id");
             assert.strictEqual(typeof navaid.type, "string", "navaid.type");
         });
-        console.log(`✅ ${this.constructor.name}.fetchNavaids successful`);
-    }
-    async fetchNavaidsByPosition() {
-        const point = new Point(-61.782, 12.0001, 0);
+    });
+    it("should fetch navaids by position correctly", async () => {
+        const point = new Point(-94.7371, 39.2853, 0);
         assert.ok(point instanceof Point, "point is an instance of Point");
         const navaids = await AviationWeatherApi.fetchNavaidsByPosition(point, 10000);
         assert.ok(Array.isArray(navaids), "navaids is an array");
@@ -76,10 +66,9 @@ export class AviationWeatherApiTest {
             assert.strictEqual(typeof navaid.id, "string", "navaid.id");
             assert.strictEqual(typeof navaid.type, "string", "navaid.type");
         });
-        console.log(`✅ ${this.constructor.name}.fetchNavaidsByPosition successful`);
-    }
-    async fetchMetarByPosition() {
-        const point = new Point(-80.1975, 25.7358, 0);
+    });
+    it("should fetch metar by position correctly", async () => {
+        const point = new Point(-94.7371, 39.2853, 0);
         assert.ok(point instanceof Point, "point is an instance of Point");
         const metars = await AviationWeatherApi.fetchMetarByPosition(point, 10000);
         assert.ok(Array.isArray(metars), "metars is an array");
@@ -90,6 +79,5 @@ export class AviationWeatherApiTest {
           assert.strictEqual(typeof metar.lon, "number", "metar.lon");
           assert.strictEqual(typeof metar.elev, "number", "metar.elev");
         });*/
-        console.log(`✅ ${this.constructor.name}.fetchMetarByPosition successful`);
-    }
-}
+    });
+});

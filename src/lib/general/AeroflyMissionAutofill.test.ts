@@ -1,13 +1,11 @@
-import { AeroflyMission } from "@fboes/aerofly-custom-missions";
 import { strict as assert } from "node:assert";
+import { describe, it } from "node:test";
+
+import { AeroflyMission } from "@fboes/aerofly-custom-missions";
 import { AeroflyMissionAutofill } from "./AeroflyMissionAutofill.js";
 
-export class AeroflyMissionAutofillTest {
-  constructor() {
-    this.checkConversion();
-  }
-
-  checkConversion() {
+describe("AeroflyMissionAutofill", () => {
+  it("should handle aircraft name conversion correctly", () => {
     const mission = new AeroflyMission("Test");
     const description = new AeroflyMissionAutofill(mission);
     const d = description.description;
@@ -23,7 +21,5 @@ export class AeroflyMissionAutofillTest {
 
     mission.aircraft.name = "b777_300er";
     assert.strictEqual(description.aircraftName, "B777-300ER");
-
-    console.log(`✅ ${this.constructor.name}.checkConversion() successful`);
-  }
-}
+  });
+});
