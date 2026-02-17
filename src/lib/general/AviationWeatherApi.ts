@@ -122,7 +122,7 @@ export interface AviationWeatherApiFix {
 
 export class AviationWeatherApi {
   static async fetchMetar(ids: string[], date: Date | null = null): Promise<AviationWeatherApiMetar[]> {
-    return AviationWeatherApi.doRequest(
+    return AviationWeatherApi.doRequest<AviationWeatherApiMetar[]>(
       "/api/data/metar",
       new URLSearchParams({
         ids: ids.join(","),
@@ -147,7 +147,7 @@ export class AviationWeatherApi {
     distance: number = 1000,
     date: Date | null = null,
   ): Promise<AviationWeatherApiMetar[]> {
-    return AviationWeatherApi.doRequest(
+    return AviationWeatherApi.doRequest<AviationWeatherApiMetar[]>(
       "/api/data/metar",
       new URLSearchParams({
         // ids: ids.join(","),
@@ -172,7 +172,7 @@ export class AviationWeatherApi {
   }
 
   static async fetchNavaids(ids: string[]): Promise<AviationWeatherApiNavaid[]> {
-    return AviationWeatherApi.doRequest(
+    return AviationWeatherApi.doRequest<AviationWeatherApiNavaidRaw[]>(
       "/api/data/navaid",
       new URLSearchParams({
         ids: ids.join(","),
@@ -185,7 +185,7 @@ export class AviationWeatherApi {
   }
 
   static async fetchFix(ids: string[]): Promise<AviationWeatherApiFix[]> {
-    return AviationWeatherApi.doRequest(
+    return AviationWeatherApi.doRequest<AviationWeatherApiFix[]>(
       "/api/data/fix",
       new URLSearchParams({
         ids: ids.join(","),
@@ -202,7 +202,7 @@ export class AviationWeatherApi {
    * @returns {Promise<AviationWeatherApiNavaid[]>}
    */
   static async fetchNavaidsByPosition(position: Point, distance: number = 1000): Promise<AviationWeatherApiNavaid[]> {
-    return AviationWeatherApi.doRequest(
+    return AviationWeatherApi.doRequest<AviationWeatherApiNavaidRaw[]>(
       "/api/data/navaid",
       new URLSearchParams({
         // ids: ids.join(","),
@@ -227,8 +227,7 @@ export class AviationWeatherApi {
     });
   }
 
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  static async doRequest(route: string, query: URLSearchParams): Promise<any> {
+  static async doRequest<T>(route: string, query: URLSearchParams): Promise<T> {
     const url = new URL(route + "?" + query, "https://aviationweather.gov");
     //console.log(url);
     const response = await fetch(url, {

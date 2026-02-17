@@ -48,7 +48,7 @@ export type OpenStreetMapApiPlace = {
  */
 export class OpenStreetMapApi {
   static async search(q: string, limit = 1): Promise<OpenStreetMapApiPlace[]> {
-    return OpenStreetMapApi.doRequest(
+    return OpenStreetMapApi.doRequest<OpenStreetMapApiPlace[]>(
       "/search",
       new URLSearchParams({
         q,
@@ -60,8 +60,7 @@ export class OpenStreetMapApi {
     );
   }
 
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  static async doRequest(route: string, query: URLSearchParams): Promise<any> {
+  static async doRequest<T>(route: string, query: URLSearchParams): Promise<T> {
     const url = new URL(route + "?" + query, "https://nominatim.openstreetmap.org");
     const response = await fetch(url, {
       headers: {

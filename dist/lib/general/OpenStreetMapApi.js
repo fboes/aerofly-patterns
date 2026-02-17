@@ -11,7 +11,6 @@ export class OpenStreetMapApi {
             namedetails: "1",
         }));
     }
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
     static async doRequest(route, query) {
         const url = new URL(route + "?" + query, "https://nominatim.openstreetmap.org");
         const response = await fetch(url, {

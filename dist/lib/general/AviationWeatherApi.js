@@ -77,7 +77,6 @@ export class AviationWeatherApi {
             };
         });
     }
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
     static async doRequest(route, query) {
         const url = new URL(route + "?" + query, "https://aviationweather.gov");
         //console.log(url);
