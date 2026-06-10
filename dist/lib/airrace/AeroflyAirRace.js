@@ -8,11 +8,12 @@ import { Markdown } from "../general/Markdown.js";
 import { LocalTime } from "../general/LocalTime.js";
 import { Formatter } from "../general/Formatter.js";
 export class AeroflyAirRace {
+    configuration;
+    airport = null;
+    aircraft = null;
+    scenarios = [];
+    nauticalTimezone = 0;
     constructor(configuration) {
-        this.airport = null;
-        this.aircraft = null;
-        this.scenarios = [];
-        this.nauticalTimezone = 0;
         this.configuration = configuration;
     }
     static async init(configuration) {

@@ -114,6 +114,21 @@ export const magDecConverter = (magdec) => {
     return magDec;
 };
 export class AviationWeatherNormalizedAirport {
+    icaoId;
+    name;
+    type;
+    lat;
+    lon;
+    /**
+     * meters MSL
+     */
+    elev;
+    magdec;
+    rwyNum;
+    tower;
+    beacon;
+    runways;
+    freqs;
     /**
      * @param {AviationWeatherApiAirport} apiData
      */
@@ -159,6 +174,13 @@ export class AviationWeatherNormalizedAirport {
     }
 }
 export class AviationWeatherNormalizedRunway {
+    id;
+    /**
+     * length, width in ft
+     */
+    dimension;
+    surface;
+    alignment;
     constructor({ id, dimension, surface, alignment }) {
         /**
          * @type {[string,string]} both directions
@@ -179,6 +201,37 @@ export class AviationWeatherNormalizedRunway {
     }
 }
 export class AviationWeatherNormalizedMetar {
+    icaoId;
+    reportTime;
+    /**
+     * in °C
+     */
+    temp;
+    /**
+     * in °C
+     */
+    dewp;
+    /**
+     * in °, null on VRB
+     */
+    wdir;
+    /**
+     * in kts
+     */
+    wspd;
+    wgst;
+    /**
+     * in SM, 99 on any distance being open-ended
+     */
+    visib;
+    altim;
+    lat;
+    lon;
+    /**
+     * meters MSL
+     */
+    elev;
+    clouds;
     /**
      *
      * @param {AviationWeatherApiMetar} apiData
@@ -214,6 +267,15 @@ export class AviationWeatherNormalizedMetar {
     }
 }
 export class AviationWeatherNormalizedCloud {
+    cover;
+    /**
+     *  0..8
+     */
+    coverOctas;
+    /**
+     *  in feet AGL
+     */
+    base;
     constructor({ cover, base }) {
         this.cover = cover === "CAVOK" || cover === "SKC" ? "CLR" : cover;
         const coverOctas = {

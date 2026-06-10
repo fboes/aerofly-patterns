@@ -10,15 +10,12 @@ import { LocalTime } from "../general/LocalTime.js";
 import { Formatter } from "../general/Formatter.js";
 
 export class AeroflyAirRace {
-  configuration: Configuration;
   airport: OpenStreetMapApiAirport | null = null;
   aircraft: AeroflyAircraft | null = null;
   scenarios: Scenario[] = [];
   nauticalTimezone: number = 0;
 
-  constructor(configuration: Configuration) {
-    this.configuration = configuration;
-  }
+  constructor(public configuration: Configuration) {}
 
   static async init(configuration: Configuration): Promise<AeroflyAirRace> {
     const airport = await OpenStreetMapApi.search(configuration.startingLocation);

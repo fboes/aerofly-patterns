@@ -1,5 +1,26 @@
 import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 export class Configuration extends ConfigurationAbstract {
+    icaoCode;
+    /**
+     * as in Aerofly Aircraft Codes
+     */
+    aircraft;
+    /**
+     * as in Aerofly Aircraft Codes
+     */
+    livery;
+    rightPatternRunways;
+    minimumSafeAltitude;
+    numberOfMissions;
+    initialDistance;
+    patternAltitude;
+    patternDistance;
+    patternFinalDistance;
+    randomHeadingRange;
+    preferredRunways;
+    isPatternAltitudeMsl;
+    directoryMode;
+    noGuides;
     constructor(args) {
         super();
         this._arguments = [

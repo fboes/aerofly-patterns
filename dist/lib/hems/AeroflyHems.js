@@ -7,6 +7,11 @@ import { AeroflyTocGenerator } from "./AeroflyTocGenerator.js";
 import { AeroflyTslGenerator } from "./AeroflyTslGenerator.js";
 import { Markdown } from "../general/Markdown.js";
 export class AeroflyHems {
+    configuration;
+    scenarios;
+    locations;
+    nauticalTimezone;
+    aircraft;
     constructor(configuration) {
         this.configuration = configuration;
         this.scenarios = [];

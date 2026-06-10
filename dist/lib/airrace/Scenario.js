@@ -1,9 +1,3 @@
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _Scenario_instances, _Scenario_getTitle, _Scenario_makeOrigin, _Scenario_getCheckpoints, _Scenario_getRandomCheckpointCount, _Scenario_getRandomLegDistance, _Scenario_getRandomAltitude, _Scenario_roundAltitude, _Scenario_geRandomAngleChange, _Scenario_getRandomSign, _Scenario_getFinish;
 import { AeroflyMission, AeroflyMissionCheckpoint, AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 import { Units } from "../../data/Units.js";
 import { Point, Vector } from "@fboes/geojson";
@@ -11,27 +5,29 @@ import { AeroflyMissionAutofill } from "../general/AeroflyMissionAutofill.js";
 import { Rand } from "../general/Rand.js";
 import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js";
 export class Scenario {
+    date;
+    aircraft;
+    mission;
     static async init(configuration, aircraft, airport, date, index = 0) {
         return new Scenario(configuration, aircraft, airport, date, await AviationWeatherApiHelper.getWeather(configuration.icaoCode, date), index);
     }
     constructor(configuration, aircraft, airport, date, weather, index = 0) {
-        _Scenario_instances.add(this);
         this.date = date;
         this.aircraft = aircraft;
         if (airport.elev !== null) {
             if (configuration.minAltitude === 0) {
-                configuration.minAltitude = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_roundAltitude).call(this, airport.elev * Units.feetPerMeter + 1500);
+                configuration.minAltitude = this._roundAltitude(airport.elev * Units.feetPerMeter + 1500);
             }
             if (configuration.maxAltitude === 0) {
-                configuration.maxAltitude = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_roundAltitude).call(this, airport.elev * Units.feetPerMeter + 3500);
+                configuration.maxAltitude = this._roundAltitude(airport.elev * Units.feetPerMeter + 3500);
             }
         }
-        const title = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getTitle).call(this, index, airport);
+        const title = this._getTitle(index, airport);
         const conditions = AviationWeatherApiHelper.makeConditions(date, weather);
-        const origin = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_makeOrigin).call(this, airport, configuration);
+        const origin = this._makeOrigin(airport, configuration);
         const destination = origin;
-        const checkpoints = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getCheckpoints).call(this, origin, configuration);
-        const finish = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getFinish).call(this, checkpoints);
+        const checkpoints = this._getCheckpoints(origin, configuration);
+        const finish = this._getFinish(checkpoints);
         this.mission = new AeroflyMission(title, {
             aircraft: {
                 name: aircraft.aeroflyCode,
@@ -53,72 +49,98 @@ export class Scenario {
         this.mission.distance = describer.distance;
         this.mission.duration = describer.calculateDuration(this.aircraft.cruiseSpeedKts);
     }
-}
-_Scenario_instances = new WeakSet(), _Scenario_getTitle = function _Scenario_getTitle(index, airport) {
-    return `Air Race #${index + 1} at ${airport.name}`;
-}, _Scenario_makeOrigin = function _Scenario_makeOrigin(airport, configuration) {
-    return {
-        icao: airport.icaoId ?? configuration.icaoCode,
-        longitude: airport.lon,
-        latitude: airport.lat,
-        dir: (Math.random() * 360 + 360) % 360,
-        alt: configuration.minAltitude / Units.feetPerMeter,
-    };
-}, _Scenario_getCheckpoints = function _Scenario_getCheckpoints(origin, configuration) {
-    const numberOfLegs = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomCheckpointCount).call(this, configuration);
-    const checkpoints = [
-        new AeroflyMissionCheckpoint(origin.icao, "origin", origin.longitude, origin.latitude, {
-            altitude: origin.alt,
-            altitudeConstraint: true,
-            flyOver: true,
-        }),
-    ];
-    let distance = 0;
-    let direction = origin.dir;
-    let position = new Point(origin.longitude, origin.latitude, origin.alt);
-    for (let i = 0; i < numberOfLegs; i++) {
-        distance = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomLegDistance).call(this, configuration);
-        if (i !== 0) {
-            direction = direction + __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_geRandomAngleChange).call(this, configuration);
+    _getTitle(index, airport) {
+        return `Air Race #${index + 1} at ${airport.name}`;
+    }
+    _makeOrigin(airport, configuration) {
+        return {
+            icao: airport.icaoId ?? configuration.icaoCode,
+            longitude: airport.lon,
+            latitude: airport.lat,
+            dir: (Math.random() * 360 + 360) % 360,
+            alt: configuration.minAltitude / Units.feetPerMeter,
+        };
+    }
+    _getCheckpoints(origin, configuration) {
+        const numberOfLegs = this._getRandomCheckpointCount(configuration);
+        const checkpoints = [
+            new AeroflyMissionCheckpoint(origin.icao, "origin", origin.longitude, origin.latitude, {
+                altitude: origin.alt,
+                altitudeConstraint: true,
+                flyOver: true,
+            }),
+        ];
+        let distance = 0;
+        let direction = origin.dir;
+        let position = new Point(origin.longitude, origin.latitude, origin.alt);
+        for (let i = 0; i < numberOfLegs; i++) {
+            distance = this._getRandomLegDistance(configuration);
+            if (i !== 0) {
+                direction = direction + this._getRandomAngleChange(configuration);
+            }
+            position = position.getPointBy(new Vector(distance, direction));
+            position.elevation = this._roundAltitude(this._getRandomAltitude(configuration));
+            checkpoints.push(new AeroflyMissionCheckpoint(`CP-${i === numberOfLegs - 1 ? "FINISH" : String(i + 1)}`, "waypoint", position.longitude, position.latitude, {
+                altitude: position.elevation,
+                direction,
+            }));
         }
-        position = position.getPointBy(new Vector(distance, direction));
-        position.elevation = __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_roundAltitude).call(this, __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomAltitude).call(this, configuration));
-        checkpoints.push(new AeroflyMissionCheckpoint(`CP-${i === numberOfLegs - 1 ? "FINISH" : String(i + 1)}`, "waypoint", position.longitude, position.latitude, {
-            altitude: position.elevation,
-            direction,
-        }));
+        return checkpoints;
     }
-    return checkpoints;
-}, _Scenario_getRandomCheckpointCount = function _Scenario_getRandomCheckpointCount(configuration) {
-    if (configuration.minCheckpointCount === configuration.maxCheckpointCount) {
-        return configuration.minCheckpointCount;
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+     */
+    _getRandomCheckpointCount(configuration) {
+        if (configuration.minCheckpointCount === configuration.maxCheckpointCount) {
+            return configuration.minCheckpointCount;
+        }
+        const minCeiled = Math.ceil(configuration.minCheckpointCount);
+        const maxFloored = Math.floor(configuration.maxCheckpointCount);
+        return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
     }
-    const minCeiled = Math.ceil(configuration.minCheckpointCount);
-    const maxFloored = Math.floor(configuration.maxCheckpointCount);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
-}, _Scenario_getRandomLegDistance = function _Scenario_getRandomLegDistance(configuration) {
-    if (configuration.minLegDistance === configuration.maxLegDistance) {
-        return configuration.minLegDistance * 1000;
+    /**
+     * in meters
+     */
+    _getRandomLegDistance(configuration) {
+        if (configuration.minLegDistance === configuration.maxLegDistance) {
+            return configuration.minLegDistance * 1000;
+        }
+        return Rand.getRandomArbitrary(configuration.minLegDistance, configuration.maxLegDistance) * 1000;
     }
-    return Rand.getRandomArbitrary(configuration.minLegDistance, configuration.maxLegDistance) * 1000;
-}, _Scenario_getRandomAltitude = function _Scenario_getRandomAltitude(configuration) {
-    if (configuration.minAltitude === configuration.maxAltitude) {
-        return configuration.minAltitude / Units.feetPerMeter;
+    /**
+     * in meters
+     */
+    _getRandomAltitude(configuration) {
+        if (configuration.minAltitude === configuration.maxAltitude) {
+            return configuration.minAltitude / Units.feetPerMeter;
+        }
+        return Rand.getRandomArbitrary(configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
     }
-    return Rand.getRandomArbitrary(configuration.minAltitude, configuration.maxAltitude) / Units.feetPerMeter;
-}, _Scenario_roundAltitude = function _Scenario_roundAltitude(meters) {
-    return (Math.ceil((meters * Units.feetPerMeter) / 100) * 100) / Units.feetPerMeter;
-}, _Scenario_geRandomAngleChange = function _Scenario_geRandomAngleChange(configuration) {
-    if (configuration.minAngleChange === configuration.maxAngleChange) {
-        return configuration.minAngleChange;
+    /**
+     *
+     * @param meters
+     * @returns in meters, rounded to next 100ft
+     */
+    _roundAltitude(meters) {
+        return (Math.ceil((meters * Units.feetPerMeter) / 100) * 100) / Units.feetPerMeter;
     }
-    return Rand.getRandomArbitrary(configuration.minAngleChange, configuration.maxAngleChange) * __classPrivateFieldGet(this, _Scenario_instances, "m", _Scenario_getRandomSign).call(this);
-}, _Scenario_getRandomSign = function _Scenario_getRandomSign() {
-    return Math.random() < 0.5 ? -1 : 1;
-}, _Scenario_getFinish = function _Scenario_getFinish(checkpoints) {
-    const lastCp = checkpoints.at(-1);
-    if (!lastCp) {
-        return null;
+    _getRandomAngleChange(configuration) {
+        if (configuration.minAngleChange === configuration.maxAngleChange) {
+            return configuration.minAngleChange;
+        }
+        return Rand.getRandomArbitrary(configuration.minAngleChange, configuration.maxAngleChange) * this._getRandomSign();
     }
-    return new AeroflyMissionTargetPlane(lastCp.longitude, lastCp.latitude, lastCp.direction ?? 0);
-};
+    /**
+     * @see https://stackoverflow.com/questions/44651537/correct-function-using-math-random-to-get-50-50-chance
+     */
+    _getRandomSign() {
+        return Math.random() < 0.5 ? -1 : 1;
+    }
+    _getFinish(checkpoints) {
+        const lastCp = checkpoints.at(-1);
+        if (!lastCp) {
+            return null;
+        }
+        return new AeroflyMissionTargetPlane(lastCp.longitude, lastCp.latitude, lastCp.direction ?? 0);
+    }
+}

@@ -8,6 +8,18 @@ import { AviationWeatherNormalizedAirport, } from "../general/AviationWeatherApi
  * @type  {AeroflyPatternsWaypointable}
  */
 export class Airport {
+    id;
+    position;
+    name;
+    runways;
+    magneticDeclination;
+    nauticalTimezone;
+    hasTower;
+    hasBeacon;
+    localFrequency;
+    navaids;
+    radioDescription;
+    navAidDescription;
     constructor(airportApiData, configuration = null) {
         const airportNormalized = new AviationWeatherNormalizedAirport(airportApiData);
         this.id = airportNormalized.icaoId;
@@ -167,6 +179,14 @@ export class Airport {
  * @type  {AeroflyPatternsWaypointable}
  */
 export class AirportRunway {
+    id;
+    position;
+    dimension;
+    alignment;
+    isRightPattern;
+    isPreferred;
+    ilsFrequency;
+    runwayType;
     /**
      *
      * @param {string} id
@@ -212,6 +232,10 @@ export class AirportRunway {
  * @type  {AeroflyPatternsWaypointable}
  */
 export class AirportNavaid {
+    id;
+    position;
+    type;
+    frequency;
     constructor(navaidJson) {
         this.id = navaidJson.id;
         this.position = new Point(navaidJson.lon, navaidJson.lat, navaidJson.elev);

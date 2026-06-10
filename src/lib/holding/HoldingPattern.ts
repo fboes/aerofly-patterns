@@ -95,21 +95,21 @@ export class HoldingPattern {
       100;
     this.patternSpeedKts = Math.min(
       aircraft.cruiseSpeedKts + 10,
-      this.#getMaxPatternSpeedKts(aircraft, this.patternAltitudeFt),
+      this._getMaxPatternSpeedKts(aircraft, this.patternAltitudeFt),
     );
-    this.legTimeMin = this.#getLegTimeMin(this.patternAltitudeFt);
+    this.legTimeMin = this._getLegTimeMin(this.patternAltitudeFt);
     this.id =
       this.dmeDistanceNm <= 0 ? holdingNavAid.id : `${holdingNavAid.id}+${String(this.dmeDistanceNm).padStart(2, "0")}`;
-    this.holdingFix = this.#getHoldingFix(holdingNavAid);
-    this.turnRadiusMeters = this.#getTurnRadiusMeters(this.patternSpeedKts);
-    this.legDistanceMeters = this.#getLegDistanceMeters(this.patternSpeedKts, this.legTimeMin);
+    this.holdingFix = this._getHoldingFix(holdingNavAid);
+    this.turnRadiusMeters = this._getTurnRadiusMeters(this.patternSpeedKts);
+    this.legDistanceMeters = this._getLegDistanceMeters(this.patternSpeedKts, this.legTimeMin);
     this.holdingAreaDirection = Degree(this.inboundHeading + (this.dmeHoldingAwayFromNavaid ? 0 : 180));
     this.holdingAreaDirectionTrue = Degree(this.holdingAreaDirection + holdingNavAid.mag_dec);
     this.furtherClearanceInMin = Rand.getRandomInt(3, 5) * 5;
     //console.log(this);
   }
 
-  #getHoldingFix(holdingNavAid: HoldingPatternFix): Point {
+  private _getHoldingFix(holdingNavAid: HoldingPatternFix): Point {
     return holdingNavAid.position.getPointBy(
       new Vector(this.dmeDistanceNm * Units.metersPerNauticalMile, Degree(this.inboundHeadingTrue + 180)),
     );
@@ -118,7 +118,7 @@ export class HoldingPattern {
   /**
    * @see https://www.code7700.com/holding.htm
    */
-  #getMaxPatternSpeedKts(aircraft: AeroflyAircraft, patternAltitudeFt: number): number {
+  private _getMaxPatternSpeedKts(aircraft: AeroflyAircraft, patternAltitudeFt: number): number {
     // TODO: Turbulence: 280
     if (aircraft.tags.includes("helicopter")) {
       return patternAltitudeFt <= 6000 ? 100 : 170;
@@ -141,12 +141,12 @@ export class HoldingPattern {
    * to make all turns to achieve an average bank angle of at least 25˚ or
    * a rate of turn of 3˚ per second, whichever requires the lesser bank.
    */
-  #getTurnRadiusMeters(patternSpeedKts: number): number {
+  private _getTurnRadiusMeters(patternSpeedKts: number): number {
     return (patternSpeedKts / (20 * Math.PI * 3)) * Units.metersPerNauticalMile; // turn radius at 3 degrees per second
     //return (patternSpeedKts ** 2 / (11.26 * Math.tan(25 * (Math.PI / 180)))) * Units.metersPerNauticalMile; // turn radius at 25 degrees bank angle
   }
 
-  #getLegDistanceMeters(patternSpeedKts: number, legTimeMin: number): number {
+  private _getLegDistanceMeters(patternSpeedKts: number, legTimeMin: number): number {
     if (this.dmeDistanceOutboundNm !== 0) {
       return Math.abs(
         Math.sqrt((this.dmeDistanceOutboundNm * Units.metersPerNauticalMile) ** 2 - (this.turnRadiusMeters * 2) ** 2) -
@@ -157,7 +157,7 @@ export class HoldingPattern {
     return (patternSpeedKts / 60) * legTimeMin * Units.metersPerNauticalMile;
   }
 
-  #getLegTimeMin(patternAltitudeFt: number): number {
+  private _getLegTimeMin(patternAltitudeFt: number): number {
     return patternAltitudeFt > 14000 ? 1.5 : 1;
   }
 

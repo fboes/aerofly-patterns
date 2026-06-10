@@ -5,19 +5,19 @@ export class LocalTime {
   month: number;
   fullYear: number;
 
-  #offsetDate: Date;
-  #offsetHours: number;
+  private _offsetDate: Date;
+  private _offsetHours: number;
 
   constructor(date: Date, offsetHours: number) {
-    this.#offsetHours = Math.round(offsetHours);
-    this.#offsetDate = new Date(date);
-    this.#offsetDate.setUTCHours(this.#offsetDate.getUTCHours() + Math.round(offsetHours));
+    this._offsetHours = Math.round(offsetHours);
+    this._offsetDate = new Date(date);
+    this._offsetDate.setUTCHours(this._offsetDate.getUTCHours() + Math.round(offsetHours));
 
-    this.hours = this.#offsetDate.getUTCHours();
-    this.minutes = this.#offsetDate.getUTCMinutes();
-    this.date = this.#offsetDate.getUTCDate();
-    this.month = this.#offsetDate.getUTCMonth();
-    this.fullYear = this.#offsetDate.getUTCFullYear();
+    this.hours = this._offsetDate.getUTCHours();
+    this.minutes = this._offsetDate.getUTCMinutes();
+    this.date = this._offsetDate.getUTCDate();
+    this.month = this._offsetDate.getUTCMonth();
+    this.fullYear = this._offsetDate.getUTCFullYear();
   }
 
   toDateString(): string {
@@ -31,20 +31,20 @@ export class LocalTime {
   }
 
   get nauticalZoneId(): string {
-    if (this.#offsetHours === 0) {
+    if (this._offsetHours === 0) {
       return "Z";
-    } else if (this.#offsetHours > 0) {
-      return String.fromCharCode(this.#offsetHours + 77);
-    } else if (this.#offsetHours < -9) {
-      return String.fromCharCode(Math.abs(this.#offsetHours) + 65);
-    } else if (this.#offsetHours < 0) {
-      return String.fromCharCode(Math.abs(this.#offsetHours) + 64); // Exclude "J"
+    } else if (this._offsetHours > 0) {
+      return String.fromCharCode(this._offsetHours + 77);
+    } else if (this._offsetHours < -9) {
+      return String.fromCharCode(Math.abs(this._offsetHours) + 65);
+    } else if (this._offsetHours < 0) {
+      return String.fromCharCode(Math.abs(this._offsetHours) + 64); // Exclude "J"
     }
     return "";
   }
 
   get timeZone(): string {
-    const prefix = this.#offsetHours < 0 ? "-" : "+";
-    return `${prefix}${Math.abs(this.#offsetHours).toFixed().padStart(2, "0")}:00`;
+    const prefix = this._offsetHours < 0 ? "-" : "+";
+    return `${prefix}${Math.abs(this._offsetHours).toFixed().padStart(2, "0")}:00`;
   }
 }

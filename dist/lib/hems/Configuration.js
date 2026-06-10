@@ -2,6 +2,19 @@ import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 export class Configuration extends ConfigurationAbstract {
+    geoJsonFile;
+    environmentId;
+    aircraft;
+    livery;
+    numberOfMissions;
+    callsign;
+    icaoCode;
+    directoryMode;
+    noGuides;
+    isColdAndDark;
+    canTransfer;
+    withApproaches;
+    doNotGeneratePois;
     constructor(args) {
         super();
         this._arguments = [

@@ -17,18 +17,12 @@ export interface AeroflyPatternsWaypointable {
 }
 
 export class AeroflyPatterns {
-  configuration: Configuration;
-  airport: Airport;
   scenarios: Scenario[];
 
-  constructor(configuration: Configuration, airport: Airport) {
-    this.configuration = configuration;
-
-    /**
-     * @type {Airport} the airport to build scenarios for
-     */
-    this.airport = airport;
-
+  constructor(
+    public configuration: Configuration,
+    public airport: Airport,
+  ) {
     /**
      * @type {Scenario[]} the scenarios to
      */

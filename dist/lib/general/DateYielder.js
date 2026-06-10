@@ -1,4 +1,8 @@
 export class DateYielder {
+    count;
+    offsetHours;
+    hoursSpacing;
+    startDate;
     /**
      *
      * @param {number} count

@@ -1,12 +1,42 @@
 import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 export class Configuration extends ConfigurationAbstract {
+    icaoCode;
+    /**
+     * as in Aerofly Aircraft Codes
+     */
+    aircraft;
+    /**
+     * as in Aerofly Aircraft Codes
+     */
+    livery;
+    numberOfMissions;
+    minCheckpointCount;
+    maxCheckpointCount;
+    minAngleChange;
+    maxAngleChange;
+    /**
+     * in kilometers
+     */
+    minLegDistance;
+    /**
+     * in kilometers
+     */
+    maxLegDistance;
+    /**
+     * in feet
+     */
+    minAltitude;
+    /**
+     * in feet
+     */
+    maxAltitude;
+    /**
+     * If file(s) should be created in sub directory
+     */
+    directoryMode = false;
+    startingLocation = "";
     constructor(args) {
         super();
-        /**
-         * If file(s) should be created in sub directory
-         */
-        this.directoryMode = false;
-        this.startingLocation = "";
         this._arguments = [
             {
                 name: "ICAO_AIRPORT_CODE",

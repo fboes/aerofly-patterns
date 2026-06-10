@@ -1,18 +1,14 @@
 import { AeroflyMissionTargetPlane, AeroflyMission, AeroflyMissionCheckpoint } from "@fboes/aerofly-custom-missions";
-import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission";
+import { AeroflyMissionPosition } from "@fboes/aerofly-custom-missions/types/dto/AeroflyMission.js";
 
 export class AeroflyMissionAutofill {
-  #mission: AeroflyMission;
-
-  constructor(mission: AeroflyMission) {
-    this.#mission = mission;
-  }
+  constructor(private mission: AeroflyMission) {}
 
   get title(): string {
-    if (this.#mission.origin.icao == this.#mission.destination.icao) {
-      return `Local flight at ${this.#mission.origin.icao}`;
+    if (this.mission.origin.icao == this.mission.destination.icao) {
+      return `Local flight at ${this.mission.origin.icao}`;
     }
-    return `From ${this.#mission.origin.icao} to ${this.#mission.destination.icao}`;
+    return `From ${this.mission.origin.icao} to ${this.mission.destination.icao}`;
   }
 
   get description(): string {
@@ -25,18 +21,18 @@ export class AeroflyMissionAutofill {
   get tags(): string[] {
     const tags = [];
 
-    if (this.#mission.conditions.wind.speed >= 22) {
+    if (this.mission.conditions.wind.speed >= 22) {
       tags.push("windy");
     }
-    if (this.#mission.conditions.visibility_sm <= 3) {
+    if (this.mission.conditions.visibility_sm <= 3) {
       tags.push("low_visibility");
     }
     if (this.timeOfDay === "night") {
       tags.push("night");
     }
-    if (this.#mission.flightSetting === "cold_and_dark") {
+    if (this.mission.flightSetting === "cold_and_dark") {
       tags.push("cold_and_dark");
-    } else if (this.#mission.flightSetting === "before_start") {
+    } else if (this.mission.flightSetting === "before_start") {
       tags.push("before_start");
     }
 
@@ -48,7 +44,7 @@ export class AeroflyMissionAutofill {
      * @type {string[]}
      */
     const adjectives: string[] = [];
-    const conditions = this.#mission.conditions;
+    const conditions = this.mission.conditions;
 
     if (conditions.wind.speed >= 48) {
       adjectives.push("stormy");
@@ -86,8 +82,8 @@ export class AeroflyMissionAutofill {
    * @returns {number} duration in seconds, considering aircraft flight setting
    */
   calculateDuration(knots: number): number {
-    let duration = (this.#mission.distance ?? 0) / (knots * (1852 / 3600));
-    switch (this.#mission.flightSetting) {
+    let duration = (this.mission.distance ?? 0) / (knots * (1852 / 3600));
+    switch (this.mission.flightSetting) {
       case "cold_and_dark":
         duration += 240;
         break;
@@ -105,13 +101,13 @@ export class AeroflyMissionAutofill {
    * Setting a target plane in around 1 meter distance in front of the aircraft.
    */
   removeGuides() {
-    const directionRad = (this.#mission.origin.dir * Math.PI) / 180;
+    const directionRad = (this.mission.origin.dir * Math.PI) / 180;
     const offset = 0.00001;
 
-    this.#mission.finish = new AeroflyMissionTargetPlane(
-      this.#mission.origin.longitude + Math.sin(directionRad) * offset,
-      this.#mission.origin.latitude + Math.cos(directionRad) * offset,
-      this.#mission.origin.dir,
+    this.mission.finish = new AeroflyMissionTargetPlane(
+      this.mission.origin.longitude + Math.sin(directionRad) * offset,
+      this.mission.origin.latitude + Math.cos(directionRad) * offset,
+      this.mission.origin.dir,
     );
   }
 
@@ -120,26 +116,26 @@ export class AeroflyMissionAutofill {
    * @returns {number} in meters
    */
   get distance(): number {
-    let lastCp: AeroflyMissionCheckpoint | AeroflyMissionPosition = this.#mission.origin;
+    let lastCp: AeroflyMissionCheckpoint | AeroflyMissionPosition = this.mission.origin;
     let distance = 0;
 
-    for (const cp of this.#mission.checkpoints) {
+    for (const cp of this.mission.checkpoints) {
       const vector = AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, cp);
       distance += vector.distance;
       cp.direction = vector.bearing;
       lastCp = cp;
     }
-    distance += AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, this.#mission.destination).distance;
+    distance += AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, this.mission.destination).distance;
 
     return distance;
   }
 
   get nauticalTimeHours(): number {
-    return (this.#mission.conditions.time.getUTCHours() + this.nauticalTimezoneOffset + 24) % 24;
+    return (this.mission.conditions.time.getUTCHours() + this.nauticalTimezoneOffset + 24) % 24;
   }
 
   get nauticalTimezoneOffset(): number {
-    return Math.round((this.#mission.origin.longitude ?? 0) / 15);
+    return Math.round((this.mission.origin.longitude ?? 0) / 15);
   }
 
   get timeOfDay(): string {
@@ -167,26 +163,26 @@ export class AeroflyMissionAutofill {
   }
 
   get aircraftName(): string {
-    switch (this.#mission.aircraft.name) {
+    switch (this.mission.aircraft.name) {
       case "f15e":
       case "f18":
       case "mb339":
       case "p38":
       case "uh60":
-        return this.#mission.aircraft.name.toUpperCase().replace(/^(\D+)(\d+)/, "$1-$2");
+        return this.mission.aircraft.name.toUpperCase().replace(/^(\D+)(\d+)/, "$1-$2");
       case "camel":
       case "concorde":
       case "jungmeister":
       case "pitts":
       case "swift":
-        return this.#mission.aircraft.name[0].toUpperCase() + String(this.#mission.aircraft.name).slice(1);
+        return this.mission.aircraft.name[0].toUpperCase() + String(this.mission.aircraft.name).slice(1);
       default:
-        return this.#mission.aircraft.name.toUpperCase().replace(/_/, "-");
+        return this.mission.aircraft.name.toUpperCase().replace(/_/, "-");
     }
   }
 
   get flightSetting(): string {
-    switch (this.#mission.flightSetting) {
+    switch (this.mission.flightSetting) {
       case "cold_and_dark":
         return "cold and dark";
       case "before_start":
@@ -214,7 +210,7 @@ export class AeroflyMissionAutofill {
 
   get wind() {
     let wind = ``;
-    const conditions = this.#mission.conditions;
+    const conditions = this.mission.conditions;
     if (conditions.wind.speed < 1) {
       wind = `no wind`;
     } else if (conditions.wind.speed <= 5) {
@@ -223,9 +219,9 @@ export class AeroflyMissionAutofill {
       wind = `wind from ${String(conditions.wind.direction).padStart(3, "0")}° at ${conditions.wind.speed} kts`;
     }
 
-    if (this.#mission.conditions.thermalStrength > 0.8) {
+    if (this.mission.conditions.thermalStrength > 0.8) {
       wind += ` and lots of thermal activity`;
-    } else if (this.#mission.conditions.thermalStrength > 0.4) {
+    } else if (this.mission.conditions.thermalStrength > 0.4) {
       wind += ` and moderate thermal activity`;
     }
 

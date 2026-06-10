@@ -64,12 +64,12 @@ export class Scenario {
     ); // Distribute entry procedures evenly among missions
     this.patternEntry = this.pattern.getEntry(bearing);
 
-    const title = this.#getTitle(index);
-    const description = this.#getDescription(this.pattern);
+    const title = this._getTitle(index);
+    const description = this._getDescription(this.pattern);
     const conditions = AviationWeatherApiHelper.makeConditions(this.date, this.weather);
-    const origin = this.#makeOriginPosition(this.pattern, bearing);
-    const destination = this.#makeDestinationPosition(this.pattern);
-    const checkpoints = this.#getCheckpoints(this.pattern, this.patternEntry);
+    const origin = this._makeOriginPosition(this.pattern, bearing);
+    const destination = this._makeDestinationPosition(this.pattern);
+    const checkpoints = this._getCheckpoints(this.pattern, this.patternEntry);
 
     this.mission = new AeroflyMission(title, {
       description,
@@ -97,14 +97,14 @@ export class Scenario {
     }
   }
 
-  #getTitle(index: number): string {
+  private _getTitle(index: number): string {
     return `HOLD #${index + 1}: ${this.holdingNavAid.name}${this.pattern.dmeDistanceNm > 0 ? ` with DME fix` : ""}`;
   }
 
   /**
    * @see https://www.code7700.com/holding.htm
    */
-  #getDescription(pattern: HoldingPattern): string {
+  private _getDescription(pattern: HoldingPattern): string {
     const direction = Formatter.getDirection(pattern.holdingAreaDirection);
     const dmeFix = pattern.dmeDistanceNm > 0 ? `the ${pattern.dmeDistanceNm} DME fix, ` : "";
     const radial =
@@ -131,7 +131,7 @@ maintain ${altitude}'. \
 Expect further clearance at ${efcString}.`;
   }
 
-  #makeOriginPosition(pattern: HoldingPattern, bearing: number): AeroflyMissionPosition {
+  private _makeOriginPosition(pattern: HoldingPattern, bearing: number): AeroflyMissionPosition {
     const origin = pattern.holdingFix.getPointBy(
       new Vector(this.configuration.initialDistance * Units.metersPerNauticalMile, bearing),
     );
@@ -148,7 +148,7 @@ Expect further clearance at ${efcString}.`;
     };
   }
 
-  #makeDestinationPosition(pattern: HoldingPattern): AeroflyMissionPosition {
+  private _makeDestinationPosition(pattern: HoldingPattern): AeroflyMissionPosition {
     return {
       icao: this.weather.icaoId,
       latitude: pattern.holdingFix.latitude,
@@ -158,7 +158,7 @@ Expect further clearance at ${efcString}.`;
     };
   }
 
-  #getCheckpoints(pattern: HoldingPattern, patternEntry: HoldingPatternEntry): AeroflyMissionCheckpoint[] {
+  private _getCheckpoints(pattern: HoldingPattern, patternEntry: HoldingPatternEntry): AeroflyMissionCheckpoint[] {
     const turnMultiplier = pattern.isLeftTurn ? -1 : 1;
 
     const pointAfterFix = pattern.holdingFix.getPointBy(
@@ -180,7 +180,7 @@ Expect further clearance at ${efcString}.`;
     };
 
     return [
-      ...this.#getEntryCheckpoints(pattern, patternEntry),
+      ...this._getEntryCheckpoints(pattern, patternEntry),
       new AeroflyMissionCheckpoint(pattern.id, "waypoint", pattern.holdingFix.longitude, pattern.holdingFix.latitude, {
         ...moreCheckpointProperties,
         frequency: this.holdingNavAid.frequency,
@@ -222,7 +222,7 @@ Expect further clearance at ${efcString}.`;
     ];
   }
 
-  #getEntryCheckpoints(pattern: HoldingPattern, patternEntry: HoldingPatternEntry): AeroflyMissionCheckpoint[] {
+  private _getEntryCheckpoints(pattern: HoldingPattern, patternEntry: HoldingPatternEntry): AeroflyMissionCheckpoint[] {
     if (patternEntry === "direct") {
       // Direct entry does not need extra checkpoints
       return [];

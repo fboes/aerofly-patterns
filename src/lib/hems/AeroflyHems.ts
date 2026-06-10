@@ -10,14 +10,12 @@ import { AeroflyTslGenerator } from "./AeroflyTslGenerator.js";
 import { Markdown } from "../general/Markdown.js";
 
 export class AeroflyHems {
-  configuration: Configuration;
   scenarios: Scenario[];
   locations: GeoJsonLocations | null;
   nauticalTimezone: number;
   aircraft: AeroflyAircraft;
 
-  constructor(configuration: Configuration) {
-    this.configuration = configuration;
+  constructor(public configuration: Configuration) {
     this.scenarios = [];
     this.locations = null;
 

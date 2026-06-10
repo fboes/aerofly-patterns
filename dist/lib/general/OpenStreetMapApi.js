@@ -23,6 +23,14 @@ export class OpenStreetMapApi {
     }
 }
 export class OpenStreetMapApiAirport {
+    icaoId;
+    name;
+    lat;
+    lon;
+    /**
+     * in meters
+     */
+    elev;
     constructor(airport) {
         this.icaoId = airport.namedetails.icao ?? null;
         this.name = airport.namedetails["name:en"] ?? airport.name;

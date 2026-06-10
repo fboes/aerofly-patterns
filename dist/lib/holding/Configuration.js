@@ -1,5 +1,71 @@
 import { ConfigurationAbstract } from "../general/ConfigurationAbstract.js";
 export class Configuration extends ConfigurationAbstract {
+    navaidCode;
+    /**
+     * as in Aerofly Aircraft Codes
+     */
+    aircraft;
+    /**
+     * as in Aerofly Aircraft Codes
+     */
+    livery;
+    /**
+     * Optional ICAO code to set METAR weather
+     */
+    airportCode;
+    /**
+     * Probability of an alternate pattern being used in the mission.
+     * Default is 0.1 (10%).
+     * This is a value between 0 and 1.
+     */
+    leftHandPatternProbability;
+    /**
+     * Probability of an DME procedure being used in the mission.
+     * Default is 0.1 (10%).
+     * This is a value between 0 and 1.
+     */
+    dmeProcedureProbability;
+    /**
+     * Probability of an DME procedure being inverse.
+     */
+    dmeHoldingAwayFromNavaidProbability;
+    /**
+     * Minimum DME distance in Nautical Miles.
+     */
+    minimumDmeDistance;
+    /**
+     * Maximum DME distance in Nautical Miles.
+     */
+    maximumDmeDistance;
+    /**
+     * Minimum safe altitude of aircraft, in ft MSL.
+     */
+    minimumSafeAltitude;
+    /**
+     * Maximum altitude of aircraft, in ft MSL.
+     **/
+    maximumAltitude;
+    /**
+     * Minimum altitude of holding pattern, in ft MSL.
+     */
+    minimumHoldingAltitude;
+    /**
+     * Maximum altitude of holding pattern, in ft MSL.
+     */
+    maximumHoldingAltitude;
+    /**
+     * Heading of inbound leg in degrees.
+     * Default is -1.
+     */
+    inboundHeading;
+    numberOfMissions;
+    /**
+     * Initial aircraft distance from holding fix in Nautical Miles.
+     * Default is 5.
+     */
+    initialDistance;
+    directoryMode;
+    noGuides;
     constructor(args) {
         super();
         this._arguments = [

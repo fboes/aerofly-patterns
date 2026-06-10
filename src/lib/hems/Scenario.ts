@@ -55,12 +55,12 @@ export class Scenario {
     const mission = MissionTypeFinder.get(missionLocations[1]);
 
     // Building the actual mission
-    const title = this.#getTitle(index, mission, missionLocations);
-    const description = this.#getDescription(mission, missionLocations);
+    const title = this._getTitle(index, mission, missionLocations);
+    const description = this._getDescription(mission, missionLocations);
     const conditions = AviationWeatherApiHelper.makeConditions(time, weather);
-    const origin = this.#makeMissionPosition(missionLocations[0]);
-    const destination = this.#makeMissionPosition(missionLocations[missionLocations.length - 1]);
-    const checkpoints = this.#getCheckpoints(missionLocations, configuration.withApproaches ? weather : null);
+    const origin = this._makeMissionPosition(missionLocations[0]);
+    const destination = this._makeMissionPosition(missionLocations[missionLocations.length - 1]);
+    const checkpoints = this._getCheckpoints(missionLocations, configuration.withApproaches ? weather : null);
 
     this.mission = new AeroflyMission(title, {
       description,
@@ -109,7 +109,7 @@ export class Scenario {
    * @param {GeoJsonLocation[]} missionLocations
    * @returns {string}
    */
-  #getTitle(index: number, mission: MissionType, missionLocations: GeoJsonLocation[]): string {
+  private _getTitle(index: number, mission: MissionType, missionLocations: GeoJsonLocation[]): string {
     return (
       `HEMS #${index + 1}: ` +
       mission.title.replace(/\$\{(.+?)\}/g, (matches, variableName) => {
@@ -119,7 +119,7 @@ export class Scenario {
     );
   }
 
-  #getDescription(mission: MissionType, missionLocations: GeoJsonLocation[]): string {
+  private _getDescription(mission: MissionType, missionLocations: GeoJsonLocation[]): string {
     return mission.description.replace(/\$\{(.+?)\}/g, (matches, variableName) => {
       const location = variableName === "origin" ? missionLocations[1] : missionLocations[2];
       let description = location.title;
@@ -143,7 +143,7 @@ export class Scenario {
    * @param {AviationWeatherNormalizedMetar} [weather]
    * @returns {AeroflyMissionCheckpoint[]}
    */
-  #getCheckpoints(
+  private _getCheckpoints(
     missionLocations: GeoJsonLocation[],
     weather: AviationWeatherNormalizedMetar | null = null,
   ): AeroflyMissionCheckpoint[] {
@@ -151,11 +151,11 @@ export class Scenario {
       const missionLocationsPlus: GeoJsonLocation[] = [];
       missionLocations.forEach((missionLocation, index) => {
         if (index > 0 && missionLocation.approaches.length) {
-          missionLocationsPlus.push(this.#getApproachLocation(missionLocation, weather));
+          missionLocationsPlus.push(this._getApproachLocation(missionLocation, weather));
         }
         missionLocationsPlus.push(missionLocation);
         if (index < missionLocations.length - 1 && missionLocation.approaches.length) {
-          missionLocationsPlus.push(this.#getApproachLocation(missionLocation, weather, true));
+          missionLocationsPlus.push(this._getApproachLocation(missionLocation, weather, true));
         }
       });
 
@@ -169,7 +169,7 @@ export class Scenario {
       } else if (index === missionLocations.length - 1) {
         type = "destination";
       }
-      return this.#makeCheckpoint(location, type);
+      return this._makeCheckpoint(location, type);
     });
   }
 
@@ -180,7 +180,7 @@ export class Scenario {
    * @param {boolean} asDeparture
    * @returns {GeoJsonLocation}
    */
-  #getApproachLocation(
+  private _getApproachLocation(
     missionLocation: GeoJsonLocation,
     weather: AviationWeatherNormalizedMetar,
     asDeparture: boolean = false,
@@ -208,7 +208,7 @@ export class Scenario {
    * @param {GeoJsonLocation} location
    * @returns {AeroflyMissionPosition}
    */
-  #makeMissionPosition(location: GeoJsonLocation): AeroflyMissionPosition {
+  private _makeMissionPosition(location: GeoJsonLocation): AeroflyMissionPosition {
     return {
       icao: location.icaoCode ?? location.title,
       longitude: location.coordinates.longitude,
@@ -218,7 +218,7 @@ export class Scenario {
     };
   }
 
-  #makeCheckpoint(
+  private _makeCheckpoint(
     location: GeoJsonLocation,
     type: AeroflyMissionCheckpointType = "waypoint",
   ): AeroflyMissionCheckpoint {

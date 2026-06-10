@@ -17,7 +17,7 @@ export class AeroflyTocGenerator {
 
     this.locations.forEach((location) => {
       return MissionTypeFinder.get(location).objects.map((object, index) => {
-        const coordinates = this.#getLonLat(location, index);
+        const coordinates = this._getLonLat(location, index);
         xrefList.push(`\
             <[xref][element][0]
                 <[vector3_float64][position][${coordinates.longitude} ${coordinates.latitude} 0]>
@@ -44,7 +44,7 @@ export class AeroflyTocGenerator {
     };
   }
 
-  #getLonLat(
+  private _getLonLat(
     location: GeoJsonLocation,
     index: number,
   ): {

@@ -10,6 +10,11 @@ import { Formatter } from "../general/Formatter.js";
 import { HoldingPatternFix } from "./HoldingPatternFix.js";
 import { Rand } from "../general/Rand.js";
 export class AeroflyHolding {
+    configuration;
+    scenarios;
+    nauticalTimezone;
+    aircraft;
+    holdingFix = null;
     static async init(configuration) {
         const self = new AeroflyHolding(configuration);
         self.holdingFix = await self.getHoldingFix(self.configuration.navaidCode);
@@ -34,7 +39,6 @@ export class AeroflyHolding {
     }
     constructor(configuration) {
         this.configuration = configuration;
-        this.holdingFix = null;
         this.scenarios = [];
         /**
          * @type {number} a time zone which only considers the longitude, rounded to the full hour, in hours difference to UTC

@@ -1,15 +1,15 @@
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _GeoJsonLocations_instances, _GeoJsonLocations_yieldRandomEmergencySite;
 import { Point } from "@fboes/geojson";
 import * as fs from "node:fs";
 import { Rand } from "../general/Rand.js";
 export class GeoJsonLocations {
+    static MARKER_HOSPITAL = "hospital";
+    static MARKER_HELIPORT = "heliport";
+    static MARKER_HELIPORT_HOSPITAL = "hospital-JP";
+    heliports;
+    hospitals;
+    other;
+    randomEmergencySite;
     constructor(filename) {
-        _GeoJsonLocations_instances.add(this);
         const rawData = fs.readFileSync(filename, "utf8");
         const featureCollection = JSON.parse(rawData);
         if (!featureCollection.type ||
@@ -52,12 +52,37 @@ export class GeoJsonLocations {
         if (this.other.length === 0) {
             throw Error("Missing mission locations in GeoJson file");
         }
-        this.randomEmergencySite = __classPrivateFieldGet(this, _GeoJsonLocations_instances, "m", _GeoJsonLocations_yieldRandomEmergencySite).call(this);
+        this.randomEmergencySite = this._yieldRandomEmergencySite();
     }
     get heliportsAndHospitals() {
         return (this.heliports ?? []).concat(this.hospitals?.filter((l) => {
             return l.markerSymbol !== GeoJsonLocations.MARKER_HELIPORT_HOSPITAL;
         }) ?? []);
+    }
+    /**
+     * Infinite generator of randomized `this.other`. On end of list will return to beginning, but keeping the random order.
+     */
+    *_yieldRandomEmergencySite() {
+        let i = this.other.length;
+        let j = 0;
+        let temp;
+        //const emergencySites = structuredClone(this.other);
+        /**
+         * @type {number[]}
+         */
+        const emergencySiteIndexes = [...Array(i).keys()];
+        while (i--) {
+            j = Rand.getRandomInt(0, i);
+            // swap randomly chosen element with current element
+            temp = emergencySiteIndexes[i];
+            emergencySiteIndexes[i] = emergencySiteIndexes[j];
+            emergencySiteIndexes[j] = temp;
+        }
+        while (emergencySiteIndexes.length) {
+            for (const locationIndex of emergencySiteIndexes) {
+                yield this.other[locationIndex];
+            }
+        }
     }
     getNearesHospital(location) {
         /** @type {number?} */
@@ -92,36 +117,16 @@ export class GeoJsonLocations {
         return location;
     }
 }
-_GeoJsonLocations_instances = new WeakSet(), _GeoJsonLocations_yieldRandomEmergencySite = function
-/**
- * Infinite generator of randomized `this.other`. On end of list will return to beginning, but keeping the random order.
- */
-* _GeoJsonLocations_yieldRandomEmergencySite() {
-    let i = this.other.length;
-    let j = 0;
-    let temp;
-    //const emergencySites = structuredClone(this.other);
-    /**
-     * @type {number[]}
-     */
-    const emergencySiteIndexes = [...Array(i).keys()];
-    while (i--) {
-        j = Rand.getRandomInt(0, i);
-        // swap randomly chosen element with current element
-        temp = emergencySiteIndexes[i];
-        emergencySiteIndexes[i] = emergencySiteIndexes[j];
-        emergencySiteIndexes[j] = temp;
-    }
-    while (emergencySiteIndexes.length) {
-        for (const locationIndex of emergencySiteIndexes) {
-            yield this.other[locationIndex];
-        }
-    }
-};
-GeoJsonLocations.MARKER_HOSPITAL = "hospital";
-GeoJsonLocations.MARKER_HELIPORT = "heliport";
-GeoJsonLocations.MARKER_HELIPORT_HOSPITAL = "hospital-JP";
 export class GeoJsonLocation {
+    type;
+    id;
+    coordinates;
+    markerSymbol;
+    title;
+    icaoCode;
+    direction;
+    approaches;
+    url;
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     constructor(json) {
         if (!json?.properties?.title) {

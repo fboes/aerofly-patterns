@@ -4,6 +4,9 @@ import { fileURLToPath } from "node:url";
 import * as fs from "node:fs";
 const packageJson = JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "../../../package.json"), "utf8"));
 export class ConfigurationAbstract {
+    _arguments;
+    _options;
+    help;
     constructor() {
         this._arguments = [];
         this._options = {

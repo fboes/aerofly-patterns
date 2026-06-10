@@ -83,7 +83,7 @@ export class GeoJsonLocations {
       throw Error("Missing mission locations in GeoJson file");
     }
 
-    this.randomEmergencySite = this.#yieldRandomEmergencySite();
+    this.randomEmergencySite = this._yieldRandomEmergencySite();
   }
 
   get heliportsAndHospitals(): GeoJsonLocation[] {
@@ -97,7 +97,7 @@ export class GeoJsonLocations {
   /**
    * Infinite generator of randomized `this.other`. On end of list will return to beginning, but keeping the random order.
    */
-  *#yieldRandomEmergencySite(): Generator<GeoJsonLocation> {
+  private *_yieldRandomEmergencySite(): Generator<GeoJsonLocation> {
     let i = this.other.length;
     let j = 0;
     let temp;

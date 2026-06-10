@@ -10,11 +10,11 @@ import { Vector } from "@fboes/geojson";
 import { Markdown } from "../general/Markdown.js";
 import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js";
 export class AeroflyPatterns {
+    configuration;
+    airport;
+    scenarios;
     constructor(configuration, airport) {
         this.configuration = configuration;
-        /**
-         * @type {Airport} the airport to build scenarios for
-         */
         this.airport = airport;
         /**
          * @type {Scenario[]} the scenarios to

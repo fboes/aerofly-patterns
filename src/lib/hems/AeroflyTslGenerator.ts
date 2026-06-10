@@ -1,17 +1,15 @@
 import { GeoJsonLocation } from "./GeoJsonLocations.js";
 
 export class AeroflyTslGenerator {
-  locations: GeoJsonLocation[];
-  environmentId: string;
   /**
    *
    * @param {GeoJsonLocation[]} locations
    * @param {string} environmentId
    */
-  constructor(locations: GeoJsonLocation[], environmentId: string) {
-    this.locations = locations;
-    this.environmentId = environmentId;
-  }
+  constructor(
+    public locations: GeoJsonLocation[],
+    public environmentId: string,
+  ) {}
 
   get sceneryObjectList(): string[] {
     return this.locations.map((location) => {

@@ -13,6 +13,15 @@ import { AviationWeatherApiHelper } from "../general/AviationWeatherApiHelper.js
  * and the entry method.
  */
 export class Scenario {
+    airport;
+    configuration;
+    aircraft;
+    weather;
+    date;
+    activeRunway;
+    activeRunwayCrosswindComponent;
+    patternWaypoints;
+    entryWaypoint;
     static async init(airport, configuration, date) {
         return new Scenario(airport, configuration, await AviationWeatherApiHelper.getWeather(airport.id, date), date);
     }
@@ -238,6 +247,13 @@ export class Scenario {
  * @type  {AeroflyPatternsWaypointable}
  */
 class ScenarioAircraft {
+    vectorFromAirport;
+    position;
+    heading;
+    id;
+    aeroflyCode;
+    aeroflyLiveryCode;
+    data;
     /**
      *
      * @param {Airport} airport

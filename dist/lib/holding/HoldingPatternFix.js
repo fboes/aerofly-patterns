@@ -1,5 +1,11 @@
 import { Point } from "@fboes/geojson";
 export class HoldingPatternFix {
+    id;
+    name;
+    type;
+    position;
+    mag_dec;
+    frequency;
     constructor(id, name, type, position, 
     /**
      * with "+" to the east and "-" to the west. Substracted from a true heading this will give the magnetic heading.

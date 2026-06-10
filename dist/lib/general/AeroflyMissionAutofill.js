@@ -1,26 +1,14 @@
-var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-};
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _AeroflyMissionAutofill_mission;
 import { AeroflyMissionTargetPlane } from "@fboes/aerofly-custom-missions";
 export class AeroflyMissionAutofill {
+    mission;
     constructor(mission) {
-        _AeroflyMissionAutofill_mission.set(this, void 0);
-        __classPrivateFieldSet(this, _AeroflyMissionAutofill_mission, mission, "f");
+        this.mission = mission;
     }
     get title() {
-        if (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.icao == __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").destination.icao) {
-            return `Local flight at ${__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.icao}`;
+        if (this.mission.origin.icao == this.mission.destination.icao) {
+            return `Local flight at ${this.mission.origin.icao}`;
         }
-        return `From ${__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.icao} to ${__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").destination.icao}`;
+        return `From ${this.mission.origin.icao} to ${this.mission.destination.icao}`;
     }
     get description() {
         const weatherAdjectives = this.weatherAdjectives;
@@ -29,19 +17,19 @@ export class AeroflyMissionAutofill {
     }
     get tags() {
         const tags = [];
-        if (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").conditions.wind.speed >= 22) {
+        if (this.mission.conditions.wind.speed >= 22) {
             tags.push("windy");
         }
-        if (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").conditions.visibility_sm <= 3) {
+        if (this.mission.conditions.visibility_sm <= 3) {
             tags.push("low_visibility");
         }
         if (this.timeOfDay === "night") {
             tags.push("night");
         }
-        if (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").flightSetting === "cold_and_dark") {
+        if (this.mission.flightSetting === "cold_and_dark") {
             tags.push("cold_and_dark");
         }
-        else if (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").flightSetting === "before_start") {
+        else if (this.mission.flightSetting === "before_start") {
             tags.push("before_start");
         }
         return tags;
@@ -51,7 +39,7 @@ export class AeroflyMissionAutofill {
          * @type {string[]}
          */
         const adjectives = [];
-        const conditions = __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").conditions;
+        const conditions = this.mission.conditions;
         if (conditions.wind.speed >= 48) {
             adjectives.push("stormy");
         }
@@ -91,8 +79,8 @@ export class AeroflyMissionAutofill {
      * @returns {number} duration in seconds, considering aircraft flight setting
      */
     calculateDuration(knots) {
-        let duration = (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").distance ?? 0) / (knots * (1852 / 3600));
-        switch (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").flightSetting) {
+        let duration = (this.mission.distance ?? 0) / (knots * (1852 / 3600));
+        switch (this.mission.flightSetting) {
             case "cold_and_dark":
                 duration += 240;
                 break;
@@ -109,31 +97,31 @@ export class AeroflyMissionAutofill {
      * Setting a target plane in around 1 meter distance in front of the aircraft.
      */
     removeGuides() {
-        const directionRad = (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.dir * Math.PI) / 180;
+        const directionRad = (this.mission.origin.dir * Math.PI) / 180;
         const offset = 0.00001;
-        __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").finish = new AeroflyMissionTargetPlane(__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.longitude + Math.sin(directionRad) * offset, __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.latitude + Math.cos(directionRad) * offset, __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.dir);
+        this.mission.finish = new AeroflyMissionTargetPlane(this.mission.origin.longitude + Math.sin(directionRad) * offset, this.mission.origin.latitude + Math.cos(directionRad) * offset, this.mission.origin.dir);
     }
     /**
      * Will also set the bearing between the given checkpoints.
      * @returns {number} in meters
      */
     get distance() {
-        let lastCp = __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin;
+        let lastCp = this.mission.origin;
         let distance = 0;
-        for (const cp of __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").checkpoints) {
+        for (const cp of this.mission.checkpoints) {
             const vector = AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, cp);
             distance += vector.distance;
             cp.direction = vector.bearing;
             lastCp = cp;
         }
-        distance += AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").destination).distance;
+        distance += AeroflyMissionAutofill.getDistanceBetweenCheckpoints(lastCp, this.mission.destination).distance;
         return distance;
     }
     get nauticalTimeHours() {
-        return (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").conditions.time.getUTCHours() + this.nauticalTimezoneOffset + 24) % 24;
+        return (this.mission.conditions.time.getUTCHours() + this.nauticalTimezoneOffset + 24) % 24;
     }
     get nauticalTimezoneOffset() {
-        return Math.round((__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").origin.longitude ?? 0) / 15);
+        return Math.round((this.mission.origin.longitude ?? 0) / 15);
     }
     get timeOfDay() {
         const nauticalTimeHours = this.nauticalTimeHours;
@@ -158,25 +146,25 @@ export class AeroflyMissionAutofill {
         return "day";
     }
     get aircraftName() {
-        switch (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").aircraft.name) {
+        switch (this.mission.aircraft.name) {
             case "f15e":
             case "f18":
             case "mb339":
             case "p38":
             case "uh60":
-                return __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").aircraft.name.toUpperCase().replace(/^(\D+)(\d+)/, "$1-$2");
+                return this.mission.aircraft.name.toUpperCase().replace(/^(\D+)(\d+)/, "$1-$2");
             case "camel":
             case "concorde":
             case "jungmeister":
             case "pitts":
             case "swift":
-                return __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").aircraft.name[0].toUpperCase() + String(__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").aircraft.name).slice(1);
+                return this.mission.aircraft.name[0].toUpperCase() + String(this.mission.aircraft.name).slice(1);
             default:
-                return __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").aircraft.name.toUpperCase().replace(/_/, "-");
+                return this.mission.aircraft.name.toUpperCase().replace(/_/, "-");
         }
     }
     get flightSetting() {
-        switch (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").flightSetting) {
+        switch (this.mission.flightSetting) {
             case "cold_and_dark":
                 return "cold and dark";
             case "before_start":
@@ -203,7 +191,7 @@ export class AeroflyMissionAutofill {
     }
     get wind() {
         let wind = ``;
-        const conditions = __classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").conditions;
+        const conditions = this.mission.conditions;
         if (conditions.wind.speed < 1) {
             wind = `no wind`;
         }
@@ -213,10 +201,10 @@ export class AeroflyMissionAutofill {
         else {
             wind = `wind from ${String(conditions.wind.direction).padStart(3, "0")}° at ${conditions.wind.speed} kts`;
         }
-        if (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").conditions.thermalStrength > 0.8) {
+        if (this.mission.conditions.thermalStrength > 0.8) {
             wind += ` and lots of thermal activity`;
         }
-        else if (__classPrivateFieldGet(this, _AeroflyMissionAutofill_mission, "f").conditions.thermalStrength > 0.4) {
+        else if (this.mission.conditions.thermalStrength > 0.4) {
             wind += ` and moderate thermal activity`;
         }
         return wind;
@@ -247,4 +235,3 @@ export class AeroflyMissionAutofill {
         };
     }
 }
-_AeroflyMissionAutofill_mission = new WeakMap();

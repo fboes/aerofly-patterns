@@ -1,4 +1,6 @@
 export class AeroflyTslGenerator {
+    locations;
+    environmentId;
     /**
      *
      * @param {GeoJsonLocation[]} locations
