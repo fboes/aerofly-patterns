@@ -1,5 +1,8 @@
 # Aerofly Landegerät
 
+> [!NOTE]
+> You might want to try the [Aerofly Startgerät](https://github.com/fboes/aerofly-startgeraet): It has even more capabilities than the Aerofly Landegerät and runs on more operating systems.
+
 This project generates random custom missions for Aerofly FS 4 by utilizing the `custom_missions_user.tmc` file. There are multiple types of missions:
 
 1. The tool creates missions containing [landing pattern or instrument approach procedure lessons](docs/pattern.md), which put your plane in a random location around an airport, sets time of day as well as weather, and let you figure out how to enter the landing pattern or instrument approach procedure correctly.
